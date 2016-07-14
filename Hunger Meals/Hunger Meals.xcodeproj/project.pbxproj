@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6711549FCFFAE413AEB3CF74 /* libPods-Hunger Meals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F70BFA21B901C87EE0C0218A /* libPods-Hunger Meals.a */; };
 		9A0C43C71D2F868300A7BF6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43C61D2F868300A7BF6B /* main.m */; };
 		9A0C43CA1D2F868300A7BF6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43C91D2F868300A7BF6B /* AppDelegate.m */; };
-		9A0C43CD1D2F868300A7BF6B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43CC1D2F868300A7BF6B /* ViewController.m */; };
 		9A0C43D01D2F868300A7BF6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A0C43CE1D2F868300A7BF6B /* Main.storyboard */; };
-		9A0C43D31D2F868400A7BF6B /* Hunger_Meals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43D11D2F868300A7BF6B /* Hunger_Meals.xcdatamodeld */; };
 		9A0C43D51D2F868400A7BF6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A0C43D41D2F868400A7BF6B /* Assets.xcassets */; };
 		9A0C43D81D2F868400A7BF6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A0C43D61D2F868400A7BF6B /* LaunchScreen.storyboard */; };
 		9A0C43E31D2F868500A7BF6B /* Hunger_MealsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43E21D2F868500A7BF6B /* Hunger_MealsTests.m */; };
 		9A0C43EE1D2F868500A7BF6B /* Hunger_MealsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43ED1D2F868500A7BF6B /* Hunger_MealsUITests.m */; };
+		A831CA7A1D37A9EF00B96F4F /* LandingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */; };
+		A831CA7E1D37ACC200B96F4F /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA7D1D37ACC200B96F4F /* SlideMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4DCA7CB294CDCDA8CA1C444C /* Pods-Hunger Meals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger Meals.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger Meals/Pods-Hunger Meals.release.xcconfig"; sourceTree = "<group>"; };
 		9A0C43C21D2F868200A7BF6B /* Hunger Meals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hunger Meals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0C43C61D2F868300A7BF6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9A0C43C81D2F868300A7BF6B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9A0C43C91D2F868300A7BF6B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9A0C43CB1D2F868300A7BF6B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9A0C43CC1D2F868300A7BF6B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9A0C43CF1D2F868300A7BF6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9A0C43D21D2F868300A7BF6B /* Hunger_Meals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hunger_Meals.xcdatamodel; sourceTree = "<group>"; };
 		9A0C43D41D2F868400A7BF6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A0C43D71D2F868400A7BF6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A0C43D91D2F868400A7BF6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +52,12 @@
 		9A0C43E91D2F868500A7BF6B /* Hunger MealsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hunger MealsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0C43ED1D2F868500A7BF6B /* Hunger_MealsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hunger_MealsUITests.m; sourceTree = "<group>"; };
 		9A0C43EF1D2F868500A7BF6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A831CA781D37A9EF00B96F4F /* LandingPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingPageViewController.h; sourceTree = "<group>"; };
+		A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingPageViewController.m; sourceTree = "<group>"; };
+		A831CA7C1D37ACC200B96F4F /* SlideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuViewController.h; sourceTree = "<group>"; };
+		A831CA7D1D37ACC200B96F4F /* SlideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuViewController.m; sourceTree = "<group>"; };
+		CF17CC79735150610AE82F35 /* Pods-Hunger Meals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger Meals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger Meals/Pods-Hunger Meals.debug.xcconfig"; sourceTree = "<group>"; };
+		F70BFA21B901C87EE0C0218A /* libPods-Hunger Meals.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hunger Meals.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6711549FCFFAE413AEB3CF74 /* libPods-Hunger Meals.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5FA363CDBF05093570B7FFAA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF17CC79735150610AE82F35 /* Pods-Hunger Meals.debug.xcconfig */,
+				4DCA7CB294CDCDA8CA1C444C /* Pods-Hunger Meals.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9A0C43B91D2F868200A7BF6B = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +102,8 @@
 				9A0C43E11D2F868500A7BF6B /* Hunger MealsTests */,
 				9A0C43EC1D2F868500A7BF6B /* Hunger MealsUITests */,
 				9A0C43C31D2F868200A7BF6B /* Products */,
+				5FA363CDBF05093570B7FFAA /* Pods */,
+				CEF003EBFAD4F4F9E5687B46 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,15 +120,13 @@
 		9A0C43C41D2F868300A7BF6B /* Hunger Meals */ = {
 			isa = PBXGroup;
 			children = (
+				A831CA731D37A71000B96F4F /* View Controllers */,
 				9A0C43C81D2F868300A7BF6B /* AppDelegate.h */,
 				9A0C43C91D2F868300A7BF6B /* AppDelegate.m */,
-				9A0C43CB1D2F868300A7BF6B /* ViewController.h */,
-				9A0C43CC1D2F868300A7BF6B /* ViewController.m */,
 				9A0C43CE1D2F868300A7BF6B /* Main.storyboard */,
 				9A0C43D41D2F868400A7BF6B /* Assets.xcassets */,
 				9A0C43D61D2F868400A7BF6B /* LaunchScreen.storyboard */,
 				9A0C43D91D2F868400A7BF6B /* Info.plist */,
-				9A0C43D11D2F868300A7BF6B /* Hunger_Meals.xcdatamodeld */,
 				9A0C43C51D2F868300A7BF6B /* Supporting Files */,
 			);
 			path = "Hunger Meals";
@@ -143,6 +158,41 @@
 			path = "Hunger MealsUITests";
 			sourceTree = "<group>";
 		};
+		A831CA731D37A71000B96F4F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A831CA7B1D37A9F500B96F4F /* Slide Menu */,
+				A831CA771D37A9EF00B96F4F /* Home */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A831CA771D37A9EF00B96F4F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A831CA781D37A9EF00B96F4F /* LandingPageViewController.h */,
+				A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A831CA7B1D37A9F500B96F4F /* Slide Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A831CA7C1D37ACC200B96F4F /* SlideMenuViewController.h */,
+				A831CA7D1D37ACC200B96F4F /* SlideMenuViewController.m */,
+			);
+			path = "Slide Menu";
+			sourceTree = "<group>";
+		};
+		CEF003EBFAD4F4F9E5687B46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F70BFA21B901C87EE0C0218A /* libPods-Hunger Meals.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +200,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A0C43F21D2F868500A7BF6B /* Build configuration list for PBXNativeTarget "Hunger Meals" */;
 			buildPhases = (
+				7986B5D3E43F215C351FB798 /* Check Pods Manifest.lock */,
 				9A0C43BE1D2F868200A7BF6B /* Sources */,
 				9A0C43BF1D2F868200A7BF6B /* Frameworks */,
 				9A0C43C01D2F868200A7BF6B /* Resources */,
+				54DC4A77B17445C3DB7445CD /* Embed Pods Frameworks */,
+				77B719F779C8B7F69A71E9CE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,15 +321,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		54DC4A77B17445C3DB7445CD /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hunger Meals/Pods-Hunger Meals-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77B719F779C8B7F69A71E9CE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hunger Meals/Pods-Hunger Meals-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7986B5D3E43F215C351FB798 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9A0C43BE1D2F868200A7BF6B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A0C43CD1D2F868300A7BF6B /* ViewController.m in Sources */,
+				A831CA7A1D37A9EF00B96F4F /* LandingPageViewController.m in Sources */,
+				A831CA7E1D37ACC200B96F4F /* SlideMenuViewController.m in Sources */,
 				9A0C43CA1D2F868300A7BF6B /* AppDelegate.m in Sources */,
 				9A0C43C71D2F868300A7BF6B /* main.m in Sources */,
-				9A0C43D31D2F868400A7BF6B /* Hunger_Meals.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +469,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -407,7 +508,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -417,22 +518,26 @@
 		};
 		9A0C43F31D2F868500A7BF6B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF17CC79735150610AE82F35 /* Pods-Hunger Meals.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Hunger Meals/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "paradigmcreatives.Hunger-Meals";
+				PRODUCT_BUNDLE_IDENTIFIER = com.basicapps.hungermeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		9A0C43F41D2F868500A7BF6B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DCA7CB294CDCDA8CA1C444C /* Pods-Hunger Meals.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Hunger Meals/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "paradigmcreatives.Hunger-Meals";
+				PRODUCT_BUNDLE_IDENTIFIER = com.basicapps.hungermeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -502,6 +607,7 @@
 				9A0C43F41D2F868500A7BF6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A0C43F51D2F868500A7BF6B /* Build configuration list for PBXNativeTarget "Hunger MealsTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +616,7 @@
 				9A0C43F71D2F868500A7BF6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A0C43F81D2F868500A7BF6B /* Build configuration list for PBXNativeTarget "Hunger MealsUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,21 +625,9 @@
 				9A0C43FA1D2F868500A7BF6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		9A0C43D11D2F868300A7BF6B /* Hunger_Meals.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9A0C43D21D2F868300A7BF6B /* Hunger_Meals.xcdatamodel */,
-			);
-			currentVersion = 9A0C43D21D2F868300A7BF6B /* Hunger_Meals.xcdatamodel */;
-			path = Hunger_Meals.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 9A0C43BA1D2F868200A7BF6B /* Project object */;
 }
