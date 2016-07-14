@@ -6,13 +6,13 @@
 //  Copyright © 2016 paradigm-creatives. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LandingPageViewController.h"
 
-@interface ViewController ()
+@interface LandingPageViewController ()
 
 @end
 
-@implementation ViewController
+@implementation LandingPageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
