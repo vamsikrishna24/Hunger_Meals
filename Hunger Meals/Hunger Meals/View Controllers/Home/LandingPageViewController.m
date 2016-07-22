@@ -219,6 +219,19 @@ static NSString * const cellIdentifier = @"MealItemCellIdentifier";
     
 }
 
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    UICollectionReusableView *reusableView = nil;
+    
+    if (kind == UICollectionElementKindSectionHeader) {
+        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"sectionHeader" forIndexPath:indexPath];
+        
+        [reusableView addSubview:self.searchController.searchBar];
+    }
+    
+    return reusableView;
+
+}
+
 - (UIEdgeInsets) collectionView:
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     
