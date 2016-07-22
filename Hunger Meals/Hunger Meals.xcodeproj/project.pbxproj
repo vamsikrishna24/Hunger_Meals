@@ -21,6 +21,11 @@
 		A831CA861D37CEC100B96F4F /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = A831CA821D37CEC100B96F4F /* close.png */; };
 		A831CA871D37CEC100B96F4F /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A831CA831D37CEC100B96F4F /* close@2x.png */; };
 		A831CA881D37CEC100B96F4F /* MTGenericAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA851D37CEC100B96F4F /* MTGenericAlertView.m */; };
+		A88444651D38D0B700887098 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = A88444641D38D0B700887098 /* Utility.m */; };
+		A88444681D38D17B00887098 /* CheckConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A88444671D38D17B00887098 /* CheckConnection.m */; };
+		A884446C1D38D5D600887098 /* BTAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = A884446B1D38D5D600887098 /* BTAlertController.m */; };
+		A88444701D38E68500887098 /* UIAlertView+CustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A884446F1D38E68500887098 /* UIAlertView+CustomAlertView.m */; };
+		A88444731D38E69900887098 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A88444721D38E69900887098 /* UIActionSheet+Blocks.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +71,17 @@
 		A831CA831D37CEC100B96F4F /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		A831CA841D37CEC100B96F4F /* MTGenericAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGenericAlertView.h; sourceTree = "<group>"; };
 		A831CA851D37CEC100B96F4F /* MTGenericAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGenericAlertView.m; sourceTree = "<group>"; };
+		A88444631D38D0B700887098 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		A88444641D38D0B700887098 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		A88444661D38D17B00887098 /* CheckConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckConnection.h; sourceTree = "<group>"; };
+		A88444671D38D17B00887098 /* CheckConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckConnection.m; sourceTree = "<group>"; };
+		A884446A1D38D5D600887098 /* BTAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAlertController.h; sourceTree = "<group>"; };
+		A884446B1D38D5D600887098 /* BTAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAlertController.m; sourceTree = "<group>"; };
+		A884446D1D38D60500887098 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		A884446E1D38E68500887098 /* UIAlertView+CustomAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+CustomAlertView.h"; sourceTree = "<group>"; };
+		A884446F1D38E68500887098 /* UIAlertView+CustomAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+CustomAlertView.m"; sourceTree = "<group>"; };
+		A88444711D38E69900887098 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
+		A88444721D38E69900887098 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
 		CF17CC79735150610AE82F35 /* Pods-Hunger Meals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger Meals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger Meals/Pods-Hunger Meals.debug.xcconfig"; sourceTree = "<group>"; };
 		F70BFA21B901C87EE0C0218A /* libPods-Hunger Meals.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hunger Meals.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -139,6 +155,7 @@
 		9A0C43C41D2F868300A7BF6B /* Hunger Meals */ = {
 			isa = PBXGroup;
 			children = (
+				A88444621D38D0A200887098 /* Basic */,
 				A831CA7F1D37CEC100B96F4F /* Third Party Libraries */,
 				A831CA731D37A71000B96F4F /* View Controllers */,
 				9A0C43C81D2F868300A7BF6B /* AppDelegate.h */,
@@ -209,6 +226,7 @@
 		A831CA7F1D37CEC100B96F4F /* Third Party Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				A88444691D38D5C600887098 /* AlertController */,
 				A831CA801D37CEC100B96F4F /* MTGenericAlertView */,
 			);
 			path = "Third Party Libraries";
@@ -231,6 +249,31 @@
 				A831CA831D37CEC100B96F4F /* close@2x.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		A88444621D38D0A200887098 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				A88444661D38D17B00887098 /* CheckConnection.h */,
+				A88444671D38D17B00887098 /* CheckConnection.m */,
+				A88444631D38D0B700887098 /* Utility.h */,
+				A88444641D38D0B700887098 /* Utility.m */,
+				A884446D1D38D60500887098 /* Constants.h */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		A88444691D38D5C600887098 /* AlertController */ = {
+			isa = PBXGroup;
+			children = (
+				A884446A1D38D5D600887098 /* BTAlertController.h */,
+				A884446B1D38D5D600887098 /* BTAlertController.m */,
+				A884446E1D38E68500887098 /* UIAlertView+CustomAlertView.h */,
+				A884446F1D38E68500887098 /* UIAlertView+CustomAlertView.m */,
+				A88444711D38E69900887098 /* UIActionSheet+Blocks.h */,
+				A88444721D38E69900887098 /* UIActionSheet+Blocks.m */,
+			);
+			path = AlertController;
 			sourceTree = "<group>";
 		};
 		CEF003EBFAD4F4F9E5687B46 /* Frameworks */ = {
@@ -424,12 +467,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A884446C1D38D5D600887098 /* BTAlertController.m in Sources */,
 				A831CA7A1D37A9EF00B96F4F /* LandingPageViewController.m in Sources */,
 				A831CA7E1D37ACC200B96F4F /* SlideMenuViewController.m in Sources */,
+				A88444731D38E69900887098 /* UIActionSheet+Blocks.m in Sources */,
 				9A0C43CA1D2F868300A7BF6B /* AppDelegate.m in Sources */,
 				2B9FECCD1D411C4500A21666 /* HMLoginViewController.m in Sources */,
 				9A0C43C71D2F868300A7BF6B /* main.m in Sources */,
+				A88444701D38E68500887098 /* UIAlertView+CustomAlertView.m in Sources */,
+				A88444651D38D0B700887098 /* Utility.m in Sources */,
 				A831CA881D37CEC100B96F4F /* MTGenericAlertView.m in Sources */,
+				A88444681D38D17B00887098 /* CheckConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

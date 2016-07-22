@@ -10,9 +10,13 @@
 #import "ECSlidingViewController.h"
 #import "MTGenericAlertView.h"
 
-@interface LandingPageViewController : UIViewController<ECSlidingViewControllerDelegate, MTGenericAlertViewDelegate>
+@interface LandingPageViewController : UIViewController<ECSlidingViewControllerDelegate, MTGenericAlertViewDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property(nonatomic, weak) IBOutlet UIView *popUpBoxView;
+@property (strong, nonatomic) UISearchController *searchController;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 
 - (IBAction)menuButtonTapped:(id)sender;
 
