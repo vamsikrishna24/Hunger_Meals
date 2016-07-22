@@ -6,6 +6,9 @@
 target 'Hunger Meals' do
 
 pod 'ECSlidingViewController', '~> 2.0.3'
+pod 'FBSDKCoreKit'
+pod 'FBSDKShareKit' 
+pod 'FBSDKLoginKit'
 
 end
 
