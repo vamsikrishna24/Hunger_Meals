@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B9FECCD1D411C4500A21666 /* HMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FECCC1D411C4500A21666 /* HMLoginViewController.m */; };
 		6711549FCFFAE413AEB3CF74 /* libPods-Hunger Meals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F70BFA21B901C87EE0C0218A /* libPods-Hunger Meals.a */; };
 		9A0C43C71D2F868300A7BF6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43C61D2F868300A7BF6B /* main.m */; };
 		9A0C43CA1D2F868300A7BF6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43C91D2F868300A7BF6B /* AppDelegate.m */; };
@@ -17,6 +18,9 @@
 		9A0C43EE1D2F868500A7BF6B /* Hunger_MealsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43ED1D2F868500A7BF6B /* Hunger_MealsUITests.m */; };
 		A831CA7A1D37A9EF00B96F4F /* LandingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */; };
 		A831CA7E1D37ACC200B96F4F /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA7D1D37ACC200B96F4F /* SlideMenuViewController.m */; };
+		A831CA861D37CEC100B96F4F /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = A831CA821D37CEC100B96F4F /* close.png */; };
+		A831CA871D37CEC100B96F4F /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A831CA831D37CEC100B96F4F /* close@2x.png */; };
+		A831CA881D37CEC100B96F4F /* MTGenericAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA851D37CEC100B96F4F /* MTGenericAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B9FECCB1D411C4500A21666 /* HMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLoginViewController.h; sourceTree = "<group>"; };
+		2B9FECCC1D411C4500A21666 /* HMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLoginViewController.m; sourceTree = "<group>"; };
 		4DCA7CB294CDCDA8CA1C444C /* Pods-Hunger Meals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger Meals.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger Meals/Pods-Hunger Meals.release.xcconfig"; sourceTree = "<group>"; };
 		9A0C43C21D2F868200A7BF6B /* Hunger Meals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hunger Meals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0C43C61D2F868300A7BF6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -56,6 +62,10 @@
 		A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingPageViewController.m; sourceTree = "<group>"; };
 		A831CA7C1D37ACC200B96F4F /* SlideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuViewController.h; sourceTree = "<group>"; };
 		A831CA7D1D37ACC200B96F4F /* SlideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuViewController.m; sourceTree = "<group>"; };
+		A831CA821D37CEC100B96F4F /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		A831CA831D37CEC100B96F4F /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		A831CA841D37CEC100B96F4F /* MTGenericAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGenericAlertView.h; sourceTree = "<group>"; };
+		A831CA851D37CEC100B96F4F /* MTGenericAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGenericAlertView.m; sourceTree = "<group>"; };
 		CF17CC79735150610AE82F35 /* Pods-Hunger Meals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger Meals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger Meals/Pods-Hunger Meals.debug.xcconfig"; sourceTree = "<group>"; };
 		F70BFA21B901C87EE0C0218A /* libPods-Hunger Meals.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hunger Meals.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -86,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B9FECC41D41192000A21666 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2B9FECCB1D411C4500A21666 /* HMLoginViewController.h */,
+				2B9FECCC1D411C4500A21666 /* HMLoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		5FA363CDBF05093570B7FFAA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +139,7 @@
 		9A0C43C41D2F868300A7BF6B /* Hunger Meals */ = {
 			isa = PBXGroup;
 			children = (
+				A831CA7F1D37CEC100B96F4F /* Third Party Libraries */,
 				A831CA731D37A71000B96F4F /* View Controllers */,
 				9A0C43C81D2F868300A7BF6B /* AppDelegate.h */,
 				9A0C43C91D2F868300A7BF6B /* AppDelegate.m */,
@@ -161,6 +181,7 @@
 		A831CA731D37A71000B96F4F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2B9FECC41D41192000A21666 /* Login */,
 				A831CA7B1D37A9F500B96F4F /* Slide Menu */,
 				A831CA771D37A9EF00B96F4F /* Home */,
 			);
@@ -183,6 +204,33 @@
 				A831CA7D1D37ACC200B96F4F /* SlideMenuViewController.m */,
 			);
 			path = "Slide Menu";
+			sourceTree = "<group>";
+		};
+		A831CA7F1D37CEC100B96F4F /* Third Party Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				A831CA801D37CEC100B96F4F /* MTGenericAlertView */,
+			);
+			path = "Third Party Libraries";
+			sourceTree = "<group>";
+		};
+		A831CA801D37CEC100B96F4F /* MTGenericAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				A831CA811D37CEC100B96F4F /* images */,
+				A831CA841D37CEC100B96F4F /* MTGenericAlertView.h */,
+				A831CA851D37CEC100B96F4F /* MTGenericAlertView.m */,
+			);
+			path = MTGenericAlertView;
+			sourceTree = "<group>";
+		};
+		A831CA811D37CEC100B96F4F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				A831CA821D37CEC100B96F4F /* close.png */,
+				A831CA831D37CEC100B96F4F /* close@2x.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		CEF003EBFAD4F4F9E5687B46 /* Frameworks */ = {
@@ -299,8 +347,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A831CA871D37CEC100B96F4F /* close@2x.png in Resources */,
 				9A0C43D81D2F868400A7BF6B /* LaunchScreen.storyboard in Resources */,
 				9A0C43D51D2F868400A7BF6B /* Assets.xcassets in Resources */,
+				A831CA861D37CEC100B96F4F /* close.png in Resources */,
 				9A0C43D01D2F868300A7BF6B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,7 +427,9 @@
 				A831CA7A1D37A9EF00B96F4F /* LandingPageViewController.m in Sources */,
 				A831CA7E1D37ACC200B96F4F /* SlideMenuViewController.m in Sources */,
 				9A0C43CA1D2F868300A7BF6B /* AppDelegate.m in Sources */,
+				2B9FECCD1D411C4500A21666 /* HMLoginViewController.m in Sources */,
 				9A0C43C71D2F868300A7BF6B /* main.m in Sources */,
+				A831CA881D37CEC100B96F4F /* MTGenericAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

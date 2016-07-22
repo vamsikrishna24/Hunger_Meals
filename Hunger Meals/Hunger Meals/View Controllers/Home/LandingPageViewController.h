@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ECSlidingViewController.h"
+#import "MTGenericAlertView.h"
 
-@interface LandingPageViewController : UIViewController
+@interface LandingPageViewController : UIViewController<ECSlidingViewControllerDelegate, MTGenericAlertViewDelegate>
 
+@property(nonatomic, weak) IBOutlet UIView *popUpBoxView;
+
+- (IBAction)menuButtonTapped:(id)sender;
 
 @end
 
