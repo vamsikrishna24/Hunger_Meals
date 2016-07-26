@@ -58,9 +58,11 @@ install_resource()
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
   install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
   install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
 fi
 
