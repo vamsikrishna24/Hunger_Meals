@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B7AC6F81D47AC3F00D59BB3 /* Dish_Images in Resources */ = {isa = PBXBuildFile; fileRef = 2B7AC6F71D47AC3F00D59BB3 /* Dish_Images */; };
+		2B7AC6FD1D47BB6F00D59BB3 /* HMDetailPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7AC6FC1D47BB6F00D59BB3 /* HMDetailPageViewController.m */; };
+		2B7AC7001D47C18400D59BB3 /* HMCartItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7AC6FF1D47C18400D59BB3 /* HMCartItemsViewController.m */; };
 		2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */; };
 		2B9FECCD1D411C4500A21666 /* HMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FECCC1D411C4500A21666 /* HMLoginViewController.m */; };
 		6711549FCFFAE413AEB3CF74 /* libPods-Hunger Meals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F70BFA21B901C87EE0C0218A /* libPods-Hunger Meals.a */; };
@@ -48,6 +51,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B7AC6F71D47AC3F00D59BB3 /* Dish_Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Dish_Images; path = "Hunger Meals/Dish_Images"; sourceTree = "<group>"; };
+		2B7AC6FB1D47BB6F00D59BB3 /* HMDetailPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDetailPageViewController.h; sourceTree = "<group>"; };
+		2B7AC6FC1D47BB6F00D59BB3 /* HMDetailPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailPageViewController.m; sourceTree = "<group>"; };
+		2B7AC6FE1D47C18400D59BB3 /* HMCartItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCartItemsViewController.h; sourceTree = "<group>"; };
+		2B7AC6FF1D47C18400D59BB3 /* HMCartItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCartItemsViewController.m; sourceTree = "<group>"; };
 		2B9A43471D471F3A00F87C1B /* HMSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSignUpViewController.h; sourceTree = "<group>"; };
 		2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSignUpViewController.m; sourceTree = "<group>"; };
 		2B9FECCB1D411C4500A21666 /* HMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLoginViewController.h; sourceTree = "<group>"; };
@@ -124,6 +132,8 @@
 				2B9FECCC1D411C4500A21666 /* HMLoginViewController.m */,
 				2B9A43471D471F3A00F87C1B /* HMSignUpViewController.h */,
 				2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */,
+				2B7AC6FE1D47C18400D59BB3 /* HMCartItemsViewController.h */,
+				2B7AC6FF1D47C18400D59BB3 /* HMCartItemsViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -140,6 +150,7 @@
 		9A0C43B91D2F868200A7BF6B = {
 			isa = PBXGroup;
 			children = (
+				2B7AC6F71D47AC3F00D59BB3 /* Dish_Images */,
 				9A0C43C41D2F868300A7BF6B /* Hunger Meals */,
 				9A0C43E11D2F868500A7BF6B /* Hunger MealsTests */,
 				9A0C43EC1D2F868500A7BF6B /* Hunger MealsUITests */,
@@ -218,6 +229,8 @@
 			children = (
 				A831CA781D37A9EF00B96F4F /* LandingPageViewController.h */,
 				A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */,
+				2B7AC6FB1D47BB6F00D59BB3 /* HMDetailPageViewController.h */,
+				2B7AC6FC1D47BB6F00D59BB3 /* HMDetailPageViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -398,6 +411,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B7AC6F81D47AC3F00D59BB3 /* Dish_Images in Resources */,
 				A831CA871D37CEC100B96F4F /* close@2x.png in Resources */,
 				9AD7F62F1D4767AD0062C6F4 /* GoogleService-Info.plist in Resources */,
 				9A0C43D81D2F868400A7BF6B /* LaunchScreen.storyboard in Resources */,
@@ -480,9 +494,11 @@
 				A831CA7A1D37A9EF00B96F4F /* LandingPageViewController.m in Sources */,
 				A831CA7E1D37ACC200B96F4F /* SlideMenuViewController.m in Sources */,
 				A88444731D38E69900887098 /* UIActionSheet+Blocks.m in Sources */,
+				2B7AC6FD1D47BB6F00D59BB3 /* HMDetailPageViewController.m in Sources */,
 				9A0C43CA1D2F868300A7BF6B /* AppDelegate.m in Sources */,
 				2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */,
 				2B9FECCD1D411C4500A21666 /* HMLoginViewController.m in Sources */,
+				2B7AC7001D47C18400D59BB3 /* HMCartItemsViewController.m in Sources */,
 				9A0C43C71D2F868300A7BF6B /* main.m in Sources */,
 				A88444701D38E68500887098 /* UIAlertView+CustomAlertView.m in Sources */,
 				A88444651D38D0B700887098 /* Utility.m in Sources */,
