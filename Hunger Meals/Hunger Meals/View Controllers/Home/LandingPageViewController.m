@@ -10,6 +10,8 @@
 #import "UIViewController+ECSlidingViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "Utility.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
 
 #define CELLSPACING 10
 #define STATUSNAVIGATIONHEIGHT 60
@@ -19,6 +21,8 @@
 @property(nonatomic, strong) NSString *searchStr;
 @property(nonatomic, strong) NSMutableArray *searchFeedArray;
 @property(nonatomic, strong) NSMutableArray *collectionFeedArray;
+@property(nonatomic, strong) NSMutableArray *dishImagesArray;
+
 
 @end
 
@@ -36,7 +40,9 @@ static NSString * const cellIdentifier = @"MealItemCellIdentifier";
     //Menu open/close based on gesture recognizer
     self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
     [self.slidingViewController.topViewController.view addGestureRecognizer:self.slidingViewController.panGesture];
-    
+    self.dishImagesArray = [[NSMutableArray alloc]initWithObjects:@"dish1",@"dish2",@"dish3",@"dish4",@"dish5",@"dish6",@"dish7",@"dish8",@"dish9",@"dish10",@"dish11",@"dish12",@"dish13",@"dish14",@"dish15",@"dish16", nil];
+    self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
+
     //Showing popup at intial
     [self showPopUpBoxAtStartUp];
     
@@ -186,13 +192,14 @@ static NSString * const cellIdentifier = @"MealItemCellIdentifier";
 
 - (NSInteger) collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
     
-    return 12;
+    return 16;
 }
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = (UICollectionViewCell *)[cv dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    
-    
+    UIImageView *imageView = [cell viewWithTag:222];
+    NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
+    imageView.image = [UIImage imageNamed:imageName];
     return cell;
 }
 

@@ -179,7 +179,7 @@ didSignInForUser:(GIDGoogleUser *)user
     
     if ([GIDSignIn sharedInstance].currentUser.profile.hasImage)
     {
-        self.imageURL = [user.profile imageURLWithDimension:150];
+       // self.imageURL = [user.profile imageURLWithDimension:150];
     }
   
     // ...
