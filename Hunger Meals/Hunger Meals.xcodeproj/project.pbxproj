@@ -17,6 +17,7 @@
 		9A0C43D81D2F868400A7BF6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A0C43D61D2F868400A7BF6B /* LaunchScreen.storyboard */; };
 		9A0C43E31D2F868500A7BF6B /* Hunger_MealsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43E21D2F868500A7BF6B /* Hunger_MealsTests.m */; };
 		9A0C43EE1D2F868500A7BF6B /* Hunger_MealsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43ED1D2F868500A7BF6B /* Hunger_MealsUITests.m */; };
+		9AD7F62F1D4767AD0062C6F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AD7F62E1D4767AD0062C6F4 /* GoogleService-Info.plist */; };
 		A831CA7A1D37A9EF00B96F4F /* LandingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */; };
 		A831CA7E1D37ACC200B96F4F /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA7D1D37ACC200B96F4F /* SlideMenuViewController.m */; };
 		A831CA861D37CEC100B96F4F /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = A831CA821D37CEC100B96F4F /* close.png */; };
@@ -66,6 +67,7 @@
 		9A0C43E91D2F868500A7BF6B /* Hunger MealsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hunger MealsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0C43ED1D2F868500A7BF6B /* Hunger_MealsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hunger_MealsUITests.m; sourceTree = "<group>"; };
 		9A0C43EF1D2F868500A7BF6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AD7F62E1D4767AD0062C6F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A831CA781D37A9EF00B96F4F /* LandingPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingPageViewController.h; sourceTree = "<group>"; };
 		A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingPageViewController.m; sourceTree = "<group>"; };
 		A831CA7C1D37ACC200B96F4F /* SlideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuViewController.h; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				9A0C43D41D2F868400A7BF6B /* Assets.xcassets */,
 				9A0C43D61D2F868400A7BF6B /* LaunchScreen.storyboard */,
 				9A0C43D91D2F868400A7BF6B /* Info.plist */,
+				9AD7F62E1D4767AD0062C6F4 /* GoogleService-Info.plist */,
 				9A0C43C51D2F868300A7BF6B /* Supporting Files */,
 			);
 			path = "Hunger Meals";
@@ -396,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A831CA871D37CEC100B96F4F /* close@2x.png in Resources */,
+				9AD7F62F1D4767AD0062C6F4 /* GoogleService-Info.plist in Resources */,
 				9A0C43D81D2F868400A7BF6B /* LaunchScreen.storyboard in Resources */,
 				9A0C43D51D2F868400A7BF6B /* Assets.xcassets in Resources */,
 				A831CA861D37CEC100B96F4F /* close.png in Resources */,
