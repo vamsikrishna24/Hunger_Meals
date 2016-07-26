@@ -23,7 +23,7 @@
     
     self.facebookLoginButton.readPermissions =
     @[@"public_profile", @"email", @"user_friends"];
-    
+    [self fetchUserInfo];
         // Do any additional setup after loading the view.
 }
 
@@ -45,6 +45,37 @@
     
 }
 
+-(void)fetchUserInfo
+{
+    if ([FBSDKAccessToken currentAccessToken])
+    {
+        NSLog(@"Token is available : %@",[[FBSDKAccessToken currentAccessToken]tokenString]);
+        
+        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name, email"}]
+         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+             if (!error)
+             {
+                 NSLog(@"results:%@",result);
+                 
+                 NSString *email = [result objectForKey:@"email"];
+                 NSString *userId = [result objectForKey:@"id"];
+                 
+                 if (email.length >0 )
+                 {
+                     //Start you app Todo
+                 }
+                 else
+                 {
+                    // NSLog(@“Facebook email is not verified");
+                           }
+                           }
+                           else
+                           {
+                               NSLog(@"Error %@",error);
+                           }
+                           }];
+                           }
+                           }
 //publish Permissions
 - (void)logInWithPublishPermissions:(NSArray *)permissions
                  fromViewController:(UIViewController *)fromViewController

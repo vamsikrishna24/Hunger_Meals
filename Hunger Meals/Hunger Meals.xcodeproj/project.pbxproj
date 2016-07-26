@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */; };
 		2B9FECCD1D411C4500A21666 /* HMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FECCC1D411C4500A21666 /* HMLoginViewController.m */; };
 		6711549FCFFAE413AEB3CF74 /* libPods-Hunger Meals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F70BFA21B901C87EE0C0218A /* libPods-Hunger Meals.a */; };
 		9A0C43C71D2F868300A7BF6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43C61D2F868300A7BF6B /* main.m */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B9A43471D471F3A00F87C1B /* HMSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSignUpViewController.h; sourceTree = "<group>"; };
+		2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSignUpViewController.m; sourceTree = "<group>"; };
 		2B9FECCB1D411C4500A21666 /* HMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLoginViewController.h; sourceTree = "<group>"; };
 		2B9FECCC1D411C4500A21666 /* HMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLoginViewController.m; sourceTree = "<group>"; };
 		4DCA7CB294CDCDA8CA1C444C /* Pods-Hunger Meals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger Meals.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger Meals/Pods-Hunger Meals.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 			children = (
 				2B9FECCB1D411C4500A21666 /* HMLoginViewController.h */,
 				2B9FECCC1D411C4500A21666 /* HMLoginViewController.m */,
+				2B9A43471D471F3A00F87C1B /* HMSignUpViewController.h */,
+				2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 				A831CA7E1D37ACC200B96F4F /* SlideMenuViewController.m in Sources */,
 				A88444731D38E69900887098 /* UIActionSheet+Blocks.m in Sources */,
 				9A0C43CA1D2F868300A7BF6B /* AppDelegate.m in Sources */,
+				2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */,
 				2B9FECCD1D411C4500A21666 /* HMLoginViewController.m in Sources */,
 				9A0C43C71D2F868300A7BF6B /* main.m in Sources */,
 				A88444701D38E68500887098 /* UIAlertView+CustomAlertView.m in Sources */,
