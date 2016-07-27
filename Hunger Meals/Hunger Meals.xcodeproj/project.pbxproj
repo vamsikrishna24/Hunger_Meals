@@ -20,7 +20,6 @@
 		9A0C43D81D2F868400A7BF6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A0C43D61D2F868400A7BF6B /* LaunchScreen.storyboard */; };
 		9A0C43E31D2F868500A7BF6B /* Hunger_MealsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43E21D2F868500A7BF6B /* Hunger_MealsTests.m */; };
 		9A0C43EE1D2F868500A7BF6B /* Hunger_MealsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43ED1D2F868500A7BF6B /* Hunger_MealsUITests.m */; };
-		9A42B8371D48BA890094FEC2 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A42B8341D48BA890094FEC2 /* libPaymentsSDK.a */; };
 		9AD7F62F1D4767AD0062C6F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AD7F62E1D4767AD0062C6F4 /* GoogleService-Info.plist */; };
 		A831CA7A1D37A9EF00B96F4F /* LandingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */; };
 		A831CA7E1D37ACC200B96F4F /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA7D1D37ACC200B96F4F /* SlideMenuViewController.m */; };
@@ -76,12 +75,6 @@
 		9A0C43E91D2F868500A7BF6B /* Hunger MealsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hunger MealsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0C43ED1D2F868500A7BF6B /* Hunger_MealsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hunger_MealsUITests.m; sourceTree = "<group>"; };
 		9A0C43EF1D2F868500A7BF6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A42B82F1D48BA890094FEC2 /* PaymentsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentsSDK.h; sourceTree = "<group>"; };
-		9A42B8301D48BA890094FEC2 /* PGMerchantConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMerchantConfiguration.h; sourceTree = "<group>"; };
-		9A42B8311D48BA890094FEC2 /* PGOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGOrder.h; sourceTree = "<group>"; };
-		9A42B8321D48BA890094FEC2 /* PGServerEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGServerEnvironment.h; sourceTree = "<group>"; };
-		9A42B8331D48BA890094FEC2 /* PGTransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGTransactionViewController.h; sourceTree = "<group>"; };
-		9A42B8341D48BA890094FEC2 /* libPaymentsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentsSDK.a; sourceTree = "<group>"; };
 		9AD7F62E1D4767AD0062C6F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A831CA781D37A9EF00B96F4F /* LandingPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingPageViewController.h; sourceTree = "<group>"; };
 		A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingPageViewController.m; sourceTree = "<group>"; };
@@ -112,7 +105,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6711549FCFFAE413AEB3CF74 /* libPods-Hunger Meals.a in Frameworks */,
-				9A42B8371D48BA890094FEC2 /* libPaymentsSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,51 +214,6 @@
 			path = "Hunger MealsUITests";
 			sourceTree = "<group>";
 		};
-		9A42B82C1D48BA890094FEC2 /* sdk */ = {
-			isa = PBXGroup;
-			children = (
-				9A42B82D1D48BA890094FEC2 /* 2_1 */,
-				9A42B8351D48BA890094FEC2 /* __MACOSX */,
-			);
-			path = sdk;
-			sourceTree = "<group>";
-		};
-		9A42B82D1D48BA890094FEC2 /* 2_1 */ = {
-			isa = PBXGroup;
-			children = (
-				9A42B82E1D48BA890094FEC2 /* include */,
-				9A42B8341D48BA890094FEC2 /* libPaymentsSDK.a */,
-			);
-			path = 2_1;
-			sourceTree = "<group>";
-		};
-		9A42B82E1D48BA890094FEC2 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				9A42B82F1D48BA890094FEC2 /* PaymentsSDK.h */,
-				9A42B8301D48BA890094FEC2 /* PGMerchantConfiguration.h */,
-				9A42B8311D48BA890094FEC2 /* PGOrder.h */,
-				9A42B8321D48BA890094FEC2 /* PGServerEnvironment.h */,
-				9A42B8331D48BA890094FEC2 /* PGTransactionViewController.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		9A42B8351D48BA890094FEC2 /* __MACOSX */ = {
-			isa = PBXGroup;
-			children = (
-				9A42B8361D48BA890094FEC2 /* 2_1 */,
-			);
-			path = __MACOSX;
-			sourceTree = "<group>";
-		};
-		9A42B8361D48BA890094FEC2 /* 2_1 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = 2_1;
-			sourceTree = "<group>";
-		};
 		A831CA731D37A71000B96F4F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,7 +300,6 @@
 		CEF003EBFAD4F4F9E5687B46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9A42B82C1D48BA890094FEC2 /* sdk */,
 				F70BFA21B901C87EE0C0218A /* libPods-Hunger Meals.a */,
 			);
 			name = Frameworks;
