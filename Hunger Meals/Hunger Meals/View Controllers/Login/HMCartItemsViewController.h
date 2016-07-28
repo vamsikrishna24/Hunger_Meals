@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HMCartCollectionReusableView.h"
 
 @interface HMCartItemsViewController : UIViewController
 @property (strong,nonatomic)IBOutlet UICollectionView *collectionView;
 @property (strong,nonatomic) NSMutableArray *dishImagesArray;
+
 
 @end
