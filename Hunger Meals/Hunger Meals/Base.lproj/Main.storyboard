@@ -851,31 +851,27 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whr-93-lGX">
-                                        <rect key="frame" x="164" y="362" width="230" height="30"/>
+                                        <rect key="frame" x="92" y="402" width="230" height="30"/>
                                         <color key="backgroundColor" red="0.1091072248" green="0.87082823590000003" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="230" id="3a1-Ij-p7N"/>
                                             <constraint firstAttribute="height" constant="30" id="leW-SU-ffu"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="Send Verification Code">
+                                        <state key="normal" title="Sig Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="mobileNumVerificationPressed:" destination="L2f-EC-14A" eventType="touchUpInside" id="oCZ-fh-vdQ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8R-sW-ETx">
-                                        <rect key="frame" x="180" y="429" width="55" height="30"/>
-                                        <state key="normal" title="Sign Up"/>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="EcA-DO-RE8" firstAttribute="leading" secondItem="Ep8-4F-hZw" secondAttribute="leading" id="4dF-fz-udU"/>
                                     <constraint firstItem="EcA-DO-RE8" firstAttribute="top" secondItem="Ep8-4F-hZw" secondAttribute="top" id="Bbk-wF-6im"/>
-                                    <constraint firstItem="whr-93-lGX" firstAttribute="trailing" secondItem="c9r-JF-GUb" secondAttribute="trailing" id="HYz-7S-krG"/>
+                                    <constraint firstItem="whr-93-lGX" firstAttribute="trailing" secondItem="c9r-JF-GUb" secondAttribute="trailing" constant="-72" id="HYz-7S-krG"/>
                                     <constraint firstAttribute="trailing" secondItem="EcA-DO-RE8" secondAttribute="trailing" id="OjG-SQ-TGL"/>
-                                    <constraint firstItem="whr-93-lGX" firstAttribute="top" secondItem="c9r-JF-GUb" secondAttribute="bottom" constant="21" id="POe-ho-p1e"/>
+                                    <constraint firstItem="whr-93-lGX" firstAttribute="top" secondItem="c9r-JF-GUb" secondAttribute="bottom" constant="61" id="POe-ho-p1e"/>
                                     <constraint firstAttribute="bottom" secondItem="EcA-DO-RE8" secondAttribute="bottom" id="lFU-3B-NbN"/>
                                     <constraint firstItem="EcA-DO-RE8" firstAttribute="centerX" secondItem="Ep8-4F-hZw" secondAttribute="centerX" id="o9K-en-cOP"/>
                                     <constraint firstItem="EcA-DO-RE8" firstAttribute="centerY" secondItem="Ep8-4F-hZw" secondAttribute="centerY" id="sUF-U6-w3S"/>
@@ -915,19 +911,19 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter otp sent to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1Z-rH-9mq">
-                            <rect key="frame" x="17" y="39" width="266" height="14.5"/>
+                            <rect key="frame" x="17" y="39" width="266" height="15"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter OTP:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2n-9M-tuj">
-                            <rect key="frame" x="17" y="65.5" width="61" height="14.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter OTP:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2n-9M-tuj">
+                            <rect key="frame" x="17" y="66" width="61" height="14"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="0.10910722483602603" green="0.87082823588875391" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCc-F9-VJL">
-                            <rect key="frame" x="210" y="88.5" width="82" height="27"/>
+                            <rect key="frame" x="210" y="89" width="82" height="27"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="82" id="v0G-Sv-gZb"/>
                             </constraints>
@@ -940,7 +936,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1K-Kg-U6A">
-                            <rect key="frame" x="98" y="142.5" width="104" height="30"/>
+                            <rect key="frame" x="98" y="143" width="104" height="30"/>
                             <color key="backgroundColor" red="0.1091072248" green="0.87082823590000003" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="104" id="1PJ-Ku-GQP"/>
@@ -954,7 +950,7 @@
                             </connections>
                         </button>
                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You have entered invalid OTP. Please try again!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7l-tx-vgS">
-                            <rect key="frame" x="17" y="122" width="275" height="14.5"/>
+                            <rect key="frame" x="17" y="122" width="275" height="15"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="1" green="0.14772560815511238" blue="0.25157017116467995" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
