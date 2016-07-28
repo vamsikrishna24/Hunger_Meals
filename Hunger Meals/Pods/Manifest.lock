@@ -46,6 +46,7 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - TwilioSDK (1.2.7)
 
 DEPENDENCIES:
   - ECSlidingViewController (~> 2.0.3)
@@ -57,6 +58,7 @@ DEPENDENCIES:
   - JSONModel (~> 1.2)
   - Reachability (~> 3.2)
   - SDWebImage (~> 3.7)
+  - TwilioSDK (~> 1.2)
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -78,5 +80,6 @@ SPEC CHECKSUMS:
   JSONModel: 81c06ecf99190a25fa6aafceea5faffa7880868a
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  TwilioSDK: d3982acf6880ddf3ce57c4444e021a71c5f35653
 
 COCOAPODS: 0.39.0
