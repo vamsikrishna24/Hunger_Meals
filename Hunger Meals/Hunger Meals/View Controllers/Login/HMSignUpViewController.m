@@ -22,6 +22,7 @@
 @implementation HMSignUpViewController{
     MTGenericAlertView *oneTimePopUp;
     NSString *otpVerificationCode;
+    BOOL isPopUpShowing;
 
 }
 - (IBAction)resendOtpButtonAction:(id)sender {
@@ -55,7 +56,10 @@
 
 - (IBAction)mobileNumVerificationPressed:(id)sender{
     
-    [self showPopUpBoxAtStartUp];
+    if (!isPopUpShowing) {
+        [self showPopUpBoxAtStartUp];
+        isPopUpShowing = YES;
+    }
 
     // Use your own details here
 
@@ -85,7 +89,9 @@
             
         }
         else{
-            
+            NSString* error = [[NSString alloc] initWithData:data
+                                                     encoding:NSUTF8StringEncoding];
+            NSLog(@"End up with error:%@",error);
         }
     }];
     
@@ -110,10 +116,21 @@
     //Add close button only to handle close button action. Other wise by default close button will be added.
     oneTimePopUp.popUpCloseButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     [oneTimePopUp.popUpCloseButton setBackgroundImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
+    [oneTimePopUp.popUpCloseButton addTarget:self action:@selector(closePopUp) forControlEvents:UIControlEventTouchUpInside];
+    
     oneTimePopUp.isPopUpView = YES;
     [oneTimePopUp setCustomInputView:_otpView];
     [oneTimePopUp setDelegate:self];
     [oneTimePopUp show];
     
+}
+
+- (void)closePopUp{
+    [oneTimePopUp close];
+    isPopUpShowing = NO;
+}
+
+- (void)alertView:(id)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    //Do something here
 }
 @end

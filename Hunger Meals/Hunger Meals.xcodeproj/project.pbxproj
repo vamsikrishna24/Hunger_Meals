@@ -20,6 +20,8 @@
 		9A0C43D81D2F868400A7BF6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A0C43D61D2F868400A7BF6B /* LaunchScreen.storyboard */; };
 		9A0C43E31D2F868500A7BF6B /* Hunger_MealsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43E21D2F868500A7BF6B /* Hunger_MealsTests.m */; };
 		9A0C43EE1D2F868500A7BF6B /* Hunger_MealsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43ED1D2F868500A7BF6B /* Hunger_MealsUITests.m */; };
+		9A818F9A1D49EBCD00FB5565 /* HMCartCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A818F991D49EBCD00FB5565 /* HMCartCollectionReusableView.m */; };
+		9A818F9F1D49F8B200FB5565 /* HMPaymentTypeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A818F9E1D49F8B200FB5565 /* HMPaymentTypeSelectionViewController.m */; };
 		9AD7F62F1D4767AD0062C6F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AD7F62E1D4767AD0062C6F4 /* GoogleService-Info.plist */; };
 		A831CA7A1D37A9EF00B96F4F /* LandingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */; };
 		A831CA7E1D37ACC200B96F4F /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA7D1D37ACC200B96F4F /* SlideMenuViewController.m */; };
@@ -75,6 +77,10 @@
 		9A0C43E91D2F868500A7BF6B /* Hunger MealsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hunger MealsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0C43ED1D2F868500A7BF6B /* Hunger_MealsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hunger_MealsUITests.m; sourceTree = "<group>"; };
 		9A0C43EF1D2F868500A7BF6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A818F981D49EBCD00FB5565 /* HMCartCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCartCollectionReusableView.h; sourceTree = "<group>"; };
+		9A818F991D49EBCD00FB5565 /* HMCartCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCartCollectionReusableView.m; sourceTree = "<group>"; };
+		9A818F9D1D49F8B200FB5565 /* HMPaymentTypeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPaymentTypeSelectionViewController.h; sourceTree = "<group>"; };
+		9A818F9E1D49F8B200FB5565 /* HMPaymentTypeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPaymentTypeSelectionViewController.m; sourceTree = "<group>"; };
 		9AD7F62E1D4767AD0062C6F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A831CA781D37A9EF00B96F4F /* LandingPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingPageViewController.h; sourceTree = "<group>"; };
 		A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingPageViewController.m; sourceTree = "<group>"; };
@@ -214,9 +220,30 @@
 			path = "Hunger MealsUITests";
 			sourceTree = "<group>";
 		};
+		9A818F911D49EA4E00FB5565 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				9A818F981D49EBCD00FB5565 /* HMCartCollectionReusableView.h */,
+				9A818F991D49EBCD00FB5565 /* HMCartCollectionReusableView.m */,
+			);
+			name = Footer;
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9A818F9C1D49F82C00FB5565 /* Payment GateWay */ = {
+			isa = PBXGroup;
+			children = (
+				9A818F9D1D49F8B200FB5565 /* HMPaymentTypeSelectionViewController.h */,
+				9A818F9E1D49F8B200FB5565 /* HMPaymentTypeSelectionViewController.m */,
+			);
+			name = "Payment GateWay";
+			sourceTree = "<group>";
+		};
 		A831CA731D37A71000B96F4F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9A818F9C1D49F82C00FB5565 /* Payment GateWay */,
+				9A818F911D49EA4E00FB5565 /* Footer */,
 				2B9FECC41D41192000A21666 /* Login */,
 				A831CA7B1D37A9F500B96F4F /* Slide Menu */,
 				A831CA771D37A9EF00B96F4F /* Home */,
@@ -498,8 +525,10 @@
 				9A0C43CA1D2F868300A7BF6B /* AppDelegate.m in Sources */,
 				2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */,
 				2B9FECCD1D411C4500A21666 /* HMLoginViewController.m in Sources */,
+				9A818F9A1D49EBCD00FB5565 /* HMCartCollectionReusableView.m in Sources */,
 				2B7AC7001D47C18400D59BB3 /* HMCartItemsViewController.m in Sources */,
 				9A0C43C71D2F868300A7BF6B /* main.m in Sources */,
+				9A818F9F1D49F8B200FB5565 /* HMPaymentTypeSelectionViewController.m in Sources */,
 				A88444701D38E68500887098 /* UIAlertView+CustomAlertView.m in Sources */,
 				A88444651D38D0B700887098 /* Utility.m in Sources */,
 				A831CA881D37CEC100B96F4F /* MTGenericAlertView.m in Sources */,

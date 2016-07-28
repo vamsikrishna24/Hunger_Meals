@@ -15,10 +15,13 @@
 
 static NSString * const cellIdentifier = @"CartItemCellIdentifier";
 
-@implementation HMCartItemsViewController
+@implementation HMCartItemsViewController{
+   //
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -26,7 +29,7 @@ static NSString * const cellIdentifier = @"CartItemCellIdentifier";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+//checkoutItemsView
 /*
 #pragma mark - Navigation
 
@@ -49,7 +52,7 @@ static NSString * const cellIdentifier = @"CartItemCellIdentifier";
 
 - (NSInteger) collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
     
-    return 16;
+    return 4;
 }
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -82,6 +85,22 @@ static NSString * const cellIdentifier = @"CartItemCellIdentifier";
 //    return cellSize;
 //    
 //}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *reusableview = nil;
+    
+    if (kind == UICollectionElementKindSectionFooter) {
+        HMCartCollectionReusableView *CartFooterView  = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView" forIndexPath:indexPath];
+ 
+        
+        reusableview = CartFooterView;
+    }
+    
+    
+    return reusableview;
+}
+
 
 
 - (UIEdgeInsets) collectionView:
