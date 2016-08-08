@@ -10,6 +10,8 @@
 #import <Google/SignIn.h>
 #import <CoreData/CoreData.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "LandingPageViewController.h"
+#import "HMLoginViewController.h"
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, GIDSignInDelegate>

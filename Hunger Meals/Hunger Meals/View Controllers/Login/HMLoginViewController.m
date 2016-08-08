@@ -29,98 +29,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    appDelegate = [[UIApplication sharedApplication]delegate];
-    
-    self.facebookLoginButton.readPermissions =
-    @[@"public_profile", @"email", @"user_friends"];
-    [self fetchUserInfo];
+     [self setupFbConfiguration];
     
      [GIDSignIn sharedInstance].uiDelegate = self;
-    
      [[GIDSignIn sharedInstance] signInSilently];
-    
-    
 
-        // Do any additional setup after loading the view.
 }
 
-
-// read permissions
-- (void)logInWithReadPermissions:(NSArray *)permissions
-              fromViewController:(UIViewController *)fromViewController
-                         handler:(FBSDKLoginManagerRequestTokenHandler)handler{
-    if ([FBSDKAccessToken currentAccessToken]) {
-        // TODO:Token is already available.
-    }
-    FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
-    [loginManager logInWithReadPermissions:@[@"email"]
-                        fromViewController:self
-                                   handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-                                       //TODO: process error or result
-                                   }];
-
+-(void)setupFbConfiguration{
+    
+    self.facebookLoginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
+    self.facebookLoginButton.delegate = self;
+    [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(profileUpdated:) name:FBSDKProfileDidChangeNotification object:nil];
     
 }
 
--(void)fetchUserInfo
-{
-    if ([FBSDKAccessToken currentAccessToken])
-    {
-        NSLog(@"Token is available : %@",[[FBSDKAccessToken currentAccessToken]tokenString]);
+-(void)profileUpdated:(NSNotification *) notification{
+    NSLog(@"User name: %@",[FBSDKProfile currentProfile].name);
+    NSLog(@"User ID: %@",[FBSDKProfile currentProfile].userID);
+}
+
+- (void)  loginButton:(FBSDKLoginButton *)loginButton
+didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
+                error:(NSError *)error{
+    
         
-        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name, email"}]
-         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-             if (!error)
-             {
-                 NSLog(@"results:%@",result);
-                 
-                 NSString *email = [result objectForKey:@"email"];
-                 NSString *userId = [result objectForKey:@"id"];
-                 [self.navigationController pushViewController:self.homePageVC animated:YES];
-                 //[self performSegueWithIdentifier:@"NextView" sender:self];
-                 if (email.length >0 )
-                 {
-                                         //Start you app Todo
-                 }
-                 else
-                 {
-                    // NSLog(@“Facebook email is not verified");
-                           }
-                           }
-                           else
-                           {
-                               NSLog(@"Error %@",error);
-                           }
-                           }];
-                           }
-                           }
-//publish Permissions
-- (void)logInWithPublishPermissions:(NSArray *)permissions
-                 fromViewController:(UIViewController *)fromViewController
-                            handler:(FBSDKLoginManagerRequestTokenHandler)handler{
+        
+}
+
+- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton{
     
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-// Implement these methods only if the GIDSignInUIDelegate is not a subclass of
-// UIViewController.
-
-// Stop the UIActivityIndicatorView animation that was started when the user
-// pressed the Sign In button
-
+#pragma mark - Google Sign-In Delegate Methods
 - (void)signInWillDispatch:(GIDSignIn *)signIn error:(NSError *)error {
     [self.myActivityIndicator stopAnimating];
 }
@@ -139,7 +82,6 @@ dismissViewController:(UIViewController *)viewController {
 }
 
 //Google SignOut
-
 - (IBAction)didTapSignOut:(id)sender {
     [[GIDSignIn sharedInstance] signOut];
 }

@@ -33,6 +33,43 @@
     return YES;
 }
 
+- (void) showInitialScreen{
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    
+    
+    //If user is already logged in
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"UserLogin"]) {
+        UINavigationController *dashBoardVC = (UINavigationController *)[storyBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+        [self changeRootViewController:dashBoardVC];
+    }
+    else {
+        HMLoginViewController *launchVC = (HMLoginViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"LandingPage"];
+        [self changeRootViewController:launchVC];
+    }
+}
+
+- (void)changeRootViewController:(UIViewController*)viewController {
+    
+    if (!self.window.rootViewController) {
+        self.window.rootViewController = viewController;
+        return;
+    }
+    
+    UIView *snapShot = [self.window snapshotViewAfterScreenUpdates:YES];
+    
+    [viewController.view addSubview:snapShot];
+    
+    self.window.rootViewController = viewController;
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        snapShot.layer.opacity = 0;
+        snapShot.layer.transform = CATransform3DMakeScale(1.5, 1.5, 1.5);
+    } completion:^(BOOL finished) {
+        [snapShot removeFromSuperview];
+    }];
+}
+
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
