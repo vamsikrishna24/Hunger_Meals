@@ -12,6 +12,7 @@
 		2B7AC7001D47C18400D59BB3 /* HMCartItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7AC6FF1D47C18400D59BB3 /* HMCartItemsViewController.m */; };
 		2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */; };
 		2B9FECCD1D411C4500A21666 /* HMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FECCC1D411C4500A21666 /* HMLoginViewController.m */; };
+		2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7B2401D55CF9800B2FABD /* HMHomePageViewController.m */; };
 		6711549FCFFAE413AEB3CF74 /* libPods-Hunger Meals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F70BFA21B901C87EE0C0218A /* libPods-Hunger Meals.a */; };
 		9A0C43C71D2F868300A7BF6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43C61D2F868300A7BF6B /* main.m */; };
 		9A0C43CA1D2F868300A7BF6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43C91D2F868300A7BF6B /* AppDelegate.m */; };
@@ -64,6 +65,8 @@
 		2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSignUpViewController.m; sourceTree = "<group>"; };
 		2B9FECCB1D411C4500A21666 /* HMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLoginViewController.h; sourceTree = "<group>"; };
 		2B9FECCC1D411C4500A21666 /* HMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLoginViewController.m; sourceTree = "<group>"; };
+		2BD7B23F1D55CF9800B2FABD /* HMHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHomePageViewController.h; sourceTree = "<group>"; };
+		2BD7B2401D55CF9800B2FABD /* HMHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHomePageViewController.m; sourceTree = "<group>"; };
 		4DCA7CB294CDCDA8CA1C444C /* Pods-Hunger Meals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger Meals.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger Meals/Pods-Hunger Meals.release.xcconfig"; sourceTree = "<group>"; };
 		9A0C43C21D2F868200A7BF6B /* Hunger Meals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hunger Meals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0C43C61D2F868300A7BF6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -264,6 +267,8 @@
 		A831CA771D37A9EF00B96F4F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2BD7B23F1D55CF9800B2FABD /* HMHomePageViewController.h */,
+				2BD7B2401D55CF9800B2FABD /* HMHomePageViewController.m */,
 				A831CA781D37A9EF00B96F4F /* LandingPageViewController.h */,
 				A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */,
 				2B7AC6FB1D47BB6F00D59BB3 /* HMDetailPageViewController.h */,
@@ -545,6 +550,7 @@
 				A88444651D38D0B700887098 /* Utility.m in Sources */,
 				A831CA881D37CEC100B96F4F /* MTGenericAlertView.m in Sources */,
 				A88444681D38D17B00887098 /* CheckConnection.m in Sources */,
+				2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
