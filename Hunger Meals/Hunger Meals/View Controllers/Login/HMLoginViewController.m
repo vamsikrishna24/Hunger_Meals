@@ -10,6 +10,7 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKLoginManager.h>
 #import "AppDelegate.h"
+#import "Constants.h"
 #import "HMHomePageViewController.h"
 
 
@@ -33,16 +34,30 @@
     
      [GIDSignIn sharedInstance].uiDelegate = self;
      [[GIDSignIn sharedInstance] signInSilently];
+     [GIDSignIn sharedInstance].delegate = self;
+
 
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    
+    
+}
 -(void)setupFbConfiguration{
     
     self.facebookLoginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
     self.facebookLoginButton.delegate = self;
     [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(profileUpdated:) name:FBSDKProfileDidChangeNotification object:nil];
-    
+    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name"}]
+     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+         
+         if (!error) {
+             NSLog(@"fetched user:%@  and Email : %@", result,result[@"email"]);
+             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserLogin"];
+             
+         }
+     }];
+
 }
 
 -(void)profileUpdated:(NSNotification *) notification{
@@ -54,8 +69,10 @@
 didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                 error:(NSError *)error{
     
-        
-        
+    if (!error) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserLogin"];
+        [APPDELEGATE showInitialScreen];
+    }
 }
 
 - (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton{
@@ -86,7 +103,31 @@ dismissViewController:(UIViewController *)viewController {
     [[GIDSignIn sharedInstance] signOut];
 }
 
+- (void)signIn:(GIDSignIn *)signIn
+didDisconnectWithUser:(GIDGoogleUser *)user
+     withError:(NSError *)error {
+    // Perform any operations when the user disconnects from app here.
+    // ...
+}
 
+- (void)signIn:(GIDSignIn *)signIn
+didSignInForUser:(GIDGoogleUser *)user
+     withError:(NSError *)error {
+    // Perform any operations on signed in user here.
+    NSString *userId = user.userID;                  // For client-side use only!
+    NSString *idToken = user.authentication.idToken; // Safe to send to the server
+    NSString *fullName = user.profile.name;
+    NSString *givenName = user.profile.givenName;
+    NSString *familyName = user.profile.familyName;
+    NSString *email = user.profile.email;
+    
+    if ([GIDSignIn sharedInstance].currentUser.profile.hasImage)
+    {
+        // self.imageURL = [user.profile imageURLWithDimension:150];
+    }
+  
+    
+}
 
 
 @end

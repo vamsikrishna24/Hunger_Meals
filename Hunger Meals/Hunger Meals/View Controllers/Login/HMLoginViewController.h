@@ -11,6 +11,6 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <Google/SignIn.h>
 
-@interface HMLoginViewController : UIViewController<GIDSignInUIDelegate, FBSDKLoginButtonDelegate>
+@interface HMLoginViewController : UIViewController<GIDSignInUIDelegate,GIDSignInDelegate, FBSDKLoginButtonDelegate>
 
 @end

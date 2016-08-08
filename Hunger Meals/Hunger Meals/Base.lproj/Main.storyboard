@@ -194,7 +194,7 @@
                 </view>
                 <exit id="LcY-sT-D5e" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="771" y="866"/>
+            <point key="canvasLocation" x="1583" y="866"/>
         </scene>
         <!--Cart Items View Controller-->
         <scene sceneID="9Qc-Uw-Wt9">
@@ -382,7 +382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5N8-mc-q5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="527" y="45"/>
+            <point key="canvasLocation" x="1339" y="45"/>
         </scene>
         <!--Payment Gateway-->
         <scene sceneID="r95-8p-0D2">
@@ -478,7 +478,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDC-S2-JWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042" y="45"/>
+            <point key="canvasLocation" x="1854" y="45"/>
         </scene>
         <!--Detail Page View Controller-->
         <scene sceneID="gsP-f5-kpo">
@@ -536,7 +536,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JNt-9f-fMM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1340" y="881"/>
+            <point key="canvasLocation" x="2152" y="881"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Upf-t9-rx5">
@@ -587,7 +587,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cjz-0W-OMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808" y="866"/>
+            <point key="canvasLocation" x="2620" y="866"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ie1-8u-xyi">
@@ -601,56 +601,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SampleLogo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="X5h-Ca-8Hu">
-                                <rect key="frame" x="0.0" y="64" width="414" height="166"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Meals_Rice.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="X5h-Ca-8Hu">
+                                <rect key="frame" x="0.0" y="64" width="414" height="240"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="166" id="bv9-q0-0JS"/>
+                                    <constraint firstAttribute="height" constant="240" id="bv9-q0-0JS"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SampleLogo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="HUP-2v-CCR">
-                                <rect key="frame" x="152" y="178" width="110" height="100"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="HUP-2v-CCR">
+                                <rect key="frame" x="152" y="245" width="110" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Odo-1s-zkU"/>
                                     <constraint firstAttribute="width" constant="110" id="YLR-UY-JVh"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MxN-ew-ShI">
-                                <rect key="frame" x="20" y="321" width="20" height="20"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BulletPoint.png" translatesAutoresizingMaskIntoConstraints="NO" id="MxN-ew-ShI">
+                                <rect key="frame" x="20" y="358" width="20" height="20"/>
+                                <color key="backgroundColor" red="0.084782094249999995" green="0.60784199279999995" blue="0.82033295159999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="6eo-gu-v6B"/>
                                     <constraint firstAttribute="width" constant="20" id="NTR-Fv-k5E"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order from our menu..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6t-1z-d0Y">
-                                <rect key="frame" x="53" y="316" width="341" height="30"/>
+                                <rect key="frame" x="53" y="353" width="341" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="reb-AA-aBO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ub6-if-Unn">
-                                <rect key="frame" x="20" y="375" width="20" height="20"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BulletPoint.png" translatesAutoresizingMaskIntoConstraints="NO" id="ub6-if-Unn">
+                                <rect key="frame" x="20" y="412" width="20" height="20"/>
+                                <color key="backgroundColor" red="0.084782094249999995" green="0.60784199279999995" blue="0.82033295159999997" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plan for the month..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04w-yl-Oc6">
-                                <rect key="frame" x="53" y="370" width="341" height="30"/>
+                                <rect key="frame" x="53" y="407" width="341" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Z6m-rq-xXO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xvh-67-uCv">
-                                <rect key="frame" x="20" y="429" width="20" height="20"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BulletPoint.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xvh-67-uCv">
+                                <rect key="frame" x="20" y="466" width="20" height="20"/>
+                                <color key="backgroundColor" red="0.084782094249999995" green="0.60784199279999995" blue="0.82033295159999997" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get it delivered..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gt-J8-hms">
-                                <rect key="frame" x="53" y="424" width="341" height="30"/>
+                                <rect key="frame" x="53" y="461" width="341" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Tmp-g6-bR4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -660,6 +663,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Fp0-54-7VV"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="14"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -670,6 +674,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4p2-r6-5Pe">
                                 <rect key="frame" x="214" y="529" width="180" height="39"/>
                                 <color key="backgroundColor" red="0.078509477392930863" green="0.48502321981424146" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="14"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -696,6 +701,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="GzZ-3s-Qex"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="14"/>
                                 <state key="normal" title="Planner.... ">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -725,10 +731,10 @@
                             <constraint firstItem="ITC-RY-JE9" firstAttribute="leading" secondItem="1BO-T6-zf8" secondAttribute="trailing" constant="14" id="Xno-j9-VUB"/>
                             <constraint firstItem="ub6-if-Unn" firstAttribute="top" secondItem="MxN-ew-ShI" secondAttribute="bottom" constant="34" id="bUO-Tk-soL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YDQ-op-ff2" secondAttribute="trailing" id="geV-Ah-OEf"/>
-                            <constraint firstItem="HUP-2v-CCR" firstAttribute="top" secondItem="X5h-Ca-8Hu" secondAttribute="bottom" constant="-52" id="gka-bf-QVJ"/>
+                            <constraint firstItem="HUP-2v-CCR" firstAttribute="top" secondItem="X5h-Ca-8Hu" secondAttribute="bottom" constant="-59" id="gka-bf-QVJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5gt-J8-hms" secondAttribute="trailing" id="gqe-uM-8Da"/>
                             <constraint firstItem="5gt-J8-hms" firstAttribute="leading" secondItem="Xvh-67-uCv" secondAttribute="trailing" constant="13" id="hvc-Nc-qVv"/>
-                            <constraint firstItem="SeN-4L-NMs" firstAttribute="top" secondItem="5gt-J8-hms" secondAttribute="bottom" constant="74" id="j1N-ag-pC3"/>
+                            <constraint firstItem="SeN-4L-NMs" firstAttribute="top" secondItem="5gt-J8-hms" secondAttribute="bottom" constant="37" id="j1N-ag-pC3"/>
                             <constraint firstItem="Xvh-67-uCv" firstAttribute="leading" secondItem="ub6-if-Unn" secondAttribute="leading" id="j7W-rp-be8"/>
                             <constraint firstItem="5gt-J8-hms" firstAttribute="centerY" secondItem="Xvh-67-uCv" secondAttribute="centerY" id="lbt-mM-8KG"/>
                             <constraint firstItem="HUP-2v-CCR" firstAttribute="centerX" secondItem="Td9-O1-fgz" secondAttribute="centerX" id="lrh-lg-xUU"/>
@@ -738,9 +744,9 @@
                             <constraint firstItem="4p2-r6-5Pe" firstAttribute="width" secondItem="SeN-4L-NMs" secondAttribute="width" id="s2W-Nc-90w"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ITC-RY-JE9" secondAttribute="trailing" id="uNs-Y4-YaL"/>
                             <constraint firstItem="X5h-Ca-8Hu" firstAttribute="leading" secondItem="Td9-O1-fgz" secondAttribute="leadingMargin" constant="-20" id="uPI-fH-Ubh"/>
-                            <constraint firstItem="MxN-ew-ShI" firstAttribute="top" secondItem="X5h-Ca-8Hu" secondAttribute="bottom" constant="91" id="uye-X4-dds"/>
+                            <constraint firstItem="MxN-ew-ShI" firstAttribute="top" secondItem="X5h-Ca-8Hu" secondAttribute="bottom" constant="54" id="uye-X4-dds"/>
                             <constraint firstItem="ub6-if-Unn" firstAttribute="leading" secondItem="MxN-ew-ShI" secondAttribute="leading" id="vPu-sc-fBd"/>
-                            <constraint firstItem="4p2-r6-5Pe" firstAttribute="top" secondItem="5gt-J8-hms" secondAttribute="bottom" constant="75" id="xYN-Y3-Acb"/>
+                            <constraint firstItem="4p2-r6-5Pe" firstAttribute="top" secondItem="5gt-J8-hms" secondAttribute="bottom" constant="38" id="xYN-Y3-Acb"/>
                             <constraint firstItem="4p2-r6-5Pe" firstAttribute="height" secondItem="SeN-4L-NMs" secondAttribute="height" constant="-1" id="xcR-kd-FLq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="P6t-1z-d0Y" secondAttribute="trailing" id="xns-MY-Upt"/>
                             <constraint firstAttribute="leadingMargin" secondItem="YDQ-op-ff2" secondAttribute="leading" id="yTC-AV-yOX"/>
@@ -753,7 +759,6 @@
                     <connections>
                         <outlet property="facebookLoginButton" destination="1BO-T6-zf8" id="Fcs-nS-8Il"/>
                         <outlet property="signInButton" destination="ITC-RY-JE9" id="kg5-se-sMO"/>
-                        <segue destination="5CW-sI-ctt" kind="show" identifier="ToHomePage" id="KKB-xC-9ej"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abJ-53-koC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -763,7 +768,7 @@
         <!--Home Page View Controller-->
         <scene sceneID="hbZ-xo-tzb">
             <objects>
-                <viewController id="5CW-sI-ctt" customClass="HMHomePageViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomePage" id="5CW-sI-ctt" customClass="HMHomePageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YIa-te-Nre"/>
                         <viewControllerLayoutGuide type="bottom" id="lIj-WP-fgA"/>
@@ -780,11 +785,11 @@
                                         <rect key="frame" x="0.0" y="92" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UQ9-Rp-LR3" id="moC-J9-Qfb">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Quick Bites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uXt-js-Rqd">
-                                                    <rect key="frame" x="15" y="0.0" width="364" height="89"/>
+                                                    <rect key="frame" x="15" y="0.0" width="364" height="89.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -811,6 +816,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="q6G-bw-bzR" secondAttribute="trailing" constant="-20" id="riW-a4-rep"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="1MN-AA-TPF"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="homePageTableView" destination="q6G-bw-bzR" id="epZ-ie-bvr"/>
@@ -818,7 +824,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FhU-QF-qIl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="246" y="731"/>
+            <point key="canvasLocation" x="1058" y="731"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="QqS-IW-YFR">
@@ -993,13 +999,13 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter OTP:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2n-9M-tuj">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter OTP:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2n-9M-tuj">
                             <rect key="frame" x="17" y="66" width="61" height="14"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="0.10910722483602603" green="0.87082823588875391" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCc-F9-VJL">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCc-F9-VJL">
                             <rect key="frame" x="210" y="89" width="82" height="27"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="82" id="v0G-Sv-gZb"/>
@@ -1012,7 +1018,7 @@
                                 <action selector="resendOtpButtonAction:" destination="L2f-EC-14A" eventType="touchUpInside" id="ueL-IP-Mzf"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1K-Kg-U6A">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1K-Kg-U6A">
                             <rect key="frame" x="98" y="143" width="104" height="30"/>
                             <color key="backgroundColor" red="0.1091072248" green="0.87082823590000003" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -1026,13 +1032,13 @@
                                 <action selector="verifyOtp:" destination="L2f-EC-14A" eventType="touchUpInside" id="tf6-Tq-c1a"/>
                             </connections>
                         </button>
-                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You have entered invalid OTP. Please try again!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7l-tx-vgS">
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have entered invalid OTP. Please try again!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7l-tx-vgS">
                             <rect key="frame" x="17" y="122" width="275" height="15"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="1" green="0.14772560815511238" blue="0.25157017116467995" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cKe-2v-H1g">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cKe-2v-H1g">
                             <rect key="frame" x="17" y="87" width="185" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="OWy-z8-bzD"/>
@@ -1121,7 +1127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Udc-wM-g8B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1524" y="45"/>
+            <point key="canvasLocation" x="2336" y="45"/>
         </scene>
         <!--Payment Status View Controller-->
         <scene sceneID="AQa-PY-yhn">
@@ -1288,14 +1294,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ykf-6D-Ul8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2012" y="45"/>
+            <point key="canvasLocation" x="2824" y="45"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tMu-S4-4kB">
+            <objects>
+                <navigationController storyboardIdentifier="HomePageNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="7l4-q0-Gzj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CQJ-O9-jat">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5CW-sI-ctt" kind="relationship" relationship="rootViewController" id="kzR-63-am4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X8B-Lx-ugp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304" y="663"/>
         </scene>
     </scenes>
     <resources>
+        <image name="BulletPoint.png" width="32" height="32"/>
         <image name="Button_Radio_Checked.png" width="26" height="26"/>
         <image name="Button_Radio_Unchecked.png" width="26" height="26"/>
         <image name="Cart_Icon" width="64" height="64"/>
         <image name="Dish_16" width="290" height="163"/>
-        <image name="SampleLogo.jpg" width="800" height="600"/>
+        <image name="Meals_Rice.jpg" width="938" height="729"/>
+        <image name="Sample.jpg" width="100" height="110"/>
     </resources>
 </document>

@@ -22,8 +22,11 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSURL *imageURL;
+
+
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+- (void) showInitialScreen;
 
 
 @end
