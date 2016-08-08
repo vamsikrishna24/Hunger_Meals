@@ -10,12 +10,15 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKLoginManager.h>
 #import "AppDelegate.h"
+#import "HMHomePageViewController.h"
 
 
 @interface HMLoginViewController ()
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *facebookLoginButton;
 @property(weak, nonatomic) IBOutlet GIDSignInButton *signInButton;
 @property(strong,nonatomic) UIActivityIndicatorView *myActivityIndicator;
+@property(strong,nonatomic) HMHomePageViewController *homePageVC;
+
 
 @end
 
@@ -73,10 +76,11 @@
                  
                  NSString *email = [result objectForKey:@"email"];
                  NSString *userId = [result objectForKey:@"id"];
-                 
+                 [self.navigationController pushViewController:self.homePageVC animated:YES];
+                 //[self performSegueWithIdentifier:@"NextView" sender:self];
                  if (email.length >0 )
                  {
-                     //Start you app Todo
+                                         //Start you app Todo
                  }
                  else
                  {
