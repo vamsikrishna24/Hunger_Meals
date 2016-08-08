@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface HMHomePageViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *locationBarButtonItem;
 @property (weak, nonatomic) IBOutlet UITableView *homePageTableView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *notificationsBarButtonItem;
 @end

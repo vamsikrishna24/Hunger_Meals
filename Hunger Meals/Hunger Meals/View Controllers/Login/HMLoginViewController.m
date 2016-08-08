@@ -29,7 +29,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
      [self setupFbConfiguration];
     
      [GIDSignIn sharedInstance].uiDelegate = self;
@@ -39,7 +38,8 @@
 
 }
 -(void)viewWillAppear:(BOOL)animated{
-    
+    self.navigationController.navigationItem.title = @"Hungry Meals";
+
     
 }
 -(void)setupFbConfiguration{

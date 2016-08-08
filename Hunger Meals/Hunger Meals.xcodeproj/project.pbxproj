@@ -10,6 +10,12 @@
 		2B45D6751D58DDA100C873ED /* BulletPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D6741D58DDA100C873ED /* BulletPoint.png */; };
 		2B45D6771D58DE2400C873ED /* Meals_Rice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D6761D58DE2400C873ED /* Meals_Rice.jpg */; };
 		2B45D67B1D58E0DA00C873ED /* Sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D67A1D58E0DA00C873ED /* Sample.jpg */; };
+		2B45D6851D59019400C873ED /* Location_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D6841D59019400C873ED /* Location_Icon.png */; };
+		2B45D6871D59020400C873ED /* Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D6861D59020400C873ED /* Notification.png */; };
+		2B45D6901D590E5F00C873ED /* HMLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B45D68F1D590E5F00C873ED /* HMLocationViewController.m */; };
+		2B45D6921D59106C00C873ED /* My_Location.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D6911D59106C00C873ED /* My_Location.png */; };
+		2B45D6961D59128300C873ED /* LocationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B45D6951D59128300C873ED /* LocationsTableViewCell.m */; };
+		2B45D6981D5913D300C873ED /* Edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D6971D5913D300C873ED /* Edit.png */; };
 		2B7AC6F81D47AC3F00D59BB3 /* Dish_Images in Resources */ = {isa = PBXBuildFile; fileRef = 2B7AC6F71D47AC3F00D59BB3 /* Dish_Images */; };
 		2B7AC6FD1D47BB6F00D59BB3 /* HMDetailPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7AC6FC1D47BB6F00D59BB3 /* HMDetailPageViewController.m */; };
 		2B7AC7001D47C18400D59BB3 /* HMCartItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7AC6FF1D47C18400D59BB3 /* HMCartItemsViewController.m */; };
@@ -63,6 +69,14 @@
 		2B45D6741D58DDA100C873ED /* BulletPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BulletPoint.png; sourceTree = "<group>"; };
 		2B45D6761D58DE2400C873ED /* Meals_Rice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Meals_Rice.jpg; sourceTree = "<group>"; };
 		2B45D67A1D58E0DA00C873ED /* Sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sample.jpg; sourceTree = "<group>"; };
+		2B45D6841D59019400C873ED /* Location_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Location_Icon.png; sourceTree = "<group>"; };
+		2B45D6861D59020400C873ED /* Notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notification.png; sourceTree = "<group>"; };
+		2B45D68E1D590E5F00C873ED /* HMLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLocationViewController.h; sourceTree = "<group>"; };
+		2B45D68F1D590E5F00C873ED /* HMLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLocationViewController.m; sourceTree = "<group>"; };
+		2B45D6911D59106C00C873ED /* My_Location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = My_Location.png; sourceTree = "<group>"; };
+		2B45D6941D59128300C873ED /* LocationsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsTableViewCell.h; sourceTree = "<group>"; };
+		2B45D6951D59128300C873ED /* LocationsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsTableViewCell.m; sourceTree = "<group>"; };
+		2B45D6971D5913D300C873ED /* Edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Edit.png; sourceTree = "<group>"; };
 		2B7AC6F71D47AC3F00D59BB3 /* Dish_Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Dish_Images; path = "Hunger Meals/Dish_Images"; sourceTree = "<group>"; };
 		2B7AC6FB1D47BB6F00D59BB3 /* HMDetailPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDetailPageViewController.h; sourceTree = "<group>"; };
 		2B7AC6FC1D47BB6F00D59BB3 /* HMDetailPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailPageViewController.m; sourceTree = "<group>"; };
@@ -148,6 +162,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B45D6931D59122E00C873ED /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2B45D6941D59128300C873ED /* LocationsTableViewCell.h */,
+				2B45D6951D59128300C873ED /* LocationsTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		2B9FECC41D41192000A21666 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +196,10 @@
 		9A0C43B91D2F868200A7BF6B = {
 			isa = PBXGroup;
 			children = (
+				2B45D6971D5913D300C873ED /* Edit.png */,
+				2B45D6841D59019400C873ED /* Location_Icon.png */,
+				2B45D6911D59106C00C873ED /* My_Location.png */,
+				2B45D6861D59020400C873ED /* Notification.png */,
 				2B45D6761D58DE2400C873ED /* Meals_Rice.jpg */,
 				9A9BC9231D587B19002E3246 /* Meals.png */,
 				2B45D6741D58DDA100C873ED /* BulletPoint.png */,
@@ -267,6 +294,7 @@
 		A831CA731D37A71000B96F4F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2B45D6931D59122E00C873ED /* Cells */,
 				9A818F9C1D49F82C00FB5565 /* Payment GateWay */,
 				9A818F911D49EA4E00FB5565 /* Footer */,
 				2B9FECC41D41192000A21666 /* Login */,
@@ -285,6 +313,8 @@
 				A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */,
 				2B7AC6FB1D47BB6F00D59BB3 /* HMDetailPageViewController.h */,
 				2B7AC6FC1D47BB6F00D59BB3 /* HMDetailPageViewController.m */,
+				2B45D68E1D590E5F00C873ED /* HMLocationViewController.h */,
+				2B45D68F1D590E5F00C873ED /* HMLocationViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -465,6 +495,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B45D6921D59106C00C873ED /* My_Location.png in Resources */,
 				2B7AC6F81D47AC3F00D59BB3 /* Dish_Images in Resources */,
 				A831CA871D37CEC100B96F4F /* close@2x.png in Resources */,
 				9A9BC9241D587B19002E3246 /* Meals.png in Resources */,
@@ -472,8 +503,11 @@
 				2B45D6751D58DDA100C873ED /* BulletPoint.png in Resources */,
 				9A0C43D81D2F868400A7BF6B /* LaunchScreen.storyboard in Resources */,
 				9A0C43D51D2F868400A7BF6B /* Assets.xcassets in Resources */,
+				2B45D6851D59019400C873ED /* Location_Icon.png in Resources */,
 				2B45D6771D58DE2400C873ED /* Meals_Rice.jpg in Resources */,
 				A831CA861D37CEC100B96F4F /* close.png in Resources */,
+				2B45D6871D59020400C873ED /* Notification.png in Resources */,
+				2B45D6981D5913D300C873ED /* Edit.png in Resources */,
 				2B45D67B1D58E0DA00C873ED /* Sample.jpg in Resources */,
 				9A0C43D01D2F868300A7BF6B /* Main.storyboard in Resources */,
 			);
@@ -555,6 +589,7 @@
 				2B7AC6FD1D47BB6F00D59BB3 /* HMDetailPageViewController.m in Sources */,
 				9A0C43CA1D2F868300A7BF6B /* AppDelegate.m in Sources */,
 				2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */,
+				2B45D6961D59128300C873ED /* LocationsTableViewCell.m in Sources */,
 				2B9FECCD1D411C4500A21666 /* HMLoginViewController.m in Sources */,
 				9A818F9A1D49EBCD00FB5565 /* HMCartCollectionReusableView.m in Sources */,
 				2B7AC7001D47C18400D59BB3 /* HMCartItemsViewController.m in Sources */,
@@ -566,6 +601,7 @@
 				A88444651D38D0B700887098 /* Utility.m in Sources */,
 				A831CA881D37CEC100B96F4F /* MTGenericAlertView.m in Sources */,
 				A88444681D38D17B00887098 /* CheckConnection.m in Sources */,
+				2B45D6901D590E5F00C873ED /* HMLocationViewController.m in Sources */,
 				2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
