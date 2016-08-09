@@ -66,17 +66,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B45D6741D58DDA100C873ED /* BulletPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BulletPoint.png; sourceTree = "<group>"; };
-		2B45D6761D58DE2400C873ED /* Meals_Rice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Meals_Rice.jpg; sourceTree = "<group>"; };
-		2B45D67A1D58E0DA00C873ED /* Sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sample.jpg; sourceTree = "<group>"; };
-		2B45D6841D59019400C873ED /* Location_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Location_Icon.png; sourceTree = "<group>"; };
-		2B45D6861D59020400C873ED /* Notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notification.png; sourceTree = "<group>"; };
+		2B45D6741D58DDA100C873ED /* BulletPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BulletPoint.png; path = ../BulletPoint.png; sourceTree = "<group>"; };
+		2B45D6761D58DE2400C873ED /* Meals_Rice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Meals_Rice.jpg; path = ../Meals_Rice.jpg; sourceTree = "<group>"; };
+		2B45D67A1D58E0DA00C873ED /* Sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Sample.jpg; path = ../Sample.jpg; sourceTree = "<group>"; };
+		2B45D6841D59019400C873ED /* Location_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Location_Icon.png; path = ../Location_Icon.png; sourceTree = "<group>"; };
+		2B45D6861D59020400C873ED /* Notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Notification.png; path = ../Notification.png; sourceTree = "<group>"; };
 		2B45D68E1D590E5F00C873ED /* HMLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLocationViewController.h; sourceTree = "<group>"; };
 		2B45D68F1D590E5F00C873ED /* HMLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLocationViewController.m; sourceTree = "<group>"; };
-		2B45D6911D59106C00C873ED /* My_Location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = My_Location.png; sourceTree = "<group>"; };
+		2B45D6911D59106C00C873ED /* My_Location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = My_Location.png; path = ../My_Location.png; sourceTree = "<group>"; };
 		2B45D6941D59128300C873ED /* LocationsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsTableViewCell.h; sourceTree = "<group>"; };
 		2B45D6951D59128300C873ED /* LocationsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsTableViewCell.m; sourceTree = "<group>"; };
-		2B45D6971D5913D300C873ED /* Edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Edit.png; sourceTree = "<group>"; };
+		2B45D6971D5913D300C873ED /* Edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Edit.png; path = ../Edit.png; sourceTree = "<group>"; };
 		2B7AC6F71D47AC3F00D59BB3 /* Dish_Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Dish_Images; path = "Hunger Meals/Dish_Images"; sourceTree = "<group>"; };
 		2B7AC6FB1D47BB6F00D59BB3 /* HMDetailPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDetailPageViewController.h; sourceTree = "<group>"; };
 		2B7AC6FC1D47BB6F00D59BB3 /* HMDetailPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailPageViewController.m; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 		9A818FA11D4A203200FB5565 /* PaymentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentPageViewController.m; sourceTree = "<group>"; };
 		9A818FA21D4A203200FB5565 /* PaymentStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentStatusViewController.h; sourceTree = "<group>"; };
 		9A818FA31D4A203200FB5565 /* PaymentStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentStatusViewController.m; sourceTree = "<group>"; };
-		9A9BC9231D587B19002E3246 /* Meals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Meals.png; sourceTree = "<group>"; };
+		9A9BC9231D587B19002E3246 /* Meals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Meals.png; path = ../Meals.png; sourceTree = "<group>"; };
 		9AD7F62E1D4767AD0062C6F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A831CA781D37A9EF00B96F4F /* LandingPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingPageViewController.h; sourceTree = "<group>"; };
 		A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingPageViewController.m; sourceTree = "<group>"; };
@@ -171,6 +171,21 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		2B65CC471D59774A00056649 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2B45D67A1D58E0DA00C873ED /* Sample.jpg */,
+				2B45D6971D5913D300C873ED /* Edit.png */,
+				2B45D6841D59019400C873ED /* Location_Icon.png */,
+				2B45D6911D59106C00C873ED /* My_Location.png */,
+				2B45D6861D59020400C873ED /* Notification.png */,
+				2B45D6761D58DE2400C873ED /* Meals_Rice.jpg */,
+				9A9BC9231D587B19002E3246 /* Meals.png */,
+				2B45D6741D58DDA100C873ED /* BulletPoint.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		2B9FECC41D41192000A21666 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,14 +211,6 @@
 		9A0C43B91D2F868200A7BF6B = {
 			isa = PBXGroup;
 			children = (
-				2B45D6971D5913D300C873ED /* Edit.png */,
-				2B45D6841D59019400C873ED /* Location_Icon.png */,
-				2B45D6911D59106C00C873ED /* My_Location.png */,
-				2B45D6861D59020400C873ED /* Notification.png */,
-				2B45D6761D58DE2400C873ED /* Meals_Rice.jpg */,
-				9A9BC9231D587B19002E3246 /* Meals.png */,
-				2B45D6741D58DDA100C873ED /* BulletPoint.png */,
-				2B45D67A1D58E0DA00C873ED /* Sample.jpg */,
 				2B7AC6F71D47AC3F00D59BB3 /* Dish_Images */,
 				9A0C43C41D2F868300A7BF6B /* Hunger Meals */,
 				9A0C43E11D2F868500A7BF6B /* Hunger MealsTests */,
@@ -227,6 +234,7 @@
 		9A0C43C41D2F868300A7BF6B /* Hunger Meals */ = {
 			isa = PBXGroup;
 			children = (
+				2B65CC471D59774A00056649 /* Images */,
 				A88444621D38D0A200887098 /* Basic */,
 				A831CA7F1D37CEC100B96F4F /* Third Party Libraries */,
 				A831CA731D37A71000B96F4F /* View Controllers */,
