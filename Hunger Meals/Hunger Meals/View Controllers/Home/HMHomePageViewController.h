@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ECSlidingViewController.h"
 
-@interface HMHomePageViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface HMHomePageViewController : UIViewController<UITableViewDataSource,UITableViewDelegate, ECSlidingViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *locationBarButtonItem;
 @property (weak, nonatomic) IBOutlet UITableView *homePageTableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *notificationsBarButtonItem;
+
+- (IBAction)menuButtonTapped:(id)sender;
+
 @end

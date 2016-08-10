@@ -8,6 +8,7 @@
 
 #import "HMHomePageViewController.h"
 #import "HMLocationViewController.h"
+#import "UIViewController+ECSlidingViewController.h"
 
 @interface HMHomePageViewController (){
     NSArray *objects;
@@ -21,9 +22,11 @@
     [super viewDidLoad];
     self.homePageTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     self.navigationItem.title = @"Hungry Meals";
+    
+    //Menu open/close based on gesture recognizer
+//    self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
+//    [self.slidingViewController.topViewController.view addGestureRecognizer:self.slidingViewController.panGesture];
 
-
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,17 +60,10 @@
     
 }
 
-/*
-#pragma mark - Navigation
+- (IBAction)menuButtonTapped:(id)sender {
+    [self.slidingViewController anchorTopViewToRightAnimated:YES];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
-
-
 
 - (IBAction)locationButtonTapped:(id)sender {
     

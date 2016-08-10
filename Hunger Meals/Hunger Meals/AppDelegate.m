@@ -41,8 +41,8 @@
     
     //If user is already logged in
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"UserLogin"]) {
-        UINavigationController *dashBoardVC = (UINavigationController *)[storyBoard instantiateViewControllerWithIdentifier:@"HomePageNavigationController"];
-        [self changeRootViewController:dashBoardVC];
+        ECSlidingViewController *HomePage = (ECSlidingViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"SlidingViewController"];
+        [self changeRootViewController:HomePage];
     }
     else {
         HMLoginViewController *launchVC = (HMLoginViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"LandingPage"];
