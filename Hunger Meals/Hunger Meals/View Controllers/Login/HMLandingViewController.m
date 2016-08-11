@@ -15,6 +15,7 @@
 
 
 @interface HMLandingViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *facebookLoginButton;
 @property(weak, nonatomic) IBOutlet GIDSignInButton *signInButton;
 @property(strong,nonatomic) UIActivityIndicatorView *myActivityIndicator;
@@ -34,6 +35,11 @@
      [GIDSignIn sharedInstance].uiDelegate = self;
      [[GIDSignIn sharedInstance] signInSilently];
      [GIDSignIn sharedInstance].delegate = self;
+    self.logoImageView.layer.cornerRadius = 10;
+    self.logoImageView.layer.borderWidth = 10;
+    self.logoImageView.layer.borderColor = (__bridge CGColorRef _Nullable)([UIColor whiteColor]);
+    self.logoImageView.layer.shadowColor = (__bridge CGColorRef _Nullable)([UIColor darkGrayColor]);
+    self.logoImageView.clipsToBounds = true;
 
 
 }

@@ -8,9 +8,7 @@
 
 #import "HMLocationViewController.h"
 
-@interface HMLocationViewController (){
-    CLLocationManager *locationManager;
-}
+@interface HMLocationViewController ()
 
 
 @end
@@ -26,13 +24,14 @@
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager requestAlwaysAuthorization];
     
     [locationManager startUpdatingLocation];
+    
     self.navigationItem.title = @"Locations";
     
     // Do any additional setup after loading the view.
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

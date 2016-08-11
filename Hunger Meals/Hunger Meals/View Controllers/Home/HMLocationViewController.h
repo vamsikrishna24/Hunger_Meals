@@ -10,7 +10,11 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface HMLocationViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,CLLocationManagerDelegate>
+@interface HMLocationViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,CLLocationManagerDelegate>{
+    
+    CLLocationManager *locationManager;
+
+}
 @property (strong, nonatomic) IBOutlet UIView *notificationsViewController;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *closeBarButton;
 @property (weak, nonatomic) IBOutlet UIView *footerView;

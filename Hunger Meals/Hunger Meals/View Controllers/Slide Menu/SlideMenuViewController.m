@@ -21,6 +21,10 @@
     [super viewDidLoad];
     
     slideMenuCategories = [[NSMutableArray alloc] initWithObjects:@"Quick Bites", @"Meals", @"Monthly Plan",@"Shop",@"Orders",@"Invite",@"Offers",@"Help",@"Contact Us",@"Sign Out", nil];
+    self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
+    self.profileImageView.clipsToBounds = true;
+
 }
 
 - (void)didReceiveMemoryWarning {
