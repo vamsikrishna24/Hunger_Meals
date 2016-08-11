@@ -48,6 +48,7 @@
 		A884446C1D38D5D600887098 /* BTAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = A884446B1D38D5D600887098 /* BTAlertController.m */; };
 		A88444701D38E68500887098 /* UIAlertView+CustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A884446F1D38E68500887098 /* UIAlertView+CustomAlertView.m */; };
 		A88444731D38E69900887098 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A88444721D38E69900887098 /* UIActionSheet+Blocks.m */; };
+		A88FB7431D5C5072005E8667 /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA7D1D37ACC200B96F4F /* SlideMenuViewController.m */; };
 		E59C0A13D3221362D1E26CF4 /* libPods-Hunger MealsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19EC3CC5C4ABE0020D1E1725 /* libPods-Hunger MealsUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -693,6 +694,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A88FB7431D5C5072005E8667 /* SlideMenuViewController.m in Sources */,
 				A884446C1D38D5D600887098 /* BTAlertController.m in Sources */,
 				A831CA7A1D37A9EF00B96F4F /* LandingPageViewController.m in Sources */,
 				A88444731D38E69900887098 /* UIActionSheet+Blocks.m in Sources */,
