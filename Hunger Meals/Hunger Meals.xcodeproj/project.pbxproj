@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2B45D6751D58DDA100C873ED /* BulletPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D6741D58DDA100C873ED /* BulletPoint.png */; };
-		2B45D6771D58DE2400C873ED /* Meals_Rice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D6761D58DE2400C873ED /* Meals_Rice.jpg */; };
-		2B45D67B1D58E0DA00C873ED /* Sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D67A1D58E0DA00C873ED /* Sample.jpg */; };
 		2B45D6851D59019400C873ED /* Location_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D6841D59019400C873ED /* Location_Icon.png */; };
 		2B45D6871D59020400C873ED /* Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D6861D59020400C873ED /* Notification.png */; };
 		2B45D6901D590E5F00C873ED /* HMLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B45D68F1D590E5F00C873ED /* HMLocationViewController.m */; };
@@ -23,6 +21,10 @@
 		2B89E5041D5BBF640022EC67 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B89E5031D5BBF640022EC67 /* CoreLocation.framework */; };
 		2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */; };
 		2B9FECCD1D411C4500A21666 /* HMLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FECCC1D411C4500A21666 /* HMLandingViewController.m */; };
+		2BC1DD0D1D5C651200F00D7D /* Smaple_Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BC1DD0C1D5C651200F00D7D /* Smaple_Logo.jpg */; };
+		2BC1DD0F1D5C65E900F00D7D /* meals_ban.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BC1DD0E1D5C65E900F00D7D /* meals_ban.jpg */; };
+		2BC1DD111D5C679F00F00D7D /* righticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC1DD101D5C679F00F00D7D /* righticon.png */; };
+		2BC1DD131D5C6A8F00F00D7D /* GoogleSignIn.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC1DD121D5C6A8F00F00D7D /* GoogleSignIn.png */; };
 		2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7B2401D55CF9800B2FABD /* HMHomePageViewController.m */; };
 		2ECD4BE63075852C928DC6BE /* libPods-Hunger Meals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD080AF85B2BF6D52AF96CEB /* libPods-Hunger Meals.a */; };
 		9A0C43C71D2F868300A7BF6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43C61D2F868300A7BF6B /* main.m */; };
@@ -80,8 +82,6 @@
 		0F05F9F159C8351E75A1ACC2 /* libPods-Hunger MealsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hunger MealsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EC3CC5C4ABE0020D1E1725 /* libPods-Hunger MealsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hunger MealsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B45D6741D58DDA100C873ED /* BulletPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BulletPoint.png; path = ../BulletPoint.png; sourceTree = "<group>"; };
-		2B45D6761D58DE2400C873ED /* Meals_Rice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Meals_Rice.jpg; path = ../Meals_Rice.jpg; sourceTree = "<group>"; };
-		2B45D67A1D58E0DA00C873ED /* Sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Sample.jpg; path = ../Sample.jpg; sourceTree = "<group>"; };
 		2B45D6841D59019400C873ED /* Location_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Location_Icon.png; path = ../Location_Icon.png; sourceTree = "<group>"; };
 		2B45D6861D59020400C873ED /* Notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Notification.png; path = ../Notification.png; sourceTree = "<group>"; };
 		2B45D68E1D590E5F00C873ED /* HMLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLocationViewController.h; sourceTree = "<group>"; };
@@ -101,6 +101,10 @@
 		2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSignUpViewController.m; sourceTree = "<group>"; };
 		2B9FECCB1D411C4500A21666 /* HMLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLandingViewController.h; sourceTree = "<group>"; };
 		2B9FECCC1D411C4500A21666 /* HMLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLandingViewController.m; sourceTree = "<group>"; };
+		2BC1DD0C1D5C651200F00D7D /* Smaple_Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Smaple_Logo.jpg; sourceTree = "<group>"; };
+		2BC1DD0E1D5C65E900F00D7D /* meals_ban.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meals_ban.jpg; sourceTree = "<group>"; };
+		2BC1DD101D5C679F00F00D7D /* righticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = righticon.png; sourceTree = "<group>"; };
+		2BC1DD121D5C6A8F00F00D7D /* GoogleSignIn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoogleSignIn.png; sourceTree = "<group>"; };
 		2BD7B23F1D55CF9800B2FABD /* HMHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHomePageViewController.h; sourceTree = "<group>"; };
 		2BD7B2401D55CF9800B2FABD /* HMHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHomePageViewController.m; sourceTree = "<group>"; };
 		39CEF7BAC10F1A2807ABF4E5 /* Pods-Hunger MealsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger MealsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger MealsUITests/Pods-Hunger MealsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,14 +219,16 @@
 			isa = PBXGroup;
 			children = (
 				A88FB74A1D5C5850005E8667 /* Splash Screen.png */,
+				2BC1DD0C1D5C651200F00D7D /* Smaple_Logo.jpg */,
 				2B89E5011D5BB2BA0022EC67 /* ProfileImage.jpg */,
-				2B45D67A1D58E0DA00C873ED /* Sample.jpg */,
+				2BC1DD0E1D5C65E900F00D7D /* meals_ban.jpg */,
 				2B45D6971D5913D300C873ED /* Edit.png */,
 				2B45D6841D59019400C873ED /* Location_Icon.png */,
 				2B45D6911D59106C00C873ED /* My_Location.png */,
 				2B45D6861D59020400C873ED /* Notification.png */,
-				2B45D6761D58DE2400C873ED /* Meals_Rice.jpg */,
 				A88FB7521D5C6030005E8667 /* Logo.png */,
+				2BC1DD101D5C679F00F00D7D /* righticon.png */,
+				2BC1DD121D5C6A8F00F00D7D /* GoogleSignIn.png */,
 				2B45D6741D58DDA100C873ED /* BulletPoint.png */,
 			);
 			name = Images;
@@ -557,23 +563,25 @@
 			files = (
 				2B45D6921D59106C00C873ED /* My_Location.png in Resources */,
 				2B7AC6F81D47AC3F00D59BB3 /* Dish_Images in Resources */,
+				2BC1DD0F1D5C65E900F00D7D /* meals_ban.jpg in Resources */,
 				A88FB74B1D5C5851005E8667 /* Splash Screen.png in Resources */,
 				A831CA871D37CEC100B96F4F /* close@2x.png in Resources */,
 				2B89E5021D5BB2BA0022EC67 /* ProfileImage.jpg in Resources */,
+				2BC1DD131D5C6A8F00F00D7D /* GoogleSignIn.png in Resources */,
 				9AD7F62F1D4767AD0062C6F4 /* GoogleService-Info.plist in Resources */,
 				A88FB7511D5C5DB5005E8667 /* Images-3.xcassets in Resources */,
 				2B45D6751D58DDA100C873ED /* BulletPoint.png in Resources */,
+				2BC1DD0D1D5C651200F00D7D /* Smaple_Logo.jpg in Resources */,
 				9A0C43D81D2F868400A7BF6B /* LaunchScreen.storyboard in Resources */,
 				A88FB74F1D5C5B4A005E8667 /* Images-2.xcassets in Resources */,
+				2BC1DD111D5C679F00F00D7D /* righticon.png in Resources */,
 				A88FB74D1D5C5ACB005E8667 /* Images.xcassets in Resources */,
 				9A0C43D51D2F868400A7BF6B /* Assets.xcassets in Resources */,
 				2B45D6851D59019400C873ED /* Location_Icon.png in Resources */,
-				2B45D6771D58DE2400C873ED /* Meals_Rice.jpg in Resources */,
 				A88FB7531D5C6030005E8667 /* Logo.png in Resources */,
 				A831CA861D37CEC100B96F4F /* close.png in Resources */,
 				2B45D6871D59020400C873ED /* Notification.png in Resources */,
 				2B45D6981D5913D300C873ED /* Edit.png in Resources */,
-				2B45D67B1D58E0DA00C873ED /* Sample.jpg in Resources */,
 				9A0C43D01D2F868300A7BF6B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
