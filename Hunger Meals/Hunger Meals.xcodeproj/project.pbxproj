@@ -25,6 +25,7 @@
 		2BC1DD0F1D5C65E900F00D7D /* meals_ban.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BC1DD0E1D5C65E900F00D7D /* meals_ban.jpg */; };
 		2BC1DD111D5C679F00F00D7D /* righticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC1DD101D5C679F00F00D7D /* righticon.png */; };
 		2BC1DD131D5C6A8F00F00D7D /* GoogleSignIn.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC1DD121D5C6A8F00F00D7D /* GoogleSignIn.png */; };
+		2BC1DD161D5C90D900F00D7D /* HMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC1DD151D5C90D900F00D7D /* HMLoginViewController.m */; };
 		2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7B2401D55CF9800B2FABD /* HMHomePageViewController.m */; };
 		2ECD4BE63075852C928DC6BE /* libPods-Hunger Meals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD080AF85B2BF6D52AF96CEB /* libPods-Hunger Meals.a */; };
 		9A0C43C71D2F868300A7BF6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43C61D2F868300A7BF6B /* main.m */; };
@@ -105,6 +106,8 @@
 		2BC1DD0E1D5C65E900F00D7D /* meals_ban.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meals_ban.jpg; sourceTree = "<group>"; };
 		2BC1DD101D5C679F00F00D7D /* righticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = righticon.png; sourceTree = "<group>"; };
 		2BC1DD121D5C6A8F00F00D7D /* GoogleSignIn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoogleSignIn.png; sourceTree = "<group>"; };
+		2BC1DD141D5C90D900F00D7D /* HMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLoginViewController.h; sourceTree = "<group>"; };
+		2BC1DD151D5C90D900F00D7D /* HMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLoginViewController.m; sourceTree = "<group>"; };
 		2BD7B23F1D55CF9800B2FABD /* HMHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHomePageViewController.h; sourceTree = "<group>"; };
 		2BD7B2401D55CF9800B2FABD /* HMHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHomePageViewController.m; sourceTree = "<group>"; };
 		39CEF7BAC10F1A2807ABF4E5 /* Pods-Hunger MealsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger MealsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger MealsUITests/Pods-Hunger MealsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -243,6 +246,8 @@
 				2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */,
 				2B7AC6FE1D47C18400D59BB3 /* HMCartItemsViewController.h */,
 				2B7AC6FF1D47C18400D59BB3 /* HMCartItemsViewController.m */,
+				2BC1DD141D5C90D900F00D7D /* HMLoginViewController.h */,
+				2BC1DD151D5C90D900F00D7D /* HMLoginViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -760,6 +765,7 @@
 				9A818FA51D4A203200FB5565 /* PaymentStatusViewController.m in Sources */,
 				9A818F9F1D49F8B200FB5565 /* HMPaymentTypeSelectionViewController.m in Sources */,
 				9A818FA41D4A203200FB5565 /* PaymentPageViewController.m in Sources */,
+				2BC1DD161D5C90D900F00D7D /* HMLoginViewController.m in Sources */,
 				A88FB7461D5C5292005E8667 /* CommonViewController.m in Sources */,
 				A88444701D38E68500887098 /* UIAlertView+CustomAlertView.m in Sources */,
 				A88444651D38D0B700887098 /* Utility.m in Sources */,
