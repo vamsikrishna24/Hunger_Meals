@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 
-@interface HMLocationViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface HMLocationViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,CLLocationManagerDelegate>
 @property (strong, nonatomic) IBOutlet UIView *notificationsViewController;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *closeBarButton;
 @property (weak, nonatomic) IBOutlet UIView *footerView;

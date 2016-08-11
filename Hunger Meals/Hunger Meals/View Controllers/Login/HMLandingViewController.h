@@ -1,5 +1,5 @@
 //
-//  HMLoginViewController.h
+//  HMLandingViwecontroller.h
 //  Hunger Meals
 //
 //  Created by Vamsi on 21/07/16.
@@ -11,6 +11,6 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <Google/SignIn.h>
 
-@interface HMLoginViewController : UIViewController<GIDSignInUIDelegate,GIDSignInDelegate, FBSDKLoginButtonDelegate>
+@interface HMLandingViewController : UIViewController<GIDSignInUIDelegate,GIDSignInDelegate, FBSDKLoginButtonDelegate>
 
 @end

@@ -11,7 +11,7 @@
 #import <CoreData/CoreData.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "LandingPageViewController.h"
-#import "HMLoginViewController.h"
+#import "HMLandingViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, GIDSignInDelegate>
 

@@ -6,7 +6,7 @@
 //  Copyright © 2016 paradigm-creatives. All rights reserved.
 //
 
-#import "HMLoginViewController.h"
+#import "HMLandingViewController.h"
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKLoginManager.h>
 #import "AppDelegate.h"
@@ -14,16 +14,16 @@
 #import "HMHomePageViewController.h"
 
 
-@interface HMLoginViewController ()
+@interface HMLandingViewController ()
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *facebookLoginButton;
 @property(weak, nonatomic) IBOutlet GIDSignInButton *signInButton;
 @property(strong,nonatomic) UIActivityIndicatorView *myActivityIndicator;
-@property(strong,nonatomic) HMHomePageViewController *homePageVC;
+@property(strong,nonatomic) HMLandingViewController *homePageVC;
 
 
 @end
 
-@implementation HMLoginViewController{
+@implementation HMLandingViewController{
     AppDelegate *appDelegate;
 }
 

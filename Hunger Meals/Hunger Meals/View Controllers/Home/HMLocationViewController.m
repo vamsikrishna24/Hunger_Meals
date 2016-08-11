@@ -8,7 +8,9 @@
 
 #import "HMLocationViewController.h"
 
-@interface HMLocationViewController ()
+@interface HMLocationViewController (){
+    CLLocationManager *locationManager;
+}
 
 
 @end
@@ -19,6 +21,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //To Get user current location
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [locationManager startUpdatingLocation];
     self.navigationItem.title = @"Locations";
     
     // Do any additional setup after loading the view.
@@ -54,11 +63,11 @@
     return cell;
     
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
-    
 }
+
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     // 1. The view for the header
@@ -88,6 +97,37 @@
 }
 */
 
+//************************************************
+#pragma mark - CLLocation Manager delegate methods
+//************************************************
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Failed to Get Your Location" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [errorAlert addAction:okAction];
+    
+    [self presentViewController:errorAlert animated:YES completion:nil];
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"didUpdateToLocation: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    
+    if (currentLocation != nil) {
+        NSLog(@"User Location: %@", currentLocation);
+    }
+    self.locatinLabel.text =  [NSString stringWithFormat:@"%@",currentLocation];
+    
+    // Stop Location Manager
+    [locationManager stopUpdatingLocation];
+}
 
 
 @end

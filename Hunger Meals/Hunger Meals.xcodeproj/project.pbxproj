@@ -22,7 +22,7 @@
 		2B89E5021D5BB2BA0022EC67 /* ProfileImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B89E5011D5BB2BA0022EC67 /* ProfileImage.jpg */; };
 		2B89E5041D5BBF640022EC67 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B89E5031D5BBF640022EC67 /* CoreLocation.framework */; };
 		2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */; };
-		2B9FECCD1D411C4500A21666 /* HMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FECCC1D411C4500A21666 /* HMLoginViewController.m */; };
+		2B9FECCD1D411C4500A21666 /* HMLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FECCC1D411C4500A21666 /* HMLandingViewController.m */; };
 		2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7B2401D55CF9800B2FABD /* HMHomePageViewController.m */; };
 		2ECD4BE63075852C928DC6BE /* libPods-Hunger Meals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD080AF85B2BF6D52AF96CEB /* libPods-Hunger Meals.a */; };
 		9A0C43C71D2F868300A7BF6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43C61D2F868300A7BF6B /* main.m */; };
@@ -92,8 +92,8 @@
 		2B89E5031D5BBF640022EC67 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2B9A43471D471F3A00F87C1B /* HMSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSignUpViewController.h; sourceTree = "<group>"; };
 		2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSignUpViewController.m; sourceTree = "<group>"; };
-		2B9FECCB1D411C4500A21666 /* HMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLoginViewController.h; sourceTree = "<group>"; };
-		2B9FECCC1D411C4500A21666 /* HMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLoginViewController.m; sourceTree = "<group>"; };
+		2B9FECCB1D411C4500A21666 /* HMLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLandingViewController.h; sourceTree = "<group>"; };
+		2B9FECCC1D411C4500A21666 /* HMLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLandingViewController.m; sourceTree = "<group>"; };
 		2BD7B23F1D55CF9800B2FABD /* HMHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHomePageViewController.h; sourceTree = "<group>"; };
 		2BD7B2401D55CF9800B2FABD /* HMHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHomePageViewController.m; sourceTree = "<group>"; };
 		39CEF7BAC10F1A2807ABF4E5 /* Pods-Hunger MealsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger MealsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger MealsUITests/Pods-Hunger MealsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,8 +215,8 @@
 		2B9FECC41D41192000A21666 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				2B9FECCB1D411C4500A21666 /* HMLoginViewController.h */,
-				2B9FECCC1D411C4500A21666 /* HMLoginViewController.m */,
+				2B9FECCB1D411C4500A21666 /* HMLandingViewController.h */,
+				2B9FECCC1D411C4500A21666 /* HMLandingViewController.m */,
 				2B9A43471D471F3A00F87C1B /* HMSignUpViewController.h */,
 				2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */,
 				2B7AC6FE1D47C18400D59BB3 /* HMCartItemsViewController.h */,
@@ -700,7 +700,7 @@
 				9A0C43CA1D2F868300A7BF6B /* AppDelegate.m in Sources */,
 				2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */,
 				2B45D6961D59128300C873ED /* LocationsTableViewCell.m in Sources */,
-				2B9FECCD1D411C4500A21666 /* HMLoginViewController.m in Sources */,
+				2B9FECCD1D411C4500A21666 /* HMLandingViewController.m in Sources */,
 				9A818F9A1D49EBCD00FB5565 /* HMCartCollectionReusableView.m in Sources */,
 				2B7AC7001D47C18400D59BB3 /* HMCartItemsViewController.m in Sources */,
 				9A0C43C71D2F868300A7BF6B /* main.m in Sources */,

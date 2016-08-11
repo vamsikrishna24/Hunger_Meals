@@ -9,9 +9,11 @@
 #import "HMHomePageViewController.h"
 #import "HMLocationViewController.h"
 #import "SWRevealViewController.h"
+#import "SlideMenuViewController.h"
 
 @interface HMHomePageViewController (){
     NSArray *objects;
+    
 }
 
 @end
@@ -23,9 +25,10 @@
     self.homePageTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     self.navigationItem.title = @"Hungry Meals";
     
+    
     //Menu open/close based on gesture recognizer
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
+    SWRevealViewController *revealController = self.revealViewController;
+    if (revealController)
     {
         [self.slideBarButton setTarget: self.revealViewController];
         [self.slideBarButton setAction: @selector( revealToggle:)];

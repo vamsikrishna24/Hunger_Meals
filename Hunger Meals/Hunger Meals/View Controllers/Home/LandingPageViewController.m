@@ -62,6 +62,7 @@ static NSString * const cellIdentifier = @"MealItemCellIdentifier";
 //**********************************
 
 - (IBAction)menuButtonTapped:(id)sender {
+    
 }
 
 -(IBAction)locateMeButtonClicked:(id)sender{

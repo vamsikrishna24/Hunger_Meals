@@ -46,7 +46,7 @@
         [self changeRootViewController:HomePage];
     }
     else {
-        HMLoginViewController *launchVC = (HMLoginViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"LandingPage"];
+        HMLandingViewController *launchVC = (HMLandingViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"LandingPage"];
         [self changeRootViewController:launchVC];
     }
 }
