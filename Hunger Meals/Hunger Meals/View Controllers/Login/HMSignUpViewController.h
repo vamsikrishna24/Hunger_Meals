@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "MTGenericAlertView.h"
+#import "CommonViewController.h"
 
 
-@interface HMSignUpViewController : UIViewController<MTGenericAlertViewDelegate>
+@interface HMSignUpViewController : CommonViewController <MTGenericAlertViewDelegate>
 @property(nonatomic, weak) IBOutlet UIButton *verficationBtn;
 
 @end

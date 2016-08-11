@@ -46,10 +46,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationItem.title = @"Sign Up";
+    [[UINavigationBar appearance] setTitleTextAttributes: @{
+                                                            NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                            NSFontAttributeName: [Fonts fontHelveticaWithSize:19.0]
+                                                            }];
 
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
