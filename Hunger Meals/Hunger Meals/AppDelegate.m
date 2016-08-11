@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SWRevealViewController.h"
 
 @interface AppDelegate ()
 
@@ -41,7 +42,7 @@
     
     //If user is already logged in
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"UserLogin"]) {
-        ECSlidingViewController *HomePage = (ECSlidingViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"SlidingViewController"];
+        SWRevealViewController *HomePage = (SWRevealViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"SlideMenuViewController"];
         [self changeRootViewController:HomePage];
     }
     else {

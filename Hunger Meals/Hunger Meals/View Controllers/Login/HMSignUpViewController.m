@@ -46,6 +46,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"Sign Up";
+
     // Do any additional setup after loading the view.
 }
 
@@ -132,5 +135,10 @@
 
 - (void)alertView:(id)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     //Do something here
+}
+
+- (IBAction)backCustom:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

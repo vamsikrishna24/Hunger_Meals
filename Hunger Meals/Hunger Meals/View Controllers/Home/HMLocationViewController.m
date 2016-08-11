@@ -10,14 +10,17 @@
 
 @interface HMLocationViewController ()
 
+
 @end
 
-@implementation HMLocationViewController
+@implementation HMLocationViewController{
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"Locations";
-
+    
     // Do any additional setup after loading the view.
 }
 
@@ -84,5 +87,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 @end

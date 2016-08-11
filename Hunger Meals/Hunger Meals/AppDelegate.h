@@ -12,7 +12,6 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "LandingPageViewController.h"
 #import "HMLoginViewController.h"
-#import <ECSlidingViewController/ECSlidingViewController.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, GIDSignInDelegate>
 

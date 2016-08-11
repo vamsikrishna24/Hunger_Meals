@@ -5,7 +5,6 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
-  - ECSlidingViewController (2.0.3)
   - FBSDKCoreKit (4.14.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.14.0):
@@ -46,10 +45,10 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - SWRevealViewController (2.3.0)
   - TwilioSDK (1.2.7)
 
 DEPENDENCIES:
-  - ECSlidingViewController (~> 2.0.3)
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
@@ -58,11 +57,11 @@ DEPENDENCIES:
   - JSONModel (~> 1.2)
   - Reachability (~> 3.2)
   - SDWebImage (~> 3.7)
+  - SWRevealViewController (~> 2.3.0)
   - TwilioSDK (~> 1.2)
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  ECSlidingViewController: 6485c14f23b4487e9946535421ca8f111f86cc53
   FBSDKCoreKit: 6e020b5db0b5bd1e01f5fb0902131befd129a502
   FBSDKLoginKit: da563567a108050ef83739c8c8c001ee9e25fa13
   FBSDKShareKit: e8e5d4ccef69b41132fe33acda26db1e33143e33
@@ -80,6 +79,9 @@ SPEC CHECKSUMS:
   JSONModel: 81c06ecf99190a25fa6aafceea5faffa7880868a
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   TwilioSDK: d3982acf6880ddf3ce57c4444e021a71c5f35653
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: cc11edde41cf38d5566176bc9d358efa077bd5cc
+
+COCOAPODS: 1.0.1

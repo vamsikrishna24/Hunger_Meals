@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ECSlidingViewController.h"
 #import "MTGenericAlertView.h"
 
-@interface LandingPageViewController : UIViewController<ECSlidingViewControllerDelegate, MTGenericAlertViewDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface LandingPageViewController : UIViewController<MTGenericAlertViewDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property(nonatomic, weak) IBOutlet UIView *popUpBoxView;
 @property (strong, nonatomic) UISearchController *searchController;

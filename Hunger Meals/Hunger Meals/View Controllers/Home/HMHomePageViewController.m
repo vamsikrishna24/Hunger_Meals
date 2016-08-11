@@ -8,7 +8,7 @@
 
 #import "HMHomePageViewController.h"
 #import "HMLocationViewController.h"
-#import "UIViewController+ECSlidingViewController.h"
+#import "SWRevealViewController.h"
 
 @interface HMHomePageViewController (){
     NSArray *objects;
@@ -24,8 +24,13 @@
     self.navigationItem.title = @"Hungry Meals";
     
     //Menu open/close based on gesture recognizer
-//    self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
-//    [self.slidingViewController.topViewController.view addGestureRecognizer:self.slidingViewController.panGesture];
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.slideBarButton setTarget: self.revealViewController];
+        [self.slideBarButton setAction: @selector( revealToggle:)];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
 
 }
 
@@ -61,7 +66,6 @@
 }
 
 - (IBAction)menuButtonTapped:(id)sender {
-    [self.slidingViewController anchorTopViewToRightAnimated:YES];
 
 }
 

@@ -7,7 +7,6 @@
 //
 
 #import "LandingPageViewController.h"
-#import "UIViewController+ECSlidingViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "Utility.h"
 #import <SDWebImage/UIImageView+WebCache.h>
@@ -38,8 +37,7 @@ static NSString * const cellIdentifier = @"MealItemCellIdentifier";
     [super viewDidLoad];
     
     //Menu open/close based on gesture recognizer
-    self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
-    [self.slidingViewController.topViewController.view addGestureRecognizer:self.slidingViewController.panGesture];
+
     self.dishImagesArray = [[NSMutableArray alloc]initWithObjects:@"dish1",@"dish2",@"dish3",@"dish4",@"dish5",@"dish6",@"dish7",@"dish8",@"dish9",@"dish10",@"dish11",@"dish12",@"dish13",@"dish14",@"dish15",@"dish16", nil];
     self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
 
@@ -64,7 +62,6 @@ static NSString * const cellIdentifier = @"MealItemCellIdentifier";
 //**********************************
 
 - (IBAction)menuButtonTapped:(id)sender {
-    [self.slidingViewController anchorTopViewToRightAnimated:YES];
 }
 
 -(IBAction)locateMeButtonClicked:(id)sender{
