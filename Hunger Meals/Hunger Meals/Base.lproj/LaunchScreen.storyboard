@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,32 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The meal planner....." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OD-3K-tK6">
-                                <rect key="frame" x="107" y="448" width="250" height="47"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="0q7-2J-N0E">
+                                <rect key="frame" x="92" y="268" width="230" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="0aI-Mc-gIG"/>
-                                    <constraint firstAttribute="height" constant="47" id="oph-N8-Hg7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Meals.png" translatesAutoresizingMaskIntoConstraints="NO" id="0q7-2J-N0E">
-                                <rect key="frame" x="107" y="227" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Onv-th-TTv"/>
-                                    <constraint firstAttribute="height" constant="200" id="Vfi-Ok-Zx4"/>
+                                    <constraint firstAttribute="width" constant="230" id="Aae-Aq-bhd"/>
+                                    <constraint firstAttribute="height" constant="200" id="NVx-Kn-Lgs"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find all your tastes here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OD-3K-tK6">
+                                <rect key="frame" x="115" y="498" width="184" height="22"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="0q7-2J-N0E" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="207" id="NPj-6G-Avg"/>
-                            <constraint firstItem="0q7-2J-N0E" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="87" id="PVn-ao-Gtx"/>
-                            <constraint firstItem="1OD-3K-tK6" firstAttribute="top" secondItem="0q7-2J-N0E" secondAttribute="bottom" constant="21" id="S6E-i4-B38"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0q7-2J-N0E" secondAttribute="trailing" constant="87" id="h5E-R9-CHR"/>
-                            <constraint firstItem="1OD-3K-tK6" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="87" id="hVC-Cy-AQJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1OD-3K-tK6" secondAttribute="trailing" constant="37" id="jmH-SU-moU"/>
+                            <constraint firstItem="0q7-2J-N0E" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Apq-n3-Klj"/>
+                            <constraint firstItem="1OD-3K-tK6" firstAttribute="centerX" secondItem="0q7-2J-N0E" secondAttribute="centerX" id="Udv-Jf-d0h"/>
+                            <constraint firstItem="0q7-2J-N0E" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="o5p-S8-L6R"/>
+                            <constraint firstItem="1OD-3K-tK6" firstAttribute="top" secondItem="0q7-2J-N0E" secondAttribute="bottom" constant="30" id="ppF-Nd-B8L"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -57,6 +50,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Meals.png" width="500" height="374"/>
+        <image name="Logo.png" width="1024" height="894"/>
     </resources>
 </document>

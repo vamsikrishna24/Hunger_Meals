@@ -11,6 +11,8 @@ pod 'FBSDKShareKit'
 pod 'FBSDKLoginKit'
 pod 'Google/SignIn'
 
+pod 'MBProgressHUD', '~> 1.0.0'
+
 pod 'JSONModel', '~> 1.2'
 
 pod 'SDWebImage', '~> 3.7'
