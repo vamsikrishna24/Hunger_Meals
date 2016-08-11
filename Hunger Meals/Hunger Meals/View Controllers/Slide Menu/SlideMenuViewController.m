@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //slideMenuCategories = [[NSMutableArray alloc] initWithObjects:@"Quick Bites", @"Meals", @"Monthly Plan",@"Shop",@"Orders",@"Invite",@"Offers",@"Help",@"Contact Us",@"Sign Out", nil];
+    slideMenuCategories = [[NSMutableArray alloc] initWithObjects:@"Quick Bites", @"Meals", @"Monthly Plan",@"Shop",@"Orders",@"Invite",@"Offers",@"Help",@"Contact Us",@"Sign Out", nil];
 }
 
 - (void)didReceiveMemoryWarning {

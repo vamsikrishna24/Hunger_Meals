@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SlideMenuViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+
 @property(nonatomic, strong) IBOutlet UITableView *tableView;
 @property(strong,nonatomic)IBOutlet UIImageView *profileImageView;
 - (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue;
