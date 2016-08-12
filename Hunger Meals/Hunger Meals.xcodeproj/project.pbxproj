@@ -41,6 +41,7 @@
 		9A818FA51D4A203200FB5565 /* PaymentStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A818FA31D4A203200FB5565 /* PaymentStatusViewController.m */; };
 		9AD7F62F1D4767AD0062C6F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AD7F62E1D4767AD0062C6F4 /* GoogleService-Info.plist */; };
 		9E72DCA193082CFE199E7B1D /* libPods-Hunger MealsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F05F9F159C8351E75A1ACC2 /* libPods-Hunger MealsTests.a */; };
+		A81A15BE1D5DF7EC00C7EFD1 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A81A15BC1D5DF7EC00C7EFD1 /* CoreData.xcdatamodeld */; };
 		A831CA7A1D37A9EF00B96F4F /* LandingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */; };
 		A831CA861D37CEC100B96F4F /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = A831CA821D37CEC100B96F4F /* close.png */; };
 		A831CA871D37CEC100B96F4F /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A831CA831D37CEC100B96F4F /* close@2x.png */; };
@@ -58,6 +59,14 @@
 		A88FB74F1D5C5B4A005E8667 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A88FB74E1D5C5B4A005E8667 /* Images-2.xcassets */; };
 		A88FB7511D5C5DB5005E8667 /* Images-3.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A88FB7501D5C5DB5005E8667 /* Images-3.xcassets */; };
 		A88FB7531D5C6030005E8667 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FB7521D5C6030005E8667 /* Logo.png */; };
+		A88FB7591D5C8351005E8667 /* SlideMenuButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FB7581D5C8351005E8667 /* SlideMenuButtonImage.png */; };
+		A88FB75B1D5C8426005E8667 /* LocationIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FB75A1D5C8426005E8667 /* LocationIcon.png */; };
+		A88FB75D1D5C842B005E8667 /* BellIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FB75C1D5C842B005E8667 /* BellIcon.png */; };
+		A88FB7601D5C8BAA005E8667 /* meals.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A88FB75F1D5C8BAA005E8667 /* meals.jpg */; };
+		A88FB7621D5C8BB8005E8667 /* meals banner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A88FB7611D5C8BB8005E8667 /* meals banner.jpg */; };
+		A88FB7641D5C8C15005E8667 /* Shop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A88FB7631D5C8C15005E8667 /* Shop.jpg */; };
+		A88FB7661D5C8C21005E8667 /* monthlyplan.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FB7651D5C8C21005E8667 /* monthlyplan.png */; };
+		A88FB7681D5C8C33005E8667 /* quickbites.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A88FB7671D5C8C33005E8667 /* quickbites.jpg */; };
 		E59C0A13D3221362D1E26CF4 /* libPods-Hunger MealsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19EC3CC5C4ABE0020D1E1725 /* libPods-Hunger MealsUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +146,7 @@
 		9A818FA31D4A203200FB5565 /* PaymentStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentStatusViewController.m; sourceTree = "<group>"; };
 		9AD7F62E1D4767AD0062C6F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A78562A9131ADBB7D15E6513 /* Pods-Hunger Meals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger Meals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger Meals/Pods-Hunger Meals.debug.xcconfig"; sourceTree = "<group>"; };
+		A81A15BD1D5DF7EC00C7EFD1 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		A831CA781D37A9EF00B96F4F /* LandingPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingPageViewController.h; sourceTree = "<group>"; };
 		A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingPageViewController.m; sourceTree = "<group>"; };
 		A831CA7C1D37ACC200B96F4F /* SlideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuViewController.h; sourceTree = "<group>"; };
@@ -165,6 +175,14 @@
 		A88FB74E1D5C5B4A005E8667 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		A88FB7501D5C5DB5005E8667 /* Images-3.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-3.xcassets"; sourceTree = "<group>"; };
 		A88FB7521D5C6030005E8667 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		A88FB7581D5C8351005E8667 /* SlideMenuButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SlideMenuButtonImage.png; sourceTree = "<group>"; };
+		A88FB75A1D5C8426005E8667 /* LocationIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LocationIcon.png; sourceTree = "<group>"; };
+		A88FB75C1D5C842B005E8667 /* BellIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BellIcon.png; sourceTree = "<group>"; };
+		A88FB75F1D5C8BAA005E8667 /* meals.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meals.jpg; sourceTree = "<group>"; };
+		A88FB7611D5C8BB8005E8667 /* meals banner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "meals banner.jpg"; sourceTree = "<group>"; };
+		A88FB7631D5C8C15005E8667 /* Shop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Shop.jpg; sourceTree = "<group>"; };
+		A88FB7651D5C8C21005E8667 /* monthlyplan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monthlyplan.png; sourceTree = "<group>"; };
+		A88FB7671D5C8C33005E8667 /* quickbites.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = quickbites.jpg; sourceTree = "<group>"; };
 		CCE95FC34802E6632ABFB214 /* Pods-Hunger MealsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger MealsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger MealsTests/Pods-Hunger MealsTests.release.xcconfig"; sourceTree = "<group>"; };
 		FD080AF85B2BF6D52AF96CEB /* libPods-Hunger Meals.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hunger Meals.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -221,16 +239,20 @@
 		2B65CC471D59774A00056649 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A88FB75E1D5C8B8A005E8667 /* Home Page Images */,
 				A88FB74A1D5C5850005E8667 /* Splash Screen.png */,
 				2BC1DD0C1D5C651200F00D7D /* Smaple_Logo.jpg */,
 				2B89E5011D5BB2BA0022EC67 /* ProfileImage.jpg */,
 				2BC1DD0E1D5C65E900F00D7D /* meals_ban.jpg */,
 				2B45D6971D5913D300C873ED /* Edit.png */,
+				A88FB7581D5C8351005E8667 /* SlideMenuButtonImage.png */,
 				2B45D6841D59019400C873ED /* Location_Icon.png */,
 				2B45D6911D59106C00C873ED /* My_Location.png */,
 				2B45D6861D59020400C873ED /* Notification.png */,
+				A88FB75C1D5C842B005E8667 /* BellIcon.png */,
 				A88FB7521D5C6030005E8667 /* Logo.png */,
 				2BC1DD101D5C679F00F00D7D /* righticon.png */,
+				A88FB75A1D5C8426005E8667 /* LocationIcon.png */,
 				2BC1DD121D5C6A8F00F00D7D /* GoogleSignIn.png */,
 				2B45D6741D58DDA100C873ED /* BulletPoint.png */,
 			);
@@ -293,6 +315,7 @@
 				A88FB74E1D5C5B4A005E8667 /* Images-2.xcassets */,
 				A88FB7501D5C5DB5005E8667 /* Images-3.xcassets */,
 				9A0C43C51D2F868300A7BF6B /* Supporting Files */,
+				A81A15BC1D5DF7EC00C7EFD1 /* CoreData.xcdatamodeld */,
 			);
 			path = "Hunger Meals";
 			sourceTree = "<group>";
@@ -440,6 +463,18 @@
 			path = AlertController;
 			sourceTree = "<group>";
 		};
+		A88FB75E1D5C8B8A005E8667 /* Home Page Images */ = {
+			isa = PBXGroup;
+			children = (
+				A88FB7631D5C8C15005E8667 /* Shop.jpg */,
+				A88FB7671D5C8C33005E8667 /* quickbites.jpg */,
+				A88FB75F1D5C8BAA005E8667 /* meals.jpg */,
+				A88FB7651D5C8C21005E8667 /* monthlyplan.png */,
+				A88FB7611D5C8BB8005E8667 /* meals banner.jpg */,
+			);
+			name = "Home Page Images";
+			sourceTree = "<group>";
+		};
 		C9EA1799E9412322A7160601 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,7 +605,9 @@
 				2B7AC6F81D47AC3F00D59BB3 /* Dish_Images in Resources */,
 				2BC1DD0F1D5C65E900F00D7D /* meals_ban.jpg in Resources */,
 				A88FB74B1D5C5851005E8667 /* Splash Screen.png in Resources */,
+				A88FB7621D5C8BB8005E8667 /* meals banner.jpg in Resources */,
 				A831CA871D37CEC100B96F4F /* close@2x.png in Resources */,
+				A88FB75B1D5C8426005E8667 /* LocationIcon.png in Resources */,
 				2B89E5021D5BB2BA0022EC67 /* ProfileImage.jpg in Resources */,
 				2BC1DD131D5C6A8F00F00D7D /* GoogleSignIn.png in Resources */,
 				9AD7F62F1D4767AD0062C6F4 /* GoogleService-Info.plist in Resources */,
@@ -578,16 +615,22 @@
 				2B45D6751D58DDA100C873ED /* BulletPoint.png in Resources */,
 				2BC1DD0D1D5C651200F00D7D /* Smaple_Logo.jpg in Resources */,
 				9A0C43D81D2F868400A7BF6B /* LaunchScreen.storyboard in Resources */,
+				A88FB7661D5C8C21005E8667 /* monthlyplan.png in Resources */,
 				A88FB74F1D5C5B4A005E8667 /* Images-2.xcassets in Resources */,
 				2BC1DD111D5C679F00F00D7D /* righticon.png in Resources */,
 				A88FB74D1D5C5ACB005E8667 /* Images.xcassets in Resources */,
 				9A0C43D51D2F868400A7BF6B /* Assets.xcassets in Resources */,
+				A88FB7681D5C8C33005E8667 /* quickbites.jpg in Resources */,
 				2B45D6851D59019400C873ED /* Location_Icon.png in Resources */,
 				A88FB7531D5C6030005E8667 /* Logo.png in Resources */,
 				A831CA861D37CEC100B96F4F /* close.png in Resources */,
 				2B45D6871D59020400C873ED /* Notification.png in Resources */,
+				A88FB75D1D5C842B005E8667 /* BellIcon.png in Resources */,
 				2B45D6981D5913D300C873ED /* Edit.png in Resources */,
 				9A0C43D01D2F868300A7BF6B /* Main.storyboard in Resources */,
+				A88FB7641D5C8C15005E8667 /* Shop.jpg in Resources */,
+				A88FB7601D5C8BAA005E8667 /* meals.jpg in Resources */,
+				A88FB7591D5C8351005E8667 /* SlideMenuButtonImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,6 +795,7 @@
 			files = (
 				A88FB7431D5C5072005E8667 /* SlideMenuViewController.m in Sources */,
 				A884446C1D38D5D600887098 /* BTAlertController.m in Sources */,
+				A81A15BE1D5DF7EC00C7EFD1 /* CoreData.xcdatamodeld in Sources */,
 				A831CA7A1D37A9EF00B96F4F /* LandingPageViewController.m in Sources */,
 				A88444731D38E69900887098 /* UIActionSheet+Blocks.m in Sources */,
 				2B7AC6FD1D47BB6F00D59BB3 /* HMDetailPageViewController.m in Sources */,
@@ -1040,6 +1084,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A81A15BC1D5DF7EC00C7EFD1 /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A81A15BD1D5DF7EC00C7EFD1 /* CoreData.xcdatamodel */,
+			);
+			currentVersion = A81A15BD1D5DF7EC00C7EFD1 /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9A0C43BA1D2F868200A7BF6B /* Project object */;
 }

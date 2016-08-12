@@ -546,7 +546,7 @@
                                         <rect key="frame" x="0.0" y="28" width="328" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zD1-Px-Avn" id="Dwl-If-C0y">
-                                            <rect key="frame" x="0.0" y="0.0" width="328" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tm4-C5-14d">
@@ -857,11 +857,11 @@
                                         <rect key="frame" x="0.0" y="92" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UQ9-Rp-LR3" id="moC-J9-Qfb">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="89.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Quick Bites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uXt-js-Rqd">
-                                                    <rect key="frame" x="15" y="0.0" width="364" height="89.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="364" height="89"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -886,18 +886,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1MN-AA-TPF">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="nMp-dh-2oR"/>
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="nMp-dh-2oR">
+                            <inset key="imageInsets" minX="0.0" minY="-19" maxX="0.0" maxY="-4"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="Notification.png" id="uyb-VN-zzQ">
-                                <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
-                                <color key="tintColor" red="0.98431372549019602" green="0.40392156862745099" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="notificationButtonPressed:" destination="5CW-sI-ctt" id="BiI-cX-uQV"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="Location_Icon.png" id="Geu-ct-WcC">
-                                <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
-                                <color key="tintColor" red="1" green="0.4427508529512999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="imageInsets" minX="1" minY="5" maxX="0.0" maxY="5"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="locationButtonTapped:" destination="5CW-sI-ctt" id="iEX-8m-gJi"/>
                                     <segue destination="jwU-Fs-OBq" kind="presentation" id="Ova-UA-XeF"/>
@@ -988,7 +990,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ivf-OJ-NgI" id="Z07-vo-hrc">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="139.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="139"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzr-68-Gav">
@@ -998,7 +1000,7 @@
                                                     </constraints>
                                                     <state key="normal" image="Edit.png"/>
                                                 </button>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" text="Beach Road, Near Bus Stop, Sagar Nagar, Visakhapatnam,Phone - 9876543210 Pin - 530001" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sll-zV-lzu">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" editable="NO" text="Beach Road, Near Bus Stop, Sagar Nagar, Visakhapatnam,Phone - 9876543210 Pin - 530001" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sll-zV-lzu">
                                                     <rect key="frame" x="13" y="62" width="385" height="70"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1290,13 +1292,13 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter OTP:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2n-9M-tuj">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter OTP:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2n-9M-tuj">
                             <rect key="frame" x="17" y="66" width="61" height="14"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="0.10910722483602603" green="0.87082823588875391" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCc-F9-VJL">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCc-F9-VJL">
                             <rect key="frame" x="210" y="89" width="82" height="27"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="82" id="v0G-Sv-gZb"/>
@@ -1309,7 +1311,7 @@
                                 <action selector="resendOtpButtonAction:" destination="L2f-EC-14A" eventType="touchUpInside" id="ueL-IP-Mzf"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1K-Kg-U6A">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1K-Kg-U6A">
                             <rect key="frame" x="98" y="143" width="104" height="30"/>
                             <color key="backgroundColor" red="0.1091072248" green="0.87082823590000003" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -1323,13 +1325,13 @@
                                 <action selector="verifyOtp:" destination="L2f-EC-14A" eventType="touchUpInside" id="tf6-Tq-c1a"/>
                             </connections>
                         </button>
-                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have entered invalid OTP. Please try again!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7l-tx-vgS">
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You have entered invalid OTP. Please try again!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7l-tx-vgS">
                             <rect key="frame" x="17" y="122" width="275" height="15"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="1" green="0.14772560815511238" blue="0.25157017116467995" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cKe-2v-H1g">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cKe-2v-H1g">
                             <rect key="frame" x="17" y="87" width="185" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="OWy-z8-bzD"/>
@@ -1400,7 +1402,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="User Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CU-Ek-9fE">
-                                <rect key="frame" x="20" y="335" width="82" height="19.5"/>
+                                <rect key="frame" x="20" y="335" width="82" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="82" id="pjj-tY-5IC"/>
                                 </constraints>

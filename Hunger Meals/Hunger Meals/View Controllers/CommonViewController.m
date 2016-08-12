@@ -43,27 +43,27 @@
 //    navigationTitleLabel.font = [Fonts fontHelveticaWithSize:19.0];
 //    self.navigationItem.titleView = navigationTitleLabel;
 
-    self.navigationController.navigationBar.backgroundColor = [UIColor orangeColor];
     self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
 
     
     if (IDIOM == IPAD) {
-        [[UINavigationBar appearance] setTitleTextAttributes: @{
+         self.navigationController.navigationBar.titleTextAttributes = @{
                                                                 NSForegroundColorAttributeName: [UIColor whiteColor],
                                                                 NSFontAttributeName: [Fonts fontHelveticaWithSize:26.0]
-                                                                }];
+                                                                };
     }
     else{
-        [[UINavigationBar appearance] setTitleTextAttributes: @{
+        self.navigationController.navigationBar.titleTextAttributes =
+        @{
                                                                 NSForegroundColorAttributeName: [UIColor whiteColor],
                                                                 NSFontAttributeName: [Fonts fontHelveticaWithSize:19.0]
-                                                                }];
+                                                                };
     }
     
 
     if ([NSStringFromClass([self class]) isEqualToString:@"HMHomePageViewController"]) {
         self.navigationItem.title = @"Hunger Meals";
-        [self addBackButtonToNavigation];
+    
     }else if ([NSStringFromClass([self class]) isEqualToString:@"HMSignUpViewController"]) {
         self.navigationItem.title = @"Sign Up";
         

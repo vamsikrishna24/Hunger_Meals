@@ -8,7 +8,6 @@
 
 #import "HMHomePageViewController.h"
 #import "HMLocationViewController.h"
-#import "SWRevealViewController.h"
 #import "SlideMenuViewController.h"
 
 @interface HMHomePageViewController (){
@@ -22,26 +21,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+        
     self.homePageTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
-    self.navigationItem.title = @"Hungry Meals";
-    
     
     //Menu open/close based on gesture recognizer
     SWRevealViewController *revealController = self.revealViewController;
+    revealController.delegate = self;
     if (revealController)
     {
         [self.slideBarButton setTarget: self.revealViewController];
         [self.slideBarButton setAction: @selector( revealToggle:)];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+        [self.view addGestureRecognizer:self.revealViewController.tapGestureRecognizer];
     }
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-    
-}
+#pragma Mark - Custom Methods
+
 
 #pragma Mark - TableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -80,5 +77,12 @@
 }
 
 - (IBAction)notificationButtonPressed:(id)sender {
+}
+
+#pragma Mark - SWRevealViewController delegate methods
+- (void)revealController:(SWRevealViewController *)revealController didMoveToPosition:(FrontViewPosition)position
+{
+    self.homePageTableView.userInteractionEnabled =
+    (revealController.frontViewPosition == FrontViewPositionRight ? FALSE : TRUE);
 }
 @end

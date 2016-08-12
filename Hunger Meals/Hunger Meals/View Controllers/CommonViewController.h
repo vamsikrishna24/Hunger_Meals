@@ -13,12 +13,6 @@
 #import "Fonts.h"
 #import "SWRevealViewController.h"
 
-typedef NS_ENUM(NSInteger, TabBarItem)
-{
-    ItemDiscover = 1,
-    ItemNews,
-    ItemServices,
-};
 
 @interface CommonViewController : UIViewController<MBProgressHUDDelegate>
 

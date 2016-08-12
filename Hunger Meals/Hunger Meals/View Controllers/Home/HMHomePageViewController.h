@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface HMHomePageViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+@interface HMHomePageViewController : CommonViewController<UITableViewDataSource,UITableViewDelegate, SWRevealViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *locationBarButtonItem;
 @property (weak, nonatomic) IBOutlet UITableView *homePageTableView;

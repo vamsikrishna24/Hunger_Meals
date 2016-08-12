@@ -7,6 +7,8 @@
 //
 
 #import "HMLocationViewController.h"
+#import "BTAlertController.h"
+#import <CoreData/CoreData.h>
 
 @interface HMLocationViewController ()
 
@@ -29,29 +31,37 @@
     [locationManager startUpdatingLocation];
     
     self.navigationItem.title = @"Locations";
-    
-    // Do any additional setup after loading the view.
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 -(void)viewWillAppear:(BOOL)animated{
-    //self.notificationsTableView.tableFooterView =self.footerView;
+    // Fetch the devices from persistent data store
+    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Device"];
+    self.addresses = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    
+    [self.notificationsTableView reloadData];
 
 }
 
+#pragma mark - Custom Methods
 - (IBAction)backCustom:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)showAlertWithMsg:(NSString *)msg{
+    [BTAlertController showAlertWithMessage:msg andTitle:@"" andOkButtonTitle:nil andCancelTitle:@"Ok" andtarget:self andAlertCancelBlock:^{
+        
+    } andAlertOkBlock:^(NSString *userName) {
+        
+    }];
+
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    return _addresses.count;
 }
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *CellIdentifier = @"NotificationIdentifier";
@@ -70,7 +80,7 @@
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     // 1. The view for the header
-    UIView* footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 22)];
+    UIView* footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40)];
     
     // 2. Set a custom background color and a border
     footerView.backgroundColor = [UIColor orangeColor];
@@ -79,22 +89,13 @@
     
     // 3. Add a label
     UIButton* footerButton = [[UIButton alloc] init];
-    footerButton.frame = CGRectMake(5, 2, tableView.frame.size.width - 5, 22);
+    footerButton.frame = CGRectMake(5, 2, tableView.frame.size.width - 5, 40);
     footerButton.backgroundColor = [UIColor clearColor];
     [footerButton setTitle:@"Add New Address" forState:UIControlStateNormal];
     [footerView addSubview:footerButton];
     
     return footerView;
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 //************************************************
 #pragma mark - CLLocation Manager delegate methods
@@ -103,15 +104,7 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"didFailWithError: %@", error);
-    UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Failed to Get Your Location" preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    [errorAlert addAction:okAction];
-    
-    [self presentViewController:errorAlert animated:YES completion:nil];
-    
+    [self showAlertWithMsg:@"Failed to Get Your Location"];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
@@ -128,5 +121,35 @@
     [locationManager stopUpdatingLocation];
 }
 
+#pragma mark - Core Data Methods
+- (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
+
+- (IBAction)saveAddressToDB:(id)sender {
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    // Create a new managed object for Address
+    NSManagedObject *addressEntity = [NSEntityDescription insertNewObjectForEntityForName:@"Addresses" inManagedObjectContext:context];
+    [addressEntity setValue:self.addressTextView.text forKey:@"address"];
+    
+    NSError *error = nil;
+    // Save the object to persistent store
+    if (![context save:&error]) {
+        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+        [self showAlertWithMsg:@"While saving your address error encountered. Please try again"];
+        
+    }
+    else{
+        [self showAlertWithMsg:@"Your address has been saved successfully"];
+    }
+    
+    
+}
 
 @end
