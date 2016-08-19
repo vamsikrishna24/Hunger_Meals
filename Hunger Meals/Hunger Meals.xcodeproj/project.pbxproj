@@ -54,7 +54,6 @@
 		A88FB7431D5C5072005E8667 /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA7D1D37ACC200B96F4F /* SlideMenuViewController.m */; };
 		A88FB7461D5C5292005E8667 /* CommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88FB7441D5C5292005E8667 /* CommonViewController.m */; };
 		A88FB7491D5C5658005E8667 /* Fonts.m in Sources */ = {isa = PBXBuildFile; fileRef = A88FB7481D5C5658005E8667 /* Fonts.m */; };
-		A88FB74B1D5C5851005E8667 /* Splash Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FB74A1D5C5850005E8667 /* Splash Screen.png */; };
 		A88FB74D1D5C5ACB005E8667 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A88FB74C1D5C5ACB005E8667 /* Images.xcassets */; };
 		A88FB74F1D5C5B4A005E8667 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A88FB74E1D5C5B4A005E8667 /* Images-2.xcassets */; };
 		A88FB7511D5C5DB5005E8667 /* Images-3.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A88FB7501D5C5DB5005E8667 /* Images-3.xcassets */; };
@@ -170,7 +169,6 @@
 		A88FB7451D5C5292005E8667 /* CommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonViewController.h; sourceTree = "<group>"; };
 		A88FB7471D5C5658005E8667 /* Fonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fonts.h; sourceTree = "<group>"; };
 		A88FB7481D5C5658005E8667 /* Fonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fonts.m; sourceTree = "<group>"; };
-		A88FB74A1D5C5850005E8667 /* Splash Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash Screen.png"; sourceTree = "<group>"; };
 		A88FB74C1D5C5ACB005E8667 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A88FB74E1D5C5B4A005E8667 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		A88FB7501D5C5DB5005E8667 /* Images-3.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-3.xcassets"; sourceTree = "<group>"; };
@@ -236,11 +234,10 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		2B65CC471D59774A00056649 /* Images */ = {
+		2B65CC471D59774A00056649 /* Images1 */ = {
 			isa = PBXGroup;
 			children = (
 				A88FB75E1D5C8B8A005E8667 /* Home Page Images */,
-				A88FB74A1D5C5850005E8667 /* Splash Screen.png */,
 				2BC1DD0C1D5C651200F00D7D /* Smaple_Logo.jpg */,
 				2B89E5011D5BB2BA0022EC67 /* ProfileImage.jpg */,
 				2BC1DD0E1D5C65E900F00D7D /* meals_ban.jpg */,
@@ -256,7 +253,7 @@
 				2BC1DD121D5C6A8F00F00D7D /* GoogleSignIn.png */,
 				2B45D6741D58DDA100C873ED /* BulletPoint.png */,
 			);
-			name = Images;
+			name = Images1;
 			sourceTree = "<group>";
 		};
 		2B9FECC41D41192000A21666 /* Login */ = {
@@ -300,7 +297,7 @@
 		9A0C43C41D2F868300A7BF6B /* Hunger Meals */ = {
 			isa = PBXGroup;
 			children = (
-				2B65CC471D59774A00056649 /* Images */,
+				2B65CC471D59774A00056649 /* Images1 */,
 				A88444621D38D0A200887098 /* Basic */,
 				A831CA7F1D37CEC100B96F4F /* Third Party Libraries */,
 				A831CA731D37A71000B96F4F /* View Controllers */,
@@ -604,7 +601,6 @@
 				2B45D6921D59106C00C873ED /* My_Location.png in Resources */,
 				2B7AC6F81D47AC3F00D59BB3 /* Dish_Images in Resources */,
 				2BC1DD0F1D5C65E900F00D7D /* meals_ban.jpg in Resources */,
-				A88FB74B1D5C5851005E8667 /* Splash Screen.png in Resources */,
 				A88FB7621D5C8BB8005E8667 /* meals banner.jpg in Resources */,
 				A831CA871D37CEC100B96F4F /* close@2x.png in Resources */,
 				A88FB75B1D5C8426005E8667 /* LocationIcon.png in Resources */,

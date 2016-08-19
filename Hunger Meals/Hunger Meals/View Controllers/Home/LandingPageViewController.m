@@ -50,6 +50,10 @@ static NSString * const cellIdentifier = @"MealItemCellIdentifier";
     //Search initializers
     self.searchStr = @"";
     self.isSearching = NO;
+    
+    
+
+
 }
 
 - (void)viewWillAppear:(BOOL)animated{

@@ -40,7 +40,11 @@
     self.logoImageView.layer.borderColor = (__bridge CGColorRef _Nullable)([UIColor whiteColor]);
     self.logoImageView.layer.shadowColor = (__bridge CGColorRef _Nullable)([UIColor darkGrayColor]);
     self.logoImageView.clipsToBounds = true;
-
+    
+    CGRect frameRect = self.userNameTextField.frame;
+    frameRect.size.height = 40; // <-- Specify the height you want here.
+    self.userNameTextField.frame = frameRect;
+    self.passwordTextField.frame = frameRect;
 
 }
 -(void)viewWillAppear:(BOOL)animated{
