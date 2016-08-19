@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,26 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find all your tastes here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OD-3K-tK6">
-                                <rect key="frame" x="115" y="498" width="184" height="22"/>
-                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="0q7-2J-N0E">
-                                <rect key="frame" x="92" y="268" width="230" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="jqA-7w-yvU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="3kb-cJ-uQd" userLabel="Logo">
+                                <rect key="frame" x="147" y="308" width="120" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="Aae-Aq-bhd"/>
-                                    <constraint firstAttribute="height" constant="200" id="NVx-Kn-Lgs"/>
+                                    <constraint firstAttribute="width" constant="120" id="Kr5-yq-9jP"/>
+                                    <constraint firstAttribute="height" constant="120" id="ue7-Hc-5hf"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="0q7-2J-N0E" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Apq-n3-Klj"/>
-                            <constraint firstItem="1OD-3K-tK6" firstAttribute="centerX" secondItem="0q7-2J-N0E" secondAttribute="centerX" id="Udv-Jf-d0h"/>
-                            <constraint firstItem="0q7-2J-N0E" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="o5p-S8-L6R"/>
-                            <constraint firstItem="1OD-3K-tK6" firstAttribute="top" secondItem="0q7-2J-N0E" secondAttribute="bottom" constant="30" id="ppF-Nd-B8L"/>
+                            <constraint firstItem="jqA-7w-yvU" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="0Vg-Ih-cec"/>
+                            <constraint firstItem="3kb-cJ-uQd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="FAo-KJ-A1n"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="jqA-7w-yvU" secondAttribute="bottom" id="ed3-Ct-JJi"/>
+                            <constraint firstItem="3kb-cJ-uQd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vjT-fi-oBW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jqA-7w-yvU" secondAttribute="trailing" constant="-20" id="vow-xg-WGJ"/>
+                            <constraint firstItem="jqA-7w-yvU" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="vsC-LD-7dO"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -50,6 +49,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo.png" width="1024" height="894"/>
+        <image name="Logo" width="160" height="160"/>
+        <image name="SplashScreen" width="300" height="450"/>
     </resources>
 </document>
