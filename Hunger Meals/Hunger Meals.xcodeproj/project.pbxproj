@@ -14,6 +14,10 @@
 		2B45D6921D59106C00C873ED /* My_Location.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D6911D59106C00C873ED /* My_Location.png */; };
 		2B45D6961D59128300C873ED /* LocationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B45D6951D59128300C873ED /* LocationsTableViewCell.m */; };
 		2B45D6981D5913D300C873ED /* Edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D6971D5913D300C873ED /* Edit.png */; };
+		2B62B47C1D6785DD00B3C526 /* HMSignUpPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B62B47B1D6785DD00B3C526 /* HMSignUpPageViewController.m */; };
+		2B62B47F1D67870B00B3C526 /* HMOTPVerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B62B47E1D67870B00B3C526 /* HMOTPVerificationViewController.m */; };
+		2B62B4821D678BD400B3C526 /* HMSignUpFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B62B4811D678BD400B3C526 /* HMSignUpFirstViewController.m */; };
+		2B62B4851D678C0400B3C526 /* HMSignUpThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B62B4841D678C0400B3C526 /* HMSignUpThirdViewController.m */; };
 		2B7AC6F81D47AC3F00D59BB3 /* Dish_Images in Resources */ = {isa = PBXBuildFile; fileRef = 2B7AC6F71D47AC3F00D59BB3 /* Dish_Images */; };
 		2B7AC6FD1D47BB6F00D59BB3 /* HMDetailPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7AC6FC1D47BB6F00D59BB3 /* HMDetailPageViewController.m */; };
 		2B7AC7001D47C18400D59BB3 /* HMCartItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7AC6FF1D47C18400D59BB3 /* HMCartItemsViewController.m */; };
@@ -99,6 +103,14 @@
 		2B45D6941D59128300C873ED /* LocationsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsTableViewCell.h; sourceTree = "<group>"; };
 		2B45D6951D59128300C873ED /* LocationsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsTableViewCell.m; sourceTree = "<group>"; };
 		2B45D6971D5913D300C873ED /* Edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Edit.png; path = ../Edit.png; sourceTree = "<group>"; };
+		2B62B47A1D6785DD00B3C526 /* HMSignUpPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSignUpPageViewController.h; sourceTree = "<group>"; };
+		2B62B47B1D6785DD00B3C526 /* HMSignUpPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSignUpPageViewController.m; sourceTree = "<group>"; };
+		2B62B47D1D67870B00B3C526 /* HMOTPVerificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMOTPVerificationViewController.h; sourceTree = "<group>"; };
+		2B62B47E1D67870B00B3C526 /* HMOTPVerificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMOTPVerificationViewController.m; sourceTree = "<group>"; };
+		2B62B4801D678BD400B3C526 /* HMSignUpFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSignUpFirstViewController.h; sourceTree = "<group>"; };
+		2B62B4811D678BD400B3C526 /* HMSignUpFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSignUpFirstViewController.m; sourceTree = "<group>"; };
+		2B62B4831D678C0400B3C526 /* HMSignUpThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSignUpThirdViewController.h; sourceTree = "<group>"; };
+		2B62B4841D678C0400B3C526 /* HMSignUpThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSignUpThirdViewController.m; sourceTree = "<group>"; };
 		2B7AC6F71D47AC3F00D59BB3 /* Dish_Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Dish_Images; path = "Hunger Meals/Dish_Images"; sourceTree = "<group>"; };
 		2B7AC6FB1D47BB6F00D59BB3 /* HMDetailPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDetailPageViewController.h; sourceTree = "<group>"; };
 		2B7AC6FC1D47BB6F00D59BB3 /* HMDetailPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailPageViewController.m; sourceTree = "<group>"; };
@@ -267,6 +279,14 @@
 				2B7AC6FF1D47C18400D59BB3 /* HMCartItemsViewController.m */,
 				2BC1DD141D5C90D900F00D7D /* HMLoginViewController.h */,
 				2BC1DD151D5C90D900F00D7D /* HMLoginViewController.m */,
+				2B62B47A1D6785DD00B3C526 /* HMSignUpPageViewController.h */,
+				2B62B47B1D6785DD00B3C526 /* HMSignUpPageViewController.m */,
+				2B62B4801D678BD400B3C526 /* HMSignUpFirstViewController.h */,
+				2B62B4811D678BD400B3C526 /* HMSignUpFirstViewController.m */,
+				2B62B47D1D67870B00B3C526 /* HMOTPVerificationViewController.h */,
+				2B62B47E1D67870B00B3C526 /* HMOTPVerificationViewController.m */,
+				2B62B4831D678C0400B3C526 /* HMSignUpThirdViewController.h */,
+				2B62B4841D678C0400B3C526 /* HMSignUpThirdViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -789,7 +809,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B62B4851D678C0400B3C526 /* HMSignUpThirdViewController.m in Sources */,
+				2B62B47C1D6785DD00B3C526 /* HMSignUpPageViewController.m in Sources */,
 				A88FB7431D5C5072005E8667 /* SlideMenuViewController.m in Sources */,
+				2B62B4821D678BD400B3C526 /* HMSignUpFirstViewController.m in Sources */,
 				A884446C1D38D5D600887098 /* BTAlertController.m in Sources */,
 				A81A15BE1D5DF7EC00C7EFD1 /* CoreData.xcdatamodeld in Sources */,
 				A831CA7A1D37A9EF00B96F4F /* LandingPageViewController.m in Sources */,
@@ -801,6 +824,7 @@
 				2B9FECCD1D411C4500A21666 /* HMLandingViewController.m in Sources */,
 				9A818F9A1D49EBCD00FB5565 /* HMCartCollectionReusableView.m in Sources */,
 				2B7AC7001D47C18400D59BB3 /* HMCartItemsViewController.m in Sources */,
+				2B62B47F1D67870B00B3C526 /* HMOTPVerificationViewController.m in Sources */,
 				9A0C43C71D2F868300A7BF6B /* main.m in Sources */,
 				9A818FA51D4A203200FB5565 /* PaymentStatusViewController.m in Sources */,
 				9A818F9F1D49F8B200FB5565 /* HMPaymentTypeSelectionViewController.m in Sources */,
