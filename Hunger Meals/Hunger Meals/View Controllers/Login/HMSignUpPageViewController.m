@@ -29,9 +29,13 @@
     self.pageViewController.dataSource = self;
     // Do any additional setup after loading the view.
 
-        firstVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FirstPage"];
-        SecondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"secondPage"];
-        thirdVC= [self.storyboard instantiateViewControllerWithIdentifier:@"thirdPage"];
+    firstVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FirstPage"];
+    firstVC.pageIndex = 0;
+    firstVC.pageViewController = _pageViewController;
+    SecondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"secondPage"];
+    SecondVC.pageIndex = 1;
+    thirdVC= [self.storyboard instantiateViewControllerWithIdentifier:@"thirdPage"];
+    thirdVC.pageIndex = 2;
 
     NSArray *viewControllers = @[firstVC];
     
@@ -43,7 +47,7 @@
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
