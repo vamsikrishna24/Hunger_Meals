@@ -45,7 +45,7 @@
 		9A818FA51D4A203200FB5565 /* PaymentStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A818FA31D4A203200FB5565 /* PaymentStatusViewController.m */; };
 		9AD7F62F1D4767AD0062C6F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AD7F62E1D4767AD0062C6F4 /* GoogleService-Info.plist */; };
 		9E72DCA193082CFE199E7B1D /* libPods-Hunger MealsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F05F9F159C8351E75A1ACC2 /* libPods-Hunger MealsTests.a */; };
-		A81A15BE1D5DF7EC00C7EFD1 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A81A15BC1D5DF7EC00C7EFD1 /* CoreData.xcdatamodeld */; };
+		A81A15BE1D5DF7EC00C7EFD1 /* HungerMeals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A81A15BC1D5DF7EC00C7EFD1 /* HungerMeals.xcdatamodeld */; };
 		A831CA7A1D37A9EF00B96F4F /* LandingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */; };
 		A831CA861D37CEC100B96F4F /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = A831CA821D37CEC100B96F4F /* close.png */; };
 		A831CA871D37CEC100B96F4F /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A831CA831D37CEC100B96F4F /* close@2x.png */; };
@@ -157,7 +157,7 @@
 		9A818FA31D4A203200FB5565 /* PaymentStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentStatusViewController.m; sourceTree = "<group>"; };
 		9AD7F62E1D4767AD0062C6F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A78562A9131ADBB7D15E6513 /* Pods-Hunger Meals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger Meals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger Meals/Pods-Hunger Meals.debug.xcconfig"; sourceTree = "<group>"; };
-		A81A15BD1D5DF7EC00C7EFD1 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		A81A15BD1D5DF7EC00C7EFD1 /* HungerMeals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HungerMeals.xcdatamodel; sourceTree = "<group>"; };
 		A831CA781D37A9EF00B96F4F /* LandingPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingPageViewController.h; sourceTree = "<group>"; };
 		A831CA791D37A9EF00B96F4F /* LandingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingPageViewController.m; sourceTree = "<group>"; };
 		A831CA7C1D37ACC200B96F4F /* SlideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuViewController.h; sourceTree = "<group>"; };
@@ -332,7 +332,7 @@
 				A88FB74E1D5C5B4A005E8667 /* Images-2.xcassets */,
 				A88FB7501D5C5DB5005E8667 /* Images-3.xcassets */,
 				9A0C43C51D2F868300A7BF6B /* Supporting Files */,
-				A81A15BC1D5DF7EC00C7EFD1 /* CoreData.xcdatamodeld */,
+				A81A15BC1D5DF7EC00C7EFD1 /* HungerMeals.xcdatamodeld */,
 			);
 			path = "Hunger Meals";
 			sourceTree = "<group>";
@@ -814,7 +814,7 @@
 				A88FB7431D5C5072005E8667 /* SlideMenuViewController.m in Sources */,
 				2B62B4821D678BD400B3C526 /* HMSignUpFirstViewController.m in Sources */,
 				A884446C1D38D5D600887098 /* BTAlertController.m in Sources */,
-				A81A15BE1D5DF7EC00C7EFD1 /* CoreData.xcdatamodeld in Sources */,
+				A81A15BE1D5DF7EC00C7EFD1 /* HungerMeals.xcdatamodeld in Sources */,
 				A831CA7A1D37A9EF00B96F4F /* LandingPageViewController.m in Sources */,
 				A88444731D38E69900887098 /* UIActionSheet+Blocks.m in Sources */,
 				2B7AC6FD1D47BB6F00D59BB3 /* HMDetailPageViewController.m in Sources */,
@@ -1106,13 +1106,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A81A15BC1D5DF7EC00C7EFD1 /* CoreData.xcdatamodeld */ = {
+		A81A15BC1D5DF7EC00C7EFD1 /* HungerMeals.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A81A15BD1D5DF7EC00C7EFD1 /* CoreData.xcdatamodel */,
+				A81A15BD1D5DF7EC00C7EFD1 /* HungerMeals.xcdatamodel */,
 			);
-			currentVersion = A81A15BD1D5DF7EC00C7EFD1 /* CoreData.xcdatamodel */;
-			path = CoreData.xcdatamodeld;
+			currentVersion = A81A15BD1D5DF7EC00C7EFD1 /* HungerMeals.xcdatamodel */;
+			path = HungerMeals.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

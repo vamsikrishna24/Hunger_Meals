@@ -10,4 +10,5 @@
 
 @interface HMSignUpPageViewController : UIViewController<UIPageViewControllerDelegate,UIPageViewControllerDataSource>
 @property (strong, nonatomic) UIPageViewController *pageViewController;
+@property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 @end

@@ -8,6 +8,7 @@
 
 #import "HMSignUpFirstViewController.h"
 #import "HMOTPVerificationViewController.h"
+#import "HMSignUpThirdViewController.h"
 
 @interface HMSignUpFirstViewController (){
     HMOTPVerificationViewController *otpVerificationVC;
@@ -44,10 +45,11 @@
 }
 
 - (IBAction)nextButtonAction:(id)sender {
+
     HMOTPVerificationViewController *SecondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"secondPage"];
-    self.pageIndex = 0;
-    
-    [self.pageViewController.dataSource pageViewController:self.pageViewController viewControllerAfterViewController:self];
+    self.pageIndex = 1;
+    HMSignUpThirdViewController *thirdVC= [self.storyboard instantiateViewControllerWithIdentifier:@"thirdPage"];    
+    [self.pageViewController setViewControllers:@[SecondVC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
    
 }
 @end

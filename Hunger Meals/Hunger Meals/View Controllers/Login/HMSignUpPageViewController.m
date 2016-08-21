@@ -35,14 +35,12 @@
     SecondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"secondPage"];
     SecondVC.pageIndex = 1;
     thirdVC= [self.storyboard instantiateViewControllerWithIdentifier:@"thirdPage"];
-    thirdVC.pageIndex = 2;
-
     NSArray *viewControllers = @[firstVC];
     
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     // Change the size of page view controller
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height+40);
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-80);
     
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
@@ -79,15 +77,16 @@
     NSInteger index;
     if([viewController isKindOfClass: NSClassFromString([NSString stringWithFormat:@"HMSignUpFirstViewController"])]){
         
-         index = ((HMSignUpFirstViewController *)viewController).pageIndex;
+         index = 0;
         
     }else if([viewController isKindOfClass: NSClassFromString([NSString stringWithFormat:@"HMOTPVerificationViewController"])]){
-         index = ((HMOTPVerificationViewController *)viewController).pageIndex;
+         index = 1;
 
     }else if([viewController isKindOfClass: NSClassFromString([NSString stringWithFormat:@"HMSignUpThirdViewController"])]){
-         index = ((HMSignUpThirdViewController *)viewController).pageIndex;
+         index = 2;
 
     }
+    [self.pageControl setCurrentPage:index];
     index--;
     return [self viewControllerAtIndex:index];
 }
@@ -97,15 +96,16 @@
     NSInteger index;
     if([viewController isKindOfClass: NSClassFromString([NSString stringWithFormat:@"HMSignUpFirstViewController"])]){
         
-        index = ((HMSignUpFirstViewController *)viewController).pageIndex;
+        index = 0;
         
     }else if([viewController isKindOfClass: NSClassFromString([NSString stringWithFormat:@"HMOTPVerificationViewController"])]){
-        index = ((HMOTPVerificationViewController *)viewController).pageIndex;
+        index = 1;
         
     }else if([viewController isKindOfClass: NSClassFromString([NSString stringWithFormat:@"HMSignUpThirdViewController"])]){
-        index = ((HMSignUpThirdViewController *)viewController).pageIndex;
+        index = 2;
         
     }
+    [self.pageControl setCurrentPage:index];
     index ++;
     return [self viewControllerAtIndex:index];
 }
@@ -115,9 +115,5 @@
     return 3;
 }
 
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
-{
-    return 0;
-}
 
 @end

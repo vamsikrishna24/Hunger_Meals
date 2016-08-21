@@ -7,60 +7,67 @@
 //
 
 #import "HMSignUpThirdViewController.h"
+#import "BTAlertController.h"
 #import <QuartzCore/QuartzCore.h>
+#import <CoreData/CoreData.h>
 
 @interface HMSignUpThirdViewController (){
-    NSInteger index;
+    NSInteger numRows;
     int *count;
+    NSMutableArray *indexPathsOfCells;
 }
 
 @end
 
 @implementation HMSignUpThirdViewController
+@synthesize managedObjectContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    index = 0;
+    numRows = 2;
+    //[self.addressTableView setTableFooterView:self.tableFooterView];
     [self.addressTableView setBackgroundColor:[UIColor clearColor]];
     self.addressTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-   
 
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // Fetch the devices from persistent data store
+    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Addresses"];
+    NSMutableArray *array = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+- (void)showAlertWithMsg:(NSString *)msg{
+    [BTAlertController showAlertWithMessage:msg andTitle:@"" andOkButtonTitle:nil andCancelTitle:@"Ok" andtarget:self andAlertCancelBlock:^{
+        
+    } andAlertOkBlock:^(NSString *userName) {
+        
+    }];
+    
 }
 
-
+#pragma mark - UITableView Delegate and Data Source Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return numRows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *CellIdentifier = @"AddressTableCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    static NSString *addressCellIdentifier = @"AddressTableCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:addressCellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:addressCellIdentifier];
     }
-    cell.contentView.layer.cornerRadius = 5.0f;
 
+    [indexPathsOfCells addObject:indexPath];
+    
     return cell;
     
 }
@@ -69,46 +76,65 @@
     
 }
 
--(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    // 1. The view for the header
-    UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40)];
-    
-    // 2. Set a custom background color and a border
-    headerView.backgroundColor = [UIColor clearColor];
-    headerView.layer.borderColor = [UIColor clearColor].CGColor;
-    headerView.layer.borderWidth = 1.0;
-    
-    UILabel* headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, tableView.frame.size.width, 17)];
-    
-    // 2. Set a custom background color and a border
-    headerLabel.layer.borderColor = [UIColor clearColor].CGColor;
-    headerLabel.layer.borderWidth = 1.0;
-    headerLabel.textColor =[UIColor colorWithRed:0.901 green:0.521 blue:0.215 alpha:1.0f];
-    headerLabel.font=[headerLabel.font fontWithSize:12];
-    headerLabel.text =@"Home";
-    [headerView addSubview:headerLabel];
-   // 24914818
-    return headerView;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 40; // you can have your own choice, of course
-}
-
 - (IBAction)addAddressAction:(id)sender {
-    //other code related to table
-    self.addressTableView.tag = ++index;
-    [self newSection];
-}
+    [self addRow];   }
 - (IBAction)skipButtonAction:(id)sender {
 }
-- (IBAction)saveButtonAction:(id)sender {
+
+#pragma mark - Core Data Methods
+- (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
 }
--(void)newSection
+
+- (IBAction)saveAddressToDB:(id)sender {
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    UITableView *tableView = self.addressTableView;
+    NSMutableSet *addressTextViews = [[NSMutableSet alloc] init];
+    
+    for (NSIndexPath *indexPath in indexPathsOfCells){
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        for (UITextView *textView in cell.contentView.subviews) {
+            if ([textView isKindOfClass:NSClassFromString(@"UITextView")]) {
+                if (![textView.text isEqualToString:@""]) {
+                    [addressTextViews addObject:textView];
+                }
+            }
+        }
+    }
+    
+    for (UITextView *textView in addressTextViews) {
+            // Create a new managed object for Address
+            NSManagedObject *addressEntity = [NSEntityDescription insertNewObjectForEntityForName:@"Addresses" inManagedObjectContext:context];
+            [addressEntity setValue:textView.text forKey:@"address"];
+            
+            NSError *error = nil;
+            // Save the object to persistent store
+            if (![context save:&error]) {
+                NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+                [self showAlertWithMsg:@"While saving your address error encountered. Please try again"];
+                
+            }
+            else{
+                [self showAlertWithMsg:@"Your address has been saved successfully"];
+            }
+    }
+    
+    
+}
+-(void)addRow
 {
-    count++;
-    [self.addressTableView reloadData];
+    //ASSUMING THIS CHUNK IS CALLED FROM A LOOP
+    NSIndexPath *path = [NSIndexPath indexPathForRow:numRows inSection:0];
+    numRows = numRows + 1;
+    [self.addressTableView beginUpdates];
+    [self.addressTableView insertRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationBottom];
+    [self.addressTableView endUpdates];
 }
+
 @end
