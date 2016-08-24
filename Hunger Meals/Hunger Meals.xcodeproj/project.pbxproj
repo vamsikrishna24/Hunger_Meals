@@ -55,12 +55,10 @@
 		A884446C1D38D5D600887098 /* BTAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = A884446B1D38D5D600887098 /* BTAlertController.m */; };
 		A88444701D38E68500887098 /* UIAlertView+CustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A884446F1D38E68500887098 /* UIAlertView+CustomAlertView.m */; };
 		A88444731D38E69900887098 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A88444721D38E69900887098 /* UIActionSheet+Blocks.m */; };
+		A88F7FE31D6DA15600310F8F /* HMScrollingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A88F7FE21D6DA15600310F8F /* HMScrollingCell.m */; };
 		A88FB7431D5C5072005E8667 /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA7D1D37ACC200B96F4F /* SlideMenuViewController.m */; };
 		A88FB7461D5C5292005E8667 /* CommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88FB7441D5C5292005E8667 /* CommonViewController.m */; };
 		A88FB7491D5C5658005E8667 /* Fonts.m in Sources */ = {isa = PBXBuildFile; fileRef = A88FB7481D5C5658005E8667 /* Fonts.m */; };
-		A88FB74D1D5C5ACB005E8667 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A88FB74C1D5C5ACB005E8667 /* Images.xcassets */; };
-		A88FB74F1D5C5B4A005E8667 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A88FB74E1D5C5B4A005E8667 /* Images-2.xcassets */; };
-		A88FB7511D5C5DB5005E8667 /* Images-3.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A88FB7501D5C5DB5005E8667 /* Images-3.xcassets */; };
 		A88FB7531D5C6030005E8667 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FB7521D5C6030005E8667 /* Logo.png */; };
 		A88FB7591D5C8351005E8667 /* SlideMenuButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FB7581D5C8351005E8667 /* SlideMenuButtonImage.png */; };
 		A88FB75B1D5C8426005E8667 /* LocationIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FB75A1D5C8426005E8667 /* LocationIcon.png */; };
@@ -177,13 +175,12 @@
 		A884446F1D38E68500887098 /* UIAlertView+CustomAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+CustomAlertView.m"; sourceTree = "<group>"; };
 		A88444711D38E69900887098 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
 		A88444721D38E69900887098 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
+		A88F7FE11D6DA15600310F8F /* HMScrollingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScrollingCell.h; sourceTree = "<group>"; };
+		A88F7FE21D6DA15600310F8F /* HMScrollingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScrollingCell.m; sourceTree = "<group>"; };
 		A88FB7441D5C5292005E8667 /* CommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonViewController.m; sourceTree = "<group>"; };
 		A88FB7451D5C5292005E8667 /* CommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonViewController.h; sourceTree = "<group>"; };
 		A88FB7471D5C5658005E8667 /* Fonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fonts.h; sourceTree = "<group>"; };
 		A88FB7481D5C5658005E8667 /* Fonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fonts.m; sourceTree = "<group>"; };
-		A88FB74C1D5C5ACB005E8667 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A88FB74E1D5C5B4A005E8667 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
-		A88FB7501D5C5DB5005E8667 /* Images-3.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-3.xcassets"; sourceTree = "<group>"; };
 		A88FB7521D5C6030005E8667 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		A88FB7581D5C8351005E8667 /* SlideMenuButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SlideMenuButtonImage.png; sourceTree = "<group>"; };
 		A88FB75A1D5C8426005E8667 /* LocationIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LocationIcon.png; sourceTree = "<group>"; };
@@ -328,9 +325,6 @@
 				9A0C43D61D2F868400A7BF6B /* LaunchScreen.storyboard */,
 				9A0C43D91D2F868400A7BF6B /* Info.plist */,
 				9AD7F62E1D4767AD0062C6F4 /* GoogleService-Info.plist */,
-				A88FB74C1D5C5ACB005E8667 /* Images.xcassets */,
-				A88FB74E1D5C5B4A005E8667 /* Images-2.xcassets */,
-				A88FB7501D5C5DB5005E8667 /* Images-3.xcassets */,
 				9A0C43C51D2F868300A7BF6B /* Supporting Files */,
 				A81A15BC1D5DF7EC00C7EFD1 /* HungerMeals.xcdatamodeld */,
 			);
@@ -412,6 +406,8 @@
 				2B7AC6FC1D47BB6F00D59BB3 /* HMDetailPageViewController.m */,
 				2B45D68E1D590E5F00C873ED /* HMLocationViewController.h */,
 				2B45D68F1D590E5F00C873ED /* HMLocationViewController.m */,
+				A88F7FE11D6DA15600310F8F /* HMScrollingCell.h */,
+				A88F7FE21D6DA15600310F8F /* HMScrollingCell.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -627,14 +623,11 @@
 				2B89E5021D5BB2BA0022EC67 /* ProfileImage.jpg in Resources */,
 				2BC1DD131D5C6A8F00F00D7D /* GoogleSignIn.png in Resources */,
 				9AD7F62F1D4767AD0062C6F4 /* GoogleService-Info.plist in Resources */,
-				A88FB7511D5C5DB5005E8667 /* Images-3.xcassets in Resources */,
 				2B45D6751D58DDA100C873ED /* BulletPoint.png in Resources */,
 				2BC1DD0D1D5C651200F00D7D /* Smaple_Logo.jpg in Resources */,
 				9A0C43D81D2F868400A7BF6B /* LaunchScreen.storyboard in Resources */,
 				A88FB7661D5C8C21005E8667 /* monthlyplan.png in Resources */,
-				A88FB74F1D5C5B4A005E8667 /* Images-2.xcassets in Resources */,
 				2BC1DD111D5C679F00F00D7D /* righticon.png in Resources */,
-				A88FB74D1D5C5ACB005E8667 /* Images.xcassets in Resources */,
 				9A0C43D51D2F868400A7BF6B /* Assets.xcassets in Resources */,
 				A88FB7681D5C8C33005E8667 /* quickbites.jpg in Resources */,
 				2B45D6851D59019400C873ED /* Location_Icon.png in Resources */,
@@ -835,6 +828,7 @@
 				A88444651D38D0B700887098 /* Utility.m in Sources */,
 				A831CA881D37CEC100B96F4F /* MTGenericAlertView.m in Sources */,
 				A88444681D38D17B00887098 /* CheckConnection.m in Sources */,
+				A88F7FE31D6DA15600310F8F /* HMScrollingCell.m in Sources */,
 				2B45D6901D590E5F00C873ED /* HMLocationViewController.m in Sources */,
 				A88FB7491D5C5658005E8667 /* Fonts.m in Sources */,
 				2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */,

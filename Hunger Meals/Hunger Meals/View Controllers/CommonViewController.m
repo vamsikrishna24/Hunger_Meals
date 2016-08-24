@@ -43,7 +43,7 @@
 //    navigationTitleLabel.font = [Fonts fontHelveticaWithSize:19.0];
 //    self.navigationItem.titleView = navigationTitleLabel;
 
-    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:37.0/255.0f green:37.0/255.0f blue:37.0/255.0f alpha:1.0f];
 
     
     if (IDIOM == IPAD) {
@@ -62,7 +62,7 @@
     
 
     if ([NSStringFromClass([self class]) isEqualToString:@"HMHomePageViewController"]) {
-        self.navigationItem.title = @"Hunger Meals";
+        self.navigationItem.title = @"Banglore";
     
     }else if ([NSStringFromClass([self class]) isEqualToString:@"HMSignUpViewController"]) {
         self.navigationItem.title = @"Sign Up";
