@@ -139,5 +139,9 @@ didSignInForUser:(GIDGoogleUser *)user
     
 }
 
+- (IBAction)signInButtonPressed:(id)sender{
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserLogin"];
+    [APPDELEGATE showInitialScreen];
+}
 
 @end

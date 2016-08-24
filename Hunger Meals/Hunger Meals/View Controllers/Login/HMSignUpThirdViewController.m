@@ -8,6 +8,7 @@
 
 #import "HMSignUpThirdViewController.h"
 #import "BTAlertController.h"
+#import "Constants.h"
 #import <QuartzCore/QuartzCore.h>
 #import <CoreData/CoreData.h>
 
@@ -79,6 +80,8 @@
 - (IBAction)addAddressAction:(id)sender {
     [self addRow];   }
 - (IBAction)skipButtonAction:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserLogin"];
+    [APPDELEGATE showInitialScreen];
 }
 
 #pragma mark - Core Data Methods
@@ -124,7 +127,8 @@
                 [self showAlertWithMsg:@"Your address has been saved successfully"];
             }
     }
-    
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserLogin"];
+    [APPDELEGATE showInitialScreen];
     
 }
 -(void)addRow
