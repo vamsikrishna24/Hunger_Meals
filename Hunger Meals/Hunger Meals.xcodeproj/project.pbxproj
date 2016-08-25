@@ -30,6 +30,8 @@
 		2BC1DD111D5C679F00F00D7D /* righticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC1DD101D5C679F00F00D7D /* righticon.png */; };
 		2BC1DD131D5C6A8F00F00D7D /* GoogleSignIn.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC1DD121D5C6A8F00F00D7D /* GoogleSignIn.png */; };
 		2BC1DD161D5C90D900F00D7D /* HMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC1DD151D5C90D900F00D7D /* HMLoginViewController.m */; };
+		2BD458B91D6F4DEE00D48AE8 /* HMCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD458B81D6F4DEE00D48AE8 /* HMCartViewController.m */; };
+		2BD458BC1D6F4F8E00D48AE8 /* HMCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD458BB1D6F4F8E00D48AE8 /* HMCartTableViewCell.m */; };
 		2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7B2401D55CF9800B2FABD /* HMHomePageViewController.m */; };
 		2ECD4BE63075852C928DC6BE /* libPods-Hunger Meals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD080AF85B2BF6D52AF96CEB /* libPods-Hunger Meals.a */; };
 		9A0C43C71D2F868300A7BF6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43C61D2F868300A7BF6B /* main.m */; };
@@ -126,6 +128,10 @@
 		2BC1DD121D5C6A8F00F00D7D /* GoogleSignIn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoogleSignIn.png; sourceTree = "<group>"; };
 		2BC1DD141D5C90D900F00D7D /* HMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLoginViewController.h; sourceTree = "<group>"; };
 		2BC1DD151D5C90D900F00D7D /* HMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLoginViewController.m; sourceTree = "<group>"; };
+		2BD458B71D6F4DEE00D48AE8 /* HMCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCartViewController.h; sourceTree = "<group>"; };
+		2BD458B81D6F4DEE00D48AE8 /* HMCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCartViewController.m; sourceTree = "<group>"; };
+		2BD458BA1D6F4F8E00D48AE8 /* HMCartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCartTableViewCell.h; sourceTree = "<group>"; };
+		2BD458BB1D6F4F8E00D48AE8 /* HMCartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCartTableViewCell.m; sourceTree = "<group>"; };
 		2BD7B23F1D55CF9800B2FABD /* HMHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHomePageViewController.h; sourceTree = "<group>"; };
 		2BD7B2401D55CF9800B2FABD /* HMHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHomePageViewController.m; sourceTree = "<group>"; };
 		39CEF7BAC10F1A2807ABF4E5 /* Pods-Hunger MealsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger MealsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger MealsUITests/Pods-Hunger MealsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,8 +181,8 @@
 		A884446F1D38E68500887098 /* UIAlertView+CustomAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+CustomAlertView.m"; sourceTree = "<group>"; };
 		A88444711D38E69900887098 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
 		A88444721D38E69900887098 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
-		A88F7FE11D6DA15600310F8F /* HMScrollingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScrollingCell.h; sourceTree = "<group>"; };
-		A88F7FE21D6DA15600310F8F /* HMScrollingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScrollingCell.m; sourceTree = "<group>"; };
+		A88F7FE11D6DA15600310F8F /* HMScrollingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMScrollingCell.h; path = Home/HMScrollingCell.h; sourceTree = "<group>"; };
+		A88F7FE21D6DA15600310F8F /* HMScrollingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMScrollingCell.m; path = Home/HMScrollingCell.m; sourceTree = "<group>"; };
 		A88FB7441D5C5292005E8667 /* CommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonViewController.m; sourceTree = "<group>"; };
 		A88FB7451D5C5292005E8667 /* CommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonViewController.h; sourceTree = "<group>"; };
 		A88FB7471D5C5658005E8667 /* Fonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fonts.h; sourceTree = "<group>"; };
@@ -239,6 +245,10 @@
 			children = (
 				2B45D6941D59128300C873ED /* LocationsTableViewCell.h */,
 				2B45D6951D59128300C873ED /* LocationsTableViewCell.m */,
+				A88F7FE11D6DA15600310F8F /* HMScrollingCell.h */,
+				A88F7FE21D6DA15600310F8F /* HMScrollingCell.m */,
+				2BD458BA1D6F4F8E00D48AE8 /* HMCartTableViewCell.h */,
+				2BD458BB1D6F4F8E00D48AE8 /* HMCartTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -286,6 +296,16 @@
 				2B62B4841D678C0400B3C526 /* HMSignUpThirdViewController.m */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		2BD458B61D6F4DC700D48AE8 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				2BD458B71D6F4DEE00D48AE8 /* HMCartViewController.h */,
+				2BD458B81D6F4DEE00D48AE8 /* HMCartViewController.m */,
+			);
+			name = Cart;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		9A0C43B91D2F868200A7BF6B = {
@@ -390,6 +410,7 @@
 				9A818F911D49EA4E00FB5565 /* Footer */,
 				2B9FECC41D41192000A21666 /* Login */,
 				A831CA7B1D37A9F500B96F4F /* Slide Menu */,
+				2BD458B61D6F4DC700D48AE8 /* Cart */,
 				A831CA771D37A9EF00B96F4F /* Home */,
 			);
 			path = "View Controllers";
@@ -406,8 +427,6 @@
 				2B7AC6FC1D47BB6F00D59BB3 /* HMDetailPageViewController.m */,
 				2B45D68E1D590E5F00C873ED /* HMLocationViewController.h */,
 				2B45D68F1D590E5F00C873ED /* HMLocationViewController.m */,
-				A88F7FE11D6DA15600310F8F /* HMScrollingCell.h */,
-				A88F7FE21D6DA15600310F8F /* HMScrollingCell.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -812,6 +831,7 @@
 				A88444731D38E69900887098 /* UIActionSheet+Blocks.m in Sources */,
 				2B7AC6FD1D47BB6F00D59BB3 /* HMDetailPageViewController.m in Sources */,
 				9A0C43CA1D2F868300A7BF6B /* AppDelegate.m in Sources */,
+				2BD458B91D6F4DEE00D48AE8 /* HMCartViewController.m in Sources */,
 				2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */,
 				2B45D6961D59128300C873ED /* LocationsTableViewCell.m in Sources */,
 				2B9FECCD1D411C4500A21666 /* HMLandingViewController.m in Sources */,
@@ -819,6 +839,7 @@
 				2B7AC7001D47C18400D59BB3 /* HMCartItemsViewController.m in Sources */,
 				2B62B47F1D67870B00B3C526 /* HMOTPVerificationViewController.m in Sources */,
 				9A0C43C71D2F868300A7BF6B /* main.m in Sources */,
+				2BD458BC1D6F4F8E00D48AE8 /* HMCartTableViewCell.m in Sources */,
 				9A818FA51D4A203200FB5565 /* PaymentStatusViewController.m in Sources */,
 				9A818F9F1D49F8B200FB5565 /* HMPaymentTypeSelectionViewController.m in Sources */,
 				9A818FA41D4A203200FB5565 /* PaymentPageViewController.m in Sources */,

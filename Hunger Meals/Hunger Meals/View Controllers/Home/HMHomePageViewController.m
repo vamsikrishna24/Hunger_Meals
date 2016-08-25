@@ -10,6 +10,7 @@
 #import "HMLocationViewController.h"
 #import "SlideMenuViewController.h"
 #import "HMScrollingCell.h"
+#import "HMCartViewController.h"
 
 @interface HMHomePageViewController (){
     NSArray *categories;
@@ -54,9 +55,16 @@
     floatingButton.frame = CGRectMake(self.view.frame.size.width/2-20, self.view.frame.size.height - 120, 60.0, 60.0);
     floatingButton.layer.cornerRadius = floatingButton.frame.size.width/2.0f;
     floatingButton.clipsToBounds = YES;
+    [floatingButton addTarget:self action:@selector(cartView) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:floatingButton];
 }
+-(void)cartView{
+    
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    HMCartViewController *cartViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"CartViewIdentifier"];
+    [self.navigationController pushViewController:cartViewController animated:YES];
 
+}
 #pragma mark - ScrollView Delegate methods
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
     

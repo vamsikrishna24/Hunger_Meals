@@ -93,6 +93,11 @@
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
+		<key>YSLContainerViewController.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -102,6 +107,11 @@
 			<true/>
 		</dict>
 		<key>0C1F8E331232C34F034FD26C684AFA0A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>220E6C64F76282AE6A6C3080DFD0FC2C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -121,7 +131,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4FF4786F6391527C2A0865B8E169DF65</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>51E65A042AA16154BAD67A057700C7F6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52BF131A4C9CF00CD743A152DF297318</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,6 +167,11 @@
 			<true/>
 		</dict>
 		<key>7E61C9A8C176278C6C99C2C59E9C152E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8105D9DFC4851AE026B6D1A015B4FB66</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -177,6 +202,11 @@
 			<true/>
 		</dict>
 		<key>C1CA2BBEEE78A59C7E125839FEE7E115</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C5396B42F606BB4C4B016D22CC9B08FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
