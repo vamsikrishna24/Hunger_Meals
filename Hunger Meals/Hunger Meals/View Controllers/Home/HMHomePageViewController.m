@@ -179,7 +179,12 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
+    if (indexPath.row == 1) {
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        HMCartViewController *cartViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"CartViewIdentifier"];
+        [self.navigationController pushViewController:cartViewController animated:YES];
+
+    }
     
 }
 

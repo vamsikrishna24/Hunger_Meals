@@ -29,7 +29,8 @@
     [[GGLContext sharedInstance] configureWithError: &configureError];
     NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
     
-    
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+
     
     [self showInitialScreen];
 

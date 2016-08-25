@@ -22,6 +22,7 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     [self initializations];
+    
 
 }
 
@@ -66,7 +67,6 @@
     
     }else if ([NSStringFromClass([self class]) isEqualToString:@"HMSignUpViewController"]) {
         self.navigationItem.title = @"Sign Up";
-        
 
     }
     
@@ -86,6 +86,11 @@
                                                                   target:self.navigationController
                                                                   action:@selector(popToRootViewControllerAnimated:)];
     self.navigationItem.leftBarButtonItem = backButton;
+    
+    
+}
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 #pragma -mark MBHUD ProgressView methods
 - (void) showActivityIndicator: (NSString *) title {
