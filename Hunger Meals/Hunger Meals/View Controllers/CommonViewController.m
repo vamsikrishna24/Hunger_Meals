@@ -69,26 +69,20 @@
         self.navigationItem.title = @"Sign Up";
 
     }
+    else if ([NSStringFromClass([self class]) isEqualToString:@"MealsViewController"]) {
+        self.navigationItem.title = @"Banglore";
+    }
     
 }
 
 - (void)addBackButtonToNavigation{
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Back Button"]
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back"
                                                                    style:UIBarButtonItemStylePlain
                                                                   target:self.navigationController
                                                                   action:@selector(popViewControllerAnimated:)];
     self.navigationItem.leftBarButtonItem = backButton;
 }
 
-- (void)addBackButtonToNewsEvents{
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Back Button"]
-                                                                   style:UIBarButtonItemStylePlain
-                                                                  target:self.navigationController
-                                                                  action:@selector(popToRootViewControllerAnimated:)];
-    self.navigationItem.leftBarButtonItem = backButton;
-    
-    
-}
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }

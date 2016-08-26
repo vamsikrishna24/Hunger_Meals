@@ -8,10 +8,10 @@
 
 #import "MealsViewController.h"
 #import "YSLContainerViewController.h"
-#import "QuickbitesViewController.h";
-#import "SouthIndianViewController.h";
-#import "NorthIndianViewController.h";
-#import "AddonsViewController.h";
+#import "QuickbitesViewController.h"
+#import "SouthIndianViewController.h"
+#import "NorthIndianViewController.h"
+#import "AddonsViewController.h"
 
 @interface MealsViewController ()<YSLContainerViewControllerDelegate>
 
