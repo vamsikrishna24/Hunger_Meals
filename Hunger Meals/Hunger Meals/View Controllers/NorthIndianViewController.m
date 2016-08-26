@@ -52,22 +52,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MealsTableViewCell *cell = (MealsTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
-    if (isCellExpanded) {
-        isCellExpanded = NO;
-    }
-    else{
-        isCellExpanded = YES;
-    }
     [tableView beginUpdates];
     [tableView endUpdates];
+    isCellExpanded = !isCellExpanded;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSIndexPath *selectedIndexPath  = [tableView indexPathForSelectedRow];
     
-    if (indexPath == selectedIndexPath && !isCellExpanded) {
+    if ([indexPath isEqual:selectedIndexPath] && !isCellExpanded) {
         return 280;
     }
     return 210;
