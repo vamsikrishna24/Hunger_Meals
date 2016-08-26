@@ -18,6 +18,12 @@
 		2B62B47F1D67870B00B3C526 /* HMOTPVerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B62B47E1D67870B00B3C526 /* HMOTPVerificationViewController.m */; };
 		2B62B4821D678BD400B3C526 /* HMSignUpFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B62B4811D678BD400B3C526 /* HMSignUpFirstViewController.m */; };
 		2B62B4851D678C0400B3C526 /* HMSignUpThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B62B4841D678C0400B3C526 /* HMSignUpThirdViewController.m */; };
+		2B6ED9A41D6FD242000D672D /* MealsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6ED9A31D6FD242000D672D /* MealsViewController.m */; };
+		2B6ED9A91D6FD8E3000D672D /* QuickbitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6ED9A81D6FD8E3000D672D /* QuickbitesViewController.m */; };
+		2B6ED9AC1D6FD902000D672D /* SouthIndianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6ED9AB1D6FD902000D672D /* SouthIndianViewController.m */; };
+		2B6ED9AF1D6FD915000D672D /* NorthIndianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6ED9AE1D6FD915000D672D /* NorthIndianViewController.m */; };
+		2B6ED9B21D6FD926000D672D /* AddonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6ED9B11D6FD926000D672D /* AddonsViewController.m */; };
+		2B6ED9B51D6FE7A9000D672D /* MealsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6ED9B41D6FE7A9000D672D /* MealsTableViewCell.m */; };
 		2B7AC6F81D47AC3F00D59BB3 /* Dish_Images in Resources */ = {isa = PBXBuildFile; fileRef = 2B7AC6F71D47AC3F00D59BB3 /* Dish_Images */; };
 		2B7AC6FD1D47BB6F00D59BB3 /* HMDetailPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7AC6FC1D47BB6F00D59BB3 /* HMDetailPageViewController.m */; };
 		2B7AC7001D47C18400D59BB3 /* HMCartItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7AC6FF1D47C18400D59BB3 /* HMCartItemsViewController.m */; };
@@ -111,6 +117,18 @@
 		2B62B4811D678BD400B3C526 /* HMSignUpFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSignUpFirstViewController.m; sourceTree = "<group>"; };
 		2B62B4831D678C0400B3C526 /* HMSignUpThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSignUpThirdViewController.h; sourceTree = "<group>"; };
 		2B62B4841D678C0400B3C526 /* HMSignUpThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSignUpThirdViewController.m; sourceTree = "<group>"; };
+		2B6ED9A21D6FD242000D672D /* MealsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealsViewController.h; sourceTree = "<group>"; };
+		2B6ED9A31D6FD242000D672D /* MealsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealsViewController.m; sourceTree = "<group>"; };
+		2B6ED9A71D6FD8E3000D672D /* QuickbitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickbitesViewController.h; sourceTree = "<group>"; };
+		2B6ED9A81D6FD8E3000D672D /* QuickbitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickbitesViewController.m; sourceTree = "<group>"; };
+		2B6ED9AA1D6FD902000D672D /* SouthIndianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SouthIndianViewController.h; sourceTree = "<group>"; };
+		2B6ED9AB1D6FD902000D672D /* SouthIndianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SouthIndianViewController.m; sourceTree = "<group>"; };
+		2B6ED9AD1D6FD915000D672D /* NorthIndianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NorthIndianViewController.h; sourceTree = "<group>"; };
+		2B6ED9AE1D6FD915000D672D /* NorthIndianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NorthIndianViewController.m; sourceTree = "<group>"; };
+		2B6ED9B01D6FD926000D672D /* AddonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddonsViewController.h; sourceTree = "<group>"; };
+		2B6ED9B11D6FD926000D672D /* AddonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddonsViewController.m; sourceTree = "<group>"; };
+		2B6ED9B31D6FE7A9000D672D /* MealsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealsTableViewCell.h; sourceTree = "<group>"; };
+		2B6ED9B41D6FE7A9000D672D /* MealsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealsTableViewCell.m; sourceTree = "<group>"; };
 		2B7AC6F71D47AC3F00D59BB3 /* Dish_Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Dish_Images; path = "Hunger Meals/Dish_Images"; sourceTree = "<group>"; };
 		2B7AC6FB1D47BB6F00D59BB3 /* HMDetailPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDetailPageViewController.h; sourceTree = "<group>"; };
 		2B7AC6FC1D47BB6F00D59BB3 /* HMDetailPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailPageViewController.m; sourceTree = "<group>"; };
@@ -275,6 +293,23 @@
 			name = Images1;
 			sourceTree = "<group>";
 		};
+		2B6ED9A61D6FD83C000D672D /* Meals */ = {
+			isa = PBXGroup;
+			children = (
+				2B6ED9A71D6FD8E3000D672D /* QuickbitesViewController.h */,
+				2B6ED9A81D6FD8E3000D672D /* QuickbitesViewController.m */,
+				2B6ED9AA1D6FD902000D672D /* SouthIndianViewController.h */,
+				2B6ED9AB1D6FD902000D672D /* SouthIndianViewController.m */,
+				2B6ED9AD1D6FD915000D672D /* NorthIndianViewController.h */,
+				2B6ED9AE1D6FD915000D672D /* NorthIndianViewController.m */,
+				2B6ED9B01D6FD926000D672D /* AddonsViewController.h */,
+				2B6ED9B11D6FD926000D672D /* AddonsViewController.m */,
+				2B6ED9B31D6FE7A9000D672D /* MealsTableViewCell.h */,
+				2B6ED9B41D6FE7A9000D672D /* MealsTableViewCell.m */,
+			);
+			name = Meals;
+			sourceTree = "<group>";
+		};
 		2B9FECC41D41192000A21666 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +438,7 @@
 		A831CA731D37A71000B96F4F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2B6ED9A61D6FD83C000D672D /* Meals */,
 				A88FB7441D5C5292005E8667 /* CommonViewController.m */,
 				A88FB7451D5C5292005E8667 /* CommonViewController.h */,
 				2B45D6931D59122E00C873ED /* Cells */,
@@ -427,6 +463,8 @@
 				2B7AC6FC1D47BB6F00D59BB3 /* HMDetailPageViewController.m */,
 				2B45D68E1D590E5F00C873ED /* HMLocationViewController.h */,
 				2B45D68F1D590E5F00C873ED /* HMLocationViewController.m */,
+				2B6ED9A21D6FD242000D672D /* MealsViewController.h */,
+				2B6ED9A31D6FD242000D672D /* MealsViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -824,16 +862,21 @@
 				2B62B4851D678C0400B3C526 /* HMSignUpThirdViewController.m in Sources */,
 				2B62B47C1D6785DD00B3C526 /* HMSignUpPageViewController.m in Sources */,
 				A88FB7431D5C5072005E8667 /* SlideMenuViewController.m in Sources */,
+				2B6ED9AF1D6FD915000D672D /* NorthIndianViewController.m in Sources */,
 				2B62B4821D678BD400B3C526 /* HMSignUpFirstViewController.m in Sources */,
 				A884446C1D38D5D600887098 /* BTAlertController.m in Sources */,
 				A81A15BE1D5DF7EC00C7EFD1 /* HungerMeals.xcdatamodeld in Sources */,
 				A831CA7A1D37A9EF00B96F4F /* LandingPageViewController.m in Sources */,
 				A88444731D38E69900887098 /* UIActionSheet+Blocks.m in Sources */,
 				2B7AC6FD1D47BB6F00D59BB3 /* HMDetailPageViewController.m in Sources */,
+				2B6ED9A41D6FD242000D672D /* MealsViewController.m in Sources */,
 				9A0C43CA1D2F868300A7BF6B /* AppDelegate.m in Sources */,
 				2BD458B91D6F4DEE00D48AE8 /* HMCartViewController.m in Sources */,
+				2B6ED9B21D6FD926000D672D /* AddonsViewController.m in Sources */,
 				2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */,
 				2B45D6961D59128300C873ED /* LocationsTableViewCell.m in Sources */,
+				2B6ED9B51D6FE7A9000D672D /* MealsTableViewCell.m in Sources */,
+				2B6ED9AC1D6FD902000D672D /* SouthIndianViewController.m in Sources */,
 				2B9FECCD1D411C4500A21666 /* HMLandingViewController.m in Sources */,
 				9A818F9A1D49EBCD00FB5565 /* HMCartCollectionReusableView.m in Sources */,
 				2B7AC7001D47C18400D59BB3 /* HMCartItemsViewController.m in Sources */,
@@ -852,6 +895,7 @@
 				A88F7FE31D6DA15600310F8F /* HMScrollingCell.m in Sources */,
 				2B45D6901D590E5F00C873ED /* HMLocationViewController.m in Sources */,
 				A88FB7491D5C5658005E8667 /* Fonts.m in Sources */,
+				2B6ED9A91D6FD8E3000D672D /* QuickbitesViewController.m in Sources */,
 				2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

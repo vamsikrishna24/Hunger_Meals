@@ -181,7 +181,7 @@
     
     if (indexPath.row == 1) {
         UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        HMCartViewController *cartViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"CartViewIdentifier"];
+        HMCartViewController *cartViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MealsViewIdentifier"];
         [self.navigationController pushViewController:cartViewController animated:YES];
 
     }
