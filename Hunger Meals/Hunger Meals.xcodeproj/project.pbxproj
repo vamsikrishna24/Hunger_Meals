@@ -39,6 +39,7 @@
 		2BD458B91D6F4DEE00D48AE8 /* HMCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD458B81D6F4DEE00D48AE8 /* HMCartViewController.m */; };
 		2BD458BC1D6F4F8E00D48AE8 /* HMCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD458BB1D6F4F8E00D48AE8 /* HMCartTableViewCell.m */; };
 		2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7B2401D55CF9800B2FABD /* HMHomePageViewController.m */; };
+		2BDF98701D70B4E8003D943C /* HMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF986F1D70B4E8003D943C /* HMTabBarViewController.m */; };
 		2ECD4BE63075852C928DC6BE /* libPods-Hunger Meals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD080AF85B2BF6D52AF96CEB /* libPods-Hunger Meals.a */; };
 		9A0C43C71D2F868300A7BF6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43C61D2F868300A7BF6B /* main.m */; };
 		9A0C43CA1D2F868300A7BF6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43C91D2F868300A7BF6B /* AppDelegate.m */; };
@@ -152,6 +153,8 @@
 		2BD458BB1D6F4F8E00D48AE8 /* HMCartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCartTableViewCell.m; sourceTree = "<group>"; };
 		2BD7B23F1D55CF9800B2FABD /* HMHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHomePageViewController.h; sourceTree = "<group>"; };
 		2BD7B2401D55CF9800B2FABD /* HMHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHomePageViewController.m; sourceTree = "<group>"; };
+		2BDF986E1D70B4E8003D943C /* HMTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTabBarViewController.h; sourceTree = "<group>"; };
+		2BDF986F1D70B4E8003D943C /* HMTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTabBarViewController.m; sourceTree = "<group>"; };
 		39CEF7BAC10F1A2807ABF4E5 /* Pods-Hunger MealsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger MealsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger MealsUITests/Pods-Hunger MealsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6125B3D8C237F187FC01D986 /* Pods-Hunger Meals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger Meals.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger Meals/Pods-Hunger Meals.release.xcconfig"; sourceTree = "<group>"; };
 		8C5A0BD3D7E3C64A555DAFB0 /* Pods-Hunger MealsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger MealsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger MealsTests/Pods-Hunger MealsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -448,6 +451,8 @@
 				A831CA7B1D37A9F500B96F4F /* Slide Menu */,
 				2BD458B61D6F4DC700D48AE8 /* Cart */,
 				A831CA771D37A9EF00B96F4F /* Home */,
+				2BDF986E1D70B4E8003D943C /* HMTabBarViewController.h */,
+				2BDF986F1D70B4E8003D943C /* HMTabBarViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -896,6 +901,7 @@
 				2B45D6901D590E5F00C873ED /* HMLocationViewController.m in Sources */,
 				A88FB7491D5C5658005E8667 /* Fonts.m in Sources */,
 				2B6ED9A91D6FD8E3000D672D /* QuickbitesViewController.m in Sources */,
+				2BDF98701D70B4E8003D943C /* HMTabBarViewController.m in Sources */,
 				2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
