@@ -15,5 +15,10 @@
 @property (nonatomic, weak) IBOutlet UITextView *descriptionView;
 @property (nonatomic, weak) IBOutlet UILabel *priceLabel;
 @property (nonatomic, weak) IBOutlet UIButton *addToCartButton;
+@property (weak, nonatomic) IBOutlet UIView *stepperView;
+@property (weak, nonatomic) IBOutlet UIButton *decrementButton;
+@property (weak, nonatomic) IBOutlet UIButton *incrementButton;
+@property (weak, nonatomic) IBOutlet UILabel *countButton;
+- (IBAction)addToCartAction:(id)sender;
 
 @end
