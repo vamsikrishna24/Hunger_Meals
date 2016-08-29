@@ -102,7 +102,7 @@ CGFloat alertTitleLabelHeight = 44;
         CGSize containerSize = [self getContainerSize];
         CGSize keyboardSize = CGSizeMake(0, 0);
         
-        self.containerView.frame = CGRectMake((screenSize.width - containerSize.width) / 2, (screenSize.height - keyboardSize.height - containerSize.height) / 2, containerSize.width, containerSize.height);
+        self.containerView.frame = CGRectMake( 30, 70, containerSize.width, containerSize.height);
     }
     
     [[[[UIApplication sharedApplication] windows] firstObject] addSubview:self];

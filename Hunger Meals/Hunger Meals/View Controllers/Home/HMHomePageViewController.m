@@ -12,11 +12,13 @@
 #import "HMScrollingCell.h"
 #import "HMCartViewController.h"
 
+
 @interface HMHomePageViewController (){
     NSArray *categories;
     NSArray *categoriesImgs;
     NSArray *scrollingImgs;
     UIButton *floatingButton;
+    MTGenericAlertView *locationPopup;
     
 }
 
@@ -57,6 +59,10 @@
     floatingButton.clipsToBounds = YES;
     [floatingButton addTarget:self action:@selector(cartView) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:floatingButton];
+    
+    [self showPopUpBoxAtStartUp];
+
+
 }
 -(void)cartView{
     
@@ -218,5 +224,18 @@
 {
     self.homePageTableView.userInteractionEnabled =
     (revealController.frontViewPosition == FrontViewPositionRight ? FALSE : TRUE);
+}
+
+-(void)showPopUpBoxAtStartUp{
+   locationPopup = [[MTGenericAlertView alloc] initWithTitle:@"Pick Up Your City" titleColor:[UIColor whiteColor] titleFont:nil backgroundImage:nil];
+    
+    //Add close button only to handle close button action. Other wise by default close button will be added.
+    locationPopup.popUpCloseButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [locationPopup.popUpCloseButton setBackgroundImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
+    [locationPopup setCustomInputView:self.addressView];
+    locationPopup.isPopUpView = YES;
+    [locationPopup setDelegate:self];
+    [locationPopup show];
+    
 }
 @end
