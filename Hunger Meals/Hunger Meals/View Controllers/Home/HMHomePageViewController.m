@@ -173,6 +173,24 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:categoryCellIdentifier];
         }
         
+        //set background color for mask view
+        UIView *maskView = (UIView *)[cell viewWithTag:111];
+        if (indexPath.row == 1) {
+            [maskView setBackgroundColor:[UIColor colorWithRed:235/255.0f green:111/255.0f blue:56/255.0f alpha:0.5]];
+        }
+        else if (indexPath.row == 2){
+            [maskView setBackgroundColor:[UIColor colorWithRed:171/255.0f green:212/255.0f blue:113/255.0f alpha:0.8]];
+        }
+        else if (indexPath.row == 3){
+            [maskView setBackgroundColor:[UIColor colorWithRed:54/255.0f green:167/255.0f blue:181/255.0f alpha:0.8]];
+        }
+        else{
+            [maskView setBackgroundColor:[UIColor clearColor]];
+        }
+        
+        //Making selection style none
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell.contentView setLayoutMargins:UIEdgeInsetsMake(15, 0, 0, 0)];
         UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
         imageView.image = [UIImage imageNamed:categoriesImgs[indexPath.row-1]];
         
@@ -197,7 +215,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        return 210;
+        return 190;
     }
     CGRect deviceFrame = DEVICEFRAME;
     CGFloat height = deviceFrame.size.height;

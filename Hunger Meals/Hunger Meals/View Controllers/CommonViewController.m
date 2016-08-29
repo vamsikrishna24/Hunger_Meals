@@ -30,6 +30,9 @@
     [super viewWillAppear:animated];
     
     [self prepareNavigationBarUI];
+    
+    //status bar color
+    [self setStatusBarBackgroundColor:[UIColor colorWithRed:255/255.0f green:166/255.0f blue:38/255.0f alpha:1.0f]];
 }
 
 - (void) initializations{
@@ -86,6 +89,16 @@
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
+
+- (void)setStatusBarBackgroundColor:(UIColor *)color {
+    
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+        statusBar.backgroundColor = color;
+    }
+}
+
 #pragma -mark MBHUD ProgressView methods
 - (void) showActivityIndicator: (NSString *) title {
     // The hud will disable all input on the view
@@ -100,7 +113,7 @@
     
     // Register for HUD callbacks so we can remove it from the window at the right time
     hud.delegate = self;
-    [hud show:YES];
+    [hud showAnimated:YES];
     [self setActivityIndicatorIsShowing:YES];
 }
 
