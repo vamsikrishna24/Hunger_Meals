@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Constants.h"
+#import "HMConstants.h"
 
 @interface Fonts : NSObject
 

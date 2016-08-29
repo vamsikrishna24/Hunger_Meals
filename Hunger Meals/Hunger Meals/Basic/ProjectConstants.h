@@ -1,9 +1,8 @@
 //
-//  Constants.h
+//  ProjectConstants.h
 //  Hunger Meals
 //
 //  Created by SivajeeBattina on 7/15/16.
-//  Copyright © 2016 paradigm-creatives. All rights reserved.
 //
 #import "AppDelegate.h"
 #import "BTAlertController.h"

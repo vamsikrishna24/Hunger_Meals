@@ -1,0 +1,31 @@
+//
+//  Product.h
+//  Hunger Meals
+//
+//  Created by SivajeeBattina on 8/29/16.
+//  Copyright © 2016 paradigm-creatives. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "JSonModel.h"
+
+@interface Product : JSONModel
+{
+    NSString *name;
+    NSString *description;
+    NSString *type;
+    NSString *category;
+    NSString *label;
+    NSNumber *is_lunch;
+    NSNumber *is_dinner;
+}
+
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString<Optional> *description;
+@property (nonatomic, retain) NSString<Optional> *type;
+@property (nonatomic, retain) NSString<Optional> *category;
+@property (nonatomic, retain) NSString<Optional> *label;
+@property (nonatomic, retain) NSNumber<Optional> *is_lunch;
+@property (nonatomic, retain) NSNumber<Optional> *is_dinner;
+
+@end

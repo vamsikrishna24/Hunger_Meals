@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "UIAlertView+CustomAlertView.h"
 #import "UIActionSheet+Blocks.h"
-#import "Constants.h"
+#import "ProjectConstants.h"
 
 static UIAlertController *presentedViewController; // static means it is only accessible from the current file
 static UIAlertView *presentedAlertView;

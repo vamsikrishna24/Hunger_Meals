@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "MBProgressHUD.h"
-#import "Constants.h"
+#import "HMConstants.h"
+#import "ProjectConstants.h"
 #import "Fonts.h"
 #import "SWRevealViewController.h"
 

@@ -10,7 +10,8 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKLoginManager.h>
 #import "AppDelegate.h"
-#import "Constants.h"
+#import "HMConstants.h"
+#import "ProjectConstants.h"
 #import "HMHomePageViewController.h"
 
 

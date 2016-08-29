@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface QuickbitesViewController : UIViewController
+@interface QuickbitesViewController : CommonViewController
 
 @end

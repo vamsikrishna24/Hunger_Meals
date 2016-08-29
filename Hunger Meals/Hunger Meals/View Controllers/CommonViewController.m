@@ -92,7 +92,7 @@
     hud.opacity = 0.7f;
     
     if(title != nil) {
-        [hud setLabelText:title];
+        hud.label.text = title;
     }
     
     // Add HUD to screen

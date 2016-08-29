@@ -8,7 +8,8 @@
 
 #import "HMSignUpThirdViewController.h"
 #import "BTAlertController.h"
-#import "Constants.h"
+#import "HMConstants.h"
+#import "ProjectConstants.h"
 #import <QuartzCore/QuartzCore.h>
 #import <CoreData/CoreData.h>
 

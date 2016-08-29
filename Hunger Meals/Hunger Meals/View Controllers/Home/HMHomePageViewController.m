@@ -166,6 +166,7 @@
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:categoryCellIdentifier];
         }
+        
         UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
         imageView.image = [UIImage imageNamed:categoriesImgs[indexPath.row-1]];
         

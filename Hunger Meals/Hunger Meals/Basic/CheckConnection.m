@@ -1,14 +1,12 @@
 //
 //  CheckConnection.m
-//  SpotLife
 //
 //  Created by SivajeeBattina on 7/15/16.
-//  Copyright © 2016 paradigm-creatives. All rights reserved.
 //
 
 #import "CheckConnection.h"
 #import "BTAlertController.h"
-#import "Constants.h"
+#import "ProjectConstants.h"
 
 @class Reachability;
 @implementation CheckConnection

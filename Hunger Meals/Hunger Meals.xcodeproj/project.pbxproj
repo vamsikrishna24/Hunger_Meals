@@ -77,6 +77,12 @@
 		A88FB7641D5C8C15005E8667 /* Shop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A88FB7631D5C8C15005E8667 /* Shop.jpg */; };
 		A88FB7661D5C8C21005E8667 /* monthlyplan.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FB7651D5C8C21005E8667 /* monthlyplan.png */; };
 		A88FB7681D5C8C33005E8667 /* quickbites.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A88FB7671D5C8C33005E8667 /* quickbites.jpg */; };
+		A895EB3A1D73FFDC00623D92 /* SVConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A895EB331D73FFDC00623D92 /* SVConnection.m */; };
+		A895EB3B1D73FFDC00623D92 /* SVRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A895EB351D73FFDC00623D92 /* SVRequest.m */; };
+		A895EB3C1D73FFDC00623D92 /* SVService.m in Sources */ = {isa = PBXBuildFile; fileRef = A895EB371D73FFDC00623D92 /* SVService.m */; };
+		A895EB3D1D73FFDC00623D92 /* SVXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A895EB391D73FFDC00623D92 /* SVXMLParser.m */; };
+		A895EB411D74361D00623D92 /* HMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A895EB401D74361D00623D92 /* HMConstants.m */; };
+		A895EB441D7438F200623D92 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = A895EB431D7438F200623D92 /* Product.m */; };
 		E59C0A13D3221362D1E26CF4 /* libPods-Hunger MealsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19EC3CC5C4ABE0020D1E1725 /* libPods-Hunger MealsUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -197,7 +203,7 @@
 		A88444671D38D17B00887098 /* CheckConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckConnection.m; sourceTree = "<group>"; };
 		A884446A1D38D5D600887098 /* BTAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAlertController.h; sourceTree = "<group>"; };
 		A884446B1D38D5D600887098 /* BTAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAlertController.m; sourceTree = "<group>"; };
-		A884446D1D38D60500887098 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		A884446D1D38D60500887098 /* ProjectConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectConstants.h; sourceTree = "<group>"; };
 		A884446E1D38E68500887098 /* UIAlertView+CustomAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+CustomAlertView.h"; sourceTree = "<group>"; };
 		A884446F1D38E68500887098 /* UIAlertView+CustomAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+CustomAlertView.m"; sourceTree = "<group>"; };
 		A88444711D38E69900887098 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
@@ -217,6 +223,18 @@
 		A88FB7631D5C8C15005E8667 /* Shop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Shop.jpg; sourceTree = "<group>"; };
 		A88FB7651D5C8C21005E8667 /* monthlyplan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monthlyplan.png; sourceTree = "<group>"; };
 		A88FB7671D5C8C33005E8667 /* quickbites.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = quickbites.jpg; sourceTree = "<group>"; };
+		A895EB321D73FFDC00623D92 /* SVConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVConnection.h; sourceTree = "<group>"; };
+		A895EB331D73FFDC00623D92 /* SVConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVConnection.m; sourceTree = "<group>"; };
+		A895EB341D73FFDC00623D92 /* SVRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRequest.h; sourceTree = "<group>"; };
+		A895EB351D73FFDC00623D92 /* SVRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRequest.m; sourceTree = "<group>"; };
+		A895EB361D73FFDC00623D92 /* SVService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVService.h; sourceTree = "<group>"; };
+		A895EB371D73FFDC00623D92 /* SVService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVService.m; sourceTree = "<group>"; };
+		A895EB381D73FFDC00623D92 /* SVXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVXMLParser.h; sourceTree = "<group>"; };
+		A895EB391D73FFDC00623D92 /* SVXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVXMLParser.m; sourceTree = "<group>"; };
+		A895EB3F1D74361D00623D92 /* HMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMConstants.h; sourceTree = "<group>"; };
+		A895EB401D74361D00623D92 /* HMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMConstants.m; sourceTree = "<group>"; };
+		A895EB421D7438F200623D92 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		A895EB431D7438F200623D92 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		CCE95FC34802E6632ABFB214 /* Pods-Hunger MealsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger MealsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger MealsTests/Pods-Hunger MealsTests.release.xcconfig"; sourceTree = "<group>"; };
 		FD080AF85B2BF6D52AF96CEB /* libPods-Hunger Meals.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hunger Meals.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -372,9 +390,11 @@
 		9A0C43C41D2F868300A7BF6B /* Hunger Meals */ = {
 			isa = PBXGroup;
 			children = (
+				A895EB3E1D74010600623D92 /* Modal */,
 				2B65CC471D59774A00056649 /* Images1 */,
 				A88444621D38D0A200887098 /* Basic */,
 				A831CA7F1D37CEC100B96F4F /* Third Party Libraries */,
+				A895EB311D73FFDC00623D92 /* Data Services */,
 				A831CA731D37A71000B96F4F /* View Controllers */,
 				9A0C43C81D2F868300A7BF6B /* AppDelegate.h */,
 				9A0C43C91D2F868300A7BF6B /* AppDelegate.m */,
@@ -520,7 +540,9 @@
 				A88444671D38D17B00887098 /* CheckConnection.m */,
 				A88444631D38D0B700887098 /* Utility.h */,
 				A88444641D38D0B700887098 /* Utility.m */,
-				A884446D1D38D60500887098 /* Constants.h */,
+				A884446D1D38D60500887098 /* ProjectConstants.h */,
+				A895EB3F1D74361D00623D92 /* HMConstants.h */,
+				A895EB401D74361D00623D92 /* HMConstants.m */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -548,6 +570,30 @@
 				A88FB7611D5C8BB8005E8667 /* meals banner.jpg */,
 			);
 			name = "Home Page Images";
+			sourceTree = "<group>";
+		};
+		A895EB311D73FFDC00623D92 /* Data Services */ = {
+			isa = PBXGroup;
+			children = (
+				A895EB321D73FFDC00623D92 /* SVConnection.h */,
+				A895EB331D73FFDC00623D92 /* SVConnection.m */,
+				A895EB341D73FFDC00623D92 /* SVRequest.h */,
+				A895EB351D73FFDC00623D92 /* SVRequest.m */,
+				A895EB361D73FFDC00623D92 /* SVService.h */,
+				A895EB371D73FFDC00623D92 /* SVService.m */,
+				A895EB381D73FFDC00623D92 /* SVXMLParser.h */,
+				A895EB391D73FFDC00623D92 /* SVXMLParser.m */,
+			);
+			path = "Data Services";
+			sourceTree = "<group>";
+		};
+		A895EB3E1D74010600623D92 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				A895EB421D7438F200623D92 /* Product.h */,
+				A895EB431D7438F200623D92 /* Product.m */,
+			);
+			name = Modal;
 			sourceTree = "<group>";
 		};
 		C9EA1799E9412322A7160601 /* Pods */ = {
@@ -875,6 +921,7 @@
 				A88444731D38E69900887098 /* UIActionSheet+Blocks.m in Sources */,
 				2B7AC6FD1D47BB6F00D59BB3 /* HMDetailPageViewController.m in Sources */,
 				2B6ED9A41D6FD242000D672D /* MealsViewController.m in Sources */,
+				A895EB411D74361D00623D92 /* HMConstants.m in Sources */,
 				9A0C43CA1D2F868300A7BF6B /* AppDelegate.m in Sources */,
 				2BD458B91D6F4DEE00D48AE8 /* HMCartViewController.m in Sources */,
 				2B6ED9B21D6FD926000D672D /* AddonsViewController.m in Sources */,
@@ -882,7 +929,9 @@
 				2B45D6961D59128300C873ED /* LocationsTableViewCell.m in Sources */,
 				2B6ED9B51D6FE7A9000D672D /* MealsTableViewCell.m in Sources */,
 				2B6ED9AC1D6FD902000D672D /* SouthIndianViewController.m in Sources */,
+				A895EB3A1D73FFDC00623D92 /* SVConnection.m in Sources */,
 				2B9FECCD1D411C4500A21666 /* HMLandingViewController.m in Sources */,
+				A895EB441D7438F200623D92 /* Product.m in Sources */,
 				9A818F9A1D49EBCD00FB5565 /* HMCartCollectionReusableView.m in Sources */,
 				2B7AC7001D47C18400D59BB3 /* HMCartItemsViewController.m in Sources */,
 				2B62B47F1D67870B00B3C526 /* HMOTPVerificationViewController.m in Sources */,
@@ -893,6 +942,7 @@
 				9A818FA41D4A203200FB5565 /* PaymentPageViewController.m in Sources */,
 				2BC1DD161D5C90D900F00D7D /* HMLoginViewController.m in Sources */,
 				A88FB7461D5C5292005E8667 /* CommonViewController.m in Sources */,
+				A895EB3C1D73FFDC00623D92 /* SVService.m in Sources */,
 				A88444701D38E68500887098 /* UIAlertView+CustomAlertView.m in Sources */,
 				A88444651D38D0B700887098 /* Utility.m in Sources */,
 				A831CA881D37CEC100B96F4F /* MTGenericAlertView.m in Sources */,
@@ -900,7 +950,9 @@
 				A88F7FE31D6DA15600310F8F /* HMScrollingCell.m in Sources */,
 				2B45D6901D590E5F00C873ED /* HMLocationViewController.m in Sources */,
 				A88FB7491D5C5658005E8667 /* Fonts.m in Sources */,
+				A895EB3D1D73FFDC00623D92 /* SVXMLParser.m in Sources */,
 				2B6ED9A91D6FD8E3000D672D /* QuickbitesViewController.m in Sources */,
+				A895EB3B1D73FFDC00623D92 /* SVRequest.m in Sources */,
 				2BDF98701D70B4E8003D943C /* HMTabBarViewController.m in Sources */,
 				2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */,
 			);
