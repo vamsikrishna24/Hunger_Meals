@@ -35,9 +35,10 @@
     float statusHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
     float navigationHeight = self.navigationController.navigationBar.frame.size.height;
     
-    YSLContainerViewController *containerVC = [[YSLContainerViewController alloc]initWithControllers:@[quickBitesVC,southIndianVC,northIndianVC,addOnsVC]
-                                                                                        topBarHeight:statusHeight + navigationHeight
-                                                                                parentViewController:self];
+    CGRect frame = CGRectMake(0, 0, DEVICEFRAME.size.width, DEVICEFRAME.size.height);
+    
+    YSLContainerViewController *containerVC = [[YSLContainerViewController alloc] initWithControllers:@[quickBitesVC,southIndianVC,northIndianVC,addOnsVC] topBarHeight:statusHeight + navigationHeight withFrame:frame parentViewController:self];
+    
     containerVC.menuItemFont = [UIFont fontWithName:@"Futura-Medium" size:10];
     containerVC.menuItemTitleColor = [UIColor colorWithRed:253/255.0f green:165/255.0f blue:57/255.0f alpha:1.0f];
     containerVC.menuItemSelectedTitleColor = [UIColor colorWithRed:253/255.0f green:165/255.0f blue:57/255.0f alpha:1.0f];

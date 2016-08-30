@@ -61,7 +61,7 @@
     [floatingButton addTarget:self action:@selector(cartView) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:floatingButton];
     
-    [self showPopUpBoxAtStartUp];
+    //[self showPopUpBoxAtStartUp];
 
 
 }

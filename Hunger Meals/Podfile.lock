@@ -48,7 +48,6 @@ PODS:
   - SDWebImage/Core (3.8.1)
   - SWRevealViewController (2.3.0)
   - TwilioSDK (1.2.7)
-  - YSLContainerViewController (0.0.2)
 
 DEPENDENCIES:
   - FBSDKCoreKit
@@ -62,7 +61,6 @@ DEPENDENCIES:
   - SDWebImage (~> 3.7)
   - SWRevealViewController (~> 2.3.0)
   - TwilioSDK (~> 1.2)
-  - YSLContainerViewController
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -86,6 +84,5 @@ SPEC CHECKSUMS:
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   TwilioSDK: d3982acf6880ddf3ce57c4444e021a71c5f35653
-  YSLContainerViewController: f4ca045a6965333db46d8c793483b07abb3a0508
 
 COCOAPODS: 0.39.0

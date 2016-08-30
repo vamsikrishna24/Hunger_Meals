@@ -59,6 +59,10 @@
     static NSString *cellIdentifier = @"MealsCellIdentifier";
     MealsTableViewCell *cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
+    //Making selection style none
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell.contentView setLayoutMargins:UIEdgeInsetsMake(15, 10, 0, 10)];
+    
     NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
     cell.itemImageView.image = [UIImage imageNamed:imageName];
     cell.titleLabel.text = [NSString stringWithFormat:@"Hot and Spicy Food Item  %ld",(long)indexPath.row];
@@ -77,9 +81,9 @@
     NSIndexPath *selectedIndexPath  = [tableView indexPathForSelectedRow];
     
     if ([indexPath isEqual:selectedIndexPath] && !isCellExpanded) {
-        return 280;
+        return 300;
     }
-    return 210;
+    return 250;
 }
 
 

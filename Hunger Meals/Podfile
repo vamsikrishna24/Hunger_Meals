@@ -23,8 +23,6 @@ pod 'IQKeyboardManager', '~> 4.0'
 
 pod 'TwilioSDK', '~>1.2'
 
-pod 'YSLContainerViewController'
-
 end
 
 target 'Hunger MealsTests' do

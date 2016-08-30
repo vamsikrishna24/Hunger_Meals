@@ -84,6 +84,8 @@
 		A895EB3D1D73FFDC00623D92 /* SVXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A895EB391D73FFDC00623D92 /* SVXMLParser.m */; };
 		A895EB411D74361D00623D92 /* HMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A895EB401D74361D00623D92 /* HMConstants.m */; };
 		A895EB441D7438F200623D92 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = A895EB431D7438F200623D92 /* Product.m */; };
+		A89E92991D75736E00E981E6 /* YSLContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E92961D75736E00E981E6 /* YSLContainerViewController.m */; };
+		A89E929A1D75736E00E981E6 /* YSLScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E92981D75736E00E981E6 /* YSLScrollMenuView.m */; };
 		E59C0A13D3221362D1E26CF4 /* libPods-Hunger MealsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19EC3CC5C4ABE0020D1E1725 /* libPods-Hunger MealsUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -238,6 +240,10 @@
 		A895EB401D74361D00623D92 /* HMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMConstants.m; sourceTree = "<group>"; };
 		A895EB421D7438F200623D92 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		A895EB431D7438F200623D92 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		A89E92951D75736E00E981E6 /* YSLContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLContainerViewController.h; sourceTree = "<group>"; };
+		A89E92961D75736E00E981E6 /* YSLContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLContainerViewController.m; sourceTree = "<group>"; };
+		A89E92971D75736E00E981E6 /* YSLScrollMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLScrollMenuView.h; sourceTree = "<group>"; };
+		A89E92981D75736E00E981E6 /* YSLScrollMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLScrollMenuView.m; sourceTree = "<group>"; };
 		CCE95FC34802E6632ABFB214 /* Pods-Hunger MealsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger MealsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger MealsTests/Pods-Hunger MealsTests.release.xcconfig"; sourceTree = "<group>"; };
 		FD080AF85B2BF6D52AF96CEB /* libPods-Hunger Meals.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hunger Meals.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -513,6 +519,7 @@
 			children = (
 				A88444691D38D5C600887098 /* AlertController */,
 				A831CA801D37CEC100B96F4F /* MTGenericAlertView */,
+				A89E92941D75736E00E981E6 /* YSLContainerViewController */,
 			);
 			path = "Third Party Libraries";
 			sourceTree = "<group>";
@@ -599,6 +606,18 @@
 				A895EB431D7438F200623D92 /* Product.m */,
 			);
 			name = Modal;
+			sourceTree = "<group>";
+		};
+		A89E92941D75736E00E981E6 /* YSLContainerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A89E92951D75736E00E981E6 /* YSLContainerViewController.h */,
+				A89E92961D75736E00E981E6 /* YSLContainerViewController.m */,
+				A89E92971D75736E00E981E6 /* YSLScrollMenuView.h */,
+				A89E92981D75736E00E981E6 /* YSLScrollMenuView.m */,
+			);
+			name = YSLContainerViewController;
+			path = ../YSLContainerViewController;
 			sourceTree = "<group>";
 		};
 		C9EA1799E9412322A7160601 /* Pods */ = {
@@ -936,10 +955,12 @@
 				2B6ED9B51D6FE7A9000D672D /* MealsTableViewCell.m in Sources */,
 				2B6ED9AC1D6FD902000D672D /* SouthIndianViewController.m in Sources */,
 				A895EB3A1D73FFDC00623D92 /* SVConnection.m in Sources */,
+				A89E929A1D75736E00E981E6 /* YSLScrollMenuView.m in Sources */,
 				2B9FECCD1D411C4500A21666 /* HMLandingViewController.m in Sources */,
 				A895EB441D7438F200623D92 /* Product.m in Sources */,
 				9A818F9A1D49EBCD00FB5565 /* HMCartCollectionReusableView.m in Sources */,
 				2B7AC7001D47C18400D59BB3 /* HMCartItemsViewController.m in Sources */,
+				A89E92991D75736E00E981E6 /* YSLContainerViewController.m in Sources */,
 				2B62B47F1D67870B00B3C526 /* HMOTPVerificationViewController.m in Sources */,
 				9A0C43C71D2F868300A7BF6B /* main.m in Sources */,
 				2BD458BC1D6F4F8E00D48AE8 /* HMCartTableViewCell.m in Sources */,

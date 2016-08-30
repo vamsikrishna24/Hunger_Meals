@@ -27,6 +27,8 @@
 @property (nonatomic, strong) UIColor *itemSelectedTitleColor;
 @property (nonatomic, strong) UIColor *itemIndicatorColor;
 
+@property (nonatomic, strong) UILabel *itemView;
+
 - (void)setShadowView;
 
 - (void)setIndicatorViewFrameWithRatio:(CGFloat)ratio isNextItem:(BOOL)isNextItem toIndex:(NSInteger)toIndex;
@@ -34,4 +36,8 @@
 - (void)setItemTextColor:(UIColor *)itemTextColor
     seletedItemTextColor:(UIColor *)selectedItemTextColor
             currentIndex:(NSInteger)currentIndex;
+
+- (void)setItemTitleArray:(NSArray *)itemTitleArray;
+
+
 @end

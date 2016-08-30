@@ -7,8 +7,10 @@
 //
 
 #import "YSLScrollMenuView.h"
+#import "ProjectConstants.h"
+#import "Fonts.h"
 
-static const CGFloat kYSLScrollMenuViewWidth  = 90;
+static CGFloat kYSLScrollMenuViewWidth  = 90;
 static const CGFloat kYSLScrollMenuViewMargin = 10;
 static const CGFloat kYSLIndicatorHeight = 3;
 
@@ -26,12 +28,17 @@ static const CGFloat kYSLIndicatorHeight = 3;
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
+        if (IS_IPAD) {
+            kYSLScrollMenuViewWidth = 180;
+        }
+        
         // default
         _viewbackgroudColor = [UIColor whiteColor];
-        _itemfont = [UIFont systemFontOfSize:16];
-        _itemTitleColor = [UIColor colorWithRed:0.866667 green:0.866667 blue:0.866667 alpha:1.0];
-        _itemSelectedTitleColor = [UIColor colorWithRed:0.333333 green:0.333333 blue:0.333333 alpha:1.0];
-        _itemIndicatorColor = [UIColor colorWithRed:0.168627 green:0.498039 blue:0.839216 alpha:1.0];
+        _itemfont = [Fonts fontHelveticaWithSize:16];
+        _itemTitleColor = [UIColor colorWithRed:253/255.0f green:165/255.0f blue:57/255.0f alpha:1.0f];
+        _itemSelectedTitleColor = [UIColor colorWithRed:253/255.0f green:165/255.0f blue:57/255.0f alpha:1.0f];
+        _itemIndicatorColor = [UIColor colorWithRed:253/255.0f green:165/255.0f blue:57/255.0f alpha:1.0f];
         
         self.backgroundColor = _viewbackgroudColor;
         _scrollView = [[UIScrollView alloc]initWithFrame:self.bounds];
@@ -83,19 +90,19 @@ static const CGFloat kYSLIndicatorHeight = 3;
         
         for (int i = 0; i < itemTitleArray.count; i++) {
             CGRect frame = CGRectMake(0, 0, kYSLScrollMenuViewWidth, CGRectGetHeight(self.frame));
-            UILabel *itemView = [[UILabel alloc] initWithFrame:frame];
-            [self.scrollView addSubview:itemView];
-            itemView.tag = i;
-            itemView.text = itemTitleArray[i];
-            itemView.userInteractionEnabled = YES;
-            itemView.backgroundColor = [UIColor clearColor];
-            itemView.textAlignment = NSTextAlignmentCenter;
-            itemView.font = self.itemfont;
-            itemView.textColor = _itemTitleColor;
-            [views addObject:itemView];
+            self.itemView = [[UILabel alloc] initWithFrame:frame];
+            [self.scrollView addSubview:self.itemView];
+            self.itemView.tag = i;
+            self.itemView.text = itemTitleArray[i];
+            self.itemView.userInteractionEnabled = YES;
+            self.itemView.backgroundColor = [UIColor clearColor];
+            self.itemView.textAlignment = NSTextAlignmentCenter;
+            self.itemView.font = self.itemfont;
+            self.itemView.textColor = _itemTitleColor;
+            [views addObject:self.itemView];
             
             UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(itemViewTapAction:)];
-            [itemView addGestureRecognizer:tapGesture];
+            [self.itemView addGestureRecognizer:tapGesture];
         }
         
         self.itemViewArray = [NSArray arrayWithArray:views];
@@ -110,7 +117,8 @@ static const CGFloat kYSLIndicatorHeight = 3;
 
 #pragma mark -- public
 
-- (void)setIndicatorViewFrameWithRatio:(CGFloat)ratio isNextItem:(BOOL)isNextItem toIndex:(NSInteger)toIndex
+- (void)setIndicatorViewFrameWithRatio:(CGFloat)ratio
+                            isNextItem:(BOOL)isNextItem toIndex:(NSInteger)toIndex
 {
     CGFloat indicatorX = 0.0;
     if (isNextItem) {
@@ -136,7 +144,7 @@ static const CGFloat kYSLIndicatorHeight = 3;
     for (int i = 0; i < self.itemViewArray.count; i++) {
         UILabel *label = self.itemViewArray[i];
         if (i == currentIndex) {
-            label.alpha = 0.0;
+            //label.alpha = 0.0;
             [UIView animateWithDuration:0.75
                                   delay:0.0
                                 options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionAllowUserInteraction
@@ -157,7 +165,7 @@ static const CGFloat kYSLIndicatorHeight = 3;
 - (void)setShadowView
 {
     UIView *view = [[UIView alloc]init];
-    view.frame = CGRectMake(0, self.frame.size.height - 0.5, CGRectGetWidth(self.frame), 0.5);
+    view.frame = CGRectMake(0, self.frame.size.height - 0.7, CGRectGetWidth(self.frame), 0.7);
     view.backgroundColor = [UIColor lightGrayColor];
     [self addSubview:view];
 }
