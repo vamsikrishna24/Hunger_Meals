@@ -11,6 +11,7 @@
 #import "SlideMenuViewController.h"
 #import "HMScrollingCell.h"
 #import "HMCartViewController.h"
+#import "HMContentViewController.h"
 
 
 @interface HMHomePageViewController (){
@@ -229,10 +230,25 @@
 
 - (IBAction)locationButtonTapped:(id)sender {
     
-//    HMNotificationsViewController *notificationVC = [[HMNotificationsViewController alloc] init];
-//    [self presentViewController:notificationVC animated:YES completion:nil];
+        HMContentViewController *contentVC = [[HMContentViewController alloc] initWithNibName:@"ContentViewController" bundle:nil]; // 12
+        contentVC.modalPresentationStyle = UIModalPresentationPopover; // 13
+        UIPopoverPresentationController *popPC = contentVC.popoverPresentationController; // 14
+        //contentVC.popoverPresentationController.sourceRect = self.locationBarButtonItem;.frame // 15
+        contentVC.popoverPresentationController.sourceView = (UIView *)self.locationBarButtonItem; // 16
+        popPC.permittedArrowDirections = UIPopoverArrowDirectionAny; // 17
+        popPC.delegate = self; //18
+        [self presentViewController:contentVC animated:YES completion:nil]; // 19
+    }
+
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller traitCollection:(UITraitCollection *)traitCollection {
+        return UIModalPresentationPopover; // 20
+    }
     
-}
+- (UIViewController *)presentationController:(UIPresentationController *)controller viewControllerForAdaptivePresentationStyle:(UIModalPresentationStyle)style {
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller.presentedViewController];
+        return navController; // 21
+    }
+
 
 - (IBAction)notificationButtonPressed:(id)sender {
 }
