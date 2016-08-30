@@ -229,11 +229,11 @@
 }
 
 - (IBAction)locationButtonTapped:(id)sender {
-    
-        HMContentViewController *contentVC = [[HMContentViewController alloc] initWithNibName:@"ContentViewController" bundle:nil]; // 12
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    HMContentViewController *contentVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"ContentViewController"];
         contentVC.modalPresentationStyle = UIModalPresentationPopover; // 13
         UIPopoverPresentationController *popPC = contentVC.popoverPresentationController; // 14
-        //contentVC.popoverPresentationController.sourceRect = self.locationBarButtonItem;.frame // 15
+    contentVC.popoverPresentationController.sourceRect = CGRectMake(self.view.frame.size.width - 50, 0, 20, 20);// 15
         contentVC.popoverPresentationController.sourceView = (UIView *)self.locationBarButtonItem; // 16
         popPC.permittedArrowDirections = UIPopoverArrowDirectionAny; // 17
         popPC.delegate = self; //18

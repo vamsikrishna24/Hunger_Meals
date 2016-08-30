@@ -12,10 +12,12 @@
 
 @interface QuickbitesViewController (){
     NSMutableArray *productObjectsArray;
+    MealsTableViewCell *cell;
     BOOL isCellExpanded;
 }
 
 @property(nonatomic, strong) NSMutableArray *dishImagesArray;
+
 
 @end
 
@@ -57,7 +59,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"MealsCellIdentifier";
-    MealsTableViewCell *cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     //Making selection style none
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -85,6 +87,9 @@
     }
     return 250;
 }
-
+//- (IBAction)addToCartAction:(id)sender {
+//    cell.addToCartButton.hidden = YES;
+//    cell.stepperView.hidden = NO;
+//}
 
 @end

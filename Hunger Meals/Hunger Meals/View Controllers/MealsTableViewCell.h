@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIView *stepperView;
 @property (weak, nonatomic) IBOutlet UIButton *decrementButton;
 @property (weak, nonatomic) IBOutlet UIButton *incrementButton;
-@property (weak, nonatomic) IBOutlet UILabel *countButton;
-- (IBAction)addToCartAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *countLabel;
 
 @end

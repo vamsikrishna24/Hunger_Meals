@@ -21,8 +21,5 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)addToCartAction:(id)sender {
-    self.addToCartButton.hidden = YES;
-    self.stepperView.hidden = NO;
-}
+
 @end
