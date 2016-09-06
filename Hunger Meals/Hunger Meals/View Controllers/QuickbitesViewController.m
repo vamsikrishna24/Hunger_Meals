@@ -92,4 +92,32 @@
 //    cell.stepperView.hidden = NO;
 //}
 
+- (IBAction)nonVegetarianAction:(id)sender {
+    NSString *tem = self.nonVegetarianButtonOutlet.titleLabel.text;
+    
+    if (tem != nil && ![tem isEqualToString:@""]) {
+        NSMutableAttributedString *temString=[[NSMutableAttributedString alloc]initWithString:tem];
+        [temString addAttribute:NSUnderlineStyleAttributeName
+                          value:[NSNumber numberWithInt:1]
+                          range:(NSRange){0,[temString length]}];
+        
+        self.nonVegetarianButtonOutlet.titleLabel.attributedText = temString;
+   }
+
+}
+
+- (IBAction)vegetarianAction:(id)sender {
+    NSString *tem = self.vegetarianButtonOutlet.titleLabel.text;
+    
+    if (tem != nil && ![tem isEqualToString:@""]) {
+        NSMutableAttributedString *temString=[[NSMutableAttributedString alloc]initWithString:tem];
+        [temString addAttribute:NSUnderlineStyleAttributeName
+                          value:[NSNumber numberWithInt:1]
+                          range:(NSRange){0,[temString length]}];
+        
+        self.vegetarianButtonOutlet.titleLabel.attributedText = temString;
+        self.nonVegetarianButtonOutlet.selected = NO;
+
+    }
+}
 @end

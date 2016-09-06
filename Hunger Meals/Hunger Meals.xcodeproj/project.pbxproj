@@ -32,6 +32,8 @@
 		2B89E5041D5BBF640022EC67 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B89E5031D5BBF640022EC67 /* CoreLocation.framework */; };
 		2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */; };
 		2B9FECCD1D411C4500A21666 /* HMLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FECCC1D411C4500A21666 /* HMLandingViewController.m */; };
+		2BBED9011D7DDD2E00D3697D /* HMSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBED9001D7DDD2E00D3697D /* HMSettingsViewController.m */; };
+		2BBED9041D7DEEF800D3697D /* HMSettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBED9031D7DEEF800D3697D /* HMSettingsTableViewCell.m */; };
 		2BC1DD0D1D5C651200F00D7D /* Smaple_Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BC1DD0C1D5C651200F00D7D /* Smaple_Logo.jpg */; };
 		2BC1DD0F1D5C65E900F00D7D /* meals_ban.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BC1DD0E1D5C65E900F00D7D /* meals_ban.jpg */; };
 		2BC1DD111D5C679F00F00D7D /* righticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC1DD101D5C679F00F00D7D /* righticon.png */; };
@@ -152,6 +154,10 @@
 		2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSignUpViewController.m; sourceTree = "<group>"; };
 		2B9FECCB1D411C4500A21666 /* HMLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLandingViewController.h; sourceTree = "<group>"; };
 		2B9FECCC1D411C4500A21666 /* HMLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLandingViewController.m; sourceTree = "<group>"; };
+		2BBED8FF1D7DDD2E00D3697D /* HMSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSettingsViewController.h; sourceTree = "<group>"; };
+		2BBED9001D7DDD2E00D3697D /* HMSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSettingsViewController.m; sourceTree = "<group>"; };
+		2BBED9021D7DEEF800D3697D /* HMSettingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSettingsTableViewCell.h; sourceTree = "<group>"; };
+		2BBED9031D7DEEF800D3697D /* HMSettingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSettingsTableViewCell.m; sourceTree = "<group>"; };
 		2BC1DD0C1D5C651200F00D7D /* Smaple_Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Smaple_Logo.jpg; sourceTree = "<group>"; };
 		2BC1DD0E1D5C65E900F00D7D /* meals_ban.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meals_ban.jpg; sourceTree = "<group>"; };
 		2BC1DD101D5C679F00F00D7D /* righticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = righticon.png; sourceTree = "<group>"; };
@@ -291,12 +297,16 @@
 		2B45D6931D59122E00C873ED /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				2B6ED9B31D6FE7A9000D672D /* MealsTableViewCell.h */,
+				2B6ED9B41D6FE7A9000D672D /* MealsTableViewCell.m */,
 				2B45D6941D59128300C873ED /* LocationsTableViewCell.h */,
 				2B45D6951D59128300C873ED /* LocationsTableViewCell.m */,
 				A88F7FE11D6DA15600310F8F /* HMScrollingCell.h */,
 				A88F7FE21D6DA15600310F8F /* HMScrollingCell.m */,
 				2BD458BA1D6F4F8E00D48AE8 /* HMCartTableViewCell.h */,
 				2BD458BB1D6F4F8E00D48AE8 /* HMCartTableViewCell.m */,
+				2BBED9021D7DEEF800D3697D /* HMSettingsTableViewCell.h */,
+				2BBED9031D7DEEF800D3697D /* HMSettingsTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -334,8 +344,8 @@
 				2B6ED9AE1D6FD915000D672D /* NorthIndianViewController.m */,
 				2B6ED9B01D6FD926000D672D /* AddonsViewController.h */,
 				2B6ED9B11D6FD926000D672D /* AddonsViewController.m */,
-				2B6ED9B31D6FE7A9000D672D /* MealsTableViewCell.h */,
-				2B6ED9B41D6FE7A9000D672D /* MealsTableViewCell.m */,
+				2BBED8FF1D7DDD2E00D3697D /* HMSettingsViewController.h */,
+				2BBED9001D7DDD2E00D3697D /* HMSettingsViewController.m */,
 			);
 			name = Meals;
 			sourceTree = "<group>";
@@ -949,7 +959,9 @@
 				A895EB411D74361D00623D92 /* HMConstants.m in Sources */,
 				9A0C43CA1D2F868300A7BF6B /* AppDelegate.m in Sources */,
 				2BD458B91D6F4DEE00D48AE8 /* HMCartViewController.m in Sources */,
+				2BBED9041D7DEEF800D3697D /* HMSettingsTableViewCell.m in Sources */,
 				2B6ED9B21D6FD926000D672D /* AddonsViewController.m in Sources */,
+				2BBED9011D7DDD2E00D3697D /* HMSettingsViewController.m in Sources */,
 				2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */,
 				2B45D6961D59128300C873ED /* LocationsTableViewCell.m in Sources */,
 				2B6ED9B51D6FE7A9000D672D /* MealsTableViewCell.m in Sources */,

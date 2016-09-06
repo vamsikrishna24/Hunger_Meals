@@ -14,6 +14,7 @@
 
 #pragma -mark API Calls
 extern NSString * const kProductsDataURL;
+extern NSString * const kCreateUserDataURL;
 
 #pragma -mark Other constants
 extern NSString * const kEmptyString;

@@ -10,5 +10,10 @@
 #import "CommonViewController.h"
 
 @interface QuickbitesViewController : CommonViewController
+- (IBAction)nonVegetarianAction:(id)sender;
 
+- (IBAction)vegetarianAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *nonVegetarianButtonOutlet;
+
+@property (weak, nonatomic) IBOutlet UIButton *vegetarianButtonOutlet;
 @end

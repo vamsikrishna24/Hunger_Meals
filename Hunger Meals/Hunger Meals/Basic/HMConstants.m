@@ -13,6 +13,8 @@
 #pragma -mark API Calls
 
 NSString * const kProductsDataURL = @"%@/products";
+NSString * const kCreateUserDataURL = @"%@/user";
+
 
 #pragma -mark Other constants
 NSString * const kEmptyString = @"";

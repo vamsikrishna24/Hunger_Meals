@@ -66,7 +66,7 @@
 
 - (void)getProductsDataUsingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
     
-    NSString *url = [NSString stringWithFormat:kProductsDataURL, HTTP_DATA_HOST];
+    NSString *url = [NSString stringWithFormat:kCreateUserDataURL, HTTP_DATA_HOST];
     
     [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
         if (response.statusCode == 200 && result!=nil) {
@@ -81,6 +81,25 @@
     }];
 }
 
+#pragma Create User
+
+- (void)createUser:(NSDictionary *)params usingBlock :(void(^)(NSMutableArray *resultArray))resultBlock{
+    
+    NSString *url = [NSString stringWithFormat:kProductsDataURL, HTTP_DATA_HOST];
+    
+    [self sendRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            resultBlock([self parseProductsData:dictResult]);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+}
 #pragma mark -- Parsing Methods
 
 - (NSMutableArray *)parseProductsData:(NSMutableArray *)array {
