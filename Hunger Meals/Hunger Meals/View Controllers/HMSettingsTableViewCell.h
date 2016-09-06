@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface HMSettingsTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *settingsImageView;
 @property (weak, nonatomic) IBOutlet UILabel *SettingsRowLabel;
 @end

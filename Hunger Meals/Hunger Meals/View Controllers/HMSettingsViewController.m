@@ -46,14 +46,24 @@
     
     if(indexPath.row == 0){
         cell.SettingsRowLabel.text = @"Manage Addresses";
+        cell.settingsImageView.image = [UIImage imageNamed:@"Home"];
+        
     }else if(indexPath.row == 1){
         cell.SettingsRowLabel.text = @"Payments";
+        cell.settingsImageView.image = [UIImage imageNamed:@"Payment_Card"];
+
     }else if(indexPath.row == 2){
         cell.SettingsRowLabel.text = @"Offers";
+        cell.settingsImageView.image = [UIImage imageNamed:@"Offers"];
+
     }else if(indexPath.row == 3) {
         cell.SettingsRowLabel.text = @"Invite Friends";
+        cell.settingsImageView.image = [UIImage imageNamed:@"Invite_Friends"];
+
     }else if(indexPath.row == 4) {
         cell.SettingsRowLabel.text = @"Help";
+        cell.settingsImageView.image = [UIImage imageNamed:@"Help"];
+
     }
     return cell;
 }
