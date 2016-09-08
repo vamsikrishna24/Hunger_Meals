@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B252C9E1D808F2F00CED084 /* HMAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B252C9D1D808F2F00CED084 /* HMAddressViewController.m */; };
+		2B252CA11D8097C500CED084 /* HMAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B252CA01D8097C500CED084 /* HMAddressTableViewCell.m */; };
 		2B41F7981D74B78E0067F0C4 /* HMContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B41F7971D74B78E0067F0C4 /* HMContentViewController.m */; };
 		2B45D6751D58DDA100C873ED /* BulletPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D6741D58DDA100C873ED /* BulletPoint.png */; };
 		2B45D6851D59019400C873ED /* Location_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D6841D59019400C873ED /* Location_Icon.png */; };
@@ -112,6 +114,10 @@
 		037160947699A40F92097D7E /* Pods-Hunger MealsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger MealsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger MealsUITests/Pods-Hunger MealsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0F05F9F159C8351E75A1ACC2 /* libPods-Hunger MealsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hunger MealsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EC3CC5C4ABE0020D1E1725 /* libPods-Hunger MealsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hunger MealsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B252C9C1D808F2F00CED084 /* HMAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAddressViewController.h; sourceTree = "<group>"; };
+		2B252C9D1D808F2F00CED084 /* HMAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAddressViewController.m; sourceTree = "<group>"; };
+		2B252C9F1D8097C500CED084 /* HMAddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAddressTableViewCell.h; sourceTree = "<group>"; };
+		2B252CA01D8097C500CED084 /* HMAddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAddressTableViewCell.m; sourceTree = "<group>"; };
 		2B41F7961D74B78E0067F0C4 /* HMContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMContentViewController.h; sourceTree = "<group>"; };
 		2B41F7971D74B78E0067F0C4 /* HMContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMContentViewController.m; sourceTree = "<group>"; };
 		2B45D6741D58DDA100C873ED /* BulletPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BulletPoint.png; path = ../BulletPoint.png; sourceTree = "<group>"; };
@@ -307,6 +313,8 @@
 				2BD458BB1D6F4F8E00D48AE8 /* HMCartTableViewCell.m */,
 				2BBED9021D7DEEF800D3697D /* HMSettingsTableViewCell.h */,
 				2BBED9031D7DEEF800D3697D /* HMSettingsTableViewCell.m */,
+				2B252C9F1D8097C500CED084 /* HMAddressTableViewCell.h */,
+				2B252CA01D8097C500CED084 /* HMAddressTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -346,6 +354,8 @@
 				2B6ED9B11D6FD926000D672D /* AddonsViewController.m */,
 				2BBED8FF1D7DDD2E00D3697D /* HMSettingsViewController.h */,
 				2BBED9001D7DDD2E00D3697D /* HMSettingsViewController.m */,
+				2B252C9C1D808F2F00CED084 /* HMAddressViewController.h */,
+				2B252C9D1D808F2F00CED084 /* HMAddressViewController.m */,
 			);
 			name = Meals;
 			sourceTree = "<group>";
@@ -961,6 +971,7 @@
 				2BD458B91D6F4DEE00D48AE8 /* HMCartViewController.m in Sources */,
 				2BBED9041D7DEEF800D3697D /* HMSettingsTableViewCell.m in Sources */,
 				2B6ED9B21D6FD926000D672D /* AddonsViewController.m in Sources */,
+				2B252CA11D8097C500CED084 /* HMAddressTableViewCell.m in Sources */,
 				2BBED9011D7DDD2E00D3697D /* HMSettingsViewController.m in Sources */,
 				2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */,
 				2B45D6961D59128300C873ED /* LocationsTableViewCell.m in Sources */,
@@ -983,6 +994,7 @@
 				A88FB7461D5C5292005E8667 /* CommonViewController.m in Sources */,
 				A895EB3C1D73FFDC00623D92 /* SVService.m in Sources */,
 				A88444701D38E68500887098 /* UIAlertView+CustomAlertView.m in Sources */,
+				2B252C9E1D808F2F00CED084 /* HMAddressViewController.m in Sources */,
 				A88444651D38D0B700887098 /* Utility.m in Sources */,
 				A831CA881D37CEC100B96F4F /* MTGenericAlertView.m in Sources */,
 				A88444681D38D17B00887098 /* CheckConnection.m in Sources */,

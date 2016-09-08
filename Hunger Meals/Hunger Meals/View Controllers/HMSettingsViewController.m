@@ -8,7 +8,7 @@
 
 #import "HMSettingsViewController.h"
 #import "HMSettingsTableViewCell.h"
-
+#import "HMAddressViewController.h"
 @interface HMSettingsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *settingsTableView;
 
@@ -48,6 +48,7 @@
         cell.SettingsRowLabel.text = @"Manage Addresses";
         cell.settingsImageView.image = [UIImage imageNamed:@"Home"];
         
+        
     }else if(indexPath.row == 1){
         cell.SettingsRowLabel.text = @"Payments";
         cell.settingsImageView.image = [UIImage imageNamed:@"Payment_Card"];
@@ -71,9 +72,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-    
-        
-        
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+         HMAddressViewController *addressVC= [mainStoryBoard instantiateViewControllerWithIdentifier:@"AddressViewController"];
+        [self.navigationController pushViewController:addressVC animated:YES];
     }
 }
 
