@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface HMCartViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface HMCartViewController : CommonViewController<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)IBOutlet UITableView *cartTableView;
 @end

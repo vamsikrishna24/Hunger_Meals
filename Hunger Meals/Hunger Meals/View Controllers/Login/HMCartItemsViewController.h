@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "HMCartCollectionReusableView.h"
+#import "CommonViewController.h"
 
-@interface HMCartItemsViewController : UIViewController
+@interface HMCartItemsViewController : CommonViewController
 @property (strong,nonatomic)IBOutlet UICollectionView *collectionView;
 @property (strong,nonatomic) NSMutableArray *dishImagesArray;
 
