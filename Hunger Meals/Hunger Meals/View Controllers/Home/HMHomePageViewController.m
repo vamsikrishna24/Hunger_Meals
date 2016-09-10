@@ -229,19 +229,25 @@
 }
 
 - (IBAction)locationButtonTapped:(id)sender {
+    
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     HMContentViewController *contentVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"ContentViewController"];
-        contentVC.modalPresentationStyle = UIModalPresentationPopover; // 13
-        UIPopoverPresentationController *popPC = contentVC.popoverPresentationController; // 14
-    contentVC.popoverPresentationController.sourceRect = CGRectMake(self.view.frame.size.width - 50, 0, 20, 20);// 15
-        contentVC.popoverPresentationController.sourceView = (UIView *)self.locationBarButtonItem; // 16
-        popPC.permittedArrowDirections = UIPopoverArrowDirectionAny; // 17
-        popPC.delegate = self; //18
-        [self presentViewController:contentVC animated:YES completion:nil]; // 19
+        contentVC.view.backgroundColor = [UIColor clearColor];
+        contentVC.modalPresentationStyle = UIModalPresentationPopover;
+        UIPopoverPresentationController *popPC = contentVC.popoverPresentationController;
+        popPC.permittedArrowDirections = UIPopoverArrowDirectionAny;
+        popPC.delegate = self;
+        popPC.barButtonItem = sender;
+    CGSize finalDesiredSize = CGSizeMake(320, 200);
+    CGSize tempSize = CGSizeMake(finalDesiredSize.width, finalDesiredSize.height + 1);
+    [contentVC setPreferredContentSize:tempSize];
+    [contentVC setPreferredContentSize:finalDesiredSize];
+
+        [self presentViewController:contentVC animated:YES completion:nil];
     }
 
 - (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller traitCollection:(UITraitCollection *)traitCollection {
-        return UIModalPresentationPopover; // 20
+        return UIModalPresentationNone; // 20
     }
     
 - (UIViewController *)presentationController:(UIPresentationController *)controller viewControllerForAdaptivePresentationStyle:(UIModalPresentationStyle)style {
