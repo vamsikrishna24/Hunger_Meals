@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HMContentViewController : UITabBarController
+@interface HMContentViewController : UIViewController
 
 @end

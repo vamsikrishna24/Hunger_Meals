@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface HMSettingsViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface HMSettingsViewController : CommonViewController<UITableViewDelegate,UITableViewDataSource>
 
 @end
