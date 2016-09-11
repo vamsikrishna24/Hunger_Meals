@@ -29,7 +29,6 @@
     numRows = 2;
     //[self.addressTableView setTableFooterView:self.tableFooterView];
     [self.addressTableView setBackgroundColor:[UIColor clearColor]];
-    self.addressTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     // Do any additional setup after loading the view.
 }

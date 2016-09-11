@@ -59,7 +59,7 @@
     floatingButton.layer.cornerRadius = floatingButton.frame.size.width/2.0f;
     floatingButton.clipsToBounds = YES;
     [floatingButton addTarget:self action:@selector(cartView) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:floatingButton];
+  //  [self.view addSubview:floatingButton];
     
     //[self showPopUpBoxAtStartUp];
 
