@@ -18,5 +18,6 @@
 - (IBAction)addAddressAction:(id)sender;
 
 - (IBAction)skipButtonAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *addressTextView;
 
 @end

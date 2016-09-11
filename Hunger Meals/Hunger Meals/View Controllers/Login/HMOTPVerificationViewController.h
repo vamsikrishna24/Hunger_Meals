@@ -10,5 +10,6 @@
 
 @interface HMOTPVerificationViewController : UIViewController
 @property NSUInteger pageIndex;
+@property (weak, nonatomic) IBOutlet UITextField *otpTextField;
 
 @end

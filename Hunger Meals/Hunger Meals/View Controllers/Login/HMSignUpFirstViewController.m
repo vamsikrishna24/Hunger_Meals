@@ -20,6 +20,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIColor *color = [UIColor colorWithRed:237.0f/255.0f green:140.0f/255.0f blue:37.0f/255.0f alpha:0.5];
+    self.emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: color}];
+    [self.emailTextField setValue:[UIFont fontWithName: @"American Typewriter Bold" size: 10] forKeyPath:@"_placeholderLabel.font"];
+    self.paswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: color}];
+    self.phoneNumberTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Phone number" attributes:@{NSForegroundColorAttributeName: color}];
+    CALayer *bottomBorder = [CALayer layer];
+    bottomBorder.frame = CGRectMake(0.0f, self.paswordTextField.frame.size.height - 1, self.paswordTextField.frame.size.width, 1.0f);
+    bottomBorder.backgroundColor = [UIColor colorWithRed:159.0f/255.0f green:159.0f/255.0f blue:159.0f/255.0f alpha:0.5].CGColor;
+    [self.paswordTextField.layer addSublayer:bottomBorder];
+    CALayer *bottomBorder1 = [CALayer layer];
+    bottomBorder1.frame = CGRectMake(0.0f, self.paswordTextField.frame.size.height - 1, self.paswordTextField.frame.size.width, 1.0f);
+    bottomBorder1.backgroundColor = [UIColor colorWithRed:159.0f/255.0f green:159.0f/255.0f blue:159.0f/255.0f alpha:0.5].CGColor;
+
+    [self.emailTextField.layer addSublayer:bottomBorder1];
+    CALayer *bottomBorder2 = [CALayer layer];
+    bottomBorder2.frame = CGRectMake(0.0f, self.paswordTextField.frame.size.height - 1, self.paswordTextField.frame.size.width, 1.0f);
+    bottomBorder2.backgroundColor = [UIColor colorWithRed:159.0f/255.0f green:159.0f/255.0f blue:159.0f/255.0f alpha:0.5].CGColor;
+
+    [self.phoneNumberTextField.layer addSublayer:bottomBorder2];
+
+    
+
     // Do any additional setup after loading the view.
 }
 
