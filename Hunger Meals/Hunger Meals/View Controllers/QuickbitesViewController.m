@@ -29,7 +29,7 @@
     productObjectsArray = [[NSMutableArray alloc] init];
     self.dishImagesArray = [[NSMutableArray alloc]initWithObjects:@"dish1",@"dish2",@"dish3",@"dish4",@"dish5",@"dish6",@"dish7",@"dish8",@"dish9",@"dish10",@"dish11",@"dish12",@"dish13",@"dish14",@"dish15",@"dish16", nil];
     [self fetchAndLoadData];
-    [self.quickBitesTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+   // [self.quickBitesTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
 
 }
 
@@ -66,7 +66,7 @@
     
     //Making selection style none
     //cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [cell.contentView setLayoutMargins:UIEdgeInsetsMake(15, 10, 0, 10)];
+    //[cell.contentView setLayoutMargins:UIEdgeInsetsMake(15, 0, 0, 0)];
     
     NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
     cell.itemImageView.image = [UIImage imageNamed:imageName];
