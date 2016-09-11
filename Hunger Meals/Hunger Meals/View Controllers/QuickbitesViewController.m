@@ -17,6 +17,7 @@
 }
 
 @property(nonatomic, strong) NSMutableArray *dishImagesArray;
+@property (weak, nonatomic) IBOutlet UITableView *quickBitesTableView;
 
 
 @end
@@ -28,6 +29,8 @@
     productObjectsArray = [[NSMutableArray alloc] init];
     self.dishImagesArray = [[NSMutableArray alloc]initWithObjects:@"dish1",@"dish2",@"dish3",@"dish4",@"dish5",@"dish6",@"dish7",@"dish8",@"dish9",@"dish10",@"dish11",@"dish12",@"dish13",@"dish14",@"dish15",@"dish16", nil];
     [self fetchAndLoadData];
+    [self.quickBitesTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -62,7 +65,7 @@
     cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     //Making selection style none
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    //cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell.contentView setLayoutMargins:UIEdgeInsetsMake(15, 10, 0, 10)];
     
     NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];

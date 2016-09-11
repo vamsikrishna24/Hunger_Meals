@@ -59,7 +59,7 @@
     floatingButton.layer.cornerRadius = floatingButton.frame.size.width/2.0f;
     floatingButton.clipsToBounds = YES;
     [floatingButton addTarget:self action:@selector(cartView) forControlEvents:UIControlEventTouchUpInside];
-  //  [self.view addSubview:floatingButton];
+   // [self.view addSubview:floatingButton];
     
     //[self showPopUpBoxAtStartUp];
 
@@ -139,9 +139,9 @@
         
         scrollingCell.pageControl.numberOfPages = [scrollingImgs count];
         [scrollingCell.pageControl setTag:indexPath.row];
-        scrollingCell.pageControl.pageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DotInactive"]];
+       // scrollingCell.pageControl.pageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DotInactive"]];
         
-        scrollingCell.pageControl.currentPageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DotActive"]];
+        //scrollingCell.pageControl.currentPageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DotActive"]];
         
         NSArray *cellGallary = scrollingImgs;
         

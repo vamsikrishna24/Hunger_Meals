@@ -43,7 +43,7 @@
     containerVC.menuItemTitleColor = [UIColor colorWithRed:253/255.0f green:165/255.0f blue:57/255.0f alpha:1.0f];
     containerVC.menuItemSelectedTitleColor = [UIColor colorWithRed:253/255.0f green:165/255.0f blue:57/255.0f alpha:1.0f];
     containerVC.menuIndicatorColor = [UIColor colorWithRed:253/255.0f green:165/255.0f blue:57/255.0f alpha:1.0f];
-    containerVC.menuBackGroudColor = [UIColor colorWithRed:65.0/255.0f green:65.0/255.0f blue:65.0/255.0f alpha:1.0f];
+    containerVC.menuBackGroudColor = [UIColor colorWithRed:238.0/255.0f green:238.0/255.0f blue:238.0/255.0f alpha:1.0f];
     
     [self.view addSubview:containerVC.view];
     

@@ -47,33 +47,33 @@
 //    navigationTitleLabel.font = [Fonts fontHelveticaWithSize:19.0];
 //    self.navigationItem.titleView = navigationTitleLabel;
 
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:37.0/255.0f green:37.0/255.0f blue:37.0/255.0f alpha:1.0f];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:238.0/255.0f green:238.0/255.0f blue:238.0/255.0f alpha:1.0f];
 
     
     if (IDIOM == IPAD) {
          self.navigationController.navigationBar.titleTextAttributes = @{
-                                                                NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                                NSForegroundColorAttributeName: [UIColor orangeColor],
                                                                 NSFontAttributeName: [Fonts fontHelveticaWithSize:26.0]
                                                                 };
     }
     else{
         self.navigationController.navigationBar.titleTextAttributes =
         @{
-                                                                NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                                NSForegroundColorAttributeName: [UIColor orangeColor],
                                                                 NSFontAttributeName: [Fonts fontHelveticaWithSize:19.0]
                                                                 };
     }
     
 
     if ([NSStringFromClass([self class]) isEqualToString:@"HMHomePageViewController"]) {
-        self.navigationItem.title = @"Banglore";
+        self.navigationItem.title = @"Bangalore";
     
     }else if ([NSStringFromClass([self class]) isEqualToString:@"HMSignUpViewController"]) {
         self.navigationItem.title = @"Sign Up";
 
     }
     else if ([NSStringFromClass([self class]) isEqualToString:@"MealsViewController"]) {
-        self.navigationItem.title = @"Banglore";
+        self.navigationItem.title = @"Bangalore";
     }
     
 }
