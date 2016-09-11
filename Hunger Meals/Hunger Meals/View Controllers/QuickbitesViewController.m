@@ -70,7 +70,7 @@
     
     NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
     cell.itemImageView.image = [UIImage imageNamed:imageName];
-    cell.titleLabel.text = [NSString stringWithFormat:@"Hot and Spicy Food Item  %ld",(long)indexPath.row];
+    cell.titleLabel.text = [NSString stringWithFormat:@"Veg Manchurian  %ld",(long)indexPath.row];
     return cell;
 }
 
@@ -86,9 +86,9 @@
     NSIndexPath *selectedIndexPath  = [tableView indexPathForSelectedRow];
     
     if ([indexPath isEqual:selectedIndexPath] && !isCellExpanded) {
-        return 300;
+        return 415;
     }
-    return 250;
+    return 330;
 }
 //- (IBAction)addToCartAction:(id)sender {
 //    cell.addToCartButton.hidden = YES;
