@@ -14,6 +14,7 @@
 
 NSString * const kProductsDataURL = @"%@/products";
 NSString * const kCreateUserDataURL = @"%@/user";
+NSString * const kUserDataURL = @"%@/login?email=%@&password=%@";
 
 
 #pragma -mark Other constants

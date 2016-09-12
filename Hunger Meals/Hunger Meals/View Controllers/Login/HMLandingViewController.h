@@ -11,7 +11,7 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <Google/SignIn.h>
 
-@interface HMLandingViewController : UIViewController<GIDSignInUIDelegate,GIDSignInDelegate, FBSDKLoginButtonDelegate>
+@interface HMLandingViewController :UIViewController <GIDSignInUIDelegate,GIDSignInDelegate, FBSDKLoginButtonDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 

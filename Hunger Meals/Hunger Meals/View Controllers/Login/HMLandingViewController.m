@@ -13,6 +13,7 @@
 #import "HMConstants.h"
 #import "ProjectConstants.h"
 #import "HMHomePageViewController.h"
+#import "SVService.h"
 
 
 @interface HMLandingViewController ()
@@ -141,8 +142,24 @@ didSignInForUser:(GIDGoogleUser *)user
 }
 
 - (IBAction)signInButtonPressed:(id)sender{
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserLogin"];
-    [APPDELEGATE showInitialScreen];
+    //[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserLogin"];
+    //[APPDELEGATE showInitialScreen];
+    [self fetchAndLoadData];
 }
 
+# pragma userLoginAPI
+
+-(void)fetchAndLoadData{
+    //[self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: _userNameTextField.text, @"userName", _passwordTextField.text, @"password",  nil];
+    SVService *service = [[SVService alloc] init];
+    [service loginUserWithDict: dict usingBlock:^(NSMutableArray *resultArray) {
+        if (resultArray.count == 0 || resultArray == nil) {
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserLogin"];
+            [APPDELEGATE showInitialScreen];
+        }
+       // [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    }];
+    
+}
 @end

@@ -81,6 +81,25 @@
     }];
 }
 
+#pragma User authentication 
+
+- (void)loginUserWithDict:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
+    
+    NSString *url = [NSString stringWithFormat:kUserDataURL, HTTP_DATA_HOST, dict[@"userName"], dict[@"password"]];
+    
+    [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            resultBlock([self parseProductsData:dictResult]);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+}
+
 #pragma Create User
 
 - (void)createUser:(NSDictionary *)params usingBlock :(void(^)(NSMutableArray *resultArray))resultBlock{
