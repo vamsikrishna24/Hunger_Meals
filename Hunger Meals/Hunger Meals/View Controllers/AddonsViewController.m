@@ -62,9 +62,9 @@
     NSIndexPath *selectedIndexPath  = [tableView indexPathForSelectedRow];
     
     if ([indexPath isEqual:selectedIndexPath] && !isCellExpanded) {
-        return 280;
+        return 415;
     }
-    return 210;
+    return 330;
 }
 
 @end
