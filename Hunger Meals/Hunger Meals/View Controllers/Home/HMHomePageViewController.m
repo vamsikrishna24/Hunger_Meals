@@ -238,10 +238,59 @@
         popPC.permittedArrowDirections = UIPopoverArrowDirectionAny;
         popPC.delegate = self;
         popPC.barButtonItem = sender;
-    CGSize finalDesiredSize = CGSizeMake(320, 200);
+    CGSize finalDesiredSize = CGSizeMake(320, 190);
     CGSize tempSize = CGSizeMake(finalDesiredSize.width, finalDesiredSize.height + 1);
     [contentVC setPreferredContentSize:tempSize];
     [contentVC setPreferredContentSize:finalDesiredSize];
+    UILabel *locationTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 5, contentVC.view.frame.size.width-10, 30)];
+    locationTitleLabel.text = @"Enter your location";
+    locationTitleLabel.textColor = [UIColor darkGrayColor];
+    locationTitleLabel.font = [UIFont systemFontOfSize:13];
+    [contentVC.view addSubview:locationTitleLabel];
+    
+    UILabel *separator1 = [[UILabel alloc]initWithFrame:CGRectMake(12, locationTitleLabel.frame.origin.y+locationTitleLabel.frame.size.height, locationTitleLabel.frame.size.width-70, 1)];
+    separator1.backgroundColor = [UIColor lightGrayColor];
+    [contentVC.view addSubview:separator1];
+    
+    UIButton *locationGPSButton = [[UIButton alloc]initWithFrame:CGRectMake(10,separator1.frame.origin.y+6, contentVC.view.frame.size.width-10, 30)];
+    [locationGPSButton setTitle:@"Let us Locate you?" forState:UIControlStateNormal];
+    [locationGPSButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    locationGPSButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    locationGPSButton.titleLabel.font = [UIFont systemFontOfSize:12];
+    locationGPSButton.imageView.image = [UIImage imageNamed:@"edit"];
+
+    [contentVC.view addSubview:locationGPSButton];
+
+    UILabel *separator2 = [[UILabel alloc]initWithFrame:CGRectMake(12, locationGPSButton.frame.origin.y+locationGPSButton.frame.size.height, locationGPSButton.frame.size.width-70, 1)];
+    separator2.backgroundColor = [UIColor lightGrayColor];
+    [contentVC.view addSubview:separator2];
+    
+    UILabel *home = [[UILabel alloc]initWithFrame:CGRectMake(12, separator2.frame.origin.y+6, 70, 30)];
+    home.text = @"Home";
+    home.textColor = [UIColor orangeColor];
+    home.font =  [UIFont systemFontOfSize:12];
+    [contentVC.view addSubview:home];
+    
+    UILabel *separator3 = [[UILabel alloc]initWithFrame:CGRectMake(12, home.frame.origin.y+home.frame.size.height, locationGPSButton.frame.size.width-70, 1)];
+    separator3.backgroundColor = [UIColor lightGrayColor];
+    [contentVC.view addSubview:separator3];
+    
+    UILabel *office = [[UILabel alloc]initWithFrame:CGRectMake(12, separator3.frame.origin.y+6, 70, 30)];
+    office.text = @"Office";
+    office.textColor = [UIColor orangeColor];
+    office.font =  [UIFont systemFontOfSize:12];
+    [contentVC.view addSubview:office];
+    
+    UILabel *separator4 = [[UILabel alloc]initWithFrame:CGRectMake(12, office.frame.origin.y+office.frame.size.height, locationGPSButton.frame.size.width-70, 1)];
+    separator4.backgroundColor = [UIColor lightGrayColor];
+    [contentVC.view addSubview:separator4];
+    
+    UILabel *parents = [[UILabel alloc]initWithFrame:CGRectMake(12, separator4.frame.origin.y+6, 70, 30)];
+    parents.text = @"Parents";
+    parents.textColor = [UIColor orangeColor];
+    parents.font =  [UIFont systemFontOfSize:12];
+    [contentVC.view addSubview:parents];
+
 
         [self presentViewController:contentVC animated:YES completion:nil];
     }
