@@ -109,7 +109,7 @@ static const CGFloat kYSLIndicatorHeight = 3;
         
         // indicator
         _indicatorView = [[UIView alloc]init];
-        _indicatorView.frame = CGRectMake(10, _scrollView.frame.size.height - kYSLIndicatorHeight, kYSLScrollMenuViewWidth, kYSLIndicatorHeight);
+        _indicatorView.frame = CGRectMake(26, _scrollView.frame.size.height - kYSLIndicatorHeight - 7, kYSLScrollMenuViewWidth-30, kYSLIndicatorHeight);
         _indicatorView.backgroundColor = self.itemIndicatorColor;
         [_scrollView addSubview:_indicatorView];
     }
@@ -130,7 +130,7 @@ static const CGFloat kYSLIndicatorHeight = 3;
     if (indicatorX < kYSLScrollMenuViewMargin || indicatorX > self.scrollView.contentSize.width - (kYSLScrollMenuViewMargin + kYSLScrollMenuViewWidth)) {
         return;
     }
-    _indicatorView.frame = CGRectMake(indicatorX, _scrollView.frame.size.height - kYSLIndicatorHeight, kYSLScrollMenuViewWidth, kYSLIndicatorHeight);
+    _indicatorView.frame = CGRectMake(indicatorX+16, _scrollView.frame.size.height - kYSLIndicatorHeight-7, kYSLScrollMenuViewWidth- 30, kYSLIndicatorHeight);
     //  NSLog(@"retio : %f",_indicatorView.frame.origin.x);
 }
 
@@ -167,7 +167,7 @@ static const CGFloat kYSLIndicatorHeight = 3;
     UIView *view = [[UIView alloc]init];
     view.frame = CGRectMake(0, self.frame.size.height - 0.7, CGRectGetWidth(self.frame), 0.7);
     view.backgroundColor = [UIColor lightGrayColor];
-    [self addSubview:view];
+  //  [self addSubview:view];
 }
 
 - (void)layoutSubviews
