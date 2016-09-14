@@ -239,6 +239,7 @@
         popPC.delegate = self;
         popPC.barButtonItem = sender;
     CGSize finalDesiredSize = CGSizeMake(320, 190);
+    
     CGSize tempSize = CGSizeMake(finalDesiredSize.width, finalDesiredSize.height + 1);
     [contentVC setPreferredContentSize:tempSize];
     [contentVC setPreferredContentSize:finalDesiredSize];
