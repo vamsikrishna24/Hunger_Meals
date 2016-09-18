@@ -12,6 +12,7 @@
 #import "HMScrollingCell.h"
 #import "HMCartViewController.h"
 #import "HMContentViewController.h"
+#import "HMMonthlyDetailViewController.h"
 
 
 @interface HMHomePageViewController (){
@@ -210,6 +211,12 @@
         HMCartViewController *cartViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MealsViewIdentifier"];
         [self.navigationController pushViewController:cartViewController animated:YES];
 
+    }
+    if (indexPath.row == 2) {
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        HMMonthlyDetailViewController *monthlyMealViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MonthlyMealsViewIdentifier"];
+        [self.navigationController pushViewController:monthlyMealViewController animated:YES];
+        
     }
     
 }

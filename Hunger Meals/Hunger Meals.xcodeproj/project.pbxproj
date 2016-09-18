@@ -33,6 +33,7 @@
 		2B89E5021D5BB2BA0022EC67 /* ProfileImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B89E5011D5BB2BA0022EC67 /* ProfileImage.jpg */; };
 		2B89E5041D5BBF640022EC67 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B89E5031D5BBF640022EC67 /* CoreLocation.framework */; };
 		2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */; };
+		2B9CCA921D8E7C3100962F7B /* HMMonthlyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9CCA911D8E7C3100962F7B /* HMMonthlyDetailViewController.m */; };
 		2B9FECCD1D411C4500A21666 /* HMLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FECCC1D411C4500A21666 /* HMLandingViewController.m */; };
 		2BBED9011D7DDD2E00D3697D /* HMSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBED9001D7DDD2E00D3697D /* HMSettingsViewController.m */; };
 		2BBED9041D7DEEF800D3697D /* HMSettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBED9031D7DEEF800D3697D /* HMSettingsTableViewCell.m */; };
@@ -158,6 +159,8 @@
 		2B89E5031D5BBF640022EC67 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2B9A43471D471F3A00F87C1B /* HMSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSignUpViewController.h; sourceTree = "<group>"; };
 		2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSignUpViewController.m; sourceTree = "<group>"; };
+		2B9CCA901D8E7C3100962F7B /* HMMonthlyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMonthlyDetailViewController.h; sourceTree = "<group>"; };
+		2B9CCA911D8E7C3100962F7B /* HMMonthlyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMonthlyDetailViewController.m; sourceTree = "<group>"; };
 		2B9FECCB1D411C4500A21666 /* HMLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLandingViewController.h; sourceTree = "<group>"; };
 		2B9FECCC1D411C4500A21666 /* HMLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLandingViewController.m; sourceTree = "<group>"; };
 		2BBED8FF1D7DDD2E00D3697D /* HMSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSettingsViewController.h; sourceTree = "<group>"; };
@@ -360,6 +363,15 @@
 			name = Meals;
 			sourceTree = "<group>";
 		};
+		2B9CCA8F1D8E7C0900962F7B /* MonthlyMealPlanner */ = {
+			isa = PBXGroup;
+			children = (
+				2B9CCA901D8E7C3100962F7B /* HMMonthlyDetailViewController.h */,
+				2B9CCA911D8E7C3100962F7B /* HMMonthlyDetailViewController.m */,
+			);
+			name = MonthlyMealPlanner;
+			sourceTree = "<group>";
+		};
 		2B9FECC41D41192000A21666 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,6 +502,7 @@
 		A831CA731D37A71000B96F4F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2B9CCA8F1D8E7C0900962F7B /* MonthlyMealPlanner */,
 				2B6ED9A61D6FD83C000D672D /* Meals */,
 				A88FB7441D5C5292005E8667 /* CommonViewController.m */,
 				A88FB7451D5C5292005E8667 /* CommonViewController.h */,
@@ -992,6 +1005,7 @@
 				9A818FA41D4A203200FB5565 /* PaymentPageViewController.m in Sources */,
 				2BC1DD161D5C90D900F00D7D /* HMLoginViewController.m in Sources */,
 				A88FB7461D5C5292005E8667 /* CommonViewController.m in Sources */,
+				2B9CCA921D8E7C3100962F7B /* HMMonthlyDetailViewController.m in Sources */,
 				A895EB3C1D73FFDC00623D92 /* SVService.m in Sources */,
 				A88444701D38E68500887098 /* UIAlertView+CustomAlertView.m in Sources */,
 				2B252C9E1D808F2F00CED084 /* HMAddressViewController.m in Sources */,
