@@ -7,8 +7,9 @@
 //
 
 #import "HMMonthlyDetailViewController.h"
+#import "HMMonthlyCollectionViewCell.h"
 
-@interface HMMonthlyDetailViewController (){
+@interface HMMonthlyDetailViewController ()<UIScrollViewDelegate>{
     NSArray *scrollingImgs;
 
 }
@@ -20,22 +21,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     scrollingImgs = [NSArray arrayWithObjects: @"page1.png",@"page2.png",@"page3.png",@"page4.png", @"page5.png", nil];
-    self.pageControl.numberOfPages = [scrollingImgs count];
-    [self.scrollView setDelegate:self];
+
     [self.scrollView setPagingEnabled:YES];
-    [self.scrollView setTag:self.pageControl.tag];
     [self.scrollView setShowsHorizontalScrollIndicator:NO];
     [self.scrollView setUserInteractionEnabled:NO];
-    [self.scrollView addGestureRecognizer:self.scrollView.panGestureRecognizer];
-    
+    [self.view addGestureRecognizer:self.scrollView.panGestureRecognizer];
     self.pageControl.numberOfPages = [scrollingImgs count];
-    [self.pageControl setTag:self.scrollView.tag];
-
+//    [self.pageControl setTag:0];
+    // scrollingCell.pageControl.pageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DotInactive"]];
+    
+    //scrollingCell.pageControl.currentPageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DotActive"]];
     
     NSArray *cellGallary = scrollingImgs;
-    
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * cellGallary.count,self.scrollView.frame.size.height);
-    
+
     for (int i = 0; i < cellGallary.count; i++) {
         CGRect frame;
         frame.origin.x = self.scrollView.frame.size.width * i;
@@ -48,8 +46,23 @@
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         
         [self.scrollView addSubview:imageView];
-    
     }
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * 5, self.scrollView.frame.size.height);
+    [self.scrollView setDelegate:self];
+    self.pageControl.currentPage = 0;
+
+    //collection view flowlayout
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    
+    // Configure layout
+    self.flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    [self.flowLayout setItemSize:CGSizeMake(211, 150)];
+    [self.flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    self.flowLayout.minimumInteritemSpacing = 10.0f;
+    [self.collectionView setCollectionViewLayout:self.flowLayout];
+    self.collectionView.bounces = YES;
+    [self.collectionView setShowsHorizontalScrollIndicator:NO];
+    [self.collectionView setShowsVerticalScrollIndicator:NO];
 
     // Do any additional setup after loading the view.
 }
@@ -65,10 +78,7 @@
     else if (xOffset>sender.contentSize.width-frameWidth){
         [sender setContentOffset:CGPointMake(sender.contentSize.width-frameWidth, 0) animated:NO];
     }
-    
     int page = floor((xOffset - frameWidth / 2) / frameWidth) + 1;
-    
- 
     self.pageControl.currentPage = page;
     
     //    cell.titleLabel.text = [self.dashboardDataArray[sender.tag] objectForKey:kTitles][page] ;
@@ -108,6 +118,32 @@
     }
     
     _scrollView.contentSize = CGSizeMake(pageSize.width * [imgArray count], pageSize.height);
+}
+
+#pragma mark - Collection View Delegate methods
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 5;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identifier = @"collectionCustomcell";
+    
+    HMMonthlyCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    
+    cell.imageView.image = [UIImage imageNamed:[scrollingImgs objectAtIndex:indexPath.row]];
+    
+    return cell;
+}
+
+- (UIEdgeInsets)collectionView:
+(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(0, 0, 0, 10);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionView *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 10; // This is the minimum inter item spacing, can be more
 }
 
 /*

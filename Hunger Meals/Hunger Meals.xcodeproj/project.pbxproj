@@ -92,6 +92,7 @@
 		A89E92991D75736E00E981E6 /* YSLContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E92961D75736E00E981E6 /* YSLContainerViewController.m */; };
 		A89E929A1D75736E00E981E6 /* YSLScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E92981D75736E00E981E6 /* YSLScrollMenuView.m */; };
 		E59C0A13D3221362D1E26CF4 /* libPods-Hunger MealsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19EC3CC5C4ABE0020D1E1725 /* libPods-Hunger MealsUITests.a */; };
+		E8F6627C1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F6627B1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -260,6 +261,8 @@
 		A89E92971D75736E00E981E6 /* YSLScrollMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLScrollMenuView.h; sourceTree = "<group>"; };
 		A89E92981D75736E00E981E6 /* YSLScrollMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLScrollMenuView.m; sourceTree = "<group>"; };
 		CCE95FC34802E6632ABFB214 /* Pods-Hunger MealsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger MealsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger MealsTests/Pods-Hunger MealsTests.release.xcconfig"; sourceTree = "<group>"; };
+		E8F6627A1D8EA95900F42136 /* HMMonthlyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMonthlyCollectionViewCell.h; sourceTree = "<group>"; };
+		E8F6627B1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMonthlyCollectionViewCell.m; sourceTree = "<group>"; };
 		FD080AF85B2BF6D52AF96CEB /* libPods-Hunger Meals.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hunger Meals.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -368,6 +371,8 @@
 			children = (
 				2B9CCA901D8E7C3100962F7B /* HMMonthlyDetailViewController.h */,
 				2B9CCA911D8E7C3100962F7B /* HMMonthlyDetailViewController.m */,
+				E8F6627A1D8EA95900F42136 /* HMMonthlyCollectionViewCell.h */,
+				E8F6627B1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m */,
 			);
 			name = MonthlyMealPlanner;
 			sourceTree = "<group>";
@@ -980,6 +985,7 @@
 				2B6ED9A41D6FD242000D672D /* MealsViewController.m in Sources */,
 				2B41F7981D74B78E0067F0C4 /* HMContentViewController.m in Sources */,
 				A895EB411D74361D00623D92 /* HMConstants.m in Sources */,
+				E8F6627C1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m in Sources */,
 				9A0C43CA1D2F868300A7BF6B /* AppDelegate.m in Sources */,
 				2BD458B91D6F4DEE00D48AE8 /* HMCartViewController.m in Sources */,
 				2BBED9041D7DEEF800D3697D /* HMSettingsTableViewCell.m in Sources */,

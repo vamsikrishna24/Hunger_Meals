@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HMMonthlyDetailViewController : UIViewController<UIScrollViewDelegate>
+@interface HMMonthlyDetailViewController : UIViewController<UIScrollViewDelegate,UICollectionViewDelegateFlowLayout>
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) IBOutlet UIScrollView* scrollView;
 @property (nonatomic, strong) IBOutlet UIImageView *backgroundImageView;
 @property (nonatomic, strong) IBOutlet UIPageControl* pageControl;
+@property (nonatomic, strong) IBOutlet UICollectionViewFlowLayout *flowLayout;
 
 @end
