@@ -8,6 +8,7 @@
 
 #import "HMMonthlyDetailViewController.h"
 #import "HMMonthlyCollectionViewCell.h"
+#import "HMScrollMonthlyCollectionViewCell.h"
 
 @interface HMMonthlyDetailViewController ()<UIScrollViewDelegate>{
     NSArray *scrollingImgs;
@@ -18,19 +19,23 @@
 
 @implementation HMMonthlyDetailViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)awakeFromNib
+{
+    //set up data
+    //your swipeView should always be driven by an array of
+    //data of some kind - don't store data in your item views
+    //or the recycling mechanism will destroy your data once
+    //your item views move off-screen
     scrollingImgs = [NSArray arrayWithObjects: @"page1.png",@"page2.png",@"page3.png",@"page4.png", @"page5.png", nil];
 
-    [self.scrollView setPagingEnabled:YES];
-    [self.scrollView setShowsHorizontalScrollIndicator:NO];
-    [self.scrollView setUserInteractionEnabled:NO];
-    [self.view addGestureRecognizer:self.scrollView.panGestureRecognizer];
-    self.pageControl.numberOfPages = [scrollingImgs count];
-//    [self.pageControl setTag:0];
-    // scrollingCell.pageControl.pageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DotInactive"]];
+   
+}
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
-    //scrollingCell.pageControl.currentPageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DotActive"]];
+    _swipeView.pagingEnabled = YES;
     
     NSArray *cellGallary = scrollingImgs;
 
@@ -59,12 +64,9 @@
     [self.flowLayout setItemSize:CGSizeMake(211, 150)];
     [self.flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     self.flowLayout.minimumInteritemSpacing = 10.0f;
-    [self.collectionView setCollectionViewLayout:self.flowLayout];
-    self.collectionView.bounces = YES;
-    [self.collectionView setShowsHorizontalScrollIndicator:NO];
-    [self.collectionView setShowsVerticalScrollIndicator:NO];
+    
+    self.pageControl.currentPage = self.swipeView.currentItemIndex;
 
-    // Do any additional setup after loading the view.
 }
 #pragma mark - ScrollView Delegate methods
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
@@ -81,69 +83,52 @@
     int page = floor((xOffset - frameWidth / 2) / frameWidth) + 1;
     self.pageControl.currentPage = page;
     
-    //    cell.titleLabel.text = [self.dashboardDataArray[sender.tag] objectForKey:kTitles][page] ;
-    //    cell.descriptionLabel.text = [self.dashboardDataArray[sender.tag] objectForKey:kDescriptions] [page];
-    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(void)vegNonveg{
-    NSArray *imgNames = [[NSArray alloc] initWithObjects:@"page1.png",@"page2.png",@"page3.png",@"page4.png", @"page5.png", nil];
-
-    
-    // Setup the array of UIImageViews
-    NSMutableArray *imgArray = [[NSMutableArray alloc] init];
-    UIImageView *tempImageView;
-    for(NSString *name in imgNames) {
-        tempImageView = [[UIImageView alloc] init];
-        tempImageView.contentMode = UIViewContentModeScaleAspectFit;
-        tempImageView.image = [UIImage imageNamed:name];
-        [imgArray addObject:tempImageView];
-        
-    }
-    
-    CGSize pageSize = _scrollView.frame.size; // scrollView is an IBOutlet for our UIScrollView
-    NSUInteger page = 0;
-    for(UIView *view in imgArray) {
-        [_scrollView addSubview:view];
-        
-        // This is the important line
-        view.frame = CGRectMake(pageSize.width * page++ + 10, 0, pageSize.width - 20, pageSize.height);
-        // We're making use of the scrollView's frame size (pageSize) so we need to;
-        // +10 to left offset of image pos (1/2 the gap)
-        // -20 for UIImageView's width (to leave 10 gap at left and right)
-    }
-    
-    _scrollView.contentSize = CGSizeMake(pageSize.width * [imgArray count], pageSize.height);
-}
 
 #pragma mark - Collection View Delegate methods
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+    if(collectionView == self.collectionView){
+        return 5;
+    }
     return 5;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
     static NSString *identifier = @"collectionCustomcell";
+    static NSString *identifier1 = @"offersCollectionCustomcell";
+
+    if(collectionView == self.collectionView){
     
     HMMonthlyCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+        cell.imageView.image = [UIImage imageNamed:[scrollingImgs objectAtIndex:indexPath.row]];
+        cell.contentView.layer.masksToBounds = true;
+        return cell;
+
+    }
+    HMScrollMonthlyCollectionViewCell*imageCell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier1 forIndexPath:indexPath];
     
-    cell.imageView.image = [UIImage imageNamed:[scrollingImgs objectAtIndex:indexPath.row]];
-    
-    return cell;
+    imageCell.imageView.image = [UIImage imageNamed:[scrollingImgs objectAtIndex:indexPath.row]];
+    imageCell.contentView.layer.masksToBounds = true;
+    return imageCell;
+
 }
 
-- (UIEdgeInsets)collectionView:
-(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    
     return UIEdgeInsetsMake(0, 0, 0, 10);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionView *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 10; // This is the minimum inter item spacing, can be more
+    return 0; // This is the minimum inter item spacing, can be more
 }
 
 /*
@@ -155,5 +140,64 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
+}
+
+#pragma mark -
+#pragma mark iCarousel methods
+
+- (NSInteger)numberOfItemsInSwipeView:(SwipeView *)swipeView
+{
+    //return the total number of items in the carousel
+    return [scrollingImgs count];
+}
+
+- (UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
+{
+    UIImageView *imageView = nil;
+    
+    //create new view if no view is available for recycling
+    if (view == nil)
+    {
+        //don't do anything specific to the index within
+        //this `if (view == nil) {...}` statement because the view will be
+        //recycled and used with other index values later
+        view = [[UIView alloc] initWithFrame:self.swipeView.bounds];
+        view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+        imageView = [[UIImageView alloc] initWithFrame:view.bounds];
+        imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        imageView.backgroundColor = [UIColor clearColor];
+        imageView.tag = 1;
+        [view addSubview:imageView];
+    }
+    else
+    {
+        //get a reference to the label in the recycled view
+        imageView = (UIImageView *)[view viewWithTag:1];
+    }
+    
+
+    imageView.image = [UIImage imageNamed:scrollingImgs[index]];
+    return view;
+}
+
+- (void)swipeViewDidEndDecelerating:(SwipeView *)swipeView{
+    self.pageControl.currentPage = self.swipeView.currentItemIndex;
+
+}
+
+
+- (CGSize)swipeViewItemSize:(SwipeView *)swipeView
+{
+    return self.swipeView.bounds.size;
+}
+- (IBAction)pagingAction:(id)sender {
+    self.swipeView.currentItemIndex = self.pageControl.currentPage;
+    self.swipeView.currentPage = self.pageControl.currentPage;
+}
+
 
 @end

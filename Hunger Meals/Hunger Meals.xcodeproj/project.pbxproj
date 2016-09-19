@@ -34,7 +34,9 @@
 		2B89E5041D5BBF640022EC67 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B89E5031D5BBF640022EC67 /* CoreLocation.framework */; };
 		2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */; };
 		2B9CCA921D8E7C3100962F7B /* HMMonthlyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9CCA911D8E7C3100962F7B /* HMMonthlyDetailViewController.m */; };
+		2B9CCA951D8EB81100962F7B /* HMScroolMonthlyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9CCA941D8EB81100962F7B /* HMScroolMonthlyCollectionViewCell.m */; };
 		2B9FECCD1D411C4500A21666 /* HMLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FECCC1D411C4500A21666 /* HMLandingViewController.m */; };
+		2BA00BB41D8FC9090087B23C /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA00BB31D8FC9090087B23C /* SwipeView.m */; };
 		2BBED9011D7DDD2E00D3697D /* HMSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBED9001D7DDD2E00D3697D /* HMSettingsViewController.m */; };
 		2BBED9041D7DEEF800D3697D /* HMSettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBED9031D7DEEF800D3697D /* HMSettingsTableViewCell.m */; };
 		2BC1DD0D1D5C651200F00D7D /* Smaple_Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BC1DD0C1D5C651200F00D7D /* Smaple_Logo.jpg */; };
@@ -162,8 +164,12 @@
 		2B9A43481D471F3A00F87C1B /* HMSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSignUpViewController.m; sourceTree = "<group>"; };
 		2B9CCA901D8E7C3100962F7B /* HMMonthlyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMonthlyDetailViewController.h; sourceTree = "<group>"; };
 		2B9CCA911D8E7C3100962F7B /* HMMonthlyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMonthlyDetailViewController.m; sourceTree = "<group>"; };
+		2B9CCA931D8EB81100962F7B /* HMScrollMonthlyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScrollMonthlyCollectionViewCell.h; sourceTree = "<group>"; };
+		2B9CCA941D8EB81100962F7B /* HMScroolMonthlyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScroolMonthlyCollectionViewCell.m; sourceTree = "<group>"; };
 		2B9FECCB1D411C4500A21666 /* HMLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLandingViewController.h; sourceTree = "<group>"; };
 		2B9FECCC1D411C4500A21666 /* HMLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLandingViewController.m; sourceTree = "<group>"; };
+		2BA00BB21D8FC9090087B23C /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeView.h; sourceTree = "<group>"; };
+		2BA00BB31D8FC9090087B23C /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeView.m; sourceTree = "<group>"; };
 		2BBED8FF1D7DDD2E00D3697D /* HMSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSettingsViewController.h; sourceTree = "<group>"; };
 		2BBED9001D7DDD2E00D3697D /* HMSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSettingsViewController.m; sourceTree = "<group>"; };
 		2BBED9021D7DEEF800D3697D /* HMSettingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSettingsTableViewCell.h; sourceTree = "<group>"; };
@@ -369,10 +375,14 @@
 		2B9CCA8F1D8E7C0900962F7B /* MonthlyMealPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				2BA00BB21D8FC9090087B23C /* SwipeView.h */,
+				2BA00BB31D8FC9090087B23C /* SwipeView.m */,
 				2B9CCA901D8E7C3100962F7B /* HMMonthlyDetailViewController.h */,
 				2B9CCA911D8E7C3100962F7B /* HMMonthlyDetailViewController.m */,
 				E8F6627A1D8EA95900F42136 /* HMMonthlyCollectionViewCell.h */,
 				E8F6627B1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m */,
+				2B9CCA931D8EB81100962F7B /* HMScrollMonthlyCollectionViewCell.h */,
+				2B9CCA941D8EB81100962F7B /* HMScroolMonthlyCollectionViewCell.m */,
 			);
 			name = MonthlyMealPlanner;
 			sourceTree = "<group>";
@@ -981,6 +991,7 @@
 				A81A15BE1D5DF7EC00C7EFD1 /* HungerMeals.xcdatamodeld in Sources */,
 				A831CA7A1D37A9EF00B96F4F /* LandingPageViewController.m in Sources */,
 				A88444731D38E69900887098 /* UIActionSheet+Blocks.m in Sources */,
+				2BA00BB41D8FC9090087B23C /* SwipeView.m in Sources */,
 				2B7AC6FD1D47BB6F00D59BB3 /* HMDetailPageViewController.m in Sources */,
 				2B6ED9A41D6FD242000D672D /* MealsViewController.m in Sources */,
 				2B41F7981D74B78E0067F0C4 /* HMContentViewController.m in Sources */,
@@ -1009,6 +1020,7 @@
 				9A818FA51D4A203200FB5565 /* PaymentStatusViewController.m in Sources */,
 				9A818F9F1D49F8B200FB5565 /* HMPaymentTypeSelectionViewController.m in Sources */,
 				9A818FA41D4A203200FB5565 /* PaymentPageViewController.m in Sources */,
+				2B9CCA951D8EB81100962F7B /* HMScroolMonthlyCollectionViewCell.m in Sources */,
 				2BC1DD161D5C90D900F00D7D /* HMLoginViewController.m in Sources */,
 				A88FB7461D5C5292005E8667 /* CommonViewController.m in Sources */,
 				2B9CCA921D8E7C3100962F7B /* HMMonthlyDetailViewController.m in Sources */,
