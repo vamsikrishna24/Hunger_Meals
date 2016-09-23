@@ -16,6 +16,10 @@
 extern NSString * const kProductsDataURL;
 extern NSString * const kCreateUserDataURL;
 extern NSString * const kUserDataURL;
+extern NSString * const kQuickBitesDataURL;
+extern NSString * const kNorthIndianBitesDataURL;
+extern NSString * const kSouthIndianBitesDataURL;
+extern NSString * const kAddOnBitesDataURL;
 
 
 #pragma -mark Other constants
@@ -24,5 +28,5 @@ extern NSString * const kEmptyValue;
 extern NSString * const kIndicatorTitle;
 extern NSString * const kIndicatorTitleSaving;
 extern NSString * const kNoInternetError;
-
+extern NSString * const kToken;
 @end

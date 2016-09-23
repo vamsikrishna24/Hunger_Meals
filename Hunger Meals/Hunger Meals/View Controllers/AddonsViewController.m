@@ -8,14 +8,16 @@
 
 #import "AddonsViewController.h"
 #import "MealsTableViewCell.h"
+#import "SVService.h"
 
 @interface AddonsViewController (){
     BOOL isCellExpanded;
     NSInteger tableViewHeight;
+    NSMutableArray *productObjectsArray;
+
 }
 
 @property(nonatomic, strong) NSMutableArray *dishImagesArray;
-
 
 
 @end
@@ -66,5 +68,19 @@
     }
     return 345;
 }
-
+-(void)fetchAndLoadData{
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: kToken,@"token",  nil];
+    SVService *service = [[SVService alloc] init];
+    [service getAddOnProductsDataUsingBlock:dict usingBlock:^(NSMutableArray *resultArray) {
+        
+        if (resultArray.count == 0 || resultArray == nil) {
+            //[self displayMessageWhenNoData];
+        }
+        productObjectsArray = [resultArray copy];
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    }];
+    
+}
 @end

@@ -28,21 +28,22 @@
     [super viewDidLoad];
     productObjectsArray = [[NSMutableArray alloc] init];
     self.dishImagesArray = [[NSMutableArray alloc]initWithObjects:@"dish1",@"dish2",@"dish3",@"dish4",@"dish5",@"dish6",@"dish7",@"dish8",@"dish9",@"dish10",@"dish11",@"dish12",@"dish13",@"dish14",@"dish15",@"dish16", nil];
-    [self fetchAndLoadData];
    // [self.quickBitesTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
 
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self fetchAndLoadData];
     isCellExpanded = NO;
 }
 
 -(void)fetchAndLoadData{
     [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
     
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: kToken,@"token",  nil];
     SVService *service = [[SVService alloc] init];
-    [service getProductsDataUsingBlock:^(NSMutableArray *resultArray) {
+    [service getQuickBitesProductsDataUsingBlock:dict usingBlock:^(NSMutableArray *resultArray) {
         
         if (resultArray.count == 0 || resultArray == nil) {
             //[self displayMessageWhenNoData];
@@ -122,5 +123,7 @@
         self.nonVegetarianButtonOutlet.selected = NO;
 
     }
+    
+
 }
 @end

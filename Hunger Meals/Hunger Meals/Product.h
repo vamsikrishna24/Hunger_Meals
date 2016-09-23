@@ -11,6 +11,7 @@
 
 @interface Product : JSONModel
 {
+    NSString *id;
     NSString *name;
     NSString *description;
     NSString *type;
@@ -18,6 +19,11 @@
     NSString *label;
     NSNumber *is_lunch;
     NSNumber *is_dinner;
+    NSNumber *user_id;
+    NSString *image_url;
+    NSString *created_at;
+    NSString *updated_at;
+    
 }
 
 @property (nonatomic, retain) NSString *name;
@@ -27,5 +33,13 @@
 @property (nonatomic, retain) NSString<Optional> *label;
 @property (nonatomic, retain) NSNumber<Optional> *is_lunch;
 @property (nonatomic, retain) NSNumber<Optional> *is_dinner;
+@property (nonatomic, retain) NSNumber<Optional> *user_id;
+@property (nonatomic, retain) NSString<Optional> *image_url;
+@property (nonatomic, retain) NSString<Optional> *created_at;
+@property (nonatomic, retain) NSString<Optional> *updated_at;
+
+
+
+
 
 @end

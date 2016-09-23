@@ -8,10 +8,14 @@
 
 #import "SouthIndianViewController.h"
 #import "MealsTableViewCell.h"
+#import "SVService.h"
+
 
 @interface SouthIndianViewController (){
     BOOL isCellExpanded;
     NSInteger tableViewHeight;
+    NSMutableArray *productObjectsArray;
+
 }
 
 @property(nonatomic, strong) NSMutableArray *dishImagesArray;
@@ -29,6 +33,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self fetchAndLoadData];
     isCellExpanded = NO;
     tableViewHeight = 210;
 }
@@ -65,6 +70,21 @@
         return 440;
     }
     return 345;
+}
+-(void)fetchAndLoadData{
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: kToken,@"token",  nil];
+    SVService *service = [[SVService alloc] init];
+    [service getSouthIndianProductsDataUsingBlock:dict usingBlock:^(NSMutableArray *resultArray) {
+        
+        if (resultArray.count == 0 || resultArray == nil) {
+            //[self displayMessageWhenNoData];
+        }
+        productObjectsArray = [resultArray copy];
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    }];
+    
 }
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface NorthIndianViewController : UIViewController
+@interface NorthIndianViewController : CommonViewController
 
 @end

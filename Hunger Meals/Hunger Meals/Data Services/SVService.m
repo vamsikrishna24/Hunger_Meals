@@ -100,6 +100,81 @@
     }];
 }
 
+#pragma QuickBites
+- (void)getQuickBitesProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
+    
+    NSString *token = [dict objectForKey:@"token"];
+    NSString *url = [NSString stringWithFormat:kQuickBitesDataURL, HTTP_DATA_HOST,token];
+    
+    [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            resultBlock([self parseProductsData:dictResult]);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+}
+
+#pragma southIndian
+- (void)getSouthIndianProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
+    
+    NSString *token = [dict objectForKey:@"token"];
+    NSString *url = [NSString stringWithFormat:kSouthIndianBitesDataURL, HTTP_DATA_HOST,token];
+    
+    [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            resultBlock([self parseProductsData:dictResult]);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+}
+#pragma NorthIndian
+- (void)getNorthIndianProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
+    
+    NSString *token = [dict objectForKey:@"token"];
+    NSString *url = [NSString stringWithFormat:kNorthIndianBitesDataURL, HTTP_DATA_HOST,token];
+    
+    [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            resultBlock([self parseProductsData:dictResult]);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+}
+
+#pragma addon
+- (void)getAddOnProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
+    
+    NSString *token = [dict objectForKey:@"token"];
+    NSString *url = [NSString stringWithFormat:kAddOnBitesDataURL, HTTP_DATA_HOST,token];
+    
+    [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            resultBlock([self parseProductsData:dictResult]);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+}
+
 #pragma Create User
 
 - (void)createUser:(NSDictionary *)params usingBlock :(void(^)(NSMutableArray *resultArray))resultBlock{
@@ -124,7 +199,7 @@
 - (NSMutableArray *)parseProductsData:(NSMutableArray *)array {
     NSError *error = nil;
     NSDictionary *dict = (NSDictionary *)array;
-    NSArray *resultArr = [dict valueForKeyPath:@"data.data"];
+    NSArray *resultArr = [dict valueForKeyPath:@"data"];
     NSMutableArray *parsedArray = [Product arrayOfModelsFromDictionaries:resultArr error:&error];
     return parsedArray;
 }
@@ -210,6 +285,7 @@
     // returning the block
     self.successblock(nil,nil,error);
 }
+
 
 
 @end

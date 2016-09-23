@@ -35,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Monthly meal";
     
     _calendarManager = [JTCalendarManager new];
     _calendarManager.delegate = self;
