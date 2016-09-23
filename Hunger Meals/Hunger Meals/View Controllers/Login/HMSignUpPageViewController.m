@@ -26,10 +26,10 @@
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
-    self.pageViewController.dataSource = self;
+    //self.pageViewController.dataSource = self;
     // Do any additional setup after loading the view.
 
-    firstVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FirstPage"];
+    firstVC = [self.storyboard instantiateViewControllerWithIdentifier:@"firstPage"];
     firstVC.pageIndex = 0;
     firstVC.pageViewController = _pageViewController;
     SecondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"secondPage"];

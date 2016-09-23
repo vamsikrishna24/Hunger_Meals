@@ -16,6 +16,7 @@
 + (BOOL) isValidateEmail:(NSString *) emailString;
 +(BOOL) isValidateDOB:(NSString *) dateOfBirth;
 +(BOOL)isUserNameValidation:(NSString*)userName;
++ (BOOL) isValidateOTP:(NSString *) otpString;
 + (BOOL)verifyPassword:(NSString *)password matchesConfirmationPassword:(NSString *)confirmPassword;
 + (NSString*) checkingForNULL:(id)givenString;
 + (BOOL)isConnectionAvailableWithAlert:(BOOL)showAlert withClass:(id)currentClass;

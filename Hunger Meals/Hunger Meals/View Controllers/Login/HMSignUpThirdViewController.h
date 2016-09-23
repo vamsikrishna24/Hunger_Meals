@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface HMSignUpThirdViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface HMSignUpThirdViewController : CommonViewController<UITableViewDelegate,UITableViewDataSource>
+
+@property NSString *email;
+@property NSString *password;
+@property NSString *phoneNumber;
+@property(strong,nonatomic) UIPageViewController *pageViewController;
+
 @property (weak, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (weak, nonatomic) IBOutlet UITableView *addressTableView;
 @property (weak, nonatomic) IBOutlet UIView *footerView;

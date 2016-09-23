@@ -7,9 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HMSignUpFirstViewController.h"
 
 @interface HMOTPVerificationViewController : UIViewController
 @property NSUInteger pageIndex;
-@property (weak, nonatomic) IBOutlet UITextField *otpTextField;
+@property NSString *email;
+@property NSString *password;
+@property NSString *phoneNumber;
+@property(strong,nonatomic) UIPageViewController *pageViewController;
+@property(strong,nonatomic) HMSignUpFirstViewController *signUpFirstVC;
 
+
+@property (weak, nonatomic) IBOutlet UITextField *otpTextField;
+@property (weak, nonatomic) IBOutlet UIButton *nextButtonOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *prevButtonOutlet;
+
+- (IBAction)nextButtonAction:(id)sender;
+- (IBAction)previousButtonAction:(id)sender;
 @end

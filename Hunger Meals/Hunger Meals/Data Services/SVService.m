@@ -16,6 +16,7 @@
 #import "MBProgressHUD.h"
 #import "SVXMLParser.h"
 #import "Product.h"
+#import "UserData.h"
 
 
 @interface SVService()
@@ -85,14 +86,15 @@
 
 - (void)loginUserWithDict:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
     
-    NSString *url = [NSString stringWithFormat:kUserDataURL, HTTP_DATA_HOST, dict[@"userName"], dict[@"password"]];
+    NSString *url = [NSString stringWithFormat:kUserLoginURL, HTTP_DATA_HOST];
     
-    [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+    [self sendRequest:url Perameters:dict usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        
         if (response.statusCode == 200 && result!=nil) {
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
-            
-            resultBlock([self parseProductsData:dictResult]);
+            NSDictionary *resultDict = [dictResult objectForKey:@"data"];
+            resultBlock([self parseUserLoginData:dictResult]);
         }
         else{
             resultBlock(nil);
@@ -179,7 +181,7 @@
 
 - (void)createUser:(NSDictionary *)params usingBlock :(void(^)(NSMutableArray *resultArray))resultBlock{
     
-    NSString *url = [NSString stringWithFormat:kProductsDataURL, HTTP_DATA_HOST];
+    NSString *url = [NSString stringWithFormat:kUserSignUpURL, HTTP_DATA_HOST];
     
     [self sendRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
         
@@ -187,7 +189,7 @@
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
             
-            resultBlock([self parseProductsData:dictResult]);
+            resultBlock([self parseUserLoginData:dictResult]);
         }
         else{
             resultBlock(nil);
@@ -195,6 +197,19 @@
     }];
 }
 #pragma mark -- Parsing Methods
+
+- (NSMutableArray *)parseUserLoginData:(NSMutableArray *)array {
+    NSError *error = nil;
+    NSDictionary *dict = (NSDictionary *)array;
+    NSDictionary *resultDict = [dict objectForKey:@"data"];
+    NSString *tokenString = [resultDict objectForKey:@"token"];
+    NSArray *resultArray = [NSArray arrayWithObject:[resultDict objectForKey:@"user"]];
+    
+    NSMutableArray *parsedArray = [UserData arrayOfModelsFromDictionaries:resultArray error:&error];
+    UserData *userDataObj = parsedArray[0];
+    userDataObj.token = tokenString;
+    return parsedArray;
+}
 
 - (NSMutableArray *)parseProductsData:(NSMutableArray *)array {
     NSError *error = nil;

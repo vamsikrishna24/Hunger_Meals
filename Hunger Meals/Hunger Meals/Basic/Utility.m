@@ -41,7 +41,7 @@
     
     if ( [password length]<8 || [password length]>12 )
         return NO;  // too long or too short
-    NSRange rang;
+  /*  NSRange rang;
     rang = [password rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]];
     if ( !rang.length )
         return NO;  // no letter
@@ -57,7 +57,7 @@
         return NO;  // no uppercase letter;
     rang = [password rangeOfCharacterFromSet:lowerCaseChars];
     if ( !rang.length )
-        return NO;  // no lowerCase Chars;
+        return NO;  // no lowerCase Chars; */
     return YES;
 }
 +(BOOL)isUserNameValidation:(NSString*)userName{
@@ -88,6 +88,17 @@
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailTest evaluateWithObject:emailString];
+    
+}
+
++ (BOOL) isValidateOTP:(NSString *) otpString
+{
+    NSScanner *scanner = [NSScanner scannerWithString:otpString];
+    BOOL isNumeric = [scanner scanInteger:NULL] && [scanner isAtEnd];
+    if (isNumeric && ![otpString isEqualToString:@""] && otpString.length==6) {
+        return true;
+    }
+    return false;
     
 }
 

@@ -94,6 +94,7 @@
 		A895EB441D7438F200623D92 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = A895EB431D7438F200623D92 /* Product.m */; };
 		A89E92991D75736E00E981E6 /* YSLContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E92961D75736E00E981E6 /* YSLContainerViewController.m */; };
 		A89E929A1D75736E00E981E6 /* YSLScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E92981D75736E00E981E6 /* YSLScrollMenuView.m */; };
+		ACD537CD1D9419700023B834 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD537CC1D9419700023B834 /* UserData.m */; };
 		E8F6627C1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F6627B1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m */; };
 		FBDF5E03F7D934EDB95266C0 /* libPods-Hunger MealsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD269D1071265531F331205 /* libPods-Hunger MealsUITests.a */; };
 /* End PBXBuildFile section */
@@ -268,6 +269,8 @@
 		A89E92961D75736E00E981E6 /* YSLContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLContainerViewController.m; sourceTree = "<group>"; };
 		A89E92971D75736E00E981E6 /* YSLScrollMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLScrollMenuView.h; sourceTree = "<group>"; };
 		A89E92981D75736E00E981E6 /* YSLScrollMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLScrollMenuView.m; sourceTree = "<group>"; };
+		ACD537CB1D9419700023B834 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		ACD537CC1D9419700023B834 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
 		B9B03796A71316DB85DCF5A7 /* libPods-Hunger MealsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hunger MealsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E67C43699DE6BCBB6CE5CDD9 /* Pods-Hunger MealsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger MealsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger MealsTests/Pods-Hunger MealsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8F6627A1D8EA95900F42136 /* HMMonthlyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMonthlyCollectionViewCell.h; sourceTree = "<group>"; };
@@ -670,6 +673,8 @@
 			children = (
 				A895EB421D7438F200623D92 /* Product.h */,
 				A895EB431D7438F200623D92 /* Product.m */,
+				ACD537CB1D9419700023B834 /* UserData.h */,
+				ACD537CC1D9419700023B834 /* UserData.m */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -1027,6 +1032,7 @@
 				2B6ED9A91D6FD8E3000D672D /* QuickbitesViewController.m in Sources */,
 				A895EB3B1D73FFDC00623D92 /* SVRequest.m in Sources */,
 				2BDF98701D70B4E8003D943C /* HMTabBarViewController.m in Sources */,
+				ACD537CD1D9419700023B834 /* UserData.m in Sources */,
 				2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

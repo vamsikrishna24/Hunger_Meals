@@ -7,21 +7,24 @@
 //
 
 #import "HMLandingViewController.h"
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
-#import <FBSDKLoginManager.h>
 #import "AppDelegate.h"
 #import "HMConstants.h"
 #import "ProjectConstants.h"
 #import "HMHomePageViewController.h"
 #import "SVService.h"
+#import "Utility.h"
+#import <Reachability/Reachability.h>
+#import "UserData.h"
 
 
 @interface HMLandingViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *facebookLoginButton;
-@property(weak, nonatomic) IBOutlet GIDSignInButton *signInButton;
+@property(weak, nonatomic) IBOutlet GIDSignInButton *googleSignInButton;
 @property(strong,nonatomic) UIActivityIndicatorView *myActivityIndicator;
 @property(strong,nonatomic) HMLandingViewController *homePageVC;
+@property (nonatomic, strong) MBProgressHUD* hud;
+@property (nonatomic, assign, getter=isIndicatorShowing) BOOL activityIndicatorIsShowing;
 
 
 @end
@@ -29,10 +32,11 @@
 @implementation HMLandingViewController{
     AppDelegate *appDelegate;
 }
-
+@synthesize hud, activityIndicatorIsShowing;
 - (void)viewDidLoad {
     [super viewDidLoad];
      [self setupFbConfiguration];
+     [self initializations];
     
      [GIDSignIn sharedInstance].uiDelegate = self;
      [[GIDSignIn sharedInstance] signInSilently];
@@ -157,25 +161,115 @@ didSignInForUser:(GIDGoogleUser *)user
     
 }
 
+#pragma mark Custom Methods
 - (IBAction)signInButtonPressed:(id)sender{
-    //[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserLogin"];
-    //[APPDELEGATE showInitialScreen];
-    [self fetchAndLoadData];
+    if ([self isValidationsSucceed]) {
+        if ([Reachability reachabilityForInternetConnection]) {
+            [self loginToServer];
+        }
+        else{
+            [self showAlertWithTitle:@"You are offline!" andMessage:@"You are not connected to the internet. Please check your network connection and try again!!"];
+        }
+        
+    }
+    
 }
 
-# pragma userLoginAPI
+- (BOOL)isValidationsSucceed{
+    if(![Utility isValidateEmail:self.userNameTextField.text] && ![Utility isValidatePassword:self.passwordTextField.text]){
+        [self showAlertWithTitle:@"Check Credentials" andMessage:@"Error with credentials you have provied. Please check them and try again!!"];
+        return NO;
+    }
+    else if(![Utility isValidateEmail:self.userNameTextField.text] ){
+        [self showAlertWithTitle:@"Check Credentials" andMessage:@"Please enter valid email and try again!!"];
+        return NO;
+    }
+    else if(![Utility isValidatePassword:self.passwordTextField.text]){
+        [self showAlertWithTitle:@"Check Credentials" andMessage:@"Please enter valid password and try again!!"];
+        return NO;
+    }
+    
+    return YES;
+}
 
--(void)fetchAndLoadData{
-    //[self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: _userNameTextField.text, @"userName", _passwordTextField.text, @"password",  nil];
-    SVService *service = [[SVService alloc] init];
-    [service loginUserWithDict: dict usingBlock:^(NSMutableArray *resultArray) {
-        if (resultArray.count == 0 || resultArray == nil) {
-            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserLogin"];
-            [APPDELEGATE showInitialScreen];
-        }
-       // [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+- (void)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message{
+    [BTAlertController showAlertWithMessage:message andTitle:title andOkButtonTitle:nil andCancelTitle:@"Ok" andtarget:self andAlertCancelBlock:^{
+        
+    } andAlertOkBlock:^(NSString *userName) {
+        
     }];
     
 }
+
+
+# pragma userLoginAPI
+
+- (void)loginToServer{
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: _userNameTextField.text, @"email", _passwordTextField.text, @"password",  nil];
+    SVService *service = [[SVService alloc] init];
+    [service loginUserWithDict: dict usingBlock:^(NSMutableArray *resultArray) {
+        if (resultArray.count != 0 || resultArray != nil) {
+            UserData *dataObject = resultArray[0];
+            NSData *personEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:dataObject];
+            [[NSUserDefaults standardUserDefaults] setObject:personEncodedObject forKey:@"UserData"];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoginValid"];
+            [APPDELEGATE showInitialScreen];
+        }
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    }];
+    
+}
+
+#pragma -mark MBHUD ProgressView methods
+
+- (void) initializations{
+    hud = [[MBProgressHUD alloc] initWithView:self.view];
+    
+}
+
+- (void) showActivityIndicator: (NSString *) title {
+    // The hud will disable all input on the view
+    hud.opacity = 0.7f;
+    
+    if(title != nil) {
+        hud.label.text = title;
+    }
+    
+    // Add HUD to screen
+    [self.view addSubview:hud];
+    
+    // Register for HUD callbacks so we can remove it from the window at the right time
+    hud.delegate = self;
+    [hud showAnimated:YES];
+    [self setActivityIndicatorIsShowing:YES];
+}
+
+- (void) showActivityIndicatorWithTitle: (NSString *) title {
+    
+    //only ever show one HUD at a time
+    if(!activityIndicatorIsShowing) {
+        //Showing the activity indicator must be on the main thread.
+        [self performSelectorOnMainThread:@selector(showActivityIndicator:) withObject:title waitUntilDone:NO];
+    }
+}
+
+- (void) hideActivityIndicatorT {
+    if(activityIndicatorIsShowing){
+        [self hudWasHidden];
+        [self setActivityIndicatorIsShowing:NO];
+    }
+}
+
+- (void) hideActivityIndicator {
+    //Hiding the activity indicator must be on the main thread.
+    [self performSelectorOnMainThread:@selector(hideActivityIndicatorT) withObject:nil waitUntilDone:NO];
+}
+
+- (void) hudWasHidden {
+    // Remove HUD from screen when the HUD was hidded
+    [hud removeFromSuperview];
+}
+
+
 @end

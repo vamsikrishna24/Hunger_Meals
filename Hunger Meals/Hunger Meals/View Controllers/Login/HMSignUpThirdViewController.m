@@ -10,6 +10,8 @@
 #import "BTAlertController.h"
 #import "HMConstants.h"
 #import "ProjectConstants.h"
+#import "SVService.h"
+#import "UserData.h"
 #import <QuartzCore/QuartzCore.h>
 #import <CoreData/CoreData.h>
 
@@ -77,11 +79,30 @@
     
 }
 
-- (IBAction)addAddressAction:(id)sender {
-    [self addRow];   }
+
 - (IBAction)skipButtonAction:(id)sender {
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserLogin"];
-    [APPDELEGATE showInitialScreen];
+    [self SignUpToServer];
+}
+
+- (void)SignUpToServer{
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: self.email, @"name", self.email, @"email", self.password, @"password",  @"authenticated_user", @"role_name", self.phoneNumber,  @"phone_no", nil];
+    SVService *service = [[SVService alloc] init];
+    [service createUser:dict usingBlock:^(NSMutableArray *resultArray) {
+        if (resultArray.count != 0 || resultArray != nil) {
+            UserData *dataObject = resultArray[0];
+            NSData *personEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:dataObject];
+            [[NSUserDefaults standardUserDefaults] setObject:personEncodedObject forKey:@"UserData"];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoginValid"];
+            [APPDELEGATE showInitialScreen];
+        }
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    }];
+    
+}
+
+- (IBAction)addAddressAction:(id)sender {
+    [self addRow];
 }
 
 #pragma mark - Core Data Methods

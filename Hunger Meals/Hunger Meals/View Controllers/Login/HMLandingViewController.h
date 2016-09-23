@@ -10,8 +10,9 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <Google/SignIn.h>
+#import "MBProgressHUD.h"
 
-@interface HMLandingViewController :UIViewController <GIDSignInUIDelegate,GIDSignInDelegate, FBSDKLoginButtonDelegate>
+@interface HMLandingViewController :UIViewController <GIDSignInUIDelegate,GIDSignInDelegate, FBSDKLoginButtonDelegate, MBProgressHUDDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 

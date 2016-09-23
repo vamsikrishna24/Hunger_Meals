@@ -9,6 +9,8 @@
 #import "HMSignUpFirstViewController.h"
 #import "HMOTPVerificationViewController.h"
 #import "HMSignUpThirdViewController.h"
+#import "BTAlertController.h"
+#import "Utility.h"
 
 @interface HMSignUpFirstViewController (){
     HMOTPVerificationViewController *otpVerificationVC;
@@ -40,7 +42,14 @@
 
     [self.phoneNumberTextField.layer addSublayer:bottomBorder2];
 
-    
+    UISwipeGestureRecognizer* swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeUpFrom:)];
+     UISwipeGestureRecognizer* swipeRightGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeUpFrom:)];
+    swipeLeftGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    swipeRightGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipeLeftGestureRecognizer];
+    [self.view addGestureRecognizer:swipeRightGestureRecognizer];
+
+
 
     // Do any additional setup after loading the view.
 }
@@ -53,25 +62,78 @@
 #pragma mark - TextField Delegate methods
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     if (textField.tag == 3) {
-        [self checkAllTheFieldsFilledOrNot];
+        [self isValidationsSucceed];
     }
 }
 
-- (void)checkAllTheFieldsFilledOrNot{
-    if ([self.emailTextField.text isEqualToString:@""] || [self.paswordTextField.text isEqualToString:@""] || [self.phoneNumberTextField.text isEqualToString:@""]) {
-        self.nextButtonOutlet.hidden = YES;
+- (BOOL)textField:(UITextField *)textField
+shouldChangeCharactersInRange:(NSRange)range
+            replacementString:(NSString *)string {
+    if (textField.tag == 3) {
+        NSString *resultText = [textField.text stringByReplacingCharactersInRange:range
+                                                                    withString:string];
+        if (resultText.length >= 10) {
+            self.nextButtonOutlet.hidden = false;
+        }
+        else {self.nextButtonOutlet.hidden = true;}
+        
+        return resultText.length <= 10;
+
     }
-    else{
-        self.nextButtonOutlet.hidden = NO;
-    }
+   
+    return true;
 }
+
+#pragma mark - Custom methods
+- (BOOL)isValidationsSucceed{
+    if(![Utility isValidateEmail:self.emailTextField.text]){
+        [self showAlertWithTitle:@"Alert" andMessage:@"Please enter valid email!!"];
+        return NO;
+    }
+    else if(![Utility isValidatePassword:self.paswordTextField.text]){
+        [self showAlertWithTitle:@"Alert" andMessage:@"Please enter valid password and try again"];
+        return NO;
+    }
+    else if([self.phoneNumberTextField.text  isEqual: @""]){
+        [self showAlertWithTitle:@"Alert" andMessage:@"Please enter valid Phone Number and try again!!"];
+        return NO;
+    }
+    self.nextButtonOutlet.hidden = false;
+    return YES;
+}
+
+- (void)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message{
+    [BTAlertController showAlertWithMessage:message andTitle:title andOkButtonTitle:nil andCancelTitle:@"Ok" andtarget:self andAlertCancelBlock:^{
+        
+    } andAlertOkBlock:^(NSString *userName) {
+        
+    }];
+    
+}
+
 
 - (IBAction)nextButtonAction:(id)sender {
+    if ([self isValidationsSucceed]) {
+        HMOTPVerificationViewController *SecondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"secondPage"];
+        SecondVC.email = self.emailTextField.text;
+        SecondVC.password = self.paswordTextField.text;
+        SecondVC.phoneNumber = self.phoneNumberTextField.text;
+        SecondVC.pageViewController = _pageViewController;
+        SecondVC.signUpFirstVC = self;
+        self.pageIndex = 1;
+        [self.pageViewController setViewControllers:@[SecondVC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 
-    HMOTPVerificationViewController *SecondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"secondPage"];
-    self.pageIndex = 1;
-    HMSignUpThirdViewController *thirdVC= [self.storyboard instantiateViewControllerWithIdentifier:@"thirdPage"];    
-    [self.pageViewController setViewControllers:@[SecondVC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-   
+    }
 }
+
+- (void)handleSwipeUpFrom:(UISwipeGestureRecognizer *)recognizer {
+    if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
+        [self nextButtonAction:nil];
+    }
+    else if (recognizer.direction == UISwipeGestureRecognizerDirectionRight){
+        
+    }
+}
+
+
 @end

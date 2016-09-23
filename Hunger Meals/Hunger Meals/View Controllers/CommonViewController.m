@@ -37,7 +37,7 @@
 
 - (void) initializations{
     hud = [[MBProgressHUD alloc] initWithView:self.view];
-    
+
 }
 
 - (void) prepareNavigationBarUI {
@@ -100,9 +100,10 @@
 }
 
 #pragma -mark MBHUD ProgressView methods
+
 - (void) showActivityIndicator: (NSString *) title {
     // The hud will disable all input on the view
-    hud.opacity = 0.7f;
+    hud.opacity = 1.0f;
     
     if(title != nil) {
         hud.label.text = title;

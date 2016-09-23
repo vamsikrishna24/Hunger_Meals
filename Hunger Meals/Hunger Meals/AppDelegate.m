@@ -42,7 +42,7 @@
     
     
     //If user is already logged in
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"UserLogin"]) {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isLoginValid"]) {
         SWRevealViewController *HomePage = (SWRevealViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"SlideMenuViewController"];
         [self changeRootViewController:HomePage];
     }

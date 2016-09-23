@@ -15,13 +15,16 @@
 #pragma -mark API Calls
 extern NSString * const kProductsDataURL;
 extern NSString * const kCreateUserDataURL;
+<<<<<<< Updated upstream
 extern NSString * const kUserDataURL;
 extern NSString * const kQuickBitesDataURL;
 extern NSString * const kNorthIndianBitesDataURL;
 extern NSString * const kSouthIndianBitesDataURL;
 extern NSString * const kAddOnBitesDataURL;
+=======
 extern NSString * const kUserLoginURL;
 extern NSString * const kUserSignUpURL;
+>>>>>>> Stashed changes
 
 
 #pragma -mark Other constants
