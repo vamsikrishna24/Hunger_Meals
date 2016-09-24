@@ -25,6 +25,9 @@ pod 'TwilioSDK', '~>1.2'
 
 pod 'JTCalendar', '~> 2.0'
 
+pod 'IQKeyboardManager'
+
+
 end
 
 target 'Hunger MealsTests' do

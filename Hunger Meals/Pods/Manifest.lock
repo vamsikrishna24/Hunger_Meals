@@ -55,6 +55,7 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - FBSDKShareKit
   - Google/SignIn
+  - IQKeyboardManager
   - IQKeyboardManager (~> 4.0)
   - JSONModel (~> 1.2)
   - JTCalendar (~> 2.0)
@@ -88,6 +89,6 @@ SPEC CHECKSUMS:
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   TwilioSDK: d3982acf6880ddf3ce57c4444e021a71c5f35653
 
-PODFILE CHECKSUM: 9525a888cf0018f9a0094ef5d53f36088c26880c
+PODFILE CHECKSUM: 6a0ca720b5afe83516ba4ec8503609aa42a36250
 
 COCOAPODS: 1.0.1

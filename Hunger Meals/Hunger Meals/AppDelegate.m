@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SWRevealViewController.h"
+#import "IQKeyboardManager.h"
 
 @interface AppDelegate ()
 
@@ -33,6 +34,8 @@
 
     
     [self showInitialScreen];
+    
+    [IQKeyboardManager sharedManager].enable = YES;
 
     return YES;
 }
