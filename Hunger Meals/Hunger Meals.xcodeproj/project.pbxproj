@@ -766,7 +766,7 @@
 				TargetAttributes = {
 					9A0C43C11D2F868200A7BF6B = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 7L7AZ2A655;
+						DevelopmentTeam = 88MQL3GAFM;
 					};
 					9A0C43DD1D2F868500A7BF6B = {
 						CreatedOnToolsVersion = 7.3;
@@ -1178,6 +1178,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Hunger Meals/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1186,8 +1187,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/sdk/2_1",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.basicapps.hungermeals;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sukor.hungrymeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1197,6 +1199,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Hunger Meals/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1205,8 +1208,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/sdk/2_1",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.basicapps.hungermeals;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sukor.hungrymeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

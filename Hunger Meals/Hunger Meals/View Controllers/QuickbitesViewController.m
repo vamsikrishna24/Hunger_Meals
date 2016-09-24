@@ -9,15 +9,18 @@
 #import "QuickbitesViewController.h"
 #import "MealsTableViewCell.h"
 #import "SVService.h"
+#import "Product.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface QuickbitesViewController (){
-    NSMutableArray *productObjectsArray;
     MealsTableViewCell *cell;
     BOOL isCellExpanded;
 }
 
 @property(nonatomic, strong) NSMutableArray *dishImagesArray;
 @property (weak, nonatomic) IBOutlet UITableView *quickBitesTableView;
+@property (strong, nonatomic) NSMutableArray *productObjectsArray;
+
 
 
 @end
@@ -26,15 +29,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    productObjectsArray = [[NSMutableArray alloc] init];
+    _productObjectsArray = [[NSMutableArray alloc] init];
     self.dishImagesArray = [[NSMutableArray alloc]initWithObjects:@"dish1",@"dish2",@"dish3",@"dish4",@"dish5",@"dish6",@"dish7",@"dish8",@"dish9",@"dish10",@"dish11",@"dish12",@"dish13",@"dish14",@"dish15",@"dish16", nil];
+    [self fetchAndLoadData];
+
+
    // [self.quickBitesTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
 
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self fetchAndLoadData];
     isCellExpanded = NO;
 }
 
@@ -48,7 +53,10 @@
         if (resultArray.count == 0 || resultArray == nil) {
             //[self displayMessageWhenNoData];
         }
-        productObjectsArray = [resultArray copy];
+        
+        _productObjectsArray = [resultArray copy];
+        [self.quickBitesTableView reloadData];
+        
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
     
@@ -58,7 +66,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return [self.dishImagesArray count];
+    return _productObjectsArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -69,9 +77,15 @@
     //cell.selectionStyle = UITableViewCellSelectionStyleNone;
     //[cell.contentView setLayoutMargins:UIEdgeInsetsMake(15, 0, 0, 0)];
     
-    NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
-    cell.itemImageView.image = [UIImage imageNamed:imageName];
-    cell.titleLabel.text = [NSString stringWithFormat:@"Veg Manchurian  %ld",(long)indexPath.row];
+    Product *product = _productObjectsArray[indexPath.row];
+    
+  //  NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
+    
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:product.image_url]
+                      placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    cell.titleLabel.text =product.name;
+    cell.descriptionView.text = product.description;
+    //[NSString stringWithFormat:@"Veg Manchurian  %ld",(long)indexPath.row];
     return cell;
 }
 
@@ -91,10 +105,6 @@
     }
     return 345;
 }
-//- (IBAction)addToCartAction:(id)sender {
-//    cell.addToCartButton.hidden = YES;
-//    cell.stepperView.hidden = NO;
-//}
 
 - (IBAction)nonVegetarianAction:(id)sender {
     NSString *tem = self.nonVegetarianButtonOutlet.titleLabel.text;
