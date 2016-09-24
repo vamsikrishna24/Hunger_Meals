@@ -3522,6 +3522,9 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="southIndianTableView" destination="SBA-lR-06Z" id="pGK-rf-uV6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jB0-JF-l2P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3780,6 +3783,9 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="addOnTableView" destination="zcd-Kl-oWF" id="qj7-Nw-ihL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5K-K2-uCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4035,6 +4041,9 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="northIndianTableView" destination="rBF-2r-JFw" id="Kcd-DS-0qg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSp-Id-Q65" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

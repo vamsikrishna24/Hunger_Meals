@@ -9,6 +9,7 @@
 #import "NorthIndianViewController.h"
 #import "MealsTableViewCell.h"
 #import "SVService.h"
+#import "Product.h"
 
 @interface NorthIndianViewController (){
     BOOL isCellExpanded;
@@ -19,6 +20,7 @@
 
 @property(nonatomic, strong) NSMutableArray *dishImagesArray;
 
+@property (weak, nonatomic) IBOutlet UITableView *northIndianTableView;
 
 
 @end
@@ -41,16 +43,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [self.dishImagesArray count];
+    return [productObjectsArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"MealsCellIdentifier";
     MealsTableViewCell *cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
-    cell.itemImageView.image = [UIImage imageNamed:imageName];
-    cell.titleLabel.text = [NSString stringWithFormat:@"Hot and Spicy Food Item  %ld",(long)indexPath.row];
+    Product *product = productObjectsArray[indexPath.row];
+//
+//    NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
+//    cell.itemImageView.image = [UIImage imageNamed:imageName];
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:product.image_url]
+                      placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    cell.titleLabel.text = product.name;
+    cell.descriptionView.text = product.description;
     return cell;
 }
 
@@ -82,6 +89,7 @@
             //[self displayMessageWhenNoData];
         }
         productObjectsArray = [resultArray copy];
+        [self.northIndianTableView reloadData];
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
     

@@ -9,6 +9,7 @@
 #import "AddonsViewController.h"
 #import "MealsTableViewCell.h"
 #import "SVService.h"
+#import "Product.h"
 
 @interface AddonsViewController (){
     BOOL isCellExpanded;
@@ -18,6 +19,7 @@
 }
 
 @property(nonatomic, strong) NSMutableArray *dishImagesArray;
+@property (weak, nonatomic) IBOutlet UITableView *addOnTableView;
 
 
 @end
@@ -39,16 +41,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [self.dishImagesArray count];
+    return [productObjectsArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"MealsCellIdentifier";
     MealsTableViewCell *cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    Product *product = productObjectsArray[indexPath.row];
     
-    NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
-    cell.itemImageView.image = [UIImage imageNamed:imageName];
-    cell.titleLabel.text = [NSString stringWithFormat:@"Hot and Spicy Food Item  %ld",(long)indexPath.row];
+//    NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
+//    cell.itemImageView.image = [UIImage imageNamed:imageName];
+    cell.titleLabel.text = product.name;
+    cell.descriptionView.text = product.description;
     return cell;
 }
 
@@ -79,6 +83,7 @@
             //[self displayMessageWhenNoData];
         }
         productObjectsArray = [resultArray copy];
+        [self.addOnTableView reloadData];
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
     
