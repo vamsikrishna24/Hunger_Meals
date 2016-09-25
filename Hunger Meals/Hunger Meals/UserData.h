@@ -22,8 +22,7 @@
     NSString *updated_at;
 }
 
-@property (nonatomic, retain) NSString<Optional
-> *token;
+@property (nonatomic, retain) NSString<Optional> *token;
 @property (nonatomic, strong) NSString<Optional> *id;
 @property (nonatomic, retain) NSString<Optional> *name;
 @property (nonatomic, retain) NSString<Optional> *email;

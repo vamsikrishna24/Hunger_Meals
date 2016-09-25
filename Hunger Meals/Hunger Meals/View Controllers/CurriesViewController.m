@@ -10,6 +10,7 @@
 #import "MealsTableViewCell.h"
 #import "SVService.h"
 #import "Product.h"
+#import "Inventory.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface CurriesViewController (){
@@ -78,6 +79,7 @@
     //[cell.contentView setLayoutMargins:UIEdgeInsetsMake(15, 0, 0, 0)];
     
     Product *product = _productObjectsArray[indexPath.row];
+     Inventory *inventory = product.inventories[0];
     
     //  NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
     
@@ -85,6 +87,7 @@
                       placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     cell.titleLabel.text =product.name;
     cell.descriptionView.text = product.description;
+    cell.priceLabel.text = [inventory  valueForKey:@"price"];
     //[NSString stringWithFormat:@"Veg Manchurian  %ld",(long)indexPath.row];
     return cell;
 }

@@ -10,6 +10,7 @@
 #import "MealsTableViewCell.h"
 #import "SVService.h"
 #import "Product.h"
+#import "Inventory.h"
 
 
 @interface SouthIndianViewController (){
@@ -53,6 +54,7 @@
     MealsTableViewCell *cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     Product *product = _productObjectsArray[indexPath.row];
+     Inventory *inventory = product.inventories[0];
 
 //    NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
 //    cell.itemImageView.image = [UIImage imageNamed:imageName];
@@ -61,6 +63,7 @@
                       placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     cell.titleLabel.text = product.name;
     cell.descriptionView.text = product.description;
+    cell.priceLabel.text = [inventory valueForKey:@"price"];
     return cell;
 }
 

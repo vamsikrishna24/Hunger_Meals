@@ -10,6 +10,7 @@
 #import "MealsTableViewCell.h"
 #import "SVService.h"
 #import "Product.h"
+#import "Inventory.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface QuickbitesViewController (){
@@ -17,9 +18,10 @@
     BOOL isCellExpanded;
 }
 
-@property(nonatomic, strong) NSMutableArray *dishImagesArray;
+@property(nonatomic, strong) NSMutableArray *inventoryObjectArray;
 @property (weak, nonatomic) IBOutlet UITableView *quickBitesTableView;
 @property (strong, nonatomic) NSMutableArray *productObjectsArray;
+@property (strong, nonatomic) NSMutableArray *labelArray;
 
 
 
@@ -30,7 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _productObjectsArray = [[NSMutableArray alloc] init];
-    self.dishImagesArray = [[NSMutableArray alloc]initWithObjects:@"dish1",@"dish2",@"dish3",@"dish4",@"dish5",@"dish6",@"dish7",@"dish8",@"dish9",@"dish10",@"dish11",@"dish12",@"dish13",@"dish14",@"dish15",@"dish16", nil];
+    _labelArray = [[NSMutableArray alloc]init];
+    //self.dishImagesArray = [[NSMutableArray alloc]initWithObjects:@"dish1",@"dish2",@"dish3",@"dish4",@"dish5",@"dish6",@"dish7",@"dish8",@"dish9",@"dish10",@"dish11",@"dish12",@"dish13",@"dish14",@"dish15",@"dish16", nil];
     [self fetchAndLoadData];
 
 
@@ -79,16 +82,28 @@
     
     Product *product = _productObjectsArray[indexPath.row];
     
+    Inventory *inventory = product.inventories[0];
+    
+
+    
   //  NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
     
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:product.image_url]
                       placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     cell.titleLabel.text =product.name;
     cell.descriptionView.text = product.description;
+    
+    cell.priceLabel.text = [inventory valueForKey: @"price"];
+    _labelArray = [_productObjectsArray valueForKey:@"label"];
+
+   // NSMutableArray *filtered = [_labelArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(veg == %@)", @"veg"]];
     //[NSString stringWithFormat:@"Veg Manchurian  %ld",(long)indexPath.row];
     return cell;
 }
-
+-(void)filterItems{
+    
+   
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView beginUpdates];

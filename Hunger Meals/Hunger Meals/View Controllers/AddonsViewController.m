@@ -10,6 +10,7 @@
 #import "MealsTableViewCell.h"
 #import "SVService.h"
 #import "Product.h"
+#import "Inventory.h"
 
 @interface AddonsViewController (){
     BOOL isCellExpanded;
@@ -48,11 +49,13 @@
     static NSString *cellIdentifier = @"MealsCellIdentifier";
     MealsTableViewCell *cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     Product *product = productObjectsArray[indexPath.row];
+     Inventory *inventory = product.inventories[0];
     
 //    NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
 //    cell.itemImageView.image = [UIImage imageNamed:imageName];
     cell.titleLabel.text = product.name;
     cell.descriptionView.text = product.description;
+    cell.priceLabel.text = [inventory valueForKey:@"price"];
     return cell;
 }
 

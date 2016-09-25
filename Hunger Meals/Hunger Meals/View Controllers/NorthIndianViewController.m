@@ -10,6 +10,7 @@
 #import "MealsTableViewCell.h"
 #import "SVService.h"
 #import "Product.h"
+#import "Inventory.h"
 
 @interface NorthIndianViewController (){
     BOOL isCellExpanded;
@@ -51,6 +52,7 @@
     MealsTableViewCell *cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     Product *product = productObjectsArray[indexPath.row];
+     Inventory *inventory = product.inventories[0];
 //
 //    NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
 //    cell.itemImageView.image = [UIImage imageNamed:imageName];
@@ -58,6 +60,7 @@
                       placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     cell.titleLabel.text = product.name;
     cell.descriptionView.text = product.description;
+    cell.priceLabel.text = [inventory valueForKey:@"price"];
     return cell;
 }
 
@@ -93,5 +96,11 @@
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
     
+}
+- (void)containerViewItemIndex:(NSInteger)index currentController:(UIViewController *)controller
+{
+    //    NSLog(@"current Index : %ld",(long)index);
+    //    NSLog(@"current controller : %@",controller);
+    [controller viewWillAppear:YES];
 }
 @end

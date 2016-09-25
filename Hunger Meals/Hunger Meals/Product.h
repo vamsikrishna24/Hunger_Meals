@@ -23,10 +23,12 @@
     NSString *image_url;
     NSString *created_at;
     NSString *updated_at;
+    NSMutableArray *inventories;
     
 }
 
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString<Optional> *id;
 @property (nonatomic, strong) NSString<Optional> *description;
 @property (nonatomic, retain) NSString<Optional> *type;
 @property (nonatomic, retain) NSString<Optional> *category;
@@ -37,6 +39,8 @@
 @property (nonatomic, retain) NSString<Optional> *image_url;
 @property (nonatomic, retain) NSString<Optional> *created_at;
 @property (nonatomic, retain) NSString<Optional> *updated_at;
+@property (nonatomic, retain) NSMutableArray<Optional> *inventories;
+
 
 
 

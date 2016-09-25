@@ -8,6 +8,6 @@
 #import "Product.h"
 
 @implementation Product
-@synthesize name,description,type,category,label,is_lunch, is_dinner,user_id,image_url,created_at,updated_at;
+@synthesize name,id,description,type,category,label,is_lunch, is_dinner,user_id,image_url,created_at,updated_at,inventories;
 
 @end
