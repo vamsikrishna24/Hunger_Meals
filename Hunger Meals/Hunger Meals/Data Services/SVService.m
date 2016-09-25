@@ -17,6 +17,7 @@
 #import "SVXMLParser.h"
 #import "Product.h"
 #import "UserData.h"
+#import "CartItem.h"
 
 
 @interface SVService()
@@ -187,6 +188,28 @@
     }];
 }
 
+- (void)getCartDatausingBlock:(void(^)(NSMutableArray *resultArray))resultBlock {
+    
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    
+    NSString *token = userDataObject.token;
+    NSString *url = [NSString stringWithFormat:kCartDataURL, HTTP_DATA_HOST,token];
+    
+    [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            resultBlock([self parseCartData:dictResult]);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+
+}
+
 #pragma Create User
 
 - (void)createUser:(NSDictionary *)params usingBlock :(void(^)(NSMutableArray *resultArray))resultBlock{
@@ -226,6 +249,14 @@
     NSDictionary *dict = (NSDictionary *)array;
     NSArray *resultArr = [dict valueForKeyPath:@"data"];
     NSMutableArray *parsedArray = [Product arrayOfModelsFromDictionaries:resultArr error:&error];
+    return parsedArray;
+}
+
+- (NSMutableArray *)parseCartData:(NSMutableArray *)array {
+    NSError *error = nil;
+    NSDictionary *dict = (NSDictionary *)array;
+    NSArray *resultArr = [dict valueForKeyPath:@"data.data"];
+    NSMutableArray *parsedArray = [CartItem arrayOfModelsFromDictionaries:resultArr error:&error];
     return parsedArray;
 }
 

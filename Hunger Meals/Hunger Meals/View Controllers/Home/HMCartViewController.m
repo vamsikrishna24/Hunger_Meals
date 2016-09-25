@@ -8,8 +8,12 @@
 
 #import "HMCartViewController.h"
 #import "HMCartTableViewCell.h"
+#import "SVService.h"
+#import "CartItem.h"
 
-@interface HMCartViewController ()
+@interface HMCartViewController (){
+    NSMutableArray *cartItemsArray;
+}
 
 @end
 
@@ -19,19 +23,33 @@
     [super viewDidLoad];
     self.title = @"Cart";
     self.cartTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear: animated];
+    
+    [self fetchAndLoadData];
 }
+
+-(void)fetchAndLoadData{
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    
+    SVService *service = [[SVService alloc] init];
+    [service getCartDatausingBlock:^(NSMutableArray *resultArray) {
+        
+        if (resultArray.count != 0 || resultArray != nil) {
+            cartItemsArray = [resultArray copy];
+        }
+        
+        [_cartTableView reloadData];
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    }];
+    
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
-}
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return [cartItemsArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -40,6 +58,9 @@
     if (cell == nil) {
         cell = [[HMCartTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cartCell];
     }
+    
+    CartItem *cartObject = [cartItemsArray objectAtIndex:indexPath.row];
+    
     return cell;
     
 }

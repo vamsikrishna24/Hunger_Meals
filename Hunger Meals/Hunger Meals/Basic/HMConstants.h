@@ -20,6 +20,8 @@ extern NSString * const kQuickBitesDataURL;
 extern NSString * const kNorthIndianBitesDataURL;
 extern NSString * const kSouthIndianBitesDataURL;
 extern NSString * const kAddOnBitesDataURL;
+extern NSString * const kCartDataURL;
+
 extern NSString * const kUserLoginURL;
 extern NSString * const kUserSignUpURL;
 

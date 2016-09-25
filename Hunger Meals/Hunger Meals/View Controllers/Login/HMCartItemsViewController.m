@@ -7,6 +7,7 @@
 //
 
 #import "HMCartItemsViewController.h"
+#import "SVService.h"
 
 @interface HMCartItemsViewController ()
 
@@ -25,10 +26,7 @@ static NSString * const cellIdentifier = @"CartItemCellIdentifier";
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 //checkoutItemsView
 /*
 #pragma mark - Navigation
