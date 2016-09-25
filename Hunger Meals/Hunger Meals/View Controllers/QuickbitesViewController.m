@@ -112,7 +112,6 @@
     isVegSwitchOn = vegSwitch.isOn;
     NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"SELF.label == %@",@"veg"];
     self.filteredProdcutsArray = [self.productObjectsArray filteredArrayUsingPredicate:bPredicate];
-    
     [_quickBitesTableView reloadData];
    
 }
