@@ -61,6 +61,11 @@
     
     CartItem *cartObject = [cartItemsArray objectAtIndex:indexPath.row];
     
+    cell.totalPriceLabel.text = cartObject.price;
+    cell.cartItemTitle.text = cartObject.product.name;
+    cell.countLabel.text = cartObject.quantity;
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:cartObject.product.image_url]
+                      placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     return cell;
     
 }

@@ -1542,6 +1542,9 @@
                                                                     <state key="normal" title="-">
                                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="decrementAction:" destination="qzc-he-Ial" eventType="touchUpInside" id="4PA-jD-5kP"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIL-At-Gzj">
                                                                     <rect key="frame" x="45" y="0.0" width="18" height="18"/>
@@ -1553,6 +1556,9 @@
                                                                     <state key="normal" title="+">
                                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="addAction:" destination="qzc-he-Ial" eventType="touchUpInside" id="EJN-Hb-DXj"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kss-uf-MZf">
                                                                     <rect key="frame" x="18" y="0.0" width="28" height="18"/>
@@ -1618,7 +1624,13 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="stepperView" destination="JVS-TS-gZ5" id="pZv-Qy-LOA"/>
+                                            <outlet property="cancelButton" destination="U3i-GZ-4zh" id="v8I-Tj-vB1"/>
+                                            <outlet property="cartItemTitle" destination="YNN-ub-U8e" id="BOG-pY-sRx"/>
+                                            <outlet property="cartItemsImageView" destination="nRg-pg-fwN" id="N6R-gg-5g4"/>
+                                            <outlet property="countLabel" destination="kss-uf-MZf" id="I4H-I8-RaU"/>
+                                            <outlet property="decrimentButton" destination="n20-Hs-s6v" id="9hM-lB-IBv"/>
+                                            <outlet property="incrementButton" destination="OIL-At-Gzj" id="nP4-Pb-oNO"/>
+                                            <outlet property="totalPriceLabel" destination="aBw-T5-OJu" id="lgs-A3-WmT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

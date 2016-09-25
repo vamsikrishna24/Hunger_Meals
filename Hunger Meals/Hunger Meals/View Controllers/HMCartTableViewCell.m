@@ -22,5 +22,13 @@
 
     // Configure the view for the selected state
 }
-
+- (IBAction)addAction:(id)sender{
+    
+    self.countLabel.text = [NSString stringWithFormat:@"%d",[self.countLabel.text intValue]+1];
+    
+}
+- (IBAction)decrementAction:(id)sender {
+    self.countLabel.text = [NSString stringWithFormat:@"%d",[self.countLabel.text intValue]-1];
+    
+}
 @end
