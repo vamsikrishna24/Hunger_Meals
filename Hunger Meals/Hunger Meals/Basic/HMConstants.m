@@ -29,6 +29,6 @@ NSString * const kEmptyValue = @" - ";
 NSString * const kIndicatorTitle = @"Please Wait...";
 NSString * const kIndicatorTitleSaving = @"Saving...";
 NSString * const kNoInternetError = @"No internet connection.";
-NSString * const kToken = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjM2LCJpc3MiOiJodHRwczpcL1wvaG1lYWxzYXBpLnN1a29yLmluXC9hcGlcL3YxXC9sb2dpbiIsImlhdCI6MTQ3NDgxMjQ1MCwiZXhwIjoxNDc0ODE2MDUwLCJuYmYiOjE0NzQ4MTI0NTAsImp0aSI6IjQ5MDE2NzMyYzVmNjNmYmUwM2M3YzJiNWM5ODRhZGRmIn0.NKqYwGV5aPkupMJRzHUgF7qTts6oUAeHI8r5scriI-c";
+NSString * const kToken = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjM2LCJpc3MiOiJodHRwczpcL1wvaG1lYWxzYXBpLnN1a29yLmluXC9hcGlcL3YxXC9sb2dpbiIsImlhdCI6MTQ3NDgyOTM3MCwiZXhwIjoxNDc0ODMyOTcwLCJuYmYiOjE0NzQ4MjkzNzAsImp0aSI6IjM0NTUxMDQ5MGZmYjdmYzdiN2U1YmY4OWNlYjU3NzY5In0.SHXGOZOBse5pIAMDpxljEf0s7S06hl0B0H1L-7mFTYI";
 
 @end

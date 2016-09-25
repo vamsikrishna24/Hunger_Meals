@@ -10,5 +10,8 @@
 #import "CommonViewController.h"
 
 @interface NorthIndianViewController : CommonViewController
+- (IBAction)addToCartAction:(id)sender;
+- (IBAction)addAction:(id)sender;
+
 
 @end

@@ -19,6 +19,7 @@
     NSInteger tableViewHeight;
     NSMutableArray *productObjectsArray;
 
+
 }
 
 @property(nonatomic, strong) NSMutableArray *dishImagesArray;
@@ -35,6 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dishImagesArray = [[NSMutableArray alloc]initWithObjects:@"dish1",@"dish2",@"dish3",@"dish4",@"dish5",@"dish6",@"dish7",@"dish8",@"dish9",@"dish10",@"dish11",@"dish12",@"dish13",@"dish14",@"dish15",@"dish16", nil];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -42,6 +44,7 @@
     [self fetchAndLoadData]; 
     isCellExpanded = NO;
     tableViewHeight = 210;
+
 }
 
 #pragma mark - Table view data source
