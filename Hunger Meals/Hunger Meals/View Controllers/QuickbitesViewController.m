@@ -99,6 +99,8 @@
 
     }
     
+    cell.addToCartButton.tag = indexPath.row;
+    
   //  NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
     
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:product.image_url]
@@ -169,4 +171,21 @@
     
 
 }
+
+- (IBAction)addToCartAction:(id)sender{
+    UIButton *btn = (UIButton *)sender;
+    Product *productObject = _productObjectsArray[btn.tag];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: productObject.id, @"inventories_id",@"1", @"quantity",  nil];
+    SVService *service = [[SVService alloc] init];
+    [service addToCart:dict usingBlock:^(NSString *resultMessage) {
+        if (resultMessage != nil) {
+            
+        }
+        
+        
+    }];
+    
+
+}
+
 @end

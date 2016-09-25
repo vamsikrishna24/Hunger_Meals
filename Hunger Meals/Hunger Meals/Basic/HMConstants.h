@@ -21,6 +21,9 @@ extern NSString * const kNorthIndianBitesDataURL;
 extern NSString * const kSouthIndianBitesDataURL;
 extern NSString * const kAddOnBitesDataURL;
 extern NSString * const kCartDataURL;
+extern NSString * const kAddToCartURL;
+extern NSString * const kUpdateCartURL;
+extern NSString * const kDeleteCartURL;
 
 extern NSString * const kUserLoginURL;
 extern NSString * const kUserSignUpURL;

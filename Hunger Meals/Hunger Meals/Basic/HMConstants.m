@@ -20,6 +20,10 @@ NSString * const kNorthIndianBitesDataURL = @"%@/products/category/nindian?token
 NSString * const kSouthIndianBitesDataURL = @"%@/products/category/sindian?token=%@";
 NSString * const kAddOnBitesDataURL = @"%@/products/category/addon?token=%@";
 NSString * const kCartDataURL = @"%@/currentcart?token=%@";
+NSString * const kAddToCartURL = @"%@/savecart?token=%@";
+NSString * const kUpdateCartURL = @"%@/cart/%@?token=%@";
+NSString * const kDeleteCartURL = @"%@/cart/%@?token=%@";
+
 
 NSString * const kUserLoginURL = @"%@/login";
 NSString * const kUserSignUpURL = @"%@/jwcreate";
