@@ -16,11 +16,14 @@
 @interface CurriesViewController (){
     MealsTableViewCell *cell;
     BOOL isCellExpanded;
+    BOOL isVegSwitchOn;
+
 }
 
 @property(nonatomic, strong) NSMutableArray *dishImagesArray;
 @property (weak, nonatomic) IBOutlet UITableView *curriesTableView;
 @property (strong, nonatomic) NSMutableArray *productObjectsArray;
+@property (strong, nonatomic) NSArray *filteredProdcutsArray;
 
 
 
@@ -66,8 +69,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+    if (isVegSwitchOn) {
+        return _filteredProdcutsArray.count;
+    }
     return _productObjectsArray.count;
+
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -79,7 +85,11 @@
     //[cell.contentView setLayoutMargins:UIEdgeInsetsMake(15, 0, 0, 0)];
     
     Product *product = _productObjectsArray[indexPath.row];
-     Inventory *inventory = product.inventories[0];
+    if (isVegSwitchOn) {
+        product = _filteredProdcutsArray[indexPath.row];
+    }
+    
+    Inventory *inventory = product.inventories[0];
     
     //  NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
     
@@ -109,5 +119,14 @@
     return 345;
 }
 
+-(IBAction)vegFilterSwitchClicked:(id)sender{
+    UISwitch *vegSwitch = (UISwitch *)sender;
+    isVegSwitchOn = vegSwitch.isOn;
+    NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"SELF.label == %@",@"veg"];
+    self.filteredProdcutsArray = [self.productObjectsArray filteredArrayUsingPredicate:bPredicate];
+    
+    [_curriesTableView reloadData];
+    
+}
 
 @end

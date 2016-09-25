@@ -16,11 +16,14 @@
 @interface QuickbitesViewController (){
     MealsTableViewCell *cell;
     BOOL isCellExpanded;
+    BOOL isVegSwitchOn;
 }
 
 @property(nonatomic, strong) NSMutableArray *inventoryObjectArray;
 @property (weak, nonatomic) IBOutlet UITableView *quickBitesTableView;
 @property (strong, nonatomic) NSMutableArray *productObjectsArray;
+@property (strong, nonatomic) NSArray *filteredProdcutsArray;
+
 @property (strong, nonatomic) NSMutableArray *labelArray;
 
 
@@ -68,7 +71,9 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    if (isVegSwitchOn) {
+       return _filteredProdcutsArray.count;
+    }
     return _productObjectsArray.count;
 }
 
@@ -81,6 +86,9 @@
     //[cell.contentView setLayoutMargins:UIEdgeInsetsMake(15, 0, 0, 0)];
     
     Product *product = _productObjectsArray[indexPath.row];
+    if (isVegSwitchOn) {
+        product = _filteredProdcutsArray[indexPath.row];
+    }
     
     Inventory *inventory = product.inventories[0];
     
@@ -96,14 +104,19 @@
     cell.priceLabel.text = [inventory valueForKey: @"price"];
     _labelArray = [_productObjectsArray valueForKey:@"label"];
 
-   // NSMutableArray *filtered = [_labelArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(veg == %@)", @"veg"]];
-    //[NSString stringWithFormat:@"Veg Manchurian  %ld",(long)indexPath.row];
     return cell;
 }
--(void)filterItems{
+
+-(IBAction)vegFilterSwitchClicked:(id)sender{
+    UISwitch *vegSwitch = (UISwitch *)sender;
+    isVegSwitchOn = vegSwitch.isOn;
+    NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"SELF.label == %@",@"veg"];
+    self.filteredProdcutsArray = [self.productObjectsArray filteredArrayUsingPredicate:bPredicate];
     
+    [_quickBitesTableView reloadData];
    
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView beginUpdates];

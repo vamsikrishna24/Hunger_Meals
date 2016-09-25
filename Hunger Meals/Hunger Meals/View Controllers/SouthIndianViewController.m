@@ -16,6 +16,7 @@
 @interface SouthIndianViewController (){
     BOOL isCellExpanded;
     NSInteger tableViewHeight;
+    BOOL isVegSwitchOn;
 
 }
 
@@ -23,6 +24,8 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *southIndianTableView;
 @property (strong, nonatomic) NSMutableArray *productObjectsArray;
+@property (strong, nonatomic) NSArray *filteredProdcutsArray;
+
 
 
 @end
@@ -46,7 +49,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [_productObjectsArray count];
+    if (isVegSwitchOn) {
+        return _filteredProdcutsArray.count;
+    }
+    return _productObjectsArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -54,7 +60,11 @@
     MealsTableViewCell *cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     Product *product = _productObjectsArray[indexPath.row];
-     Inventory *inventory = product.inventories[0];
+    if (isVegSwitchOn) {
+        product = _filteredProdcutsArray[indexPath.row];
+    }
+    
+    Inventory *inventory = product.inventories[0];
 
 //    NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
 //    cell.itemImageView.image = [UIImage imageNamed:imageName];
@@ -98,6 +108,16 @@
 
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
+}
+
+-(IBAction)vegFilterSwitchClicked:(id)sender{
+    UISwitch *vegSwitch = (UISwitch *)sender;
+    isVegSwitchOn = vegSwitch.isOn;
+    NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"SELF.label == %@",@"veg"];
+    self.filteredProdcutsArray = [self.productObjectsArray filteredArrayUsingPredicate:bPredicate];
+    
+    [_southIndianTableView reloadData];
+    
 }
 
 @end

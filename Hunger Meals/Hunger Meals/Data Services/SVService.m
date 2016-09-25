@@ -104,8 +104,10 @@
 
 #pragma QuickBites
 - (void)getQuickBitesProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
     
-    NSString *token = [dict objectForKey:@"token"];
+    NSString *token = userDataObject.token;
     NSString *url = [NSString stringWithFormat:kQuickBitesDataURL, HTTP_DATA_HOST,token];
     
     [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
@@ -123,8 +125,10 @@
 
 #pragma southIndian
 - (void)getSouthIndianProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
     
-    NSString *token = [dict objectForKey:@"token"];
+    NSString *token = userDataObject.token;
     NSString *url = [NSString stringWithFormat:kSouthIndianBitesDataURL, HTTP_DATA_HOST,token];
     
     [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
@@ -142,7 +146,10 @@
 #pragma NorthIndian
 - (void)getNorthIndianProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
     
-    NSString *token = [dict objectForKey:@"token"];
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    
+    NSString *token = userDataObject.token;
     NSString *url = [NSString stringWithFormat:kNorthIndianBitesDataURL, HTTP_DATA_HOST,token];
     
     [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
@@ -161,7 +168,10 @@
 #pragma addon
 - (void)getAddOnProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
     
-    NSString *token = [dict objectForKey:@"token"];
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    
+    NSString *token = userDataObject.token;
     NSString *url = [NSString stringWithFormat:kAddOnBitesDataURL, HTTP_DATA_HOST,token];
     
     [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {

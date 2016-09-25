@@ -14,6 +14,8 @@
 
 @interface AddonsViewController (){
     BOOL isCellExpanded;
+    BOOL isVegSwitchOn;
+
     NSInteger tableViewHeight;
     NSMutableArray *productObjectsArray;
 
@@ -21,6 +23,8 @@
 
 @property(nonatomic, strong) NSMutableArray *dishImagesArray;
 @property (weak, nonatomic) IBOutlet UITableView *addOnTableView;
+@property (strong, nonatomic) NSArray *filteredProdcutsArray;
+
 
 
 @end
@@ -42,14 +46,22 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [productObjectsArray count];
+    if (isVegSwitchOn) {
+        return _filteredProdcutsArray.count;
+    }
+    return productObjectsArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"MealsCellIdentifier";
     MealsTableViewCell *cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
     Product *product = productObjectsArray[indexPath.row];
-     Inventory *inventory = product.inventories[0];
+    if (isVegSwitchOn) {
+        product = _filteredProdcutsArray[indexPath.row];
+    }
+    
+    Inventory *inventory = product.inventories[0];
     
 //    NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
 //    cell.itemImageView.image = [UIImage imageNamed:imageName];
@@ -91,4 +103,15 @@
     }];
     
 }
+
+-(IBAction)vegFilterSwitchClicked:(id)sender{
+    UISwitch *vegSwitch = (UISwitch *)sender;
+    isVegSwitchOn = vegSwitch.isOn;
+    NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"SELF.label == %@",@"veg"];
+    self.filteredProdcutsArray = [productObjectsArray filteredArrayUsingPredicate:bPredicate];
+    
+    [_addOnTableView reloadData];
+    
+}
+
 @end
