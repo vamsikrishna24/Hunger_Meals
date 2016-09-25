@@ -64,6 +64,13 @@
         product = _filteredProdcutsArray[indexPath.row];
     }
     
+    if([product.label  isEqual: @"veg"]){
+        cell.vegNonVegColorView.backgroundColor = [UIColor greenColor];
+    }else if([product.label  isEqual: @"non-veg"]){
+        cell.vegNonVegColorView.backgroundColor = [UIColor redColor];
+        
+    }
+
     Inventory *inventory = product.inventories[0];
 
 //    NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];

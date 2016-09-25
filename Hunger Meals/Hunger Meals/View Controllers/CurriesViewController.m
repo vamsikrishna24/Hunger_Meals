@@ -34,8 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _productObjectsArray = [[NSMutableArray alloc] init];
-    self.dishImagesArray = [[NSMutableArray alloc]initWithObjects:@"dish1",@"dish2",@"dish3",@"dish4",@"dish5",@"dish6",@"dish7",@"dish8",@"dish9",@"dish10",@"dish11",@"dish12",@"dish13",@"dish14",@"dish15",@"dish16", nil];
-    [self fetchAndLoadData];
+       [self fetchAndLoadData];
     
     
     // [self.quickBitesTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
@@ -90,6 +89,13 @@
     }
     
     Inventory *inventory = product.inventories[0];
+    if([product.label  isEqual: @"veg"]){
+        cell.vegNonVegColorView.backgroundColor = [UIColor greenColor];
+    }else if([product.label  isEqual: @"non-veg"]){
+        cell.vegNonVegColorView.backgroundColor = [UIColor redColor];
+        
+    }
+
     
     //  NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
     

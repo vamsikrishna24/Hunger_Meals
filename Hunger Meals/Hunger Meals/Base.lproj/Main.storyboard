@@ -1405,6 +1405,7 @@
                                             <outlet property="priceLabel" destination="zvA-fH-2VX" id="01R-OB-kUu"/>
                                             <outlet property="stepperView" destination="cAu-HF-vni" id="4bx-Ov-vfv"/>
                                             <outlet property="titleLabel" destination="zKn-Pl-mJP" id="Sw7-6t-i6D"/>
+                                            <outlet property="vegNonVegColorView" destination="f9z-lc-rVc" id="IMW-1g-DAM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
