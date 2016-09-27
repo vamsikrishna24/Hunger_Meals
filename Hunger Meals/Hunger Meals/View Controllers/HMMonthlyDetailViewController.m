@@ -10,7 +10,7 @@
 #import "HMMonthlyCollectionViewCell.h"
 #import "HMScrollMonthlyCollectionViewCell.h"
 
-@interface HMMonthlyDetailViewController ()<UIScrollViewDelegate>{
+@interface HMMonthlyDetailViewController ()<UIScrollViewDelegate,UIScrollViewAccessibilityDelegate>{
     NSArray *scrollingImgs;
 
 }
@@ -27,6 +27,9 @@
     //or the recycling mechanism will destroy your data once
     //your item views move off-screen
     scrollingImgs = [NSArray arrayWithObjects: @"page1.png",@"page2.png",@"page3.png",@"page4.png", @"page5.png", nil];
+    self.scrollView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height+500);
+    _scrollView.bounces = NO;
+
 
    
 }
@@ -36,54 +39,23 @@
     [super viewDidLoad];
     
     _swipeView.pagingEnabled = YES;
-    
-    NSArray *cellGallary = scrollingImgs;
 
-    for (int i = 0; i < cellGallary.count; i++) {
-        CGRect frame;
-        frame.origin.x = self.scrollView.frame.size.width * i;
-        frame.origin.y = 0;
-        frame.size = self.scrollView.frame.size;
-        
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
-        imageView.image = [UIImage imageNamed:cellGallary[i]];
-        imageView.clipsToBounds = YES;
-        imageView.contentMode = UIViewContentModeScaleAspectFill;
-        
-        [self.scrollView addSubview:imageView];
-    }
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * 5, self.scrollView.frame.size.height);
-    [self.scrollView setDelegate:self];
     self.pageControl.currentPage = 0;
 
     //collection view flowlayout
     self.collectionView.backgroundColor = [UIColor clearColor];
     
-    // Configure layout
-    self.flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    [self.flowLayout setItemSize:CGSizeMake(211, 150)];
-    [self.flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-    self.flowLayout.minimumInteritemSpacing = 10.0f;
+//    // Configure layout
+//    self.flowLayout = [[UICollectionViewFlowLayout alloc] init];
+//    [self.flowLayout setItemSize:CGSizeMake(211, 150)];
+//    [self.flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+//    self.flowLayout.minimumInteritemSpacing = 10.0f;
     
     self.pageControl.currentPage = self.swipeView.currentItemIndex;
-
+    CGSize scrollableSize = CGSizeMake(320, 800);
+    [self.scrollView setContentSize:scrollableSize];
 }
 #pragma mark - ScrollView Delegate methods
-- (void)scrollViewDidScroll:(UIScrollView *)sender {
-    
-    CGFloat xOffset = sender.contentOffset.x;
-    CGFloat frameWidth = sender.frame.size.width;
-    
-    if (xOffset<0) {
-        [sender setContentOffset:CGPointZero animated:NO];
-    }
-    else if (xOffset>sender.contentSize.width-frameWidth){
-        [sender setContentOffset:CGPointMake(sender.contentSize.width-frameWidth, 0) animated:NO];
-    }
-    int page = floor((xOffset - frameWidth / 2) / frameWidth) + 1;
-    self.pageControl.currentPage = page;
-    
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
