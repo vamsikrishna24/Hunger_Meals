@@ -78,7 +78,7 @@
 
     }
     else if ([NSStringFromClass([self class]) isEqualToString:@"MealsViewController"]) {
-        self.navigationItem.title = @"Bangalore";
+        self.navigationItem.title = @"Menu";
     }
     
 }

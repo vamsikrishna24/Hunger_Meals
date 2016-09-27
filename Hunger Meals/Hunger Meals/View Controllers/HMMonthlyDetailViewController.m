@@ -37,6 +37,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Meal Plan";
     
     _swipeView.pagingEnabled = YES;
 
