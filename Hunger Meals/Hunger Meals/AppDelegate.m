@@ -36,6 +36,7 @@
     [self showInitialScreen];
     
     [IQKeyboardManager sharedManager].enable = YES;
+  
 
     return YES;
 }

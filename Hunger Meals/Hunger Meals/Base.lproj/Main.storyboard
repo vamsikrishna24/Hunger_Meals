@@ -552,7 +552,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tm4-C5-14d">
                                                     <rect key="frame" x="19" y="14" width="15" height="15"/>
-                                                    <color key="backgroundColor" red="1" green="0.46654374597446191" blue="0.20220349609786414" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.71764705880000002" green="0.71764705880000002" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="15" id="WCN-sR-vHZ"/>
                                                         <constraint firstAttribute="height" constant="15" id="hTl-CM-ZqS"/>
@@ -609,7 +609,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.084782094249999995" green="0.60784199279999995" blue="0.82033295159999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.61824665300000003" blue="0.15429812800000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="I0N-qh-M4J" firstAttribute="leading" secondItem="DGY-B6-cUa" secondAttribute="trailing" constant="8" id="EBT-Sm-32A"/>
                                     <constraint firstItem="hWj-3H-P95" firstAttribute="leading" secondItem="I0N-qh-M4J" secondAttribute="leading" id="GpO-ga-7TB"/>
@@ -3128,7 +3128,7 @@
                                             <constraint firstAttribute="width" constant="28" id="jiD-ke-GPc"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                        <state key="normal" image="Edit">
+                                        <state key="normal" image="Account">
                                             <color key="titleColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
@@ -3269,7 +3269,7 @@
         <scene sceneID="HGK-O4-n6R">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ux2-tr-jTo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cart" image="Shopping" id="V2E-1m-Y0p"/>
+                    <tabBarItem key="tabBarItem" title="Cart" image="Cart_Icon" id="V2E-1m-Y0p"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VNr-sb-R4K">
@@ -3289,7 +3289,7 @@
         <scene sceneID="3pQ-qu-BDh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zQI-vf-r19" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Menu" image="Menu" id="ws4-NR-D6B"/>
+                    <tabBarItem key="tabBarItem" title="Menu" image="Meals" id="ws4-NR-D6B"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CwK-Mr-6wH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -4154,15 +4154,20 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZq-Yf-5Xm">
-                                <rect key="frame" x="94" y="450" width="228" height="42"/>
-                                <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="131" y="450" width="152" height="42"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.54117647059999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="228" id="jCj-Uv-3zb"/>
+                                    <constraint firstAttribute="width" constant="152" id="jCj-Uv-3zb"/>
                                     <constraint firstAttribute="height" constant="42" id="uSt-GF-zK1"/>
                                 </constraints>
                                 <state key="normal" title="Add a new address">
-                                    <color key="titleColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xst-wC-O0M">
                                 <rect key="frame" x="0.0" y="64" width="414" height="378"/>
@@ -4229,7 +4234,7 @@
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="lRN-X5-tIO" firstAttribute="leading" secondItem="wEC-CQ-U2b" secondAttribute="leadingMargin" constant="-20" id="2ZK-N8-qQx"/>
-                            <constraint firstItem="hZq-Yf-5Xm" firstAttribute="centerX" secondItem="wEC-CQ-U2b" secondAttribute="centerX" constant="1" id="JFE-aV-WrI"/>
+                            <constraint firstItem="hZq-Yf-5Xm" firstAttribute="centerX" secondItem="wEC-CQ-U2b" secondAttribute="centerX" constant="-0.5" id="JFE-aV-WrI"/>
                             <constraint firstItem="xst-wC-O0M" firstAttribute="top" secondItem="0iq-Wp-n77" secondAttribute="bottom" constant="44" id="Nmd-es-hU7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xst-wC-O0M" secondAttribute="trailing" constant="-20" id="PHt-3K-1jb"/>
                             <constraint firstItem="xst-wC-O0M" firstAttribute="leading" secondItem="wEC-CQ-U2b" secondAttribute="leadingMargin" constant="-20" id="XF7-Hi-Rt5"/>
@@ -4524,22 +4529,21 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Account" width="29" height="29"/>
         <image name="Address" width="29" height="29"/>
         <image name="Button_Radio_Checked.png" width="26" height="26"/>
         <image name="Button_Radio_Unchecked.png" width="26" height="26"/>
         <image name="Cart_Icon" width="29" height="29"/>
         <image name="Dish_16" width="290" height="163"/>
-        <image name="Edit" width="32" height="32"/>
         <image name="Edit.png" width="20" height="20"/>
         <image name="Hamberger_Menu" width="32" height="32"/>
         <image name="Home" width="29" height="29"/>
         <image name="Location_Icon.png" width="24" height="24"/>
         <image name="Logo" width="160" height="160"/>
-        <image name="Menu" width="32" height="32"/>
+        <image name="Meals" width="29" height="29"/>
         <image name="My_Location.png" width="20" height="20"/>
         <image name="ProfileImage.jpg" width="235" height="235"/>
         <image name="Settings" width="32" height="32"/>
-        <image name="Shopping" width="32" height="32"/>
         <image name="SplashScreen" width="300" height="450"/>
         <image name="User_location" width="29" height="29"/>
     </resources>

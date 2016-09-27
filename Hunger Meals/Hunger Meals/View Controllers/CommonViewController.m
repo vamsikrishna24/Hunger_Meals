@@ -23,7 +23,12 @@
     [super viewDidLoad];
     [self initializations];
     
-
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back"
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:nil
+                                                                            action:nil];
+    
+    [self.navigationController.navigationBar setTintColor:[UIColor orangeColor]];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
