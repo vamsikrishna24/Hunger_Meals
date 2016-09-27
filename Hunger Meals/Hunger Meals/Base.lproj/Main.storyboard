@@ -1068,15 +1068,13 @@
                             <color key="tintColor" red="0.93725490199999995" green="0.54117647059999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem image="Location_Icon.png" id="Geu-ct-WcC">
-                                <inset key="imageInsets" minX="1" minY="5" maxX="0.0" maxY="5"/>
+                            <barButtonItem image="User_location" id="Geu-ct-WcC">
                                 <color key="tintColor" red="1" green="0.64313725489999995" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="locationButtonTapped:" destination="5CW-sI-ctt" id="qZr-df-Y7f"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="Notification" id="uyb-VN-zzQ">
-                                <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                            <barButtonItem image="User_location" id="uyb-VN-zzQ">
                                 <color key="tintColor" red="1" green="0.64313725489999995" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="notificationButtonPressed:" destination="5CW-sI-ctt" id="BiI-cX-uQV"/>
@@ -4151,19 +4149,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="73.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home" translatesAutoresizingMaskIntoConstraints="NO" id="8sr-0r-WLY">
-                                                    <rect key="frame" x="10" y="17" width="40" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="8c2-JT-MyE"/>
-                                                        <constraint firstAttribute="height" constant="40" id="YmC-KJ-FU4"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="207, 1st cross,sriram nagar - block -b kondapur,Hyderabad,Telangana 500087" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VGE-Z9-5cz">
                                                     <rect key="frame" x="58" y="8" width="356" height="59"/>
                                                     <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Address" translatesAutoresizingMaskIntoConstraints="NO" id="8sr-0r-WLY">
+                                                    <rect key="frame" x="10" y="17" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="8c2-JT-MyE"/>
+                                                        <constraint firstAttribute="height" constant="40" id="YmC-KJ-FU4"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -4497,22 +4495,23 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Address" width="29" height="29"/>
         <image name="Button_Radio_Checked.png" width="26" height="26"/>
         <image name="Button_Radio_Unchecked.png" width="26" height="26"/>
-        <image name="Cart_Icon" width="64" height="64"/>
+        <image name="Cart_Icon" width="29" height="29"/>
         <image name="Dish_16" width="290" height="163"/>
         <image name="Edit" width="32" height="32"/>
         <image name="Edit.png" width="20" height="20"/>
         <image name="Hamberger_Menu" width="32" height="32"/>
-        <image name="Home" width="32" height="32"/>
+        <image name="Home" width="29" height="29"/>
         <image name="Location_Icon.png" width="24" height="24"/>
         <image name="Logo" width="160" height="160"/>
         <image name="Menu" width="32" height="32"/>
         <image name="My_Location.png" width="20" height="20"/>
-        <image name="Notification" width="32" height="32"/>
         <image name="ProfileImage.jpg" width="235" height="235"/>
         <image name="Settings" width="32" height="32"/>
         <image name="Shopping" width="32" height="32"/>
         <image name="SplashScreen" width="300" height="450"/>
+        <image name="User_location" width="29" height="29"/>
     </resources>
 </document>
