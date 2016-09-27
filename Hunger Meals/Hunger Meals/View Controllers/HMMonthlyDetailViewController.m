@@ -45,12 +45,6 @@
     //collection view flowlayout
     self.collectionView.backgroundColor = [UIColor clearColor];
     
-//    // Configure layout
-//    self.flowLayout = [[UICollectionViewFlowLayout alloc] init];
-//    [self.flowLayout setItemSize:CGSizeMake(211, 150)];
-//    [self.flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-//    self.flowLayout.minimumInteritemSpacing = 10.0f;
-    
     self.pageControl.currentPage = self.swipeView.currentItemIndex;
     CGSize scrollableSize = CGSizeMake(320, 800);
     [self.scrollView setContentSize:scrollableSize];
@@ -103,15 +97,7 @@
     return 0; // This is the minimum inter item spacing, can be more
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
@@ -133,9 +119,7 @@
     //create new view if no view is available for recycling
     if (view == nil)
     {
-        //don't do anything specific to the index within
-        //this `if (view == nil) {...}` statement because the view will be
-        //recycled and used with other index values later
+
         view = [[UIView alloc] initWithFrame:self.swipeView.bounds];
         view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
