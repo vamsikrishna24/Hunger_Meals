@@ -236,6 +236,57 @@
     }];
 }
 
+//- (void)currentCartDetails:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
+//    
+//    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+//    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+//    
+//    NSString *token = userDataObject.token;
+//    NSString *url = [NSString stringWithFormat:kAddToCartURL, HTTP_DATA_HOST,token];
+//    
+//    
+//    [self sendRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+//        
+//        if (response.statusCode == 200 && result!=nil) {
+//            
+//            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+//            NSDictionary *resultDict = [dictResult objectForKey:@"data"];
+//            NSString *resultMessage = [resultDict objectForKey:@"message"];
+//            
+//            resultBlock(resultMessage);
+//        }
+//        else{
+//            resultBlock(nil);
+//        }
+//    }];
+//}
+
+//- (void)deleteCartItems:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
+//    
+//    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+//    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+//    
+//    NSString *token = userDataObject.token;
+//    NSString *url = [NSString stringWithFormat:kDeleteCartURL, HTTP_DATA_HOST,token];
+//    
+//    
+//    [self deleteRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+//        
+//        if (response.statusCode == 200 && result!=nil) {
+//            
+//            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+//            NSDictionary *resultDict = [dictResult objectForKey:@"data"];
+//            NSString *resultMessage = [resultDict objectForKey:@"message"];
+//            
+//            resultBlock(resultMessage);
+//        }
+//        else{
+//            resultBlock(nil);
+//        }
+//    }];
+//}
+
+
 #pragma Create User
 
 - (void)createUser:(NSDictionary *)params usingBlock :(void(^)(NSMutableArray *resultArray))resultBlock{
@@ -294,6 +345,17 @@
     
     //Add POST method to request
     [request setPostMethodWithDict:perameterDict andURL:urlString];
+    
+    [self initiateConnectionwithrequest:request usingblock:block];
+}
+
+
+-(void)deleteRequest:(NSString *)urlString  Perameters:(NSDictionary *)perameterDict usingblock:(void(^)(id result, NSHTTPURLResponse *response, NSError *err))block{
+    
+    SVRequest *request = [[SVRequest alloc] init];
+    
+    //Add PUT method to request
+    [request setDeleteMethodWithDict:perameterDict andURL:urlString];
     
     [self initiateConnectionwithrequest:request usingblock:block];
 }

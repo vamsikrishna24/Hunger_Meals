@@ -34,6 +34,9 @@ NSString * const kEmptyValue = @" - ";
 NSString * const kIndicatorTitle = @"Please Wait...";
 NSString * const kIndicatorTitleSaving = @"Saving...";
 NSString * const kNoInternetError = @"No internet connection.";
-NSString * const kToken = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjM2LCJpc3MiOiJodHRwczpcL1wvaG1lYWxzYXBpLnN1a29yLmluXC9hcGlcL3YxXC9sb2dpbiIsImlhdCI6MTQ3NDgzMzc2MywiZXhwIjoxNDc0ODM3MzYzLCJuYmYiOjE0NzQ4MzM3NjMsImp0aSI6IjlhZWU2ZGU4MzBhNTU2NmJmMjg0YmEyOGUwODllNzBiIn0.eGvDDX_0E_o077m_yMHx8ya6YYeXlGTlpc1V4p-Abxc";
+NSString * const kToken = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjM2LCJpc3MiOiJodHRwczpcL1wvaG1lYWxzYXBpLnN1a29yLmluXC9hcGlcL3YxXC9sb2dpbiIsImlhdCI6MTQ3NDg3MjQyNCwiZXhwIjoxNDc0ODc2MDI0LCJuYmYiOjE0NzQ4NzI0MjQsImp0aSI6IjdkNGIwYWJiOTBlNTZjNDJjNDcxOTU3ZjQ1YjYwNjQ3In0.75QvRODahOpAlg2LMYELcOb1i9jGv9ThtNOTLyLpaOk";
+
+#pragma Amazon URL
+NSString * const imageAmazonlink = @"https://s3.ap-south-1.amazonaws.com/hungermeals/dishes/";
 
 @end

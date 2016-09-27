@@ -103,8 +103,9 @@
     
   //  NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
     
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:product.image_url]
-                      placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    NSString *string = [NSString stringWithFormat:@"%@%@",imageAmazonlink,product.image_url];
+    [cell.itemImageView sd_setImageWithURL:[NSURL URLWithString:string]placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    
     cell.titleLabel.text =product.name;
     cell.descriptionView.text = product.description;
     

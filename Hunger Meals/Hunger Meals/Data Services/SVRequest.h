@@ -108,4 +108,8 @@ authorization with tocken
  
  */
 -(void)setPutMethodWithDict:(NSDictionary*)dictParams andURL:(NSString*)urlString;
+
+-(void)setDeleteMethodWithDict:(NSDictionary*)dictParams andURL:(NSString*)urlString;
+
 @end
+

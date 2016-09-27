@@ -47,10 +47,27 @@
     
 }
 
+//- (IBAction)deleteCartItemAction:(id)sender{
+//        [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+//    UIButton *btn = (UIButton *)sender;
+//    CartItem *productObject = cartItemsArray[btn.tag];
+//    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: @"391", @"inventories_id",nil];
+//
+//        SVService *service = [[SVService alloc] init];
+//        [service deleteCartItems:dict usingBlock:^(NSString *resultMessage) {
+//            
+//            
+//            [_cartTableView reloadData];
+//            [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+//        }];
+//        
+//    }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [cartItemsArray count];
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cartCell = @"CartCellIdentifier";

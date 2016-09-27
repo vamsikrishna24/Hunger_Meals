@@ -36,4 +36,9 @@ extern NSString * const kIndicatorTitle;
 extern NSString * const kIndicatorTitleSaving;
 extern NSString * const kNoInternetError;
 extern NSString * const kToken;
+
+#pragma Amazon URL
+extern NSString * const imageAmazonlink;
+
+
 @end

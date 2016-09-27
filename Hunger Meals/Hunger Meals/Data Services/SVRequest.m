@@ -209,4 +209,20 @@
     [self addValue:SV_APPLICATION_JSON forHTTPHeaderField: SV_Key_Content_Type];
     [self setHTTPMethod:@"PUT"];
 }
+
+-(void)setDeleteMethodWithDict:(NSDictionary*)dictParams andURL:(NSString*)urlString
+{
+    NSError *err;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictParams
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&err];
+    [self setURL:[NSURL URLWithString:urlString]];
+    [self setCachePolicy:NSURLRequestReloadIgnoringCacheData];
+    [self setTimeoutInterval:TIMEOUT];
+    [self setHTTPBody:jsonData];
+    
+    
+    [self addValue:SV_APPLICATION_JSON forHTTPHeaderField: SV_Key_Content_Type];
+    [self setHTTPMethod:@"DELETE"];
+}
 @end
