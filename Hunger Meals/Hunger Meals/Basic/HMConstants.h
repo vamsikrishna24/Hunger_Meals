@@ -27,6 +27,7 @@ extern NSString * const kDeleteCartURL;
 
 extern NSString * const kUserLoginURL;
 extern NSString * const kUserSignUpURL;
+extern NSString * const kAddCoupenCode;
 
 
 #pragma -mark Other constants

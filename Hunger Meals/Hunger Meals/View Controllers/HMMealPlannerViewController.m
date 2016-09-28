@@ -14,6 +14,7 @@
     NSDate *_dateSelected;
 
 }
+@property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
 
 @end
 
@@ -161,6 +162,9 @@
     return NO;
     
 }
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 5;
+}
 
 - (void)createRandomEvents
 {
@@ -179,6 +183,8 @@
         
         [_eventsByDate[key] addObject:randomDate];
     }
+    
+
 }
 
 @end

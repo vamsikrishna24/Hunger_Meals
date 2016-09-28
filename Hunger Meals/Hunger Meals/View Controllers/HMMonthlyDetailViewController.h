@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "SwipeView.h"
+#import "CommonViewController.h"
 
-@interface HMMonthlyDetailViewController : UIViewController<UIScrollViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate,SwipeViewDataSource,SwipeViewDelegate>
+@interface HMMonthlyDetailViewController :CommonViewController <UIScrollViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate,SwipeViewDataSource,SwipeViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UICollectionView *imagesCollectionView;
 @property (nonatomic, strong) IBOutlet UIScrollView* scrollView;

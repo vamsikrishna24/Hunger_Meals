@@ -188,6 +188,7 @@
     }];
 }
 
+#pragma Current-Cart
 - (void)getCartDatausingBlock:(void(^)(NSMutableArray *resultArray))resultBlock {
     
     NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
@@ -236,6 +237,32 @@
     }];
 }
 
+#pragma coupon
+
+- (void)addcouponcode:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
+    
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    
+    NSString *token = userDataObject.token;
+    NSString *url = [NSString stringWithFormat:kAddCoupenCode, HTTP_DATA_HOST,token];
+    
+    
+    [self sendRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            NSDictionary *resultDict = [dictResult objectForKey:@"data"];
+            NSString *resultMessage = [resultDict objectForKey:@"message"];
+            
+            resultBlock(resultMessage);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+}
 //- (void)currentCartDetails:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
 //    
 //    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
