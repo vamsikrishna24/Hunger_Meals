@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "CommonViewController.h"
 #import "MTGenericAlertView.h"
+#import <CoreLocation/CoreLocation.h>
 
 
-
-@interface HMHomePageViewController : CommonViewController<UITableViewDataSource,UITableViewDelegate, SWRevealViewControllerDelegate,MTGenericAlertViewDelegate,UIPopoverPresentationControllerDelegate>
+@interface HMHomePageViewController : CommonViewController<UITableViewDataSource,UITableViewDelegate, SWRevealViewControllerDelegate,MTGenericAlertViewDelegate,UIPopoverPresentationControllerDelegate,CLLocationManagerDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *locationBarButtonItem;
 @property (weak, nonatomic) IBOutlet UITableView *homePageTableView;

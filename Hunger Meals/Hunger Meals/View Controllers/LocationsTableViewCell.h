@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LocationsTableViewCell : UITableViewCell
-
+@property  UITextView *addressTextView;
 @end

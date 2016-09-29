@@ -13,16 +13,28 @@
 #import "HMCartViewController.h"
 #import "HMContentViewController.h"
 #import "HMMonthlyDetailViewController.h"
+#import "SVService.h"
+
 
 
 @interface HMHomePageViewController (){
     NSArray *categories;
     NSArray *categoriesImgs;
     NSArray *scrollingImgs;
+    NSMutableArray *addressArray;
     UIButton *floatingButton;
+    CLLocationManager *locationManager;
     MTGenericAlertView *locationPopup;
-    
+    CLGeocoder *geocoder;
+    CLPlacemark *placemark;
+    UITableView *locationTable;
+    UITextView *textView;
+
 }
+@property(nonatomic, strong) NSString *latitudeString;
+@property(nonatomic, strong) NSString *longitudeStrinng;
+@property(nonatomic, strong) NSString *addressStrinng;
+@property(nonatomic,strong) NSString *locationAddressString;
 
 @end
 
@@ -30,7 +42,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
+    
     self.homePageTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     
     categories = [NSArray arrayWithObjects: @"Meals",@"Monthly Meal Planner",@"Store", nil];
@@ -38,6 +50,7 @@
     categoriesImgs = [NSArray arrayWithObjects: @"Category1.png",@"Category2.png",@"Category3.png", nil];
     
     scrollingImgs = [NSArray arrayWithObjects: @"page1.png",@"page2.png",@"page3.png",@"page4.png", @"page5.png", nil];
+
     
     //Menu open/close based on gesture recognizer
     SWRevealViewController *revealController = self.revealViewController;
@@ -64,8 +77,23 @@
     
     //[self showPopUpBoxAtStartUp];
 
+    locationManager = [[CLLocationManager alloc] init];
+    
 
 }
+//-(void)showPopUpBoxAtStartUp{
+//    locationPopup = [[MTGenericAlertView alloc] initWithTitle:@"Pick Up Your City" titleColor:[UIColor whiteColor] titleFont:nil backgroundImage:nil];
+//    
+//    //Add close button only to handle close button action. Other wise by default close button will be added.
+//    locationPopup.popUpCloseButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+//    [locationPopup.popUpCloseButton setBackgroundImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
+//    [locationPopup setCustomInputView:_popUpBoxView];
+//    locationPopup.isPopUpView = YES;
+//    [locationPopup setDelegate:self];
+//    [locationPopup show];
+//    
+//}
+
 -(void)cartView{
     
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -116,7 +144,11 @@
 
 #pragma Mark - TableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if(tableView == locationTable){
+        return addressArray.count;
+    }else{
     return 4;
+    }
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -125,8 +157,27 @@
     
     static NSString *scrollingCellIdentifier = @"ScrollingCellIdentifier";
     static NSString *categoryCellIdentifier = @"HomeCategoryIdentifier";
+    static NSString *LocationIdentifier = @"ScrollingCellIdentifier";
     UITableViewCell *cell;
-    
+
+    if(tableView == locationTable){
+        
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:LocationIdentifier];
+        }
+        NSString * stringToDisplay = (NSString *)[[addressArray valueForKey:@"address"] componentsJoinedByString:@""];
+        textView = [[UITextView alloc] initWithFrame:CGRectMake(10, 5, 320, 40)];
+        textView.textAlignment = NSTextAlignmentLeft;
+        textView.backgroundColor = [UIColor clearColor];
+//        textView.alpha = 0.5;
+//        cell.contentView.backgroundColor = [UIColor clearColor];
+        locationTable.backgroundColor = [UIColor clearColor];
+        [cell.contentView addSubview:textView];
+        textView.text = stringToDisplay;
+        textView.editable = NO;
+        textView.selectable = NO;
+
+    }else{
     if (indexPath.row == 0) {
         HMScrollingCell *scrollingCell = (HMScrollingCell *)[tableView dequeueReusableCellWithIdentifier:scrollingCellIdentifier];
         
@@ -140,6 +191,7 @@
         
         scrollingCell.pageControl.numberOfPages = [scrollingImgs count];
         [scrollingCell.pageControl setTag:indexPath.row];
+        
        // scrollingCell.pageControl.pageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DotInactive"]];
         
         //scrollingCell.pageControl.currentPageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DotActive"]];
@@ -201,6 +253,7 @@
         
         
     }
+    }
     
     return cell;
 }
@@ -222,6 +275,10 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if(tableView == locationTable){
+        return 50;
+    }else if(tableView == self.homePageTableView ){
     if (indexPath.row == 0) {
         return 190;
     }
@@ -229,6 +286,8 @@
     CGFloat height = deviceFrame.size.height;
     
     return (height-270)/3;
+    }
+    return 0;
 }
 
 - (IBAction)menuButtonTapped:(id)sender {
@@ -250,57 +309,79 @@
     CGSize tempSize = CGSizeMake(finalDesiredSize.width, finalDesiredSize.height + 1);
     [contentVC setPreferredContentSize:tempSize];
     [contentVC setPreferredContentSize:finalDesiredSize];
-    UILabel *locationTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 5, contentVC.view.frame.size.width-10, 30)];
-    locationTitleLabel.text = @"Enter your location";
-    locationTitleLabel.textColor = [UIColor darkGrayColor];
-    locationTitleLabel.font = [UIFont systemFontOfSize:13];
-    [contentVC.view addSubview:locationTitleLabel];
     
-    UILabel *separator1 = [[UILabel alloc]initWithFrame:CGRectMake(12, locationTitleLabel.frame.origin.y+locationTitleLabel.frame.size.height, locationTitleLabel.frame.size.width-70, 1)];
-    separator1.backgroundColor = [UIColor lightGrayColor];
-    [contentVC.view addSubview:separator1];
-    
-    UIButton *locationGPSButton = [[UIButton alloc]initWithFrame:CGRectMake(10,separator1.frame.origin.y+6, contentVC.view.frame.size.width-10, 30)];
-    [locationGPSButton setTitle:@"Let us Locate you?" forState:UIControlStateNormal];
-    [locationGPSButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    locationGPSButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    locationGPSButton.titleLabel.font = [UIFont systemFontOfSize:12];
-    locationGPSButton.imageView.image = [UIImage imageNamed:@"edit"];
 
-    [contentVC.view addSubview:locationGPSButton];
+    locationTable = [[UITableView alloc]initWithFrame:CGRectMake(contentVC.view.frame.origin.x,contentVC.view.frame.origin.y,320,190)];
+    locationTable.dataSource = self;
+    locationTable.delegate = self;
+    locationTable.backgroundColor = [UIColor clearColor];
+    locationTable.separatorColor = [UIColor lightGrayColor];
+    [contentVC.view addSubview:locationTable];
 
-    UILabel *separator2 = [[UILabel alloc]initWithFrame:CGRectMake(12, locationGPSButton.frame.origin.y+locationGPSButton.frame.size.height, locationGPSButton.frame.size.width-70, 1)];
-    separator2.backgroundColor = [UIColor lightGrayColor];
-    [contentVC.view addSubview:separator2];
+//    UILabel *locationTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 5, contentVC.view.frame.size.width-10, 30)];
+//    locationTitleLabel.text = @"Enter your location";
+//    locationTitleLabel.textColor = [UIColor darkGrayColor];
+//    locationTitleLabel.font = [UIFont systemFontOfSize:13];
+//    [contentVC.view addSubview:locationTitleLabel];
+//    
+//    UILabel *separator1 = [[UILabel alloc]initWithFrame:CGRectMake(12, locationTitleLabel.frame.origin.y+locationTitleLabel.frame.size.height, locationTitleLabel.frame.size.width-70, 1)];
+//    separator1.backgroundColor = [UIColor lightGrayColor];
+//    [contentVC.view addSubview:separator1];
+//    
+//    UIButton *locationGPSButton = [[UIButton alloc]initWithFrame:CGRectMake(10,separator1.frame.origin.y+6, contentVC.view.frame.size.width-10, 30)];
+//    [locationGPSButton setTitle:@"Let us Locate you?" forState:UIControlStateNormal];
+//    [locationGPSButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+//    locationGPSButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+//    locationGPSButton.titleLabel.font = [UIFont systemFontOfSize:12];
+//    locationGPSButton.imageView.image = [UIImage imageNamed:@"edit"];
+//
+//    [contentVC.view addSubview:locationGPSButton];
+//
+//    UILabel *separator2 = [[UILabel alloc]initWithFrame:CGRectMake(12, locationGPSButton.frame.origin.y+locationGPSButton.frame.size.height, locationGPSButton.frame.size.width-70, 1)];
+//    separator2.backgroundColor = [UIColor lightGrayColor];
+//    [contentVC.view addSubview:separator2];
+//    
+//    UILabel *home = [[UILabel alloc]initWithFrame:CGRectMake(12, separator2.frame.origin.y+6, 70, 30)];
+//    home.text = @"Home";
+//    home.textColor = [UIColor orangeColor];
+//    home.font =  [UIFont systemFontOfSize:12];
+//    [contentVC.view addSubview:home];
+//    
+//    UILabel *separator3 = [[UILabel alloc]initWithFrame:CGRectMake(12, home.frame.origin.y+home.frame.size.height, locationGPSButton.frame.size.width-70, 1)];
+//    separator3.backgroundColor = [UIColor lightGrayColor];
+//    [contentVC.view addSubview:separator3];
+//    
+//    UILabel *office = [[UILabel alloc]initWithFrame:CGRectMake(12, separator3.frame.origin.y+6, 70, 30)];
+//    office.text = @"Office";
+//    office.textColor = [UIColor orangeColor];
+//    office.font =  [UIFont systemFontOfSize:12];
+//    [contentVC.view addSubview:office];
+//    
+//    UILabel *separator4 = [[UILabel alloc]initWithFrame:CGRectMake(12, office.frame.origin.y+office.frame.size.height, locationGPSButton.frame.size.width-70, 1)];
+//    separator4.backgroundColor = [UIColor lightGrayColor];
+//    [contentVC.view addSubview:separator4];
+//    
+//    UILabel *parents = [[UILabel alloc]initWithFrame:CGRectMake(12, separator4.frame.origin.y+6, 70, 30)];
+//    parents.text = @"Parents";
+//    parents.textColor = [UIColor orangeColor];
+//    parents.font =  [UIFont systemFontOfSize:12];
+//    [contentVC.view addSubview:parents];
     
-    UILabel *home = [[UILabel alloc]initWithFrame:CGRectMake(12, separator2.frame.origin.y+6, 70, 30)];
-    home.text = @"Home";
-    home.textColor = [UIColor orangeColor];
-    home.font =  [UIFont systemFontOfSize:12];
-    [contentVC.view addSubview:home];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
-    UILabel *separator3 = [[UILabel alloc]initWithFrame:CGRectMake(12, home.frame.origin.y+home.frame.size.height, locationGPSButton.frame.size.width-70, 1)];
-    separator3.backgroundColor = [UIColor lightGrayColor];
-    [contentVC.view addSubview:separator3];
-    
-    UILabel *office = [[UILabel alloc]initWithFrame:CGRectMake(12, separator3.frame.origin.y+6, 70, 30)];
-    office.text = @"Office";
-    office.textColor = [UIColor orangeColor];
-    office.font =  [UIFont systemFontOfSize:12];
-    [contentVC.view addSubview:office];
-    
-    UILabel *separator4 = [[UILabel alloc]initWithFrame:CGRectMake(12, office.frame.origin.y+office.frame.size.height, locationGPSButton.frame.size.width-70, 1)];
-    separator4.backgroundColor = [UIColor lightGrayColor];
-    [contentVC.view addSubview:separator4];
-    
-    UILabel *parents = [[UILabel alloc]initWithFrame:CGRectMake(12, separator4.frame.origin.y+6, 70, 30)];
-    parents.text = @"Parents";
-    parents.textColor = [UIColor orangeColor];
-    parents.font =  [UIFont systemFontOfSize:12];
-    [contentVC.view addSubview:parents];
-
-
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 &&
+        [CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse
+        //[CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedAlways
+        ) {
+        // Will open an confirm dialog to get user's approval
+        [locationManager requestWhenInUseAuthorization];
+    } else {
+        [locationManager startUpdatingLocation]; //Will update location immediately
+    }
+    [locationManager startUpdatingLocation];
         [self presentViewController:contentVC animated:YES completion:nil];
+    [self fetchLocation ];
     }
 
 - (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller traitCollection:(UITraitCollection *)traitCollection {
@@ -335,4 +416,78 @@
     [locationPopup show];
     
 }
+
+
+//************************************************
+#pragma mark - CLLocation Manager delegate methods
+//************************************************
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    UIAlertView *errorAlert = [[UIAlertView alloc]
+                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [errorAlert show];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"didUpdateToLocation: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    
+    if (currentLocation != nil) {
+        self.longitudeStrinng = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
+        self.latitudeString = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+    }
+    
+    // Reverse Geocoding
+    NSLog(@"Resolving the Address");
+    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
+        if (error == nil && [placemarks count] > 0) {
+            placemark = [placemarks lastObject];
+            self.addressStrinng = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
+                                   placemark.subThoroughfare, placemark.thoroughfare,
+                                   placemark.postalCode, placemark.locality,
+                                   placemark.administrativeArea,
+                                   placemark.country];
+        } else {
+            NSLog(@"%@", error.debugDescription);
+        }
+    } ];
+    
+}
+- (void)locationManager:(CLLocationManager*)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    switch (status) {
+        case kCLAuthorizationStatusNotDetermined: {
+        } break;
+        case kCLAuthorizationStatusDenied: {
+        } break;
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+        case kCLAuthorizationStatusAuthorizedAlways: {
+            [locationManager startUpdatingLocation]; //Will update location immediately
+        } break;
+        default:
+            break;
+    }
+}
+
+-(void)fetchLocation{
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    
+    SVService *service = [[SVService alloc] init];
+    [service getLocationsDataUsingBlock:^(NSMutableArray *resultArray) {
+        addressArray = resultArray;
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+        [locationTable reloadData];
+
+    }];
+    
+}
+
+#pragma TableViewDelate Methods
+
+
+
 @end

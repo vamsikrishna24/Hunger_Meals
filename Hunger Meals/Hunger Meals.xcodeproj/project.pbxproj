@@ -46,6 +46,7 @@
 		2BC1DD111D5C679F00F00D7D /* righticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC1DD101D5C679F00F00D7D /* righticon.png */; };
 		2BC1DD131D5C6A8F00F00D7D /* GoogleSignIn.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC1DD121D5C6A8F00F00D7D /* GoogleSignIn.png */; };
 		2BC1DD161D5C90D900F00D7D /* HMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC1DD151D5C90D900F00D7D /* HMLoginViewController.m */; };
+		2BCE33871D9D3CF800AE64E6 /* HMLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE33861D9D3CF800AE64E6 /* HMLocationTableViewCell.m */; };
 		2BD458B91D6F4DEE00D48AE8 /* HMCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD458B81D6F4DEE00D48AE8 /* HMCartViewController.m */; };
 		2BD458BC1D6F4F8E00D48AE8 /* HMCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD458BB1D6F4F8E00D48AE8 /* HMCartTableViewCell.m */; };
 		2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7B2401D55CF9800B2FABD /* HMHomePageViewController.m */; };
@@ -187,6 +188,8 @@
 		2BC1DD121D5C6A8F00F00D7D /* GoogleSignIn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoogleSignIn.png; sourceTree = "<group>"; };
 		2BC1DD141D5C90D900F00D7D /* HMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLoginViewController.h; sourceTree = "<group>"; };
 		2BC1DD151D5C90D900F00D7D /* HMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLoginViewController.m; sourceTree = "<group>"; };
+		2BCE33851D9D3CF800AE64E6 /* HMLocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLocationTableViewCell.h; sourceTree = "<group>"; };
+		2BCE33861D9D3CF800AE64E6 /* HMLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLocationTableViewCell.m; sourceTree = "<group>"; };
 		2BD458B71D6F4DEE00D48AE8 /* HMCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCartViewController.h; sourceTree = "<group>"; };
 		2BD458B81D6F4DEE00D48AE8 /* HMCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCartViewController.m; sourceTree = "<group>"; };
 		2BD458BA1D6F4F8E00D48AE8 /* HMCartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCartTableViewCell.h; sourceTree = "<group>"; };
@@ -349,6 +352,8 @@
 				2BBED9031D7DEEF800D3697D /* HMSettingsTableViewCell.m */,
 				2B252C9F1D8097C500CED084 /* HMAddressTableViewCell.h */,
 				2B252CA01D8097C500CED084 /* HMAddressTableViewCell.m */,
+				2BCE33851D9D3CF800AE64E6 /* HMLocationTableViewCell.h */,
+				2BCE33861D9D3CF800AE64E6 /* HMLocationTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1028,6 +1033,7 @@
 				A895EB3A1D73FFDC00623D92 /* SVConnection.m in Sources */,
 				A89E929A1D75736E00E981E6 /* YSLScrollMenuView.m in Sources */,
 				2B9FECCD1D411C4500A21666 /* HMLandingViewController.m in Sources */,
+				2BCE33871D9D3CF800AE64E6 /* HMLocationTableViewCell.m in Sources */,
 				A895EB441D7438F200623D92 /* Product.m in Sources */,
 				9A818F9A1D49EBCD00FB5565 /* HMCartCollectionReusableView.m in Sources */,
 				2B7AC7001D47C18400D59BB3 /* HMCartItemsViewController.m in Sources */,

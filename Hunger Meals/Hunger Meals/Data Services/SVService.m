@@ -225,7 +225,8 @@
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
             
-            resultBlock([self parseProductsData:dictResult]);
+            //resultBlock([self parseArrayProductsData:(NSMutableArray *)dictResult]);
+            resultBlock((NSMutableArray *)dictResult);
         }
         else{
             resultBlock(nil);
@@ -419,6 +420,14 @@
     NSDictionary *dict = (NSDictionary *)array;
     NSArray *resultArr = [dict valueForKeyPath:@"data"];
     NSMutableArray *parsedArray = [Product arrayOfModelsFromDictionaries:resultArr error:&error];
+    return parsedArray;
+}
+
+- (NSMutableArray *)parseArrayProductsData:(NSMutableArray *)array {
+    NSError *error = nil;
+    //NSDictionary *dict = (NSDictionary *)array;
+   // NSArray *resultArr = [dict valueForKeyPath:@"data"];
+    NSMutableArray *parsedArray = [Product arrayOfModelsFromDictionaries:array error:&error];
     return parsedArray;
 }
 

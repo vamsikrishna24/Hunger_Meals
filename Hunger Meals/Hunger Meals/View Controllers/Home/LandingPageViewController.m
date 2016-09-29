@@ -18,6 +18,9 @@
 
 @property(nonatomic) BOOL isSearching;
 @property(nonatomic, strong) NSString *searchStr;
+@property(nonatomic, strong) NSString *latitudeString;
+@property(nonatomic, strong) NSString *longitudeStrinng;
+@property(nonatomic, strong) NSString *addressStrinng;
 @property(nonatomic, strong) NSMutableArray *searchFeedArray;
 @property(nonatomic, strong) NSMutableArray *collectionFeedArray;
 @property(nonatomic, strong) NSMutableArray *dishImagesArray;
@@ -30,6 +33,8 @@ static NSString * const cellIdentifier = @"MealItemCellIdentifier";
 {
     CLLocationManager *locationManager;
     MTGenericAlertView *locationPopup;
+    CLGeocoder *geocoder;
+    CLPlacemark *placemark;
 
 }
 
@@ -46,13 +51,12 @@ static NSString * const cellIdentifier = @"MealItemCellIdentifier";
     
     //To Get user current location
     locationManager = [[CLLocationManager alloc] init];
-    
+    geocoder = [[CLGeocoder alloc] init];
     //Search initializers
     self.searchStr = @"";
     self.isSearching = NO;
     
 }
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
@@ -97,37 +101,36 @@ static NSString * const cellIdentifier = @"MealItemCellIdentifier";
 
 }
 
-//************************************************
-#pragma mark - CLLocation Manager delegate methods
-//************************************************
+//
 
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    NSLog(@"didFailWithError: %@", error);
-    UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Failed to Get Your Location" preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    [errorAlert addAction:okAction];
-    
-    [self presentViewController:errorAlert animated:YES completion:nil];
-    
-}
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    NSLog(@"didUpdateToLocation: %@", newLocation);
-    CLLocation *currentLocation = newLocation;
-    
-    if (currentLocation != nil) {
-        NSLog(@"User Location: %@", currentLocation);
-    }
-    
-    // Stop Location Manager
-    [locationManager stopUpdatingLocation];
-    [locationPopup close];
-}
+//- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+//{
+//    NSLog(@"didFailWithError: %@", error);
+//    UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Failed to Get Your Location" preferredStyle:UIAlertControllerStyleAlert];
+//    
+//    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        
+//    }];
+//    [errorAlert addAction:okAction];
+//    
+//    [self presentViewController:errorAlert animated:YES completion:nil];
+//    
+//}
+//
+//- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+//{
+//    NSLog(@"didUpdateToLocation: %@", newLocation);
+//    CLLocation *currentLocation = newLocation;
+//    
+//    if (currentLocation != nil) {
+//        NSLog(@"User Location: %@", currentLocation);
+//    }
+//    
+//    // Stop Location Manager
+//    [locationManager stopUpdatingLocation];
+//    [locationPopup close];
+//}
 
 //************************************************
 #pragma mark - Search methods
@@ -243,5 +246,7 @@ static NSString * const cellIdentifier = @"MealItemCellIdentifier";
     
     return UIEdgeInsetsMake(10, 10, 10, 10);
 }
+
+
 
 @end

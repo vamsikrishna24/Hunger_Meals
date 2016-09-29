@@ -359,7 +359,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Dn-CY-kG5" userLabel="PaytmView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Dn-CY-kG5" userLabel="PaytmView">
                                 <rect key="frame" x="20" y="72" width="374" height="65"/>
                                 <subviews>
                                     <button opaque="NO" tag="2222" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXe-OK-evR">
@@ -382,7 +382,7 @@
                                     <constraint firstAttribute="trailing" secondItem="bXe-OK-evR" secondAttribute="trailing" id="rbx-h8-ABA"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ck2-TD-uaK" userLabel="PayUMoneyView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck2-TD-uaK" userLabel="PayUMoneyView">
                                 <rect key="frame" x="20" y="145" width="374" height="65"/>
                                 <subviews>
                                     <button opaque="NO" tag="2222" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJC-PS-3wC">
@@ -405,7 +405,7 @@
                                     <constraint firstAttribute="bottom" secondItem="fJC-PS-3wC" secondAttribute="bottom" constant="5" id="ZCG-VA-Xpz"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nh1-92-n3W">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nh1-92-n3W">
                                 <rect key="frame" x="50" y="258" width="313" height="38"/>
                                 <color key="backgroundColor" red="1" green="0.3273916677" blue="0.36794372079999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1071,7 +1071,7 @@
                                     <action selector="locationButtonTapped:" destination="5CW-sI-ctt" id="qZr-df-Y7f"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="User_location" id="uyb-VN-zzQ">
+                            <barButtonItem image="Notification" id="uyb-VN-zzQ">
                                 <color key="tintColor" red="1" green="0.64313725489999995" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="notificationButtonPressed:" destination="5CW-sI-ctt" id="BiI-cX-uQV"/>
@@ -2215,7 +2215,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P16-gS-yvi">
+                            <webView contentMode="scaleToFill" misplaced="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P16-gS-yvi">
                                 <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -4555,6 +4555,7 @@
         <image name="Logo" width="160" height="160"/>
         <image name="Meals" width="29" height="29"/>
         <image name="My_Location.png" width="20" height="20"/>
+        <image name="Notification" width="32" height="32"/>
         <image name="ProfileImage.jpg" width="235" height="235"/>
         <image name="Settings" width="32" height="32"/>
         <image name="SplashScreen" width="300" height="450"/>
