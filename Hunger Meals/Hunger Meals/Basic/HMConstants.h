@@ -30,6 +30,7 @@ extern NSString * const kUserSignUpURL;
 extern NSString * const kAddCoupenCode;
 extern NSString * const kOTPGeneration;
 extern NSString * const kOTPVerification;
+extern NSString * const kLocation;
 
 
 #pragma -mark Other constants

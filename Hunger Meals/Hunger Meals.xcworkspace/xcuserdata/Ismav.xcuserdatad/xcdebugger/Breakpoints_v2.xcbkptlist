@@ -6,32 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hunger Meals/View Controllers/Login/HMOTPVerificationViewController.m"
-            timestampString = "496810543.536423"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "-regenarateOtp"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunger Meals/View Controllers/Login/HMOTPVerificationViewController.m"
-            timestampString = "496811008.427469"
+            filePath = "Hunger Meals/Data Services/SVService.m"
+            timestampString = "496825235.362144"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "-verifyOtp"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "-getLocationsDataUsingBlock:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hunger Meals/Data Services/SVService.m"
-            timestampString = "496811753.412594"
+            timestampString = "496825212.527094"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
             landmarkName = "-otpVerification:usingBlock:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,45 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hunger Meals/Data Services/SVService.m"
-            timestampString = "496811754.137261"
+            timestampString = "496825282.422817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
             landmarkName = "-otpVerification:usingBlock:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[SVService otpVerification:usingBlock:]"
-                  moduleName = "Hunger Meals"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Ismav/Desktop/NewHungry/Hunger%20Meals/Hunger%20Meals/Data%20Services/SVService.m"
-                  timestampString = "496811754.140961"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "295"
-                  endingLineNumber = "295"
-                  offsetFromSymbolStart = "157">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__40-[SVService otpVerification:usingBlock:]_block_invoke"
-                  moduleName = "Hunger Meals"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Ismav/Desktop/NewHungry/Hunger%20Meals/Hunger%20Meals/Data%20Services/SVService.m"
-                  timestampString = "496811754.14124"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "295"
-                  endingLineNumber = "295"
-                  offsetFromSymbolStart = "98">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

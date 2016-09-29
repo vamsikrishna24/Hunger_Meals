@@ -6,6 +6,7 @@
 //
 
 #import "SVRequest.h"
+#import "SVService.h"
 
 #define SV_APPLICATION_JSON @"application/json"
 #define SV_MULTIPART_FORM(boundry) [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundry]
@@ -39,7 +40,13 @@
     [self setHTTPMethod:@"GET"];
 //    [self addValue:[CPAUser accessTocken] forHTTPHeaderField:kAUTHORIZATION];
 }
+-(void)setGetMethodAuthwithURL:(NSString*)urlString
+{
+    [self setURL:[NSURL URLWithString:urlString]];
+    [self setHTTPMethod:@"GET"];
+    [self addValue:[SVService getBasicAuthorization] forHTTPHeaderField:kAUTHORIZATION];
 
+}
 -(void)setDeleteMethodwithURL:(NSString*)urlString
 {
     [self setURL:[NSURL URLWithString:urlString]];

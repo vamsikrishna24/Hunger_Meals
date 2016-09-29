@@ -25,11 +25,7 @@ NSString * const kUpdateCartURL = @"%@/cart/%@?token=%@";
 NSString * const kAddCoupenCode = @"%@/addcouponcode/%@?token=%@";
 NSString * const kOTPGeneration = @"%@/generateotp";
 NSString * const kOTPVerification = @"%@/verifyotp";
-
-
-
-
-
+NSString * const kLocation = @"%@/locations/%@?token=%@";
 
 NSString * const kUserLoginURL = @"%@/login";
 NSString * const kUserSignUpURL = @"%@/jwcreate";

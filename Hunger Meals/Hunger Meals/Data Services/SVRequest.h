@@ -111,5 +111,8 @@ authorization with tocken
 
 -(void)setDeleteMethodWithDict:(NSDictionary*)dictParams andURL:(NSString*)urlString;
 
+-(void)setGetMethodAuthwithURL:(NSString*)urlString;
+
+
 @end
 

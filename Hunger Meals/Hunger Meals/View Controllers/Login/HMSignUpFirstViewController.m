@@ -128,14 +128,13 @@ shouldChangeCharactersInRange:(NSRange)range
     }
 }
 
+
 -(void)otpGenation{
-    //[self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: self.phoneNumberTextField.text, @"phoneno",nil];
-    
     SVService *service = [[SVService alloc] init];
     [service otpGenaration:dict usingBlock:^(NSString *resultMessage) {
-        
-      //  [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
         
     }];
 

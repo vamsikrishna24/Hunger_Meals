@@ -211,7 +211,26 @@
 
 }
 
+#pragma mark -- REST Services
 
+#pragma GetLocations
+
+- (void)getLocationsDataUsingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
+    
+    NSString *url = [NSString stringWithFormat:kLocation, HTTP_DATA_HOST];
+    [self sendGetRequestWithAuth:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            resultBlock([self parseProductsData:dictResult]);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+}
+#pragma AddToCArt
 - (void)addToCart:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
     
     NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
@@ -286,7 +305,7 @@
     }];
 }
 
-#pragma OTP Generation
+#pragma OTP Verification
 - (void)otpVerification:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
     
     NSString *url = [NSString stringWithFormat:kOTPVerification, HTTP_DATA_HOST];
@@ -466,6 +485,23 @@
         block(nil,nil,nil);
     }
 }
+
+-(void)sendGetRequestWithAuth:(NSString *)urlString usingblock:(void(^)(id result, NSHTTPURLResponse *response, NSError *err))block
+{
+    NSLog(@"requestString: %@", urlString);
+    SVRequest *request = [self authenticatedRequest];
+    
+    if (request) {
+        [request setGetMethodAuthwithURL:urlString];
+        
+        [self initiateConnectionwithrequest:request usingblock:block];
+    }
+    else{
+        block(nil,nil,nil);
+    }
+}
+
+
 - (SVRequest *) authenticatedRequest{
     
     
@@ -502,6 +538,20 @@
     self.successblock(nil,nil,error);
 }
 
++(NSString *)getBasicAuthorization
+{
+    return [NSString stringWithFormat:@"Basic %@",[SVService encodeStringTo64:[NSString  stringWithFormat:@"%@:%@",@"citizenoperator@cim.com",@"Test@1234"]]];
+    //return [NSString stringWithFormat:@"Basic %@",[CPAUtility encodeStringTo64:[NSString  stringWithFormat:@"%@:%@",@"cimadmin@cim.com",@"Test@1234"]]];
+}
 
++ (NSString*)encodeStringTo64:(NSString*)fromString {
+    
+    NSData *plainData = [fromString dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *base64String;
+    if ([plainData respondsToSelector:@selector(base64EncodedStringWithOptions:)]) {
+        base64String = [plainData base64EncodedStringWithOptions:kNilOptions];  // iOS 7+
+    }
+    return base64String;
+}
 
 @end

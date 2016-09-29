@@ -97,18 +97,13 @@
 
 -(void)verifyOtp{
     
-    //  [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+      [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: self.phoneNumber,@"phoneno",self.otpTextField.text,@"otp",nil];
-    
     SVService *service = [[SVService alloc] init];
     [service otpVerification:dict usingBlock:^(NSString *resultMessage) {
-        
-        result = resultMessage;
-        
-        //[self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
-        
+    result = resultMessage;
+    [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
-    
 }
 - (void)sendVerificationCodeToMobile{
     

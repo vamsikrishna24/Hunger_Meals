@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "HMSignUpFirstViewController.h"
+#import "CommonViewController.h"
 
-@interface HMOTPVerificationViewController : UIViewController
+@interface HMOTPVerificationViewController : CommonViewController
 @property NSUInteger pageIndex;
 @property NSString *email;
 @property NSString *password;

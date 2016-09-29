@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface HMSignUpFirstViewController : UIViewController<UITextFieldDelegate>
+@interface HMSignUpFirstViewController : CommonViewController<UITextFieldDelegate>
 @property NSUInteger pageIndex;
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
