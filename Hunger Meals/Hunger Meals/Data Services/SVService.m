@@ -286,6 +286,28 @@
     }];
 }
 
+#pragma OTP Generation
+- (void)otpVerification:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
+    
+    NSString *url = [NSString stringWithFormat:kOTPVerification, HTTP_DATA_HOST];
+    
+    
+    [self sendRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            NSDictionary *resultDict = [dictResult objectForKey:@"data"];
+            NSString *resultMessage = [resultDict objectForKey:@"message"];
+            
+            resultBlock(resultMessage);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+}
+
 //- (void)currentCartDetails:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
 //    
 //    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];

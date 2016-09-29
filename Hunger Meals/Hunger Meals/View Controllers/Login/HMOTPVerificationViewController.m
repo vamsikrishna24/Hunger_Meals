@@ -23,6 +23,8 @@
     NSString *OTPCode;
     BOOL isMobileVerified;
     HMSignUpFirstViewController *firstVC;
+    __block NSString *result;
+
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,16 +54,18 @@
 }
 
 - (IBAction)verifyOtp:(id)sender {
+//    
+//    if([result isEqualToString:self.otpTextField.text]){
+//        [self showAlertWithTitle:@"Success" andMessage:@"Congrats! Your mobile number has been verified."];
+//        self.nextButtonOutlet.hidden = NO;
+//        isMobileVerified = true;
+//        
+//    }else{
+//        self.nextButtonOutlet.hidden = YES;
+//        isMobileVerified = NO;
+//    }
+    [self verifyOtp];
     
-    if([OTPCode isEqualToString:self.otpTextField.text]){
-        [self showAlertWithTitle:@"Success" andMessage:@"Congrats! Your mobile number has been verified."];
-        self.nextButtonOutlet.hidden = NO;
-        isMobileVerified = true;
-        
-    }else{
-        self.nextButtonOutlet.hidden = YES;
-        isMobileVerified = NO;
-    }
 }
 
 - (IBAction) generateAndSendOTPCode:(id)sender{
@@ -72,17 +76,36 @@
 //        OTPCode = [self generateRandomNumber];
 //    }
     
-    [self otpGenation];
+    [self regenarateOtp];
 }
 
--(void)otpGenation{
-    //[self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: self.phoneNumber, @"phoneno",nil];
+-(void)regenarateOtp{
     
+  //  [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: self.phoneNumber, @"phoneno",nil];
+
     SVService *service = [[SVService alloc] init];
     [service otpGenaration:dict usingBlock:^(NSString *resultMessage) {
         
-        //  [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+        result = resultMessage;
+        
+          //[self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+        
+    }];
+    
+}
+
+-(void)verifyOtp{
+    
+    //  [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: self.phoneNumber,@"phoneno",self.otpTextField.text,@"otp",nil];
+    
+    SVService *service = [[SVService alloc] init];
+    [service otpVerification:dict usingBlock:^(NSString *resultMessage) {
+        
+        result = resultMessage;
+        
+        //[self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
         
     }];
     

@@ -24,6 +24,9 @@ NSString * const kAddToCartURL = @"%@/savecart?token=%@";
 NSString * const kUpdateCartURL = @"%@/cart/%@?token=%@";
 NSString * const kAddCoupenCode = @"%@/addcouponcode/%@?token=%@";
 NSString * const kOTPGeneration = @"%@/generateotp";
+NSString * const kOTPVerification = @"%@/verifyotp";
+
+
 
 
 
