@@ -11,6 +11,8 @@
 #import "HMSignUpThirdViewController.h"
 #import "Utility.h"
 #import "BTAlertController.h"
+#import "SVService.h"
+#import "HMSignUpFirstViewController.h"
 
 @interface HMOTPVerificationViewController ()
 
@@ -20,11 +22,13 @@
 {
     NSString *OTPCode;
     BOOL isMobileVerified;
+    HMSignUpFirstViewController *firstVC;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialSetUp];
     [self generateAndSendOTPCode:nil];
+    firstVC  = [[HMSignUpFirstViewController alloc]init];
 }
 
 - (void)initialSetUp{
@@ -61,14 +65,28 @@
 }
 
 - (IBAction) generateAndSendOTPCode:(id)sender{
-    if (OTPCode.length>0) {
-        [self sendVerificationCodeToMobile];
-    }
-    else {
-        OTPCode = [self generateRandomNumber];
-    }
+//    if (OTPCode.length>0) {
+//        [self sendVerificationCodeToMobile];
+//    }
+//    else {
+//        OTPCode = [self generateRandomNumber];
+//    }
+    
+    [self otpGenation];
 }
 
+-(void)otpGenation{
+    //[self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: self.phoneNumber, @"phoneno",nil];
+    
+    SVService *service = [[SVService alloc] init];
+    [service otpGenaration:dict usingBlock:^(NSString *resultMessage) {
+        
+        //  [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+        
+    }];
+    
+}
 - (void)sendVerificationCodeToMobile{
     
     // Use your own details here

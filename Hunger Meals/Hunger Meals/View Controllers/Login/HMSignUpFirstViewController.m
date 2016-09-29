@@ -11,6 +11,7 @@
 #import "HMSignUpThirdViewController.h"
 #import "BTAlertController.h"
 #import "Utility.h"
+#import "SVService.h"
 
 @interface HMSignUpFirstViewController (){
     HMOTPVerificationViewController *otpVerificationVC;
@@ -122,10 +123,23 @@ shouldChangeCharactersInRange:(NSRange)range
         SecondVC.signUpFirstVC = self;
         self.pageIndex = 1;
         [self.pageViewController setViewControllers:@[SecondVC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+        [self otpGenation];
 
     }
 }
 
+-(void)otpGenation{
+    //[self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: self.phoneNumberTextField.text, @"phoneno",nil];
+    
+    SVService *service = [[SVService alloc] init];
+    [service otpGenaration:dict usingBlock:^(NSString *resultMessage) {
+        
+      //  [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+        
+    }];
+
+}
 - (void)handleSwipeUpFrom:(UISwipeGestureRecognizer *)recognizer {
     if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
         [self nextButtonAction:nil];
