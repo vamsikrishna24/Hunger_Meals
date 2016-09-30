@@ -14,6 +14,7 @@
 @interface HMCartViewController (){
     NSMutableArray *cartItemsArray;
 }
+@property (weak, nonatomic) IBOutlet UILabel *cartEmptyLabel;
 
 @end
 
@@ -21,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.cartEmptyLabel.hidden = YES;
     self.title = @"Cart";
     self.cartTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
@@ -65,6 +67,13 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (cartItemsArray.count == 0) {
+        self.cartEmptyLabel.hidden = NO;
+        
+    }else {
+        self.cartEmptyLabel.hidden = YES;
+        
+    }
     return [cartItemsArray count];
 }
 
@@ -81,12 +90,17 @@
     cell.totalPriceLabel.text = cartObject.price;
     cell.cartItemTitle.text = cartObject.product.name;
     cell.countLabel.text = cartObject.quantity;
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:cartObject.product.image_url]
-                      placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    
+    NSString *string = [NSString stringWithFormat:@"%@%@",imageAmazonlink,cartObject.product.image_url];
+    [cell.cartItemsImageView sd_setImageWithURL:[NSURL URLWithString:string]placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     return cell;
     
 }
 
+- (IBAction)addToCartAction:(id)sender{
+    
+    
+}
 
 /*
 #pragma mark - Navigation

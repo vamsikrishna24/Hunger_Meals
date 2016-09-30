@@ -256,15 +256,6 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9E-CP-5gw">
                                             <rect key="frame" x="0.0" y="-2" width="414" height="172"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items Cost " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQ4-4M-5DP">
-                                                    <rect key="frame" x="23" y="20" width="359" height="22"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="NXZ-sB-Oqb"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery Charges " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okc-gp-spx">
                                                     <rect key="frame" x="23" y="81" width="359" height="21"/>
                                                     <constraints>
@@ -290,6 +281,15 @@
                                                     <rect key="frame" x="23" y="50" width="359" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="yEr-ai-sP5"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items Cost " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQ4-4M-5DP">
+                                                    <rect key="frame" x="23" y="20" width="359" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="NXZ-sB-Oqb"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1449,7 +1449,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CartCellIdentifier" rowHeight="106" id="qzc-he-Ial" customClass="HMCartTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="106"/>
+                                        <rect key="frame" x="0.0" y="92" width="414" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qzc-he-Ial" id="gmT-Qt-oYg">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="105.5"/>
@@ -1597,6 +1597,16 @@
                                     <outlet property="delegate" destination="tUW-7a-Rla" id="kC8-WB-pnf"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart is empty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEo-rl-A8X">
+                                <rect key="frame" x="0.0" y="239" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="bgf-Wb-Azl"/>
+                                    <constraint firstAttribute="height" constant="44" id="iam-lB-rlG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.96078431369999995" green="0.50196078430000002" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgz-9q-ItL">
                                 <rect key="frame" x="0.0" y="456" width="414" height="231"/>
                                 <subviews>
@@ -1607,8 +1617,8 @@
                                             <constraint firstAttribute="height" constant="68" id="7Bz-ja-Nhm"/>
                                             <constraint firstAttribute="width" constant="116" id="xrT-Pl-YNS"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <state key="normal" title="rs. 450">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="₹ 450">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -1617,8 +1627,8 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total bill" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yF-gl-7pZ">
                                                 <rect key="frame" x="23" y="8" width="267" height="52"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="textColor" red="0.93725490199999995" green="0.54117647059999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -1629,11 +1639,12 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg5-AH-e6m">
                                         <rect key="frame" x="106" y="123" width="203" height="43"/>
-                                        <color key="backgroundColor" red="0.99215686270000003" green="0.69646890220000002" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.61824665300000003" blue="0.15429812800000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="203" id="3FE-xw-pUu"/>
                                             <constraint firstAttribute="height" constant="43" id="R7B-fK-CBp"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Make Payment">
                                             <color key="titleColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -1659,7 +1670,9 @@
                         <constraints>
                             <constraint firstItem="rJw-kd-dMf" firstAttribute="leading" secondItem="uOG-k9-IXB" secondAttribute="leadingMargin" constant="-20" id="8ty-IY-CaR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hgz-9q-ItL" secondAttribute="trailing" constant="-20" id="Ao9-26-wAc"/>
+                            <constraint firstItem="MEo-rl-A8X" firstAttribute="centerX" secondItem="uOG-k9-IXB" secondAttribute="centerX" id="JK8-OU-cAB"/>
                             <constraint firstItem="rJw-kd-dMf" firstAttribute="top" secondItem="leX-k2-19O" secondAttribute="bottom" id="N8a-bX-3iB"/>
+                            <constraint firstItem="MEo-rl-A8X" firstAttribute="centerY" secondItem="uOG-k9-IXB" secondAttribute="centerY" constant="-107" id="aFa-5q-1Yw"/>
                             <constraint firstItem="21R-eb-MUw" firstAttribute="top" secondItem="hgz-9q-ItL" secondAttribute="bottom" id="kh4-VY-XF1"/>
                             <constraint firstItem="hgz-9q-ItL" firstAttribute="leading" secondItem="uOG-k9-IXB" secondAttribute="leadingMargin" constant="-20" id="l3B-XT-BNl"/>
                             <constraint firstItem="hgz-9q-ItL" firstAttribute="top" secondItem="rJw-kd-dMf" secondAttribute="bottom" constant="-1" id="pCf-dX-jyg"/>
@@ -1670,6 +1683,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="cartEmptyLabel" destination="MEo-rl-A8X" id="X2c-c3-OAc"/>
                         <outlet property="cartTableView" destination="rJw-kd-dMf" id="TAD-ed-iFM"/>
                     </connections>
                 </viewController>

@@ -32,4 +32,6 @@
 @property (nonatomic, retain) NSString<Optional> *created_at;
 @property (nonatomic, retain) NSString<Optional> *updated_at;
 
++ (NSString *)getAccessToken;
+
 @end

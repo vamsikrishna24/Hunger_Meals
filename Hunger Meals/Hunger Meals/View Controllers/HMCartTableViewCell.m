@@ -7,6 +7,8 @@
 //
 
 #import "HMCartTableViewCell.h"
+#import "Product.h"
+#import "SVService.h"
 
 @implementation HMCartTableViewCell
 
@@ -25,6 +27,18 @@
 - (IBAction)addAction:(id)sender{
     
     self.countLabel.text = [NSString stringWithFormat:@"%d",[self.countLabel.text intValue]+1];
+//    
+//    //UIButton *btn = (UIButton *)sender;
+//    Product *productObject = [[Product alloc]init];
+//    //Product *productObject = cartItemsArray[btn.tag];
+//    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: productObject.id, @"inventories_id",@"1", @"quantity",  nil];
+//    SVService *service = [[SVService alloc] init];
+//    [service addToCart:dict usingBlock:^(NSString *resultMessage) {
+//        if (resultMessage != nil) {
+//            
+//        }
+//    }];
+
     
 }
 - (IBAction)decrementAction:(id)sender {

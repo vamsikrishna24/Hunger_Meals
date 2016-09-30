@@ -174,6 +174,8 @@
 }
 
 - (IBAction)addToCartAction:(id)sender{
+    
+    
     UIButton *btn = (UIButton *)sender;
     Product *productObject = _productObjectsArray[btn.tag];
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: productObject.id, @"inventories_id",@"1", @"quantity",  nil];

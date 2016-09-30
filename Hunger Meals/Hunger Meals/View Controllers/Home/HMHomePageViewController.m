@@ -144,27 +144,60 @@
 
 #pragma Mark - TableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if(tableView == locationTable){
-        return addressArray.count;
-    }else{
-    return 4;
+    if(tableView == locationTable && section == 0 ){
+            return 1;
     }
+        else if(tableView == locationTable && section == 1){
+        return addressArray.count;
+        }
+        else return 4;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return 2;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *scrollingCellIdentifier = @"ScrollingCellIdentifier";
     static NSString *categoryCellIdentifier = @"HomeCategoryIdentifier";
     static NSString *LocationIdentifier = @"ScrollingCellIdentifier";
+    static NSString *LocationIdenti = @"ScrollingCellIdentifier";
+
     UITableViewCell *cell;
 
-    if(tableView == locationTable){
+    if(tableView == locationTable && indexPath.section ==0){
+        
+        
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:LocationIdenti];
+    
+            UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(10,10, cell.frame.size.width-20, 35)];
+            textField.placeholder = @" enter your location";
+            textField.backgroundColor = [UIColor clearColor];
+            locationTable.backgroundColor = [UIColor clearColor];
+            textField.layer.borderWidth = 1;
+            textField.layer.borderColor = [UIColor orangeColor].CGColor;
+            textField.textColor = [UIColor orangeColor];
+            textField.alpha = 0.8;
+            textField.clipsToBounds = YES;
+            [cell.contentView addSubview:textField];
+            cell.backgroundColor = [UIColor clearColor];
+            
+            UIButton *locateMeButton = [[UIButton alloc]initWithFrame:CGRectMake(10, textField.frame.size.height+textField.frame.origin.y, cell.frame.size.width-20, 35)];
+            [locateMeButton setTitle:@"Let us locate you?" forState:UIControlStateNormal];
+            [locateMeButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+            locateMeButton.titleLabel.font = [UIFont systemFontOfSize:16];
+            [cell.contentView addSubview:locateMeButton];
+            
+            cell.selectionStyle = NO;
+            
+        }
+    }else if(tableView == locationTable && indexPath.section ==1){
         
         if (cell == nil) {
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:LocationIdentifier];
         }
+        cell.backgroundColor = [UIColor clearColor];
+
         NSString * stringToDisplay = (NSString *)[[addressArray valueForKey:@"address"] componentsJoinedByString:@""];
         textView = [[UITextView alloc] initWithFrame:CGRectMake(10, 5, 320, 40)];
         textView.textAlignment = NSTextAlignmentLeft;
@@ -176,6 +209,7 @@
         textView.text = stringToDisplay;
         textView.editable = NO;
         textView.selectable = NO;
+        textView.textColor = [UIColor orangeColor];
 
     }else{
     if (indexPath.row == 0) {
@@ -276,9 +310,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if(tableView == locationTable){
-        return 50;
-    }else if(tableView == self.homePageTableView ){
+    if(tableView == locationTable &&indexPath.section == 0){
+        return 80;
+    }else if(tableView == locationTable &&indexPath.section == 1){
+        return 40;
+    }
+        if(tableView == self.homePageTableView ){
     if (indexPath.row == 0) {
         return 190;
     }
@@ -312,60 +349,14 @@
     
 
     locationTable = [[UITableView alloc]initWithFrame:CGRectMake(contentVC.view.frame.origin.x,contentVC.view.frame.origin.y,320,190)];
+    locationTable.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+
     locationTable.dataSource = self;
     locationTable.delegate = self;
     locationTable.backgroundColor = [UIColor clearColor];
     locationTable.separatorColor = [UIColor lightGrayColor];
     [contentVC.view addSubview:locationTable];
 
-//    UILabel *locationTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 5, contentVC.view.frame.size.width-10, 30)];
-//    locationTitleLabel.text = @"Enter your location";
-//    locationTitleLabel.textColor = [UIColor darkGrayColor];
-//    locationTitleLabel.font = [UIFont systemFontOfSize:13];
-//    [contentVC.view addSubview:locationTitleLabel];
-//    
-//    UILabel *separator1 = [[UILabel alloc]initWithFrame:CGRectMake(12, locationTitleLabel.frame.origin.y+locationTitleLabel.frame.size.height, locationTitleLabel.frame.size.width-70, 1)];
-//    separator1.backgroundColor = [UIColor lightGrayColor];
-//    [contentVC.view addSubview:separator1];
-//    
-//    UIButton *locationGPSButton = [[UIButton alloc]initWithFrame:CGRectMake(10,separator1.frame.origin.y+6, contentVC.view.frame.size.width-10, 30)];
-//    [locationGPSButton setTitle:@"Let us Locate you?" forState:UIControlStateNormal];
-//    [locationGPSButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-//    locationGPSButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-//    locationGPSButton.titleLabel.font = [UIFont systemFontOfSize:12];
-//    locationGPSButton.imageView.image = [UIImage imageNamed:@"edit"];
-//
-//    [contentVC.view addSubview:locationGPSButton];
-//
-//    UILabel *separator2 = [[UILabel alloc]initWithFrame:CGRectMake(12, locationGPSButton.frame.origin.y+locationGPSButton.frame.size.height, locationGPSButton.frame.size.width-70, 1)];
-//    separator2.backgroundColor = [UIColor lightGrayColor];
-//    [contentVC.view addSubview:separator2];
-//    
-//    UILabel *home = [[UILabel alloc]initWithFrame:CGRectMake(12, separator2.frame.origin.y+6, 70, 30)];
-//    home.text = @"Home";
-//    home.textColor = [UIColor orangeColor];
-//    home.font =  [UIFont systemFontOfSize:12];
-//    [contentVC.view addSubview:home];
-//    
-//    UILabel *separator3 = [[UILabel alloc]initWithFrame:CGRectMake(12, home.frame.origin.y+home.frame.size.height, locationGPSButton.frame.size.width-70, 1)];
-//    separator3.backgroundColor = [UIColor lightGrayColor];
-//    [contentVC.view addSubview:separator3];
-//    
-//    UILabel *office = [[UILabel alloc]initWithFrame:CGRectMake(12, separator3.frame.origin.y+6, 70, 30)];
-//    office.text = @"Office";
-//    office.textColor = [UIColor orangeColor];
-//    office.font =  [UIFont systemFontOfSize:12];
-//    [contentVC.view addSubview:office];
-//    
-//    UILabel *separator4 = [[UILabel alloc]initWithFrame:CGRectMake(12, office.frame.origin.y+office.frame.size.height, locationGPSButton.frame.size.width-70, 1)];
-//    separator4.backgroundColor = [UIColor lightGrayColor];
-//    [contentVC.view addSubview:separator4];
-//    
-//    UILabel *parents = [[UILabel alloc]initWithFrame:CGRectMake(12, separator4.frame.origin.y+6, 70, 30)];
-//    parents.text = @"Parents";
-//    parents.textColor = [UIColor orangeColor];
-//    parents.font =  [UIFont systemFontOfSize:12];
-//    [contentVC.view addSubview:parents];
     
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;

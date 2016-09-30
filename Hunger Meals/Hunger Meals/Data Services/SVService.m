@@ -199,7 +199,7 @@
     NSString *token = userDataObject.token;
     NSString *url = [NSString stringWithFormat:kCartDataURL, HTTP_DATA_HOST,token];
     
-    [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+    [self sendGetRequestWithAuth:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
         if (response.statusCode == 200 && result!=nil) {
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
@@ -552,7 +552,7 @@
 
 +(NSString *)getBasicAuthorization
 {
-    return [NSString stringWithFormat:@"Basic %@",[SVService encodeStringTo64:[NSString  stringWithFormat:@"%@:%@",@"citizenoperator@cim.com",@"Test@1234"]]];
+    return [NSString stringWithFormat:@"Basic %@",[SVService encodeStringTo64:[NSString  stringWithFormat:@"%@:%@",@"",@""]]];
     //return [NSString stringWithFormat:@"Basic %@",[CPAUtility encodeStringTo64:[NSString  stringWithFormat:@"%@:%@",@"cimadmin@cim.com",@"Test@1234"]]];
 }
 
