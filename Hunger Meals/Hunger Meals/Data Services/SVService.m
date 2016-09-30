@@ -263,11 +263,9 @@
 
 - (void)addcouponcode:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
     
-    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
-    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
     
-    NSString *token = userDataObject.token;
-    NSString *url = [NSString stringWithFormat:kAddCoupenCode, HTTP_DATA_HOST,token];
+    NSString *coupon = @"HM150";
+    NSString *url = [NSString stringWithFormat:kAddCoupenCode, HTTP_DATA_HOST,coupon];
     
     
     [self sendRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
