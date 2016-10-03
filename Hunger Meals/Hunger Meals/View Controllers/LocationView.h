@@ -25,5 +25,5 @@
 @property NSMutableArray *instancesArray;
 @property NSIndexPath *selectedIndexPath;
 @property BOOL isLocalChange;
-
+@property (weak, nonatomic)NSString * stringToDisplay;
 @end
