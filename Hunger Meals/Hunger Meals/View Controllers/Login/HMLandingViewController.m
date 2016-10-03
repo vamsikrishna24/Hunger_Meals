@@ -207,6 +207,7 @@ didSignInForUser:(GIDGoogleUser *)user
 - (void)loginToServer{
     [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: _userNameTextField.text, @"email", _passwordTextField.text, @"password",  nil];
+    
     SVService *service = [[SVService alloc] init];
     [service loginUserWithDict: dict usingBlock:^(NSMutableArray *resultArray) {
         if (resultArray.count != 0 || resultArray != nil) {
@@ -214,6 +215,8 @@ didSignInForUser:(GIDGoogleUser *)user
             NSData *personEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:dataObject];
             [[NSUserDefaults standardUserDefaults] setObject:personEncodedObject forKey:@"UserData"];
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoginValid"];
+            [[NSUserDefaults standardUserDefaults] setObject: @"NO" forKey: @"isLocationSelected"];
+            //([(AppDelegate *)[[UIApplication sharedApplication] delegate] enableCurrentLocation]);
             [APPDELEGATE showInitialScreen];
         }
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];

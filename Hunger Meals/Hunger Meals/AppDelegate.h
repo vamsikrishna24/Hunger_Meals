@@ -10,10 +10,11 @@
 #import <Google/SignIn.h>
 #import <CoreData/CoreData.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "LandingPageViewController.h"
 #import "HMLandingViewController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, GIDSignInDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate, GIDSignInDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
@@ -22,10 +23,15 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSURL *imageURL;
 
+@property int selectedInstance;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 - (void) showInitialScreen;
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
+
+-(void) enableCurrentLocation;
 
 
 @end

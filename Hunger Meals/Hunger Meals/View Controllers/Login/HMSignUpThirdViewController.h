@@ -14,6 +14,7 @@
 @property NSString *email;
 @property NSString *password;
 @property NSString *phoneNumber;
+@property NSString *userName;
 @property(strong,nonatomic) UIPageViewController *pageViewController;
 
 @property (weak, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *addAddressButtonOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *skipButtonOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *saveButtonOutlet;
+@property NSUInteger pageIndex;
 - (IBAction)addAddressAction:(id)sender;
 
 - (IBAction)skipButtonAction:(id)sender;

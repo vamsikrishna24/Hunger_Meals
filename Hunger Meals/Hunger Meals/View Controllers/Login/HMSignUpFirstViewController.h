@@ -12,12 +12,15 @@
 @interface HMSignUpFirstViewController : CommonViewController<UITextFieldDelegate>
 @property NSUInteger pageIndex;
 
+@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *paswordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 @property (weak, nonatomic) IBOutlet UIButton *nextButtonOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *signInButton;
 
 @property(strong,nonatomic) UIPageViewController *pageViewController;
 
 - (IBAction)nextButtonAction:(id)sender;
+
 @end

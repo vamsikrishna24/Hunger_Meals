@@ -202,6 +202,53 @@
                                       annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
 }
 
+#pragma mark - Enable Current location
+-(void)enableCurrentLocation
+{
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    // self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    [self.locationManager startUpdatingLocation];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 &&
+        [CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse
+        //[CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedAlways
+        ) {
+        // Will open an confirm dialog to get user's approval
+        [_locationManager requestWhenInUseAuthorization];
+    } else {
+        [_locationManager startUpdatingLocation]; //Will update location immediately
+    }
+}
+
+- (void)locationManager:(CLLocationManager*)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    switch (status) {
+        case kCLAuthorizationStatusNotDetermined: {
+        } break;
+        case kCLAuthorizationStatusDenied: {
+        } break;
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+        case kCLAuthorizationStatusAuthorizedAlways: {
+            [_locationManager startUpdatingLocation]; //Will update location immediately
+        } break;
+        default:
+            break;
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations {
+    CLLocation *location = [locations lastObject];
+    
+    //[CPAUser saveUserLocation:location.coordinate LocationName:@"My Location"];
+    
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"LocationUpdated"
+     object:self];
+    NSLog(@"lat%f - lon%f", location.coordinate.latitude, location.coordinate.longitude);
+}
 
 
 

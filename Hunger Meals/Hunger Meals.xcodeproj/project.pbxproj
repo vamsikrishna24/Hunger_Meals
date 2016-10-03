@@ -51,6 +51,8 @@
 		2BD458BC1D6F4F8E00D48AE8 /* HMCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD458BB1D6F4F8E00D48AE8 /* HMCartTableViewCell.m */; };
 		2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7B2401D55CF9800B2FABD /* HMHomePageViewController.m */; };
 		2BDF98701D70B4E8003D943C /* HMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF986F1D70B4E8003D943C /* HMTabBarViewController.m */; };
+		2BE861881D9F69C50005FABC /* LocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE861871D9F69C50005FABC /* LocationTableViewCell.m */; };
+		2BE8618B1D9F742C0005FABC /* LocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8618A1D9F742C0005FABC /* LocationView.m */; };
 		2BF5B0511D96593800A3D315 /* CurriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5B0501D96593800A3D315 /* CurriesViewController.m */; };
 		2BF5B0571D96DCE400A3D315 /* Inventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5B0561D96DCE400A3D315 /* Inventory.m */; };
 		38977BBACBB1FF1B038F49FD /* libPods-Hunger MealsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B03796A71316DB85DCF5A7 /* libPods-Hunger MealsTests.a */; };
@@ -198,6 +200,10 @@
 		2BD7B2401D55CF9800B2FABD /* HMHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHomePageViewController.m; sourceTree = "<group>"; };
 		2BDF986E1D70B4E8003D943C /* HMTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTabBarViewController.h; sourceTree = "<group>"; };
 		2BDF986F1D70B4E8003D943C /* HMTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTabBarViewController.m; sourceTree = "<group>"; };
+		2BE861861D9F69C50005FABC /* LocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTableViewCell.h; sourceTree = "<group>"; };
+		2BE861871D9F69C50005FABC /* LocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTableViewCell.m; sourceTree = "<group>"; };
+		2BE861891D9F742C0005FABC /* LocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationView.h; sourceTree = "<group>"; };
+		2BE8618A1D9F742C0005FABC /* LocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationView.m; sourceTree = "<group>"; };
 		2BF5B04F1D96593800A3D315 /* CurriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurriesViewController.h; sourceTree = "<group>"; };
 		2BF5B0501D96593800A3D315 /* CurriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurriesViewController.m; sourceTree = "<group>"; };
 		2BF5B0551D96DCE400A3D315 /* Inventory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inventory.h; sourceTree = "<group>"; };
@@ -354,6 +360,10 @@
 				2B252CA01D8097C500CED084 /* HMAddressTableViewCell.m */,
 				2BCE33851D9D3CF800AE64E6 /* HMLocationTableViewCell.h */,
 				2BCE33861D9D3CF800AE64E6 /* HMLocationTableViewCell.m */,
+				2BE861861D9F69C50005FABC /* LocationTableViewCell.h */,
+				2BE861871D9F69C50005FABC /* LocationTableViewCell.m */,
+				2BE861891D9F742C0005FABC /* LocationView.h */,
+				2BE8618A1D9F742C0005FABC /* LocationView.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1047,6 +1057,7 @@
 				2B9CCA951D8EB81100962F7B /* HMScroolMonthlyCollectionViewCell.m in Sources */,
 				2BC1DD161D5C90D900F00D7D /* HMLoginViewController.m in Sources */,
 				A88FB7461D5C5292005E8667 /* CommonViewController.m in Sources */,
+				2BE861881D9F69C50005FABC /* LocationTableViewCell.m in Sources */,
 				2B9CCA921D8E7C3100962F7B /* HMMonthlyDetailViewController.m in Sources */,
 				A895EB3C1D73FFDC00623D92 /* SVService.m in Sources */,
 				A88444701D38E68500887098 /* UIAlertView+CustomAlertView.m in Sources */,
@@ -1062,6 +1073,7 @@
 				2B6ED9A91D6FD8E3000D672D /* QuickbitesViewController.m in Sources */,
 				A895EB3B1D73FFDC00623D92 /* SVRequest.m in Sources */,
 				2BDF98701D70B4E8003D943C /* HMTabBarViewController.m in Sources */,
+				2BE8618B1D9F742C0005FABC /* LocationView.m in Sources */,
 				ACD537CD1D9419700023B834 /* UserData.m in Sources */,
 				2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */,
 			);

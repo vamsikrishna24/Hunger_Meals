@@ -24,6 +24,10 @@
     self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
     self.profileImageView.clipsToBounds = true;
+    
+    self.profileNameLabel.text = [UserData userName];
+    self.emailLabel.text = [UserData email];
+    self.phoneNumberLabel.text = [UserData phonNumber];
 
 }
 
@@ -31,12 +35,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return slideMenuCategories.count;
 }
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *CellIdentifier = @"SlideMenuCellIdentifier";
@@ -50,9 +57,28 @@
     return cell;
     
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
+    if (indexPath.row == 6) {
+        
+            [BTAlertController showAlertWithMessage: @"Are you sure want to Sign Out?" andTitle: @"Alert!" andOkButtonTitle: @"Ok" andCancelTitle:@"Cancel" andtarget:self andAlertCancelBlock:^{
+                
+            } andAlertOkBlock:^(NSString *userName) {
+                [[NSUserDefaults standardUserDefaults] setObject: nil forKey:@"UserData"];
+                [[NSUserDefaults standardUserDefaults] setBool: NO forKey:@"isLoginValid"];
+                [[NSUserDefaults standardUserDefaults] setValue: nil forKey: @"selectedLocation"];
+                [[NSUserDefaults standardUserDefaults] setObject: @"NO" forKey: @"isLocationSelected"];
+                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+                
+                HMLandingViewController *loginVC = (HMLandingViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"LandingPage"];
+                
+                [self presentViewController:loginVC
+                                   animated:YES
+                                 completion:nil];
+            }];
+            
+        }
     
 }
 

@@ -7,10 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HMLandingViewController.h"
+#import "UserData.h"
+#import "BTAlertController.h"
 
 @interface SlideMenuViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic, strong) IBOutlet UITableView *tableView;
+
+@property (weak, nonatomic) IBOutlet UIView *profileView;
 @property(strong,nonatomic)IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *profileNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneNumberLabel;
+@property NSUInteger pageIndex;
+
 - (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue;
 @end

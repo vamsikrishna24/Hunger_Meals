@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AppDelegate.h"
 
 # define HTTP_DATA_HOST @"https://hmealsapi.sukor.in/api/v1"
 
@@ -43,6 +44,14 @@ extern NSString * const kToken;
 
 #pragma Amazon URL
 extern NSString * const imageAmazonlink;
+
+#define USER_DEFAULTS [NSUserDefaults standardUserDefaults]
+
+#define APPDELEGATE   ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+
+#define kRadioOn @"RadioOn"
+#define kRadioOff @"RadioOff"
+#define kClose @"close"
 
 
 @end

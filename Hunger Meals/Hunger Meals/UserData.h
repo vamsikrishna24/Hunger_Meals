@@ -34,4 +34,8 @@
 
 + (NSString *)getAccessToken;
 
++ (NSString *)userName;
++ (NSString *)email;
++ (NSString *)phonNumber;
+
 @end

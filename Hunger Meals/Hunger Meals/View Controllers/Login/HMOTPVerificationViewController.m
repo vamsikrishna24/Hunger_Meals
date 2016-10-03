@@ -41,6 +41,7 @@
     bottomBorder.frame = CGRectMake(0.0f, self.otpTextField.frame.size.height - 1, self.otpTextField.frame.size.width, 1.0f);
     bottomBorder.backgroundColor = [UIColor colorWithRed:159.0f/255.0f green:159.0f/255.0f blue:159.0f/255.0f alpha:0.5].CGColor;
     [self.otpTextField.layer addSublayer:bottomBorder];
+    self.pageIndex = 2;
     
     isMobileVerified = NO;
     
@@ -198,6 +199,7 @@ replacementString:(NSString *)string {
         thirdVC.email = self.email;
         thirdVC.password = self.password;
         thirdVC.phoneNumber = self.phoneNumber;
+        thirdVC.userName = self.userName;
         thirdVC.pageViewController = _pageViewController;
         [self.pageViewController setViewControllers:@[thirdVC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     }

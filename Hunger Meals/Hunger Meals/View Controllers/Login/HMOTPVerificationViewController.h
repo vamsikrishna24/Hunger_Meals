@@ -15,6 +15,7 @@
 @property NSString *email;
 @property NSString *password;
 @property NSString *phoneNumber;
+@property NSString *userName;
 @property(strong,nonatomic) UIPageViewController *pageViewController;
 @property(strong,nonatomic) HMSignUpFirstViewController *signUpFirstVC;
 

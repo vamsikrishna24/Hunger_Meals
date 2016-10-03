@@ -71,7 +71,7 @@
     
 
     if ([NSStringFromClass([self class]) isEqualToString:@"HMHomePageViewController"]) {
-        self.navigationItem.title = @"Bangalore";
+        self.navigationItem.title = @"Hunger Meals";
     
     }else if ([NSStringFromClass([self class]) isEqualToString:@"HMSignUpViewController"]) {
         self.navigationItem.title = @"Sign Up";

@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIColor *color = [UIColor colorWithRed:237.0f/255.0f green:140.0f/255.0f blue:37.0f/255.0f alpha:0.5];
+    self.userNameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"User Name" attributes:@{NSForegroundColorAttributeName: color}];
+    [self.userNameTextField setValue:[UIFont fontWithName: @"American Typewriter Bold" size: 10] forKeyPath:@"_placeholderLabel.font"];
     self.emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: color}];
     [self.emailTextField setValue:[UIFont fontWithName: @"American Typewriter Bold" size: 10] forKeyPath:@"_placeholderLabel.font"];
     self.paswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: color}];
@@ -42,6 +44,12 @@
     bottomBorder2.backgroundColor = [UIColor colorWithRed:159.0f/255.0f green:159.0f/255.0f blue:159.0f/255.0f alpha:0.5].CGColor;
 
     [self.phoneNumberTextField.layer addSublayer:bottomBorder2];
+    
+    CALayer *bottomBorder3 = [CALayer layer];
+    bottomBorder3.frame = CGRectMake(0.0f, self.userNameTextField.frame.size.height - 1, self.userNameTextField.frame.size.width, 1.0f);
+    bottomBorder3.backgroundColor = [UIColor colorWithRed:159.0f/255.0f green:159.0f/255.0f blue:159.0f/255.0f alpha:0.5].CGColor;
+    
+    [self.userNameTextField.layer addSublayer:bottomBorder3];
 
     UISwipeGestureRecognizer* swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeUpFrom:)];
      UISwipeGestureRecognizer* swipeRightGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeUpFrom:)];
@@ -87,7 +95,11 @@ shouldChangeCharactersInRange:(NSRange)range
 
 #pragma mark - Custom methods
 - (BOOL)isValidationsSucceed{
-    if(![Utility isValidateEmail:self.emailTextField.text]){
+    if(![Utility isUserNameValidation:self.userNameTextField.text]){
+        [self showAlertWithTitle:@"Alert" andMessage:@"Please enter user name!!"];
+        return NO;
+    }
+    else if(![Utility isValidateEmail:self.emailTextField.text]){
         [self showAlertWithTitle:@"Alert" andMessage:@"Please enter valid email!!"];
         return NO;
     }
@@ -119,13 +131,25 @@ shouldChangeCharactersInRange:(NSRange)range
         SecondVC.email = self.emailTextField.text;
         SecondVC.password = self.paswordTextField.text;
         SecondVC.phoneNumber = self.phoneNumberTextField.text;
+        SecondVC.userName = self.userNameTextField.text;
         SecondVC.pageViewController = _pageViewController;
         SecondVC.signUpFirstVC = self;
         self.pageIndex = 1;
+
         [self.pageViewController setViewControllers:@[SecondVC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
         [self otpGenation];
 
     }
+}
+
+- (IBAction)previousButtonAction:(id)sender {
+    
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    HMLandingViewController *loginVC = (HMLandingViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"LandingPage"];
+    
+    [self presentViewController:loginVC
+                       animated:YES
+                     completion:nil];
 }
 
 
@@ -139,12 +163,13 @@ shouldChangeCharactersInRange:(NSRange)range
     }];
 
 }
+
 - (void)handleSwipeUpFrom:(UISwipeGestureRecognizer *)recognizer {
     if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
         [self nextButtonAction:nil];
     }
     else if (recognizer.direction == UISwipeGestureRecognizerDirectionRight){
-        
+        [self previousButtonAction: nil];
     }
 }
 
