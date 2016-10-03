@@ -7,11 +7,14 @@
 //
 
 #import "HMMealPlannerViewController.h"
+#import "HMItemListTableViewCell.h"
 
 @interface HMMealPlannerViewController (){
     NSMutableDictionary *_eventsByDate;
     
     NSDate *_dateSelected;
+    NSMutableArray *itemsListArray;
+    
 
 }
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
@@ -56,6 +59,8 @@
     _calendarManager.settings.weekModeEnabled = YES;
     [_calendarManager reload];
     _calendarMenuView.scrollView.scrollEnabled = NO; // Scroll not supported with JTVerticalCalendarView
+    
+    itemsListArray = [[NSMutableArray alloc]init];
 }
 
 #pragma mark - CalendarManager delegate
@@ -163,9 +168,13 @@
     
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return 31;
 }
-
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"Calendarcell";
+    HMItemListTableViewCell *cell = (HMItemListTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    return  cell;
+}
 - (void)createRandomEvents
 {
     _eventsByDate = [NSMutableDictionary new];

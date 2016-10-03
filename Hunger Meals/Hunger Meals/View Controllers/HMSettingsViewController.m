@@ -32,7 +32,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 5;
+    return 4;
 }
 //
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -53,15 +53,16 @@
         cell.SettingsRowLabel.text = @"Payments";
         cell.settingsImageView.image = [UIImage imageNamed:@"Payment_Card"];
 
-    }else if(indexPath.row == 2){
-        cell.SettingsRowLabel.text = @"Offers";
-        cell.settingsImageView.image = [UIImage imageNamed:@"Offers"];
+    }//else if(indexPath.row == 2){
+      //  cell.SettingsRowLabel.text = @"Offers";
+      //  cell.settingsImageView.image = [UIImage imageNamed:@"Offers"];
 
-    }else if(indexPath.row == 3) {
+ //   }
+else if(indexPath.row == 2) {
         cell.SettingsRowLabel.text = @"Invite Friends";
         cell.settingsImageView.image = [UIImage imageNamed:@"Invite_Friends"];
 
-    }else if(indexPath.row == 4) {
+    }else if(indexPath.row == 3) {
         cell.SettingsRowLabel.text = @"Help";
         cell.settingsImageView.image = [UIImage imageNamed:@"Help"];
 

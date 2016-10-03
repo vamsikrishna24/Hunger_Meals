@@ -53,6 +53,7 @@
 		2BDF98701D70B4E8003D943C /* HMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF986F1D70B4E8003D943C /* HMTabBarViewController.m */; };
 		2BE861881D9F69C50005FABC /* LocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE861871D9F69C50005FABC /* LocationTableViewCell.m */; };
 		2BE8618B1D9F742C0005FABC /* LocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8618A1D9F742C0005FABC /* LocationView.m */; };
+		2BEDB6391DA26CE800D24863 /* HMItemListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDB6381DA26CE800D24863 /* HMItemListTableViewCell.m */; };
 		2BF5B0511D96593800A3D315 /* CurriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5B0501D96593800A3D315 /* CurriesViewController.m */; };
 		2BF5B0571D96DCE400A3D315 /* Inventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5B0561D96DCE400A3D315 /* Inventory.m */; };
 		38977BBACBB1FF1B038F49FD /* libPods-Hunger MealsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B03796A71316DB85DCF5A7 /* libPods-Hunger MealsTests.a */; };
@@ -204,6 +205,8 @@
 		2BE861871D9F69C50005FABC /* LocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTableViewCell.m; sourceTree = "<group>"; };
 		2BE861891D9F742C0005FABC /* LocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationView.h; sourceTree = "<group>"; };
 		2BE8618A1D9F742C0005FABC /* LocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationView.m; sourceTree = "<group>"; };
+		2BEDB6371DA26CE800D24863 /* HMItemListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMItemListTableViewCell.h; sourceTree = "<group>"; };
+		2BEDB6381DA26CE800D24863 /* HMItemListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMItemListTableViewCell.m; sourceTree = "<group>"; };
 		2BF5B04F1D96593800A3D315 /* CurriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurriesViewController.h; sourceTree = "<group>"; };
 		2BF5B0501D96593800A3D315 /* CurriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurriesViewController.m; sourceTree = "<group>"; };
 		2BF5B0551D96DCE400A3D315 /* Inventory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inventory.h; sourceTree = "<group>"; };
@@ -364,6 +367,8 @@
 				2BE861871D9F69C50005FABC /* LocationTableViewCell.m */,
 				2BE861891D9F742C0005FABC /* LocationView.h */,
 				2BE8618A1D9F742C0005FABC /* LocationView.m */,
+				2BEDB6371DA26CE800D24863 /* HMItemListTableViewCell.h */,
+				2BEDB6381DA26CE800D24863 /* HMItemListTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1038,6 +1043,7 @@
 				2BF5B0511D96593800A3D315 /* CurriesViewController.m in Sources */,
 				2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */,
 				2B45D6961D59128300C873ED /* LocationsTableViewCell.m in Sources */,
+				2BEDB6391DA26CE800D24863 /* HMItemListTableViewCell.m in Sources */,
 				2B6ED9B51D6FE7A9000D672D /* MealsTableViewCell.m in Sources */,
 				2B6ED9AC1D6FD902000D672D /* SouthIndianViewController.m in Sources */,
 				A895EB3A1D73FFDC00623D92 /* SVConnection.m in Sources */,

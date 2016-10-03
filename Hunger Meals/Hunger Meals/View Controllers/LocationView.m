@@ -35,6 +35,8 @@
                 _instancesArray = resultArray;
                 CGRect frame = CGRectMake(16, (self.frame.size.height - 64 - _instancesArray.count * 40) / 2, self.frame.size.width - 32, _instancesArray.count * 40);
                 NSString * stringToDisplay = (NSString *)[[[_instancesArray valueForKey:@"location"]valueForKey:@"address"]componentsJoinedByString:@""];
+                NSString * city = [_instancesArray valueForKey:@"city"];
+                
                 if (frame.size.height < 80) {
                     frame.size.height = 80;
 
