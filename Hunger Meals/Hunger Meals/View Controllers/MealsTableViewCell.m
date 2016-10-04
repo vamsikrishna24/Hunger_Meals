@@ -26,7 +26,12 @@
 
 }
 - (IBAction)decrementAction:(id)sender {
-     self.countLabel.text = [NSString stringWithFormat:@"%d",[self.countLabel.text intValue]-1];
+    if ([self.countLabel.text intValue]<=1) {
+         self.addToCartButton.hidden = NO;
+    }
+    else{
+    self.countLabel.text = [NSString stringWithFormat:@"%d",[self.countLabel.text intValue]-1];
+    }
 
 }
 - (IBAction)addTocartButtonAction:(id)sender {

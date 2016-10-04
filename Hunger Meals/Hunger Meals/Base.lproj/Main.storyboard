@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDL-3C-iXZ">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDL-3C-iXZ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -359,7 +359,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Dn-CY-kG5" userLabel="PaytmView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Dn-CY-kG5" userLabel="PaytmView">
                                 <rect key="frame" x="20" y="72" width="374" height="65"/>
                                 <subviews>
                                     <button opaque="NO" tag="2222" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXe-OK-evR">
@@ -382,7 +382,7 @@
                                     <constraint firstAttribute="trailing" secondItem="bXe-OK-evR" secondAttribute="trailing" id="rbx-h8-ABA"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck2-TD-uaK" userLabel="PayUMoneyView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ck2-TD-uaK" userLabel="PayUMoneyView">
                                 <rect key="frame" x="20" y="145" width="374" height="65"/>
                                 <subviews>
                                     <button opaque="NO" tag="2222" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJC-PS-3wC">
@@ -405,7 +405,7 @@
                                     <constraint firstAttribute="bottom" secondItem="fJC-PS-3wC" secondAttribute="bottom" constant="5" id="ZCG-VA-Xpz"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nh1-92-n3W">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nh1-92-n3W">
                                 <rect key="frame" x="50" y="258" width="313" height="38"/>
                                 <color key="backgroundColor" red="1" green="0.3273916677" blue="0.36794372079999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -592,7 +592,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmH-ev-jdq">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmH-ev-jdq">
                                         <rect key="frame" x="90" y="89" width="217" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1305,9 +1305,10 @@
                                                                             </state>
                                                                             <connections>
                                                                                 <action selector="addAction:" destination="PTt-lu-n1y" eventType="touchUpInside" id="k3v-sg-L5h"/>
+                                                                                <action selector="addToCartAction:" destination="szz-r1-i5K" eventType="touchUpInside" id="EoV-zA-4Ys"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gV-GM-zhm">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gV-GM-zhm">
                                                                             <rect key="frame" x="33" y="3" width="42" height="30"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1321,6 +1322,7 @@
                                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                             </state>
                                                                             <connections>
+                                                                                <action selector="addToCartAction:" destination="szz-r1-i5K" eventType="touchUpInside" id="9Fe-XG-EVQ"/>
                                                                                 <action selector="decrementAction:" destination="PTt-lu-n1y" eventType="touchUpInside" id="DAU-VL-wsb"/>
                                                                             </connections>
                                                                         </button>
@@ -1462,11 +1464,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="106" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rJw-kd-dMf">
-                                <rect key="frame" x="0.0" y="64" width="414" height="393"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="437"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CartCellIdentifier" rowHeight="106" id="qzc-he-Ial" customClass="HMCartTableViewCell">
-                                        <rect key="frame" x="0.0" y="92" width="414" height="106"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qzc-he-Ial" id="gmT-Qt-oYg">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="105.5"/>
@@ -1501,7 +1503,7 @@
                                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="deleteCartItemAction:" destination="tUW-7a-Rla" eventType="touchUpInside" id="LqE-6e-7ua"/>
+                                                                <action selector="deleteCartItem:" destination="tUW-7a-Rla" eventType="touchUpInside" id="6GS-VD-mUy"/>
                                                             </connections>
                                                         </button>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVS-TS-gZ5" userLabel="Stepper View">
@@ -1519,6 +1521,7 @@
                                                                     </state>
                                                                     <connections>
                                                                         <action selector="decrementAction:" destination="qzc-he-Ial" eventType="touchUpInside" id="4PA-jD-5kP"/>
+                                                                        <action selector="updateProductQuantiy:" destination="tUW-7a-Rla" eventType="touchUpInside" id="hlO-W2-gUy"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIL-At-Gzj">
@@ -1533,6 +1536,7 @@
                                                                     </state>
                                                                     <connections>
                                                                         <action selector="addAction:" destination="qzc-he-Ial" eventType="touchUpInside" id="EJN-Hb-DXj"/>
+                                                                        <action selector="updateProductQuantiy:" destination="tUW-7a-Rla" eventType="touchUpInside" id="xeq-cm-BQl"/>
                                                                     </connections>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kss-uf-MZf">
@@ -1643,7 +1647,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="298" height="68"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total bill" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yF-gl-7pZ">
-                                                <rect key="frame" x="23" y="8" width="267" height="52"/>
+                                                <rect key="frame" x="0.0" y="-456" width="69" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" red="0.93725490199999995" green="0.54117647059999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1696,8 +1700,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="rJw-kd-dMf" secondAttribute="trailing" constant="-20" id="y70-Ic-yho"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="JCY-nD-85H"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="cartEmptyLabel" destination="MEo-rl-A8X" id="X2c-c3-OAc"/>
@@ -3582,9 +3588,10 @@
                                                                             </state>
                                                                             <connections>
                                                                                 <action selector="addAction:" destination="3QF-aX-q4S" eventType="touchUpInside" id="GFq-0y-Pkz"/>
+                                                                                <action selector="addToCartAction:" destination="VAF-sg-V6A" eventType="touchUpInside" id="vqv-kt-qLY"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDn-WG-AVP">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDn-WG-AVP">
                                                                             <rect key="frame" x="33" y="3" width="42" height="30"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -3598,6 +3605,7 @@
                                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                             </state>
                                                                             <connections>
+                                                                                <action selector="addToCartAction:" destination="VAF-sg-V6A" eventType="touchUpInside" id="Zdn-yg-ID2"/>
                                                                                 <action selector="decrementAction:" destination="3QF-aX-q4S" eventType="touchUpInside" id="E4Y-bm-97q"/>
                                                                             </connections>
                                                                         </button>
@@ -3634,6 +3642,7 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                     <connections>
+                                                                        <action selector="addToCartAction:" destination="VAF-sg-V6A" eventType="touchUpInside" id="NDY-MA-cIH"/>
                                                                         <action selector="addTocartButtonAction:" destination="3QF-aX-q4S" eventType="touchUpInside" id="BE0-vb-uey"/>
                                                                     </connections>
                                                                 </button>
@@ -3853,9 +3862,10 @@
                                                                             </state>
                                                                             <connections>
                                                                                 <action selector="addAction:" destination="IJl-h2-LRu" eventType="touchUpInside" id="HzU-U9-mbd"/>
+                                                                                <action selector="addToCartAction:" destination="8bE-0r-bOs" eventType="touchUpInside" id="brg-4k-I6P"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbi-8G-Mn0">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbi-8G-Mn0">
                                                                             <rect key="frame" x="33" y="3" width="42" height="30"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -3869,6 +3879,7 @@
                                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                             </state>
                                                                             <connections>
+                                                                                <action selector="addToCartAction:" destination="8bE-0r-bOs" eventType="touchUpInside" id="d5l-mc-MJ8"/>
                                                                                 <action selector="decrementAction:" destination="IJl-h2-LRu" eventType="touchUpInside" id="8ms-Eb-OEf"/>
                                                                             </connections>
                                                                         </button>
@@ -3905,6 +3916,7 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                     <connections>
+                                                                        <action selector="addToCartAction:" destination="8bE-0r-bOs" eventType="touchUpInside" id="7Fa-UI-CvA"/>
                                                                         <action selector="addTocartButtonAction:" destination="IJl-h2-LRu" eventType="touchUpInside" id="Xts-Ua-3W0"/>
                                                                     </connections>
                                                                 </button>
@@ -4115,7 +4127,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l6h-uz-1JX">
                                                                     <rect key="frame" x="262" y="16" width="109" height="36"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkA-eT-5nc">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkA-eT-5nc">
                                                                             <rect key="frame" x="33" y="3" width="42" height="30"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -4129,6 +4141,7 @@
                                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                             </state>
                                                                             <connections>
+                                                                                <action selector="addToCartAction:" destination="sl5-E6-q1S" eventType="touchUpInside" id="qqc-6t-fuV"/>
                                                                                 <action selector="decrementAction:" destination="7R8-6D-f2o" eventType="touchUpInside" id="Zxs-lJ-ffl"/>
                                                                             </connections>
                                                                         </button>
@@ -4144,6 +4157,7 @@
                                                                             </state>
                                                                             <connections>
                                                                                 <action selector="addAction:" destination="7R8-6D-f2o" eventType="touchUpInside" id="aYT-dW-gKH"/>
+                                                                                <action selector="addToCartAction:" destination="sl5-E6-q1S" eventType="touchUpInside" id="rmu-6V-mN7"/>
                                                                             </connections>
                                                                         </button>
                                                                     </subviews>
@@ -4180,6 +4194,7 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                     <connections>
+                                                                        <action selector="addToCartAction:" destination="sl5-E6-q1S" eventType="touchUpInside" id="CP7-Of-pxE"/>
                                                                         <action selector="addTocartButtonAction:" destination="7R8-6D-f2o" eventType="touchUpInside" id="vjh-GE-QPN"/>
                                                                     </connections>
                                                                 </button>
@@ -4515,9 +4530,10 @@
                                                                             </state>
                                                                             <connections>
                                                                                 <action selector="addAction:" destination="rQZ-Kq-P7e" eventType="touchUpInside" id="jeS-IJ-3AJ"/>
+                                                                                <action selector="addToCartAction:" destination="0Zx-PA-s6G" eventType="touchUpInside" id="xmQ-7L-NVL"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOa-ao-rfk">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOa-ao-rfk">
                                                                             <rect key="frame" x="33" y="3" width="42" height="30"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -4531,6 +4547,7 @@
                                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                             </state>
                                                                             <connections>
+                                                                                <action selector="addToCartAction:" destination="0Zx-PA-s6G" eventType="touchUpInside" id="gj5-33-ing"/>
                                                                                 <action selector="decrementAction:" destination="rQZ-Kq-P7e" eventType="touchUpInside" id="lhr-Ja-Nfm"/>
                                                                             </connections>
                                                                         </button>
@@ -4567,6 +4584,7 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                     <connections>
+                                                                        <action selector="addToCartAction:" destination="0Zx-PA-s6G" eventType="touchUpInside" id="Nr8-46-a1e"/>
                                                                         <action selector="addTocartButtonAction:" destination="rQZ-Kq-P7e" eventType="touchUpInside" id="Uz2-jo-Dcg"/>
                                                                     </connections>
                                                                 </button>

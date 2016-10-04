@@ -56,15 +56,6 @@
 
 - (IBAction)verifyOtp:(id)sender {
 //    
-//    if([result isEqualToString:self.otpTextField.text]){
-//        [self showAlertWithTitle:@"Success" andMessage:@"Congrats! Your mobile number has been verified."];
-//        self.nextButtonOutlet.hidden = NO;
-//        isMobileVerified = true;
-//        
-//    }else{
-//        self.nextButtonOutlet.hidden = YES;
-//        isMobileVerified = NO;
-//    }
     [self verifyOtp];
     
 }
@@ -103,6 +94,17 @@
     SVService *service = [[SVService alloc] init];
     [service otpVerification:dict usingBlock:^(NSString *resultMessage) {
     result = resultMessage;
+        if ([result isEqualToString:@"OTP verified and cleared from DB"]) {
+            
+            [self showAlertWithTitle:@"Success" andMessage:@"Congrats! Your mobile number has been verified."];
+            self.nextButtonOutlet.hidden = NO;
+            isMobileVerified = true;
+            
+        }else{
+            self.nextButtonOutlet.hidden = YES;
+            isMobileVerified = NO;
+        }
+
     [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
 }

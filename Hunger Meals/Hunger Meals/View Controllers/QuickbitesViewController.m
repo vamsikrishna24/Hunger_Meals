@@ -80,7 +80,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"MealsCellIdentifier";
     cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
+    cell.addToCartButton.hidden = NO;
+    cell.countLabel.text = @"1";
+    cell.priceLabel.text = @"";
+    cell.titleLabel.text = @"";
+    cell.descriptionView.text = @"";
+    cell.itemImageView.image = nil;
+    if (cell == nil) {
+        cell = [[MealsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+
     //Making selection style none
     //cell.selectionStyle = UITableViewCellSelectionStyleNone;
     //[cell.contentView setLayoutMargins:UIEdgeInsetsMake(15, 0, 0, 0)];
@@ -100,6 +109,8 @@
     }
     
     cell.addToCartButton.tag = indexPath.row;
+    cell.incrementButton.tag = indexPath.row;
+    cell.decrementButton.tag = indexPath.row;
     
   //  NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
     
@@ -174,11 +185,11 @@
 }
 
 - (IBAction)addToCartAction:(id)sender{
-    
-    
     UIButton *btn = (UIButton *)sender;
+    MealsTableViewCell *mealsCell = (MealsTableViewCell*)[_quickBitesTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:btn.tag inSection:0]];
     Product *productObject = _productObjectsArray[btn.tag];
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: productObject.id, @"inventories_id",@"1", @"quantity",  nil];
+    NSInteger quantity = [mealsCell.countLabel.text intValue];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: productObject.id, @"inventories_id",[NSNumber numberWithInteger:quantity], @"quantity",  nil];
     SVService *service = [[SVService alloc] init];
     [service addToCart:dict usingBlock:^(NSString *resultMessage) {
         if (resultMessage != nil) {

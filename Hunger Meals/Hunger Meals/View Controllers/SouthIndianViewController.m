@@ -58,6 +58,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"MealsCellIdentifier";
     MealsTableViewCell *cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    cell.addToCartButton.hidden = NO;
+    cell.countLabel.text = @"1";
+    cell.priceLabel.text = @"";
+    cell.titleLabel.text = @"";
+    cell.descriptionView.text = @"";
+    cell.itemImageView.image = nil;
+    if (cell == nil) {
+        cell = [[MealsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+
     
     Product *product = _productObjectsArray[indexPath.row];
     if (isVegSwitchOn) {
@@ -72,6 +82,10 @@
     }
 
     Inventory *inventory = product.inventories[0];
+    
+    cell.addToCartButton.tag = indexPath.row;
+    cell.incrementButton.tag = indexPath.row;
+    cell.decrementButton.tag = indexPath.row;
 
 //    NSString *imageName = [NSString stringWithFormat:@"Dish_Images/%@.jpg",self.dishImagesArray[indexPath.row]];
 //    cell.itemImageView.image = [UIImage imageNamed:imageName];
@@ -123,6 +137,24 @@
     self.filteredProdcutsArray = [self.productObjectsArray filteredArrayUsingPredicate:bPredicate];
     
     [_southIndianTableView reloadData];
+    
+}
+
+- (IBAction)addToCartAction:(id)sender{
+    UIButton *btn = (UIButton *)sender;
+    MealsTableViewCell *mealsCell = (MealsTableViewCell*)[_southIndianTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:btn.tag inSection:0]];
+    Product *productObject = _productObjectsArray[btn.tag];
+    NSInteger quantity = [mealsCell.countLabel.text intValue];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: productObject.id, @"inventories_id",[NSNumber numberWithInteger:quantity], @"quantity",  nil];
+    SVService *service = [[SVService alloc] init];
+    [service addToCart:dict usingBlock:^(NSString *resultMessage) {
+        if (resultMessage != nil) {
+            
+        }
+        
+        
+    }];
+    
     
 }
 

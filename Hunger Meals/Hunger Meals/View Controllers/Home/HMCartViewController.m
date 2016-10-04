@@ -86,6 +86,9 @@
     }
     
     CartItem *cartObject = [cartItemsArray objectAtIndex:indexPath.row];
+    cell.incrementButton.tag = indexPath.row;
+    cell.decrimentButton.tag = indexPath.row;
+    cell.cancelButton.tag = indexPath.row;
     
     cell.totalPriceLabel.text = cartObject.price;
     cell.cartItemTitle.text = cartObject.product.name;
@@ -97,19 +100,38 @@
     
 }
 
-- (IBAction)addToCartAction:(id)sender{
+- (IBAction)updateProductQuantiy:(id)sender{
+    UIButton *btn = (UIButton *)sender;
+    HMCartTableViewCell *mealsCell = (HMCartTableViewCell*)[_cartTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:btn.tag inSection:0]];
+    Product *productObject = cartItemsArray[btn.tag];
+    NSInteger quantity = [mealsCell.countLabel.text intValue];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: productObject.id, @"inventories_id",[NSNumber numberWithInteger:quantity], @"quantity",  nil];
+    SVService *service = [[SVService alloc] init];
+    [service addToCart:dict usingBlock:^(NSString *resultMessage) {
+        if (resultMessage != nil) {
+            
+        }
+        
+        
+    }];
     
-    
+
 }
 
-/*
-#pragma mark - Navigation
+- (IBAction)deleteCartItem:(id)sender{
+    UIButton *btn = (UIButton *)sender;
+    Product *productObject = cartItemsArray[btn.tag];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: productObject.id, @"inventories_id",0, @"quantity",  nil];
+    SVService *service = [[SVService alloc] init];
+    [service addToCart:dict usingBlock:^(NSString *resultMessage) {
+        if (resultMessage != nil && [resultMessage isEqualToString:@"Cart has been updated"]) {
+            [_cartTableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:btn.tag inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+        }
+        
+        
+    }];
+    
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
 
 @end

@@ -78,15 +78,24 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"MealsCellIdentifier";
     cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    //Making selection style none
-    //cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    //[cell.contentView setLayoutMargins:UIEdgeInsetsMake(15, 0, 0, 0)];
+    cell.addToCartButton.hidden = NO;
+    cell.countLabel.text = @"1";
+    cell.priceLabel.text = @"";
+    cell.titleLabel.text = @"";
+    cell.descriptionView.text = @"";
+    cell.itemImageView.image = nil;
+    if (cell == nil) {
+        cell = [[MealsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
     
     Product *product = _productObjectsArray[indexPath.row];
     if (isVegSwitchOn) {
         product = _filteredProdcutsArray[indexPath.row];
     }
+    
+    cell.addToCartButton.tag = indexPath.row;
+    cell.incrementButton.tag = indexPath.row;
+    cell.decrementButton.tag = indexPath.row;
     
     Inventory *inventory = product.inventories[0];
     if([product.label  isEqual: @"veg"]){
@@ -133,5 +142,24 @@
     [_curriesTableView reloadData];
     
 }
+
+- (IBAction)addToCartAction:(id)sender{
+    UIButton *btn = (UIButton *)sender;
+    MealsTableViewCell *mealsCell = (MealsTableViewCell*)[_curriesTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:btn.tag inSection:0]];
+    Product *productObject = _productObjectsArray[btn.tag];
+    NSInteger quantity = [mealsCell.countLabel.text intValue];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: productObject.id, @"inventories_id",[NSNumber numberWithInteger:quantity], @"quantity",  nil];
+    SVService *service = [[SVService alloc] init];
+    [service addToCart:dict usingBlock:^(NSString *resultMessage) {
+        if (resultMessage != nil) {
+            
+        }
+        
+        
+    }];
+    
+    
+}
+
 
 @end
