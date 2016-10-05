@@ -17,6 +17,8 @@
 		2B45D6921D59106C00C873ED /* My_Location.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D6911D59106C00C873ED /* My_Location.png */; };
 		2B45D6961D59128300C873ED /* LocationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B45D6951D59128300C873ED /* LocationsTableViewCell.m */; };
 		2B45D6981D5913D300C873ED /* Edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B45D6971D5913D300C873ED /* Edit.png */; };
+		2B58CE5D1DA5073F0005C043 /* Tax.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B58CE5C1DA5073F0005C043 /* Tax.json */; };
+		2B58CE601DA50AD00005C043 /* Tax.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B58CE5F1DA50AD00005C043 /* Tax.m */; };
 		2B6047A61D911CBC003889BA /* HMMealPlannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6047A51D911CBC003889BA /* HMMealPlannerViewController.m */; };
 		2B62B47C1D6785DD00B3C526 /* HMSignUpPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B62B47B1D6785DD00B3C526 /* HMSignUpPageViewController.m */; };
 		2B62B47F1D67870B00B3C526 /* HMOTPVerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B62B47E1D67870B00B3C526 /* HMOTPVerificationViewController.m */; };
@@ -140,6 +142,9 @@
 		2B45D6941D59128300C873ED /* LocationsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsTableViewCell.h; sourceTree = "<group>"; };
 		2B45D6951D59128300C873ED /* LocationsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsTableViewCell.m; sourceTree = "<group>"; };
 		2B45D6971D5913D300C873ED /* Edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Edit.png; path = ../Edit.png; sourceTree = "<group>"; };
+		2B58CE5C1DA5073F0005C043 /* Tax.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Tax.json; sourceTree = "<group>"; };
+		2B58CE5E1DA50AD00005C043 /* Tax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tax.h; sourceTree = "<group>"; };
+		2B58CE5F1DA50AD00005C043 /* Tax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tax.m; sourceTree = "<group>"; };
 		2B6047A41D911CBC003889BA /* HMMealPlannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMealPlannerViewController.h; sourceTree = "<group>"; };
 		2B6047A51D911CBC003889BA /* HMMealPlannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMealPlannerViewController.m; sourceTree = "<group>"; };
 		2B62B47A1D6785DD00B3C526 /* HMSignUpPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSignUpPageViewController.h; sourceTree = "<group>"; };
@@ -478,6 +483,7 @@
 		9A0C43B91D2F868200A7BF6B = {
 			isa = PBXGroup;
 			children = (
+				2B58CE5C1DA5073F0005C043 /* Tax.json */,
 				2B7AC6F71D47AC3F00D59BB3 /* Dish_Images */,
 				9A0C43C41D2F868300A7BF6B /* Hunger Meals */,
 				9A0C43E11D2F868500A7BF6B /* Hunger MealsTests */,
@@ -715,6 +721,8 @@
 				AC423DCF1D985D6B00B8A5E5 /* CartItem.m */,
 				2BBDA6131D9B94A700F632CC /* Coupon.h */,
 				2BBDA6141D9B94A700F632CC /* Coupon.m */,
+				2B58CE5E1DA50AD00005C043 /* Tax.h */,
+				2B58CE5F1DA50AD00005C043 /* Tax.m */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -861,6 +869,7 @@
 				A88FB7681D5C8C33005E8667 /* quickbites.jpg in Resources */,
 				2B45D6851D59019400C873ED /* Location_Icon.png in Resources */,
 				A88FB7531D5C6030005E8667 /* Logo.png in Resources */,
+				2B58CE5D1DA5073F0005C043 /* Tax.json in Resources */,
 				A831CA861D37CEC100B96F4F /* close.png in Resources */,
 				2B45D6871D59020400C873ED /* Notification.png in Resources */,
 				A88FB75D1D5C842B005E8667 /* BellIcon.png in Resources */,
@@ -1081,6 +1090,7 @@
 				2BDF98701D70B4E8003D943C /* HMTabBarViewController.m in Sources */,
 				2BE8618B1D9F742C0005FABC /* LocationView.m in Sources */,
 				ACD537CD1D9419700023B834 /* UserData.m in Sources */,
+				2B58CE601DA50AD00005C043 /* Tax.m in Sources */,
 				2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

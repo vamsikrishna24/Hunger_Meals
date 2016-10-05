@@ -48,7 +48,7 @@ typedef void(^SuccessBlock)(NSData *data , NSHTTPURLResponse *response, NSError 
 
 -(void)deleteRequest:(NSString *)urlString  Perameters:(NSDictionary *)perameterDict usingblock:(void(^)(id result, NSHTTPURLResponse *response, NSError *err))block;
 
-- (void)addcouponcode:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock;
+- (void)couponCode:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock;
 
 - (void)otpGenaration:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock;
 

@@ -22,7 +22,7 @@ NSString * const kAddOnBitesDataURL = @"%@/products/category/addon?token=%@";
 NSString * const kCartDataURL = @"%@/currentcart?token=%@";
 NSString * const kAddToCartURL = @"%@/savecart?token=%@";
 NSString * const kUpdateCartURL = @"%@/cart/%@?token=%@";
-NSString * const kAddCoupenCode = @"%@/getcouponvalue?code=%@";
+NSString * const kAddCoupenCode = @"%@/getcouponvalue";
 NSString * const kOTPGeneration = @"%@/generateotp";
 NSString * const kOTPVerification = @"%@/verifyotp";
 NSString * const kLocation = @"%@/locations";

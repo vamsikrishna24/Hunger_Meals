@@ -38,7 +38,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self fetchAddCoupenCode];
+   // [self fetchAddCoupenCode];
     self.title = @"Meal Plan";
     
     _swipeView.pagingEnabled = YES;
@@ -158,19 +158,19 @@
     self.swipeView.currentPage = self.pageControl.currentPage;
 }
 
--(void)fetchAddCoupenCode{
-    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
- NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: @"HM250", @"code",@"30", @"amount",@"cash", @"type",@"category", @"coupon",@"20-08-2016", @"startAt",@"30-08-2016",@"endsAt",nil];
-    
-    SVService *service = [[SVService alloc] init];
-    [service addcouponcode:dict usingBlock:^(NSString *resultMessage) {
-        
-        
-     
-        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
-     
-    }];
-}
+//-(void)fetchAddCoupenCode{
+//    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+// NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: @"HM250", @"code",@"30", @"amount",@"cash", @"type",@"category", @"coupon",@"20-08-2016", @"startAt",@"30-08-2016",@"endsAt",nil];
+//    
+//    SVService *service = [[SVService alloc] init];
+//    [service addcouponcode:dict usingBlock:^(NSString *resultMessage) {
+//        
+//        
+//     
+//        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+//     
+//    }];
+//}
 
 
 @end

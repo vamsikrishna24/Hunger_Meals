@@ -261,11 +261,9 @@
 
 #pragma coupon
 
-- (void)addcouponcode:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
+- (void)couponCode:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
     
-    
-    NSString *coupon = @"HM150";
-    NSString *url = [NSString stringWithFormat:kAddCoupenCode, HTTP_DATA_HOST,coupon];
+    NSString *url = [NSString stringWithFormat:kAddCoupenCode, HTTP_DATA_HOST];
     
     
     [self sendRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
@@ -273,10 +271,10 @@
         if (response.statusCode == 200 && result!=nil) {
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
-            NSDictionary *resultDict = [dictResult objectForKey:@"data"];
-            NSString *resultMessage = [resultDict objectForKey:@"message"];
+            NSString *resultDict = [dictResult objectForKey:@"data"];
+          //  NSString *resultMessage = [resultDict objectForKey:@"message"];
             
-            resultBlock(resultMessage);
+            resultBlock(resultDict);
         }
         else{
             resultBlock(nil);
@@ -284,6 +282,29 @@
     }];
 }
 
+
+//-(void)couponCode:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
+//
+//    
+//    NSString *url = [NSString stringWithFormat:kAddCoupenCode, HTTP_DATA_HOST];
+//    
+//    [self sendRequest:url Perameters:dict usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+//        
+//        if (response.statusCode == 200 && result!=nil) {
+//            
+//            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+//            NSDictionary *resultDict = [dictResult objectForKey:@"data"];
+//            NSString *resultMessage = [resultDict objectForKey:@"message"];
+//            
+//            resultBlock(resultMessage);
+//        }
+//        else{
+//            resultBlock(nil);
+//        }
+//    }];
+//}
+
+        
 #pragma OTP Generation
 - (void)otpGenaration:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
     

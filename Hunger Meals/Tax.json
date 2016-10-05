@@ -1,0 +1,43 @@
+{
+    "location": {
+      "id": 2,
+      "name": "loc5",
+      "city": "hyd",
+      "type": "deliverylocation",
+      "sublocation": "asd",
+      "address": "asds",
+      "lat": "12",
+      "lng": "23",
+      "zip": "12343",
+      "created_at": null,
+      "updated_at": "2016-09-20 19:42:21",
+      "kitchens": [
+        {
+          "id": 1,
+          "admin_id": "5",
+          "name": "kormangala",
+          "is_active": "0",
+          "location_id": "0",
+          "created_at": "2016-09-19 11:12:05",
+          "updated_at": "2016-09-20 15:46:09",
+          "pivot": {
+            "location_id": "2",
+            "kitchen_id": "1"
+          }
+        }
+      ]
+    },
+    "tax": {
+      "id": 1,
+      "kitchen_id": "6",
+      "service_charge": "13",
+      "service_tax": "2",
+      "VAT": "12",
+      "CESS": "2",
+      "delivery_charge": "12",
+      "packing_charge": "3",
+      "created_at": "2016-09-19 11:12:05",
+      "updated_at": "2016-09-19 11:27:06",
+      "surge": null
+    }
+  }
