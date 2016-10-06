@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *profileNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumberLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property NSUInteger pageIndex;
 
 - (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue;

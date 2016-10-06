@@ -7,10 +7,13 @@
 //
 
 #import "SlideMenuViewController.h"
+#import "HMSlideMenuTableViewCell.h"
 
 @interface SlideMenuViewController (){
 
     NSMutableArray *slideMenuCategories;
+    NSMutableArray *slideMenuimagesCategories;
+
 }
 
 @end
@@ -21,6 +24,8 @@
     [super viewDidLoad];
     
     slideMenuCategories = [[NSMutableArray alloc] initWithObjects: @"Meals", @"Monthly Plan",@"Shop",@"Orders",@"Invite",@"Help",@"Sign Out", nil];
+    slideMenuimagesCategories = [[NSMutableArray alloc] initWithObjects: @"Meals", @"Meals",@"Meals",@"Meals",@"Meals",@"Meals",@"Meals", nil];
+    
     self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
     self.profileImageView.clipsToBounds = true;
@@ -47,13 +52,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *CellIdentifier = @"SlideMenuCellIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    HMSlideMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[HMSlideMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    UILabel *categoryLabel = (UILabel *)[cell viewWithTag:1];
-    categoryLabel.text = slideMenuCategories[indexPath.row];
+    //UILabel *categoryLabel = (UILabel *)[cell viewWithTag:1];
+    cell.menuLabel.text = slideMenuCategories[indexPath.row];
+    cell.iconImageView.image = [UIImage imageNamed:slideMenuimagesCategories[indexPath.row]] ;
+    
     return cell;
     
 }

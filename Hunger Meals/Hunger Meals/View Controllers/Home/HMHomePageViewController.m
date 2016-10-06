@@ -222,7 +222,7 @@
     UITableViewCell *cell;
     if (tableView == self.locationTableView) {
         LocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: locIdentifier];
-        cell.locationLabel.text = [locations [indexPath.row] valueForKey: @"address"];
+        cell.locationLabel.text = [locations [indexPath.row] valueForKey: @"name"];
         return cell;
     }
     

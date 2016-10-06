@@ -33,8 +33,8 @@
             if (resultArray != nil || resultArray.count != 0) {
                 _instancesArray = [[NSMutableArray alloc]init];
                 _instancesArray = resultArray;
-                CGRect frame = CGRectMake(16, (self.frame.size.height - 64 - _instancesArray.count * 40) / 2, self.frame.size.width - 32, _instancesArray.count * 40);
-                self.stringToDisplay = (NSString *)[[[_instancesArray valueForKey:@"location"]valueForKey:@"address"]componentsJoinedByString:@""];
+                CGRect frame = CGRectMake(25, (self.frame.size.height - 64 - _instancesArray.count * 40) / 2, self.frame.size.width - 50, _instancesArray.count * 100);
+                self.stringToDisplay = (NSString *)[[[_instancesArray valueForKey:@"location"]valueForKey:@"name"]componentsJoinedByString:@""];
                 
                 NSString * city = [_instancesArray valueForKey:@"city"];
                 
@@ -83,7 +83,7 @@
       //  [cell.locationLabel setText: instance [@"address"]];
         
         NSInteger selectedLoc = [[USER_DEFAULTS valueForKey: @"selectedLocation"] integerValue];
-        cell.locationLabel.text = (NSString *)[[[_instancesArray valueForKey:@"location"]valueForKey:@"address"]componentsJoinedByString:@""];
+        cell.locationLabel.text = (NSString *)[[[_instancesArray valueForKey:@"location"]valueForKey:@"name"]componentsJoinedByString:@""];
         if (selectedLoc == indexPath.row) {
             _selectedIndexPath = indexPath;
             [cell.radioButton setImage: [UIImage imageNamed: kRadioOn] forState: UIControlStateNormal];
@@ -120,7 +120,11 @@
 }
 
 - (CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    return 40.0;
+    
+    if(indexPath.row == 0){
+        return 45;
+    }else
+    return 70.0;
 }
 
 
