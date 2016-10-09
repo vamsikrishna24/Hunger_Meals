@@ -75,9 +75,10 @@
 }
 -(void)setupFbConfiguration{
     
-    self.facebookLoginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
+    self.facebookLoginButton.readPermissions = @[@"email"];
     self.facebookLoginButton.delegate = self;
     [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(profileUpdated:) name:FBSDKProfileDidChangeNotification object:nil];
     [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name"}]
      startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
@@ -101,8 +102,9 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                 error:(NSError *)error{
     
     if (!error) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserLogin"];
-        [APPDELEGATE showInitialScreen];
+        [self signUpWithFacebookDetails:result.token.tokenString];
+//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserLogin"];
+//        [APPDELEGATE showInitialScreen];
     }
 }
 
@@ -152,6 +154,10 @@ didSignInForUser:(GIDGoogleUser *)user
     NSString *familyName = user.profile.familyName;
     NSString *email = user.profile.email;
     
+    if (user.authentication.accessToken) {
+        [self signUpWithGoogleDetails:user.authentication.accessToken];
+    }
+    
     if ([GIDSignIn sharedInstance].currentUser.profile.hasImage)
     {
         // self.imageURL = [user.profile imageURLWithDimension:150];
@@ -161,6 +167,48 @@ didSignInForUser:(GIDGoogleUser *)user
 }
 
 #pragma mark Custom Methods
+- (void) signUpWithFacebookDetails:(NSString *)token{
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: token, @"socialtoken", @"Facebook", @"logintype",  nil];
+    
+    SVService *service = [[SVService alloc] init];
+    [service signupWithSocialNetwork:dict usingBlock:^(NSMutableArray *resultArray) {
+
+        if (resultArray.count != 0 || resultArray != nil) {
+            UserData *dataObject = resultArray[0];
+            NSData *personEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:dataObject];
+            [[NSUserDefaults standardUserDefaults] setObject:personEncodedObject forKey:@"UserData"];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoginValid"];
+            [[NSUserDefaults standardUserDefaults] setObject: @"NO" forKey: @"isLocationSelected"];
+            //([(AppDelegate *)[[UIApplication sharedApplication] delegate] enableCurrentLocation]);
+            [APPDELEGATE showInitialScreen];
+        }
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    }];
+
+}
+
+- (void) signUpWithGoogleDetails:(NSString *)token{
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: token, @"socialtoken", @"gmail", @"logintype",  nil];
+    
+    SVService *service = [[SVService alloc] init];
+    [service signupWithSocialNetwork:dict usingBlock:^(NSMutableArray *resultArray) {
+        
+        if (resultArray.count != 0 || resultArray != nil) {
+            UserData *dataObject = resultArray[0];
+            NSData *personEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:dataObject];
+            [[NSUserDefaults standardUserDefaults] setObject:personEncodedObject forKey:@"UserData"];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoginValid"];
+            [[NSUserDefaults standardUserDefaults] setObject: @"NO" forKey: @"isLocationSelected"];
+            //([(AppDelegate *)[[UIApplication sharedApplication] delegate] enableCurrentLocation]);
+            [APPDELEGATE showInitialScreen];
+        }
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    }];
+
+}
+
 - (IBAction)signInButtonPressed:(id)sender{
     if ([self isValidationsSucceed]) {
             [self loginToServer];

@@ -35,6 +35,7 @@ NSString * const kCurrentActiveOrders = @"%@/currentactiveorders";
 
 NSString * const kUserLoginURL = @"%@/login";
 NSString * const kUserSignUpURL = @"%@/jwcreate";
+NSString * const kSocialSignUpURL = @"%@/jwsocialauthenticate";
 
 #pragma -mark Other constants
 NSString * const kEmptyString = @"";

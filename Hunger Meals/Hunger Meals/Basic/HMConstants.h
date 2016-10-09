@@ -28,6 +28,7 @@ extern NSString * const kDeleteCartURL;
 
 extern NSString * const kUserLoginURL;
 extern NSString * const kUserSignUpURL;
+extern NSString * const kSocialSignUpURL;
 extern NSString * const kAddCoupenCode;
 extern NSString * const kOTPGeneration;
 extern NSString * const kOTPVerification;

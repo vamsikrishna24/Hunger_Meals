@@ -105,6 +105,7 @@
     }];
 }
 
+
 #pragma QuickBites
 - (void)getQuickBitesProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
     NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
@@ -486,6 +487,25 @@
         }
     }];
 }
+
+- (void)signupWithSocialNetwork:(NSDictionary *)params usingBlock :(void(^)(NSMutableArray *resultArray))resultBlock{
+    
+    NSString *url = [NSString stringWithFormat:kSocialSignUpURL, HTTP_DATA_HOST];
+    
+    [self sendRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            resultBlock([self parseUserLoginData:dictResult]);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+}
+
 #pragma mark -- Parsing Methods
 
 - (NSMutableArray *)parseUserLoginData:(NSMutableArray *)array {
