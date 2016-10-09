@@ -8,6 +8,7 @@
 
 #import "SlideMenuViewController.h"
 #import "HMSlideMenuTableViewCell.h"
+#import "HMOrdersListTableViewController.h"
 
 
 @interface SlideMenuViewController (){
@@ -67,7 +68,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    SVService *service = [[SVService alloc] init];
     
     if (indexPath.row == 0){
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
@@ -76,19 +76,12 @@
         [self.navigationController pushViewController:mealsVC animated:YES];
     }
     if (indexPath.row == 3){
-         [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+        UINavigationController *nav = [[UINavigationController alloc]initWithNibName:@"HomeNavigationController" bundle:[NSBundle mainBundle]];
         
-        [service getCurrentActiveordersusingBlock:^(NSMutableArray *resultArray) {
-
-            if(resultArray.count == 0){
-                
-                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Orders" message:@"Currently there are no orders to deliver" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-                [alertView show];
-            }
-            
-            [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
-            
-        }];
+            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        
+            HMOrdersListTableViewController *orderList = [storyBoard instantiateViewControllerWithIdentifier:@"OrdersViewIdentifier"];
+       [self.navigationController pushViewController:orderList animated:YES];
 
     }
     

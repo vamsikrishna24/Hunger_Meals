@@ -544,11 +544,11 @@
     return parsedArray;
 }
 - (NSMutableArray *)parseOrdersData:(NSMutableArray *)array {
-    NSError *error = nil;
+   // NSError *error = nil;
     NSDictionary *dict = (NSDictionary *)array;
-    NSArray *resultArr = [dict valueForKeyPath:@"data"];
-    NSMutableArray *parsedArray = [Product arrayOfModelsFromDictionaries:resultArr error:&error];
-    return parsedArray;
+    NSMutableArray *resultArr = [dict valueForKeyPath:@"data"];
+   // NSMutableArray *parsedArray = [Product arrayOfModelsFromDictionaries:resultArr error:&error];
+    return resultArr;
 }
 - (NSMutableArray *)parseCartData:(NSMutableArray *)array {
     NSError *error = nil;
