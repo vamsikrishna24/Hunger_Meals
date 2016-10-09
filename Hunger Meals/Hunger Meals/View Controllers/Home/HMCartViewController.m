@@ -15,6 +15,8 @@
 @interface HMCartViewController (){
     NSMutableArray *cartItemsArray;
     NSString *rsString;
+    float totalAmount;
+    float taxSum;
 }
 @property (weak, nonatomic) IBOutlet UILabel *cartEmptyLabel;
 
@@ -39,45 +41,7 @@
 //        [self performSelectorOnMainThread:@selector(hideActivityIndicator:) withObject:kIndicatorTitle waitUntilDone:NO];
 //    }];
     
-    Tax *taxObject = [[Tax alloc]init];
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Tax" ofType:@"json"];
-    NSData *data = [NSData dataWithContentsOfFile:filePath];
-    NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    
-    NSMutableDictionary *taxDict = [[NSMutableDictionary alloc]init];
-    
-    taxDict = [json valueForKey:@"tax"];
-    float value1 = 0.0;
-    int total = 100;
-    value1 = [[taxDict objectForKey:@"CESS"] floatValue];
-    value1 = (value1*total)/100;
-    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
-    self.cessValueLabel.text = rsString;
-    
-    value1 = [[taxDict objectForKey:@"service_charge"] floatValue];
-    value1 = (value1*total)/100;
-    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
-    self.serviceChargeValueLabel.text = rsString;
-    
-    value1 = [[taxDict objectForKey:@"service_tax"] floatValue];
-    value1 = (value1*total)/100;
-    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
-    self.serviceTaxValueLabel.text = rsString;
-    
-    value1 = [[taxDict objectForKey:@"VAT"] floatValue];
-    value1 = (value1*total)/100;
-    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
-    self.vatValueLabel.text = rsString;
-    
-    value1 = [[taxDict objectForKey:@"delivery_charge"] floatValue];
-    value1 = (value1*total)/100;
-    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
-    self.dekieveryChagesValueLabel.text = rsString;
-    
-    value1 = [[taxDict objectForKey:@"packing_charge"] floatValue];
-    value1 = (value1*total)/100;
-    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
-    self.packagingValueLabel.text = rsString;
+   
 
 }
 
@@ -147,6 +111,14 @@
     cell.totalPriceLabel.text = cartObject.price;
     cell.cartItemTitle.text = cartObject.product.name;
     cell.countLabel.text = cartObject.quantity;
+    totalAmount = 0;
+    for (int row = 0; row < cartItemsArray.count ; row++) {
+//        NSIndexPath* cellPath = [NSIndexPath indexPathForRow:row inSection:0];
+//        UITableViewCell* cell = [tableView cellForRowAtIndexPath:cellPath];
+        totalAmount += [cartObject.price floatValue];
+    }
+    
+    [self calculation];
     
     NSString *string = [NSString stringWithFormat:@"%@%@",imageAmazonlink,cartObject.product.image_url];
     [cell.cartItemsImageView sd_setImageWithURL:[NSURL URLWithString:string]placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
@@ -154,6 +126,58 @@
     
 }
 
+-(void)calculation{
+    Tax *taxObject = [[Tax alloc]init];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Tax" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    
+    NSMutableDictionary *taxDict = [[NSMutableDictionary alloc]init];
+    taxSum = 0.0;
+    taxDict = [json valueForKey:@"tax"];
+    float value1 = 0.0;
+    int total = totalAmount;
+    value1 = [[taxDict objectForKey:@"CESS"] floatValue];
+    value1 = (value1*total)/100;
+    taxSum = value1;
+    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
+    self.cessValueLabel.text = rsString;
+    
+    value1 = [[taxDict objectForKey:@"service_charge"] floatValue];
+    value1 = (value1*total)/100;
+    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
+    self.serviceChargeValueLabel.text = rsString;
+    
+    taxSum = taxSum + value1;
+    value1 = [[taxDict objectForKey:@"service_tax"] floatValue];
+    value1 = (value1*total)/100;
+    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
+    self.serviceTaxValueLabel.text = rsString;
+    taxSum = taxSum + value1;
+
+    value1 = [[taxDict objectForKey:@"VAT"] floatValue];
+    value1 = (value1*total)/100;
+    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
+    self.vatValueLabel.text = rsString;
+    taxSum = taxSum + value1;
+
+    value1 = [[taxDict objectForKey:@"delivery_charge"] floatValue];
+    value1 = (value1*total)/100;
+    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
+    self.dekieveryChagesValueLabel.text = rsString;
+    taxSum = taxSum + value1;
+
+    value1 = [[taxDict objectForKey:@"packing_charge"] floatValue];
+    value1 = (value1*total)/100;
+    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
+    self.packagingValueLabel.text = rsString;
+    taxSum = taxSum + value1;
+    totalAmount = totalAmount + taxSum;
+    self.totalPrice.text = [NSString stringWithFormat:@"%.2f",totalAmount] ;
+
+
+    
+}
 - (IBAction)updateProductQuantiy:(id)sender{
     UIButton *btn = (UIButton *)sender;
     HMCartTableViewCell *mealsCell = (HMCartTableViewCell*)[_cartTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:btn.tag inSection:0]];
@@ -195,11 +219,17 @@
     SVService *service = [[SVService alloc] init];
     
     [service couponCode:dict usingBlock:^(NSString *resultArray) {
-        self.amountDiscountLabel.text = [NSString stringWithFormat:@"- %.2f ₹",[[resultArray valueForKey:@"amount"]floatValue]];
+        self.amountDiscountLabel.text = [NSString stringWithFormat:@"%.2f",[[resultArray valueForKey:@"amount"]floatValue]];
+        totalAmount = totalAmount - taxSum;
+        taxSum = taxSum - [self.amountDiscountLabel.text floatValue];
+        totalAmount = totalAmount + taxSum;
+        self.totalPrice.text = [NSString stringWithFormat:@"%.2f",totalAmount];
 
-
+        self.applyButton.enabled = NO;
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
         
     }];
+    
+    
 }
 @end

@@ -26,6 +26,12 @@ NSString * const kAddCoupenCode = @"%@/getcouponvalue";
 NSString * const kOTPGeneration = @"%@/generateotp";
 NSString * const kOTPVerification = @"%@/verifyotp";
 NSString * const kLocation = @"%@/locations";
+NSString * const kMonthlyproducts = @"%@/getmonthlyproducts";
+NSString * const kCurrentmealplan = @"%@/currmealplan";
+NSString * const kCurrentActiveOrders = @"%@/currentactiveorders";
+
+
+
 
 NSString * const kUserLoginURL = @"%@/login";
 NSString * const kUserSignUpURL = @"%@/jwcreate";

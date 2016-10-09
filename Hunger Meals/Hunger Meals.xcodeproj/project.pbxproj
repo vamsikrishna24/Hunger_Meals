@@ -59,6 +59,9 @@
 		2BEDB6391DA26CE800D24863 /* HMItemListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDB6381DA26CE800D24863 /* HMItemListTableViewCell.m */; };
 		2BF5B0511D96593800A3D315 /* CurriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5B0501D96593800A3D315 /* CurriesViewController.m */; };
 		2BF5B0571D96DCE400A3D315 /* Inventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5B0561D96DCE400A3D315 /* Inventory.m */; };
+		2BF98EB41DA89A55009573AB /* HMItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB31DA89A55009573AB /* HMItemList.m */; };
+		2BF98EB71DA8B7CE009573AB /* Itemlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB61DA8B7CE009573AB /* Itemlist.m */; };
+		2BF98EBA1DA8C812009573AB /* ItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB91DA8C812009573AB /* ItemTableViewCell.m */; };
 		38977BBACBB1FF1B038F49FD /* libPods-Hunger MealsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B03796A71316DB85DCF5A7 /* libPods-Hunger MealsTests.a */; };
 		67A9DF2A319A1E2057942F80 /* libPods-Hunger Meals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517349AA1104418B811BF63 /* libPods-Hunger Meals.a */; };
 		9A0C43C71D2F868300A7BF6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43C61D2F868300A7BF6B /* main.m */; };
@@ -219,6 +222,12 @@
 		2BF5B0501D96593800A3D315 /* CurriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurriesViewController.m; sourceTree = "<group>"; };
 		2BF5B0551D96DCE400A3D315 /* Inventory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inventory.h; sourceTree = "<group>"; };
 		2BF5B0561D96DCE400A3D315 /* Inventory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inventory.m; sourceTree = "<group>"; };
+		2BF98EB21DA89A55009573AB /* HMItemList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMItemList.h; sourceTree = "<group>"; };
+		2BF98EB31DA89A55009573AB /* HMItemList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMItemList.m; sourceTree = "<group>"; };
+		2BF98EB51DA8B7CE009573AB /* Itemlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Itemlist.h; sourceTree = "<group>"; };
+		2BF98EB61DA8B7CE009573AB /* Itemlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Itemlist.m; sourceTree = "<group>"; };
+		2BF98EB81DA8C812009573AB /* ItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemTableViewCell.h; sourceTree = "<group>"; };
+		2BF98EB91DA8C812009573AB /* ItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTableViewCell.m; sourceTree = "<group>"; };
 		3517349AA1104418B811BF63 /* libPods-Hunger Meals.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hunger Meals.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4601FB6FA060AC4FD73DB175 /* Pods-Hunger MealsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger MealsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger MealsUITests/Pods-Hunger MealsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		719A449AF43D1D047E749B26 /* Pods-Hunger MealsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger MealsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger MealsUITests/Pods-Hunger MealsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -379,6 +388,8 @@
 				2BEDB6381DA26CE800D24863 /* HMItemListTableViewCell.m */,
 				2B085DBC1DA6715700EE2404 /* HMSlideMenuTableViewCell.h */,
 				2B085DBD1DA6715700EE2404 /* HMSlideMenuTableViewCell.m */,
+				2BF98EB81DA8C812009573AB /* ItemTableViewCell.h */,
+				2BF98EB91DA8C812009573AB /* ItemTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -435,6 +446,8 @@
 				2B9CCA911D8E7C3100962F7B /* HMMonthlyDetailViewController.m */,
 				2B6047A41D911CBC003889BA /* HMMealPlannerViewController.h */,
 				2B6047A51D911CBC003889BA /* HMMealPlannerViewController.m */,
+				2BF98EB21DA89A55009573AB /* HMItemList.h */,
+				2BF98EB31DA89A55009573AB /* HMItemList.m */,
 			);
 			name = MonthlyMealPlanner;
 			sourceTree = "<group>";
@@ -728,6 +741,8 @@
 				2BBDA6141D9B94A700F632CC /* Coupon.m */,
 				2B58CE5E1DA50AD00005C043 /* Tax.h */,
 				2B58CE5F1DA50AD00005C043 /* Tax.m */,
+				2BF98EB51DA8B7CE009573AB /* Itemlist.h */,
+				2BF98EB61DA8B7CE009573AB /* Itemlist.m */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -1031,6 +1046,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B62B4851D678C0400B3C526 /* HMSignUpThirdViewController.m in Sources */,
+				2BF98EB41DA89A55009573AB /* HMItemList.m in Sources */,
 				2B62B47C1D6785DD00B3C526 /* HMSignUpPageViewController.m in Sources */,
 				A88FB7431D5C5072005E8667 /* SlideMenuViewController.m in Sources */,
 				2B6ED9AF1D6FD915000D672D /* NorthIndianViewController.m in Sources */,
@@ -1046,6 +1062,7 @@
 				2B7AC6FD1D47BB6F00D59BB3 /* HMDetailPageViewController.m in Sources */,
 				2B6ED9A41D6FD242000D672D /* MealsViewController.m in Sources */,
 				2B41F7981D74B78E0067F0C4 /* HMContentViewController.m in Sources */,
+				2BF98EBA1DA8C812009573AB /* ItemTableViewCell.m in Sources */,
 				AC423DD01D985D6B00B8A5E5 /* CartItem.m in Sources */,
 				A895EB411D74361D00623D92 /* HMConstants.m in Sources */,
 				E8F6627C1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m in Sources */,
@@ -1059,6 +1076,7 @@
 				2B9A43491D471F3A00F87C1B /* HMSignUpViewController.m in Sources */,
 				2B45D6961D59128300C873ED /* LocationsTableViewCell.m in Sources */,
 				2BEDB6391DA26CE800D24863 /* HMItemListTableViewCell.m in Sources */,
+				2BF98EB71DA8B7CE009573AB /* Itemlist.m in Sources */,
 				2B6ED9B51D6FE7A9000D672D /* MealsTableViewCell.m in Sources */,
 				2B6ED9AC1D6FD902000D672D /* SouthIndianViewController.m in Sources */,
 				A895EB3A1D73FFDC00623D92 /* SVConnection.m in Sources */,

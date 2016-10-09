@@ -54,13 +54,23 @@ typedef void(^SuccessBlock)(NSData *data , NSHTTPURLResponse *response, NSError 
 
 - (void)otpVerification:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock;
 
--(void)sendASMXRequest:(NSString *)urlString  Parameters:(NSDictionary *)parameterDict method:(NSString *)methodName usingblock:(void(^)(id result, NSHTTPURLResponse *response, NSError *err))block;
-
--(void)sendASMXRequest:(NSString *)urlString  soapMessage:(NSString *)soapMessage method:(NSString *)methodName usingblock:(void(^)(id result, NSHTTPURLResponse *response, NSError *err))block;
-
 +(NSString *)getBasicAuthorization;
 
 - (NSMutableArray *)parseArrayProductsData:(NSMutableArray *)array;
+
+- (void)getmonthlyproductsusingBlock:(void(^)(NSMutableArray *resultArray))resultBlock;
+
+- (void)getcurrmealplanusingBlock:(void(^)(NSMutableArray *resultArray))resultBlock;
+
+- (NSMutableArray *)parseItemsArrayData:(NSMutableArray *)array;
+
+- (NSMutableArray *)parseOrdersData:(NSMutableArray *)array;
+
+- (void)getCurrentActiveordersusingBlock:(void(^)(NSMutableArray *resultArray))resultBlock;
+
+-(void)sendASMXRequest:(NSString *)urlString  Parameters:(NSDictionary *)parameterDict method:(NSString *)methodName usingblock:(void(^)(id result, NSHTTPURLResponse *response, NSError *err))block;
+
+-(void)sendASMXRequest:(NSString *)urlString  soapMessage:(NSString *)soapMessage method:(NSString *)methodName usingblock:(void(^)(id result, NSHTTPURLResponse *response, NSError *err))block;
 
 
 @end

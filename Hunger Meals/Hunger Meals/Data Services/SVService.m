@@ -19,6 +19,7 @@
 #import "UserData.h"
 #import "CartItem.h"
 #import "BTAlertController.h"
+#import "Itemlist.h"
 
 
 
@@ -213,6 +214,73 @@
 
 }
 
+
+#pragma Getmonthlyproducts
+- (void)getmonthlyproductsusingBlock:(void(^)(NSMutableArray *resultArray))resultBlock {
+    
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    
+    NSString *token = userDataObject.token;
+    NSString *url = [NSString stringWithFormat:kMonthlyproducts, HTTP_DATA_HOST,token];
+    
+    [self sendGetRequestWithAuth:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            resultBlock([self parseProductsData:dictResult]);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+}
+
+
+#pragma currmealplan
+- (void)getcurrmealplanusingBlock:(void(^)(NSMutableArray *resultArray))resultBlock {
+    
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    
+    NSString *token = userDataObject.token;
+    NSString *url = [NSString stringWithFormat:kCurrentmealplan, HTTP_DATA_HOST,token];
+    
+    [self sendGetRequestWithAuth:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            resultBlock([self parseCartData:dictResult]);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+}
+
+#pragma currentactiveorders
+- (void)getCurrentActiveordersusingBlock:(void(^)(NSMutableArray *resultArray))resultBlock {
+    
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    
+    NSString *token = userDataObject.token;
+    NSString *url = [NSString stringWithFormat:kCurrentActiveOrders, HTTP_DATA_HOST,token];
+    
+    [self sendGetRequestWithAuth:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            resultBlock([self parseOrdersData:dictResult]);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+}
 #pragma mark -- REST Services
 
 #pragma GetLocations
@@ -449,7 +517,20 @@
     NSMutableArray *parsedArray = [Product arrayOfModelsFromDictionaries:array error:&error];
     return parsedArray;
 }
-
+- (NSMutableArray *)parseItemsArrayData:(NSMutableArray *)array {
+    NSError *error = nil;
+    //NSDictionary *dict = (NSDictionary *)array;
+    // NSArray *resultArr = [dict valueForKeyPath:@"data"];
+    NSMutableArray *parsedArray = [Product arrayOfModelsFromDictionaries:array error:&error];
+    return parsedArray;
+}
+- (NSMutableArray *)parseOrdersData:(NSMutableArray *)array {
+    NSError *error = nil;
+    NSDictionary *dict = (NSDictionary *)array;
+    NSArray *resultArr = [dict valueForKeyPath:@"data"];
+    NSMutableArray *parsedArray = [Product arrayOfModelsFromDictionaries:resultArr error:&error];
+    return parsedArray;
+}
 - (NSMutableArray *)parseCartData:(NSMutableArray *)array {
     NSError *error = nil;
     NSDictionary *dict = (NSDictionary *)array;

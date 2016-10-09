@@ -8,16 +8,20 @@
 
 #import "HMMealPlannerViewController.h"
 #import "HMItemListTableViewCell.h"
+#import "HMItemList.h"
+#import "ItemTableViewCell.h"
 
 @interface HMMealPlannerViewController (){
     NSMutableDictionary *_eventsByDate;
     
     NSDate *_dateSelected;
     NSMutableArray *itemsListArray;
-    
+    HMItemList *itemListView;
 
 }
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
+@property (strong, nonatomic) IBOutlet UIView *instanceView;
+@property (weak, nonatomic) IBOutlet UITableView *itemListTableView;
 
 @end
 
@@ -39,7 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Monthly meal";
+    self.title = @"Monthly meal Planner";
     
     _calendarManager = [JTCalendarManager new];
     _calendarManager.delegate = self;
@@ -61,8 +65,31 @@
     _calendarMenuView.scrollView.scrollEnabled = NO; // Scroll not supported with JTVerticalCalendarView
     
     itemsListArray = [[NSMutableArray alloc]init];
-}
+    
+    itemListView = [[HMItemList alloc]init];
+    
+    [self fetchAndLoadData];
+    [self.itemListTableView reloadData];
+    self.instanceView.hidden = YES;
+    
+    
+   
+    
+    }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    self.navigationController.navigationBar.userInteractionEnabled = NO;
+    self.instanceView.center = CGPointMake(self.view.frame.size.width  / 2,
+                                           (self.view.frame.size.height / 2)+50);
+
+   // self.instanceView.frame = CGRectMake(16, self.view.frame.size.height / 2 - 30, self.view.frame.size.width - 32, 7*40);
+    [self.instanceView setBackgroundColor: [UIColor clearColor]];
+    [self.view addSubview: self.instanceView];
+    
+
+    
+}
 #pragma mark - CalendarManager delegate
 
 // Exemple of implementation of prepareDayView method
@@ -168,11 +195,45 @@
     
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 31;
+     if (tableView == self.calendarTableView) {
+         NSCalendar *calendar = [NSCalendar currentCalendar];
+         NSRange range = [calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:[NSDate date]];
+         NSUInteger numberOfDaysInMonth = range.length;
+    return numberOfDaysInMonth;
+     }else{
+         return itemsListArray.count;
+     }
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    self.instanceView.hidden = NO;
+    if(tableView == self.calendarTableView){
+        
+    }
+    
+    
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"Calendarcell";
-    HMItemListTableViewCell *cell = (HMItemListTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    UITableViewCell *cell;
+    if (tableView == self.calendarTableView) {
+        HMItemListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"Calendarcell"];
+        return cell;
+    }else if(tableView == self.itemListTableView){
+        
+    static NSString *cellIdentifier = @"ItemListCell";
+        
+    ItemTableViewCell *celll = (ItemTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if(indexPath.row ==0 ){
+              celll.itemNameLabel.text = @"Meanu";
+        }
+        
+        NSArray *itemsArray = [itemsListArray valueForKey:@"title"];
+        
+        celll.itemNameLabel.text = itemsArray [indexPath.row];
+        return celll;
+
+    }else
     return  cell;
 }
 - (void)createRandomEvents
@@ -193,6 +254,32 @@
         [_eventsByDate[key] addObject:randomDate];
     }
     
+
+}
+
+
+-(void)fetchAndLoadData{
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    
+    SVService *service = [[SVService alloc] init];
+    [service getcurrmealplanusingBlock:^(NSMutableArray *resultArray) {
+        
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    }];
+    
+}
+- (IBAction)lunchButtonAction:(id)sender {
+    self.instanceView.hidden = NO;
+    self.navigationController.navigationBar.userInteractionEnabled = NO;
+  //  UIButton *btn = (UIButton *)sender;
+    
+    [self.itemListTableView reloadData];
+
+}
+- (IBAction)dinnerButtonAction:(id)sender {
+    self.instanceView.hidden = NO;
+    self.navigationController.navigationBar.userInteractionEnabled = NO;
+    [self.itemListTableView reloadData];
 
 }
 

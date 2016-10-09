@@ -10,8 +10,11 @@
 #import "HMLandingViewController.h"
 #import "UserData.h"
 #import "BTAlertController.h"
+#import "CommonViewController.h"
+#import "SVService.h"
+#import "MealsViewController.h"
 
-@interface SlideMenuViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface SlideMenuViewController : CommonViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic, strong) IBOutlet UITableView *tableView;
 

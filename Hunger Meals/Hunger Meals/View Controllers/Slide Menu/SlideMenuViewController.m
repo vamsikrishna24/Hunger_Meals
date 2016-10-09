@@ -9,6 +9,7 @@
 #import "SlideMenuViewController.h"
 #import "HMSlideMenuTableViewCell.h"
 
+
 @interface SlideMenuViewController (){
 
     NSMutableArray *slideMenuCategories;
@@ -66,6 +67,30 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    SVService *service = [[SVService alloc] init];
+    
+    if (indexPath.row == 0){
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        MealsViewController *mealsVC = [storyBoard instantiateViewControllerWithIdentifier:@"MealsViewIdentifier"];
+        
+        [self.navigationController pushViewController:mealsVC animated:YES];
+    }
+    if (indexPath.row == 3){
+         [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+        
+        [service getCurrentActiveordersusingBlock:^(NSMutableArray *resultArray) {
+
+            if(resultArray.count == 0){
+                
+                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Orders" message:@"Currently there are no orders to deliver" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                [alertView show];
+            }
+            
+            [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+            
+        }];
+
+    }
     
     if (indexPath.row == 6) {
         

@@ -29,5 +29,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *serviceTaxLabel;
 @property (weak, nonatomic) IBOutlet UILabel *amountDiscountLabel;
 - (IBAction)applyButtonAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *totalPrice;
 
 @end
