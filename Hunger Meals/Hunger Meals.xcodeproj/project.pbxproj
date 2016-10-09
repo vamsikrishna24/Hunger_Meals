@@ -82,7 +82,6 @@
 		A831CA871D37CEC100B96F4F /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A831CA831D37CEC100B96F4F /* close@2x.png */; };
 		A831CA881D37CEC100B96F4F /* MTGenericAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A831CA851D37CEC100B96F4F /* MTGenericAlertView.m */; };
 		A88444651D38D0B700887098 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = A88444641D38D0B700887098 /* Utility.m */; };
-		A88444681D38D17B00887098 /* CheckConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A88444671D38D17B00887098 /* CheckConnection.m */; };
 		A884446C1D38D5D600887098 /* BTAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = A884446B1D38D5D600887098 /* BTAlertController.m */; };
 		A88444701D38E68500887098 /* UIAlertView+CustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A884446F1D38E68500887098 /* UIAlertView+CustomAlertView.m */; };
 		A88444731D38E69900887098 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A88444721D38E69900887098 /* UIActionSheet+Blocks.m */; };
@@ -109,6 +108,8 @@
 		A89E929A1D75736E00E981E6 /* YSLScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E92981D75736E00E981E6 /* YSLScrollMenuView.m */; };
 		AC423DD01D985D6B00B8A5E5 /* CartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC423DCF1D985D6B00B8A5E5 /* CartItem.m */; };
 		ACD537CD1D9419700023B834 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD537CC1D9419700023B834 /* UserData.m */; };
+		ACDD63951DAA4F4400B1889C /* PayTMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDD63941DAA4F4400B1889C /* PayTMViewController.m */; };
+		ACFA959D1DAA7F28000F1846 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
 		E8F6627C1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F6627B1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m */; };
 		FBDF5E03F7D934EDB95266C0 /* libPods-Hunger MealsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD269D1071265531F331205 /* libPods-Hunger MealsUITests.a */; };
 /* End PBXBuildFile section */
@@ -268,8 +269,6 @@
 		A831CA851D37CEC100B96F4F /* MTGenericAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGenericAlertView.m; sourceTree = "<group>"; };
 		A88444631D38D0B700887098 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		A88444641D38D0B700887098 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
-		A88444661D38D17B00887098 /* CheckConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckConnection.h; sourceTree = "<group>"; };
-		A88444671D38D17B00887098 /* CheckConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckConnection.m; sourceTree = "<group>"; };
 		A884446A1D38D5D600887098 /* BTAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAlertController.h; sourceTree = "<group>"; };
 		A884446B1D38D5D600887098 /* BTAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAlertController.m; sourceTree = "<group>"; };
 		A884446D1D38D60500887098 /* ProjectConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectConstants.h; sourceTree = "<group>"; };
@@ -312,6 +311,14 @@
 		AC423DCF1D985D6B00B8A5E5 /* CartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartItem.m; sourceTree = "<group>"; };
 		ACD537CB1D9419700023B834 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		ACD537CC1D9419700023B834 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
+		ACDD63931DAA4F4400B1889C /* PayTMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayTMViewController.h; sourceTree = "<group>"; };
+		ACDD63941DAA4F4400B1889C /* PayTMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayTMViewController.m; sourceTree = "<group>"; };
+		ACDD63981DAA4FD200B1889C /* PaymentsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentsSDK.h; sourceTree = "<group>"; };
+		ACDD63991DAA4FD200B1889C /* PGMerchantConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMerchantConfiguration.h; sourceTree = "<group>"; };
+		ACDD639A1DAA4FD200B1889C /* PGOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGOrder.h; sourceTree = "<group>"; };
+		ACDD639B1DAA4FD200B1889C /* PGServerEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGServerEnvironment.h; sourceTree = "<group>"; };
+		ACDD639C1DAA4FD200B1889C /* PGTransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGTransactionViewController.h; sourceTree = "<group>"; };
+		ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentsSDK.a; sourceTree = "<group>"; };
 		B9B03796A71316DB85DCF5A7 /* libPods-Hunger MealsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hunger MealsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E67C43699DE6BCBB6CE5CDD9 /* Pods-Hunger MealsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger MealsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger MealsTests/Pods-Hunger MealsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8F6627A1D8EA95900F42136 /* HMMonthlyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMonthlyCollectionViewCell.h; sourceTree = "<group>"; };
@@ -325,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B89E5041D5BBF640022EC67 /* CoreLocation.framework in Frameworks */,
+				ACFA959D1DAA7F28000F1846 /* libPaymentsSDK.a in Frameworks */,
 				67A9DF2A319A1E2057942F80 /* libPods-Hunger Meals.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,6 +597,8 @@
 				9A818FA11D4A203200FB5565 /* PaymentPageViewController.m */,
 				9A818FA21D4A203200FB5565 /* PaymentStatusViewController.h */,
 				9A818FA31D4A203200FB5565 /* PaymentStatusViewController.m */,
+				ACDD63931DAA4F4400B1889C /* PayTMViewController.h */,
+				ACDD63941DAA4F4400B1889C /* PayTMViewController.m */,
 			);
 			name = "Payment GateWay";
 			sourceTree = "<group>";
@@ -644,6 +654,7 @@
 		A831CA7F1D37CEC100B96F4F /* Third Party Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				ACDD63961DAA4FC000B1889C /* PayTM */,
 				A88444691D38D5C600887098 /* AlertController */,
 				A831CA801D37CEC100B96F4F /* MTGenericAlertView */,
 				A89E92941D75736E00E981E6 /* YSLContainerViewController */,
@@ -675,8 +686,6 @@
 			children = (
 				A88FB7471D5C5658005E8667 /* Fonts.h */,
 				A88FB7481D5C5658005E8667 /* Fonts.m */,
-				A88444661D38D17B00887098 /* CheckConnection.h */,
-				A88444671D38D17B00887098 /* CheckConnection.m */,
 				A88444631D38D0B700887098 /* Utility.h */,
 				A88444641D38D0B700887098 /* Utility.m */,
 				A884446D1D38D60500887098 /* ProjectConstants.h */,
@@ -757,6 +766,27 @@
 			);
 			name = YSLContainerViewController;
 			path = ../YSLContainerViewController;
+			sourceTree = "<group>";
+		};
+		ACDD63961DAA4FC000B1889C /* PayTM */ = {
+			isa = PBXGroup;
+			children = (
+				ACDD63971DAA4FD200B1889C /* include */,
+				ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */,
+			);
+			name = PayTM;
+			sourceTree = "<group>";
+		};
+		ACDD63971DAA4FD200B1889C /* include */ = {
+			isa = PBXGroup;
+			children = (
+				ACDD63981DAA4FD200B1889C /* PaymentsSDK.h */,
+				ACDD63991DAA4FD200B1889C /* PGMerchantConfiguration.h */,
+				ACDD639A1DAA4FD200B1889C /* PGOrder.h */,
+				ACDD639B1DAA4FD200B1889C /* PGServerEnvironment.h */,
+				ACDD639C1DAA4FD200B1889C /* PGTransactionViewController.h */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1061,6 +1091,7 @@
 				2BA00BB41D8FC9090087B23C /* SwipeView.m in Sources */,
 				2B7AC6FD1D47BB6F00D59BB3 /* HMDetailPageViewController.m in Sources */,
 				2B6ED9A41D6FD242000D672D /* MealsViewController.m in Sources */,
+				ACDD63951DAA4F4400B1889C /* PayTMViewController.m in Sources */,
 				2B41F7981D74B78E0067F0C4 /* HMContentViewController.m in Sources */,
 				2BF98EBA1DA8C812009573AB /* ItemTableViewCell.m in Sources */,
 				AC423DD01D985D6B00B8A5E5 /* CartItem.m in Sources */,
@@ -1104,7 +1135,6 @@
 				A88444651D38D0B700887098 /* Utility.m in Sources */,
 				A831CA881D37CEC100B96F4F /* MTGenericAlertView.m in Sources */,
 				2B6047A61D911CBC003889BA /* HMMealPlannerViewController.m in Sources */,
-				A88444681D38D17B00887098 /* CheckConnection.m in Sources */,
 				A88F7FE31D6DA15600310F8F /* HMScrollingCell.m in Sources */,
 				2B45D6901D590E5F00C873ED /* HMLocationViewController.m in Sources */,
 				A88FB7491D5C5658005E8667 /* Fonts.m in Sources */,
@@ -1272,6 +1302,22 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/sdk/2_1",
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sukor.hungrymeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1293,6 +1339,22 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/sdk/2_1",
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sukor.hungrymeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";

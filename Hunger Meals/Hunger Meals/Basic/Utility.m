@@ -7,7 +7,6 @@
 //
 
 #import "Utility.h"
-#import "CheckConnection.h"
 
 @implementation Utility
 + (NSString *) getGenericeEmail:(NSString *)emailText;
@@ -142,15 +141,7 @@
 
 #pragma mark ==========NETWORK ALERT=================
 
-+ (BOOL)isConnectionAvailableWithAlert:(BOOL)showAlert withClass:(id)currentClass
-{
-    CheckConnection *connectionObj = [[CheckConnection alloc]init];
-    if (showAlert) {
-        [connectionObj startWithCurrentClass:currentClass];
-    }
-    
-    return [connectionObj checkInternetRechable];
-}
+
 + (NSString*) getStringWithTrimSpaces:(NSString*)string
 {
     return [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];

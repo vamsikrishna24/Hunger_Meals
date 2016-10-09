@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PaymentsSDK.h"
 
-@interface HMPaymentTypeSelectionViewController : UIViewController
+
+@interface HMPaymentTypeSelectionViewController : UIViewController<PGTransactionDelegate>
+
+@property (nonatomic, weak) IBOutlet UIButton *paytmButton;
+@property (nonatomic, weak) IBOutlet UIButton *payUButton;
 
 @end

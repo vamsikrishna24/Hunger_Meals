@@ -347,6 +347,25 @@
             </objects>
             <point key="canvasLocation" x="2815" y="-1027"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Rpg-02-77W">
+            <objects>
+                <viewController id="jGm-oP-SkW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8IM-HQ-Wmx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zb0-uR-GCy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sJl-J8-ha2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8wx-de-jhv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3871.5" y="-1812.5"/>
+        </scene>
         <!--Payment Gateway-->
         <scene sceneID="r95-8p-0D2">
             <objects>
@@ -373,7 +392,7 @@
                                         </state>
                                         <state key="selected" image="Button_Radio_Checked.png"/>
                                         <connections>
-                                            <action selector="paytmOptionSelected:" destination="xRG-Yj-jMh" eventType="touchUpInside" id="H0P-Zu-Kvl"/>
+                                            <action selector="paytmOptionSelected:" destination="xRG-Yj-jMh" eventType="touchUpInside" id="il6-9d-tlk"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -399,7 +418,7 @@
                                         </state>
                                         <state key="selected" image="Button_Radio_Checked.png"/>
                                         <connections>
-                                            <action selector="payUmoneyOptionSelected:" destination="xRG-Yj-jMh" eventType="touchUpInside" id="wxF-AM-eDy"/>
+                                            <action selector="payUmoneyOptionSelected:" destination="xRG-Yj-jMh" eventType="touchUpInside" id="loD-HF-M4f"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -423,7 +442,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="MakeAPaymentButtonPressed:" destination="xRG-Yj-jMh" eventType="touchUpInside" id="F8w-W3-XzH"/>
+                                    <action selector="MakeAPaymentButtonPressed:" destination="xRG-Yj-jMh" eventType="touchUpInside" id="BdQ-bc-IVZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -445,9 +464,9 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="payUButton" destination="fJC-PS-3wC" id="9ft-kx-Z53"/>
-                        <outlet property="paytmButton" destination="bXe-OK-evR" id="a0p-Ab-g32"/>
-                        <segue destination="sI8-gY-gqu" kind="show" identifier="ToPayUMoney" id="opO-XU-ukS"/>
+                        <outlet property="payUButton" destination="fJC-PS-3wC" id="Xfb-jH-zG6"/>
+                        <outlet property="paytmButton" destination="bXe-OK-evR" id="3ze-yY-2i9"/>
+                        <segue destination="sI8-gY-gqu" kind="show" identifier="ToPayUMoney" id="CRm-NM-yk9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDC-S2-JWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1627,6 +1646,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+<<<<<<< Updated upstream
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zc-li-hC8">
@@ -1643,6 +1663,8 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+=======
+>>>>>>> Stashed changes
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>

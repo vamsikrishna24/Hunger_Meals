@@ -43,7 +43,6 @@ PODS:
   - JSONModel (1.5.1)
   - JTCalendar (2.1.9)
   - MBProgressHUD (1.0.0)
-  - Reachability (3.2)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -60,7 +59,6 @@ DEPENDENCIES:
   - JSONModel (~> 1.2)
   - JTCalendar (~> 2.0)
   - MBProgressHUD (~> 1.0.0)
-  - Reachability (~> 3.2)
   - SDWebImage (~> 3.7)
   - SWRevealViewController (~> 2.3.0)
   - TwilioSDK (~> 1.2)
@@ -84,11 +82,10 @@ SPEC CHECKSUMS:
   JSONModel: fd2553dc9e6608a3f35bfc956a14be35395d3852
   JTCalendar: beb2f4c1b639bf6880f680b4858227acf83a049c
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   TwilioSDK: d3982acf6880ddf3ce57c4444e021a71c5f35653
 
-PODFILE CHECKSUM: 6a0ca720b5afe83516ba4ec8503609aa42a36250
+PODFILE CHECKSUM: 0098fee9d8f4d6a9c821d2b099cdfa91e3deba8e
 
 COCOAPODS: 1.0.1

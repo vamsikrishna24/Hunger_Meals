@@ -13,7 +13,6 @@
 #import "HMHomePageViewController.h"
 #import "SVService.h"
 #import "Utility.h"
-#import <Reachability/Reachability.h>
 #import "UserData.h"
 
 
@@ -164,14 +163,11 @@ didSignInForUser:(GIDGoogleUser *)user
 #pragma mark Custom Methods
 - (IBAction)signInButtonPressed:(id)sender{
     if ([self isValidationsSucceed]) {
-        if ([Reachability reachabilityForInternetConnection]) {
             [self loginToServer];
         }
         else{
             [self showAlertWithTitle:@"You are offline!" andMessage:@"You are not connected to the internet. Please check your network connection and try again!!"];
         }
-        
-    }
     
 }
 

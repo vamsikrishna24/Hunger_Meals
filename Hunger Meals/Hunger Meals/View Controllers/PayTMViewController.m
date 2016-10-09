@@ -1,70 +1,24 @@
 //
-//  HMPaymentTypeSelectionViewController.m
+//  PayTMViewController.m
 //  Hunger Meals
 //
-//  Created by Vamsi T on 28/07/2016.
+//  Created by Uber - Sivajee Battina on 09/10/16.
 //  Copyright © 2016 paradigm-creatives. All rights reserved.
 //
 
-#import "HMPaymentTypeSelectionViewController.h"
+#import "PayTMViewController.h"
 
-@interface HMPaymentTypeSelectionViewController ()
-{
-    NSString *selectedPaymentMethod;
-}
+@interface PayTMViewController ()
+
 @end
 
-@implementation HMPaymentTypeSelectionViewController
+@implementation PayTMViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.paytmButton.layer setValue:[NSNumber numberWithBool:YES] forKey:@"isSelected"];
-    selectedPaymentMethod = @"PAYTM";
+    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)paytmOptionSelected:(id)sender{
-    UIButton *btn = (UIButton *)sender;
-    if ([btn.layer valueForKey:@"isSelected"]) {
-        [btn.layer setValue:[NSNumber numberWithBool:YES] forKey:@"isSelected"];
-    }
-    else {
-        [btn.layer setValue:[NSNumber numberWithBool:NO] forKey:@"isSelected"];
-    }
-    
-    [self.payUButton setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
-    [self.paytmButton setImage:[UIImage imageNamed:@"Radio_Checked"] forState:UIControlStateNormal];
-
-    selectedPaymentMethod = @"PAYTM";
-}
-
-- (IBAction)payUmoneyOptionSelected:(id)sender{
-    UIButton *btn = (UIButton *)sender;
-    if ([btn.layer valueForKey:@"isSelected"]) {
-        [btn.layer setValue:[NSNumber numberWithBool:YES] forKey:@"isSelected"];
-    }
-    else {
-        [btn.layer setValue:[NSNumber numberWithBool:NO] forKey:@"isSelected"];
-    }
-    [self.paytmButton setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
-    [self.payUButton setImage:[UIImage imageNamed:@"Radio_Checked"] forState:UIControlStateNormal];
-
-    selectedPaymentMethod = @"PAYUMONEY";
-}
-
-- (IBAction)MakeAPaymentButtonPressed:(id)sender{
-    
-    if ([selectedPaymentMethod isEqualToString:@"PAYTM"]) {
-        [self makePaymentWithPayTM:nil];
-    }
-    else if ([selectedPaymentMethod isEqualToString:@"PAYUMONEY"]){
-        [self performSegueWithIdentifier:@"ToPayUMoney" sender:self];
-    }
-}
 +(NSString*)generateOrderIDWithPrefix:(NSString *)prefix
 {
     srand ( (unsigned)time(NULL) );
@@ -94,7 +48,7 @@
                                        }];
 }
 
--(IBAction)makePaymentWithPayTM:(id)sender
+-(IBAction)testPayment:(id)sender
 {
     //Step 1: Create a default merchant config object
     PGMerchantConfiguration *mc = [PGMerchantConfiguration defaultConfiguration];
@@ -112,7 +66,7 @@
     orderDict[@"WEBSITE"] = @"worldpressplg";
     //Order configuration in the order object
     orderDict[@"TXN_AMOUNT"] = @"1";
-    orderDict[@"ORDER_ID"] = [HMPaymentTypeSelectionViewController generateOrderIDWithPrefix:@""];
+    orderDict[@"ORDER_ID"] = [PayTMViewController generateOrderIDWithPrefix:@""];
     orderDict[@"REQUEST_TYPE"] = @"DEFAULT";
     orderDict[@"CUST_ID"] = @"1234567890";
     
@@ -120,13 +74,16 @@
     
     //Step 4: Choose the PG server. In your production build dont call selectServerDialog. Just create a instance of the
     //PGTransactionViewController and set the serverType to eServerTypeProduction
-    
-    PGTransactionViewController *txnController = [[PGTransactionViewController alloc] initTransactionForOrder:order];
-    txnController.serverType = eServerTypeStaging;
-    txnController.merchant = mc;
-    txnController.delegate = self;
-    [self showController:txnController];
-    
+    [PGServerEnvironment selectServerDialog:self.view completionHandler:^(ServerType type)
+     {
+         PGTransactionViewController *txnController = [[PGTransactionViewController alloc] initTransactionForOrder:order];
+         if (type != eServerTypeNone) {
+             txnController.serverType = type;
+             txnController.merchant = mc;
+             txnController.delegate = self;
+             [self showController:txnController];
+         }
+     }];
 }
 
 #pragma mark PGTransactionViewController delegate

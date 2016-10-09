@@ -17,8 +17,6 @@ pod 'JSONModel', '~> 1.2'
 
 pod 'SDWebImage', '~> 3.7'
 
-pod 'Reachability', '~> 3.2'
-
 pod 'IQKeyboardManager', '~> 4.0'
 
 pod 'TwilioSDK', '~>1.2'

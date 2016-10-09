@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDL-3C-iXZ">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDL-3C-iXZ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -359,22 +359,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Dn-CY-kG5" userLabel="PaytmView">
-                                <rect key="frame" x="20" y="28" width="374" height="65"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Dn-CY-kG5" userLabel="PaytmView">
+                                <rect key="frame" x="20" y="72" width="374" height="65"/>
                                 <subviews>
                                     <button opaque="NO" tag="2222" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXe-OK-evR">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <inset key="titleEdgeInsets" minX="19" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="240" maxY="0.0"/>
-                                        <state key="normal" title="Paytm" image="Radio_Checked">
+                                        <state key="normal" title="Paytm" image="Button_Radio_Unchecked.png">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected" image="Button_Radio_Checked.png"/>
-                                        <connections>
-                                            <action selector="paytmOptionSelected:" destination="xRG-Yj-jMh" eventType="touchUpInside" id="H0P-Zu-Kvl"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -385,22 +382,19 @@
                                     <constraint firstAttribute="trailing" secondItem="bXe-OK-evR" secondAttribute="trailing" id="rbx-h8-ABA"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck2-TD-uaK" userLabel="PayUMoneyView">
-                                <rect key="frame" x="20" y="101" width="374" height="65"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ck2-TD-uaK" userLabel="PayUMoneyView">
+                                <rect key="frame" x="20" y="145" width="374" height="65"/>
                                 <subviews>
                                     <button opaque="NO" tag="2222" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJC-PS-3wC">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <inset key="titleEdgeInsets" minX="19" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="240" maxY="0.0"/>
-                                        <state key="normal" title="Pay U Money" image="Radio_Unchecked">
+                                        <state key="normal" title="Pay U Money" image="Button_Radio_Unchecked.png">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected" image="Button_Radio_Checked.png"/>
-                                        <connections>
-                                            <action selector="payUmoneyOptionSelected:" destination="xRG-Yj-jMh" eventType="touchUpInside" id="wxF-AM-eDy"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -411,8 +405,8 @@
                                     <constraint firstAttribute="bottom" secondItem="fJC-PS-3wC" secondAttribute="bottom" constant="5" id="ZCG-VA-Xpz"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nh1-92-n3W">
-                                <rect key="frame" x="50" y="214" width="313" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nh1-92-n3W">
+                                <rect key="frame" x="50" y="258" width="313" height="38"/>
                                 <color key="backgroundColor" red="1" green="0.3273916677" blue="0.36794372079999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="313" id="PKx-Wu-vqY"/>
@@ -423,7 +417,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="MakeAPaymentButtonPressed:" destination="xRG-Yj-jMh" eventType="touchUpInside" id="F8w-W3-XzH"/>
+                                    <segue destination="sI8-gY-gqu" kind="show" id="xrn-1G-7uN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -444,11 +438,6 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-                    <connections>
-                        <outlet property="payUButton" destination="fJC-PS-3wC" id="9ft-kx-Z53"/>
-                        <outlet property="paytmButton" destination="bXe-OK-evR" id="a0p-Ab-g32"/>
-                        <segue destination="sI8-gY-gqu" kind="show" identifier="ToPayUMoney" id="opO-XU-ukS"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDC-S2-JWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -562,7 +551,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmH-ev-jdq">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmH-ev-jdq">
                                         <rect key="frame" x="90" y="89" width="217" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -4985,6 +4974,7 @@
         <image name="Account" width="29" height="29"/>
         <image name="Address" width="29" height="29"/>
         <image name="Button_Radio_Checked.png" width="26" height="26"/>
+        <image name="Button_Radio_Unchecked.png" width="26" height="26"/>
         <image name="Cart_Icon" width="29" height="29"/>
         <image name="Dish_16" width="290" height="163"/>
         <image name="Edit.png" width="20" height="20"/>
@@ -4997,8 +4987,6 @@
         <image name="Notification" width="32" height="32"/>
         <image name="ProfileImage.jpg" width="235" height="235"/>
         <image name="RadioOff" width="21" height="21"/>
-        <image name="Radio_Checked" width="13" height="13"/>
-        <image name="Radio_Unchecked" width="13" height="13"/>
         <image name="Settings" width="32" height="32"/>
         <image name="SplashScreen" width="300" height="450"/>
         <image name="User_location" width="29" height="29"/>
