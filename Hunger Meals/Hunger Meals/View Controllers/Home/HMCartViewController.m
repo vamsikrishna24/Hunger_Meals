@@ -17,6 +17,7 @@
     NSString *rsString;
     float totalAmount;
     float taxSum;
+    int quantity;
 }
 @property (weak, nonatomic) IBOutlet UILabel *cartEmptyLabel;
 
@@ -28,6 +29,7 @@
     [super viewDidLoad];
     self.cartEmptyLabel.hidden = YES;
     self.title = @"Cart";
+    quantity = 0;
     self.cartTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 //    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
 //    
@@ -111,14 +113,7 @@
     cell.totalPriceLabel.text = cartObject.price;
     cell.cartItemTitle.text = cartObject.product.name;
     cell.countLabel.text = cartObject.quantity;
-    totalAmount = 0;
-    for (int row = 0; row < cartItemsArray.count ; row++) {
-//        NSIndexPath* cellPath = [NSIndexPath indexPathForRow:row inSection:0];
-//        UITableViewCell* cell = [tableView cellForRowAtIndexPath:cellPath];
-        totalAmount += [cartObject.price floatValue];
-    }
-    
-    [self calculation];
+   
     
     NSString *string = [NSString stringWithFormat:@"%@%@",imageAmazonlink,cartObject.product.image_url];
     [cell.cartItemsImageView sd_setImageWithURL:[NSURL URLWithString:string]placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
@@ -174,22 +169,33 @@
     taxSum = taxSum + value1;
     totalAmount = totalAmount + taxSum;
     self.totalPrice.text = [NSString stringWithFormat:@"%.2f",totalAmount] ;
+
+
     
 }
 - (IBAction)updateProductQuantiy:(id)sender{
     UIButton *btn = (UIButton *)sender;
     HMCartTableViewCell *mealsCell = (HMCartTableViewCell*)[_cartTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:btn.tag inSection:0]];
-    Product *productObject = cartItemsArray[btn.tag];
-    NSInteger quantity = [mealsCell.countLabel.text intValue];
-    NSArray *array = productObject.inventories[btn.tag];
-    NSString *stringArray = [array valueForKey:@"id"];
+    CartItem *cartItemObject = cartItemsArray[btn.tag];
+    quantity = [mealsCell.countLabel.text intValue];
+    int priceOfItem= [cartItemObject.price intValue]/[cartItemObject.quantity intValue];
+    mealsCell.totalPriceLabel.text = [NSString stringWithFormat:@"%d",priceOfItem * quantity];
+    
+    totalAmount = 0;
+    for (int row = 0; row < cartItemsArray.count ; row++) {
+        totalAmount += [cartItemObject.price floatValue];
+    }
+    
+    [self calculation];
+    NSString *stringArray =cartItemObject.inventories_id;
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: stringArray, @"inventories_id",[NSNumber numberWithInteger:quantity], @"quantity",  nil];
+    
+    
     SVService *service = [[SVService alloc] init];
     [service addToCart:dict usingBlock:^(NSString *resultMessage) {
         if (resultMessage != nil) {
             
         }
-        
         
     }];
     

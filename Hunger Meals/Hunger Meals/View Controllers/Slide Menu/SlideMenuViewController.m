@@ -93,6 +93,9 @@
                 [[NSUserDefaults standardUserDefaults] setBool: NO forKey:@"isLoginValid"];
                 [[NSUserDefaults standardUserDefaults] setValue: nil forKey: @"selectedLocation"];
                 [[NSUserDefaults standardUserDefaults] setObject: @"NO" forKey: @"isLocationSelected"];
+                [FBSDKAccessToken setCurrentAccessToken:nil];
+                [[GIDSignIn sharedInstance] signOut];
+             
                 UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
                 
                 HMLandingViewController *loginVC = (HMLandingViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"LandingPage"];

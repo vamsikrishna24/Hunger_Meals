@@ -103,8 +103,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
     
     if (result.token.tokenString == nil) {
         [FBSDKAccessToken setCurrentAccessToken:nil];
-    }
-    if (!error) {
+    }else if (!error) {
         [self signUpWithFacebookDetails:result.token.tokenString];
 //        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserLogin"];
 //        [APPDELEGATE showInitialScreen];
