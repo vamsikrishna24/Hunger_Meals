@@ -25,8 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    slideMenuCategories = [[NSMutableArray alloc] initWithObjects: @"Meals", @"Monthly Plan",@"Shop",@"Orders",@"Invite",@"Help",@"Sign Out", nil];
-    slideMenuimagesCategories = [[NSMutableArray alloc] initWithObjects: @"Meals", @"Meals",@"Meals",@"Meals",@"Meals",@"Meals",@"Meals", nil];
+    slideMenuCategories = [[NSMutableArray alloc] initWithObjects: @"Home",@"Meals", @"Monthly Meal Plan",@"Orders",@"Invite",@"User Profile",@"Sign Out", nil];
+    slideMenuimagesCategories = [[NSMutableArray alloc] initWithObjects:@"Home", @"Meals", @"Meals",@"Work",@"Invite_Friends",@"Invite_Friends",@"Account", nil];
     
     self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;

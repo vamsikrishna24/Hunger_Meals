@@ -24,15 +24,15 @@
     
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     QuickbitesViewController *quickBitesVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"QuickBitesViewIdentifier"];
-    quickBitesVC.title = @"Quick Bites";
+    quickBitesVC.title = @"QUICK BITES";
     SouthIndianViewController *southIndianVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"SouthIndianViewIdentifier"];
-    southIndianVC.title = @"South Indian";
+    southIndianVC.title = @"SOUTH INDIAN";
     NorthIndianViewController *northIndianVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"NorthIndianViewIdentifier"];
-    northIndianVC.title = @"North Indian";
+    northIndianVC.title = @"NORTH INDIAN";
     CurriesViewController *curriesVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"CurriesViewIdentifier"];
-    curriesVC.title = @"Curries";
+    curriesVC.title = @"CURRIES";
     AddonsViewController *addOnsVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"AddonsViewIdentifier"];
-    addOnsVC.title = @"Add-ons";
+    addOnsVC.title = @"ADD-ONS";
     
     float statusHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
     float navigationHeight = self.navigationController.navigationBar.frame.size.height;

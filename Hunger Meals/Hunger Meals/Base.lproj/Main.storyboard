@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Roboto-Bold.ttf">
@@ -1073,30 +1072,22 @@
                     </view>
                     <navigationItem key="navigationItem" id="1MN-AA-TPF">
                         <barButtonItem key="leftBarButtonItem" image="Hamberger_Menu" id="nMp-dh-2oR">
-                            <inset key="imageInsets" minX="5" minY="10" maxX="5" maxY="5"/>
+                            <inset key="imageInsets" minX="3" minY="4" maxX="3" maxY="6"/>
                             <color key="tintColor" red="0.93725490199999995" green="0.54117647059999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem image="User_location" id="Geu-ct-WcC">
-                                <color key="tintColor" red="1" green="0.64313725489999995" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="locationButtonTapped:" destination="5CW-sI-ctt" id="qZr-df-Y7f"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="Notification" id="uyb-VN-zzQ">
-                                <color key="tintColor" red="1" green="0.64313725489999995" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="notificationButtonPressed:" destination="5CW-sI-ctt" id="BiI-cX-uQV"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="User_location" id="Geu-ct-WcC">
+                            <inset key="imageInsets" minX="2" minY="3" maxX="2" maxY="3"/>
+                            <color key="tintColor" red="1" green="0.64313725489999995" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="locationButtonTapped:" destination="5CW-sI-ctt" id="qZr-df-Y7f"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="homePageTableView" destination="q6G-bw-bzR" id="epZ-ie-bvr"/>
                         <outlet property="instanceView" destination="FLk-ew-P00" id="xJn-Bg-5XY"/>
                         <outlet property="locationBarButtonItem" destination="Geu-ct-WcC" id="qEN-p3-NOq"/>
-                        <outlet property="notificationsBarButtonItem" destination="uyb-VN-zzQ" id="dTh-tb-PNA"/>
                         <outlet property="slideBarButton" destination="nMp-dh-2oR" id="olH-ts-Gf1"/>
                     </connections>
                 </viewController>
@@ -5328,7 +5319,6 @@
         <image name="Logo" width="160" height="160"/>
         <image name="Meals" width="29" height="29"/>
         <image name="My_Location.png" width="20" height="20"/>
-        <image name="Notification" width="32" height="32"/>
         <image name="ProfileImage.jpg" width="235" height="235"/>
         <image name="RadioOff" width="21" height="21"/>
         <image name="Radio_Checked" width="13" height="13"/>

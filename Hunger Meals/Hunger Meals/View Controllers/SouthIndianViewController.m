@@ -93,7 +93,7 @@
     [cell.itemImageView sd_setImageWithURL:[NSURL URLWithString:string]placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     cell.titleLabel.text = product.name;
     cell.descriptionView.text = product.description;
-    cell.priceLabel.text = [inventory valueForKey:@"price"];
+    cell.priceLabel.text = [NSString stringWithFormat:@"₹ %@",[inventory valueForKey: @"price"]];
     return cell;
 }
 
@@ -145,7 +145,9 @@
     MealsTableViewCell *mealsCell = (MealsTableViewCell*)[_southIndianTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:btn.tag inSection:0]];
     Product *productObject = _productObjectsArray[btn.tag];
     NSInteger quantity = [mealsCell.countLabel.text intValue];
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: productObject.id, @"inventories_id",[NSNumber numberWithInteger:quantity], @"quantity",  nil];
+    NSArray *array = productObject.inventories[btn.tag];
+    NSString *stringArray = [array valueForKey:@"id"];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: stringArray, @"inventories_id",[NSNumber numberWithInteger:quantity], @"quantity",  nil];
     SVService *service = [[SVService alloc] init];
     [service addToCart:dict usingBlock:^(NSString *resultMessage) {
         if (resultMessage != nil) {
