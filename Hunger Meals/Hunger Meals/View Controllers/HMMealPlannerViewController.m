@@ -80,12 +80,13 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     self.navigationController.navigationBar.userInteractionEnabled = NO;
-    self.instanceView.center = CGPointMake(self.view.frame.size.width  / 2,
-                                           (self.view.frame.size.height / 2)+50);
+  //  self.instanceView.center = CGPointMake(self.view.frame.size.width  / 2,
+                                          // (self.view.frame.size.height / 2)+50);
 
    // self.instanceView.frame = CGRectMake(16, self.view.frame.size.height / 2 - 30, self.view.frame.size.width - 32, 7*40);
     [self.instanceView setBackgroundColor: [UIColor clearColor]];
-    [self.view addSubview: self.instanceView];
+
+   // [self.view addSubview: self.instanceView];
     
 
     
@@ -210,7 +211,7 @@
     if(tableView == self.calendarTableView){
         
     }
-    
+
     
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -272,6 +273,11 @@
     self.instanceView.hidden = NO;
     self.navigationController.navigationBar.userInteractionEnabled = NO;
   //  UIButton *btn = (UIButton *)sender;
+    MTGenericAlertView *MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:@"Alert!!" titleColor:nil titleFont:nil backgroundImage:nil];
+    [MTGenericAlertViewtainer setCustomInputView:self.instanceView]; //Add customized view to this method
+    MTGenericAlertViewtainer.tag = 3;
+    [MTGenericAlertViewtainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
+    [MTGenericAlertViewtainer show];
     
     [self.itemListTableView reloadData];
 
