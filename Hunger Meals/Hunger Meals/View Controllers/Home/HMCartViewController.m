@@ -17,6 +17,7 @@
     NSString *rsString;
     float totalAmount;
     float taxSum;
+    float coupondCodeDiscount;
     int quantity;
 }
 @property (weak, nonatomic) IBOutlet UILabel *cartEmptyLabel;
@@ -60,7 +61,7 @@
     [service getCartDatausingBlock:^(NSMutableArray *resultArray) {
         
         if (resultArray.count != 0 || resultArray != nil) {
-            cartItemsArray = [resultArray copy];
+            cartItemsArray = [resultArray mutableCopy];
         }
         
         [_cartTableView reloadData];
@@ -87,6 +88,15 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    totalAmount = 0;
+    for (int row = 0; row < cartItemsArray.count ; row++) {
+        CartItem *cartItemObject = cartItemsArray[row];
+        totalAmount += [cartItemObject.price floatValue];
+    }
+    
+    [self calculation];
+    
     if (cartItemsArray.count == 0) {
         self.cartEmptyLabel.hidden = NO;
         
@@ -113,7 +123,6 @@
     cell.totalPriceLabel.text = cartObject.price;
     cell.cartItemTitle.text = cartObject.product.name;
     cell.countLabel.text = cartObject.quantity;
-   
     
     NSString *string = [NSString stringWithFormat:@"%@%@",imageAmazonlink,cartObject.product.image_url];
     [cell.cartItemsImageView sd_setImageWithURL:[NSURL URLWithString:string]placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
@@ -180,9 +189,14 @@
     quantity = [mealsCell.countLabel.text intValue];
     int priceOfItem= [cartItemObject.price intValue]/[cartItemObject.quantity intValue];
     mealsCell.totalPriceLabel.text = [NSString stringWithFormat:@"%d",priceOfItem * quantity];
+   
+    //Updating the latest cart details again
+    cartItemObject.price = [NSString stringWithFormat:@"%d", priceOfItem*quantity];
+    cartItemObject.quantity = [NSString stringWithFormat:@"%d", quantity];
     
     totalAmount = 0;
     for (int row = 0; row < cartItemsArray.count ; row++) {
+        CartItem *cartItemObject = cartItemsArray[row];
         totalAmount += [cartItemObject.price floatValue];
     }
     
@@ -204,14 +218,17 @@
 
 - (IBAction)deleteCartItem:(id)sender{
     UIButton *btn = (UIButton *)sender;
-    Product *productObject = cartItemsArray[btn.tag];
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: productObject.id, @"inventories_id",0, @"quantity",  nil];
+    CartItem *productObject = cartItemsArray[btn.tag];
+    [cartItemsArray removeObject:productObject];
+    
+    [_cartTableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:btn.tag inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: productObject.inventories_id, @"inventories_id", @"0", @"quantity",  nil];
     SVService *service = [[SVService alloc] init];
     [service addToCart:dict usingBlock:^(NSString *resultMessage) {
-        if (resultMessage != nil && [resultMessage isEqualToString:@"Cart has been updated"]) {
-            [_cartTableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:btn.tag inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+        if (resultMessage != nil && [resultMessage isEqualToString:@"Item has been removed from cart"]) {
+            
         }
-        
         
     }];
     
@@ -220,22 +237,49 @@
 
 
 - (IBAction)applyButtonAction:(id)sender {
+    if (totalAmount > 0) {
+    
     [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:self.promoCodeTextField.text,@"code",nil];
     SVService *service = [[SVService alloc] init];
     
     [service couponCode:dict usingBlock:^(NSString *resultArray) {
-        self.amountDiscountLabel.text = [NSString stringWithFormat:@"%.2f",[[resultArray valueForKey:@"amount"]floatValue]];
-        totalAmount = totalAmount - taxSum;
-        taxSum = taxSum - [self.amountDiscountLabel.text floatValue];
-        totalAmount = totalAmount + taxSum;
+        self.amountDiscountLabel.text = [NSString stringWithFormat:@"- %.2f ₹",[[resultArray valueForKey:@"amount"]floatValue]];
+        coupondCodeDiscount = [[resultArray valueForKey:@"amount"]floatValue];
+        totalAmount = totalAmount - coupondCodeDiscount;
         self.totalPrice.text = [NSString stringWithFormat:@"%.2f",totalAmount];
 
         self.applyButton.enabled = NO;
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
         
     }];
-    
+        
+    }
     
 }
+
+#pragma Mark - TextField Delegate methods
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (range.length == 1 && range.location == 0) {
+        self.applyButton.enabled = YES;
+        
+        totalAmount = totalAmount + coupondCodeDiscount;
+        self.amountDiscountLabel.text = [NSString stringWithFormat:@"0"];
+        self.totalPrice.text = [NSString stringWithFormat:@"%.2f",totalAmount];
+        
+    }
+    
+    return YES;
+}
+
+- (BOOL)textFieldShouldClear:(UITextField *)textField{
+
+    return  YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+
+}
+
 @end
