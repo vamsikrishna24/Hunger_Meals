@@ -111,7 +111,6 @@
 		A89E92991D75736E00E981E6 /* YSLContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E92961D75736E00E981E6 /* YSLContainerViewController.m */; };
 		A89E929A1D75736E00E981E6 /* YSLScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E92981D75736E00E981E6 /* YSLScrollMenuView.m */; };
 		AC423DD01D985D6B00B8A5E5 /* CartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC423DCF1D985D6B00B8A5E5 /* CartItem.m */; };
-		ACD0E8201DAC023400D83065 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
 		ACD537CD1D9419700023B834 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD537CC1D9419700023B834 /* UserData.m */; };
 		ACDD63951DAA4F4400B1889C /* PayTMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDD63941DAA4F4400B1889C /* PayTMViewController.m */; };
 		E8F6627C1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F6627B1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m */; };
@@ -343,11 +342,7 @@
 			files = (
 				2B89E5041D5BBF640022EC67 /* CoreLocation.framework in Frameworks */,
 				67A9DF2A319A1E2057942F80 /* libPods-Hunger Meals.a in Frameworks */,
-<<<<<<< Updated upstream
 				2BEDFF291DABB05000AE3AB0 /* libPaymentsSDK.a in Frameworks */,
-=======
-				ACD0E8201DAC023400D83065 /* libPaymentsSDK.a in Frameworks */,
->>>>>>> Stashed changes
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1349,7 +1344,6 @@
 					Meals/Third,
 					Party,
 					Libraries,
-<<<<<<< Updated upstream
 					"$(PROJECT_DIR)/Hunger",
 					Meals/Third,
 					Party,
@@ -1362,8 +1356,6 @@
 					Meals/Third,
 					Party,
 					Libraries,
-=======
->>>>>>> Stashed changes
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1512,7 +1504,6 @@
 					Meals/Third,
 					Party,
 					Libraries,
-<<<<<<< Updated upstream
 					"$(PROJECT_DIR)/Hunger",
 					Meals/Third,
 					Party,
@@ -1525,8 +1516,6 @@
 					Meals/Third,
 					Party,
 					Libraries,
-=======
->>>>>>> Stashed changes
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

@@ -101,9 +101,6 @@
 didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                 error:(NSError *)error{
     
-    if (result.token.tokenString == nil) {
-        [FBSDKAccessToken setCurrentAccessToken:nil];
-    }
     if (!error) {
         [self signUpWithFacebookDetails:result.token.tokenString];
 //        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserLogin"];
@@ -185,9 +182,6 @@ didSignInForUser:(GIDGoogleUser *)user
             [[NSUserDefaults standardUserDefaults] setObject: @"NO" forKey: @"isLocationSelected"];
             //([(AppDelegate *)[[UIApplication sharedApplication] delegate] enableCurrentLocation]);
             [APPDELEGATE showInitialScreen];
-        }
-        else {
-            [self showAlertWithTitle:@"Oops!" andMessage:@"Error while sign up. Please try again later"];
         }
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
