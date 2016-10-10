@@ -174,8 +174,6 @@
     taxSum = taxSum + value1;
     totalAmount = totalAmount + taxSum;
     self.totalPrice.text = [NSString stringWithFormat:@"%.2f",totalAmount] ;
-
-
     
 }
 - (IBAction)updateProductQuantiy:(id)sender{
@@ -183,7 +181,9 @@
     HMCartTableViewCell *mealsCell = (HMCartTableViewCell*)[_cartTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:btn.tag inSection:0]];
     Product *productObject = cartItemsArray[btn.tag];
     NSInteger quantity = [mealsCell.countLabel.text intValue];
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: productObject.id, @"inventories_id",[NSNumber numberWithInteger:quantity], @"quantity",  nil];
+    NSArray *array = productObject.inventories[btn.tag];
+    NSString *stringArray = [array valueForKey:@"id"];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: stringArray, @"inventories_id",[NSNumber numberWithInteger:quantity], @"quantity",  nil];
     SVService *service = [[SVService alloc] init];
     [service addToCart:dict usingBlock:^(NSString *resultMessage) {
         if (resultMessage != nil) {
