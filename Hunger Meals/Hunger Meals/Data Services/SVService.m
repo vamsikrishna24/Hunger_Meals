@@ -97,7 +97,7 @@
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
             NSDictionary *resultDict = [dictResult objectForKey:@"data"];
-            resultBlock([self parseUserLoginData:resultDict]);
+            resultBlock([self parseUserLoginData:dictResult]);
         }
         else{
             resultBlock(nil);

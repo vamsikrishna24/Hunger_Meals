@@ -68,7 +68,7 @@
                   moduleName = "Hunger Meals"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Ismav/Desktop/NewHungry/Hunger%20Meals/Hunger%20Meals/Data%20Services/SVService.m"
-                  timestampString = "497802352.654445"
+                  timestampString = "497803241.506066"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "94"
@@ -83,7 +83,7 @@
                   moduleName = "Hunger Meals"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Ismav/Desktop/NewHungry/Hunger%20Meals/Hunger%20Meals/Data%20Services/SVService.m"
-                  timestampString = "497802352.65459"
+                  timestampString = "497803241.506289"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "94"
@@ -148,7 +148,7 @@
                   moduleName = "Hunger Meals"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Ismav/Desktop/NewHungry/Hunger%20Meals/Hunger%20Meals/View%20Controllers/Login/HMLandingViewController.m"
-                  timestampString = "497802412.077799"
+                  timestampString = "497803241.50856"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "256"
@@ -163,7 +163,7 @@
                   moduleName = "Hunger Meals"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Ismav/Desktop/NewHungry/Hunger%20Meals/Hunger%20Meals/View%20Controllers/Login/HMLandingViewController.m"
-                  timestampString = "497802412.077974"
+                  timestampString = "497803241.508707"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "256"
@@ -179,13 +179,157 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunger Meals/View Controllers/Login/HMLandingViewController.m"
-            timestampString = "497802424.112122"
+            filePath = "Hunger Meals/Data Services/SVService.m"
+            timestampString = "497803097.217478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
-            landmarkName = "-signInButtonPressed:"
+            startingLineNumber = "499"
+            endingLineNumber = "499"
+            landmarkName = "-signupWithSocialNetwork:usingBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hunger Meals/View Controllers/Login/HMLandingViewController.m"
+            timestampString = "497803227.721808"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "-signUpWithFacebookDetails:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[HMLandingViewController signUpWithFacebookDetails:]"
+                  moduleName = "Hunger Meals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Ismav/Desktop/NewHungry/Hunger%20Meals/Hunger%20Meals/View%20Controllers/Login/HMLandingViewController.m"
+                  timestampString = "497803241.510199"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "270">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__53-[HMLandingViewController signUpWithFacebookDetails:]_block_invoke"
+                  moduleName = "Hunger Meals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Ismav/Desktop/NewHungry/Hunger%20Meals/Hunger%20Meals/View%20Controllers/Login/HMLandingViewController.m"
+                  timestampString = "497803241.510331"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "39">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hunger Meals/View Controllers/Login/HMLandingViewController.m"
+            timestampString = "497803230.031622"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
+            landmarkName = "-signUpWithGoogleDetails:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[HMLandingViewController signUpWithGoogleDetails:]"
+                  moduleName = "Hunger Meals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Ismav/Desktop/NewHungry/Hunger%20Meals/Hunger%20Meals/View%20Controllers/Login/HMLandingViewController.m"
+                  timestampString = "497803241.511851"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "196"
+                  endingLineNumber = "196"
+                  offsetFromSymbolStart = "270">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__51-[HMLandingViewController signUpWithGoogleDetails:]_block_invoke"
+                  moduleName = "Hunger Meals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Ismav/Desktop/NewHungry/Hunger%20Meals/Hunger%20Meals/View%20Controllers/Login/HMLandingViewController.m"
+                  timestampString = "497803241.512231"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "196"
+                  endingLineNumber = "196"
+                  offsetFromSymbolStart = "39">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hunger Meals/View Controllers/Login/HMLandingViewController.m"
+            timestampString = "497803233.286618"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "-signUpWithGoogleDetails:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hunger Meals/View Controllers/Login/HMLandingViewController.m"
+            timestampString = "497803234.6022"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "-signUpWithFacebookDetails:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hunger Meals/View Controllers/Login/HMLandingViewController.m"
+            timestampString = "497803260.862113"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "-signUpWithFacebookDetails:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
