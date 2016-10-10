@@ -24,6 +24,7 @@
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     
+    
     //Google
     
     NSError* configureError;
@@ -192,6 +193,7 @@
             options:(NSDictionary *)options {
     if ([url.scheme isEqualToString:@"fb1335065416517482"]) {
         return [[FBSDKApplicationDelegate sharedInstance] application:app openURL:url sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey] annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
+        
     }
     
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserLogin"];

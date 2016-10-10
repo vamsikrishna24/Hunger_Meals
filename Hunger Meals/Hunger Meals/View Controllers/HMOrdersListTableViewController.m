@@ -80,10 +80,6 @@
     cell.orderDateLabel.text = [NSString stringWithFormat:@"%@",objectArray[indexPath.row]];
     return cell;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 25;
-}
 /*
 #pragma mark - Navigation
 

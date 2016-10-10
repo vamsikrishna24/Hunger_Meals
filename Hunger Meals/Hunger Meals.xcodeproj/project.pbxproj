@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B085DBE1DA6715700EE2404 /* HMSlideMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B085DBD1DA6715700EE2404 /* HMSlideMenuTableViewCell.m */; };
+		2B227D391DAB892A00D5F583 /* HMOrderDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B227D381DAB892A00D5F583 /* HMOrderDetailTableViewController.m */; };
 		2B252C9E1D808F2F00CED084 /* HMAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B252C9D1D808F2F00CED084 /* HMAddressViewController.m */; };
 		2B252CA11D8097C500CED084 /* HMAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B252CA01D8097C500CED084 /* HMAddressTableViewCell.m */; };
 		2B41F7981D74B78E0067F0C4 /* HMContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B41F7971D74B78E0067F0C4 /* HMContentViewController.m */; };
@@ -57,9 +58,9 @@
 		2BE861881D9F69C50005FABC /* LocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE861871D9F69C50005FABC /* LocationTableViewCell.m */; };
 		2BE8618B1D9F742C0005FABC /* LocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8618A1D9F742C0005FABC /* LocationView.m */; };
 		2BEDB6391DA26CE800D24863 /* HMItemListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDB6381DA26CE800D24863 /* HMItemListTableViewCell.m */; };
+		2BEDFF291DABB05000AE3AB0 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
 		2BEEF6CF1DAAB6AD0010715F /* HMOrdersListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEEF6CE1DAAB6AD0010715F /* HMOrdersListTableViewController.m */; };
 		2BEEF6D21DAAB6E00010715F /* HMOrdersListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEEF6D11DAAB6E00010715F /* HMOrdersListTableViewCell.m */; };
-		2BF54AA71DAB63E700476322 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
 		2BF5B0511D96593800A3D315 /* CurriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5B0501D96593800A3D315 /* CurriesViewController.m */; };
 		2BF5B0571D96DCE400A3D315 /* Inventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5B0561D96DCE400A3D315 /* Inventory.m */; };
 		2BF98EB41DA89A55009573AB /* HMItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB31DA89A55009573AB /* HMItemList.m */; };
@@ -136,6 +137,8 @@
 /* Begin PBXFileReference section */
 		2B085DBC1DA6715700EE2404 /* HMSlideMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSlideMenuTableViewCell.h; sourceTree = "<group>"; };
 		2B085DBD1DA6715700EE2404 /* HMSlideMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSlideMenuTableViewCell.m; sourceTree = "<group>"; };
+		2B227D371DAB892A00D5F583 /* HMOrderDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMOrderDetailTableViewController.h; sourceTree = "<group>"; };
+		2B227D381DAB892A00D5F583 /* HMOrderDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMOrderDetailTableViewController.m; sourceTree = "<group>"; };
 		2B252C9C1D808F2F00CED084 /* HMAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAddressViewController.h; sourceTree = "<group>"; };
 		2B252C9D1D808F2F00CED084 /* HMAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAddressViewController.m; sourceTree = "<group>"; };
 		2B252C9F1D8097C500CED084 /* HMAddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAddressTableViewCell.h; sourceTree = "<group>"; };
@@ -339,7 +342,7 @@
 			files = (
 				2B89E5041D5BBF640022EC67 /* CoreLocation.framework in Frameworks */,
 				67A9DF2A319A1E2057942F80 /* libPods-Hunger Meals.a in Frameworks */,
-				2BF54AA71DAB63E700476322 /* libPaymentsSDK.a in Frameworks */,
+				2BEDFF291DABB05000AE3AB0 /* libPaymentsSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +454,8 @@
 				2B252C9D1D808F2F00CED084 /* HMAddressViewController.m */,
 				2BEEF6CD1DAAB6AD0010715F /* HMOrdersListTableViewController.h */,
 				2BEEF6CE1DAAB6AD0010715F /* HMOrdersListTableViewController.m */,
+				2B227D371DAB892A00D5F583 /* HMOrderDetailTableViewController.h */,
+				2B227D381DAB892A00D5F583 /* HMOrderDetailTableViewController.m */,
 			);
 			name = Meals;
 			sourceTree = "<group>";
@@ -1147,6 +1152,7 @@
 				A831CA881D37CEC100B96F4F /* MTGenericAlertView.m in Sources */,
 				2B6047A61D911CBC003889BA /* HMMealPlannerViewController.m in Sources */,
 				A88F7FE31D6DA15600310F8F /* HMScrollingCell.m in Sources */,
+				2B227D391DAB892A00D5F583 /* HMOrderDetailTableViewController.m in Sources */,
 				2B45D6901D590E5F00C873ED /* HMLocationViewController.m in Sources */,
 				A88FB7491D5C5658005E8667 /* Fonts.m in Sources */,
 				A895EB3D1D73FFDC00623D92 /* SVXMLParser.m in Sources */,
@@ -1342,6 +1348,14 @@
 					Meals/Third,
 					Party,
 					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1466,6 +1480,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/sdk/2_1",
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 					"$(PROJECT_DIR)/Hunger",
 					Meals/Third,
 					Party,

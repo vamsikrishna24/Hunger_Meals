@@ -382,6 +382,13 @@
             [self.navigationController pushViewController:monthlyMealViewController animated:YES];
             
         }
+        if (indexPath.row == 3) {
+            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            HMCartViewController *cartViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MealsViewIdentifier"];
+            [self.navigationController pushViewController:cartViewController animated:YES];
+            
+        }
+        
     }
 }
 
