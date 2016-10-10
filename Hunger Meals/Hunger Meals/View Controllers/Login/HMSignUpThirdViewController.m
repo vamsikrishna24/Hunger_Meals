@@ -69,6 +69,11 @@
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:addressCellIdentifier];
     }
+    
+    if (indexPath.row == 1) {
+        UILabel *label = (UILabel *)[cell viewWithTag:101];
+        label.text = @"Office";
+    }
 
     [indexPathsOfCells addObject:indexPath];
     
@@ -85,7 +90,37 @@
     [self SignUpToServer];
 }
 
-- (void)SignUpToServer{
+- (IBAction)saveButtonAction:(id)sender {
+    if (true) {
+        for (int x=0; x<numRows; x++) {
+            UITableViewCell *cell = [_addressTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:x inSection:0]];
+            UITextView *addressTextView = (UITextView *)[cell viewWithTag:102];
+            NSString *address = addressTextView.text;
+            if (address.length>1) {
+                [self saveLocation:address];
+            }
+            
+        }
+    }
+    
+}
+
+- (void) saveLocation:(NSString *)address{
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: @"Koramanagala", @"name", @"Banglore", @"city", @"Birla", @"sublocation",  address, @"address", 12.9317,  @"lat", 77.6227, @"lng", 560030, "zip", "userlocation", "type", nil];
+    SVService *service = [[SVService alloc] init];
+    [service getLocationID:dict usingBlock:^(NSMutableArray *resultArray) {
+        if (resultArray.count != 0 || resultArray != nil) {
+            
+        }
+       
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    }];
+
+}
+
+- (BOOL)SignUpToServer{
+    __block BOOL isSignupSucess;
     [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: self.email, @"name", self.email, @"email", self.password, @"password",  @"authenticated_user", @"role_name", self.phoneNumber,  @"phone_no", nil];
     SVService *service = [[SVService alloc] init];
@@ -96,9 +131,15 @@
             [[NSUserDefaults standardUserDefaults] setObject:personEncodedObject forKey:@"UserData"];
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoginValid"];
             [APPDELEGATE showInitialScreen];
+            isSignupSucess = YES;
+        }
+        else {
+            [self showAlertWithMsg:@"Couldn't able to signup now. Please try again later"];
         }
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
+    
+    return isSignupSucess;
     
 }
 

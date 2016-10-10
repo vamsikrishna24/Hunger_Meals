@@ -301,6 +301,25 @@
         }
     }];
 }
+
+- (void)getLocationID:(NSDictionary *)params usingBlock :(void(^)(NSMutableArray *resultArray))resultBlock{
+    
+    NSString *url = [NSString stringWithFormat:kGetLocationIDURL, HTTP_DATA_HOST];
+    
+    [self sendRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            resultBlock([self parseUserLoginData:dictResult]);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+}
+
 #pragma AddToCArt
 - (void)addToCart:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
     
