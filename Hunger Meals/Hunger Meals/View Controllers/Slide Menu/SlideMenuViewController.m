@@ -72,17 +72,16 @@
     if (indexPath.row == 0){
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         MealsViewController *mealsVC = [storyBoard instantiateViewControllerWithIdentifier:@"MealsViewIdentifier"];
-        
         [self.navigationController pushViewController:mealsVC animated:YES];
+        
     }
     if (indexPath.row == 3){
-        UINavigationController *nav = [[UINavigationController alloc]initWithNibName:@"HomeNavigationController" bundle:[NSBundle mainBundle]];
-        
+       
             UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        
+      
             HMOrdersListTableViewController *orderList = [storyBoard instantiateViewControllerWithIdentifier:@"OrdersViewIdentifier"];
-       [self.navigationController pushViewController:orderList animated:YES];
-
+           UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
+        [self presentViewController:orderList animated:YES completion:nil];
     }
     
     if (indexPath.row == 6) {
@@ -98,9 +97,7 @@
                 
                 HMLandingViewController *loginVC = (HMLandingViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"LandingPage"];
                 
-                [self presentViewController:loginVC
-                                   animated:YES
-                                 completion:nil];
+                [self presentViewController:loginVC animated:YES completion:nil];
             }];
             
         }
