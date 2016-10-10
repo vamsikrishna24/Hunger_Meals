@@ -147,7 +147,7 @@ CGFloat alertTitleLabelHeight = 44;
         self.alertTitleLabel.frame = CGRectMake(0, 0, containerSize.width, alertTitleLabelHeight);
         
         CGRect contentFrame = self.customInputView.frame;
-        contentFrame.origin.y += CGRectGetHeight(self.alertTitleLabel.frame);
+        //contentFrame.origin.y += CGRectGetHeight(self.alertTitleLabel.frame);
         self.customInputView.frame = contentFrame;
     }
     

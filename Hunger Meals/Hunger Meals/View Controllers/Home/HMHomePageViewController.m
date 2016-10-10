@@ -33,6 +33,7 @@
     int selectedLocation;
     BOOL isLocationSelected;
     LocationView *locationView;
+    MTGenericAlertView *MTGenericAlertViewtainer;
     
 }
 
@@ -103,19 +104,35 @@
     if ([[USER_DEFAULTS valueForKey: @"isLocationSelected"]  isEqual: @"NO"]) {
         [USER_DEFAULTS setObject: @"YES" forKey: @"isLocationSelected"];
         //[USER_DEFAULTS setValue: @"YES" forKey: @"isLocationSelected"];
-        self.instanceView.frame = self.view.bounds;//CGRectMake(16, self.view.frame.size.height / 2 - 30, self.view.frame.size.width - 32, 60);
+     //   self.instanceView.frame = self.view.bounds;//CGRectMake(16, self.view.frame.size.height / 2 - 30, self.view.frame.size.width - 32, 60);
         self.instanceView.delegate = self;
         [self.instanceView setBackgroundColor: [UIColor clearColor]];
         self.navigationController.navigationBar.userInteractionEnabled = NO;
-        [self.view addSubview: self.instanceView];
+        
+         MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:nil titleColor:nil titleFont:nil backgroundImage:nil];
+        [MTGenericAlertViewtainer setCustomInputView:self.instanceView]; //Add customized view to this method
+        MTGenericAlertViewtainer.tag = 3;
+        // [MTGenericAlertViewtainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
+        [MTGenericAlertViewtainer show];
+
+     //   [self.view addSubview: self.instanceView];
         
         locations = [[NSMutableArray alloc] init];
     } else {
-        self.instanceView.frame = self.view.bounds;
+       // self.instanceView.frame = self.view.bounds;
         self.instanceView.delegate = self;
         [self.instanceView setBackgroundColor: [UIColor clearColor]];
-        self.instanceView.hidden = YES;
-        [self.view addSubview: self.instanceView];
+       // [MTGenericAlertViewtainer close];
+        
+        MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:nil titleColor:nil titleFont:nil backgroundImage:nil];
+        [MTGenericAlertViewtainer setCustomInputView:self.instanceView]; //Add customized view to this method
+        MTGenericAlertViewtainer.tag = 3;
+        // [MTGenericAlertViewtainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
+        [MTGenericAlertViewtainer show];
+        
+
+
+        //[self.view addSubview: self.instanceView];
     }
     
     //[locations addObject: @{@"address": @"Banglore"}];
@@ -125,7 +142,7 @@
 
 - (void)selectedLocation:(NSDictionary *)location {
     self.navigationController.navigationBar.userInteractionEnabled = YES;
-    self.instanceView.hidden = true;
+    [MTGenericAlertViewtainer close];
     isLocationSelected = NO;
     NSLog(@"Locattion: %@", location);
 }
@@ -358,7 +375,7 @@
     
     if (tableView == self.locationTableView) {
         selectedLocation = (int)indexPath.row;
-        self.instanceView.hidden = true;
+        [MTGenericAlertViewtainer close];
     } else {
         if (indexPath.row == 1) {
             UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -418,9 +435,9 @@
 - (IBAction)locationButtonTapped:(id)sender {
     isLocationSelected = !isLocationSelected;
     if (isLocationSelected) {
-        self.instanceView.hidden = NO;
+        [MTGenericAlertViewtainer show];
     } else {
-        self.instanceView.hidden = YES;
+        [MTGenericAlertViewtainer close];
         
     }
 //    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -600,7 +617,7 @@
                                initWithTitle:@"Oops" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [errorAlert show];
     self.navigationController.navigationBar.userInteractionEnabled = YES;
-    self.instanceView.hidden = YES;
+    [MTGenericAlertViewtainer close];
 }
 
 -(void)fetchLocation{

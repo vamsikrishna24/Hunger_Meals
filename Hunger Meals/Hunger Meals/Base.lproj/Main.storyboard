@@ -964,10 +964,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="171"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9iU-Zv-ZzR">
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iU-Zv-ZzR">
                                                     <rect key="frame" x="0.0" y="-5" width="414" height="176"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RXV-A8-tJl">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXV-A8-tJl">
                                                             <rect key="frame" x="0.0" y="8" width="414" height="168"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="20i-rc-Qdn">
@@ -977,6 +977,14 @@
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </view>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="RXV-A8-tJl" secondAttribute="trailing" id="5TE-Af-C74"/>
+                                                        <constraint firstItem="RXV-A8-tJl" firstAttribute="centerX" secondItem="9iU-Zv-ZzR" secondAttribute="centerX" id="6ho-h4-kgU"/>
+                                                        <constraint firstItem="RXV-A8-tJl" firstAttribute="top" secondItem="9iU-Zv-ZzR" secondAttribute="top" constant="8" id="i32-U8-k75"/>
+                                                        <constraint firstItem="RXV-A8-tJl" firstAttribute="centerY" secondItem="9iU-Zv-ZzR" secondAttribute="centerY" constant="4" id="nbb-LW-R2O"/>
+                                                        <constraint firstAttribute="bottom" secondItem="RXV-A8-tJl" secondAttribute="bottom" id="yXj-fP-47G"/>
+                                                        <constraint firstItem="RXV-A8-tJl" firstAttribute="leading" secondItem="9iU-Zv-ZzR" secondAttribute="leading" id="ywB-oC-Q1o"/>
+                                                    </constraints>
                                                     <inset key="scrollIndicatorInsets" minX="600" minY="20" maxX="150" maxY="20"/>
                                                 </scrollView>
                                                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="9uX-xc-WLb">
@@ -1001,8 +1009,12 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="9uX-xc-WLb" secondAttribute="bottom" constant="-2" id="0aI-lZ-roE"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="rw6-fw-njs" secondAttribute="bottom" constant="34" id="8Cb-QI-wDd"/>
+                                                <constraint firstItem="9iU-Zv-ZzR" firstAttribute="leading" secondItem="moC-J9-Qfb" secondAttribute="leadingMargin" constant="-8" id="RrE-Lm-B9v"/>
                                                 <constraint firstItem="rw6-fw-njs" firstAttribute="leading" secondItem="moC-J9-Qfb" secondAttribute="leadingMargin" constant="12" id="Xhm-8H-K8q"/>
+                                                <constraint firstItem="9iU-Zv-ZzR" firstAttribute="top" secondItem="moC-J9-Qfb" secondAttribute="topMargin" constant="-13" id="cfJ-db-RNs"/>
                                                 <constraint firstItem="9uX-xc-WLb" firstAttribute="centerX" secondItem="moC-J9-Qfb" secondAttribute="centerX" id="eCt-Bh-dj5"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="9iU-Zv-ZzR" secondAttribute="bottom" constant="-8" id="fdc-n9-aCA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="9iU-Zv-ZzR" secondAttribute="trailing" constant="-8" id="xWy-qH-2ZB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

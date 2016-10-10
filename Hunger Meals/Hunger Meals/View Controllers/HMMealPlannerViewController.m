@@ -273,10 +273,10 @@
     self.instanceView.hidden = NO;
     self.navigationController.navigationBar.userInteractionEnabled = NO;
   //  UIButton *btn = (UIButton *)sender;
-    MTGenericAlertView *MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:@"Alert!!" titleColor:nil titleFont:nil backgroundImage:nil];
+    MTGenericAlertView *MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:@"list" titleColor:nil titleFont:nil backgroundImage:nil];
     [MTGenericAlertViewtainer setCustomInputView:self.instanceView]; //Add customized view to this method
     MTGenericAlertViewtainer.tag = 3;
-    [MTGenericAlertViewtainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
+   // [MTGenericAlertViewtainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
     [MTGenericAlertViewtainer show];
     
     [self.itemListTableView reloadData];
