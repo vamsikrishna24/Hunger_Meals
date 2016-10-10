@@ -42,6 +42,8 @@ typedef void(^SuccessBlock)(NSData *data , NSHTTPURLResponse *response, NSError 
 -(void)sendGetRequestWithAuth:(NSString *)urlString usingblock:(void(^)(id result, NSHTTPURLResponse *response, NSError *err))block;
 
 - (void)getLocationsDataUsingBlock:(void(^)(NSMutableArray *resultArray))resultBlock;
+
+- (void)getLocationID:(NSDictionary *)params usingBlock :(void(^)(NSMutableArray *resultArray))resultBlock;
 //Service Requests
 
 -(void)sendRequest:(NSString *)urlString  Perameters:(NSDictionary *)perameterDict usingblock:(void(^)(id result, NSHTTPURLResponse *response, NSError *err))block;
