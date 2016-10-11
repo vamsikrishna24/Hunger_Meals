@@ -123,7 +123,7 @@
     cell.decrimentButton.tag = indexPath.row;
     cell.cancelButton.tag = indexPath.row;
     
-    cell.totalPriceLabel.text = cartObject.price;
+    cell.totalPriceLabel.text = [NSString stringWithFormat:@"%@ ₹",cartObject.price];
     cell.cartItemTitle.text = cartObject.product.name;
     cell.countLabel.text = cartObject.quantity;
     
@@ -180,7 +180,7 @@
     self.packagingValueLabel.text = rsString;
     taxSum = taxSum + value1;
     totalAmount = totalAmount + taxSum;
-    self.totalPrice.text = [NSString stringWithFormat:@"%.2f",totalAmount] ;
+    self.totalPrice.text = [NSString stringWithFormat:@"%.2f ₹",totalAmount] ;
     
     
     
@@ -191,7 +191,7 @@
     CartItem *cartItemObject = cartItemsArray[btn.tag];
     quantity = [mealsCell.countLabel.text intValue];
     int priceOfItem= [cartItemObject.price intValue]/[cartItemObject.quantity intValue];
-    mealsCell.totalPriceLabel.text = [NSString stringWithFormat:@"%d",priceOfItem * quantity];
+    mealsCell.totalPriceLabel.text = [NSString stringWithFormat:@"%d ₹",priceOfItem * quantity];
     
     //Updating the latest cart details again
     cartItemObject.price = [NSString stringWithFormat:@"%d", priceOfItem*quantity];
@@ -246,7 +246,7 @@
             self.amountDiscountLabel.text = [NSString stringWithFormat:@"- %.2f ₹",[[resultArray valueForKey:@"amount"]floatValue]];
             coupondCodeDiscount = [[resultArray valueForKey:@"amount"]floatValue];
             totalAmount = totalAmount - coupondCodeDiscount;
-            self.totalPrice.text = [NSString stringWithFormat:@"%.2f",totalAmount];
+            self.totalPrice.text = [NSString stringWithFormat:@"%.2f ₹",totalAmount];
             self.applyButton.enabled = NO;
             [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
             
@@ -266,7 +266,7 @@
         }
         isCouponApplied = NO;
         self.amountDiscountLabel.text = [NSString stringWithFormat:@"0"];
-        self.totalPrice.text = [NSString stringWithFormat:@"%.2f",totalAmount];
+        self.totalPrice.text = [NSString stringWithFormat:@"%.2f ₹",totalAmount];
         
     }
     

@@ -53,7 +53,7 @@
     
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: kToken,@"token",  nil];
     SVService *service = [[SVService alloc] init];
-    [service getQuickBitesProductsDataUsingBlock:dict usingBlock:^(NSMutableArray *resultArray) {
+    [service getCurriesProductsDataUsingBlock:dict usingBlock:^(NSMutableArray *resultArray) {
         
         if (resultArray.count == 0 || resultArray == nil) {
             //[self displayMessageWhenNoData];

@@ -146,10 +146,26 @@
         if (response.statusCode == 200 && result!=nil) {
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
-            NSString *tokenString = [dictResult valueForKey:@"error"];
-            if([tokenString isEqualToString:@"Token is Expired"]){
-                [self signOut];
-            }
+                       resultBlock([self parseProductsData:dictResult]);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+}
+
+#pragma Curries
+- (void)getCurriesProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    
+    NSString *token = userDataObject.token;
+    NSString *url = [NSString stringWithFormat:kCurries, HTTP_DATA_HOST,token];
+    
+    [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
             resultBlock([self parseProductsData:dictResult]);
         }
         else{
@@ -171,11 +187,7 @@
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
             
-            NSString *tokenString = [dictResult valueForKey:@"error"];
-            if([tokenString isEqualToString:@"Token is Expired"]){
-                [self signOut];
-                
-            }
+           
             resultBlock([self parseProductsData:dictResult]);
         }
         else{
@@ -197,12 +209,7 @@
         if (response.statusCode == 200 && result!=nil) {
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
-            
-            NSString *tokenString = [dictResult valueForKey:@"error"];
-            if([tokenString isEqualToString:@"Token is Expired"]){
-                [self signOut];
-                
-            }
+           
             resultBlock([self parseProductsData:dictResult]);
         }
         else{
