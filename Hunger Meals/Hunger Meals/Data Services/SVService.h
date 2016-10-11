@@ -43,7 +43,10 @@ typedef void(^SuccessBlock)(NSData *data , NSHTTPURLResponse *response, NSError 
 
 - (void)getLocationsDataUsingBlock:(void(^)(NSMutableArray *resultArray))resultBlock;
 
-- (void)getLocationID:(NSDictionary *)params usingBlock :(void(^)(NSMutableArray *resultArray))resultBlock;
+- (void)getLocationID:(NSDictionary *)params usingBlock :(void(^)(NSString *locationId))resultBlock;
+
+- (void)syncLocationToUserAccount:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock;
+
 //Service Requests
 
 -(void)sendRequest:(NSString *)urlString  Perameters:(NSDictionary *)perameterDict usingblock:(void(^)(id result, NSHTTPURLResponse *response, NSError *err))block;

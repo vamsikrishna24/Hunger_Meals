@@ -34,6 +34,7 @@ extern NSString * const kOTPGeneration;
 extern NSString * const kOTPVerification;
 extern NSString * const kLocation;
 extern NSString * const kGetLocationIDURL;
+extern NSString * const kSyncUserLocation;
 extern NSString * const kMonthlyproducts;
 extern NSString * const kCurrentmealplan;
 extern NSString * const kCurrentActiveOrders;

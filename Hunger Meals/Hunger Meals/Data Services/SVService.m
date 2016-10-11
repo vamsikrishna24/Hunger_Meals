@@ -342,9 +342,13 @@
     }];
 }
 
-- (void)getLocationID:(NSDictionary *)params usingBlock :(void(^)(NSMutableArray *resultArray))resultBlock{
+- (void)getLocationID:(NSDictionary *)params usingBlock :(void(^)(NSString *locationId))resultBlock{
     
-    NSString *url = [NSString stringWithFormat:kGetLocationIDURL, HTTP_DATA_HOST];
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    
+    NSString *token = userDataObject.token;
+    NSString *url = [NSString stringWithFormat:kGetLocationIDURL, HTTP_DATA_HOST,token];
     
     [self sendRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
         
@@ -352,18 +356,38 @@
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
             
-            NSString *tokenString = [dictResult valueForKey:@"error"];
-            if([tokenString isEqualToString:@"Token is Expired"]){
-                [self signOut];
-                
-            }
-            resultBlock([self parseUserLoginData:dictResult]);
+            NSString *locationID = [dictResult valueForKeyPath:@"data.location"];
+            resultBlock(locationID);
         }
         else{
             resultBlock(nil);
         }
     }];
 }
+
+- (void)syncLocationToUserAccount:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
+    
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    
+    NSString *token = userDataObject.token;
+    NSString *url = [NSString stringWithFormat:kSyncUserLocation, HTTP_DATA_HOST,token];
+    
+    [self sendRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            NSString *locationID = [dictResult valueForKeyPath:@"data.message"];
+            resultBlock(locationID);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+}
+
 
 #pragma AddToCArt
 - (void)addToCart:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{

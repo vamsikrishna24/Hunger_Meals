@@ -19,6 +19,7 @@
     NSInteger numRows;
     int *count;
     NSMutableArray *indexPathsOfCells;
+    NSMutableArray *savedLocationIDs;
 }
 
 @end
@@ -33,6 +34,7 @@
     [self.addressTableView setBackgroundColor:[UIColor clearColor]];
     self.pageIndex = 3;
 
+    savedLocationIDs = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view.
 }
 
@@ -91,7 +93,7 @@
 }
 
 - (IBAction)saveButtonAction:(id)sender {
-    if (true) {
+    if ([self SignUpToServer]) {
         for (int x=0; x<numRows; x++) {
             UITableViewCell *cell = [_addressTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:x inSection:0]];
             UITextView *addressTextView = (UITextView *)[cell viewWithTag:102];
@@ -106,15 +108,30 @@
 }
 
 - (void) saveLocation:(NSString *)address{
-    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: @"Koramanagala", @"name", @"Banglore", @"city", @"Birla", @"sublocation",  address, @"address", 12.9317,  @"lat", 77.6227, @"lng", 560030, "zip", "userlocation", "type", nil];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: @"Koramanagala", @"name", @"Banglore", @"city", @"Birla", @"sublocation",  address, @"address", @12.9317,  @"lat", @77.6227, @"lng", @560030, @"zip", @"userlocation", @"type", nil];
     SVService *service = [[SVService alloc] init];
-    [service getLocationID:dict usingBlock:^(NSMutableArray *resultArray) {
-        if (resultArray.count != 0 || resultArray != nil) {
-            
+    [service getLocationID:dict usingBlock:^(NSString *locationId) {
+        
+        if (locationId != nil || ![locationId isEqualToString:@""]) {
+            [self syncLocationForUser:locationId];
+            [savedLocationIDs addObject:locationId];
         }
        
-        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    }];
+
+}
+
+- (void)syncLocationForUser:(NSString *)locationID{
+
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: locationID, @"location_id", nil];
+    SVService *service = [[SVService alloc] init];
+    [service syncLocationToUserAccount:dict usingBlock:^(NSString *resultMessage) {
+        
+        if (resultMessage != nil || ![resultMessage isEqualToString:@""]) {
+            NSLog(@"%@", resultMessage);
+            
+        }
+        
     }];
 
 }
