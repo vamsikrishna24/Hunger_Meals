@@ -86,7 +86,7 @@ else if(indexPath.row == 3) {
     if (indexPath.row == 2) {
         UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         HMOrdersListTableViewController *orderVC= [mainStoryBoard instantiateViewControllerWithIdentifier:@"OrdersViewIdentifier"];
-        [self.navigationController pushViewController:orderVC animated:YES];
+        [self presentViewController:orderVC animated:YES completion:nil];
     }
 }
 

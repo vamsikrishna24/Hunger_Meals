@@ -57,7 +57,7 @@
     
     scrollingImgs = [NSArray arrayWithObjects: @"page1.png",@"page2.png",@"page3.png",@"page4.png", @"page5.png", nil];
     locationView = [[LocationView alloc]init];
-
+    
     
     //Menu open/close based on gesture recognizer
     SWRevealViewController *revealController = self.revealViewController;
@@ -69,7 +69,7 @@
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
         [self.view addGestureRecognizer:self.revealViewController.tapGestureRecognizer];
     }
-
+    
     //Floating Button
     floatingButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [floatingButton addTarget:self
@@ -80,12 +80,12 @@
     floatingButton.layer.cornerRadius = floatingButton.frame.size.width/2.0f;
     floatingButton.clipsToBounds = YES;
     [floatingButton addTarget:self action:@selector(cartView) forControlEvents:UIControlEventTouchUpInside];
-   // [self.view addSubview:floatingButton];
+    // [self.view addSubview:floatingButton];
     
     //[self showPopUpBoxAtStartUp];
     //[self showLocationPopUp];
-//    ([(AppDelegate *)[[UIApplication sharedApplication] delegate] enableCurrentLocation]);
-
+    //    ([(AppDelegate *)[[UIApplication sharedApplication] delegate] enableCurrentLocation]);
+    
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -104,51 +104,52 @@
     if ([[USER_DEFAULTS valueForKey: @"isLocationSelected"]  isEqual: @"NO"]) {
         [USER_DEFAULTS setObject: @"YES" forKey: @"isLocationSelected"];
         //[USER_DEFAULTS setValue: @"YES" forKey: @"isLocationSelected"];
-     //   self.instanceView.frame = self.view.bounds;//CGRectMake(16, self.view.frame.size.height / 2 - 30, self.view.frame.size.width - 32, 60);
+        self.instanceView.frame = self.view.bounds;//CGRectMake(16, self.view.frame.size.height / 2 - 30, self.view.frame.size.width - 32, 60);
         self.instanceView.delegate = self;
         [self.instanceView setBackgroundColor: [UIColor clearColor]];
         self.navigationController.navigationBar.userInteractionEnabled = NO;
         
-         MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:nil titleColor:nil titleFont:nil backgroundImage:nil];
-        [MTGenericAlertViewtainer setCustomInputView:self.instanceView]; //Add customized view to this method
-        MTGenericAlertViewtainer.tag = 3;
-        // [MTGenericAlertViewtainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
-        [MTGenericAlertViewtainer show];
-
-     //   [self.view addSubview: self.instanceView];
+        //         MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:nil titleColor:nil titleFont:nil backgroundImage:nil];
+        //        [MTGenericAlertViewtainer setCustomInputView:self.instanceView]; //Add customized view to this method
+        //        MTGenericAlertViewtainer.tag = 3;
+        //        // [MTGenericAlertViewtainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
+        //        [MTGenericAlertViewtainer show];
+        
+        [self.view addSubview: self.instanceView];
         
         locations = [[NSMutableArray alloc] init];
     } else {
-       // self.instanceView.frame = self.view.bounds;
+        self.instanceView.frame = self.view.bounds;
         self.instanceView.delegate = self;
         [self.instanceView setBackgroundColor: [UIColor clearColor]];
-       // [MTGenericAlertViewtainer close];
+        //       // [MTGenericAlertViewtainer close];
+        //
+        //        MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:nil titleColor:nil titleFont:nil backgroundImage:nil];
+        //        [MTGenericAlertViewtainer setCustomInputView:self.instanceView]; //Add customized view to this method
+        //        MTGenericAlertViewtainer.tag = 3;
+        //        // [MTGenericAlertViewtainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
+        //        [MTGenericAlertViewtainer show];
         
-        MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:nil titleColor:nil titleFont:nil backgroundImage:nil];
-        [MTGenericAlertViewtainer setCustomInputView:self.instanceView]; //Add customized view to this method
-        MTGenericAlertViewtainer.tag = 3;
-        // [MTGenericAlertViewtainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
-        [MTGenericAlertViewtainer show];
         
-
-
-        //[self.view addSubview: self.instanceView];
+        
+        [self.view addSubview: self.instanceView];
     }
     
     //[locations addObject: @{@"address": @"Banglore"}];
     //[self fetchLocation];
-
+    
 }
 
 - (void)selectedLocation:(NSDictionary *)location {
     self.navigationController.navigationBar.userInteractionEnabled = YES;
-    [MTGenericAlertViewtainer close];
+    self.instanceView.hidden = true;
+    //[MTGenericAlertViewtainer close];
     isLocationSelected = NO;
     NSLog(@"Locattion: %@", location);
 }
 //-(void)showPopUpBoxAtStartUp{
 //    locationPopup = [[MTGenericAlertView alloc] initWithTitle:@"Pick Up Your City" titleColor:[UIColor whiteColor] titleFont:nil backgroundImage:nil];
-//    
+//
 //    //Add close button only to handle close button action. Other wise by default close button will be added.
 //    locationPopup.popUpCloseButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
 //    [locationPopup.popUpCloseButton setBackgroundImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
@@ -156,7 +157,7 @@
 //    locationPopup.isPopUpView = YES;
 //    [locationPopup setDelegate:self];
 //    [locationPopup show];
-//    
+//
 //}
 
 -(void)cartView{
@@ -202,7 +203,7 @@
 }
 
 -(IBAction)floatingButtonClicked:(id)sender{
-   //Floating Button Clicked
+    //Floating Button Clicked
 }
 #pragma Mark - Custom Methods
 
@@ -213,7 +214,7 @@
         return locations.count;
     }
     if(tableView == locationTable && section == 0 ){
-            return 1;
+        return 1;
     }
     else if(tableView == locationTable && section == 1){
         return addressArray.count;
@@ -235,7 +236,7 @@
     static NSString *LocationIdentifier = @"ScrollingCellIdentifier";
     static NSString *LocationIdenti = @"ScrollingCellIdentifier";
     static NSString *locIdentifier = @"LocationCell";
-
+    
     UITableViewCell *cell;
     if (tableView == self.locationTableView) {
         LocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: locIdentifier];
@@ -248,7 +249,7 @@
         
         if (cell == nil) {
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:LocationIdenti];
-    
+            
             UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(10,10, cell.frame.size.width-20, 35)];
             textField.placeholder = @" enter your location";
             textField.backgroundColor = [UIColor clearColor];
@@ -277,96 +278,96 @@
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:LocationIdentifier];
         }
         cell.backgroundColor = [UIColor clearColor];
-
+        
         NSString * stringToDisplay = (NSString *)[[addressArray valueForKey:@"address"] componentsJoinedByString:@""];
         textView = [[UITextView alloc] initWithFrame:CGRectMake(10, 5, 320, 40)];
         textView.textAlignment = NSTextAlignmentLeft;
         textView.backgroundColor = [UIColor clearColor];
-//        textView.alpha = 0.5;
-//        cell.contentView.backgroundColor = [UIColor clearColor];
+        //        textView.alpha = 0.5;
+        //        cell.contentView.backgroundColor = [UIColor clearColor];
         locationTable.backgroundColor = [UIColor clearColor];
         [cell.contentView addSubview:textView];
         textView.text = stringToDisplay;
         textView.editable = NO;
         textView.selectable = NO;
         textView.textColor = [UIColor orangeColor];
-
+        
     }else{
-    if (indexPath.row == 0) {
-        HMScrollingCell *scrollingCell = (HMScrollingCell *)[tableView dequeueReusableCellWithIdentifier:scrollingCellIdentifier];
-        
-        // Customize UIScrollView here..
-        [scrollingCell.scrollView setDelegate:self];
-        [scrollingCell.scrollView setPagingEnabled:YES];
-        [scrollingCell.scrollView setTag:indexPath.row];
-        [scrollingCell.scrollView setShowsHorizontalScrollIndicator:NO];
-        [scrollingCell.scrollView setUserInteractionEnabled:NO];
-        [scrollingCell.contentView addGestureRecognizer:scrollingCell.scrollView.panGestureRecognizer];
-        
-        scrollingCell.pageControl.numberOfPages = [scrollingImgs count];
-        [scrollingCell.pageControl setTag:indexPath.row];
-        
-       // scrollingCell.pageControl.pageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DotInactive"]];
-        
-        //scrollingCell.pageControl.currentPageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DotActive"]];
-        
-        NSArray *cellGallary = scrollingImgs;
-        
-        scrollingCell.scrollView.contentSize = CGSizeMake(scrollingCell.scrollView.frame.size.width * cellGallary.count,scrollingCell.scrollView.frame.size.height);
-        
-        for (int i = 0; i < cellGallary.count; i++) {
-            CGRect frame;
-            frame.origin.x = scrollingCell.scrollView.frame.size.width * i;
-            frame.origin.y = 0;
-            frame.size = scrollingCell.scrollView.frame.size;
+        if (indexPath.row == 0) {
+            HMScrollingCell *scrollingCell = (HMScrollingCell *)[tableView dequeueReusableCellWithIdentifier:scrollingCellIdentifier];
             
-            UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
-            imageView.image = [UIImage imageNamed:cellGallary[i]];
-            imageView.clipsToBounds = YES;
-            imageView.contentMode = UIViewContentModeScaleAspectFill;
+            // Customize UIScrollView here..
+            [scrollingCell.scrollView setDelegate:self];
+            [scrollingCell.scrollView setPagingEnabled:YES];
+            [scrollingCell.scrollView setTag:indexPath.row];
+            [scrollingCell.scrollView setShowsHorizontalScrollIndicator:NO];
+            [scrollingCell.scrollView setUserInteractionEnabled:NO];
+            [scrollingCell.contentView addGestureRecognizer:scrollingCell.scrollView.panGestureRecognizer];
+            
+            scrollingCell.pageControl.numberOfPages = [scrollingImgs count];
+            [scrollingCell.pageControl setTag:indexPath.row];
+            
+            // scrollingCell.pageControl.pageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DotInactive"]];
+            
+            //scrollingCell.pageControl.currentPageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"DotActive"]];
+            
+            NSArray *cellGallary = scrollingImgs;
+            
+            scrollingCell.scrollView.contentSize = CGSizeMake(scrollingCell.scrollView.frame.size.width * cellGallary.count,scrollingCell.scrollView.frame.size.height);
+            
+            for (int i = 0; i < cellGallary.count; i++) {
+                CGRect frame;
+                frame.origin.x = scrollingCell.scrollView.frame.size.width * i;
+                frame.origin.y = 0;
+                frame.size = scrollingCell.scrollView.frame.size;
+                
+                UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
+                imageView.image = [UIImage imageNamed:cellGallary[i]];
+                imageView.clipsToBounds = YES;
+                imageView.contentMode = UIViewContentModeScaleAspectFill;
+                
+                
+                [scrollingCell.scrollView addSubview:imageView];
+            }
+            
+            //configure cell
+            //        scrollingCell.titleLabel.text = [[self.dashboardDataArray[indexPath.row] objectForKey:kTitles] firstObject];
             
             
-            [scrollingCell.scrollView addSubview:imageView];
-        }
-        
-        //configure cell
-//        scrollingCell.titleLabel.text = [[self.dashboardDataArray[indexPath.row] objectForKey:kTitles] firstObject];
-
-        
-        return scrollingCell;
-    }
-    else{
-        cell = [tableView dequeueReusableCellWithIdentifier:categoryCellIdentifier];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:categoryCellIdentifier];
-        }
-        
-        //set background color for mask view
-        UIView *maskView = (UIView *)[cell viewWithTag:111];
-        if (indexPath.row == 1) {
-            [maskView setBackgroundColor:[UIColor colorWithRed:235/255.0f green:111/255.0f blue:56/255.0f alpha:0.5]];
-        }
-        else if (indexPath.row == 2){
-            [maskView setBackgroundColor:[UIColor colorWithRed:171/255.0f green:212/255.0f blue:113/255.0f alpha:0.8]];
-        }
-        else if (indexPath.row == 3){
-            [maskView setBackgroundColor:[UIColor colorWithRed:54/255.0f green:167/255.0f blue:181/255.0f alpha:0.8]];
+            return scrollingCell;
         }
         else{
-            [maskView setBackgroundColor:[UIColor clearColor]];
+            cell = [tableView dequeueReusableCellWithIdentifier:categoryCellIdentifier];
+            if (cell == nil) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:categoryCellIdentifier];
+            }
+            
+            //set background color for mask view
+            UIView *maskView = (UIView *)[cell viewWithTag:111];
+            if (indexPath.row == 1) {
+                [maskView setBackgroundColor:[UIColor colorWithRed:235/255.0f green:111/255.0f blue:56/255.0f alpha:0.5]];
+            }
+            else if (indexPath.row == 2){
+                [maskView setBackgroundColor:[UIColor colorWithRed:171/255.0f green:212/255.0f blue:113/255.0f alpha:0.8]];
+            }
+            else if (indexPath.row == 3){
+                [maskView setBackgroundColor:[UIColor colorWithRed:54/255.0f green:167/255.0f blue:181/255.0f alpha:0.8]];
+            }
+            else{
+                [maskView setBackgroundColor:[UIColor clearColor]];
+            }
+            
+            //Making selection style none
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            [cell.contentView setLayoutMargins:UIEdgeInsetsMake(15, 0, 0, 0)];
+            UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
+            imageView.image = [UIImage imageNamed:categoriesImgs[indexPath.row-1]];
+            
+            UILabel *categoryLabel = (UILabel *)[cell viewWithTag:2];
+            categoryLabel.text = [categories objectAtIndex:indexPath.row-1];
+            
+            
         }
-        
-        //Making selection style none
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [cell.contentView setLayoutMargins:UIEdgeInsetsMake(15, 0, 0, 0)];
-        UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
-        imageView.image = [UIImage imageNamed:categoriesImgs[indexPath.row-1]];
-        
-        UILabel *categoryLabel = (UILabel *)[cell viewWithTag:2];
-        categoryLabel.text = [categories objectAtIndex:indexPath.row-1];
-        
-        
-    }
     }
     
     return cell;
@@ -375,7 +376,7 @@
     
     if (tableView == self.locationTableView) {
         selectedLocation = (int)indexPath.row;
-        [MTGenericAlertViewtainer close];
+        self.instanceView.hidden = true;
     } else {
         if (indexPath.row == 1) {
             UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -390,7 +391,7 @@
             SVService *service = [[SVService alloc] init];
             [service getmonthlyproductsusingBlock:^(NSMutableArray *resultArray) {
                 
-               // itemsListArray = resultArray;
+                // itemsListArray = resultArray;
                 
                 
                 
@@ -419,78 +420,78 @@
     if(tableView == self.homePageTableView ){
         if (indexPath.row == 0) {
             return 166;
-    }
-    CGRect deviceFrame = DEVICEFRAME;
-    CGFloat height = deviceFrame.size.height;
-    
-    return (height-270)/3;
+        }
+        CGRect deviceFrame = DEVICEFRAME;
+        CGFloat height = deviceFrame.size.height;
+        
+        return (height-270)/3;
     }
     return 0;
 }
 
 - (IBAction)menuButtonTapped:(id)sender {
-
+    
 }
 
 - (IBAction)locationButtonTapped:(id)sender {
     isLocationSelected = !isLocationSelected;
     if (isLocationSelected) {
-        [MTGenericAlertViewtainer show];
+        self.instanceView.hidden = NO;
     } else {
-        [MTGenericAlertViewtainer close];
+        self.instanceView.hidden = YES;
         
     }
-//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    HMContentViewController *contentVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"ContentViewController"];
-//        contentVC.view.backgroundColor = [UIColor clearColor];
-//        contentVC.modalPresentationStyle = UIModalPresentationPopover;
-//        UIPopoverPresentationController *popPC = contentVC.popoverPresentationController;
-//        popPC.permittedArrowDirections = UIPopoverArrowDirectionAny;
-//        popPC.delegate = self;
-//        popPC.barButtonItem = sender;
-//    CGSize finalDesiredSize = CGSizeMake(320, 190);
-//    
-//    CGSize tempSize = CGSizeMake(finalDesiredSize.width, finalDesiredSize.height + 1);
-//    [contentVC setPreferredContentSize:tempSize];
-//    [contentVC setPreferredContentSize:finalDesiredSize];
-//    
-//
-//    locationTable = [[UITableView alloc]initWithFrame:CGRectMake(contentVC.view.frame.origin.x,contentVC.view.frame.origin.y,320,190)];
-//    locationTable.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
-//
-//    locationTable.dataSource = self;
-//    locationTable.delegate = self;
-//    locationTable.backgroundColor = [UIColor clearColor];
-//    locationTable.separatorColor = [UIColor lightGrayColor];
-//    [contentVC.view addSubview:locationTable];
-//
-//    
-//    locationManager.delegate = self;
-//    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-//    
-//    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 &&
-//        [CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse
-//        //[CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedAlways
-//        ) {
-//        // Will open an confirm dialog to get user's approval
-//        [locationManager requestWhenInUseAuthorization];
-//    } else {
-//        [locationManager startUpdatingLocation]; //Will update location immediately
-//    }
-//    [locationManager startUpdatingLocation];
-//    [self presentViewController:contentVC animated:YES completion:nil];
-//    [self fetchLocation ];
+    //    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //    HMContentViewController *contentVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"ContentViewController"];
+    //        contentVC.view.backgroundColor = [UIColor clearColor];
+    //        contentVC.modalPresentationStyle = UIModalPresentationPopover;
+    //        UIPopoverPresentationController *popPC = contentVC.popoverPresentationController;
+    //        popPC.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    //        popPC.delegate = self;
+    //        popPC.barButtonItem = sender;
+    //    CGSize finalDesiredSize = CGSizeMake(320, 190);
+    //
+    //    CGSize tempSize = CGSizeMake(finalDesiredSize.width, finalDesiredSize.height + 1);
+    //    [contentVC setPreferredContentSize:tempSize];
+    //    [contentVC setPreferredContentSize:finalDesiredSize];
+    //
+    //
+    //    locationTable = [[UITableView alloc]initWithFrame:CGRectMake(contentVC.view.frame.origin.x,contentVC.view.frame.origin.y,320,190)];
+    //    locationTable.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+    //
+    //    locationTable.dataSource = self;
+    //    locationTable.delegate = self;
+    //    locationTable.backgroundColor = [UIColor clearColor];
+    //    locationTable.separatorColor = [UIColor lightGrayColor];
+    //    [contentVC.view addSubview:locationTable];
+    //
+    //
+    //    locationManager.delegate = self;
+    //    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    //
+    //    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 &&
+    //        [CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse
+    //        //[CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedAlways
+    //        ) {
+    //        // Will open an confirm dialog to get user's approval
+    //        [locationManager requestWhenInUseAuthorization];
+    //    } else {
+    //        [locationManager startUpdatingLocation]; //Will update location immediately
+    //    }
+    //    [locationManager startUpdatingLocation];
+    //    [self presentViewController:contentVC animated:YES completion:nil];
+    //    [self fetchLocation ];
     //self.instanceView.hidden = NO;
-    }
+}
 
 - (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller traitCollection:(UITraitCollection *)traitCollection {
-        return UIModalPresentationNone; // 20
-    }
-    
+    return UIModalPresentationNone; // 20
+}
+
 - (UIViewController *)presentationController:(UIPresentationController *)controller viewControllerForAdaptivePresentationStyle:(UIModalPresentationStyle)style {
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller.presentedViewController];
-        return navController; // 21
-    }
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller.presentedViewController];
+    return navController; // 21
+}
 
 
 - (IBAction)notificationButtonPressed:(id)sender {
@@ -518,7 +519,7 @@
 
 -(void)showPopUpBoxAtStartUp{
     
-   locationPopup = [[MTGenericAlertView alloc] initWithTitle:@"Pick Up Your City" titleColor:[UIColor whiteColor] titleFont:nil backgroundImage:nil];
+    locationPopup = [[MTGenericAlertView alloc] initWithTitle:@"Pick Up Your City" titleColor:[UIColor whiteColor] titleFont:nil backgroundImage:nil];
     
     //Add close button only to handle close button action. Other wise by default close button will be added.
     locationPopup.popUpCloseButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
@@ -549,33 +550,33 @@
 }
 
 /*
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    NSLog(@"didUpdateToLocation: %@", newLocation);
-    CLLocation *currentLocation = newLocation;
-    
-    if (currentLocation != nil) {
-        self.longitudeStrinng = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
-        self.latitudeString = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
-    }
-    
-    // Reverse Geocoding
-    NSLog(@"Resolving the Address");
-    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
-        if (error == nil && [placemarks count] > 0) {
-            placemark = [placemarks lastObject];
-            self.addressStrinng = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
-                                   placemark.subThoroughfare, placemark.thoroughfare,
-                                   placemark.postalCode, placemark.locality,
-                                   placemark.administrativeArea,
-                                   placemark.country];
-        } else {
-            NSLog(@"%@", error.debugDescription);
-        }
-    } ];
-    
-}
+ - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+ {
+ NSLog(@"didUpdateToLocation: %@", newLocation);
+ CLLocation *currentLocation = newLocation;
+ 
+ if (currentLocation != nil) {
+ self.longitudeStrinng = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
+ self.latitudeString = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+ }
+ 
+ // Reverse Geocoding
+ NSLog(@"Resolving the Address");
+ [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+ NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
+ if (error == nil && [placemarks count] > 0) {
+ placemark = [placemarks lastObject];
+ self.addressStrinng = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
+ placemark.subThoroughfare, placemark.thoroughfare,
+ placemark.postalCode, placemark.locality,
+ placemark.administrativeArea,
+ placemark.country];
+ } else {
+ NSLog(@"%@", error.debugDescription);
+ }
+ } ];
+ 
+ }
  */
 
 - (void)locationManager:(CLLocationManager*)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
@@ -617,28 +618,28 @@
                                initWithTitle:@"Oops" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [errorAlert show];
     self.navigationController.navigationBar.userInteractionEnabled = YES;
-    [MTGenericAlertViewtainer close];
+    self.instanceView.hidden = YES;
 }
 
 -(void)fetchLocation{
     //[self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
     
     SVService *service = [[SVService alloc] init];
-//    [service getLocationsDataUsingBlock:^(NSMutableArray *resultArray) {
-//        addressArray = resultArray;
-//        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
-//        [self.locationTableView reloadData];
-//        [locationTable reloadData];
-//
-//    }];
+    //    [service getLocationsDataUsingBlock:^(NSMutableArray *resultArray) {
+    //        addressArray = resultArray;
+    //        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    //        [self.locationTableView reloadData];
+    //        [locationTable reloadData];
+    //
+    //    }];
     [service getLocationsDataUsingBlock:^(NSMutableArray *resultArray) {
         //[self createSelectInstancePopUp];
-//        locations = resultArray;
-//        self.locationTableView.delegate = self;
-//        self.locationTableView.dataSource = self;
-//        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
-//        [self.locationTableView reloadData];
-//        [self.view bringSubviewToFront: self.locationView];
+        //        locations = resultArray;
+        //        self.locationTableView.delegate = self;
+        //        self.locationTableView.dataSource = self;
+        //        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+        //        [self.locationTableView reloadData];
+        //        [self.view bringSubviewToFront: self.locationView];
         
     }];
     

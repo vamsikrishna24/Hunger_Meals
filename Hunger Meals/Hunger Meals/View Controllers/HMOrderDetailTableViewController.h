@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface HMOrderDetailTableViewController : UITableViewController
+@interface HMOrderDetailTableViewController : CommonViewController
 
 @end

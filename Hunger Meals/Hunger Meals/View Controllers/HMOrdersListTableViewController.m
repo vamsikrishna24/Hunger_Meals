@@ -8,6 +8,7 @@
 
 #import "HMOrdersListTableViewController.h"
 #import "HMOrdersListTableViewCell.h"
+#import "HMOrderDetailTableViewController.h"
 #import "SVService.h"
 
 @interface HMOrdersListTableViewController (){
@@ -96,5 +97,11 @@
 }
 
 - (IBAction)viewDetailsButtonAction:(id)sender {
+//    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+
+//    HMOrderDetailTableViewController *orderDetailVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"OrderDetailIdentifier"];
+//    [self.navigationController pushViewController:orderDetailVC animated:YES];
+
+    
 }
 @end

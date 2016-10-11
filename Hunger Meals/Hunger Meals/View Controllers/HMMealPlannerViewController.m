@@ -17,6 +17,7 @@
     NSDate *_dateSelected;
     NSMutableArray *itemsListArray;
     HMItemList *itemListView;
+    MTGenericAlertView *MTGenericAlertViewtainer;
 
 }
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
@@ -70,8 +71,7 @@
     
     [self fetchAndLoadData];
     [self.itemListTableView reloadData];
-    self.instanceView.hidden = YES;
-    
+    [MTGenericAlertViewtainer close];
     
    
     
@@ -207,12 +207,11 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    self.instanceView.hidden = NO;
+    //self.instanceView.hidden = NO;
+    [MTGenericAlertViewtainer show];
     if(tableView == self.calendarTableView){
         
     }
-
-    
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -270,20 +269,28 @@
     
 }
 - (IBAction)lunchButtonAction:(id)sender {
-    self.instanceView.hidden = NO;
+   
+
+    if(itemsListArray.count >= 1)
+    {
+     MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:@"Menu" titleColor:nil titleFont:nil backgroundImage:nil];
+        [MTGenericAlertViewtainer show];
+
+
+    //self.instanceView.hidden = NO;
     self.navigationController.navigationBar.userInteractionEnabled = NO;
   //  UIButton *btn = (UIButton *)sender;
-    MTGenericAlertView *MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:@"list" titleColor:nil titleFont:nil backgroundImage:nil];
     [MTGenericAlertViewtainer setCustomInputView:self.instanceView]; //Add customized view to this method
     MTGenericAlertViewtainer.tag = 3;
    // [MTGenericAlertViewtainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
     [MTGenericAlertViewtainer show];
+    }
     
     [self.itemListTableView reloadData];
 
 }
 - (IBAction)dinnerButtonAction:(id)sender {
-    self.instanceView.hidden = NO;
+    [MTGenericAlertViewtainer show];
     self.navigationController.navigationBar.userInteractionEnabled = NO;
     [self.itemListTableView reloadData];
 
