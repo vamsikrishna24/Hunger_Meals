@@ -29,6 +29,7 @@
     self.emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: color}];
     [self.emailTextField setValue:[UIFont fontWithName: @"American Typewriter Bold" size: 10] forKeyPath:@"_placeholderLabel.font"];
     self.paswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: color}];
+    self.confirmPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Confirm Password" attributes:@{NSForegroundColorAttributeName: color}];
     self.phoneNumberTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Phone number" attributes:@{NSForegroundColorAttributeName: color}];
     CALayer *bottomBorder = [CALayer layer];
     bottomBorder.frame = CGRectMake(0.0f, self.paswordTextField.frame.size.height - 1, self.paswordTextField.frame.size.width, 1.0f);
@@ -50,6 +51,12 @@
     bottomBorder3.backgroundColor = [UIColor colorWithRed:159.0f/255.0f green:159.0f/255.0f blue:159.0f/255.0f alpha:0.5].CGColor;
     
     [self.userNameTextField.layer addSublayer:bottomBorder3];
+    
+    CALayer *bottomBorder4 = [CALayer layer];
+    bottomBorder4.frame = CGRectMake(0.0f, self.confirmPasswordTextField.frame.size.height - 1, self.confirmPasswordTextField.frame.size.width, 1.0f);
+    bottomBorder4.backgroundColor = [UIColor colorWithRed:159.0f/255.0f green:159.0f/255.0f blue:159.0f/255.0f alpha:0.5].CGColor;
+    
+    [self.confirmPasswordTextField.layer addSublayer:bottomBorder4];
 
     UISwipeGestureRecognizer* swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeUpFrom:)];
      UISwipeGestureRecognizer* swipeRightGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeUpFrom:)];
@@ -105,6 +112,10 @@ shouldChangeCharactersInRange:(NSRange)range
     }
     else if(![Utility isValidatePassword:self.paswordTextField.text]){
         [self showAlertWithTitle:@"Alert" andMessage:@"Please enter valid password and try again"];
+        return NO;
+    }
+    else if(self.paswordTextField.text != self.confirmPasswordTextField.text){
+        [self showAlertWithTitle:@"Alert" andMessage:@"Both password and confirm password should match,Please try again!!"];
         return NO;
     }
     else if([self.phoneNumberTextField.text  isEqual: @""]){

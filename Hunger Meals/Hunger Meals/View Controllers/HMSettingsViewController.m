@@ -9,6 +9,7 @@
 #import "HMSettingsViewController.h"
 #import "HMSettingsTableViewCell.h"
 #import "HMAddressViewController.h"
+#import "HMOrdersListTableViewController.h"
 @interface HMSettingsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *settingsTableView;
 
@@ -32,7 +33,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 4;
+    return 5;
 }
 //
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -58,11 +59,16 @@
       //  cell.settingsImageView.image = [UIImage imageNamed:@"Offers"];
 
  //   }
-else if(indexPath.row == 2) {
+    //   }
+    else if(indexPath.row == 2) {
+        cell.SettingsRowLabel.text = @"Orders";
+        cell.settingsImageView.image = [UIImage imageNamed:@"Invite_Friends"];
+    }
+else if(indexPath.row == 3) {
         cell.SettingsRowLabel.text = @"Invite Friends";
         cell.settingsImageView.image = [UIImage imageNamed:@"Invite_Friends"];
 
-    }else if(indexPath.row == 3) {
+    }else if(indexPath.row == 4) {
         cell.SettingsRowLabel.text = @"Help";
         cell.settingsImageView.image = [UIImage imageNamed:@"Help"];
 
@@ -76,6 +82,11 @@ else if(indexPath.row == 2) {
         UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
          HMAddressViewController *addressVC= [mainStoryBoard instantiateViewControllerWithIdentifier:@"AddressViewController"];
         [self.navigationController pushViewController:addressVC animated:YES];
+    }
+    if (indexPath.row == 2) {
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        HMOrdersListTableViewController *orderVC= [mainStoryBoard instantiateViewControllerWithIdentifier:@"OrdersViewIdentifier"];
+        [self.navigationController pushViewController:orderVC animated:YES];
     }
 }
 

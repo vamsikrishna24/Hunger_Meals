@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 @property (weak, nonatomic) IBOutlet UIButton *nextButtonOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
+@property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTextField;
 
 @property(strong,nonatomic) UIPageViewController *pageViewController;
 

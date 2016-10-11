@@ -97,6 +97,7 @@
         if ([result isEqualToString:@"OTP verified and cleared from DB"]) {
             
             [self showAlertWithTitle:@"Success" andMessage:@"Congrats! Your mobile number has been verified."];
+            [self navigate];
             self.nextButtonOutlet.hidden = NO;
             isMobileVerified = true;
             
@@ -107,6 +108,16 @@
 
     [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
+}
+
+-(void)navigate{
+    HMSignUpThirdViewController *thirdVC= [self.storyboard instantiateViewControllerWithIdentifier:@"thirdPage"];
+    thirdVC.email = self.email;
+    thirdVC.password = self.password;
+    thirdVC.phoneNumber = self.phoneNumber;
+    thirdVC.userName = self.userName;
+    thirdVC.pageViewController = _pageViewController;
+    [self.pageViewController setViewControllers:@[thirdVC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 }
 - (void)sendVerificationCodeToMobile{
     
@@ -196,15 +207,15 @@ replacementString:(NSString *)string {
 
 
 - (IBAction)nextButtonAction:(id)sender {
-    if ([self isValidationsSucceed] && isMobileVerified) {
-        HMSignUpThirdViewController *thirdVC= [self.storyboard instantiateViewControllerWithIdentifier:@"thirdPage"];
-        thirdVC.email = self.email;
-        thirdVC.password = self.password;
-        thirdVC.phoneNumber = self.phoneNumber;
-        thirdVC.userName = self.userName;
-        thirdVC.pageViewController = _pageViewController;
-        [self.pageViewController setViewControllers:@[thirdVC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-    }
+//    if ([self isValidationsSucceed] && isMobileVerified) {
+//        HMSignUpThirdViewController *thirdVC= [self.storyboard instantiateViewControllerWithIdentifier:@"thirdPage"];
+//        thirdVC.email = self.email;
+//        thirdVC.password = self.password;
+//        thirdVC.phoneNumber = self.phoneNumber;
+//        thirdVC.userName = self.userName;
+//        thirdVC.pageViewController = _pageViewController;
+//        [self.pageViewController setViewControllers:@[thirdVC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+//    }
 }
 
 - (IBAction)previousButtonAction:(id)sender {

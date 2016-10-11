@@ -171,7 +171,7 @@ didSignInForUser:(GIDGoogleUser *)user
 #pragma mark Custom Methods
 - (void) signUpWithFacebookDetails:(NSString *)token{
     [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: token, @"socialtoken", @"Facebook", @"logintype",  nil];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: token, @"socialtoken", @"facebook", @"logintype",  nil];
     
     SVService *service = [[SVService alloc] init];
     [service signupWithSocialNetwork:dict usingBlock:^(NSMutableArray *resultArray) {

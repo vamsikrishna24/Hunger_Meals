@@ -19,6 +19,7 @@
     float taxSum;
     float coupondCodeDiscount;
     int quantity;
+    BOOL isCouponApplied;
 }
 @property (weak, nonatomic) IBOutlet UILabel *cartEmptyLabel;
 
@@ -28,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    isCouponApplied = NO;
     self.cartEmptyLabel.hidden = YES;
     self.title = @"Cart";
     quantity = 0;
@@ -244,11 +246,11 @@
     SVService *service = [[SVService alloc] init];
     
     [service couponCode:dict usingBlock:^(NSString *resultArray) {
+        isCouponApplied = YES;
         self.amountDiscountLabel.text = [NSString stringWithFormat:@"- %.2f ₹",[[resultArray valueForKey:@"amount"]floatValue]];
         coupondCodeDiscount = [[resultArray valueForKey:@"amount"]floatValue];
         totalAmount = totalAmount - coupondCodeDiscount;
         self.totalPrice.text = [NSString stringWithFormat:@"%.2f",totalAmount];
-
         self.applyButton.enabled = NO;
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
         
@@ -263,8 +265,10 @@
 {
     if (range.length == 1 && range.location == 0) {
         self.applyButton.enabled = YES;
-        
+        if(isCouponApplied == YES) {
         totalAmount = totalAmount + coupondCodeDiscount;
+        }
+        isCouponApplied = NO;
         self.amountDiscountLabel.text = [NSString stringWithFormat:@"0"];
         self.totalPrice.text = [NSString stringWithFormat:@"%.2f",totalAmount];
         
