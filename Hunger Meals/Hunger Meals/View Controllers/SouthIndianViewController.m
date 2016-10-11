@@ -35,7 +35,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dishImagesArray = [[NSMutableArray alloc]initWithObjects:@"dish1",@"dish2",@"dish3",@"dish4",@"dish5",@"dish6",@"dish7",@"dish8",@"dish9",@"dish10",@"dish11",@"dish12",@"dish13",@"dish14",@"dish15",@"dish16", nil];
-    [self fetchAndLoadData];
 
 }
 
@@ -43,6 +42,8 @@
     [super viewWillAppear:animated];
     isCellExpanded = NO;
     tableViewHeight = 210;
+    [self fetchAndLoadData];
+
 }
 
 #pragma mark - Table view data source
@@ -145,7 +146,7 @@
     MealsTableViewCell *mealsCell = (MealsTableViewCell*)[_southIndianTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:btn.tag inSection:0]];
     Product *productObject = _productObjectsArray[btn.tag];
     NSInteger quantity = [mealsCell.countLabel.text intValue];
-    NSArray *array = productObject.inventories[btn.tag];
+    NSArray *array = productObject.inventories[0];
     NSString *stringArray = [array valueForKey:@"id"];
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: stringArray, @"inventories_id",[NSNumber numberWithInteger:quantity], @"quantity",  nil];
     SVService *service = [[SVService alloc] init];

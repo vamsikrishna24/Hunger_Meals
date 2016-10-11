@@ -37,7 +37,6 @@
     _productObjectsArray = [[NSMutableArray alloc] init];
     _labelArray = [[NSMutableArray alloc]init];
     //self.dishImagesArray = [[NSMutableArray alloc]initWithObjects:@"dish1",@"dish2",@"dish3",@"dish4",@"dish5",@"dish6",@"dish7",@"dish8",@"dish9",@"dish10",@"dish11",@"dish12",@"dish13",@"dish14",@"dish15",@"dish16", nil];
-    [self fetchAndLoadData];
 
 
    // [self.quickBitesTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
@@ -47,6 +46,8 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     isCellExpanded = NO;
+    [self fetchAndLoadData];
+
 }
 
 -(void)fetchAndLoadData{
@@ -189,7 +190,7 @@
     MealsTableViewCell *mealsCell = (MealsTableViewCell*)[_quickBitesTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:btn.tag inSection:0]];
     Product *productObject = _productObjectsArray[btn.tag];
     NSInteger quantity = [mealsCell.countLabel.text intValue];
-    NSArray *array = productObject.inventories[btn.tag];
+    NSArray *array = productObject.inventories[0];
     NSString *stringArray = [array valueForKey:@"id"];
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: stringArray, @"inventories_id",[NSNumber numberWithInteger:quantity], @"quantity",  nil];
     SVService *service = [[SVService alloc] init];

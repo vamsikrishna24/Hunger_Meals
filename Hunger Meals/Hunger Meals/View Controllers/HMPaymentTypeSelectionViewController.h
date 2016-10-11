@@ -10,9 +10,10 @@
 #import "PaymentsSDK.h"
 
 
+
 @interface HMPaymentTypeSelectionViewController : UIViewController<PGTransactionDelegate>
 
 @property (nonatomic, weak) IBOutlet UIButton *paytmButton;
 @property (nonatomic, weak) IBOutlet UIButton *payUButton;
-
+@property(nonatomic,strong) NSString *PaymentAmountString;
 @end

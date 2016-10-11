@@ -10,5 +10,5 @@
 #import "PaymentsSDK.h"
 
 @interface PayTMViewController : UIViewController <PGTransactionDelegate>
-
+@property (nonatomic,strong)NSString *paymentString;
 @end

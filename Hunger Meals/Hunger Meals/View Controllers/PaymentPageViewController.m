@@ -96,7 +96,7 @@
 #define Failure_URL @"https://dl.dropboxusercontent.com/s/dtnvwz5p4uymjvg/success.html"
 #define Product_Info @"Denim Jeans"
 #define Paid_Amount @"1549.00"
-#define Payee_Name @"Suraj Mirajkar"
+#define Payee_Name @"Vamsi"
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
@@ -129,7 +129,7 @@
     NSString *txnid1 = [strHash substringToIndex:20];
     strMIHPayID = txnid1;
     NSString *key = Merchant_Key;
-    NSString *amount = Paid_Amount;
+    NSString *amount = self.paymentString;
     NSString *productInfo = Product_Info;
     NSString *firstname = Payee_Name;
     NSString *email = [NSString stringWithFormat:@"suraj%d@yopmail.com",i]; // Generated a fake mail id for testing
@@ -220,7 +220,7 @@
         [mutDictTransactionDetails setObject:@"Success" forKey:@"Transaction_Status"];
         [mutDictTransactionDetails setObject:Payee_Name forKey:@"Payee_Name"];
         [mutDictTransactionDetails setObject:Product_Info forKey:@"Product_Info"];
-        [mutDictTransactionDetails setObject:Paid_Amount forKey:@"Paid_Amount"];
+        [mutDictTransactionDetails setObject:self.paymentString forKey:@"Paid_Amount"];
         
         [self navigateToPaymentStatusScreen:mutDictTransactionDetails];
     });
@@ -233,7 +233,7 @@
         NSMutableDictionary *mutDictTransactionDetails = [[NSMutableDictionary alloc] init];
         [mutDictTransactionDetails setObject:Payee_Name forKey:@"Payee_Name"];
         [mutDictTransactionDetails setObject:Product_Info forKey:@"Product_Info"];
-        [mutDictTransactionDetails setObject:Paid_Amount forKey:@"Paid_Amount"];
+        [mutDictTransactionDetails setObject:self.paymentString forKey:@"Paid_Amount"];
         [mutDictTransactionDetails setObject:strMIHPayID forKey:@"Transaction_ID"];
         [mutDictTransactionDetails setObject:@"Failed" forKey:@"Transaction_Status"];
         [self navigateToPaymentStatusScreen:mutDictTransactionDetails];

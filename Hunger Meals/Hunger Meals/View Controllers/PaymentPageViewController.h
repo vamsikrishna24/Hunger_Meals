@@ -10,6 +10,7 @@
 
 @interface PaymentPageViewController : UIViewController
 
+@property (nonatomic,strong)NSString *paymentString;
 
 @end
 

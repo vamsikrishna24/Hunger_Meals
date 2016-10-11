@@ -11,6 +11,7 @@
 #import "SVService.h"
 #import "CartItem.h"
 #import "Tax.h"
+#import "HMPaymentTypeSelectionViewController.h"
 
 @interface HMCartViewController (){
     NSMutableArray *cartItemsArray;
@@ -34,20 +35,20 @@
     self.title = @"Cart";
     quantity = 0;
     self.cartTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
-//    
-//    SVService *service = [[SVService alloc] init];
-//    
-//    [service getLocationsDataUsingBlock:^(NSMutableArray *resultArray) {
-//        
-//        
-//        
-//        
-//        [self performSelectorOnMainThread:@selector(hideActivityIndicator:) withObject:kIndicatorTitle waitUntilDone:NO];
-//    }];
+    //    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    //
+    //    SVService *service = [[SVService alloc] init];
+    //
+    //    [service getLocationsDataUsingBlock:^(NSMutableArray *resultArray) {
+    //
+    //
+    //
+    //
+    //        [self performSelectorOnMainThread:@selector(hideActivityIndicator:) withObject:kIndicatorTitle waitUntilDone:NO];
+    //    }];
     
-   
-
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -80,12 +81,12 @@
 //
 //        SVService *service = [[SVService alloc] init];
 //        [service deleteCartItems:dict usingBlock:^(NSString *resultMessage) {
-//            
-//            
+//
+//
 //            [_cartTableView reloadData];
 //            [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
 //        }];
-//        
+//
 //    }
 
 
@@ -160,19 +161,19 @@
     rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
     self.serviceTaxValueLabel.text = rsString;
     taxSum = taxSum + value1;
-
+    
     value1 = [[taxDict objectForKey:@"VAT"] floatValue];
     value1 = (value1*total)/100;
     rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
     self.vatValueLabel.text = rsString;
     taxSum = taxSum + value1;
-
+    
     value1 = [[taxDict objectForKey:@"delivery_charge"] floatValue];
     value1 = (value1*total)/100;
     rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
     self.dekieveryChagesValueLabel.text = rsString;
     taxSum = taxSum + value1;
-
+    
     value1 = [[taxDict objectForKey:@"packing_charge"] floatValue];
     value1 = (value1*total)/100;
     rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
@@ -180,8 +181,8 @@
     taxSum = taxSum + value1;
     totalAmount = totalAmount + taxSum;
     self.totalPrice.text = [NSString stringWithFormat:@"%.2f",totalAmount] ;
-
-
+    
+    
     
 }
 - (IBAction)updateProductQuantiy:(id)sender{
@@ -191,7 +192,7 @@
     quantity = [mealsCell.countLabel.text intValue];
     int priceOfItem= [cartItemObject.price intValue]/[cartItemObject.quantity intValue];
     mealsCell.totalPriceLabel.text = [NSString stringWithFormat:@"%d",priceOfItem * quantity];
-   
+    
     //Updating the latest cart details again
     cartItemObject.price = [NSString stringWithFormat:@"%d", priceOfItem*quantity];
     cartItemObject.quantity = [NSString stringWithFormat:@"%d", quantity];
@@ -215,46 +216,41 @@
         
     }];
     
-
+    
 }
 
 - (IBAction)deleteCartItem:(id)sender{
     UIButton *btn = (UIButton *)sender;
     CartItem *productObject = cartItemsArray[btn.tag];
     [cartItemsArray removeObject:productObject];
-    
-    [_cartTableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:btn.tag inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
-    
+    [_cartTableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:btn.tag inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.cartTableView reloadData];
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: productObject.inventories_id, @"inventories_id", @"0", @"quantity",  nil];
     SVService *service = [[SVService alloc] init];
     [service addToCart:dict usingBlock:^(NSString *resultMessage) {
         if (resultMessage != nil && [resultMessage isEqualToString:@"Item has been removed from cart"]) {
             
         }
-        
     }];
-    
-
 }
-
 
 - (IBAction)applyButtonAction:(id)sender {
     if (totalAmount > 0) {
-    
-    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:self.promoCodeTextField.text,@"code",nil];
-    SVService *service = [[SVService alloc] init];
-    
-    [service couponCode:dict usingBlock:^(NSString *resultArray) {
-        isCouponApplied = YES;
-        self.amountDiscountLabel.text = [NSString stringWithFormat:@"- %.2f ₹",[[resultArray valueForKey:@"amount"]floatValue]];
-        coupondCodeDiscount = [[resultArray valueForKey:@"amount"]floatValue];
-        totalAmount = totalAmount - coupondCodeDiscount;
-        self.totalPrice.text = [NSString stringWithFormat:@"%.2f",totalAmount];
-        self.applyButton.enabled = NO;
-        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
         
-    }];
+        [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:self.promoCodeTextField.text,@"code",nil];
+        SVService *service = [[SVService alloc] init];
+        
+        [service couponCode:dict usingBlock:^(NSString *resultArray) {
+            isCouponApplied = YES;
+            self.amountDiscountLabel.text = [NSString stringWithFormat:@"- %.2f ₹",[[resultArray valueForKey:@"amount"]floatValue]];
+            coupondCodeDiscount = [[resultArray valueForKey:@"amount"]floatValue];
+            totalAmount = totalAmount - coupondCodeDiscount;
+            self.totalPrice.text = [NSString stringWithFormat:@"%.2f",totalAmount];
+            self.applyButton.enabled = NO;
+            [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+            
+        }];
         
     }
     
@@ -266,7 +262,7 @@
     if (range.length == 1 && range.location == 0) {
         self.applyButton.enabled = YES;
         if(isCouponApplied == YES) {
-        totalAmount = totalAmount + coupondCodeDiscount;
+            totalAmount = totalAmount + coupondCodeDiscount;
         }
         isCouponApplied = NO;
         self.amountDiscountLabel.text = [NSString stringWithFormat:@"0"];
@@ -278,12 +274,19 @@
 }
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField{
-
+    
     return  YES;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
-
+    
 }
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"ToPaymentSelection"]){
+        HMPaymentTypeSelectionViewController *paymentSelectionVC = (HMPaymentTypeSelectionViewController *)segue.destinationViewController;
+        paymentSelectionVC.PaymentAmountString = [NSString stringWithFormat:@"%f",totalAmount];
+        
+        
+    }
+}
 @end

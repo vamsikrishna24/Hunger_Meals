@@ -7,6 +7,8 @@
 //
 
 #import "HMPaymentTypeSelectionViewController.h"
+#import "PaymentPageViewController.h"
+#import "PayTMViewController.h"
 
 @interface HMPaymentTypeSelectionViewController ()
 {
@@ -63,6 +65,16 @@
     }
     else if ([selectedPaymentMethod isEqualToString:@"PAYUMONEY"]){
         [self performSegueWithIdentifier:@"ToPayUMoney" sender:self];
+    
+    }
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"ToPayUMoney"]){
+        PaymentPageViewController *payUMoney = (PaymentPageViewController *)segue.destinationViewController;
+        payUMoney.paymentString = self.PaymentAmountString;
+    }else{
+        PayTMViewController *paytm = (PayTMViewController *)segue.destinationViewController;
+        paytm.paymentString = self.PaymentAmountString;
     }
 }
 +(NSString*)generateOrderIDWithPrefix:(NSString *)prefix
@@ -111,7 +123,7 @@
     orderDict[@"INDUSTRY_TYPE_ID"] = @"Retail";
     orderDict[@"WEBSITE"] = @"worldpressplg";
     //Order configuration in the order object
-    orderDict[@"TXN_AMOUNT"] = @"1";
+    orderDict[@"TXN_AMOUNT"] = self.PaymentAmountString;
     orderDict[@"ORDER_ID"] = [HMPaymentTypeSelectionViewController generateOrderIDWithPrefix:@""];
     orderDict[@"REQUEST_TYPE"] = @"DEFAULT";
     orderDict[@"CUST_ID"] = @"1234567890";

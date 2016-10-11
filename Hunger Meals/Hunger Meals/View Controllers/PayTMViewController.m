@@ -10,13 +10,14 @@
 
 @interface PayTMViewController ()
 
+
 @end
 
 @implementation PayTMViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self testPayment:nil];
 }
 
 +(NSString*)generateOrderIDWithPrefix:(NSString *)prefix
@@ -65,7 +66,7 @@
     orderDict[@"INDUSTRY_TYPE_ID"] = @"Retail";
     orderDict[@"WEBSITE"] = @"worldpressplg";
     //Order configuration in the order object
-    orderDict[@"TXN_AMOUNT"] = @"1";
+    orderDict[@"TXN_AMOUNT"] = self.paymentString;
     orderDict[@"ORDER_ID"] = [PayTMViewController generateOrderIDWithPrefix:@""];
     orderDict[@"REQUEST_TYPE"] = @"DEFAULT";
     orderDict[@"CUST_ID"] = @"1234567890";
@@ -127,5 +128,6 @@
 {
     DEBUGLOG(@"ViewController::didFinishCASTransaction:response = %@", response);
 }
+
 
 @end

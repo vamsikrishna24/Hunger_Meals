@@ -40,6 +40,7 @@
     [super viewWillAppear:animated];
     isCellExpanded = NO;
     tableViewHeight = 210;
+    [self fetchAndLoadData];
 }
 
 #pragma mark - Table view data source
@@ -140,7 +141,7 @@
     MealsTableViewCell *mealsCell = (MealsTableViewCell*)[_addOnTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:btn.tag inSection:0]];
     Product *productObject = productObjectsArray[btn.tag];
     NSInteger quantity = [mealsCell.countLabel.text intValue];
-    NSArray *array = productObject.inventories[btn.tag];
+    NSArray *array = productObject.inventories[0];
     NSString *stringArray = [array valueForKey:@"id"];
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: stringArray, @"inventories_id",[NSNumber numberWithInteger:quantity], @"quantity",  nil];
     SVService *service = [[SVService alloc] init];
