@@ -19,6 +19,8 @@
 #import "CartItem.h"
 #import "BTAlertController.h"
 #import "Itemlist.h"
+#import "AppDelegate.h"
+#import "ProjectConstants.h"
 
 
 
@@ -119,6 +121,11 @@
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
             
+            NSString *tokenString = [dictResult valueForKey:@"error"];
+            if([tokenString isEqualToString:@"Token is Expired"]){
+                [self signOut];
+                
+            }
             resultBlock([self parseProductsData:dictResult]);
         }
         else{
@@ -139,7 +146,10 @@
         if (response.statusCode == 200 && result!=nil) {
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
-            
+            NSString *tokenString = [dictResult valueForKey:@"error"];
+            if([tokenString isEqualToString:@"Token is Expired"]){
+                [self signOut];
+            }
             resultBlock([self parseProductsData:dictResult]);
         }
         else{
@@ -161,6 +171,11 @@
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
             
+            NSString *tokenString = [dictResult valueForKey:@"error"];
+            if([tokenString isEqualToString:@"Token is Expired"]){
+                [self signOut];
+                
+            }
             resultBlock([self parseProductsData:dictResult]);
         }
         else{
@@ -183,6 +198,11 @@
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
             
+            NSString *tokenString = [dictResult valueForKey:@"error"];
+            if([tokenString isEqualToString:@"Token is Expired"]){
+                [self signOut];
+                
+            }
             resultBlock([self parseProductsData:dictResult]);
         }
         else{
@@ -205,6 +225,11 @@
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
             
+            NSString *tokenString = [dictResult valueForKey:@"error"];
+            if([tokenString isEqualToString:@"Token is Expired"]){
+                [self signOut];
+                
+            }
             resultBlock([self parseCartData:dictResult]);
         }
         else{
@@ -229,6 +254,11 @@
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
             
+            NSString *tokenString = [dictResult valueForKey:@"error"];
+            if([tokenString isEqualToString:@"Token is Expired"]){
+                [self signOut];
+                
+            }
             resultBlock([self parseProductsData:dictResult]);
         }
         else{
@@ -252,6 +282,11 @@
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
             
+            NSString *tokenString = [dictResult valueForKey:@"error"];
+            if([tokenString isEqualToString:@"Token is Expired"]){
+                [self signOut];
+                
+            }
             resultBlock([self parseCartData:dictResult]);
         }
         else{
@@ -274,6 +309,11 @@
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
             
+            NSString *tokenString = [dictResult valueForKey:@"error"];
+            if([tokenString isEqualToString:@"Token is Expired"]){
+                [self signOut];
+                
+            }
             resultBlock([self parseOrdersData:dictResult]);
         }
         else{
@@ -292,7 +332,7 @@
         if (response.statusCode == 200 && result!=nil) {
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
-            
+        
             //resultBlock([self parseArrayProductsData:(NSMutableArray *)dictResult]);
             resultBlock((NSMutableArray *)dictResult);
         }
@@ -312,6 +352,11 @@
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
             
+            NSString *tokenString = [dictResult valueForKey:@"error"];
+            if([tokenString isEqualToString:@"Token is Expired"]){
+                [self signOut];
+                
+            }
             resultBlock([self parseUserLoginData:dictResult]);
         }
         else{
@@ -335,6 +380,12 @@
         if (response.statusCode == 200 && result!=nil) {
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            NSString *tokenString = [dictResult valueForKey:@"error"];
+            if([tokenString isEqualToString:@"Token is Expired"]){
+                [self signOut];
+                
+            }
             NSDictionary *resultDict = [dictResult objectForKey:@"data"];
             NSString *resultMessage = [resultDict objectForKey:@"message"];
             
@@ -358,6 +409,13 @@
         if (response.statusCode == 200 && result!=nil) {
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            NSString *tokenString = [dictResult valueForKey:@"error"];
+            if([tokenString isEqualToString:@"Token is Expired"]){
+                
+                [self signOut];
+                
+            }
             NSString *resultDict = [dictResult objectForKey:@"data"];
           //  NSString *resultMessage = [resultDict objectForKey:@"message"];
             
@@ -403,6 +461,12 @@
         if (response.statusCode == 200 && result!=nil) {
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            NSString *tokenString = [dictResult valueForKey:@"error"];
+            if([tokenString isEqualToString:@"Token is Expired"]){
+                [self signOut];
+                
+            }
             NSDictionary *resultDict = [dictResult objectForKey:@"data"];
             NSString *resultMessage = [resultDict objectForKey:@"message"];
             
@@ -425,6 +489,12 @@
         if (response.statusCode == 200 && result!=nil) {
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            NSString *tokenString = [dictResult valueForKey:@"error"];
+            if([tokenString isEqualToString:@"Token is Expired"]){
+                [self signOut];
+                
+            }
             NSDictionary *resultDict = [dictResult objectForKey:@"data"];
             NSString *resultMessage = [resultDict objectForKey:@"message"];
             
@@ -704,4 +774,14 @@
     return base64String;
 }
 
+-(void)signOut{
+    [[NSUserDefaults standardUserDefaults] setObject: nil forKey:@"UserData"];
+    [[NSUserDefaults standardUserDefaults] setBool: NO forKey:@"isLoginValid"];
+    [[NSUserDefaults standardUserDefaults] setValue: nil forKey: @"selectedLocation"];
+    [[NSUserDefaults standardUserDefaults] setObject: @"NO" forKey: @"isLocationSelected"];
+    [FBSDKAccessToken setCurrentAccessToken:nil];
+    [[GIDSignIn sharedInstance] signOut];
+    [APPDELEGATE showInitialScreen];
+
+}
 @end
