@@ -16,6 +16,10 @@
 		2B03AB1E1DAFAEAB000DD8DA /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB061DAF58E5000DD8DA /* Roboto-Medium.ttf */; };
 		2B03AB1F1DAFAEAB000DD8DA /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB071DAF58E5000DD8DA /* Roboto-Regular.ttf */; };
 		2B03AB221DAFAEAB000DD8DA /* Soria font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB0A1DAF58E5000DD8DA /* Soria font.ttf */; };
+		2B03AB291DAFD100000DD8DA /* LobsterTwo-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB251DAFD0EC000DD8DA /* LobsterTwo-Bold.otf */; };
+		2B03AB2A1DAFD100000DD8DA /* LobsterTwo-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB261DAFD0EC000DD8DA /* LobsterTwo-BoldItalic.otf */; };
+		2B03AB2B1DAFD100000DD8DA /* LobsterTwo-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB271DAFD0EC000DD8DA /* LobsterTwo-Italic.otf */; };
+		2B03AB2C1DAFD100000DD8DA /* LobsterTwo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB281DAFD0EC000DD8DA /* LobsterTwo-Regular.otf */; };
 		2B085DBE1DA6715700EE2404 /* HMSlideMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B085DBD1DA6715700EE2404 /* HMSlideMenuTableViewCell.m */; };
 		2B227D391DAB892A00D5F583 /* HMOrderDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B227D381DAB892A00D5F583 /* HMOrderDetailTableViewController.m */; };
 		2B252C9E1D808F2F00CED084 /* HMAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B252C9D1D808F2F00CED084 /* HMAddressViewController.m */; };
@@ -154,6 +158,10 @@
 		2B03AB171DAF5F7C000DD8DA /* HmDelieveriAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HmDelieveriAddressViewController.m; sourceTree = "<group>"; };
 		2B03AB231DAFB492000DD8DA /* seravek-light-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "seravek-light-webfont.ttf"; sourceTree = "<group>"; };
 		2B03AB241DAFB492000DD8DA /* seravek-medium-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "seravek-medium-webfont.ttf"; sourceTree = "<group>"; };
+		2B03AB251DAFD0EC000DD8DA /* LobsterTwo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-Bold.otf"; sourceTree = "<group>"; };
+		2B03AB261DAFD0EC000DD8DA /* LobsterTwo-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-BoldItalic.otf"; sourceTree = "<group>"; };
+		2B03AB271DAFD0EC000DD8DA /* LobsterTwo-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-Italic.otf"; sourceTree = "<group>"; };
+		2B03AB281DAFD0EC000DD8DA /* LobsterTwo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-Regular.otf"; sourceTree = "<group>"; };
 		2B085DBC1DA6715700EE2404 /* HMSlideMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSlideMenuTableViewCell.h; sourceTree = "<group>"; };
 		2B085DBD1DA6715700EE2404 /* HMSlideMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSlideMenuTableViewCell.m; sourceTree = "<group>"; };
 		2B227D371DAB892A00D5F583 /* HMOrderDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMOrderDetailTableViewController.h; sourceTree = "<group>"; };
@@ -407,6 +415,10 @@
 				2B03AB0A1DAF58E5000DD8DA /* Soria font.ttf */,
 				2B03AB231DAFB492000DD8DA /* seravek-light-webfont.ttf */,
 				2B03AB241DAFB492000DD8DA /* seravek-medium-webfont.ttf */,
+				2B03AB251DAFD0EC000DD8DA /* LobsterTwo-Bold.otf */,
+				2B03AB261DAFD0EC000DD8DA /* LobsterTwo-BoldItalic.otf */,
+				2B03AB271DAFD0EC000DD8DA /* LobsterTwo-Italic.otf */,
+				2B03AB281DAFD0EC000DD8DA /* LobsterTwo-Regular.otf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -954,6 +966,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B03AB291DAFD100000DD8DA /* LobsterTwo-Bold.otf in Resources */,
+				2B03AB2A1DAFD100000DD8DA /* LobsterTwo-BoldItalic.otf in Resources */,
+				2B03AB2B1DAFD100000DD8DA /* LobsterTwo-Italic.otf in Resources */,
+				2B03AB2C1DAFD100000DD8DA /* LobsterTwo-Regular.otf in Resources */,
 				2B03AB1C1DAFAEAB000DD8DA /* glyphicons-halflings-regular.ttf in Resources */,
 				2B03AB1D1DAFAEAB000DD8DA /* Roboto-Light.ttf in Resources */,
 				2B03AB1E1DAFAEAB000DD8DA /* Roboto-Medium.ttf in Resources */,
