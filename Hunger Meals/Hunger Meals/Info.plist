@@ -5,8 +5,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Soria font.ttf</string>
-		<string>seravek-medium-webfont.ttf</string>
 		<string>seravek-light-webfont.ttf</string>
+		<string>seravek-medium-webfont.ttf</string>
 		<string>Roboto-Regular.ttf</string>
 		<string>Roboto-Medium.ttf</string>
 		<string>Roboto-Light.ttf</string>

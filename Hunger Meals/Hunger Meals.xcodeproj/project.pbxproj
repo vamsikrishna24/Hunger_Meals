@@ -15,8 +15,6 @@
 		2B03AB1D1DAFAEAB000DD8DA /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB051DAF58E5000DD8DA /* Roboto-Light.ttf */; };
 		2B03AB1E1DAFAEAB000DD8DA /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB061DAF58E5000DD8DA /* Roboto-Medium.ttf */; };
 		2B03AB1F1DAFAEAB000DD8DA /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB071DAF58E5000DD8DA /* Roboto-Regular.ttf */; };
-		2B03AB201DAFAEAB000DD8DA /* seravek-light-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB081DAF58E5000DD8DA /* seravek-light-webfont.ttf */; };
-		2B03AB211DAFAEAB000DD8DA /* seravek-medium-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB091DAF58E5000DD8DA /* seravek-medium-webfont.ttf */; };
 		2B03AB221DAFAEAB000DD8DA /* Soria font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB0A1DAF58E5000DD8DA /* Soria font.ttf */; };
 		2B085DBE1DA6715700EE2404 /* HMSlideMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B085DBD1DA6715700EE2404 /* HMSlideMenuTableViewCell.m */; };
 		2B227D391DAB892A00D5F583 /* HMOrderDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B227D381DAB892A00D5F583 /* HMOrderDetailTableViewController.m */; };
@@ -151,22 +149,11 @@
 		2B03AB051DAF58E5000DD8DA /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		2B03AB061DAF58E5000DD8DA /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		2B03AB071DAF58E5000DD8DA /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		2B03AB081DAF58E5000DD8DA /* seravek-light-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "seravek-light-webfont.ttf"; sourceTree = "<group>"; };
-		2B03AB091DAF58E5000DD8DA /* seravek-medium-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "seravek-medium-webfont.ttf"; sourceTree = "<group>"; };
 		2B03AB0A1DAF58E5000DD8DA /* Soria font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Soria font.ttf"; sourceTree = "<group>"; };
-		2B03AB0B1DAF5991000DD8DA /* LobsterTwo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-Bold.otf"; sourceTree = "<group>"; };
-		2B03AB0C1DAF5991000DD8DA /* LobsterTwo-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-BoldItalic.otf"; sourceTree = "<group>"; };
-		2B03AB0D1DAF5991000DD8DA /* LobsterTwo-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-Italic.otf"; sourceTree = "<group>"; };
-		2B03AB0E1DAF5991000DD8DA /* LobsterTwo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-Regular.otf"; sourceTree = "<group>"; };
-		2B03AB0F1DAF5991000DD8DA /* Quicksand_Dash.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Quicksand_Dash.otf; sourceTree = "<group>"; };
-		2B03AB101DAF5991000DD8DA /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.otf"; sourceTree = "<group>"; };
-		2B03AB111DAF5991000DD8DA /* Quicksand-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-BoldItalic.otf"; sourceTree = "<group>"; };
-		2B03AB121DAF5991000DD8DA /* Quicksand-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Italic.otf"; sourceTree = "<group>"; };
-		2B03AB131DAF5991000DD8DA /* Quicksand-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.otf"; sourceTree = "<group>"; };
-		2B03AB141DAF5991000DD8DA /* Quicksand-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-LightItalic.otf"; sourceTree = "<group>"; };
-		2B03AB151DAF5991000DD8DA /* Quicksand-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.otf"; sourceTree = "<group>"; };
 		2B03AB161DAF5F7C000DD8DA /* HmDelieveriAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HmDelieveriAddressViewController.h; sourceTree = "<group>"; };
 		2B03AB171DAF5F7C000DD8DA /* HmDelieveriAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HmDelieveriAddressViewController.m; sourceTree = "<group>"; };
+		2B03AB231DAFB492000DD8DA /* seravek-light-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "seravek-light-webfont.ttf"; sourceTree = "<group>"; };
+		2B03AB241DAFB492000DD8DA /* seravek-medium-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "seravek-medium-webfont.ttf"; sourceTree = "<group>"; };
 		2B085DBC1DA6715700EE2404 /* HMSlideMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSlideMenuTableViewCell.h; sourceTree = "<group>"; };
 		2B085DBD1DA6715700EE2404 /* HMSlideMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSlideMenuTableViewCell.m; sourceTree = "<group>"; };
 		2B227D371DAB892A00D5F583 /* HMOrderDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMOrderDetailTableViewController.h; sourceTree = "<group>"; };
@@ -417,20 +404,9 @@
 				2B03AB051DAF58E5000DD8DA /* Roboto-Light.ttf */,
 				2B03AB061DAF58E5000DD8DA /* Roboto-Medium.ttf */,
 				2B03AB071DAF58E5000DD8DA /* Roboto-Regular.ttf */,
-				2B03AB081DAF58E5000DD8DA /* seravek-light-webfont.ttf */,
-				2B03AB091DAF58E5000DD8DA /* seravek-medium-webfont.ttf */,
 				2B03AB0A1DAF58E5000DD8DA /* Soria font.ttf */,
-				2B03AB0B1DAF5991000DD8DA /* LobsterTwo-Bold.otf */,
-				2B03AB0C1DAF5991000DD8DA /* LobsterTwo-BoldItalic.otf */,
-				2B03AB0D1DAF5991000DD8DA /* LobsterTwo-Italic.otf */,
-				2B03AB0E1DAF5991000DD8DA /* LobsterTwo-Regular.otf */,
-				2B03AB0F1DAF5991000DD8DA /* Quicksand_Dash.otf */,
-				2B03AB101DAF5991000DD8DA /* Quicksand-Bold.otf */,
-				2B03AB111DAF5991000DD8DA /* Quicksand-BoldItalic.otf */,
-				2B03AB121DAF5991000DD8DA /* Quicksand-Italic.otf */,
-				2B03AB131DAF5991000DD8DA /* Quicksand-Light.otf */,
-				2B03AB141DAF5991000DD8DA /* Quicksand-LightItalic.otf */,
-				2B03AB151DAF5991000DD8DA /* Quicksand-Regular.otf */,
+				2B03AB231DAFB492000DD8DA /* seravek-light-webfont.ttf */,
+				2B03AB241DAFB492000DD8DA /* seravek-medium-webfont.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -982,8 +958,6 @@
 				2B03AB1D1DAFAEAB000DD8DA /* Roboto-Light.ttf in Resources */,
 				2B03AB1E1DAFAEAB000DD8DA /* Roboto-Medium.ttf in Resources */,
 				2B03AB1F1DAFAEAB000DD8DA /* Roboto-Regular.ttf in Resources */,
-				2B03AB201DAFAEAB000DD8DA /* seravek-light-webfont.ttf in Resources */,
-				2B03AB211DAFAEAB000DD8DA /* seravek-medium-webfont.ttf in Resources */,
 				2B03AB221DAFAEAB000DD8DA /* Soria font.ttf in Resources */,
 				2B03AB1A1DAFAE98000DD8DA /* amaranth.regular.ttf in Resources */,
 				2B03AB1B1DAFAE98000DD8DA /* Debby.ttf in Resources */,

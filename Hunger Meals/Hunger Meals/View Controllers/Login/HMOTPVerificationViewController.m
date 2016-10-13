@@ -36,7 +36,7 @@
 - (void)initialSetUp{
     UIColor *color = [UIColor colorWithRed:237.0f/255.0f green:140.0f/255.0f blue:37.0f/255.0f alpha:0.5];
     self.otpTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Enter OTP Here" attributes:@{NSForegroundColorAttributeName: color}];
-    [self.otpTextField setValue:[UIFont fontWithName: @"American Typewriter Bold" size: 10] forKeyPath:@"_placeholderLabel.font"];
+    [self.otpTextField setValue:[UIFont fontWithName: @"Roboto-Light" size: 13] forKeyPath:@"_placeholderLabel.font"];
     CALayer *bottomBorder = [CALayer layer];
     bottomBorder.frame = CGRectMake(0.0f, self.otpTextField.frame.size.height - 1, self.otpTextField.frame.size.width, 1.0f);
     bottomBorder.backgroundColor = [UIColor colorWithRed:159.0f/255.0f green:159.0f/255.0f blue:159.0f/255.0f alpha:0.5].CGColor;
