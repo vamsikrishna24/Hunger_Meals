@@ -12,6 +12,7 @@
 #import "CartItem.h"
 #import "Tax.h"
 #import "HMPaymentTypeSelectionViewController.h"
+#import "HmDelieveriAddressViewController.h"
 
 @interface HMCartViewController (){
     NSMutableArray *cartItemsArray;
@@ -283,8 +284,8 @@
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"ToPaymentSelection"]){
-        HMPaymentTypeSelectionViewController *paymentSelectionVC = (HMPaymentTypeSelectionViewController *)segue.destinationViewController;
-        paymentSelectionVC.PaymentAmountString = [NSString stringWithFormat:@"%f",totalAmount];
+        HmDelieveriAddressViewController *deliveryVC = (HmDelieveriAddressViewController *)segue.destinationViewController;
+        deliveryVC.PaymentAmountString = [NSString stringWithFormat:@"%f",totalAmount];
         
         
     }

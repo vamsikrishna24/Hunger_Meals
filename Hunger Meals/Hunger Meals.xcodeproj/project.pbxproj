@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B03AB181DAF5F7C000DD8DA /* HmDelieveriAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B03AB171DAF5F7C000DD8DA /* HmDelieveriAddressViewController.m */; };
+		2B03AB191DAF628A000DD8DA /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
+		2B03AB1A1DAFAE98000DD8DA /* amaranth.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB021DAF58E5000DD8DA /* amaranth.regular.ttf */; };
+		2B03AB1B1DAFAE98000DD8DA /* Debby.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB031DAF58E5000DD8DA /* Debby.ttf */; };
+		2B03AB1C1DAFAEAB000DD8DA /* glyphicons-halflings-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB041DAF58E5000DD8DA /* glyphicons-halflings-regular.ttf */; };
+		2B03AB1D1DAFAEAB000DD8DA /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB051DAF58E5000DD8DA /* Roboto-Light.ttf */; };
+		2B03AB1E1DAFAEAB000DD8DA /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB061DAF58E5000DD8DA /* Roboto-Medium.ttf */; };
+		2B03AB1F1DAFAEAB000DD8DA /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB071DAF58E5000DD8DA /* Roboto-Regular.ttf */; };
+		2B03AB201DAFAEAB000DD8DA /* seravek-light-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB081DAF58E5000DD8DA /* seravek-light-webfont.ttf */; };
+		2B03AB211DAFAEAB000DD8DA /* seravek-medium-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB091DAF58E5000DD8DA /* seravek-medium-webfont.ttf */; };
+		2B03AB221DAFAEAB000DD8DA /* Soria font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB0A1DAF58E5000DD8DA /* Soria font.ttf */; };
 		2B085DBE1DA6715700EE2404 /* HMSlideMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B085DBD1DA6715700EE2404 /* HMSlideMenuTableViewCell.m */; };
 		2B227D391DAB892A00D5F583 /* HMOrderDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B227D381DAB892A00D5F583 /* HMOrderDetailTableViewController.m */; };
 		2B252C9E1D808F2F00CED084 /* HMAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B252C9D1D808F2F00CED084 /* HMAddressViewController.m */; };
@@ -65,7 +76,6 @@
 		2BF98EB41DA89A55009573AB /* HMItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB31DA89A55009573AB /* HMItemList.m */; };
 		2BF98EB71DA8B7CE009573AB /* Itemlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB61DA8B7CE009573AB /* Itemlist.m */; };
 		2BF98EBA1DA8C812009573AB /* ItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB91DA8C812009573AB /* ItemTableViewCell.m */; };
-		2BFA575D1DAD51E50016CF9C /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
 		38977BBACBB1FF1B038F49FD /* libPods-Hunger MealsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B03796A71316DB85DCF5A7 /* libPods-Hunger MealsTests.a */; };
 		67A9DF2A319A1E2057942F80 /* libPods-Hunger Meals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517349AA1104418B811BF63 /* libPods-Hunger Meals.a */; };
 		9A0C43C71D2F868300A7BF6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43C61D2F868300A7BF6B /* main.m */; };
@@ -135,6 +145,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B03AB021DAF58E5000DD8DA /* amaranth.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = amaranth.regular.ttf; sourceTree = "<group>"; };
+		2B03AB031DAF58E5000DD8DA /* Debby.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Debby.ttf; sourceTree = "<group>"; };
+		2B03AB041DAF58E5000DD8DA /* glyphicons-halflings-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "glyphicons-halflings-regular.ttf"; sourceTree = "<group>"; };
+		2B03AB051DAF58E5000DD8DA /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		2B03AB061DAF58E5000DD8DA /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		2B03AB071DAF58E5000DD8DA /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		2B03AB081DAF58E5000DD8DA /* seravek-light-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "seravek-light-webfont.ttf"; sourceTree = "<group>"; };
+		2B03AB091DAF58E5000DD8DA /* seravek-medium-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "seravek-medium-webfont.ttf"; sourceTree = "<group>"; };
+		2B03AB0A1DAF58E5000DD8DA /* Soria font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Soria font.ttf"; sourceTree = "<group>"; };
+		2B03AB0B1DAF5991000DD8DA /* LobsterTwo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-Bold.otf"; sourceTree = "<group>"; };
+		2B03AB0C1DAF5991000DD8DA /* LobsterTwo-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-BoldItalic.otf"; sourceTree = "<group>"; };
+		2B03AB0D1DAF5991000DD8DA /* LobsterTwo-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-Italic.otf"; sourceTree = "<group>"; };
+		2B03AB0E1DAF5991000DD8DA /* LobsterTwo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-Regular.otf"; sourceTree = "<group>"; };
+		2B03AB0F1DAF5991000DD8DA /* Quicksand_Dash.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Quicksand_Dash.otf; sourceTree = "<group>"; };
+		2B03AB101DAF5991000DD8DA /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.otf"; sourceTree = "<group>"; };
+		2B03AB111DAF5991000DD8DA /* Quicksand-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-BoldItalic.otf"; sourceTree = "<group>"; };
+		2B03AB121DAF5991000DD8DA /* Quicksand-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Italic.otf"; sourceTree = "<group>"; };
+		2B03AB131DAF5991000DD8DA /* Quicksand-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.otf"; sourceTree = "<group>"; };
+		2B03AB141DAF5991000DD8DA /* Quicksand-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-LightItalic.otf"; sourceTree = "<group>"; };
+		2B03AB151DAF5991000DD8DA /* Quicksand-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.otf"; sourceTree = "<group>"; };
+		2B03AB161DAF5F7C000DD8DA /* HmDelieveriAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HmDelieveriAddressViewController.h; sourceTree = "<group>"; };
+		2B03AB171DAF5F7C000DD8DA /* HmDelieveriAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HmDelieveriAddressViewController.m; sourceTree = "<group>"; };
 		2B085DBC1DA6715700EE2404 /* HMSlideMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSlideMenuTableViewCell.h; sourceTree = "<group>"; };
 		2B085DBD1DA6715700EE2404 /* HMSlideMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSlideMenuTableViewCell.m; sourceTree = "<group>"; };
 		2B227D371DAB892A00D5F583 /* HMOrderDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMOrderDetailTableViewController.h; sourceTree = "<group>"; };
@@ -342,7 +374,7 @@
 			files = (
 				2B89E5041D5BBF640022EC67 /* CoreLocation.framework in Frameworks */,
 				67A9DF2A319A1E2057942F80 /* libPods-Hunger Meals.a in Frameworks */,
-				2BFA575D1DAD51E50016CF9C /* libPaymentsSDK.a in Frameworks */,
+				2B03AB191DAF628A000DD8DA /* libPaymentsSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +406,33 @@
 				9BD269D1071265531F331205 /* libPods-Hunger MealsUITests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2B03AB011DAF58C3000DD8DA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2B03AB021DAF58E5000DD8DA /* amaranth.regular.ttf */,
+				2B03AB031DAF58E5000DD8DA /* Debby.ttf */,
+				2B03AB041DAF58E5000DD8DA /* glyphicons-halflings-regular.ttf */,
+				2B03AB051DAF58E5000DD8DA /* Roboto-Light.ttf */,
+				2B03AB061DAF58E5000DD8DA /* Roboto-Medium.ttf */,
+				2B03AB071DAF58E5000DD8DA /* Roboto-Regular.ttf */,
+				2B03AB081DAF58E5000DD8DA /* seravek-light-webfont.ttf */,
+				2B03AB091DAF58E5000DD8DA /* seravek-medium-webfont.ttf */,
+				2B03AB0A1DAF58E5000DD8DA /* Soria font.ttf */,
+				2B03AB0B1DAF5991000DD8DA /* LobsterTwo-Bold.otf */,
+				2B03AB0C1DAF5991000DD8DA /* LobsterTwo-BoldItalic.otf */,
+				2B03AB0D1DAF5991000DD8DA /* LobsterTwo-Italic.otf */,
+				2B03AB0E1DAF5991000DD8DA /* LobsterTwo-Regular.otf */,
+				2B03AB0F1DAF5991000DD8DA /* Quicksand_Dash.otf */,
+				2B03AB101DAF5991000DD8DA /* Quicksand-Bold.otf */,
+				2B03AB111DAF5991000DD8DA /* Quicksand-BoldItalic.otf */,
+				2B03AB121DAF5991000DD8DA /* Quicksand-Italic.otf */,
+				2B03AB131DAF5991000DD8DA /* Quicksand-Light.otf */,
+				2B03AB141DAF5991000DD8DA /* Quicksand-LightItalic.otf */,
+				2B03AB151DAF5991000DD8DA /* Quicksand-Regular.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		2B45D6931D59122E00C873ED /* Cells */ = {
@@ -503,6 +562,8 @@
 			children = (
 				2BD458B71D6F4DEE00D48AE8 /* HMCartViewController.h */,
 				2BD458B81D6F4DEE00D48AE8 /* HMCartViewController.m */,
+				2B03AB161DAF5F7C000DD8DA /* HmDelieveriAddressViewController.h */,
+				2B03AB171DAF5F7C000DD8DA /* HmDelieveriAddressViewController.m */,
 			);
 			name = Cart;
 			path = Home;
@@ -548,6 +609,7 @@
 		9A0C43C41D2F868300A7BF6B /* Hunger Meals */ = {
 			isa = PBXGroup;
 			children = (
+				2B03AB011DAF58C3000DD8DA /* Fonts */,
 				A895EB3E1D74010600623D92 /* Modal */,
 				2B65CC471D59774A00056649 /* Images1 */,
 				A88444621D38D0A200887098 /* Basic */,
@@ -916,6 +978,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B03AB1C1DAFAEAB000DD8DA /* glyphicons-halflings-regular.ttf in Resources */,
+				2B03AB1D1DAFAEAB000DD8DA /* Roboto-Light.ttf in Resources */,
+				2B03AB1E1DAFAEAB000DD8DA /* Roboto-Medium.ttf in Resources */,
+				2B03AB1F1DAFAEAB000DD8DA /* Roboto-Regular.ttf in Resources */,
+				2B03AB201DAFAEAB000DD8DA /* seravek-light-webfont.ttf in Resources */,
+				2B03AB211DAFAEAB000DD8DA /* seravek-medium-webfont.ttf in Resources */,
+				2B03AB221DAFAEAB000DD8DA /* Soria font.ttf in Resources */,
+				2B03AB1A1DAFAE98000DD8DA /* amaranth.regular.ttf in Resources */,
+				2B03AB1B1DAFAE98000DD8DA /* Debby.ttf in Resources */,
 				2B45D6921D59106C00C873ED /* My_Location.png in Resources */,
 				2B7AC6F81D47AC3F00D59BB3 /* Dish_Images in Resources */,
 				2BC1DD0F1D5C65E900F00D7D /* meals_ban.jpg in Resources */,
@@ -1107,6 +1178,7 @@
 				2B7AC6FD1D47BB6F00D59BB3 /* HMDetailPageViewController.m in Sources */,
 				2B6ED9A41D6FD242000D672D /* MealsViewController.m in Sources */,
 				ACDD63951DAA4F4400B1889C /* PayTMViewController.m in Sources */,
+				2B03AB181DAF5F7C000DD8DA /* HmDelieveriAddressViewController.m in Sources */,
 				2B41F7981D74B78E0067F0C4 /* HMContentViewController.m in Sources */,
 				2BF98EBA1DA8C812009573AB /* ItemTableViewCell.m in Sources */,
 				AC423DD01D985D6B00B8A5E5 /* CartItem.m in Sources */,
@@ -1388,6 +1460,14 @@
 					Meals/Third,
 					Party,
 					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1512,6 +1592,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/sdk/2_1",
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 					"$(PROJECT_DIR)/Hunger",
 					Meals/Third,
 					Party,
