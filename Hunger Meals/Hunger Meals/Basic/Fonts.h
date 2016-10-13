@@ -13,4 +13,5 @@
 
 + (UIFont *) fontHelveticaWithSize:(CGFloat) fontSize;
 
++ (UIFont *) debbyWithSize:(CGFloat) fontSize;
 @end

@@ -65,7 +65,7 @@
         self.navigationController.navigationBar.titleTextAttributes =
         @{
                                                                 NSForegroundColorAttributeName: [UIColor orangeColor],
-                                                                NSFontAttributeName: [Fonts fontHelveticaWithSize:19.0]
+                                                                NSFontAttributeName: [Fonts debbyWithSize:25.0]
                                                                 };
     }
     

@@ -3243,7 +3243,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8B-Lx-ugp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1164" y="695"/>
+            <point key="canvasLocation" x="1516.5" y="674"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YCw-23-wzH">

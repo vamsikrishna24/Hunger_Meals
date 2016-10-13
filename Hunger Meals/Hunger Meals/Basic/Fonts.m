@@ -13,4 +13,8 @@
 + (UIFont *) fontHelveticaWithSize:(CGFloat) fontSize {
     return [UIFont fontWithName: @"Helvetica Neue" size: fontSize];
 }
+
++ (UIFont *) debbyWithSize:(CGFloat) fontSize {
+    return [UIFont fontWithName: @"Debby" size: fontSize];
+}
 @end
