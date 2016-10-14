@@ -14,6 +14,7 @@
 #import "HMPaymentTypeSelectionViewController.h"
 #import "HmDelieveriAddressViewController.h"
 
+
 @interface HMCartViewController (){
     NSMutableArray *cartItemsArray;
     NSString *rsString;
@@ -127,6 +128,8 @@
     cell.totalPriceLabel.text = [NSString stringWithFormat:@"%@ ₹",cartObject.price];
     cell.cartItemTitle.text = cartObject.product.name;
     cell.countLabel.text = cartObject.quantity;
+    
+    self.quantityString = cartObject.quantity;
     
     NSString *string = [NSString stringWithFormat:@"%@%@",imageAmazonlink,cartObject.product.image_url];
     [cell.cartItemsImageView sd_setImageWithURL:[NSURL URLWithString:string]placeholderImage:[UIImage imageNamed:@"placeholder.png"]];

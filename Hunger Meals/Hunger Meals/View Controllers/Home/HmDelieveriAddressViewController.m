@@ -30,8 +30,6 @@
     [self TextFieldsFonts];
     self.title = @"Delivery address";
     
-    [self saveLocation:@"narasannapeta"];
-    
 }
 -(void)textFieldProperties{
     
@@ -100,7 +98,7 @@
 }
 */
 
-- (void) saveLocation:(NSString *)address{
+- (void) saveLocation{
     
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: self.cityTextField.text, @"name", self.cityTextField.text, @"city", self.areaLocalityTextField.text, @"sublocation",  self.flatNumberTextField.text, @"address", @12.9317,  @"lat", @77.6227, @"lng", self.pinCodeTextField.text, @"zip", @"userlocation", @"type", nil];
     SVService *service = [[SVService alloc] init];
@@ -129,6 +127,7 @@
 
 
 - (IBAction)proceedToCheckoutAction:(id)sender {
+    [self saveLocation];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

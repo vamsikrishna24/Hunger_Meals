@@ -19,7 +19,6 @@
 		2B03AB2A1DAFD100000DD8DA /* LobsterTwo-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB261DAFD0EC000DD8DA /* LobsterTwo-BoldItalic.otf */; };
 		2B03AB2B1DAFD100000DD8DA /* LobsterTwo-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB271DAFD0EC000DD8DA /* LobsterTwo-Italic.otf */; };
 		2B03AB2C1DAFD100000DD8DA /* LobsterTwo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB281DAFD0EC000DD8DA /* LobsterTwo-Regular.otf */; };
-		2B03AB2D1DB01937000DD8DA /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
 		2B085DBE1DA6715700EE2404 /* HMSlideMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B085DBD1DA6715700EE2404 /* HMSlideMenuTableViewCell.m */; };
 		2B227D391DAB892A00D5F583 /* HMOrderDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B227D381DAB892A00D5F583 /* HMOrderDetailTableViewController.m */; };
 		2B252C9E1D808F2F00CED084 /* HMAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B252C9D1D808F2F00CED084 /* HMAddressViewController.m */; };
@@ -78,6 +77,7 @@
 		2BF98EB41DA89A55009573AB /* HMItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB31DA89A55009573AB /* HMItemList.m */; };
 		2BF98EB71DA8B7CE009573AB /* Itemlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB61DA8B7CE009573AB /* Itemlist.m */; };
 		2BF98EBA1DA8C812009573AB /* ItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB91DA8C812009573AB /* ItemTableViewCell.m */; };
+		2BFA56AF1DB0A664000A1E28 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
 		38977BBACBB1FF1B038F49FD /* libPods-Hunger MealsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B03796A71316DB85DCF5A7 /* libPods-Hunger MealsTests.a */; };
 		67A9DF2A319A1E2057942F80 /* libPods-Hunger Meals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517349AA1104418B811BF63 /* libPods-Hunger Meals.a */; };
 		9A0C43C71D2F868300A7BF6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43C61D2F868300A7BF6B /* main.m */; };
@@ -369,7 +369,7 @@
 			files = (
 				2B89E5041D5BBF640022EC67 /* CoreLocation.framework in Frameworks */,
 				67A9DF2A319A1E2057942F80 /* libPods-Hunger Meals.a in Frameworks */,
-				2B03AB2D1DB01937000DD8DA /* libPaymentsSDK.a in Frameworks */,
+				2BFA56AF1DB0A664000A1E28 /* libPaymentsSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1462,6 +1462,10 @@
 					Meals/Third,
 					Party,
 					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1586,6 +1590,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/sdk/2_1",
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 					"$(PROJECT_DIR)/Hunger",
 					Meals/Third,
 					Party,

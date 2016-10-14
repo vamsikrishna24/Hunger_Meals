@@ -12,6 +12,7 @@
 #import "Product.h"
 #import "Inventory.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "HMCartItemsViewController.h"
 
 @interface QuickbitesViewController (){
     MealsTableViewCell *cell;

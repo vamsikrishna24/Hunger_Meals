@@ -30,13 +30,18 @@
     SVService *service = [[SVService alloc] init];
 
     [service getCurrentActiveordersusingBlock:^(NSMutableArray *resultArray) {
-        orderArray = [resultArray copy];
+        
+        if (![resultArray isEqual:[NSNull null]]) {
+            if(resultArray){
+                
+                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Orders" message:@"Currently there are no orders to deliver" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                [alertView show];
+            }
+            orderArray = [resultArray copy];
 
-        if(resultArray.count == 0){
-            
-            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Orders" message:@"Currently there are no orders to deliver" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-            [alertView show];
         }
+
+
         [self.ordersTableView reloadData];
 
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
@@ -52,6 +57,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if(orderArray == 0){
+        return 0;
+    }
     return orderArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

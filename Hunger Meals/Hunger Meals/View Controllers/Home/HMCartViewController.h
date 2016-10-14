@@ -30,5 +30,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *amountDiscountLabel;
 - (IBAction)applyButtonAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *totalPrice;
+@property (weak, nonatomic)  NSString *quantityString;
+
 
 @end
