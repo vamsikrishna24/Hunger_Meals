@@ -8,9 +8,12 @@
 
 #import "HmDelieveriAddressViewController.h"
 #import "HMPaymentTypeSelectionViewController.h"
+#import "SVService.h"
 
 @interface HmDelieveriAddressViewController (){
     CALayer *bottomBorder;
+    NSMutableArray *savedLocationIDs;
+
 }
 
 @end
@@ -19,10 +22,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    savedLocationIDs = [[NSMutableArray alloc] init];
 
     [self textFieldProperties];
     
     [self TextFieldsFonts];
+    self.title = @"Delivery address";
+    
+    [self saveLocation:@"narasannapeta"];
     
 }
 -(void)textFieldProperties{
@@ -91,6 +99,34 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void) saveLocation:(NSString *)address{
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: self.cityTextField.text, @"name", self.cityTextField.text, @"city", self.areaLocalityTextField.text, @"sublocation",  self.flatNumberTextField.text, @"address", @12.9317,  @"lat", @77.6227, @"lng", self.pinCodeTextField.text, @"zip", @"userlocation", @"type", nil];
+    SVService *service = [[SVService alloc] init];
+    [service getLocationID:dict usingBlock:^(NSString *locationId) {
+        if (locationId != nil || ![locationId isEqualToString:@""]) {
+            [self syncLocationForUser:locationId];
+            [savedLocationIDs addObject:locationId];
+        }
+    }];
+}
+
+- (void)syncLocationForUser:(NSString *)locationID{
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: locationID, @"location_id", nil];
+    SVService *service = [[SVService alloc] init];
+    [service syncLocationToUserAccount:dict usingBlock:^(NSString *resultMessage) {
+        
+        if (resultMessage != nil || ![resultMessage isEqualToString:@""]) {
+            NSLog(@"%@", resultMessage);
+            
+        }
+        
+    }];
+    
+}
+
 
 - (IBAction)proceedToCheckoutAction:(id)sender {
 }

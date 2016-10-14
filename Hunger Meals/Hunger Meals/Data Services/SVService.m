@@ -294,7 +294,7 @@
                 [self signOut];
                 
             }
-            resultBlock([self parseCartData:dictResult]);
+            resultBlock([self parseArrayProductsData:dictResult]);
         }
         else{
             resultBlock(nil);
@@ -653,6 +653,14 @@
     NSError *error = nil;
     //NSDictionary *dict = (NSDictionary *)array;
    // NSArray *resultArr = [dict valueForKeyPath:@"data"];
+    NSMutableArray *parsedArray = [Product arrayOfModelsFromDictionaries:array error:&error];
+    return parsedArray;
+}
+
+- (NSMutableArray *)parseCurrentMealData:(NSMutableArray *)array {
+    NSError *error = nil;
+    //NSDictionary *dict = (NSDictionary *)array;
+    // NSArray *resultArr = [dict valueForKeyPath:@"data"];
     NSMutableArray *parsedArray = [Product arrayOfModelsFromDictionaries:array error:&error];
     return parsedArray;
 }

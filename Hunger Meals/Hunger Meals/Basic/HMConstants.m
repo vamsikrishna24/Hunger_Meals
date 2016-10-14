@@ -31,8 +31,6 @@ NSString * const kCurrentmealplan = @"%@/currmealplan";
 NSString * const kCurrentActiveOrders = @"%@/currentactiveorders";
 NSString * const kCurries = @"%@/products/category/curries?token=%@";;
 
-
-
 NSString * const kUserLoginURL = @"%@/login";
 NSString * const kUserSignUpURL = @"%@/jwcreate";
 NSString * const kSocialSignUpURL = @"%@/jwsocialauthenticate";
