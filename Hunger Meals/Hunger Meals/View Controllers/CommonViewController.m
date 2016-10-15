@@ -37,7 +37,7 @@
     [self prepareNavigationBarUI];
     
     //status bar color
-    [self setStatusBarBackgroundColor:[UIColor colorWithRed:255/255.0f green:166/255.0f blue:38/255.0f alpha:1.0f]];
+    [self setStatusBarBackgroundColor:[UIColor colorWithRed:234/255.0f green:90/255.0f blue:51/255.0f alpha:1.0f]];
 }
 
 - (void) initializations{
@@ -64,7 +64,7 @@
     else{
         self.navigationController.navigationBar.titleTextAttributes =
         @{
-                                                                NSForegroundColorAttributeName: [UIColor orangeColor],
+                                                                NSForegroundColorAttributeName: APPLICATION_COLOR,
                                                                 NSFontAttributeName: [Fonts debbyWithSize:25.0]
                                                                 };
     }
@@ -89,6 +89,7 @@
                                                                   target:self.navigationController
                                                                   action:@selector(popViewControllerAnimated:)];
     self.navigationItem.leftBarButtonItem = backButton;
+    self.navigationItem.leftBarButtonItem.tintColor = APPLICATION_COLOR;
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
