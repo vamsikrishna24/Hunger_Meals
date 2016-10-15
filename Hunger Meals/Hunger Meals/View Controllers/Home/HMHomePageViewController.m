@@ -386,17 +386,7 @@
         }
         if (indexPath.row == 2) {
             UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
-            
-            SVService *service = [[SVService alloc] init];
-            [service getmonthlyproductsusingBlock:^(NSMutableArray *resultArray) {
-                
-                // itemsListArray = resultArray;
-                
-                
-                
-                [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
-            }];            HMMonthlyDetailViewController *monthlyMealViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MonthlyMealsViewIdentifier"];
+            HMMonthlyDetailViewController *monthlyMealViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MonthlyMealsViewIdentifier"];
             [self.navigationController pushViewController:monthlyMealViewController animated:YES];
             
         }

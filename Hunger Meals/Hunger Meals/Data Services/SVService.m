@@ -21,6 +21,7 @@
 #import "Itemlist.h"
 #import "AppDelegate.h"
 #import "ProjectConstants.h"
+#import "Itemlist.h"
 
 
 
@@ -266,7 +267,7 @@
                 [self signOut];
                 
             }
-            resultBlock([self parseProductsData:dictResult]);
+            resultBlock([self parseItemsData:dictResult]);
         }
         else{
             resultBlock(nil);
@@ -646,6 +647,14 @@
     NSDictionary *dict = (NSDictionary *)array;
     NSArray *resultArr = [dict valueForKeyPath:@"data"];
     NSMutableArray *parsedArray = [Product arrayOfModelsFromDictionaries:resultArr error:&error];
+    return parsedArray;
+}
+
+- (NSMutableArray *)parseItemsData:(NSMutableArray *)array {
+    NSError *error = nil;
+    NSDictionary *dict = (NSDictionary *)array;
+    NSArray *resultArr = [dict valueForKeyPath:@"data"];
+    NSMutableArray *parsedArray = [Itemlist arrayOfModelsFromDictionaries:resultArr error:&error];
     return parsedArray;
 }
 

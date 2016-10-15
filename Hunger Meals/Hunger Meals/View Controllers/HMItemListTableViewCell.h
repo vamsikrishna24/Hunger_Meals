@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HMItemListTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *lunchButtonOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *dinnerButtonOutlet;
 
 @end

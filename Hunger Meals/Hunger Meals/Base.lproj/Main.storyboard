@@ -2849,7 +2849,7 @@
                                     <constraint firstAttribute="height" constant="558" id="eoB-4K-hLZ"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Calendarcell" rowHeight="105" id="5HG-Zm-y9Z">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Calendarcell" rowHeight="105" id="5HG-Zm-y9Z" customClass="HMItemListTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="414" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5HG-Zm-y9Z" id="kjN-2L-wgI">
@@ -2910,6 +2910,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="dinnerButtonOutlet" destination="JK7-uA-Xdv" id="oXi-LX-97W"/>
+                                            <outlet property="lunchButtonOutlet" destination="7gB-YY-3TV" id="mAf-zk-pwK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
