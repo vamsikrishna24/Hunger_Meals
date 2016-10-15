@@ -10,6 +10,7 @@
 #import "HMItemListTableViewCell.h"
 #import "HMItemList.h"
 #import "ItemTableViewCell.h"
+#import "MTGenericAlertView.h"
 
 @interface HMMealPlannerViewController (){
     NSMutableDictionary *_eventsByDate;
@@ -18,8 +19,11 @@
     NSMutableArray *itemsListArray;
     HMItemList *itemListView;
     MTGenericAlertView *MTGenericAlertViewtainer;
-    NSString *str;
-
+    NSString *lunchText;
+    NSString *dinnerText;
+    NSIndexPath *selectedCalenderIndexPath;
+    BOOL isLunchBtn;
+    BOOL isDinnerBtn;
 }
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
 @property (strong, nonatomic) IBOutlet UIView *instanceView;
@@ -38,7 +42,10 @@
     }
     
     self.title = @"Vertical";
-    
+    lunchText = @"";
+    dinnerText = @"";
+    isLunchBtn = NO;
+    isDinnerBtn = NO;
     return self;
 }
 
@@ -217,28 +224,41 @@
             [MTGenericAlertViewtainer close];
             
             ItemTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-         str = cell.itemNameLabel.text;
+            if(isLunchBtn){
+                lunchText = cell.itemNameLabel.text;
+            } else{
+                dinnerText = cell.itemNameLabel.text;
+            }
+            //reload calenderTableView
+            // Add them in an index path array
+            NSArray* indexArray = [NSArray arrayWithObjects:selectedCalenderIndexPath, nil];
+            // Launch reload for the two index path
+            [self.calendarTableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationFade];
         }
     }
     else if(tableView == self.calendarTableView){
         NSIndexPath *selectedIndexPath = [self.calendarTableView indexPathForSelectedRow];
         if(selectedIndexPath){
             
-            HMItemListTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-            [cell.lunchButtonOutlet setTitle:[NSString stringWithFormat:@" Lunch: %@",str] forState:UIControlStateNormal];
-            [self.itemListTableView reloadData];
+//            HMItemListTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//            [cell.lunchButtonOutlet setTitle:[NSString stringWithFormat:@" Lunch: %@",str] forState:UIControlStateNormal];
+//            [self.itemListTableView reloadData];
 //            [cell.lunchButtonOutlet addTarget:self action:@selector(lunchButtonAction:) forControlEvents:UIControlEventTouchUpInside];
 //            [cell.lunchButtonOutlet addTarget:self action:@selector(lunchButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         }
-    
     }
     
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell;
     if (tableView == self.calendarTableView) {
         HMItemListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"Calendarcell"];
+        cell.lunchButtonOutlet.tag = indexPath.row;
+        cell.dinnerButtonOutlet.tag = indexPath.row;
+        [cell.lunchButtonOutlet setTitle:[NSString stringWithFormat:@" Lunch: %@",lunchText] forState:UIControlStateNormal];
+        [cell.dinnerButtonOutlet setTitle:[NSString stringWithFormat:@" Dinner: %@",dinnerText] forState:UIControlStateNormal];
         return cell;
     }else if(tableView == self.itemListTableView){
         
@@ -291,31 +311,34 @@
     
 }
 - (IBAction)lunchButtonAction:(id)sender {
-   
-
+    isLunchBtn = YES;
+    isDinnerBtn = NO;
+    selectedCalenderIndexPath = [NSIndexPath indexPathForRow:[sender tag] inSection:0];
+    
     if(itemsListArray.count >= 1)
     {
-     MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:@"Menu" titleColor:nil titleFont:nil backgroundImage:nil];
-       // [MTGenericAlertViewtainer show];
-
-
-    //self.instanceView.hidden = NO;
-    self.navigationController.navigationBar.userInteractionEnabled = NO;
-  //  UIButton *btn = (UIButton *)sender;
-    [MTGenericAlertViewtainer setCustomInputView:self.instanceView]; //Add customized view to this method
-    MTGenericAlertViewtainer.tag = 3;
- //   [MTGenericAlertViewtainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
-    [MTGenericAlertViewtainer show];
+        MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:@"Menu" titleColor:nil titleFont:nil backgroundImage:nil];
+//        self.navigationController.navigationBar.userInteractionEnabled = NO;
+        [MTGenericAlertViewtainer setCustomInputView:self.instanceView];
+        [MTGenericAlertViewtainer show];
+        
+        [MTGenericAlertViewtainer setAlertViewButtonActionCompletionHandler:^(MTGenericAlertView *alertView, int buttonIndex) {
+            NSLog(@"Block: Button at position %d is clicked on alertView %d.", buttonIndex, (int)alertView.tag);
+            [alertView close];
+            
+        }];
     }
    
     [self.itemListTableView reloadData];
 
 }
 - (IBAction)dinnerButtonAction:(id)sender {
+    isLunchBtn = NO;
+    isDinnerBtn = YES;
+    selectedCalenderIndexPath = [NSIndexPath indexPathForRow:[sender tag] inSection:0];
     [MTGenericAlertViewtainer show];
     self.navigationController.navigationBar.userInteractionEnabled = NO;
     [self.itemListTableView reloadData];
-
 }
 
 -(void)fetchMonthlyMealPlan{
