@@ -10,6 +10,7 @@
 #import "HMSlideMenuTableViewCell.h"
 #import "HMOrdersListTableViewController.h"
 #import "HMInviteViewController.h"
+#import "HMUserProfileViewController.h"
 
 
 @interface SlideMenuViewController (){
@@ -91,10 +92,20 @@
         
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         
-        HMInviteViewController *orderList = [storyBoard instantiateViewControllerWithIdentifier:@"InviteFriendIdentifier"];
+        HMInviteViewController *inviteVC = [storyBoard instantiateViewControllerWithIdentifier:@"InviteFriendIdentifier"];
         UINavigationController *senav = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationIdentifier"];
         //[self performSegueWithIdentifier:@"NavigationIdentifier" sender:nil];
-        [self presentViewController:orderList animated:YES completion:nil];
+        [self presentViewController:inviteVC animated:YES completion:nil];
+    }
+    if (indexPath.row == 5){
+        
+        
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        
+        HMUserProfileViewController *profileVC = [storyBoard instantiateViewControllerWithIdentifier:@"UserProfileIdentifier"];
+        UINavigationController *senav = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationIdentifier"];
+        //[self performSegueWithIdentifier:@"NavigationIdentifier" sender:nil];
+        [self presentViewController:profileVC animated:YES completion:nil];
     }
     
     if (indexPath.row == 6) {
