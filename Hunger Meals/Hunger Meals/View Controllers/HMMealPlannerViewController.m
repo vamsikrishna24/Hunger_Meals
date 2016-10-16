@@ -26,6 +26,7 @@
     int *calenderCount;
     NSMutableArray *lunchItemsList;
     NSMutableArray *dinnerItemsList;
+    NSString *currentMonth;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
@@ -96,6 +97,12 @@
         [dinnerItemsList addObject:[NSNull null]];
     }
     }
+   //get month name
+    NSDate *now = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM"];
+    NSString *month = [formatter stringFromDate:now];
+    currentMonth = month;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -267,7 +274,8 @@
     UITableViewCell *cell;
     if (tableView == self.calendarTableView) {
         HMItemListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"Calendarcell"];
-        cell.dateLbl.text =  [NSString stringWithFormat:@"%ld st",indexPath.row+1];
+        NSString *date = currentMonth;
+        cell.dateLbl.text = [date stringByAppendingString:[NSString stringWithFormat:@" %ld",indexPath.row+1]];
         cell.lunchButtonOutlet.tag = indexPath.row;
         cell.dinnerButtonOutlet.tag = indexPath.row;
         NSString *lunchText = lunchItemsList[indexPath.row];

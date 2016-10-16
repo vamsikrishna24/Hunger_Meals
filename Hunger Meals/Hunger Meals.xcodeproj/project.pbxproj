@@ -125,7 +125,7 @@
 		ACD537CD1D9419700023B834 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD537CC1D9419700023B834 /* UserData.m */; };
 		ACDD63951DAA4F4400B1889C /* PayTMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDD63941DAA4F4400B1889C /* PayTMViewController.m */; };
 		E8F6627C1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F6627B1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m */; };
-		E8F7BF6E1DB3214B005F6225 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
+		E8F7BF6F1DB33941005F6225 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
 		FBDF5E03F7D934EDB95266C0 /* libPods-Hunger MealsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD269D1071265531F331205 /* libPods-Hunger MealsUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -369,7 +369,7 @@
 			files = (
 				2B89E5041D5BBF640022EC67 /* CoreLocation.framework in Frameworks */,
 				67A9DF2A319A1E2057942F80 /* libPods-Hunger Meals.a in Frameworks */,
-				E8F7BF6E1DB3214B005F6225 /* libPaymentsSDK.a in Frameworks */,
+				E8F7BF6F1DB33941005F6225 /* libPaymentsSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1478,6 +1478,10 @@
 					Meals/Third,
 					Party,
 					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1602,6 +1606,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/sdk/2_1",
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 					"$(PROJECT_DIR)/Hunger",
 					Meals/Third,
 					Party,
