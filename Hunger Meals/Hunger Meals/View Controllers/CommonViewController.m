@@ -28,7 +28,7 @@
                                                                             target:nil
                                                                             action:nil];
     
-    [self.navigationController.navigationBar setTintColor:[UIColor orangeColor]];
+    [self.navigationController.navigationBar setTintColor:APPLICATION_COLOR];
 }
 
 - (void) viewWillAppear:(BOOL)animated {

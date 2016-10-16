@@ -42,9 +42,9 @@
     YSLContainerViewController *containerVC = [[YSLContainerViewController alloc] initWithControllers:@[quickBitesVC,southIndianVC,northIndianVC,curriesVC,addOnsVC] topBarHeight:statusHeight + navigationHeight withFrame:frame parentViewController:self];
     
     containerVC.menuItemFont = [UIFont fontWithName:@"Soria-Soria" size:13];
-    containerVC.menuItemTitleColor = [UIColor colorWithRed:253/255.0f green:165/255.0f blue:57/255.0f alpha:1.0f];
-    containerVC.menuItemSelectedTitleColor = [UIColor colorWithRed:253/255.0f green:165/255.0f blue:57/255.0f alpha:1.0f];
-    containerVC.menuIndicatorColor = [UIColor colorWithRed:253/255.0f green:165/255.0f blue:57/255.0f alpha:1.0f];
+    containerVC.menuItemTitleColor = APPLICATION_COLOR;
+    containerVC.menuItemSelectedTitleColor = APPLICATION_COLOR;
+    containerVC.menuIndicatorColor = APPLICATION_COLOR;
     containerVC.menuBackGroudColor = [UIColor colorWithRed:238.0/255.0f green:238.0/255.0f blue:238.0/255.0f alpha:1.0f];
 
     [self.view addSubview:containerVC.view];

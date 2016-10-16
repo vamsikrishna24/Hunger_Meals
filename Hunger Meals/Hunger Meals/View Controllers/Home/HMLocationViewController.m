@@ -83,7 +83,7 @@
     UIView* footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40)];
     
     // 2. Set a custom background color and a border
-    footerView.backgroundColor = [UIColor orangeColor];
+    footerView.backgroundColor = APPLICATION_COLOR;
     footerView.layer.borderColor = [UIColor colorWithWhite:0.5 alpha:1.0].CGColor;
     footerView.layer.borderWidth = 1.0;
     

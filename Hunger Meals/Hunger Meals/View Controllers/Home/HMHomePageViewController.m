@@ -255,8 +255,8 @@
             textField.backgroundColor = [UIColor clearColor];
             locationTable.backgroundColor = [UIColor clearColor];
             textField.layer.borderWidth = 1;
-            textField.layer.borderColor = [UIColor orangeColor].CGColor;
-            textField.textColor = [UIColor orangeColor];
+            textField.layer.borderColor = APPLICATION_COLOR.CGColor;
+            textField.textColor = APPLICATION_COLOR;
             textField.alpha = 0.8;
             textField.clipsToBounds = YES;
             [cell.contentView addSubview:textField];
@@ -265,7 +265,7 @@
             UIButton *locateMeButton = [[UIButton alloc]initWithFrame:CGRectMake(10, textField.frame.size.height+textField.frame.origin.y, cell.frame.size.width-20, 35)];
             [locateMeButton setTitle:@"Let us locate you?" forState:UIControlStateNormal];
             [locateMeButton addTarget: self action: @selector(showCurrentLocation) forControlEvents:UIControlEventTouchUpInside];
-            [locateMeButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+            [locateMeButton setTitleColor:APPLICATION_COLOR forState:UIControlStateNormal];
             locateMeButton.titleLabel.font = [UIFont systemFontOfSize:16];
             [cell.contentView addSubview:locateMeButton];
             
@@ -290,7 +290,7 @@
         textView.text = stringToDisplay;
         textView.editable = NO;
         textView.selectable = NO;
-        textView.textColor = [UIColor orangeColor];
+        textView.textColor = APPLICATION_COLOR;
         
     }else{
         if (indexPath.row == 0) {

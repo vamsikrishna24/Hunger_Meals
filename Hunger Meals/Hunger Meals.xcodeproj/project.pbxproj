@@ -20,8 +20,8 @@
 		2B03AB2B1DAFD100000DD8DA /* LobsterTwo-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB271DAFD0EC000DD8DA /* LobsterTwo-Italic.otf */; };
 		2B03AB2C1DAFD100000DD8DA /* LobsterTwo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB281DAFD0EC000DD8DA /* LobsterTwo-Regular.otf */; };
 		2B085DBE1DA6715700EE2404 /* HMSlideMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B085DBD1DA6715700EE2404 /* HMSlideMenuTableViewCell.m */; };
-		2B0C2FAD1DB3B511000FCAB4 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
 		2B0C2FB01DB3B973000FCAB4 /* HMInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C2FAF1DB3B973000FCAB4 /* HMInviteViewController.m */; };
+		2B203BAF1DB3C085006604BE /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
 		2B227D391DAB892A00D5F583 /* HMOrderDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B227D381DAB892A00D5F583 /* HMOrderDetailTableViewController.m */; };
 		2B252C9E1D808F2F00CED084 /* HMAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B252C9D1D808F2F00CED084 /* HMAddressViewController.m */; };
 		2B252CA11D8097C500CED084 /* HMAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B252CA01D8097C500CED084 /* HMAddressTableViewCell.m */; };
@@ -372,7 +372,7 @@
 			files = (
 				2B89E5041D5BBF640022EC67 /* CoreLocation.framework in Frameworks */,
 				67A9DF2A319A1E2057942F80 /* libPods-Hunger Meals.a in Frameworks */,
-				2B0C2FAD1DB3B511000FCAB4 /* libPaymentsSDK.a in Frameworks */,
+				2B203BAF1DB3C085006604BE /* libPaymentsSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1500,6 +1500,10 @@
 					Meals/Third,
 					Party,
 					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1624,6 +1628,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/sdk/2_1",
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 					"$(PROJECT_DIR)/Hunger",
 					Meals/Third,
 					Party,

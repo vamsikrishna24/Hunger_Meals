@@ -7,6 +7,7 @@
 //
 
 #import "HMTabBarViewController.h"
+#import "ProjectConstants.h"
 
 @interface HMTabBarViewController ()
 
@@ -16,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[UITabBar appearance] setTintColor:[UIColor orangeColor]];
+    [[UITabBar appearance] setTintColor:APPLICATION_COLOR];
 
     // Do any additional setup after loading the view.
 }
