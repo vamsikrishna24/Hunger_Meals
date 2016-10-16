@@ -126,7 +126,7 @@
 
 #define TOPBAR_COLOR [UIColor colorWithRed:171.0/255.0 green:171.0/255.0 blue:181.0/255.0 alpha:1]
 
-#define APPLICATION_COLOR [UIColor colorWithRed:238/255.0f green:86/255.0f blue:73/255.0f alpha:1]
+#define APPLICATION_COLOR [UIColor colorWithRed:238/255.0f green:98/255.0f blue:58/255.0f alpha:1]
 
 #define UNKNOWN_USER_NAME @"User Name"
 #define CURRENT_PASSWORD @"Current_Password"
