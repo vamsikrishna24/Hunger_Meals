@@ -20,6 +20,8 @@
 		2B03AB2B1DAFD100000DD8DA /* LobsterTwo-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB271DAFD0EC000DD8DA /* LobsterTwo-Italic.otf */; };
 		2B03AB2C1DAFD100000DD8DA /* LobsterTwo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB281DAFD0EC000DD8DA /* LobsterTwo-Regular.otf */; };
 		2B085DBE1DA6715700EE2404 /* HMSlideMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B085DBD1DA6715700EE2404 /* HMSlideMenuTableViewCell.m */; };
+		2B0C2FAD1DB3B511000FCAB4 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
+		2B0C2FB01DB3B973000FCAB4 /* HMInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C2FAF1DB3B973000FCAB4 /* HMInviteViewController.m */; };
 		2B227D391DAB892A00D5F583 /* HMOrderDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B227D381DAB892A00D5F583 /* HMOrderDetailTableViewController.m */; };
 		2B252C9E1D808F2F00CED084 /* HMAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B252C9D1D808F2F00CED084 /* HMAddressViewController.m */; };
 		2B252CA11D8097C500CED084 /* HMAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B252CA01D8097C500CED084 /* HMAddressTableViewCell.m */; };
@@ -125,7 +127,6 @@
 		ACD537CD1D9419700023B834 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD537CC1D9419700023B834 /* UserData.m */; };
 		ACDD63951DAA4F4400B1889C /* PayTMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDD63941DAA4F4400B1889C /* PayTMViewController.m */; };
 		E8F6627C1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F6627B1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m */; };
-		E8F7BF6F1DB33941005F6225 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
 		FBDF5E03F7D934EDB95266C0 /* libPods-Hunger MealsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD269D1071265531F331205 /* libPods-Hunger MealsUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -164,6 +165,8 @@
 		2B03AB281DAFD0EC000DD8DA /* LobsterTwo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-Regular.otf"; sourceTree = "<group>"; };
 		2B085DBC1DA6715700EE2404 /* HMSlideMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSlideMenuTableViewCell.h; sourceTree = "<group>"; };
 		2B085DBD1DA6715700EE2404 /* HMSlideMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSlideMenuTableViewCell.m; sourceTree = "<group>"; };
+		2B0C2FAE1DB3B973000FCAB4 /* HMInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMInviteViewController.h; sourceTree = "<group>"; };
+		2B0C2FAF1DB3B973000FCAB4 /* HMInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMInviteViewController.m; sourceTree = "<group>"; };
 		2B227D371DAB892A00D5F583 /* HMOrderDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMOrderDetailTableViewController.h; sourceTree = "<group>"; };
 		2B227D381DAB892A00D5F583 /* HMOrderDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMOrderDetailTableViewController.m; sourceTree = "<group>"; };
 		2B252C9C1D808F2F00CED084 /* HMAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAddressViewController.h; sourceTree = "<group>"; };
@@ -369,7 +372,7 @@
 			files = (
 				2B89E5041D5BBF640022EC67 /* CoreLocation.framework in Frameworks */,
 				67A9DF2A319A1E2057942F80 /* libPods-Hunger Meals.a in Frameworks */,
-				E8F7BF6F1DB33941005F6225 /* libPaymentsSDK.a in Frameworks */,
+				2B0C2FAD1DB3B511000FCAB4 /* libPaymentsSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,6 +715,8 @@
 			children = (
 				A831CA7C1D37ACC200B96F4F /* SlideMenuViewController.h */,
 				A831CA7D1D37ACC200B96F4F /* SlideMenuViewController.m */,
+				2B0C2FAE1DB3B973000FCAB4 /* HMInviteViewController.h */,
+				2B0C2FAF1DB3B973000FCAB4 /* HMInviteViewController.m */,
 			);
 			path = "Slide Menu";
 			sourceTree = "<group>";
@@ -1157,6 +1162,7 @@
 				A88FB7431D5C5072005E8667 /* SlideMenuViewController.m in Sources */,
 				2B6ED9AF1D6FD915000D672D /* NorthIndianViewController.m in Sources */,
 				2BF5B0571D96DCE400A3D315 /* Inventory.m in Sources */,
+				2B0C2FB01DB3B973000FCAB4 /* HMInviteViewController.m in Sources */,
 				2BBDA6151D9B94A700F632CC /* Coupon.m in Sources */,
 				2B62B4821D678BD400B3C526 /* HMSignUpFirstViewController.m in Sources */,
 				A884446C1D38D5D600887098 /* BTAlertController.m in Sources */,
@@ -1482,6 +1488,18 @@
 					Meals/Third,
 					Party,
 					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1606,6 +1624,18 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/sdk/2_1",
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 					"$(PROJECT_DIR)/Hunger",
 					Meals/Third,
 					Party,

@@ -9,6 +9,7 @@
 #import "SlideMenuViewController.h"
 #import "HMSlideMenuTableViewCell.h"
 #import "HMOrdersListTableViewController.h"
+#import "HMInviteViewController.h"
 
 
 @interface SlideMenuViewController (){
@@ -82,6 +83,16 @@
       
             HMOrdersListTableViewController *orderList = [storyBoard instantiateViewControllerWithIdentifier:@"OrdersViewIdentifier"];
            UINavigationController *senav = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationIdentifier"];
+        //[self performSegueWithIdentifier:@"NavigationIdentifier" sender:nil];
+        [self presentViewController:orderList animated:YES completion:nil];
+    }
+    if (indexPath.row == 4){
+        
+        
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        
+        HMInviteViewController *orderList = [storyBoard instantiateViewControllerWithIdentifier:@"InviteFriendIdentifier"];
+        UINavigationController *senav = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationIdentifier"];
         //[self performSegueWithIdentifier:@"NavigationIdentifier" sender:nil];
         [self presentViewController:orderList animated:YES completion:nil];
     }
