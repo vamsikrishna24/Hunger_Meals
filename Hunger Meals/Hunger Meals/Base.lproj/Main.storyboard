@@ -2856,16 +2856,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="104.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSJ-IY-d3x">
-                                                    <rect key="frame" x="8" y="36" width="42" height="34"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="42" id="1XC-Mu-VaZ"/>
-                                                        <constraint firstAttribute="height" constant="34" id="YOJ-av-EiT"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gB-YY-3TV">
                                                     <rect key="frame" x="58" y="8" width="333" height="40"/>
                                                     <color key="backgroundColor" red="0.91905349489999999" green="0.35409897569999998" blue="0.19947114590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2893,6 +2883,16 @@
                                                         <action selector="dinnerButtonAction:" destination="wea-Oy-MWI" eventType="touchUpInside" id="kSZ-cl-N9v"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSJ-IY-d3x">
+                                                    <rect key="frame" x="8" y="36" width="42" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="1XC-Mu-VaZ"/>
+                                                        <constraint firstAttribute="height" constant="34" id="YOJ-av-EiT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="JK7-uA-Xdv" firstAttribute="height" secondItem="7gB-YY-3TV" secondAttribute="height" id="2V7-2K-K3p"/>
@@ -2911,6 +2911,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
+                                            <outlet property="dateLbl" destination="oSJ-IY-d3x" id="Vya-w0-wzY"/>
                                             <outlet property="dinnerButtonOutlet" destination="JK7-uA-Xdv" id="oXi-LX-97W"/>
                                             <outlet property="lunchButtonOutlet" destination="7gB-YY-3TV" id="mAf-zk-pwK"/>
                                         </connections>

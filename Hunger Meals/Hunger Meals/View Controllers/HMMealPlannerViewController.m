@@ -19,12 +19,15 @@
     NSMutableArray *itemsListArray;
     HMItemList *itemListView;
     MTGenericAlertView *MTGenericAlertViewtainer;
-    NSString *lunchText;
-    NSString *dinnerText;
+   
     NSIndexPath *selectedCalenderIndexPath;
     BOOL isLunchBtn;
     BOOL isDinnerBtn;
+    int *calenderCount;
+    NSMutableArray *lunchItemsList;
+    NSMutableArray *dinnerItemsList;
 }
+
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
 @property (strong, nonatomic) IBOutlet UIView *instanceView;
 @property (weak, nonatomic) IBOutlet UITableView *itemListTableView;
@@ -42,8 +45,6 @@
     }
     
     self.title = @"Vertical";
-    lunchText = @"";
-    dinnerText = @"";
     isLunchBtn = NO;
     isDinnerBtn = NO;
     return self;
@@ -83,8 +84,19 @@
     
     [self fetchMonthlyMealPlan];
 
-    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSRange range = [calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:[NSDate date]];
+    NSUInteger numberOfDaysInMonth = range.length;
+        lunchItemsList = [[NSMutableArray alloc]initWithCapacity:numberOfDaysInMonth];
+        dinnerItemsList = [[NSMutableArray alloc]initWithCapacity:numberOfDaysInMonth];
+
+    for(int i = 0; i < numberOfDaysInMonth; ++i){
+    {
+        [lunchItemsList addObject:[NSNull null]];
+        [dinnerItemsList addObject:[NSNull null]];
     }
+    }
+}
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
@@ -225,9 +237,9 @@
             
             ItemTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
             if(isLunchBtn){
-                lunchText = cell.itemNameLabel.text;
+                lunchItemsList[selectedCalenderIndexPath.row] = cell.itemNameLabel.text;
             } else{
-                dinnerText = cell.itemNameLabel.text;
+                dinnerItemsList[selectedCalenderIndexPath.row] = cell.itemNameLabel.text;
             }
             //reload calenderTableView
             // Add them in an index path array
@@ -255,8 +267,18 @@
     UITableViewCell *cell;
     if (tableView == self.calendarTableView) {
         HMItemListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"Calendarcell"];
+        cell.dateLbl.text =  [NSString stringWithFormat:@"%ld st",indexPath.row+1];
         cell.lunchButtonOutlet.tag = indexPath.row;
         cell.dinnerButtonOutlet.tag = indexPath.row;
+        NSString *lunchText = lunchItemsList[indexPath.row];
+        NSString *dinnerText = dinnerItemsList[indexPath.row];
+
+        if(lunchText == (id)[NSNull null]){
+           lunchText = @"";
+        }
+        if(dinnerText == (id)[NSNull null]){
+            dinnerText = @"";
+        }
         [cell.lunchButtonOutlet setTitle:[NSString stringWithFormat:@" Lunch: %@",lunchText] forState:UIControlStateNormal];
         [cell.dinnerButtonOutlet setTitle:[NSString stringWithFormat:@" Dinner: %@",dinnerText] forState:UIControlStateNormal];
         return cell;

@@ -11,5 +11,6 @@
 @interface HMItemListTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIButton *lunchButtonOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *dinnerButtonOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *dateLbl;
 
 @end
