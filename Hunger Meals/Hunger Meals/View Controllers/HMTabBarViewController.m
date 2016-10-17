@@ -19,6 +19,7 @@
     [super viewDidLoad];
     [[UITabBar appearance] setTintColor:APPLICATION_COLOR];
 
+
     // Do any additional setup after loading the view.
 }
 

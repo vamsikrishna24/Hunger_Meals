@@ -37,6 +37,8 @@
     self.title = @"Cart";
     quantity = 0;
     self.cartTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
+
     //    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
     //
     //    SVService *service = [[SVService alloc] init];
@@ -67,6 +69,7 @@
         
         if (resultArray.count != 0 || resultArray != nil) {
             cartItemsArray = [resultArray mutableCopy];
+            [[self navigationController] tabBarItem].badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)cartItemsArray.count];
         }
         
         [_cartTableView reloadData];
