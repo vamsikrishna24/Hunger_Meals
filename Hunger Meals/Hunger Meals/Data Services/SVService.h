@@ -51,6 +51,8 @@ typedef void(^SuccessBlock)(NSData *data , NSHTTPURLResponse *response, NSError 
 
 - (void)inviteUserAccount:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock;
 
+- (void)saveMonthlyMealPlan:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock;
+
 - (NSMutableArray *)parseItemsData:(NSMutableArray *)array;
 //Service Requests
 
@@ -72,7 +74,8 @@ typedef void(^SuccessBlock)(NSData *data , NSHTTPURLResponse *response, NSError 
 
 - (void)getmonthlyproductsusingBlock:(void(^)(NSMutableArray *resultArray))resultBlock;
 
-- (void)getcurrmealplanusingBlock:(void(^)(NSMutableArray *resultArray))resultBlock;
+- (void)getcurrmealplanusingBlock:(void(^)(NSDictionary *resultDict))resultBlock;
+
 
 - (NSMutableArray *)parseItemsArrayData:(NSMutableArray *)array;
 

@@ -536,7 +536,7 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     CLLocation *currentLoc = locations.lastObject;
     currentLocation = currentLoc;
-    NSLog(@"Current Location: %@", currentLoc);
+    //NSLog(@"Current Location: %@", currentLoc);
 }
 
 /*

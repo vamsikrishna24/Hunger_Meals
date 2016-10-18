@@ -35,6 +35,7 @@
     SecondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"secondPage"];
     SecondVC.pageIndex = 1;
     thirdVC= [self.storyboard instantiateViewControllerWithIdentifier:@"thirdPage"];
+    thirdVC.pageIndex = 2;
     NSArray *viewControllers = @[firstVC];
     
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];

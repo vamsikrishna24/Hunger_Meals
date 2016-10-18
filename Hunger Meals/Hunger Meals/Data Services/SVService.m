@@ -99,10 +99,10 @@
         if (response.statusCode == 200 && result!=nil) {
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
-            NSDictionary *resultDict = [dictResult objectForKey:@"data"];
             resultBlock([self parseUserLoginData:dictResult]);
         }
         else{
+            NSString *error = [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];
             resultBlock(nil);
         }
     }];
@@ -277,7 +277,7 @@
 
 
 #pragma currmealplan
-- (void)getcurrmealplanusingBlock:(void(^)(NSMutableArray *resultArray))resultBlock {
+- (void)getcurrmealplanusingBlock:(void(^)(NSDictionary *resultDict))resultBlock{
     
     NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
     UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
@@ -295,12 +295,40 @@
                 [self signOut];
                 
             }
-            resultBlock([self parseArrayProductsData:dictResult]);
+            
+            resultBlock(dictResult);
         }
         else{
             resultBlock(nil);
         }
     }];
+}
+
+- (void)saveMonthlyMealPlan:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock {
+    
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    
+    NSString *token = userDataObject.token;
+    NSString *url = [NSString stringWithFormat:kCurrentmealplan, HTTP_DATA_HOST,token];
+    
+    [self sendRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            NSString *resultMsg = [dictResult valueForKeyPath:@"data.message"];
+            NSString *tokenString = [dictResult valueForKey:@"error"];
+            if([tokenString isEqualToString:@"Token is Expired"]){
+                [self signOut];
+                
+            }
+            resultBlock(resultMsg);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+
 }
 
 #pragma currentactiveorders
@@ -674,6 +702,12 @@
     return parsedArray;
 }
 
+- (NSMutableArray *)parseMonthlyMealData:(NSMutableArray *)array {
+    NSError *error = nil;
+    NSMutableArray *parsedArray = [Itemlist arrayOfModelsFromDictionaries:array error:&error];
+    return parsedArray;
+}
+
 - (NSMutableArray *)parseItemsData:(NSMutableArray *)array {
     NSError *error = nil;
     NSDictionary *dict = (NSDictionary *)array;
@@ -856,4 +890,5 @@
     [APPDELEGATE showInitialScreen];
 
 }
+
 @end

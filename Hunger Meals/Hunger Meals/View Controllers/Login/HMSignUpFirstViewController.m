@@ -81,9 +81,9 @@
 
 #pragma mark - TextField Delegate methods
 - (void)textFieldDidEndEditing:(UITextField *)textField{
-    if (textField.tag == 3) {
-        [self isValidationsSucceed];
-    }
+//    if (textField.tag == 3) {
+//        [self isValidationsSucceed];
+//    }
 }
 
 - (BOOL)textField:(UITextField *)textField
@@ -118,7 +118,7 @@ shouldChangeCharactersInRange:(NSRange)range
         [self showAlertWithTitle:@"Alert" andMessage:@"Please enter valid password and try again"];
         return NO;
     }
-    else if(self.paswordTextField.text != self.confirmPasswordTextField.text){
+    else if(![self.paswordTextField.text isEqualToString: self.confirmPasswordTextField.text]){
         [self showAlertWithTitle:@"Alert" andMessage:@"Both password and confirm password should match,Please try again!!"];
         return NO;
     }

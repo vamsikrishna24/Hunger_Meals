@@ -11,6 +11,8 @@
 #import "HMItemList.h"
 #import "ItemTableViewCell.h"
 #import "MTGenericAlertView.h"
+#import "Itemlist.h"
+#import "BTAlertController.h"
 
 @interface HMMealPlannerViewController (){
     NSMutableDictionary *_eventsByDate;
@@ -54,7 +56,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Monthly meal Planner";
+    self.title = @"Monthly Meal Planner";
+    
+    UIBarButtonItem *saveBtn = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(saveButtonClicked:)];
+    self.navigationItem.rightBarButtonItem = saveBtn;
     
     _calendarManager = [JTCalendarManager new];
     _calendarManager.delegate = self;
@@ -83,7 +88,7 @@
     [self.itemListTableView reloadData];
     [MTGenericAlertViewtainer close];
     
-    [self fetchMonthlyMealPlan];
+    [self fetchMonthlyProducts];
 
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSRange range = [calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:[NSDate date]];
@@ -93,8 +98,8 @@
 
     for(int i = 0; i < numberOfDaysInMonth; ++i){
     {
-        [lunchItemsList addObject:[NSNull null]];
-        [dinnerItemsList addObject:[NSNull null]];
+        [lunchItemsList addObject:@""];
+        [dinnerItemsList addObject:@""];
     }
     }
    //get month name
@@ -107,7 +112,6 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    self.navigationController.navigationBar.userInteractionEnabled = NO;
   //  self.instanceView.center = CGPointMake(self.view.frame.size.width  / 2,
                                           // (self.view.frame.size.height / 2)+50);
 
@@ -116,9 +120,55 @@
 
    // [self.view addSubview: self.instanceView];
     
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+}
+
+-(IBAction)saveButtonClicked:(id)sender{
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    
+    NSMutableArray *lunchPlanDataArray = [[NSMutableArray alloc] init];
+    NSMutableArray *dinnerPlanDataArray = [[NSMutableArray alloc] init];
+    
+    for (NSString *itemName in lunchItemsList) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.title = %@",itemName];
+        NSArray *filteredArray = [itemsListArray filteredArrayUsingPredicate:predicate];
+        if (filteredArray.count > 0) {
+            Itemlist *item = filteredArray.firstObject;
+            [lunchPlanDataArray addObject:item.id];
+        }
+        else {
+            [lunchPlanDataArray addObject:@""];
+        }
+        
+    }
+
+    for (NSString *itemName in dinnerItemsList) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.title = %@",itemName];
+        NSArray *filteredArray = [itemsListArray filteredArrayUsingPredicate:predicate];
+        if (filteredArray.count > 0) {
+            Itemlist *item = filteredArray.firstObject;
+            [dinnerPlanDataArray addObject:item.id];
+        }
+        else {
+            [dinnerPlanDataArray addObject:@""];
+        }
+        
+    }
 
     
+    NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:lunchPlanDataArray, @"lunchplandata", dinnerPlanDataArray, @"dinnerplandata", nil];
+    
+    SVService *service = [[SVService alloc] init];
+    [service saveMonthlyMealPlan:params usingBlock:^(NSString *resultMessage) {
+        
+        [self showAlertWithTitle:@"Status!" andMessage:resultMessage];
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    }];
 }
+
 #pragma mark - CalendarManager delegate
 
 // Exemple of implementation of prepareDayView method
@@ -198,7 +248,7 @@
     }
 }
 
-#pragma mark - Fake data
+#pragma mark - Calender methods
 
 // Used only to have a key for _eventsByDate
 - (NSDateFormatter *)dateFormatter
@@ -233,6 +283,7 @@
          return itemsListArray.count;
      }
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     //self.instanceView.hidden = NO;
@@ -281,12 +332,6 @@
         NSString *lunchText = lunchItemsList[indexPath.row];
         NSString *dinnerText = dinnerItemsList[indexPath.row];
 
-        if(lunchText == (id)[NSNull null]){
-           lunchText = @"";
-        }
-        if(dinnerText == (id)[NSNull null]){
-            dinnerText = @"";
-        }
         [cell.lunchButtonOutlet setTitle:[NSString stringWithFormat:@" Lunch: %@",lunchText] forState:UIControlStateNormal];
         [cell.dinnerButtonOutlet setTitle:[NSString stringWithFormat:@" Dinner: %@",dinnerText] forState:UIControlStateNormal];
         return cell;
@@ -334,8 +379,34 @@
     [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
     
     SVService *service = [[SVService alloc] init];
-    [service getcurrmealplanusingBlock:^(NSMutableArray *resultArray) {
-        
+    [service getcurrmealplanusingBlock:^(NSDictionary *resultDict) {
+        if (resultDict.count > 0) {
+            NSMutableArray *lunchList = [resultDict valueForKeyPath:@"data.lunchplandata.title"];
+            NSMutableArray *dinnerList = [resultDict valueForKeyPath:@"data.dinnerplandata.title"];
+            [lunchItemsList removeAllObjects];
+            [dinnerItemsList removeAllObjects];
+            
+            for (NSArray *array in lunchList) {
+                if ([array firstObject] != nil) {
+                    [lunchItemsList addObject:[array firstObject]];
+                }
+                else {
+                    [lunchItemsList addObject:@""];
+                }
+                
+            }
+            
+            for (NSArray *array in dinnerList) {
+                if ([array firstObject] != nil) {
+                    [dinnerItemsList addObject:[array firstObject]];
+                }
+                else {
+                    [dinnerItemsList addObject:@""];
+                }
+            }
+            
+            [_calendarTableView reloadData];
+        }
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
     
@@ -347,9 +418,12 @@
     
     if(itemsListArray.count >= 1)
     {
-        MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:@"Menu" titleColor:nil titleFont:nil backgroundImage:nil];
-//        self.navigationController.navigationBar.userInteractionEnabled = NO;
-        [MTGenericAlertViewtainer setCustomInputView:self.instanceView];
+        if (MTGenericAlertViewtainer == nil) {
+            MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:@"Menu" titleColor:nil titleFont:nil backgroundImage:nil];
+            MTGenericAlertViewtainer.isPopUpView = YES;
+            [MTGenericAlertViewtainer setCustomInputView:self.instanceView];
+
+        }
         [MTGenericAlertViewtainer show];
         
         [MTGenericAlertViewtainer setAlertViewButtonActionCompletionHandler:^(MTGenericAlertView *alertView, int buttonIndex) {
@@ -366,22 +440,37 @@
     isLunchBtn = NO;
     isDinnerBtn = YES;
     selectedCalenderIndexPath = [NSIndexPath indexPathForRow:[sender tag] inSection:0];
+    if (MTGenericAlertViewtainer == nil) {
+        MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:@"Menu" titleColor:nil titleFont:nil backgroundImage:nil];
+         MTGenericAlertViewtainer.isPopUpView = YES;
+        [MTGenericAlertViewtainer setCustomInputView:self.instanceView];
+    }
     [MTGenericAlertViewtainer show];
-    self.navigationController.navigationBar.userInteractionEnabled = NO;
     [self.itemListTableView reloadData];
 }
 
--(void)fetchMonthlyMealPlan{
+- (void)fetchMonthlyProducts{
     [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
     
     SVService *service = [[SVService alloc] init];
     [service getmonthlyproductsusingBlock:^(NSMutableArray *resultArray) {
-        
-         itemsListArray = resultArray;
-        
-        
+        if (resultArray.count > 0) {
+            itemsListArray = resultArray;
+            [_itemListTableView reloadData];
+        }
         
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
+
 }
+
+- (void)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message{
+    [BTAlertController showAlertWithMessage:message andTitle:title andOkButtonTitle:nil andCancelTitle:@"Ok" andtarget:self andAlertCancelBlock:^{
+        
+    } andAlertOkBlock:^(NSString *userName) {
+        
+    }];
+    
+}
+
 @end

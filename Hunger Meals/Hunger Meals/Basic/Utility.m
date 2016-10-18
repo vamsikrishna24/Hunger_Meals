@@ -38,7 +38,7 @@
     
     //NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
     
-    if ( [password length]<8 || [password length]>12 )
+    if ( [password length]<8 || [password length]>18 )
         return NO;  // too long or too short
   /*  NSRange rang;
     rang = [password rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]];

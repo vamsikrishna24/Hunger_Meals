@@ -27,7 +27,8 @@ NSString * const kOTPGeneration = @"%@/generateotp";
 NSString * const kOTPVerification = @"%@/verifyotp";
 NSString * const kLocation = @"%@/locations";
 NSString * const kMonthlyproducts = @"%@/getmonthlyproducts";
-NSString * const kCurrentmealplan = @"%@/currmealplan";
+NSString * const kGetMonthlyMealPlan = @"%@/mealplan/%@";
+NSString * const kCurrentmealplan = @"%@/currmealplan?token=%@";
 NSString * const kCurrentActiveOrders = @"%@/currentactiveorders";
 NSString * const kCurries = @"%@/products/category/curries?token=%@";;
 
