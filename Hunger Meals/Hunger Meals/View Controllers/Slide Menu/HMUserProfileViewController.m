@@ -7,8 +7,12 @@
 //
 
 #import "HMUserProfileViewController.h"
+#import "UserData.h"
+
 
 @interface HMUserProfileViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneNumberLabel;
 
 @end
 
@@ -16,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.emailLabel.text = [UserData email];
+   // self.phoneNumberLabel.text = [UserData phonNumber];
     // Do any additional setup after loading the view.
 }
 

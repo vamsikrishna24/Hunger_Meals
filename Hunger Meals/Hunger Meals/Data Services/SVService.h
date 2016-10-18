@@ -49,6 +49,8 @@ typedef void(^SuccessBlock)(NSData *data , NSHTTPURLResponse *response, NSError 
 
 - (void)syncLocationToUserAccount:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock;
 
+- (void)inviteUserAccount:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock;
+
 - (NSMutableArray *)parseItemsData:(NSMutableArray *)array;
 //Service Requests
 

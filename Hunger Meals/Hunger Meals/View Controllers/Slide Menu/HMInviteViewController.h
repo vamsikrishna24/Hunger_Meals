@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface HMInviteViewController : UIViewController
+@interface HMInviteViewController : CommonViewController
+
 
 @end

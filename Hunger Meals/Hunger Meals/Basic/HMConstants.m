@@ -36,6 +36,8 @@ NSString * const kUserSignUpURL = @"%@/jwcreate";
 NSString * const kSocialSignUpURL = @"%@/jwsocialauthenticate";
 NSString * const kGetLocationIDURL = @"%@/location?token=%@";
 NSString * const kSyncUserLocation = @"%@/userlocation?token=%@";
+NSString * const kInviteUserURL = @"%@/invite";
+
 
 #pragma -mark Other constants
 NSString * const kEmptyString = @"";

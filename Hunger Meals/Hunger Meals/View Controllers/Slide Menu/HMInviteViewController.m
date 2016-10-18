@@ -8,6 +8,7 @@
 
 #import "HMInviteViewController.h"
 #import "ProjectConstants.h"
+#import "SVService.h"
 
 @interface HMInviteViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
@@ -44,6 +45,20 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)inviteButtonOutlet:(id)sender {
+    
+      [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: self.emailTextField.text, @"email",nil];
+    
+    SVService *service = [[SVService alloc] init];
+    [service inviteUserAccount:dict usingBlock:^(NSString *resultMessage) {
+        
+        
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+        
+    }];
+
+}
 - (IBAction)closeAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
     

@@ -396,6 +396,30 @@
     }];
 }
 
+#pragma InviteUser
+- (void)inviteUserAccount:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
+    
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    
+    NSString *token = userDataObject.token;
+    NSString *url = [NSString stringWithFormat:kInviteUserURL, HTTP_DATA_HOST,token];
+    
+    [self sendRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            NSString *resultDict = [dictResult objectForKey:@"data"];
+            resultBlock(resultDict);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+}
+
 
 #pragma AddToCArt
 - (void)addToCart:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{

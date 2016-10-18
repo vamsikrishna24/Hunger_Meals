@@ -39,6 +39,7 @@ extern NSString * const kSyncUserLocation;
 extern NSString * const kMonthlyproducts;
 extern NSString * const kCurrentmealplan;
 extern NSString * const kCurrentActiveOrders;
+extern NSString * const kInviteUserURL;
 
 
 

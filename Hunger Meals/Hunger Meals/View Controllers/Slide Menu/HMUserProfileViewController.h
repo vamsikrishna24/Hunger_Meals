@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface HMUserProfileViewController : UIViewController
+@interface HMUserProfileViewController : CommonViewController
 
 @end
