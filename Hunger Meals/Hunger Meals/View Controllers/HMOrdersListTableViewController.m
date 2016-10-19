@@ -32,7 +32,7 @@
     [service getCurrentActiveordersusingBlock:^(NSMutableArray *resultArray) {
         
         if (![resultArray isEqual:[NSNull null]]) {
-            if(resultArray){
+            if(resultArray.count == 0){
                 
                 UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Orders" message:@"Currently there are no orders to deliver" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
                 [alertView show];

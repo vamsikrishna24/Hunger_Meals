@@ -17,4 +17,8 @@
 + (UIFont *) debbyWithSize:(CGFloat) fontSize {
     return [UIFont fontWithName: @"Debby" size: fontSize];
 }
+
++ (UIFont *) quicksandlightWithSize:(CGFloat) fontSize {
+    return [UIFont fontWithName: @"Amaranth" size: fontSize];
+}
 @end

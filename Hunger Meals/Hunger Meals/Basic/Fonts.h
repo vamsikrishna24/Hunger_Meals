@@ -14,4 +14,6 @@
 + (UIFont *) fontHelveticaWithSize:(CGFloat) fontSize;
 
 + (UIFont *) debbyWithSize:(CGFloat) fontSize;
+
++ (UIFont *) quicksandlightWithSize:(CGFloat) fontSize;
 @end

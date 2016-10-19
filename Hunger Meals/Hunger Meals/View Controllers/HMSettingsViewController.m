@@ -10,6 +10,7 @@
 #import "HMSettingsTableViewCell.h"
 #import "HMAddressViewController.h"
 #import "HMOrdersListTableViewController.h"
+#import "HMInviteViewController.h"
 @interface HMSettingsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *settingsTableView;
 
@@ -23,6 +24,25 @@
     self.title = @"Settings";
     self.settingsTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     // Do any additional setup after loading the view.
+}
+- (IBAction)logoutAction:(id)sender {
+    
+    [BTAlertController showAlertWithMessage: @"Are you sure want to Sign Out?" andTitle: @"Alert!" andOkButtonTitle: @"Ok" andCancelTitle:@"Cancel" andtarget:self andAlertCancelBlock:^{
+        
+    } andAlertOkBlock:^(NSString *userName) {
+        [[NSUserDefaults standardUserDefaults] setObject: nil forKey:@"UserData"];
+        [[NSUserDefaults standardUserDefaults] setBool: NO forKey:@"isLoginValid"];
+        [[NSUserDefaults standardUserDefaults] setValue: nil forKey: @"selectedLocation"];
+        [[NSUserDefaults standardUserDefaults] setObject: @"NO" forKey: @"isLocationSelected"];
+        [FBSDKAccessToken setCurrentAccessToken:nil];
+        [[GIDSignIn sharedInstance] signOut];
+        
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        
+        HMLandingViewController *loginVC = (HMLandingViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"LandingPage"];
+        
+        [self presentViewController:loginVC animated:YES completion:nil];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,6 +107,11 @@ else if(indexPath.row == 3) {
         UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         HMOrdersListTableViewController *orderVC= [mainStoryBoard instantiateViewControllerWithIdentifier:@"OrdersViewIdentifier"];
         [self presentViewController:orderVC animated:YES completion:nil];
+    }
+    if (indexPath.row == 3) {
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        HMInviteViewController *inviteVC= [mainStoryBoard instantiateViewControllerWithIdentifier:@"InviteFriendIdentifier"];
+        [self presentViewController:inviteVC animated:YES completion:nil];
     }
 }
 
