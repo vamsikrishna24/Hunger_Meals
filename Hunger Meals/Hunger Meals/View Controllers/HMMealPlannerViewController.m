@@ -387,29 +387,33 @@
         if (resultDict.count > 0) {
             NSMutableArray *lunchList = [resultDict valueForKeyPath:@"data.lunchplandata.title"];
             NSMutableArray *dinnerList = [resultDict valueForKeyPath:@"data.dinnerplandata.title"];
-            [lunchItemsList removeAllObjects];
-            [dinnerItemsList removeAllObjects];
-            
-            for (NSArray *array in lunchList) {
-                if ([array firstObject] != nil) {
-                    [lunchItemsList addObject:[array firstObject]];
-                }
-                else {
-                    [lunchItemsList addObject:@""];
+            if (lunchList.count || dinnerList.count) {
+                [lunchItemsList removeAllObjects];
+                [dinnerItemsList removeAllObjects];
+                
+                for (NSArray *array in lunchList) {
+                    if ([array firstObject] != nil) {
+                        [lunchItemsList addObject:[array firstObject]];
+                    }
+                    else {
+                        [lunchItemsList addObject:@""];
+                    }
+                    
                 }
                 
+                for (NSArray *array in dinnerList) {
+                    if ([array firstObject] != nil) {
+                        [dinnerItemsList addObject:[array firstObject]];
+                    }
+                    else {
+                        [dinnerItemsList addObject:@""];
+                    }
+                }
+                
+                [_calendarTableView reloadData];
+
             }
             
-            for (NSArray *array in dinnerList) {
-                if ([array firstObject] != nil) {
-                    [dinnerItemsList addObject:[array firstObject]];
-                }
-                else {
-                    [dinnerItemsList addObject:@""];
-                }
-            }
-            
-            [_calendarTableView reloadData];
         }
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];

@@ -2657,7 +2657,7 @@
         <!--Data Source-->
         <scene sceneID="p7h-AT-Yat">
             <objects>
-                <viewController storyboardIdentifier="MonthlyMealsViewIdentifier" id="h3t-Fn-VZL" customClass="HMMonthlyDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MonthlyRecommondationViewIdentifier" id="h3t-Fn-VZL" customClass="HMMonthlyDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eKn-jr-sBu"/>
                         <viewControllerLayoutGuide type="bottom" id="Mkt-6e-w9T"/>
@@ -2861,7 +2861,7 @@
         <!--Meal Planner View Controller-->
         <scene sceneID="O7l-Ou-tg7">
             <objects>
-                <viewController id="wea-Oy-MWI" customClass="HMMealPlannerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MonthlyMealsViewIdentifier" id="wea-Oy-MWI" customClass="HMMealPlannerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wNV-3a-bM9"/>
                         <viewControllerLayoutGuide type="bottom" id="DT2-bs-qs0"/>

@@ -13,6 +13,7 @@
 #import "HMCartViewController.h"
 #import "HMContentViewController.h"
 #import "HMMonthlyDetailViewController.h"
+#import "HMMealPlannerViewController.h"
 #import "SVService.h"
 #import "LocationView.h"
 
@@ -205,7 +206,30 @@
 -(IBAction)floatingButtonClicked:(id)sender{
     //Floating Button Clicked
 }
+
 #pragma Mark - Custom Methods
+-(void)navigateToMealPlan{
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    SVService *service = [[SVService alloc] init];
+    [service getcurrmealplanusingBlock:^(NSDictionary *resultDict) {
+        if (resultDict.count > 0) {
+            NSMutableArray *lunchList = [resultDict valueForKeyPath:@"data.lunchplandata.title"];
+            NSMutableArray *dinnerList = [resultDict valueForKeyPath:@"data.dinnerplandata.title"];
+            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            if (lunchList.count || dinnerList.count) {
+                HMMealPlannerViewController *monthlyMealViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MonthlyMealsViewIdentifier"];
+                [self.navigationController pushViewController:monthlyMealViewController animated:YES];
+            }
+            else {
+                HMMonthlyDetailViewController *monthlyMealViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MonthlyRecommondationViewIdentifier"];
+                [self.navigationController pushViewController:monthlyMealViewController animated:YES];
+            }
+            
+        }
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    }];
+    
+}
 
 
 #pragma Mark - TableView Data Source
@@ -372,6 +396,7 @@
     
     return cell;
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (tableView == self.locationTableView) {
@@ -385,10 +410,7 @@
             
         }
         if (indexPath.row == 2) {
-            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            HMMonthlyDetailViewController *monthlyMealViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MonthlyMealsViewIdentifier"];
-            [self.navigationController pushViewController:monthlyMealViewController animated:YES];
-            
+            [self navigateToMealPlan];
         }
         if (indexPath.row == 3) {
             UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
