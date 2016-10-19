@@ -97,9 +97,9 @@
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
         </mutableArray>
         <mutableArray key="Soria font.ttf">
-            <string>Soria-Soria</string>
             <string>Soria-Soria</string>
             <string>Soria-Soria</string>
             <string>Soria-Soria</string>
@@ -2702,31 +2702,29 @@
                                                     <constraint firstAttribute="height" constant="138" id="xj1-hx-ZOI"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="09J-aV-GgF">
-                                                    <size key="itemSize" width="138" height="130"/>
+                                                    <size key="itemSize" width="200" height="130"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="offersCollectionCustomcell" id="Uai-DY-oCs" customClass="HMScrollMonthlyCollectionViewCell">
-                                                        <rect key="frame" x="0.0" y="4" width="138" height="130"/>
+                                                        <rect key="frame" x="0.0" y="4" width="200" height="130"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                            <rect key="frame" x="0.0" y="0.0" width="138" height="130"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="130"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="555" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Label" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kp-4Y-Ui2">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="138" height="130"/>
-                                                                    <fontDescription key="fontDescription" name="Soria-Soria" family="Soria" pointSize="22"/>
-                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <rect key="frame" x="8" y="95" width="192" height="15.5"/>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l1e-cy-itY">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="138" height="130"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="90"/>
                                                                     <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="138" id="6lc-hG-wmr"/>
-                                                                        <constraint firstAttribute="height" constant="130" id="dzm-g6-wqP"/>
+                                                                        <constraint firstAttribute="height" constant="90" id="dzm-g6-wqP"/>
                                                                     </constraints>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -2737,20 +2735,24 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </view>
-                                                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstItem="6kp-4Y-Ui2" firstAttribute="trailing" secondItem="l1e-cy-itY" secondAttribute="trailing" id="8s8-Gj-U9L"/>
-                                                            <constraint firstItem="6kp-4Y-Ui2" firstAttribute="bottom" secondItem="l1e-cy-itY" secondAttribute="bottom" id="Vcl-V8-NuG"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="6kp-4Y-Ui2" secondAttribute="trailing" constant="-8" id="0AR-ld-eCZ"/>
                                                             <constraint firstAttribute="trailingMargin" secondItem="l1e-cy-itY" secondAttribute="trailing" constant="-8" id="XSP-OM-HUP"/>
+                                                            <constraint firstItem="6kp-4Y-Ui2" firstAttribute="leading" secondItem="Uai-DY-oCs" secondAttribute="leadingMargin" id="aMo-fJ-nVP"/>
                                                             <constraint firstItem="l1e-cy-itY" firstAttribute="top" secondItem="Uai-DY-oCs" secondAttribute="topMargin" constant="-8" id="an1-v8-c9L"/>
                                                             <constraint firstAttribute="leadingMargin" secondItem="l1e-cy-itY" secondAttribute="leading" constant="8" id="gxO-KK-KjB"/>
-                                                            <constraint firstItem="6kp-4Y-Ui2" firstAttribute="top" secondItem="l1e-cy-itY" secondAttribute="top" id="lHu-Fj-Qly"/>
-                                                            <constraint firstItem="6kp-4Y-Ui2" firstAttribute="leading" secondItem="l1e-cy-itY" secondAttribute="leading" id="mks-El-k0T"/>
-                                                            <constraint firstAttribute="bottomMargin" secondItem="l1e-cy-itY" secondAttribute="bottom" constant="-8" id="uUY-JD-pVO"/>
+                                                            <constraint firstItem="6kp-4Y-Ui2" firstAttribute="top" secondItem="l1e-cy-itY" secondAttribute="bottom" constant="5" id="nqF-Q3-9ph"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                 <integer key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                                <color key="value" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                <integer key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
@@ -3090,7 +3092,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                        <color key="value" red="0.64423381979695438" green="0.64423381979695438" blue="0.64423381979695438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                         <integer key="value" value="2"/>
@@ -3108,7 +3110,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                        <color key="value" red="0.64423381980000005" green="0.64423381980000005" blue="0.64423381980000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                         <integer key="value" value="2"/>

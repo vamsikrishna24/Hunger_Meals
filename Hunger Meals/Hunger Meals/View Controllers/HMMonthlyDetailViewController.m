@@ -31,7 +31,7 @@
     //or the recycling mechanism will destroy your data once
     //your item views move off-screen
     scrollingImgs = [NSArray arrayWithObjects: @"page1.png",@"page2.png",@"page3.png", nil];
-    descriptionsArray = [NSArray arrayWithObjects: @"30 Days Veg Meal",@"30 Days Egg Meal",@"30 Days Chicken Meal", nil];
+    descriptionsArray = [NSArray arrayWithObjects: @"Simple Veg Plan",@"Simple Egg Plan",@"Simple Chicken Plan", nil];
    // self.scrollView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height+500);
    // _scrollView.bounces = NO;
 
