@@ -26,8 +26,6 @@
     BOOL isLunchBtn;
     BOOL isDinnerBtn;
     int *calenderCount;
-    NSMutableArray *lunchItemsList;
-    NSMutableArray *dinnerItemsList;
     NSString *currentMonth;
 }
 
@@ -38,7 +36,7 @@
 @end
 
 @implementation HMMealPlannerViewController
-
+@synthesize dinnerItemsList, lunchItemsList;
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -84,30 +82,36 @@
     
     itemListView = [[HMItemList alloc]init];
     
-    [self fetchAndLoadData];
+    [_calendarTableView reloadData];
     [self.itemListTableView reloadData];
-    [MTGenericAlertViewtainer close];
-    
     [self fetchMonthlyProducts];
 
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSRange range = [calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:[NSDate date]];
     NSUInteger numberOfDaysInMonth = range.length;
+    
+    if (!_isFromComboVC) {
+        
         lunchItemsList = [[NSMutableArray alloc]initWithCapacity:numberOfDaysInMonth];
         dinnerItemsList = [[NSMutableArray alloc]initWithCapacity:numberOfDaysInMonth];
-
-    for(int i = 0; i < numberOfDaysInMonth; ++i){
-    {
-        [lunchItemsList addObject:@""];
-        [dinnerItemsList addObject:@""];
+        
+        for(int i = 0; i < numberOfDaysInMonth; ++i){
+            [lunchItemsList addObject:@""];
+            [dinnerItemsList addObject:@""];
+        }
+        
+        [self fetchAndLoadData];
     }
-    }
+   
+    
    //get month name
     NSDate *now = [NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MMM"];
     NSString *month = [formatter stringFromDate:now];
     currentMonth = month;
+    
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{

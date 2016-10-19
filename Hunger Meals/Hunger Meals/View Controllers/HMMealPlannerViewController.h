@@ -18,4 +18,8 @@
 
 @property (strong, nonatomic) JTCalendarManager *calendarManager;
 
+@property (nonatomic, strong) NSMutableArray *lunchItemsList;
+@property (nonatomic, strong) NSMutableArray *dinnerItemsList;
+@property (nonatomic, assign) BOOL isFromComboVC;
+
 @end

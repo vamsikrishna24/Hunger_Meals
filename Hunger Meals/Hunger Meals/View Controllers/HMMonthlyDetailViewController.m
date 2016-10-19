@@ -10,9 +10,12 @@
 #import "HMMonthlyCollectionViewCell.h"
 #import "HMScrollMonthlyCollectionViewCell.h"
 #import "SVService.h"
+#import "HMComboSelectionViewController.h"
 
 @interface HMMonthlyDetailViewController ()<UIScrollViewDelegate,UIScrollViewAccessibilityDelegate>{
     NSArray *scrollingImgs;
+    NSArray *descriptionsArray;
+    NSString *selectedCombo;
 
 }
 
@@ -27,9 +30,10 @@
     //data of some kind - don't store data in your item views
     //or the recycling mechanism will destroy your data once
     //your item views move off-screen
-    scrollingImgs = [NSArray arrayWithObjects: @"page1.png",@"page2.png",@"page3.png",@"page4.png", @"page5.png", nil];
-    self.scrollView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height+500);
-    _scrollView.bounces = NO;
+    scrollingImgs = [NSArray arrayWithObjects: @"page1.png",@"page2.png",@"page3.png", nil];
+    descriptionsArray = [NSArray arrayWithObjects: @"30 Days Veg Meal",@"30 Days Egg Meal",@"30 Days Chicken Meal", nil];
+   // self.scrollView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height+500);
+   // _scrollView.bounces = NO;
 
 }
 
@@ -46,43 +50,41 @@
     self.collectionView.backgroundColor = [UIColor clearColor];
     
     self.pageControl.currentPage = self.swipeView.currentItemIndex;
-    CGSize scrollableSize = CGSizeMake(320, 800);
-    [self.scrollView setContentSize:scrollableSize];
-}
-#pragma mark - ScrollView Delegate methods
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+- (void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    CGSize scrollableSize = CGSizeMake(self.view.bounds.size.width, 539);
+    [self.scrollView setContentSize:scrollableSize];
+
+}
 
 #pragma mark - Collection View Delegate methods
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    
-    if(collectionView == self.collectionView){
-        return 5;
-    }
-    return 5;
+ 
+    return scrollingImgs.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *identifier = @"collectionCustomcell";
+    //static NSString *identifier = @"collectionCustomcell";
     static NSString *identifier1 = @"offersCollectionCustomcell";
 
-    if(collectionView == self.collectionView){
-    
-    HMMonthlyCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-        cell.imageView.image = [UIImage imageNamed:[scrollingImgs objectAtIndex:indexPath.row]];
-        cell.contentView.layer.masksToBounds = true;
-        return cell;
-
-    }
-    HMScrollMonthlyCollectionViewCell*imageCell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier1 forIndexPath:indexPath];
+//    if(collectionView == self.collectionView){
+//    
+//    HMMonthlyCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+//        cell.imageView.image = [UIImage imageNamed:[scrollingImgs objectAtIndex:indexPath.row]];
+//        cell.contentView.layer.masksToBounds = true;
+//        return cell;
+//
+//    }
+    HMScrollMonthlyCollectionViewCell *imageCell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier1 forIndexPath:indexPath];
     
     imageCell.imageView.image = [UIImage imageNamed:[scrollingImgs objectAtIndex:indexPath.row]];
     imageCell.contentView.layer.masksToBounds = true;
+    imageCell.descriptionLabel.text = [descriptionsArray objectAtIndex:indexPath.row];
     return imageCell;
 
 }
@@ -97,6 +99,19 @@
     return 0; // This is the minimum inter item spacing, can be more
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+        selectedCombo = @"VEG_MEAL";
+    }
+    else if (indexPath.row == 1){
+        selectedCombo = @"EGG_MEAL";
+    }
+    else if (indexPath.row == 2){
+        selectedCombo = @"CHICKEN_MEAL";
+    }
+    
+    [self performSegueWithIdentifier:@"ToComboSelectionSegueIdentifier" sender:nil];
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -159,5 +174,12 @@
 - (IBAction)mealPlanButtonAction:(id)sender {
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"ToComboSelectionSegueIdentifier"]){
+        HMComboSelectionViewController *comboVC = (HMComboSelectionViewController *)segue.destinationViewController;
+        comboVC.selectedCombo = selectedCombo;
+        
+    }
+}
 
 @end
