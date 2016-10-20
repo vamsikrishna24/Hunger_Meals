@@ -76,6 +76,9 @@
 		2BEEF6D21DAAB6E00010715F /* HMOrdersListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEEF6D11DAAB6E00010715F /* HMOrdersListTableViewCell.m */; };
 		2BF5B0511D96593800A3D315 /* CurriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5B0501D96593800A3D315 /* CurriesViewController.m */; };
 		2BF5B0571D96DCE400A3D315 /* Inventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5B0561D96DCE400A3D315 /* Inventory.m */; };
+		2BF62A291DB867A900B58A8B /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
+		2BF62A2C1DB868AA00B58A8B /* HMMonthlyCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF62A2B1DB868AA00B58A8B /* HMMonthlyCartViewController.m */; };
+		2BF62A2F1DB8699B00B58A8B /* HMMonthlyCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF62A2E1DB8699B00B58A8B /* HMMonthlyCartTableViewCell.m */; };
 		2BF98EB41DA89A55009573AB /* HMItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB31DA89A55009573AB /* HMItemList.m */; };
 		2BF98EB71DA8B7CE009573AB /* Itemlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB61DA8B7CE009573AB /* Itemlist.m */; };
 		2BF98EBA1DA8C812009573AB /* ItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB91DA8C812009573AB /* ItemTableViewCell.m */; };
@@ -123,7 +126,6 @@
 		A895EB441D7438F200623D92 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = A895EB431D7438F200623D92 /* Product.m */; };
 		A89E92991D75736E00E981E6 /* YSLContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E92961D75736E00E981E6 /* YSLContainerViewController.m */; };
 		A89E929A1D75736E00E981E6 /* YSLScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A89E92981D75736E00E981E6 /* YSLScrollMenuView.m */; };
-		AC3533F41DB7D46C0005D716 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
 		AC3533F71DB7F1680005D716 /* HMComboSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3533F61DB7F1680005D716 /* HMComboSelectionViewController.m */; };
 		AC3533FA1DB7FF2E0005D716 /* checkbox_not_ticked.png in Resources */ = {isa = PBXBuildFile; fileRef = AC3533F81DB7FF2E0005D716 /* checkbox_not_ticked.png */; };
 		AC3533FB1DB7FF2E0005D716 /* checkbox_ticked.png in Resources */ = {isa = PBXBuildFile; fileRef = AC3533F91DB7FF2E0005D716 /* checkbox_ticked.png */; };
@@ -268,6 +270,10 @@
 		2BF5B0501D96593800A3D315 /* CurriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurriesViewController.m; sourceTree = "<group>"; };
 		2BF5B0551D96DCE400A3D315 /* Inventory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inventory.h; sourceTree = "<group>"; };
 		2BF5B0561D96DCE400A3D315 /* Inventory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inventory.m; sourceTree = "<group>"; };
+		2BF62A2A1DB868AA00B58A8B /* HMMonthlyCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMonthlyCartViewController.h; sourceTree = "<group>"; };
+		2BF62A2B1DB868AA00B58A8B /* HMMonthlyCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMonthlyCartViewController.m; sourceTree = "<group>"; };
+		2BF62A2D1DB8699B00B58A8B /* HMMonthlyCartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMonthlyCartTableViewCell.h; sourceTree = "<group>"; };
+		2BF62A2E1DB8699B00B58A8B /* HMMonthlyCartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMonthlyCartTableViewCell.m; sourceTree = "<group>"; };
 		2BF98EB21DA89A55009573AB /* HMItemList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMItemList.h; sourceTree = "<group>"; };
 		2BF98EB31DA89A55009573AB /* HMItemList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMItemList.m; sourceTree = "<group>"; };
 		2BF98EB51DA8B7CE009573AB /* Itemlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Itemlist.h; sourceTree = "<group>"; };
@@ -382,7 +388,7 @@
 			files = (
 				2B89E5041D5BBF640022EC67 /* CoreLocation.framework in Frameworks */,
 				67A9DF2A319A1E2057942F80 /* libPods-Hunger Meals.a in Frameworks */,
-				AC3533F41DB7D46C0005D716 /* libPaymentsSDK.a in Frameworks */,
+				2BF62A291DB867A900B58A8B /* libPaymentsSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +475,8 @@
 				2BF98EB91DA8C812009573AB /* ItemTableViewCell.m */,
 				2BEEF6D01DAAB6E00010715F /* HMOrdersListTableViewCell.h */,
 				2BEEF6D11DAAB6E00010715F /* HMOrdersListTableViewCell.m */,
+				2BF62A2D1DB8699B00B58A8B /* HMMonthlyCartTableViewCell.h */,
+				2BF62A2E1DB8699B00B58A8B /* HMMonthlyCartTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -535,6 +543,8 @@
 				2BF98EB31DA89A55009573AB /* HMItemList.m */,
 				AC3533F51DB7F1680005D716 /* HMComboSelectionViewController.h */,
 				AC3533F61DB7F1680005D716 /* HMComboSelectionViewController.m */,
+				2BF62A2A1DB868AA00B58A8B /* HMMonthlyCartViewController.h */,
+				2BF62A2B1DB868AA00B58A8B /* HMMonthlyCartViewController.m */,
 			);
 			name = MonthlyMealPlanner;
 			sourceTree = "<group>";
@@ -741,7 +751,6 @@
 			isa = PBXGroup;
 			children = (
 				ACDD63961DAA4FC000B1889C /* PayTM */,
-				A88444691D38D5C600887098 /* AlertController */,
 				A831CA801D37CEC100B96F4F /* MTGenericAlertView */,
 				A89E92941D75736E00E981E6 /* YSLContainerViewController */,
 			);
@@ -791,7 +800,8 @@
 				A88444711D38E69900887098 /* UIActionSheet+Blocks.h */,
 				A88444721D38E69900887098 /* UIActionSheet+Blocks.m */,
 			);
-			path = AlertController;
+			name = AlertController;
+			path = "../Third Party Libraries/AlertController";
 			sourceTree = "<group>";
 		};
 		A88FB75E1D5C8B8A005E8667 /* Home Page Images */ = {
@@ -809,6 +819,7 @@
 		A895EB311D73FFDC00623D92 /* Data Services */ = {
 			isa = PBXGroup;
 			children = (
+				A88444691D38D5C600887098 /* AlertController */,
 				A895EB321D73FFDC00623D92 /* SVConnection.h */,
 				A895EB331D73FFDC00623D92 /* SVConnection.m */,
 				A895EB341D73FFDC00623D92 /* SVRequest.h */,
@@ -1226,6 +1237,7 @@
 				2BD458BC1D6F4F8E00D48AE8 /* HMCartTableViewCell.m in Sources */,
 				9A818FA51D4A203200FB5565 /* PaymentStatusViewController.m in Sources */,
 				9A818F9F1D49F8B200FB5565 /* HMPaymentTypeSelectionViewController.m in Sources */,
+				2BF62A2F1DB8699B00B58A8B /* HMMonthlyCartTableViewCell.m in Sources */,
 				9A818FA41D4A203200FB5565 /* PaymentPageViewController.m in Sources */,
 				2B9CCA951D8EB81100962F7B /* HMScroolMonthlyCollectionViewCell.m in Sources */,
 				2BC1DD161D5C90D900F00D7D /* HMLoginViewController.m in Sources */,
@@ -1236,6 +1248,7 @@
 				A88444701D38E68500887098 /* UIAlertView+CustomAlertView.m in Sources */,
 				AC3533F71DB7F1680005D716 /* HMComboSelectionViewController.m in Sources */,
 				2B252C9E1D808F2F00CED084 /* HMAddressViewController.m in Sources */,
+				2BF62A2C1DB868AA00B58A8B /* HMMonthlyCartViewController.m in Sources */,
 				A88444651D38D0B700887098 /* Utility.m in Sources */,
 				A831CA881D37CEC100B96F4F /* MTGenericAlertView.m in Sources */,
 				2B6047A61D911CBC003889BA /* HMMealPlannerViewController.m in Sources */,
@@ -1552,6 +1565,10 @@
 					Meals/Third,
 					Party,
 					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1676,6 +1693,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/sdk/2_1",
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 					"$(PROJECT_DIR)/Hunger",
 					Meals/Third,
 					Party,

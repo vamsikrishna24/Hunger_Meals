@@ -13,6 +13,7 @@
 #import "MTGenericAlertView.h"
 #import "Itemlist.h"
 #import "BTAlertController.h"
+#import "HMMonthlyCartViewController.h"
 
 @interface HMMealPlannerViewController (){
     NSMutableDictionary *_eventsByDate;
@@ -171,6 +172,10 @@
         [self showAlertWithTitle:@"Status!" andMessage:resultMessage];
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
+
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    HMMonthlyCartViewController *monthlyCartMealViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MonthlyCartViewIdentifier"];
+    [self.navigationController pushViewController:monthlyCartMealViewController animated:YES];
 }
 
 #pragma mark - CalendarManager delegate
@@ -328,6 +333,7 @@
     
     UITableViewCell *cell;
     if (tableView == self.calendarTableView) {
+        
         HMItemListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"Calendarcell"];
         NSString *date = currentMonth;
         cell.dateLbl.text = [date stringByAppendingString:[NSString stringWithFormat:@" %ld",indexPath.row+1]];
@@ -338,6 +344,7 @@
 
         [cell.lunchButtonOutlet setTitle:[NSString stringWithFormat:@" Lunch: %@",lunchText] forState:UIControlStateNormal];
         [cell.dinnerButtonOutlet setTitle:[NSString stringWithFormat:@" Dinner: %@",dinnerText] forState:UIControlStateNormal];
+
         return cell;
     }else if(tableView == self.itemListTableView){
         
@@ -384,21 +391,24 @@
     
     SVService *service = [[SVService alloc] init];
     [service getcurrmealplanusingBlock:^(NSDictionary *resultDict) {
-        if (resultDict.count > 0) {
-            NSMutableArray *lunchList = [resultDict valueForKeyPath:@"data.lunchplandata.title"];
-            NSMutableArray *dinnerList = [resultDict valueForKeyPath:@"data.dinnerplandata.title"];
-            if (lunchList.count || dinnerList.count) {
-                [lunchItemsList removeAllObjects];
-                [dinnerItemsList removeAllObjects];
-                
-                for (NSArray *array in lunchList) {
-                    if ([array firstObject] != nil) {
-                        [lunchItemsList addObject:[array firstObject]];
-                    }
-                    else {
-                        [lunchItemsList addObject:@""];
-                    }
-                    
+
+        NSMutableArray *lunchList = [resultDict valueForKeyPath:@"data.lunchplandata.title"];
+        NSMutableArray *dinnerList = [resultDict valueForKeyPath:@"data.dinnerplandata.title"];
+        if (lunchList.count > 0 && dinnerList.count > 0 ) {
+            [lunchItemsList removeAllObjects];
+            [dinnerItemsList removeAllObjects];
+            
+            for (NSArray *array in lunchList) {
+                if ([array firstObject] != nil) {
+                    [lunchItemsList addObject:[array firstObject]];
+                }
+                else {
+                    [lunchItemsList addObject:@""];
+                }
+            }
+            for (NSArray *array in dinnerList) {
+                if ([array firstObject] != nil) {
+                    [dinnerItemsList addObject:[array firstObject]];
                 }
                 
                 for (NSArray *array in dinnerList) {

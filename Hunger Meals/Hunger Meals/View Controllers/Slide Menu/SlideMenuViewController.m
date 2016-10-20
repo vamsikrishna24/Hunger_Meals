@@ -13,6 +13,7 @@
 #import "HMUserProfileViewController.h"
 
 
+
 @interface SlideMenuViewController (){
 
     NSMutableArray *slideMenuCategories;
@@ -72,9 +73,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.row == 0){
+//        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+//        MealsViewController *mealsVC = [storyBoard instantiateViewControllerWithIdentifier:@"MealsViewIdentifier"];
+//        [self.navigationController pushViewController:mealsVC animated:YES];
+        
+    }
+    
+    if (indexPath.row == 2){
+        
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        UINavigationController *navigationController = (UINavigationController *)[storyBoard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
         MealsViewController *mealsVC = [storyBoard instantiateViewControllerWithIdentifier:@"MealsViewIdentifier"];
-        [self.navigationController pushViewController:mealsVC animated:YES];
+        [navigationController pushViewController:mealsVC animated:YES];
         
     }
     if (indexPath.row == 3){

@@ -285,6 +285,7 @@
     NSString *token = userDataObject.token;
     NSString *url = [NSString stringWithFormat:kCurrentmealplan, HTTP_DATA_HOST,token];
     
+    
     [self sendGetRequestWithAuth:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
         if (response.statusCode == 200 && result!=nil) {
             
@@ -295,7 +296,13 @@
                 [self signOut];
                 
             }
-            
+            NSMutableArray *lunchList = [dictResult valueForKeyPath:@"data.lunchplandata.title"];
+            NSMutableArray *dinnerList = [dictResult valueForKeyPath:@"data.dinnerplandata.title"];
+            if (lunchList.count < 1 && dinnerList.count < 1 ){
+                [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"MonthlyMealPlan"];
+            }else{
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"MonthlyMealPlan"];
+            }
             resultBlock(dictResult);
         }
         else{
