@@ -76,12 +76,15 @@
 		2BEEF6D21DAAB6E00010715F /* HMOrdersListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEEF6D11DAAB6E00010715F /* HMOrdersListTableViewCell.m */; };
 		2BF5B0511D96593800A3D315 /* CurriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5B0501D96593800A3D315 /* CurriesViewController.m */; };
 		2BF5B0571D96DCE400A3D315 /* Inventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5B0561D96DCE400A3D315 /* Inventory.m */; };
-		2BF62A291DB867A900B58A8B /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
 		2BF62A2C1DB868AA00B58A8B /* HMMonthlyCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF62A2B1DB868AA00B58A8B /* HMMonthlyCartViewController.m */; };
 		2BF62A2F1DB8699B00B58A8B /* HMMonthlyCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF62A2E1DB8699B00B58A8B /* HMMonthlyCartTableViewCell.m */; };
 		2BF98EB41DA89A55009573AB /* HMItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB31DA89A55009573AB /* HMItemList.m */; };
 		2BF98EB71DA8B7CE009573AB /* Itemlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB61DA8B7CE009573AB /* Itemlist.m */; };
 		2BF98EBA1DA8C812009573AB /* ItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB91DA8C812009573AB /* ItemTableViewCell.m */; };
+		2BFE01171DB92D91007934BD /* BentonSans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BFE01161DB92D85007934BD /* BentonSans Regular.ttf */; };
+		2BFE01181DB92D91007934BD /* BentonSans Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BFE01151DB92D6A007934BD /* BentonSans Medium.ttf */; };
+		2BFE01191DB92D91007934BD /* BentonSans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BFE01141DB92D5A007934BD /* BentonSans Bold.ttf */; };
+		2BFE011A1DB92F90007934BD /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
 		38977BBACBB1FF1B038F49FD /* libPods-Hunger MealsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B03796A71316DB85DCF5A7 /* libPods-Hunger MealsTests.a */; };
 		67A9DF2A319A1E2057942F80 /* libPods-Hunger Meals.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3517349AA1104418B811BF63 /* libPods-Hunger Meals.a */; };
 		9A0C43C71D2F868300A7BF6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C43C61D2F868300A7BF6B /* main.m */; };
@@ -280,6 +283,9 @@
 		2BF98EB61DA8B7CE009573AB /* Itemlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Itemlist.m; sourceTree = "<group>"; };
 		2BF98EB81DA8C812009573AB /* ItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemTableViewCell.h; sourceTree = "<group>"; };
 		2BF98EB91DA8C812009573AB /* ItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTableViewCell.m; sourceTree = "<group>"; };
+		2BFE01141DB92D5A007934BD /* BentonSans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BentonSans Bold.ttf"; sourceTree = "<group>"; };
+		2BFE01151DB92D6A007934BD /* BentonSans Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BentonSans Medium.ttf"; sourceTree = "<group>"; };
+		2BFE01161DB92D85007934BD /* BentonSans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BentonSans Regular.ttf"; sourceTree = "<group>"; };
 		3517349AA1104418B811BF63 /* libPods-Hunger Meals.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hunger Meals.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4601FB6FA060AC4FD73DB175 /* Pods-Hunger MealsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger MealsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger MealsUITests/Pods-Hunger MealsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		719A449AF43D1D047E749B26 /* Pods-Hunger MealsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger MealsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hunger MealsUITests/Pods-Hunger MealsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -388,7 +394,7 @@
 			files = (
 				2B89E5041D5BBF640022EC67 /* CoreLocation.framework in Frameworks */,
 				67A9DF2A319A1E2057942F80 /* libPods-Hunger Meals.a in Frameworks */,
-				2BF62A291DB867A900B58A8B /* libPaymentsSDK.a in Frameworks */,
+				2BFE011A1DB92F90007934BD /* libPaymentsSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +431,9 @@
 		2B03AB011DAF58C3000DD8DA /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				2BFE01161DB92D85007934BD /* BentonSans Regular.ttf */,
+				2BFE01151DB92D6A007934BD /* BentonSans Medium.ttf */,
+				2BFE01141DB92D5A007934BD /* BentonSans Bold.ttf */,
 				2B03AB021DAF58E5000DD8DA /* amaranth.regular.ttf */,
 				2B03AB031DAF58E5000DD8DA /* Debby.ttf */,
 				2B03AB041DAF58E5000DD8DA /* glyphicons-halflings-regular.ttf */,
@@ -998,6 +1007,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BFE01171DB92D91007934BD /* BentonSans Regular.ttf in Resources */,
+				2BFE01181DB92D91007934BD /* BentonSans Medium.ttf in Resources */,
+				2BFE01191DB92D91007934BD /* BentonSans Bold.ttf in Resources */,
 				AC3533FB1DB7FF2E0005D716 /* checkbox_ticked.png in Resources */,
 				2B03AB291DAFD100000DD8DA /* LobsterTwo-Bold.otf in Resources */,
 				2B03AB2A1DAFD100000DD8DA /* LobsterTwo-BoldItalic.otf in Resources */,
@@ -1569,6 +1581,14 @@
 					Meals/Third,
 					Party,
 					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1693,6 +1713,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/sdk/2_1",
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 					"$(PROJECT_DIR)/Hunger",
 					Meals/Third,
 					Party,

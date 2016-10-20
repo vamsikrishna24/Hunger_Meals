@@ -4,6 +4,9 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>BentonSans Bold.otf</string>
+		<string>BentonSans Medium.otf</string>
+		<string>BentonSans Regular.otf</string>
 		<string>Soria font.ttf</string>
 		<string>seravek-light-webfont.ttf</string>
 		<string>seravek-medium-webfont.ttf</string>

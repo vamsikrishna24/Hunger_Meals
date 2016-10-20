@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CommonViewController.h"
 
-@interface HmDelieveriAddressViewController : CommonViewController
+@interface HmDelieveriAddressViewController : CommonViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *homeButtonOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *officeButtonOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *otherButtonOutlet;

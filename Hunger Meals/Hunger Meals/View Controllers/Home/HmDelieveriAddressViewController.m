@@ -30,6 +30,8 @@
     [self TextFieldsFonts];
     self.title = @"Delivery address";
     
+   // self.proceedToCheckOutButtonOutlet.enabled = NO;
+    
 }
 -(void)textFieldProperties{
     
@@ -136,4 +138,16 @@
         paymentVC.PaymentAmountString = self.PaymentAmountString;
     }
 }
+
+//#pragma Mark - TextField Delegate methods
+//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+//{
+//    
+//    if(self.pinCodeTextField.text.length > 0 && self.deliveryAddressTextFiels.text.length > 0 && self.flatNumberTextField.text.length > 0 && self.areaLocalityTextField.text.length > 0 && self.cityTextField.text.length > 0 && self.stateTextField.text.length > 0){
+//        self.proceedToCheckOutButtonOutlet.enabled = YES;
+//    }
+//    self.proceedToCheckOutButtonOutlet.enabled = NO;
+//
+//    return YES;
+//}
 @end
