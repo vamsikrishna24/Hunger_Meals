@@ -53,6 +53,8 @@ typedef void(^SuccessBlock)(NSData *data , NSHTTPURLResponse *response, NSError 
 
 - (void)saveMonthlyMealPlan:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock;
 
+- (void)forgotPassword:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock;
+
 - (NSMutableArray *)parseItemsData:(NSMutableArray *)array;
 //Service Requests
 

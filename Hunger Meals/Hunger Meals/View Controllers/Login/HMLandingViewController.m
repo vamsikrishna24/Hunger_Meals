@@ -24,6 +24,7 @@
 @property(strong,nonatomic) HMLandingViewController *homePageVC;
 @property (nonatomic, strong) MBProgressHUD* hud;
 @property (nonatomic, assign, getter=isIndicatorShowing) BOOL activityIndicatorIsShowing;
+@property (weak, nonatomic) IBOutlet UIButton *forgotPasswordButtonOutlet;
 
 
 @end
@@ -330,6 +331,17 @@ didSignInForUser:(GIDGoogleUser *)user
 - (void) hudWasHidden {
     // Remove HUD from screen when the HUD was hidded
     [hud removeFromSuperview];
+}
+- (IBAction)forgotPasswordButtonAction:(id)sender {
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+
+     SVService *service = [[SVService alloc] init];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: _userNameTextField.text, @"email",  nil];
+    [service forgotPassword:dict usingBlock:^(NSString *resultMessage) {
+        
+    [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+
+    }];
 }
 
 

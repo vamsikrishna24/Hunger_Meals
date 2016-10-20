@@ -337,7 +337,35 @@
     }];
 
 }
+#pragma forgot_Password
+- (void)forgotPassword:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock {
+    
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    
+    NSString *token = userDataObject.token;
+    NSString *url = [NSString stringWithFormat:kForgotPasswordURL, HTTP_DATA_HOST,token];
+    
+    [self sendRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            NSString *resultMsg = [dictResult valueForKeyPath:@"data.message"];
+            
+            if([resultMsg isEqualToString: @"Validation error"]){
+                 [[[UIAlertView alloc] initWithTitle:@"Validation error" message:@"The email must be a valid email address." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            }else{
 
+             [[[UIAlertView alloc] initWithTitle:@"Success" message:@"A link to reset your password has been sent on your email" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            }
+            resultBlock(dictResult);
+        }
+else{
+            resultBlock(nil);
+        }
+    }];
+    
+}
 #pragma currentactiveorders
 - (void)getCurrentActiveordersusingBlock:(void(^)(NSMutableArray *resultArray))resultBlock {
     

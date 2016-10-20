@@ -947,6 +947,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <action selector="forgotPasswordButtonAction:" destination="dDL-3C-iXZ" eventType="touchUpInside" id="jKN-Mx-UW7"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9B-2l-C7M">
                                         <rect key="frame" x="25" y="46" width="44" height="16"/>
@@ -1162,6 +1165,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="facebookLoginButton" destination="1BO-T6-zf8" id="Fcs-nS-8Il"/>
+                        <outlet property="forgotPasswordButtonOutlet" destination="38G-vs-E32" id="j40-S1-cch"/>
                         <outlet property="googleSignInButton" destination="xe9-kz-eZs" id="8TK-aX-vxd"/>
                         <outlet property="logoImageView" destination="HUP-2v-CCR" id="wE1-vG-I5p"/>
                         <outlet property="passwordTextField" destination="l4S-9z-cQz" id="hN1-hL-t6c"/>
@@ -4306,13 +4310,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViT-cA-Jaj">
-                                                    <rect key="frame" x="14" y="129" width="129" height="40"/>
+                                                    <rect key="frame" x="14" y="135" width="100" height="30"/>
                                                     <color key="backgroundColor" red="0.93333333333333335" green="0.33725490196078434" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="DTd-7e-CTF"/>
-                                                        <constraint firstAttribute="width" constant="129" id="lcc-pD-m8X"/>
+                                                        <constraint firstAttribute="height" constant="30" id="DTd-7e-CTF"/>
+                                                        <constraint firstAttribute="width" constant="100" id="lcc-pD-m8X"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <state key="normal" title="VIEW DETAILS">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -4329,7 +4333,7 @@
                                             <constraints>
                                                 <constraint firstItem="tO2-Xh-BbX" firstAttribute="top" secondItem="4eh-z4-5zy" secondAttribute="bottom" constant="8" id="4sM-mZ-oUC"/>
                                                 <constraint firstItem="ard-Z5-Xwh" firstAttribute="top" secondItem="tO2-Xh-BbX" secondAttribute="bottom" constant="8" id="BPb-eo-hvb"/>
-                                                <constraint firstItem="ViT-cA-Jaj" firstAttribute="top" secondItem="Qgp-0X-fYf" secondAttribute="bottom" constant="18" id="DMI-ua-p6D"/>
+                                                <constraint firstItem="ViT-cA-Jaj" firstAttribute="top" secondItem="Qgp-0X-fYf" secondAttribute="bottom" constant="24" id="DMI-ua-p6D"/>
                                                 <constraint firstItem="Qgp-0X-fYf" firstAttribute="top" secondItem="ard-Z5-Xwh" secondAttribute="bottom" constant="8" id="F2b-s8-Wwh"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="tWn-xl-yUs" secondAttribute="leading" constant="-6" id="HBY-zK-QvW"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ard-Z5-Xwh" secondAttribute="trailing" id="Iqz-qD-nuo"/>
@@ -4344,7 +4348,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="4eh-z4-5zy" secondAttribute="trailing" constant="6" id="bLu-O4-Cy4"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="wek-38-PfR" secondAttribute="bottom" constant="13.5" id="gOE-rN-ysF"/>
                                                 <constraint firstItem="Qgp-0X-fYf" firstAttribute="leading" secondItem="zxV-yo-h6v" secondAttribute="leadingMargin" constant="-8" id="k7f-3s-sgf"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ViT-cA-Jaj" secondAttribute="bottom" constant="9" id="rGC-DU-TYl"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ViT-cA-Jaj" secondAttribute="bottom" constant="13" id="rGC-DU-TYl"/>
                                                 <constraint firstAttribute="topMargin" secondItem="4eh-z4-5zy" secondAttribute="top" id="saA-Dh-Juk"/>
                                             </constraints>
                                         </tableViewCellContentView>
