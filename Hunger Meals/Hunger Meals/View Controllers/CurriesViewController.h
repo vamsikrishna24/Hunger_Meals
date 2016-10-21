@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CommonViewController.h"
+#import "Utility.h"
 
 @interface CurriesViewController : CommonViewController
 

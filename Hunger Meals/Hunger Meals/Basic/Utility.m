@@ -165,4 +165,20 @@
     return dateString;
 }
 
++(void)saveTocart:(NSString *)name quantity:(NSInteger )quantity{
+    
+    [[NSUserDefaults standardUserDefaults]setObject: [NSString stringWithFormat:@"%ld",quantity] forKey:[NSString stringWithFormat:@"%@", name]];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (NSString *)getQuantityforId:(NSString *)savedId {
+    
+    if ([[NSUserDefaults standardUserDefaults] valueForKey: savedId] != nil) {
+        return [[NSUserDefaults standardUserDefaults] valueForKey: savedId];
+    }
+    return @"0";
+    
+}
+
+
 @end

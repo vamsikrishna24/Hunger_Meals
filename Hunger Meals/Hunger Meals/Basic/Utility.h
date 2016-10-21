@@ -23,5 +23,7 @@
 + (NSString*) getStringWithTrimSpaces:(NSString*)string;
 + (NSString*)giveImageNameWithURL:(NSString *)url;
 + (NSString*)getStringFromDate:(NSDate*)date withFormat:(NSString *)format;
++(void)saveTocart:(NSString *)name quantity:(NSInteger)quantity;
++ (NSString *)getQuantityforId:(NSString *)savedId;
 
 @end

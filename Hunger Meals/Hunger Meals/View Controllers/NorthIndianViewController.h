@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CommonViewController.h"
+#import "Utility.h"
 
 @interface NorthIndianViewController : CommonViewController
 - (IBAction)addToCartAction:(id)sender;

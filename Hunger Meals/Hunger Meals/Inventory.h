@@ -34,4 +34,6 @@
 @property (nonatomic, retain) NSString<Optional> *is_lunch;
 @property (nonatomic, retain) NSString<Optional> *is_dinnerr;
 
+-(void)genrateinverntoryObject:(NSDictionary *)invObj;
+
 @end

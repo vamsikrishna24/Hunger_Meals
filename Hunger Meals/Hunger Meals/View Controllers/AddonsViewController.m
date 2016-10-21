@@ -75,7 +75,7 @@
     cell.incrementButton.tag = indexPath.row;
     cell.decrementButton.tag = indexPath.row;
     
-    Inventory *inventory = product.inventories[0];
+    NSDictionary *inventory = [product.inventories firstObject];
     
     if([product.label  isEqual: @"veg"]){
         cell.vegNonVegColorView.backgroundColor = [UIColor greenColor];
@@ -83,7 +83,17 @@
         cell.vegNonVegColorView.backgroundColor = [UIColor redColor];
         
     }
-
+    NSString  *qty = [Utility getQuantityforId:[NSString stringWithFormat:@"%@",[inventory valueForKey:@"id"]]];
+    if (![qty isEqualToString:@"0"]) {
+        
+        cell.addToCartButton.hidden = YES;
+        cell.countLabel.text = [NSString stringWithFormat:@"%@",qty];
+        
+        
+    }else{
+        cell.addToCartButton.hidden = NO;
+        
+    }
     NSString *string = [NSString stringWithFormat:@"%@%@",imageAmazonlink,product.image_url];
     [cell.itemImageView sd_setImageWithURL:[NSURL URLWithString:string]placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
@@ -144,6 +154,7 @@
     NSArray *array = productObject.inventories[0];
     NSString *stringArray = [array valueForKey:@"id"];
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: stringArray, @"inventories_id",[NSNumber numberWithInteger:quantity], @"quantity",  nil];
+    [Utility saveTocart:dict[@"inventories_id"] quantity:quantity];
     SVService *service = [[SVService alloc] init];
     [service addToCart:dict usingBlock:^(NSString *resultMessage) {
         if (resultMessage != nil) {

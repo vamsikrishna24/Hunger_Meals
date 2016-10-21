@@ -111,11 +111,43 @@
 
 #pragma QuickBites
 - (void)getQuickBitesProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
+
+    
+    [self productRequestUSingBlock:dict dataUrl:kQuickBitesDataURL usingBlock:resultBlock];
+    
+}
+
+#pragma southIndian
+- (void)getSouthIndianProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
+    [self productRequestUSingBlock:dict dataUrl:kSouthIndianBitesDataURL usingBlock:resultBlock];
+
+}
+
+#pragma Curries
+- (void)getCurriesProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
+    [self productRequestUSingBlock:dict dataUrl:kCurries usingBlock:resultBlock];
+
+}
+#pragma NorthIndian
+- (void)getNorthIndianProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
+    
+    [self productRequestUSingBlock:dict dataUrl:kNorthIndianBitesDataURL usingBlock:resultBlock];
+
+}
+
+#pragma addon
+- (void)getAddOnProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
+    
+    [self productRequestUSingBlock:dict dataUrl:kAddOnBitesDataURL usingBlock:resultBlock];
+
+}
+
+-(void)productRequestUSingBlock:(NSDictionary *)dict dataUrl:(NSString *)urlString usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
     NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
     UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
     
     NSString *token = userDataObject.token;
-    NSString *url = [NSString stringWithFormat:kQuickBitesDataURL, HTTP_DATA_HOST,token];
+    NSString *url = [NSString stringWithFormat:urlString, HTTP_DATA_HOST,token];
     
     [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
         if (response.statusCode == 200 && result!=nil) {
@@ -133,92 +165,8 @@
             resultBlock(nil);
         }
     }];
+    
 }
-
-#pragma southIndian
-- (void)getSouthIndianProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
-    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
-    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
-    
-    NSString *token = userDataObject.token;
-    NSString *url = [NSString stringWithFormat:kSouthIndianBitesDataURL, HTTP_DATA_HOST,token];
-    
-    [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
-        if (response.statusCode == 200 && result!=nil) {
-            
-            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
-                       resultBlock([self parseProductsData:dictResult]);
-        }
-        else{
-            resultBlock(nil);
-        }
-    }];
-}
-
-#pragma Curries
-- (void)getCurriesProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
-    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
-    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
-    
-    NSString *token = userDataObject.token;
-    NSString *url = [NSString stringWithFormat:kCurries, HTTP_DATA_HOST,token];
-    
-    [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
-        if (response.statusCode == 200 && result!=nil) {
-            
-            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
-            resultBlock([self parseProductsData:dictResult]);
-        }
-        else{
-            resultBlock(nil);
-        }
-    }];
-}
-#pragma NorthIndian
-- (void)getNorthIndianProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
-    
-    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
-    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
-    
-    NSString *token = userDataObject.token;
-    NSString *url = [NSString stringWithFormat:kNorthIndianBitesDataURL, HTTP_DATA_HOST,token];
-    
-    [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
-        if (response.statusCode == 200 && result!=nil) {
-            
-            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
-            
-           
-            resultBlock([self parseProductsData:dictResult]);
-        }
-        else{
-            resultBlock(nil);
-        }
-    }];
-}
-
-#pragma addon
-- (void)getAddOnProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
-    
-    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
-    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
-    
-    NSString *token = userDataObject.token;
-    NSString *url = [NSString stringWithFormat:kAddOnBitesDataURL, HTTP_DATA_HOST,token];
-    
-    [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
-        if (response.statusCode == 200 && result!=nil) {
-            
-            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
-           
-            resultBlock([self parseProductsData:dictResult]);
-        }
-        else{
-            resultBlock(nil);
-        }
-    }];
-}
-
 #pragma Current-Cart
 - (void)getCartDatausingBlock:(void(^)(NSMutableArray *resultArray))resultBlock {
     

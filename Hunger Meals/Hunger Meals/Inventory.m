@@ -11,4 +11,9 @@
 @implementation Inventory
 @synthesize id,product_id,kitchen_id,price,stock,date,created_at,updated_at,is_lunch,is_dinnerr;
 
+-(void)genrateinverntoryObject:(NSDictionary *)invObj
+{
+    self.id =  [invObj valueForKey:@"id"];
+}
+
 @end
