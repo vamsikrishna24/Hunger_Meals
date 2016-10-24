@@ -93,9 +93,9 @@
             UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
       
             HMOrdersListTableViewController *orderList = [storyBoard instantiateViewControllerWithIdentifier:@"OrdersViewIdentifier"];
-           UINavigationController *senav = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationIdentifier"];
+           UINavigationController *ordersNavigation = [self.storyboard instantiateViewControllerWithIdentifier:@"ordersNavigationIdentifier"];
         //[self performSegueWithIdentifier:@"NavigationIdentifier" sender:nil];
-        [self presentViewController:orderList animated:YES completion:nil];
+        [self presentViewController:ordersNavigation animated:YES completion:nil];
     }
     if (indexPath.row == 4){
         
@@ -103,7 +103,7 @@
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         
         HMInviteViewController *inviteVC = [storyBoard instantiateViewControllerWithIdentifier:@"InviteFriendIdentifier"];
-        UINavigationController *senav = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationIdentifier"];
+        //UINavigationController *senav = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationIdentifier"];
         //[self performSegueWithIdentifier:@"NavigationIdentifier" sender:nil];
         [self presentViewController:inviteVC animated:YES completion:nil];
     }
@@ -113,7 +113,7 @@
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         
         HMUserProfileViewController *profileVC = [storyBoard instantiateViewControllerWithIdentifier:@"UserProfileIdentifier"];
-        UINavigationController *senav = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationIdentifier"];
+        //UINavigationController *senav = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationIdentifier"];
         //[self performSegueWithIdentifier:@"NavigationIdentifier" sender:nil];
         [self presentViewController:profileVC animated:YES completion:nil];
     }

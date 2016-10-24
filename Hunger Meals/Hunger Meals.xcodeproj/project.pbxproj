@@ -19,7 +19,6 @@
 		2B03AB2A1DAFD100000DD8DA /* LobsterTwo-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB261DAFD0EC000DD8DA /* LobsterTwo-BoldItalic.otf */; };
 		2B03AB2B1DAFD100000DD8DA /* LobsterTwo-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB271DAFD0EC000DD8DA /* LobsterTwo-Italic.otf */; };
 		2B03AB2C1DAFD100000DD8DA /* LobsterTwo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB281DAFD0EC000DD8DA /* LobsterTwo-Regular.otf */; };
-		2B06F9B21DB9E1CC00715C18 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
 		2B085DBE1DA6715700EE2404 /* HMSlideMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B085DBD1DA6715700EE2404 /* HMSlideMenuTableViewCell.m */; };
 		2B0C2FB01DB3B973000FCAB4 /* HMInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C2FAF1DB3B973000FCAB4 /* HMInviteViewController.m */; };
 		2B203BB21DB3DF98006604BE /* HMUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B203BB11DB3DF98006604BE /* HMUserProfileViewController.m */; };
@@ -134,6 +133,8 @@
 		AC3533FB1DB7FF2E0005D716 /* checkbox_ticked.png in Resources */ = {isa = PBXBuildFile; fileRef = AC3533F91DB7FF2E0005D716 /* checkbox_ticked.png */; };
 		AC423DD01D985D6B00B8A5E5 /* CartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC423DCF1D985D6B00B8A5E5 /* CartItem.m */; };
 		ACD537CD1D9419700023B834 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD537CC1D9419700023B834 /* UserData.m */; };
+		ACDC01191DBD0FAE00710C1D /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
+		ACDC011C1DBD1C9B00710C1D /* OrderDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDC011B1DBD1C9B00710C1D /* OrderDetails.m */; };
 		ACDD63951DAA4F4400B1889C /* PayTMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDD63941DAA4F4400B1889C /* PayTMViewController.m */; };
 		E8F6627C1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F6627B1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m */; };
 		FBDF5E03F7D934EDB95266C0 /* libPods-Hunger MealsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD269D1071265531F331205 /* libPods-Hunger MealsUITests.a */; };
@@ -372,6 +373,8 @@
 		AC423DCF1D985D6B00B8A5E5 /* CartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartItem.m; sourceTree = "<group>"; };
 		ACD537CB1D9419700023B834 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		ACD537CC1D9419700023B834 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
+		ACDC011A1DBD1C9B00710C1D /* OrderDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetails.h; sourceTree = "<group>"; };
+		ACDC011B1DBD1C9B00710C1D /* OrderDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetails.m; sourceTree = "<group>"; };
 		ACDD63931DAA4F4400B1889C /* PayTMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayTMViewController.h; sourceTree = "<group>"; };
 		ACDD63941DAA4F4400B1889C /* PayTMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayTMViewController.m; sourceTree = "<group>"; };
 		ACDD63981DAA4FD200B1889C /* PaymentsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentsSDK.h; sourceTree = "<group>"; };
@@ -394,7 +397,7 @@
 			files = (
 				2B89E5041D5BBF640022EC67 /* CoreLocation.framework in Frameworks */,
 				67A9DF2A319A1E2057942F80 /* libPods-Hunger Meals.a in Frameworks */,
-				2B06F9B21DB9E1CC00715C18 /* libPaymentsSDK.a in Frameworks */,
+				ACDC01191DBD0FAE00710C1D /* libPaymentsSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -858,6 +861,8 @@
 				2B58CE5F1DA50AD00005C043 /* Tax.m */,
 				2BF98EB51DA8B7CE009573AB /* Itemlist.h */,
 				2BF98EB61DA8B7CE009573AB /* Itemlist.m */,
+				ACDC011A1DBD1C9B00710C1D /* OrderDetails.h */,
+				ACDC011B1DBD1C9B00710C1D /* OrderDetails.m */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -1203,6 +1208,7 @@
 				A88FB7431D5C5072005E8667 /* SlideMenuViewController.m in Sources */,
 				2B6ED9AF1D6FD915000D672D /* NorthIndianViewController.m in Sources */,
 				2BF5B0571D96DCE400A3D315 /* Inventory.m in Sources */,
+				ACDC011C1DBD1C9B00710C1D /* OrderDetails.m in Sources */,
 				2B0C2FB01DB3B973000FCAB4 /* HMInviteViewController.m in Sources */,
 				2BBDA6151D9B94A700F632CC /* Coupon.m in Sources */,
 				2B62B4821D678BD400B3C526 /* HMSignUpFirstViewController.m in Sources */,
@@ -1597,6 +1603,14 @@
 					Meals/Third,
 					Party,
 					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1721,6 +1735,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/sdk/2_1",
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 					"$(PROJECT_DIR)/Hunger",
 					Meals/Third,
 					Party,

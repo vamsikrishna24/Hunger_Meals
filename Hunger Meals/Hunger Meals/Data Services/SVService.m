@@ -22,7 +22,7 @@
 #import "AppDelegate.h"
 #import "ProjectConstants.h"
 #import "Itemlist.h"
-
+#import "OrderDetails.h"
 
 
 @interface SVService()
@@ -722,11 +722,11 @@ else{
     return parsedArray;
 }
 - (NSMutableArray *)parseOrdersData:(NSMutableArray *)array {
-   // NSError *error = nil;
+    NSError *error = nil;
     NSDictionary *dict = (NSDictionary *)array;
     NSMutableArray *resultArr = [dict valueForKeyPath:@"data"];
-   // NSMutableArray *parsedArray = [Product arrayOfModelsFromDictionaries:resultArr error:&error];
-    return resultArr;
+    NSMutableArray *parsedArray = [OrderDetails arrayOfModelsFromDictionaries:resultArr error:&error];
+    return parsedArray;
 }
 - (NSMutableArray *)parseCartData:(NSMutableArray *)array {
     NSError *error = nil;

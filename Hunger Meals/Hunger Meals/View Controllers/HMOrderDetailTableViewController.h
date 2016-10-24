@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "CommonViewController.h"
+#import "OrderDetails.h"
 
-@interface HMOrderDetailTableViewController : CommonViewController
+@interface HMOrderDetailTableViewController : CommonViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic, weak) IBOutlet UITableView *orderDetailsTableview;
+@property (nonatomic, weak) IBOutlet UILabel *orderNumberLabel;
+@property (nonatomic, weak) IBOutlet UILabel *orderDateLabel;
+@property (nonatomic, strong) OrderDetails *orderDetail;
 @end

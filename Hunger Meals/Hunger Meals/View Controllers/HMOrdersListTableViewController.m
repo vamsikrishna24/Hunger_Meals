@@ -10,6 +10,7 @@
 #import "HMOrdersListTableViewCell.h"
 #import "HMOrderDetailTableViewController.h"
 #import "SVService.h"
+#import "OrderDetails.h"
 
 @interface HMOrdersListTableViewController (){
     NSMutableArray *orderArray;
@@ -70,34 +71,22 @@
         cell = [[HMOrdersListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    objectArray= [orderArray valueForKey:@"totalprice"];
-    cell.orderTotalPrice.text = [NSString stringWithFormat:@"%@",objectArray[indexPath.row]];
-    objectArray= [orderArray valueForKeyPath:@"cartItems.product.name"];
+    OrderDetails *orderDetail = [orderArray objectAtIndex:indexPath.row];
+    cell.orderTotalPrice.text = orderDetail.totalprice;
+    cell.ItemNameLabel.text = [orderDetail.created_at objectForKey:@"date"];
+    cell.orderDateLabel.text = [NSString stringWithFormat:@"Order ID: #%@", orderDetail.id];
+    cell.viewDetailsButtonOutlet.tag = indexPath.row;
     
-    NSMutableString *productNameString = [[NSMutableString alloc]init];
-    NSArray *nameArray = [objectArray objectAtIndex:indexPath.row];
-    
-        for (NSString *nameString in nameArray) {
-            
-            [productNameString appendFormat:@"%@,",nameString];
-        
-    }
-    cell.ItemNameLabel.text = productNameString;
-
-    objectArray= [orderArray valueForKeyPath:@"created_at.date"];
-
-    cell.orderDateLabel.text = [NSString stringWithFormat:@"%@",objectArray[indexPath.row]];
     return cell;
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+#pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    HMOrderDetailTableViewController *orderDetailsVC = (HMOrderDetailTableViewController *)[segue destinationViewController];
+    UIButton *viewDetailsBtn = (UIButton *)sender;
+    orderDetailsVC.orderDetail = [orderArray objectAtIndex:viewDetailsBtn.tag];
 }
-*/
+
 
 - (IBAction)closeAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
