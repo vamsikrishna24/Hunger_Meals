@@ -11,6 +11,9 @@
 #import "HMOrdersListTableViewController.h"
 #import "HMInviteViewController.h"
 #import "HMUserProfileViewController.h"
+#import "HMHomePageViewController.h"
+#import "HMMonthlyDetailViewController.h"
+#import "HMMealPlannerViewController.h"
 
 
 
@@ -72,30 +75,29 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    
     if (indexPath.row == 0){
-//        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-//        MealsViewController *mealsVC = [storyBoard instantiateViewControllerWithIdentifier:@"MealsViewIdentifier"];
-//        [self.navigationController pushViewController:mealsVC animated:YES];
-        
+//        HMHomePageViewController *homeVC = [storyBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+//        [APPDELEGATE.homeNavigationController pushViewController:homeVC animated:YES];
+        [self.revealViewController revealToggleAnimated:YES];
     }
     
-    if (indexPath.row == 2){
-        
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        UINavigationController *navigationController = (UINavigationController *)[storyBoard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
+    else if (indexPath.row == 1) {
         MealsViewController *mealsVC = [storyBoard instantiateViewControllerWithIdentifier:@"MealsViewIdentifier"];
-        [navigationController pushViewController:mealsVC animated:YES];
         
+        [APPDELEGATE.homeNavigationController pushViewController:mealsVC animated:YES];
+        [self.revealViewController revealToggleAnimated:YES];
+
     }
-    if (indexPath.row == 3){
-       
-        
-            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-      
-            HMOrdersListTableViewController *orderList = [storyBoard instantiateViewControllerWithIdentifier:@"OrdersViewIdentifier"];
-           UINavigationController *ordersNavigation = [self.storyboard instantiateViewControllerWithIdentifier:@"ordersNavigationIdentifier"];
-        //[self performSegueWithIdentifier:@"NavigationIdentifier" sender:nil];
-        [self presentViewController:ordersNavigation animated:YES completion:nil];
+    
+    else if (indexPath.row == 2){
+        [self navigateToMealPlan];
+    }
+    else if (indexPath.row == 3){
+        HMOrdersListTableViewController *orderList = [storyBoard instantiateViewControllerWithIdentifier:@"OrdersViewIdentifier"];
+        [APPDELEGATE.homeNavigationController pushViewController:orderList animated:YES];
+        [self.revealViewController revealToggleAnimated:YES];
     }
     if (indexPath.row == 4){
         
@@ -138,6 +140,31 @@
             }];
             
         }
+    
+}
+
+#pragma Mark - Custom Methods
+-(void)navigateToMealPlan{
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    SVService *service = [[SVService alloc] init];
+    [service getcurrmealplanusingBlock:^(NSDictionary *resultDict) {
+        if (resultDict.count > 0) {
+            NSMutableArray *lunchList = [resultDict valueForKeyPath:@"data.lunchplandata.title"];
+            NSMutableArray *dinnerList = [resultDict valueForKeyPath:@"data.dinnerplandata.title"];
+            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            if (lunchList.count || dinnerList.count) {
+                HMMealPlannerViewController *monthlyMealViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MonthlyMealsViewIdentifier"];
+                [APPDELEGATE.homeNavigationController pushViewController:monthlyMealViewController animated:YES];
+            }
+            else {
+                HMMonthlyDetailViewController *monthlyMealViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MonthlyRecommondationViewIdentifier"];
+                [APPDELEGATE.homeNavigationController pushViewController:monthlyMealViewController animated:YES];
+            }
+            
+        }
+        [self.revealViewController revealToggleAnimated:YES];
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    }];
     
 }
 

@@ -58,7 +58,7 @@
     
     scrollingImgs = [NSArray arrayWithObjects: @"page1.png",@"page2.png",@"page3.png",@"page4.png", @"page5.png", nil];
     locationView = [[LocationView alloc]init];
-    
+    APPDELEGATE.homeNavigationController = self.navigationController;
     
     //Menu open/close based on gesture recognizer
     SWRevealViewController *revealController = self.revealViewController;

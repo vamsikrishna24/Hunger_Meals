@@ -131,9 +131,9 @@
 		AC3533F71DB7F1680005D716 /* HMComboSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3533F61DB7F1680005D716 /* HMComboSelectionViewController.m */; };
 		AC3533FA1DB7FF2E0005D716 /* checkbox_not_ticked.png in Resources */ = {isa = PBXBuildFile; fileRef = AC3533F81DB7FF2E0005D716 /* checkbox_not_ticked.png */; };
 		AC3533FB1DB7FF2E0005D716 /* checkbox_ticked.png in Resources */ = {isa = PBXBuildFile; fileRef = AC3533F91DB7FF2E0005D716 /* checkbox_ticked.png */; };
+		AC37E06D1DC11F6F00B0ED0A /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
 		AC423DD01D985D6B00B8A5E5 /* CartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC423DCF1D985D6B00B8A5E5 /* CartItem.m */; };
 		ACD537CD1D9419700023B834 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD537CC1D9419700023B834 /* UserData.m */; };
-		ACDC01191DBD0FAE00710C1D /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD639D1DAA4FD200B1889C /* libPaymentsSDK.a */; };
 		ACDC011C1DBD1C9B00710C1D /* OrderDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDC011B1DBD1C9B00710C1D /* OrderDetails.m */; };
 		ACDD63951DAA4F4400B1889C /* PayTMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDD63941DAA4F4400B1889C /* PayTMViewController.m */; };
 		E8F6627C1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F6627B1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m */; };
@@ -397,7 +397,7 @@
 			files = (
 				2B89E5041D5BBF640022EC67 /* CoreLocation.framework in Frameworks */,
 				67A9DF2A319A1E2057942F80 /* libPods-Hunger Meals.a in Frameworks */,
-				ACDC01191DBD0FAE00710C1D /* libPaymentsSDK.a in Frameworks */,
+				AC37E06D1DC11F6F00B0ED0A /* libPaymentsSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1611,6 +1611,14 @@
 					Meals/Third,
 					Party,
 					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1735,6 +1743,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/sdk/2_1",
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
+					"$(PROJECT_DIR)/Hunger",
+					Meals/Third,
+					Party,
+					Libraries,
 					"$(PROJECT_DIR)/Hunger",
 					Meals/Third,
 					Party,
