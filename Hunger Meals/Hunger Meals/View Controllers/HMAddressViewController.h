@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
+#import "MTGenericAlertView.h"
 
-@interface HMAddressViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+
+@interface HMAddressViewController : CommonViewController<UITableViewDelegate,UITableViewDataSource,MTGenericAlertViewDelegate>
+@property NSMutableArray *addressesArray;
 
 @end
