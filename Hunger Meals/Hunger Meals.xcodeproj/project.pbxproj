@@ -134,6 +134,8 @@
 		AC3533FB1DB7FF2E0005D716 /* checkbox_ticked.png in Resources */ = {isa = PBXBuildFile; fileRef = AC3533F91DB7FF2E0005D716 /* checkbox_ticked.png */; };
 		AC423DD01D985D6B00B8A5E5 /* CartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC423DCF1D985D6B00B8A5E5 /* CartItem.m */; };
 		ACD537CD1D9419700023B834 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD537CC1D9419700023B834 /* UserData.m */; };
+		ACD911681DC27DB300E8EDD2 /* helvetica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACD911661DC27DB300E8EDD2 /* helvetica.ttf */; };
+		ACD911691DC27DB300E8EDD2 /* nevis.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACD911671DC27DB300E8EDD2 /* nevis.ttf */; };
 		ACDC011C1DBD1C9B00710C1D /* OrderDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDC011B1DBD1C9B00710C1D /* OrderDetails.m */; };
 		ACDD63951DAA4F4400B1889C /* PayTMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDD63941DAA4F4400B1889C /* PayTMViewController.m */; };
 		E8F6627C1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F6627B1D8EA95900F42136 /* HMMonthlyCollectionViewCell.m */; };
@@ -373,6 +375,8 @@
 		AC423DCF1D985D6B00B8A5E5 /* CartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartItem.m; sourceTree = "<group>"; };
 		ACD537CB1D9419700023B834 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		ACD537CC1D9419700023B834 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
+		ACD911661DC27DB300E8EDD2 /* helvetica.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = helvetica.ttf; sourceTree = "<group>"; };
+		ACD911671DC27DB300E8EDD2 /* nevis.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nevis.ttf; sourceTree = "<group>"; };
 		ACDC011A1DBD1C9B00710C1D /* OrderDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetails.h; sourceTree = "<group>"; };
 		ACDC011B1DBD1C9B00710C1D /* OrderDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetails.m; sourceTree = "<group>"; };
 		ACDD63931DAA4F4400B1889C /* PayTMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayTMViewController.h; sourceTree = "<group>"; };
@@ -450,6 +454,8 @@
 				2B03AB261DAFD0EC000DD8DA /* LobsterTwo-BoldItalic.otf */,
 				2B03AB271DAFD0EC000DD8DA /* LobsterTwo-Italic.otf */,
 				2B03AB281DAFD0EC000DD8DA /* LobsterTwo-Regular.otf */,
+				ACD911661DC27DB300E8EDD2 /* helvetica.ttf */,
+				ACD911671DC27DB300E8EDD2 /* nevis.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -1048,8 +1054,10 @@
 				2B58CE5D1DA5073F0005C043 /* Tax.json in Resources */,
 				A831CA861D37CEC100B96F4F /* close.png in Resources */,
 				2B45D6871D59020400C873ED /* Notification.png in Resources */,
+				ACD911691DC27DB300E8EDD2 /* nevis.ttf in Resources */,
 				A88FB75D1D5C842B005E8667 /* BellIcon.png in Resources */,
 				AC3533FA1DB7FF2E0005D716 /* checkbox_not_ticked.png in Resources */,
+				ACD911681DC27DB300E8EDD2 /* helvetica.ttf in Resources */,
 				2B45D6981D5913D300C873ED /* Edit.png in Resources */,
 				9A0C43D01D2F868300A7BF6B /* Main.storyboard in Resources */,
 				A88FB7641D5C8C15005E8667 /* Shop.jpg in Resources */,
