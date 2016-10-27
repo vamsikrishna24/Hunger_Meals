@@ -517,7 +517,7 @@
 
 -(void)showLocationPopUp {
     
-    locationPopup = [[MTGenericAlertView alloc] initWithTitle:@"Select your Location" titleColor:[UIColor whiteColor] titleFont:nil backgroundImage:nil];
+    locationPopup = [[MTGenericAlertView alloc] initWithTitle:@"Select your Location" titleColor:APPLICATION_TITLE_COLOR titleFont:[Fonts nevisWithSize:16.0] backgroundImage:nil];
     
     //Add close button only to handle close button action. Other wise by default close button will be added.
     locationPopup.popUpCloseButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];

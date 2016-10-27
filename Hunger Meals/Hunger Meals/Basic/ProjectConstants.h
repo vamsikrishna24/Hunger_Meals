@@ -128,6 +128,10 @@
 
 #define APPLICATION_COLOR [UIColor colorWithRed:242/255.0f green:114/255.0f blue:68/255.0f alpha:1]
 
+#define APPLICATION_TITLE_COLOR [UIColor colorWithRed:85.0/255.0f green:85.0/255.0f blue:85.0/255.0f alpha:1]
+
+#define APPLICATION_SUBTITLE_COLOR [UIColor colorWithRed:119.0/255.0f green:119.0/255.0f blue:119.0/255.0f alpha:1]
+
 #define UNKNOWN_USER_NAME @"User Name"
 #define CURRENT_PASSWORD @"Current_Password"
 #define CURRENT_EMAILID @"emailID"

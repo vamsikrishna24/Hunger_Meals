@@ -16,4 +16,11 @@
 + (UIFont *) debbyWithSize:(CGFloat) fontSize;
 
 + (UIFont *) quicksandlightWithSize:(CGFloat) fontSize;
+
++ (UIFont *) nevisWithSize:(CGFloat) fontSize;
+
++ (UIFont *) HelveticaWithSize:(CGFloat) fontSize;
+
++ (UIFont *) helveticaBoldWithSize:(CGFloat) fontSize;
+
 @end

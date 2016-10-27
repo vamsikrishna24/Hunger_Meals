@@ -57,15 +57,15 @@
     
     if (IDIOM == IPAD) {
          self.navigationController.navigationBar.titleTextAttributes = @{
-                                                                NSForegroundColorAttributeName: [UIColor orangeColor],
-                                                                NSFontAttributeName: [Fonts fontHelveticaWithSize:26.0]
+                                                                NSForegroundColorAttributeName:APPLICATION_TITLE_COLOR ,
+                                                                NSFontAttributeName: [Fonts nevisWithSize:23.0]
                                                                 };
     }
     else{
         self.navigationController.navigationBar.titleTextAttributes =
         @{
-                                                                NSForegroundColorAttributeName: APPLICATION_COLOR,
-                                                                NSFontAttributeName: [Fonts quicksandlightWithSize:20.0]
+                                                                NSForegroundColorAttributeName: APPLICATION_TITLE_COLOR,
+                                                                NSFontAttributeName: [Fonts nevisWithSize:18.0]
                                                                 };
     }
     

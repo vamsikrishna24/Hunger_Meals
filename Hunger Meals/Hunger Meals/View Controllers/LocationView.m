@@ -7,6 +7,8 @@
 //
 
 #import "LocationView.h"
+#import "Fonts.h"
+#import "ProjectConstants.h"
 
 @implementation LocationView
 
@@ -73,14 +75,17 @@
     cell.backgroundColor = [UIColor colorWithRed:238.0/255.0f green:238.0/255.0f blue:238.0/255.0f alpha:1.0f];
     if (indexPath.row == 0) {
         [cell.locationLabel setText: @"Select Location"];
+        [cell.locationLabel setTextColor:APPLICATION_TITLE_COLOR];
+        [cell.locationLabel setFont:[Fonts nevisWithSize:16.0]];
+        cell.locationLeadingConstraint.constant = -13;
         cell.radioButton.hidden = true;
-        CGRect frame = cell.locationLabel.frame;
-        frame.origin.x = cell.radioButton.frame.origin.x;
-        cell.locationLabel.frame = frame;
     } else {
      //   NSDictionary *instance = _instancesArray [indexPath.row - 1];
         
       //  [cell.locationLabel setText: instance [@"address"]];
+        
+        [cell.locationLabel setTextColor:[UIColor colorWithRed:119.0/255.0f green:119.0/255.0f blue:119.0/255.0f alpha:1.0f]];
+        [cell.locationLabel setFont:[Fonts HelveticaWithSize:13.0]];
         
         NSInteger selectedLoc = [[USER_DEFAULTS valueForKey: @"selectedLocation"] integerValue];
         cell.locationLabel.text = (NSString *)[[[_instancesArray valueForKey:@"location"]valueForKey:@"name"]componentsJoinedByString:@""];

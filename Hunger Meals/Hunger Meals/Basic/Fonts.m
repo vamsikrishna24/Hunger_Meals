@@ -21,4 +21,17 @@
 + (UIFont *) quicksandlightWithSize:(CGFloat) fontSize {
     return [UIFont fontWithName: @"Amaranth" size: fontSize];
 }
+
++ (UIFont *) nevisWithSize:(CGFloat) fontSize {
+    return [UIFont fontWithName: @"nevis-Bold" size: fontSize];
+}
+
++ (UIFont *) HelveticaWithSize:(CGFloat) fontSize {
+    return [UIFont fontWithName: @"Helvetica" size: fontSize];
+}
+
++ (UIFont *) helveticaBoldWithSize:(CGFloat) fontSize {
+    return [UIFont fontWithName: @"Helvetica Bold" size: fontSize];
+}
+
 @end

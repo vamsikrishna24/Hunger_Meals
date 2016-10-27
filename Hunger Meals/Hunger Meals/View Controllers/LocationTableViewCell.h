@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *radioButton;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *locationLeadingConstraint;
 
 @end

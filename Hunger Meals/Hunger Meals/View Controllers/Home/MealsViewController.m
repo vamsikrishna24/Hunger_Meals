@@ -13,6 +13,8 @@
 #import "NorthIndianViewController.h"
 #import "AddonsViewController.h"
 #import "CurriesViewController.h"
+#import "Fonts.h"
+
 @interface MealsViewController ()<YSLContainerViewControllerDelegate>
 
 @end
@@ -41,8 +43,8 @@
     
     YSLContainerViewController *containerVC = [[YSLContainerViewController alloc] initWithControllers:@[quickBitesVC,southIndianVC,northIndianVC,curriesVC,addOnsVC] topBarHeight:statusHeight + navigationHeight withFrame:frame parentViewController:self];
     
-    containerVC.menuItemFont = [UIFont fontWithName:@"Soria-Soria" size:13];
-    containerVC.menuItemTitleColor = APPLICATION_COLOR;
+    containerVC.menuItemFont = [Fonts helveticaBoldWithSize:11.0];
+    containerVC.menuItemTitleColor = APPLICATION_SUBTITLE_COLOR;
     containerVC.menuItemSelectedTitleColor = APPLICATION_COLOR;
     containerVC.menuIndicatorColor = APPLICATION_COLOR;
     containerVC.menuBackGroudColor = [UIColor colorWithRed:238.0/255.0f green:238.0/255.0f blue:238.0/255.0f alpha:1.0f];
