@@ -30,7 +30,7 @@
     NorthIndianViewController *northIndianVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"NorthIndianViewIdentifier"];
     northIndianVC.title = @"NORTH INDIAN";
     CurriesViewController *curriesVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"CurriesViewIdentifier"];
-    curriesVC.title = @"CURRIES";
+    curriesVC.title = @"BIRYANI";
     AddonsViewController *addOnsVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"AddonsViewIdentifier"];
     addOnsVC.title = @"ADD-ONS";
     
