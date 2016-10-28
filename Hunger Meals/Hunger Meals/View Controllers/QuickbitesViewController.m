@@ -134,7 +134,7 @@
     [cell.itemImageView sd_setImageWithURL:[NSURL URLWithString:string]placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
     cell.titleLabel.text =product.name;
-    cell.descriptionView.text = product.description;
+    cell.descriptionView.text = @"3 Rotis, Rice,Mixed Dal, \nChicken Rara,Beans Ki\nSabji and Chutney";//product.description;
     
     cell.priceLabel.text = [NSString stringWithFormat:@"₹ %@",[inventory valueForKey: @"price"]];
     _labelArray = [_productObjectsArray valueForKey:@"label"];
@@ -161,12 +161,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSIndexPath *selectedIndexPath  = [tableView indexPathForSelectedRow];
-    
-    if ([indexPath isEqual:selectedIndexPath] && !isCellExpanded) {
-        return 440;
-    }
-    return 345;
+//    NSIndexPath *selectedIndexPath  = [tableView indexPathForSelectedRow];
+//    
+//    if ([indexPath isEqual:selectedIndexPath] && !isCellExpanded) {
+//        return 440;
+//    }
+    return 467;
 }
 
 - (IBAction)nonVegetarianAction:(id)sender {
