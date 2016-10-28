@@ -128,7 +128,7 @@
     cell.decrimentButton.tag = indexPath.row;
     cell.cancelButton.tag = indexPath.row;
     
-    cell.totalPriceLabel.text = [NSString stringWithFormat:@"%@ ₹",cartObject.price];
+    cell.totalPriceLabel.text = [NSString stringWithFormat:@"₹ %@",cartObject.price];
     cell.cartItemTitle.text = cartObject.product.name;
     cell.countLabel.text = cartObject.quantity;
     
@@ -154,40 +154,40 @@
     value1 = [[taxDict objectForKey:@"CESS"] floatValue];
     value1 = (value1*total)/100;
     taxSum = value1;
-    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
+    rsString = [ NSString stringWithFormat:@"₹ %.2f",value1];
     self.cessValueLabel.text = rsString;
     
     value1 = [[taxDict objectForKey:@"service_charge"] floatValue];
     value1 = (value1*total)/100;
-    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
+    rsString = [ NSString stringWithFormat:@"₹ %.2f",value1];
     self.serviceChargeValueLabel.text = rsString;
     
     taxSum = taxSum + value1;
     value1 = [[taxDict objectForKey:@"service_tax"] floatValue];
     value1 = (value1*total)/100;
-    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
+    rsString = [ NSString stringWithFormat:@"₹ %.2f",value1];
     self.serviceTaxValueLabel.text = rsString;
     taxSum = taxSum + value1;
     
     value1 = [[taxDict objectForKey:@"VAT"] floatValue];
     value1 = (value1*total)/100;
-    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
+    rsString = [ NSString stringWithFormat:@"₹ %.2f",value1];
     self.vatValueLabel.text = rsString;
     taxSum = taxSum + value1;
     
     value1 = [[taxDict objectForKey:@"delivery_charge"] floatValue];
     value1 = (value1*total)/100;
-    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
+    rsString = [ NSString stringWithFormat:@"₹ %.2f",value1];
     self.dekieveryChagesValueLabel.text = rsString;
     taxSum = taxSum + value1;
     
     value1 = [[taxDict objectForKey:@"packing_charge"] floatValue];
     value1 = (value1*total)/100;
-    rsString = [ NSString stringWithFormat:@"%.2f ₹",value1];
+    rsString = [ NSString stringWithFormat:@"₹ %.2f",value1];
     self.packagingValueLabel.text = rsString;
     taxSum = taxSum + value1;
     totalAmount = totalAmount + taxSum;
-    self.totalPrice.text = [NSString stringWithFormat:@"%.2f ₹",totalAmount] ;
+    self.totalPrice.text = [NSString stringWithFormat:@"₹ %.2f",totalAmount] ;
     
     
     
@@ -198,7 +198,7 @@
     CartItem *cartItemObject = cartItemsArray[btn.tag];
     quantity = [mealsCell.countLabel.text intValue];
     int priceOfItem= [cartItemObject.price intValue]/[cartItemObject.quantity intValue];
-    mealsCell.totalPriceLabel.text = [NSString stringWithFormat:@"%d ₹",priceOfItem * quantity];
+    mealsCell.totalPriceLabel.text = [NSString stringWithFormat:@"₹ %d",priceOfItem * quantity];
     
     //Updating the latest cart details again
     cartItemObject.price = [NSString stringWithFormat:@"%d", priceOfItem*quantity];
@@ -250,10 +250,10 @@
         
         [service couponCode:dict usingBlock:^(NSString *resultArray) {
             isCouponApplied = YES;
-            self.amountDiscountLabel.text = [NSString stringWithFormat:@"- %.2f ₹",[[resultArray valueForKey:@"amount"]floatValue]];
+            self.amountDiscountLabel.text = [NSString stringWithFormat:@"₹ - %.2f",[[resultArray valueForKey:@"amount"]floatValue]];
             coupondCodeDiscount = [[resultArray valueForKey:@"amount"]floatValue];
             totalAmount = totalAmount - coupondCodeDiscount;
-            self.totalPrice.text = [NSString stringWithFormat:@"%.2f ₹",totalAmount];
+            self.totalPrice.text = [NSString stringWithFormat:@"₹ %.2f",totalAmount];
             self.applyButton.enabled = NO;
             [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
             
@@ -272,8 +272,8 @@
             totalAmount = totalAmount + coupondCodeDiscount;
         }
         isCouponApplied = NO;
-        self.amountDiscountLabel.text = [NSString stringWithFormat:@"0"];
-        self.totalPrice.text = [NSString stringWithFormat:@"%.2f ₹",totalAmount];
+        self.amountDiscountLabel.text = [NSString stringWithFormat:@"₹ 0.00"];
+        self.totalPrice.text = [NSString stringWithFormat:@"₹ %.2f",totalAmount];
         
     }
     

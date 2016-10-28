@@ -115,20 +115,20 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     totalAmount = 0;
-    for (int row = 0; row < monthlyCartItemsArray.count ; row++) {
-        Itemlist *itemObject = itemsListArray[row];
-   //     totalAmount += [cartItemObject.price floatValue];
-    }
-    
-    [self calculation];
-    
-    if (monthlyCartItemsArray.count == 0) {
-        self.cartEmptyLabel.hidden = NO;
-        
-    }else {
-        self.cartEmptyLabel.hidden = YES;
-        
-    }
+//    for (int row = 0; row < monthlyCartItemsArray.count ; row++) {
+//        Itemlist *itemObject = itemsListArray[row];
+//        totalAmount += [cartItemObject.price floatValue];
+//    }
+//    
+//    [self calculation];
+//    
+//    if (monthlyCartItemsArray.count == 0) {
+//        self.cartEmptyLabel.hidden = NO;
+//        
+//    }else {
+//        self.cartEmptyLabel.hidden = YES;
+//        
+//    }
     return [monthlyCartItemsArray count];
 }
 
