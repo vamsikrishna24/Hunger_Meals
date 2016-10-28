@@ -55,7 +55,11 @@ typedef void(^SuccessBlock)(NSData *data , NSHTTPURLResponse *response, NSError 
 
 - (void)forgotPassword:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock;
 
+- (void)currentUserMonthlyCartWithDict:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock;
+
 - (NSMutableArray *)parseItemsData:(NSMutableArray *)array;
+
+- (NSMutableArray *)parseCurrentMonthlyCartData:(NSMutableArray *)array;
 //Service Requests
 
 -(void)sendRequest:(NSString *)urlString  Perameters:(NSDictionary *)perameterDict usingblock:(void(^)(id result, NSHTTPURLResponse *response, NSError *err))block;

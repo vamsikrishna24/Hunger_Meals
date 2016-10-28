@@ -1,4 +1,4 @@
-//
+ //
 //  HMMonthlyCartViewController.m
 //  Hunger Meals
 //
@@ -17,6 +17,8 @@
 
 @interface HMMonthlyCartViewController (){
     NSMutableArray *cartItemsArray;
+    NSMutableArray *monthlyCartItemsArray;
+
     NSString *rsString;
     float totalAmount;
     float taxSum;
@@ -65,12 +67,13 @@
 - (void)fetchMonthlyProducts{
     [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
     
+    NSDictionary *dict = [[NSDictionary alloc]initWithObjectsAndKeys:@"lunch",@"type", nil];
     SVService *service = [[SVService alloc] init];
-    [service getmonthlyproductsusingBlock:^(NSMutableArray *resultArray) {
-        if (resultArray.count > 0) {
-            itemsListArray = resultArray;
-        }
+    [service currentUserMonthlyCartWithDict:dict usingBlock:^(NSMutableArray *resultArray) {
+        
+        monthlyCartItemsArray = resultArray;
         [self.cartTableView reloadData];
+
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
     
@@ -112,21 +115,21 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     totalAmount = 0;
-    for (int row = 0; row < itemsListArray.count ; row++) {
+    for (int row = 0; row < monthlyCartItemsArray.count ; row++) {
         Itemlist *itemObject = itemsListArray[row];
    //     totalAmount += [cartItemObject.price floatValue];
     }
     
     [self calculation];
     
-    if (cartItemsArray.count == 0) {
+    if (monthlyCartItemsArray.count == 0) {
         self.cartEmptyLabel.hidden = NO;
         
     }else {
         self.cartEmptyLabel.hidden = YES;
         
     }
-    return [itemsListArray count];
+    return [monthlyCartItemsArray count];
 }
 
 
@@ -136,10 +139,11 @@
     if (cell == nil) {
         cell = [[HMMonthlyCartTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cartCell];
     }
-    cell.totalPriceLabel.text = [NSString stringWithFormat:@"%@ ₹",@"23"];
-        cell.cartItemTitle.text = @"Roasted chicken with pulao rice";
-        cell.countLabel.text = @"10";
-        self.quantityString = @"10";
+    //cell.totalPriceLabel.text = [NSString stringWithFormat:@"%@ ₹",@"23"];
+        cell.cartItemTitle.text = [monthlyCartItemsArray valueForKey:@"name"][indexPath.row];
+        cell.countLabel.text = [monthlyCartItemsArray valueForKey:@"quantity"][indexPath.row];
+      //  self.quantityString = [monthlyCartItemsArray valueForKey:@"quantity"][indexPath.row];
+       cell.totalPriceLabel.text = [monthlyCartItemsArray valueForKey:@"price"][indexPath.row];
 
 //    CartItem *cartObject = [itemsListArray objectAtIndex:indexPath.row];
 //    cell.incrementButton.tag = indexPath.row;

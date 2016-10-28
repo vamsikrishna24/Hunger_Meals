@@ -39,6 +39,8 @@ NSString * const kGetLocationIDURL = @"%@/location?token=%@";
 NSString * const kSyncUserLocation = @"%@/userlocation?token=%@";
 NSString * const kInviteUserURL = @"%@/invite";
 NSString * const kForgotPasswordURL = @"%@/forgot_password";
+NSString * const kCurrentUserMonthlycart = @"%@/currusermonthlycart?token=%@";
+
 
 
 

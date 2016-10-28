@@ -108,6 +108,35 @@
     }];
 }
 
+#pragma User authentication
+
+- (void)currentUserMonthlyCartWithDict:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
+    
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    
+    NSString *token = userDataObject.token;
+    
+    NSString *url = [NSString stringWithFormat:kCurrentUserMonthlycart, HTTP_DATA_HOST,token];
+    
+    [self sendRequest:url Perameters:dict usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            NSString *tokenString = [dictResult valueForKey:@"error"];
+            if([tokenString isEqualToString:@"Token is Expired"]){
+                [self signOut];
+                
+            }
+            resultBlock([self parseCurrentMonthlyCartData:dictResult]);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+
+}
 
 #pragma QuickBites
 - (void)getQuickBitesProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
@@ -729,6 +758,14 @@ else{
     return parsedArray;
 }
 - (NSMutableArray *)parseCartData:(NSMutableArray *)array {
+    NSError *error = nil;
+    NSDictionary *dict = (NSDictionary *)array;
+    NSArray *resultArr = [dict valueForKeyPath:@"data.data"];
+    NSMutableArray *parsedArray = [CartItem arrayOfModelsFromDictionaries:resultArr error:&error];
+    return parsedArray;
+}
+
+- (NSMutableArray *)parseCurrentMonthlyCartData:(NSMutableArray *)array {
     NSError *error = nil;
     NSDictionary *dict = (NSDictionary *)array;
     NSArray *resultArr = [dict valueForKeyPath:@"data.data"];
