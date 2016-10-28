@@ -768,8 +768,8 @@ else{
 - (NSMutableArray *)parseCurrentMonthlyCartData:(NSMutableArray *)array {
     NSError *error = nil;
     NSDictionary *dict = (NSDictionary *)array;
-    NSArray *resultArr = [dict valueForKeyPath:@"data.data"];
-    NSMutableArray *parsedArray = [CartItem arrayOfModelsFromDictionaries:resultArr error:&error];
+    NSMutableArray *resultArr = [dict valueForKeyPath:@"data.data"];
+    NSMutableArray *parsedArray = resultArr;//[CartItem arrayOfModelsFromDictionaries:resultArr error:&error];
     return parsedArray;
 }
 

@@ -17,6 +17,7 @@
     NSString *inventories_id;
     Product *product;
     NSString *price;
+    NSString *name;
     NSString *quantity;
     NSDictionary *created_at;
     NSDictionary *updated_at;
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) Product *product;
 @property (nonatomic, retain) NSString<Optional> *price;
 @property (nonatomic, retain) NSString<Optional> *quantity;
+@property (nonatomic, retain) NSString<Optional> *name;
 @property (nonatomic, retain) NSDictionary<Optional> *created_at;
 @property (nonatomic, retain) NSDictionary<Optional> *updated_at;
 
