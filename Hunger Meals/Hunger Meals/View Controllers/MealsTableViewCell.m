@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.decrementButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.incrementButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
     // Initialization code
 }
 
