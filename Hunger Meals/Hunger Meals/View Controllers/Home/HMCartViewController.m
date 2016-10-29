@@ -38,7 +38,7 @@
     self.title = @"Cart";
     quantity = 0;
     self.cartTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    //self.cartTableView.tableFooterView = self.cartTaxView;
+    self.cartTableView.tableFooterView = self.cartTaxView;
 
     
     [self.promoCodeTextField setValue:[UIFont fontWithName: @"Roboto-Light" size: 13] forKeyPath:@"_placeholderLabel.font"];
