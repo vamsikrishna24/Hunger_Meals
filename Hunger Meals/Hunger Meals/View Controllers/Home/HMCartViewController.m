@@ -25,6 +25,7 @@
     BOOL isCouponApplied;
 }
 @property (weak, nonatomic) IBOutlet UILabel *cartEmptyLabel;
+@property (weak, nonatomic) IBOutlet UIView *cartTaxView;
 
 @end
 
@@ -37,8 +38,18 @@
     self.title = @"Cart";
     quantity = 0;
     self.cartTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //self.cartTableView.tableFooterView = self.cartTaxView;
 
-
+    
+    [self.promoCodeTextField setValue:[UIFont fontWithName: @"Roboto-Light" size: 13] forKeyPath:@"_placeholderLabel.font"];
+    
+    UIColor *color = [UIColor colorWithRed:119.0/255.0f green:119.0/255.0f blue:119.0/255.0f alpha:1.0];
+    self.promoCodeTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Promo Code" attributes:@{NSForegroundColorAttributeName: color}];
+    CALayer *bottomBorder = [CALayer layer];
+    bottomBorder.frame = CGRectMake(0.0f, self.promoCodeTextField.frame.size.height - 1, self.promoCodeTextField.frame.size.width, 1.0f);
+    bottomBorder.backgroundColor = [UIColor colorWithRed:159.0f/255.0f green:159.0f/255.0f blue:159.0f/255.0f alpha:0.5].CGColor;
+    [self.promoCodeTextField.layer addSublayer:bottomBorder];
+    
     //    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
     //
     //    SVService *service = [[SVService alloc] init];

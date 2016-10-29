@@ -14,7 +14,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
+    //self.countLabel.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.incrementButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.decrimentButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.stepperView.layer.borderWidth = 1;
     // Initialization code
 }
