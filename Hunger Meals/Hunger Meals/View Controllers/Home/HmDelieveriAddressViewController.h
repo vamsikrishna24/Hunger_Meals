@@ -24,4 +24,8 @@
 
 - (IBAction)proceedToCheckoutAction:(id)sender;
 
+- (IBAction)otherButtonAction:(id)sender;
+- (IBAction)homeButtonAction:(id)sender;
+- (IBAction)officeButtonAction:(id)sender;
+
 @end

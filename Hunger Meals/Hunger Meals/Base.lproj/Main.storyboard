@@ -1452,11 +1452,12 @@
                                                 </state>
                                                 <state key="selected" image="Button_Radio_Checked.png"/>
                                                 <connections>
+                                                    <action selector="officeButtonAction:" destination="KzZ-ca-Ydf" eventType="touchUpInside" id="jlG-6g-iDM"/>
                                                     <action selector="paytmOptionSelected:" destination="xRG-Yj-jMh" eventType="touchUpInside" id="UTJ-Ay-IW8"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2222" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMJ-xc-mmJ">
-                                                <rect key="frame" x="283" y="20" width="112" height="60"/>
+                                                <rect key="frame" x="294" y="20" width="112" height="60"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
                                                 <inset key="titleEdgeInsets" minX="19" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1466,11 +1467,11 @@
                                                 </state>
                                                 <state key="selected" image="Button_Radio_Checked.png"/>
                                                 <connections>
-                                                    <action selector="paytmOptionSelected:" destination="xRG-Yj-jMh" eventType="touchUpInside" id="BSS-Qx-Dfs"/>
+                                                    <action selector="otherButtonAction:" destination="KzZ-ca-Ydf" eventType="touchUpInside" id="2fd-B0-mnW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2222" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Le-7z-32o">
-                                                <rect key="frame" x="20" y="20" width="112" height="60"/>
+                                                <rect key="frame" x="10" y="20" width="112" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="hDe-8B-E30"/>
                                                 </constraints>
@@ -1483,31 +1484,32 @@
                                                 </state>
                                                 <state key="selected" image="Button_Radio_Checked.png"/>
                                                 <connections>
-                                                    <action selector="paytmOptionSelected:" destination="xRG-Yj-jMh" eventType="touchUpInside" id="XEg-WM-X27"/>
+                                                    <action selector="homeButtonAction:" destination="KzZ-ca-Ydf" eventType="touchUpInside" id="Xim-KD-Sx0"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="mHr-JC-EZm" firstAttribute="leading" secondItem="1Le-7z-32o" secondAttribute="trailing" constant="20" id="0dj-jI-X40"/>
+                                            <constraint firstItem="mHr-JC-EZm" firstAttribute="leading" secondItem="1Le-7z-32o" secondAttribute="trailing" constant="30" id="0dj-jI-X40"/>
                                             <constraint firstItem="mHr-JC-EZm" firstAttribute="centerY" secondItem="1Le-7z-32o" secondAttribute="centerY" id="9Rw-ov-Njc"/>
                                             <constraint firstItem="gMJ-xc-mmJ" firstAttribute="width" secondItem="mHr-JC-EZm" secondAttribute="width" constant="1" id="KhF-9p-M6j"/>
                                             <constraint firstItem="gMJ-xc-mmJ" firstAttribute="centerY" secondItem="mHr-JC-EZm" secondAttribute="centerY" id="UXR-AG-mMa"/>
                                             <constraint firstItem="mHr-JC-EZm" firstAttribute="width" secondItem="1Le-7z-32o" secondAttribute="width" constant="-1" id="YSP-HN-Ywe"/>
                                             <constraint firstItem="gMJ-xc-mmJ" firstAttribute="height" secondItem="mHr-JC-EZm" secondAttribute="height" id="ZpN-pf-Xjx"/>
-                                            <constraint firstAttribute="trailing" secondItem="gMJ-xc-mmJ" secondAttribute="trailing" constant="20" id="bog-c5-EIB"/>
+                                            <constraint firstAttribute="trailing" secondItem="gMJ-xc-mmJ" secondAttribute="trailing" constant="9" id="bog-c5-EIB"/>
                                             <constraint firstItem="1Le-7z-32o" firstAttribute="top" secondItem="Dk3-BR-n76" secondAttribute="top" constant="20" id="hFA-X9-nTL"/>
                                             <constraint firstItem="mHr-JC-EZm" firstAttribute="height" secondItem="1Le-7z-32o" secondAttribute="height" id="hQM-vr-OU3"/>
                                             <constraint firstAttribute="height" constant="100" id="ht8-i7-ovy"/>
-                                            <constraint firstItem="gMJ-xc-mmJ" firstAttribute="leading" secondItem="mHr-JC-EZm" secondAttribute="trailing" constant="20" id="kIW-eU-o33"/>
-                                            <constraint firstItem="1Le-7z-32o" firstAttribute="leading" secondItem="Dk3-BR-n76" secondAttribute="leading" constant="20" id="ow6-xi-RfA"/>
+                                            <constraint firstItem="gMJ-xc-mmJ" firstAttribute="leading" secondItem="mHr-JC-EZm" secondAttribute="trailing" constant="31" id="kIW-eU-o33"/>
+                                            <constraint firstItem="1Le-7z-32o" firstAttribute="leading" secondItem="Dk3-BR-n76" secondAttribute="leading" constant="10" id="ow6-xi-RfA"/>
+                                            <constraint firstItem="mHr-JC-EZm" firstAttribute="centerX" secondItem="Dk3-BR-n76" secondAttribute="centerX" id="yBY-BO-BWW"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hb7-ce-fl5">
                                         <rect key="frame" x="8" y="120" width="398" height="264"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Delivery Time" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Nic-u1-UXq">
-                                                <rect key="frame" x="213" y="8" width="181" height="40"/>
+                                                <rect key="frame" x="213" y="8" width="172" height="40"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="0.90905172410000001" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="ceZ-xy-tOe"/>
@@ -1525,7 +1527,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Building/Flat No/House No" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Z4Q-O5-xva">
-                                                <rect key="frame" x="4" y="70" width="390" height="40"/>
+                                                <rect key="frame" x="12" y="70" width="373" height="40"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="0.90905172410000001" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="yLC-AQ-FLO"/>
@@ -1543,7 +1545,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Area/ Locality" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="BNk-jd-ena">
-                                                <rect key="frame" x="4" y="136" width="390" height="40"/>
+                                                <rect key="frame" x="12" y="136" width="373" height="40"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="0.90905172410000001" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="1" green="0.65921854759999998" blue="0.25414326069999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
@@ -1558,7 +1560,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="ex6-88-yjL" userLabel="City">
-                                                <rect key="frame" x="4" y="205" width="181" height="40"/>
+                                                <rect key="frame" x="12" y="205" width="181" height="40"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="0.90905172410000001" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="1" green="0.65921854759999998" blue="0.25414326069999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
@@ -1573,7 +1575,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="lTo-WC-07D">
-                                                <rect key="frame" x="213" y="205" width="181" height="40"/>
+                                                <rect key="frame" x="213" y="205" width="172" height="40"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="0.90905172410000001" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="1" green="0.65921854759999998" blue="0.25414326069999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
@@ -1588,7 +1590,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PinCode" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="a71-b6-u8R">
-                                                <rect key="frame" x="4" y="8" width="181" height="40"/>
+                                                <rect key="frame" x="12" y="8" width="181" height="40"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="0.90905172410000001" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="1" green="0.65921854759999998" blue="0.25414326069999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
@@ -1613,12 +1615,12 @@
                                             <constraint firstItem="lTo-WC-07D" firstAttribute="width" secondItem="Nic-u1-UXq" secondAttribute="width" id="4tK-IJ-OaH"/>
                                             <constraint firstItem="a71-b6-u8R" firstAttribute="top" secondItem="Hb7-ce-fl5" secondAttribute="top" constant="8" id="CXd-B1-s5N"/>
                                             <constraint firstAttribute="bottom" secondItem="ex6-88-yjL" secondAttribute="bottom" constant="19" id="FCa-KP-a3D"/>
-                                            <constraint firstItem="Nic-u1-UXq" firstAttribute="width" secondItem="a71-b6-u8R" secondAttribute="width" id="FIg-Wu-ql5"/>
+                                            <constraint firstItem="Nic-u1-UXq" firstAttribute="width" secondItem="a71-b6-u8R" secondAttribute="width" constant="-9" id="FIg-Wu-ql5"/>
                                             <constraint firstItem="lTo-WC-07D" firstAttribute="height" secondItem="Nic-u1-UXq" secondAttribute="height" id="Hav-80-BCi"/>
-                                            <constraint firstItem="Z4Q-O5-xva" firstAttribute="leading" secondItem="Hb7-ce-fl5" secondAttribute="leading" constant="4" id="L4Q-ur-wVG"/>
+                                            <constraint firstItem="Z4Q-O5-xva" firstAttribute="leading" secondItem="Hb7-ce-fl5" secondAttribute="leading" constant="12" id="L4Q-ur-wVG"/>
                                             <constraint firstItem="BNk-jd-ena" firstAttribute="width" secondItem="Z4Q-O5-xva" secondAttribute="width" id="Oj0-dw-lG8"/>
                                             <constraint firstItem="Nic-u1-UXq" firstAttribute="centerY" secondItem="a71-b6-u8R" secondAttribute="centerY" id="QNn-rz-s3X"/>
-                                            <constraint firstItem="a71-b6-u8R" firstAttribute="leading" secondItem="Hb7-ce-fl5" secondAttribute="leading" constant="4" id="S6g-Nu-lqv"/>
+                                            <constraint firstItem="a71-b6-u8R" firstAttribute="leading" secondItem="Hb7-ce-fl5" secondAttribute="leading" constant="12" id="S6g-Nu-lqv"/>
                                             <constraint firstItem="BNk-jd-ena" firstAttribute="trailing" secondItem="Z4Q-O5-xva" secondAttribute="trailing" id="U8G-5n-XmT"/>
                                             <constraint firstItem="ex6-88-yjL" firstAttribute="height" secondItem="a71-b6-u8R" secondAttribute="height" id="WGi-NJ-PZX"/>
                                             <constraint firstItem="lTo-WC-07D" firstAttribute="top" secondItem="BNk-jd-ena" secondAttribute="bottom" constant="29" id="Y2Z-cI-9uf"/>
@@ -1626,11 +1628,11 @@
                                             <constraint firstAttribute="bottom" secondItem="lTo-WC-07D" secondAttribute="bottom" constant="19" id="bcD-c9-pC0"/>
                                             <constraint firstAttribute="height" constant="264" id="cU6-H9-UYO"/>
                                             <constraint firstItem="BNk-jd-ena" firstAttribute="top" secondItem="Z4Q-O5-xva" secondAttribute="bottom" constant="26" id="e08-Z8-1EG"/>
-                                            <constraint firstAttribute="trailing" secondItem="Z4Q-O5-xva" secondAttribute="trailing" constant="4" id="eaN-c2-g7g"/>
+                                            <constraint firstAttribute="trailing" secondItem="Z4Q-O5-xva" secondAttribute="trailing" constant="13" id="eaN-c2-g7g"/>
                                             <constraint firstItem="Nic-u1-UXq" firstAttribute="height" secondItem="a71-b6-u8R" secondAttribute="height" id="hF4-xV-EAV"/>
                                             <constraint firstItem="lTo-WC-07D" firstAttribute="leading" secondItem="Nic-u1-UXq" secondAttribute="leading" id="i47-rZ-7rg"/>
-                                            <constraint firstItem="Nic-u1-UXq" firstAttribute="leading" secondItem="a71-b6-u8R" secondAttribute="trailing" constant="28" id="mLX-rO-oIq"/>
-                                            <constraint firstAttribute="trailing" secondItem="Nic-u1-UXq" secondAttribute="trailing" constant="4" id="mjE-ej-f6N"/>
+                                            <constraint firstItem="Nic-u1-UXq" firstAttribute="leading" secondItem="a71-b6-u8R" secondAttribute="trailing" constant="20" id="mLX-rO-oIq"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nic-u1-UXq" secondAttribute="trailing" constant="13" id="mjE-ej-f6N"/>
                                             <constraint firstItem="ex6-88-yjL" firstAttribute="leading" secondItem="a71-b6-u8R" secondAttribute="leading" id="nWK-eq-hQL"/>
                                             <constraint firstItem="BNk-jd-ena" firstAttribute="height" secondItem="Z4Q-O5-xva" secondAttribute="height" id="ueU-7o-K5Z"/>
                                         </constraints>

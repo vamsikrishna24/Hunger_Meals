@@ -13,6 +13,7 @@
 @interface HmDelieveriAddressViewController (){
     CALayer *bottomBorder;
     NSMutableArray *savedLocationIDs;
+    NSString *selectedAddressType;
 
 }
 
@@ -29,7 +30,8 @@
     
     [self TextFieldsFonts];
     self.title = @"Delivery address";
-    
+    [self.homeButtonOutlet.layer setValue:[NSNumber numberWithBool:YES] forKey:@"isSelected"];
+    selectedAddressType = @"HOME";
    // self.proceedToCheckOutButtonOutlet.enabled = NO;
     
 }
@@ -150,4 +152,53 @@
 //
 //    return YES;
 //}
+- (IBAction)otherButtonAction:(id)sender {
+    UIButton *btn = (UIButton *)sender;
+    if ([btn.layer valueForKey:@"isSelected"]) {
+        [btn.layer setValue:[NSNumber numberWithBool:YES] forKey:@"isSelected"];
+    }
+    else {
+        [btn.layer setValue:[NSNumber numberWithBool:NO] forKey:@"isSelected"];
+    }
+    
+    [self.homeButtonOutlet setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
+     [self.officeButtonOutlet setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
+    
+    [self.otherButtonOutlet setImage:[UIImage imageNamed:@"Radio_Checked"] forState:UIControlStateNormal];
+    
+    selectedAddressType = @"OTHER";
+}
+
+- (IBAction)homeButtonAction:(id)sender {
+    UIButton *btn = (UIButton *)sender;
+    if ([btn.layer valueForKey:@"isSelected"]) {
+        [btn.layer setValue:[NSNumber numberWithBool:YES] forKey:@"isSelected"];
+    }
+    else {
+        [btn.layer setValue:[NSNumber numberWithBool:NO] forKey:@"isSelected"];
+    }
+    
+    [self.otherButtonOutlet setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
+    [self.officeButtonOutlet setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
+    
+    [self.homeButtonOutlet setImage:[UIImage imageNamed:@"Radio_Checked"] forState:UIControlStateNormal];
+    
+    selectedAddressType = @"HOME";
+}
+- (IBAction)officeButtonAction:(id)sender {
+    UIButton *btn = (UIButton *)sender;
+    if ([btn.layer valueForKey:@"isSelected"]) {
+        [btn.layer setValue:[NSNumber numberWithBool:YES] forKey:@"isSelected"];
+    }
+    else {
+        [btn.layer setValue:[NSNumber numberWithBool:NO] forKey:@"isSelected"];
+    }
+    
+    [self.otherButtonOutlet setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
+    [self.homeButtonOutlet setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
+    
+    [self.officeButtonOutlet setImage:[UIImage imageNamed:@"Radio_Checked"] forState:UIControlStateNormal];
+    
+    selectedAddressType = @"OFFICE";
+}
 @end
