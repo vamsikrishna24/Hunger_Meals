@@ -102,7 +102,7 @@
     if (isVegSwitchOn) {
         product = _filteredProdcutsArray[indexPath.row];
     }
-        
+    
     if([product.label  isEqual: @"veg"]){
         cell.vegImageView.image = [UIImage imageNamed:@"Veg"];
        // cell.vegNonVegColorView.backgroundColor = [UIColor greenColor];
@@ -219,9 +219,7 @@
     Product *productObject = _productObjectsArray[btn.tag];
     NSInteger quantity = [mealsCell.countLabel.text intValue];
     
-    NSArray *array = productObject.inventories[0];
-    NSString *stringArray = [array valueForKey:@"id"];
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: stringArray, @"inventories_id",[NSNumber numberWithInteger:quantity], @"quantity",  nil];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: productObject.id, @"inventories_id",[NSNumber numberWithInteger:quantity], @"quantity",  nil];
     
     [Utility saveTocart:dict[@"inventories_id"] quantity:quantity];
     
