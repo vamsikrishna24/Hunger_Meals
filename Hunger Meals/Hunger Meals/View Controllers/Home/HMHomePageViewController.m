@@ -409,9 +409,11 @@
             [self.navigationController pushViewController:cartViewController animated:YES];
             
         }
+        
         if (indexPath.row == 2) {
             [self navigateToMealPlan];
         }
+        
         if (indexPath.row == 3) {
             UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             HMCartViewController *cartViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MealsViewIdentifier"];

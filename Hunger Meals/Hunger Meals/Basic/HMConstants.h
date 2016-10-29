@@ -17,6 +17,7 @@
 extern NSString * const kProductsDataURL;
 extern NSString * const kCreateUserDataURL;
 extern NSString * const kUserDataURL;
+extern NSString * const kMealsProductURL;
 extern NSString * const kQuickBitesDataURL;
 extern NSString * const kNorthIndianBitesDataURL;
 extern NSString * const kSouthIndianBitesDataURL;

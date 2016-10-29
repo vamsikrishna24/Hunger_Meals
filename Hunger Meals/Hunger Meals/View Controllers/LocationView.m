@@ -35,10 +35,14 @@
             if (resultArray != nil || resultArray.count != 0) {
                 _instancesArray = [[NSMutableArray alloc]init];
                 _instancesArray = resultArray;
-                CGRect frame = CGRectMake(25, (self.frame.size.height - 64 - _instancesArray.count * 40) / 2, self.frame.size.width - 50, _instancesArray.count * 100);
+                CGRect frame;
+                if (_instancesArray.count > 3) {
+                    frame = CGRectMake(25, self.frame.size.height/2 - 150, self.frame.size.width - 50, 300);
+                }
+                else {
+                    frame = CGRectMake(25, (self.frame.size.height/2 - (_instancesArray.count * 100)/2), self.frame.size.width - 50, _instancesArray.count * 100);
+                }
                 self.stringToDisplay = (NSString *)[[[_instancesArray valueForKey:@"location"]valueForKey:@"name"]componentsJoinedByString:@""];
-                
-                NSString * city = [_instancesArray valueForKey:@"city"];
                 
                 if (frame.size.height < 80) {
                     frame.size.height = 80;
@@ -86,9 +90,10 @@
         
         [cell.locationLabel setTextColor:[UIColor colorWithRed:119.0/255.0f green:119.0/255.0f blue:119.0/255.0f alpha:1.0f]];
         [cell.locationLabel setFont:[Fonts HelveticaWithSize:13.0]];
-        
+        cell.radioButton.hidden = false;
+        cell.locationLeadingConstraint.constant = 8;
         NSInteger selectedLoc = [[USER_DEFAULTS valueForKey: @"selectedLocation"] integerValue];
-        cell.locationLabel.text = (NSString *)[[[_instancesArray valueForKey:@"location"]valueForKey:@"name"]componentsJoinedByString:@""];
+        cell.locationLabel.text = (NSString *)[[_instancesArray[indexPath.row-1] valueForKey:@"location"]valueForKey:@"name"];
         if (selectedLoc == indexPath.row) {
             _selectedIndexPath = indexPath;
             [cell.radioButton setImage: [UIImage imageNamed: kRadioOn] forState: UIControlStateNormal];
@@ -111,6 +116,9 @@
         [cell.radioButton setImage: [UIImage imageNamed: kRadioOn] forState: UIControlStateNormal];
         APPDELEGATE.selectedInstance = (int)_selectedIndexPath.row;
         [USER_DEFAULTS setValue: [NSString stringWithFormat: @"%ld", (long)indexPath.row] forKey: @"selectedLocation"];
+        
+        NSString *locationID = [[_instancesArray[indexPath.row-1] valueForKey:@"location"]valueForKey:@"id"];
+        [[NSUserDefaults standardUserDefaults] setObject:locationID forKey:@"locationID"];
     }
     
     

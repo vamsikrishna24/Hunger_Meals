@@ -140,34 +140,63 @@
 
 #pragma QuickBites
 - (void)getQuickBitesProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
-
     
-    [self productRequestUSingBlock:dict dataUrl:kQuickBitesDataURL usingBlock:resultBlock];
+    NSString *locationID = [[NSUserDefaults standardUserDefaults] objectForKey:@"locationID"];
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    NSString *token = userDataObject.token;
+    NSString *urlString = [NSString stringWithFormat:kMealsProductURL, HTTP_DATA_HOST,locationID,@"qbites", token];
+    [self productRequestUSingBlock:dict dataUrl:urlString usingBlock:resultBlock];
     
 }
 
 #pragma southIndian
 - (void)getSouthIndianProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
-    [self productRequestUSingBlock:dict dataUrl:kSouthIndianBitesDataURL usingBlock:resultBlock];
+    
+    NSString *locationID = [[NSUserDefaults standardUserDefaults] objectForKey:@"locationID"];
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    NSString *token = userDataObject.token;
+    NSString *urlString = [NSString stringWithFormat:kMealsProductURL, HTTP_DATA_HOST,locationID,@"sindian", token];
+    [self productRequestUSingBlock:dict dataUrl:urlString usingBlock:resultBlock];
+
 
 }
 
 #pragma Curries
 - (void)getCurriesProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
-    [self productRequestUSingBlock:dict dataUrl:kCurries usingBlock:resultBlock];
+    NSString *locationID = [[NSUserDefaults standardUserDefaults] objectForKey:@"locationID"];
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    NSString *token = userDataObject.token;
+    NSString *urlString = [NSString stringWithFormat:kMealsProductURL, HTTP_DATA_HOST,locationID,@"curries", token];
+    [self productRequestUSingBlock:dict dataUrl:urlString usingBlock:resultBlock];
+
 
 }
 #pragma NorthIndian
 - (void)getNorthIndianProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
     
-    [self productRequestUSingBlock:dict dataUrl:kNorthIndianBitesDataURL usingBlock:resultBlock];
+    NSString *locationID = [[NSUserDefaults standardUserDefaults] objectForKey:@"locationID"];
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    NSString *token = userDataObject.token;
+    NSString *urlString = [NSString stringWithFormat:kMealsProductURL, HTTP_DATA_HOST,locationID,@"nindian", token];
+    [self productRequestUSingBlock:dict dataUrl:urlString usingBlock:resultBlock];
+
 
 }
 
 #pragma addon
 - (void)getAddOnProductsDataUsingBlock:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
     
-    [self productRequestUSingBlock:dict dataUrl:kAddOnBitesDataURL usingBlock:resultBlock];
+    NSString *locationID = [[NSUserDefaults standardUserDefaults] objectForKey:@"locationID"];
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    NSString *token = userDataObject.token;
+    NSString *urlString = [NSString stringWithFormat:kMealsProductURL, HTTP_DATA_HOST,locationID,@"addons", token];
+    [self productRequestUSingBlock:dict dataUrl:urlString usingBlock:resultBlock];
+
 
 }
 
@@ -709,8 +738,14 @@ else{
 - (NSMutableArray *)parseProductsData:(NSMutableArray *)array {
     NSError *error = nil;
     NSDictionary *dict = (NSDictionary *)array;
-    NSArray *resultArr = [dict valueForKeyPath:@"data"];
+    NSArray *resultArr = [dict valueForKeyPath:@"data.product"];
+    NSArray *pricesArr = [dict valueForKeyPath:@"data.price"];
     NSMutableArray *parsedArray = [Product arrayOfModelsFromDictionaries:resultArr error:&error];
+    int count = 0;
+    for (Product *productObj in parsedArray) {
+        productObj.price = pricesArr[count];
+        count++;
+    }
     return parsedArray;
 }
 

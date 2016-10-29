@@ -104,8 +104,8 @@
     NSString *string = [NSString stringWithFormat:@"%@%@",imageAmazonlink,product.image_url];
     [cell.itemImageView sd_setImageWithURL:[NSURL URLWithString:string]placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     cell.titleLabel.text = product.name;
-    cell.descriptionView.text = @"3 Rotis, Rice,Mixed Dal, \nChicken Rara,Beans Ki\nSabji and Chutney";//product.description;
-    cell.priceLabel.text = [NSString stringWithFormat:@"₹ %@",[inventory valueForKey: @"price"]];
+    cell.descriptionView.text = product.description;
+    cell.priceLabel.text = [NSString stringWithFormat:@"₹ %@",product.price];
     return cell;
 }
 

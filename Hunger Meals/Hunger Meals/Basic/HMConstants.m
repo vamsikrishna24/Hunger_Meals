@@ -15,6 +15,7 @@
 NSString * const kProductsDataURL = @"%@/products";
 NSString * const kCreateUserDataURL = @"%@/user";
 NSString * const kUserDataURL = @"%@/login?email=%@&password=%@";
+NSString * const kMealsProductURL = @"%@/products/location/%@/category/%@?token=%@";
 NSString * const kQuickBitesDataURL = @"%@/products/category/qbites?token=%@";
 NSString * const kNorthIndianBitesDataURL = @"%@/products/category/nindian?token=%@";
 NSString * const kSouthIndianBitesDataURL = @"%@/products/category/sindian?token=%@";

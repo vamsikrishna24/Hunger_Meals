@@ -14,6 +14,7 @@
     NSString *id;
     NSString *name;
     NSString *description;
+    NSString *price;
     NSString *type;
     NSString *category;
     NSString *label;
@@ -30,6 +31,7 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, strong) NSString<Optional> *id;
 @property (nonatomic, strong) NSString<Optional> *description;
+@property (nonatomic, strong) NSString<Optional> *price;
 @property (nonatomic, retain) NSString<Optional> *type;
 @property (nonatomic, retain) NSString<Optional> *category;
 @property (nonatomic, retain) NSString<Optional> *label;
