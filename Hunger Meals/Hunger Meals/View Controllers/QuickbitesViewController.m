@@ -102,9 +102,7 @@
     if (isVegSwitchOn) {
         product = _filteredProdcutsArray[indexPath.row];
     }
-    
-    NSDictionary *inventory = [product.inventories firstObject];
-    
+        
     if([product.label  isEqual: @"veg"]){
         cell.vegImageView.image = [UIImage imageNamed:@"Veg"];
        // cell.vegNonVegColorView.backgroundColor = [UIColor greenColor];
@@ -116,12 +114,12 @@
     }
     
     
-    NSString  *qty = [Utility getQuantityforId:[NSString stringWithFormat:@"%@",[inventory valueForKey:@"id"]]];
-    if (![qty isEqualToString:@"0"]) {
+    NSInteger  qty = [product.quantity integerValue];
+    
+    if (qty > 0) {
         
         cell.addToCartButton.hidden = YES;
-        cell.countLabel.text = [NSString stringWithFormat:@"%@",qty];
-
+        cell.countLabel.text = [NSString stringWithFormat:@"%ld",qty];
         
     }else{
         cell.addToCartButton.hidden = NO;

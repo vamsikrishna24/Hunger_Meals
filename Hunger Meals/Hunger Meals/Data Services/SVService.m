@@ -738,12 +738,14 @@ else{
 - (NSMutableArray *)parseProductsData:(NSMutableArray *)array {
     NSError *error = nil;
     NSDictionary *dict = (NSDictionary *)array;
-    NSArray *resultArr = [dict valueForKeyPath:@"data.product"];
-    NSArray *pricesArr = [dict valueForKeyPath:@"data.price"];
+    NSArray *resultArr = [dict valueForKeyPath:@"data.inventory.product"];
+    NSArray *pricesArr = [dict valueForKeyPath:@"data.inventory.price"];
+    NSArray *quantityArr = [dict valueForKeyPath:@"data.quantity"];
     NSMutableArray *parsedArray = [Product arrayOfModelsFromDictionaries:resultArr error:&error];
     int count = 0;
     for (Product *productObj in parsedArray) {
         productObj.price = pricesArr[count];
+        productObj.quantity = quantityArr[count];
         count++;
     }
     return parsedArray;

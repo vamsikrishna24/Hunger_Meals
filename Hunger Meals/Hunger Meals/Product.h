@@ -25,7 +25,7 @@
     NSString *created_at;
     NSString *updated_at;
     NSMutableArray *inventories;
-    
+    NSNumber *quantity;
 }
 
 @property (nonatomic, retain) NSString *name;
@@ -41,6 +41,7 @@
 @property (nonatomic, retain) NSString<Optional> *image_url;
 @property (nonatomic, retain) NSString<Optional> *created_at;
 @property (nonatomic, retain) NSString<Optional> *updated_at;
+@property (nonatomic, retain) NSNumber<Optional> *quantity;
 @property (nonatomic, retain) NSMutableArray<Optional> *inventories;
 
 
