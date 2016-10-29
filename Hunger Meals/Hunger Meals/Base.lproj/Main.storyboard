@@ -4763,13 +4763,13 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EhA-0z-USS">
-                                        <rect key="frame" x="337" y="8" width="51" height="31"/>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EhA-0z-USS">
+                                        <rect key="frame" x="321" y="8" width="51" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="49" id="8hK-Ll-zvP"/>
                                             <constraint firstAttribute="height" constant="31" id="bQI-9m-wuF"/>
                                         </constraints>
-                                        <color key="onTintColor" red="0.93725490199999995" green="0.54117647059999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="onTintColor" red="0.91764705879999997" green="0.35294117650000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="vegFilterSwitchClicked:" destination="8bE-0r-bOs" eventType="valueChanged" id="geX-R7-LWb"/>
                                         </connections>
@@ -4822,13 +4822,13 @@
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1D-1q-gd4">
                                                                             <rect key="frame" x="0.0" y="3" width="30" height="30"/>
-                                                                            <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="30" id="iAm-Jm-iQU"/>
                                                                                 <constraint firstAttribute="height" constant="30" id="qYV-4D-Poo"/>
                                                                             </constraints>
                                                                             <state key="normal" title="+">
-                                                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                             </state>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -4847,14 +4847,14 @@
                                                                             <rect key="frame" x="33" y="3" width="42" height="30"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="textColor" red="0.91764705879999997" green="0.35294117650000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7E-m4-Yba">
                                                                             <rect key="frame" x="79" y="3" width="30" height="30"/>
-                                                                            <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <state key="normal" title="-">
-                                                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                             </state>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -5587,7 +5587,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ycY-nT-ydz">
-                                        <rect key="frame" x="337" y="8" width="51" height="31"/>
+                                        <rect key="frame" x="321" y="8" width="51" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="ZMS-Ab-enA"/>
                                             <constraint firstAttribute="width" constant="49" id="jto-qR-52Y"/>
@@ -5602,7 +5602,7 @@
                                 <constraints>
                                     <constraint firstItem="9Yv-9T-s0F" firstAttribute="leading" secondItem="D24-Cs-Xwt" secondAttribute="leading" constant="30" id="50l-vM-P9B"/>
                                     <constraint firstAttribute="bottom" secondItem="9Yv-9T-s0F" secondAttribute="bottom" constant="8" id="6e4-y6-c67"/>
-                                    <constraint firstAttribute="trailing" secondItem="ycY-nT-ydz" secondAttribute="trailing" constant="28" id="W9i-Gx-6g6"/>
+                                    <constraint firstAttribute="trailing" secondItem="ycY-nT-ydz" secondAttribute="trailing" constant="44" id="W9i-Gx-6g6"/>
                                     <constraint firstAttribute="bottom" secondItem="ycY-nT-ydz" secondAttribute="bottom" constant="8" id="apd-5R-Fbe"/>
                                     <constraint firstAttribute="height" constant="47" id="erA-gH-lhm"/>
                                     <constraint firstItem="9Yv-9T-s0F" firstAttribute="top" secondItem="D24-Cs-Xwt" secondAttribute="top" constant="8" id="lNu-wO-6G9"/>
