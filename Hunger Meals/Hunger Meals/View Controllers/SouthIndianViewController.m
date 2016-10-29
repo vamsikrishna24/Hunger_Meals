@@ -17,6 +17,7 @@
     BOOL isCellExpanded;
     NSInteger tableViewHeight;
     BOOL isVegSwitchOn;
+    MealsTableViewCell *cell;
 
 }
 
@@ -58,7 +59,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"MealsCellIdentifier";
-    MealsTableViewCell *cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     cell.addToCartButton.hidden = NO;
     cell.countLabel.text = @"1";
     cell.priceLabel.text = @"";
@@ -109,6 +110,15 @@
     [cell.itemImageView sd_setImageWithURL:[NSURL URLWithString:string]placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     cell.titleLabel.text = product.name;
     cell.descriptionView.text = product.description;
+    
+    if ([product.description isEqualToString: @""]) {
+        cell.descriptionHeightConstraint.constant = 0;
+    }
+    else {
+        CGSize newSize = [cell.descriptionView sizeThatFits:CGSizeMake(cell.descriptionView.frame.size.width, MAXFLOAT)];
+        cell.descriptionHeightConstraint.constant = newSize.height;
+    }
+
     cell.priceLabel.text = [NSString stringWithFormat:@"₹ %@",product.price];
     return cell;
 }
@@ -122,12 +132,16 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSIndexPath *selectedIndexPath  = [tableView indexPathForSelectedRow];
-//    
-//    if ([indexPath isEqual:selectedIndexPath] && !isCellExpanded) {
-//        return 440;
-//    }
-    return 467;
+    Product *product = [_productObjectsArray objectAtIndex:indexPath.row];
+    CGFloat descHeight;
+    if ([product.description isEqualToString: @""]) {
+        descHeight = 0;
+    }
+    else {
+        CGSize newSize = [cell.descriptionView sizeThatFits:CGSizeMake(cell.descriptionView.frame.size.width, MAXFLOAT)];
+        descHeight = newSize.height;
+    }
+    return 375 + descHeight;
 }
 -(void)fetchAndLoadData{
     [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];

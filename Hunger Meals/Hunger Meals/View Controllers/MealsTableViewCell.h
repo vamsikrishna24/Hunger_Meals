@@ -13,6 +13,7 @@
 @property (nonatomic, weak) IBOutlet UIImageView *itemImageView;
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UITextView *descriptionView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *descriptionHeightConstraint;
 @property (nonatomic, weak) IBOutlet UILabel *priceLabel;
 @property (nonatomic, weak) IBOutlet UIButton *addToCartButton;
 @property (weak, nonatomic) IBOutlet UIView *stepperView;

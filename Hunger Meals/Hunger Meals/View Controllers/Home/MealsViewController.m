@@ -39,7 +39,7 @@
     float statusHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
     float navigationHeight = self.navigationController.navigationBar.frame.size.height;
     
-    CGRect frame = CGRectMake(0, 0, DEVICEFRAME.size.width, DEVICEFRAME.size.height);
+    CGRect frame = CGRectMake(0, 0, DEVICEFRAME.size.width, DEVICEFRAME.size.height+20);
     
     YSLContainerViewController *containerVC = [[YSLContainerViewController alloc] initWithControllers:@[quickBitesVC,southIndianVC,northIndianVC,curriesVC,addOnsVC] topBarHeight:statusHeight + navigationHeight withFrame:frame parentViewController:self];
     

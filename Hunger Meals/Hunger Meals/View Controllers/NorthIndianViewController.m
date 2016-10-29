@@ -15,6 +15,7 @@
 @interface NorthIndianViewController (){
     BOOL isCellExpanded;
     BOOL isVegSwitchOn;
+    MealsTableViewCell *cell;
 
     NSInteger tableViewHeight;
     NSMutableArray *productObjectsArray;
@@ -59,7 +60,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"MealsCellIdentifier";
-    MealsTableViewCell *cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     cell.addToCartButton.hidden = NO;
     cell.countLabel.text = @"1";
     cell.priceLabel.text = @"";
@@ -108,7 +109,16 @@
     NSString *string = [NSString stringWithFormat:@"%@%@",imageAmazonlink,product.image_url];
     [cell.itemImageView sd_setImageWithURL:[NSURL URLWithString:string]placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     cell.titleLabel.text = product.name;
-    cell.descriptionView.text = @"3 Rotis, Rice,Mixed Dal, \nChicken Rara,Beans Ki\nSabji and Chutney";//product.description;
+    cell.descriptionView.text = product.description;
+    
+    if ([product.description isEqualToString: @""]) {
+        cell.descriptionHeightConstraint.constant = 0;
+    }
+    else {
+        CGSize newSize = [cell.descriptionView sizeThatFits:CGSizeMake(cell.descriptionView.frame.size.width, MAXFLOAT)];
+        cell.descriptionHeightConstraint.constant = newSize.height;
+    }
+
     cell.priceLabel.text = [NSString stringWithFormat:@"₹ %@",[inventory valueForKey: @"price"]];
     return cell;
 }
@@ -122,12 +132,17 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSIndexPath *selectedIndexPath  = [tableView indexPathForSelectedRow];
-//    
-//    if ([indexPath isEqual:selectedIndexPath] && !isCellExpanded) {
-//        return 470;
-//    }
-    return 467;
+    Product *product = [productObjectsArray objectAtIndex:indexPath.row];
+    CGFloat descHeight;
+    if ([product.description isEqualToString: @""]) {
+        descHeight = 0;
+    }
+    else {
+        CGSize newSize = [cell.descriptionView sizeThatFits:CGSizeMake(cell.descriptionView.frame.size.width, MAXFLOAT)];
+        descHeight = newSize.height;
+    }
+    return 375 + descHeight;
+
 }
 
 -(void)fetchAndLoadData{

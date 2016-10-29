@@ -15,6 +15,7 @@
 @interface AddonsViewController (){
     BOOL isCellExpanded;
     BOOL isVegSwitchOn;
+    MealsTableViewCell *cell;
 
     NSInteger tableViewHeight;
     NSMutableArray *productObjectsArray;
@@ -55,7 +56,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"MealsCellIdentifier";
-    MealsTableViewCell *cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    cell = (MealsTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     cell.addToCartButton.hidden = NO;
     cell.countLabel.text = @"1";
     cell.priceLabel.text = @"";
@@ -103,6 +104,14 @@
     
     cell.titleLabel.text = product.name;
     cell.descriptionView.text = product.description;
+    if ([product.description isEqualToString: @""]) {
+        cell.descriptionHeightConstraint.constant = 0;
+    }
+    else {
+        CGSize newSize = [cell.descriptionView sizeThatFits:CGSizeMake(cell.descriptionView.frame.size.width, MAXFLOAT)];
+        cell.descriptionHeightConstraint.constant = newSize.height;
+    }
+
     cell.priceLabel.text = [NSString stringWithFormat:@"₹ %@",[inventory valueForKey: @"price"]];
     return cell;
 }
@@ -116,12 +125,17 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSIndexPath *selectedIndexPath  = [tableView indexPathForSelectedRow];
-    
-    if ([indexPath isEqual:selectedIndexPath] && !isCellExpanded) {
-        return 440;
+    Product *product = [productObjectsArray objectAtIndex:indexPath.row];
+    CGFloat descHeight;
+    if ([product.description isEqualToString: @""]) {
+        descHeight = 0;
     }
-    return 345;
+    else {
+        CGSize newSize = [cell.descriptionView sizeThatFits:CGSizeMake(cell.descriptionView.frame.size.width, MAXFLOAT)];
+        descHeight = newSize.height;
+    }
+    return 375 + descHeight;
+
 }
 -(void)fetchAndLoadData{
     [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
