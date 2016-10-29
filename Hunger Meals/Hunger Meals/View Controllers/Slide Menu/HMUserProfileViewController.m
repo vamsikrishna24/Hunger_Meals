@@ -21,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.emailLabel.text = [UserData email];
+    self.emailLabel.font = [UIFont fontWithName:@"Helvetica-light" size:14];
+    self.phoneNumberLabel.font = [UIFont fontWithName:@"Helvetica-light" size:14];
    // self.phoneNumberLabel.text = [UserData phonNumber];
     // Do any additional setup after loading the view.
 }

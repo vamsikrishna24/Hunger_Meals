@@ -4,18 +4,28 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunger Meals/View Controllers/Home/HmDelieveriAddressViewController.h"
-            timestampString = "499448958.678731"
+            filePath = "Hunger Meals/View Controllers/Slide Menu/HMUserProfileViewController.m"
+            timestampString = "499459325.38581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
-            landmarkName = "homeButtonOutlet"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "emailLabel"
             landmarkType = "19">
          </BreakpointContent>
       </BreakpointProxy>
