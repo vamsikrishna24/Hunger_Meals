@@ -101,9 +101,13 @@
     cell.decrementButton.tag = indexPath.row;
     
     if([product.label  isEqual: @"veg"]){
-        cell.vegNonVegColorView.backgroundColor = [UIColor greenColor];
+     //   cell.vegNonVegColorView.backgroundColor = [UIColor greenColor];
+        cell.vegImageView.image = [UIImage imageNamed:@"Veg"];
+
     }else if([product.label  isEqual: @"non-veg"]){
-        cell.vegNonVegColorView.backgroundColor = [UIColor redColor];
+       // cell.vegNonVegColorView.backgroundColor = [UIColor redColor];
+        cell.vegImageView.image = [UIImage imageNamed:@"NonVeg"];
+
         
     }
     NSString  *qty = [Utility getQuantityforId:[NSString stringWithFormat:@"%@",[inventory valueForKey:@"id"]]];

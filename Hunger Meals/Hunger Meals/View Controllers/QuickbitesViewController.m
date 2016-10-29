@@ -25,6 +25,7 @@
 @property (strong, nonatomic) NSMutableArray *productObjectsArray;
 @property (strong, nonatomic) NSArray *filteredProdcutsArray;
 
+
 @property (strong, nonatomic) NSMutableArray *labelArray;
 
 
@@ -105,9 +106,12 @@
     NSDictionary *inventory = [product.inventories firstObject];
     
     if([product.label  isEqual: @"veg"]){
-        cell.vegNonVegColorView.backgroundColor = [UIColor greenColor];
+        cell.vegImageView.image = [UIImage imageNamed:@"Veg"];
+       // cell.vegNonVegColorView.backgroundColor = [UIColor greenColor];
+        
     }else if([product.label  isEqual: @"non-veg"]){
-        cell.vegNonVegColorView.backgroundColor = [UIColor redColor];
+        //cell.vegNonVegColorView.backgroundColor = [UIColor redColor];
+         cell.vegImageView.image = [UIImage imageNamed:@"NonVeg"];
 
     }
     

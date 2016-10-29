@@ -82,7 +82,7 @@
     //   }
     else if(indexPath.row == 2) {
         cell.SettingsRowLabel.text = @"Orders";
-        cell.settingsImageView.image = [UIImage imageNamed:@"Invite_Friends"];
+        cell.settingsImageView.image = [UIImage imageNamed:@"Orders"];
     }
 else if(indexPath.row == 3) {
         cell.SettingsRowLabel.text = @"Invite Friends";

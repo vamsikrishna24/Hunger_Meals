@@ -32,7 +32,7 @@
     [super viewDidLoad];
     
     slideMenuCategories = [[NSMutableArray alloc] initWithObjects: @"Home",@"Meals", @"Monthly Meal Plan",@"Orders",@"Invite",@"User Profile",@"Sign Out", nil];
-    slideMenuimagesCategories = [[NSMutableArray alloc] initWithObjects:@"Home", @"Meals", @"Meals",@"Work",@"Invite_Friends",@"Invite_Friends",@"Account", nil];
+    slideMenuimagesCategories = [[NSMutableArray alloc] initWithObjects:@"Home", @"Meals", @"MonthlyPlanner",@"Orders",@"Invite_Friends",@"Account",@"Logout", nil];
     
     self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;

@@ -20,5 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *incrementButton;
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
 @property (weak, nonatomic) IBOutlet UIView *vegNonVegColorView;
+@property (weak, nonatomic) IBOutlet UIImageView *vegImageView;
 
 @end
