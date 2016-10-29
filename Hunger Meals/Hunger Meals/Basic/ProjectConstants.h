@@ -126,7 +126,7 @@
 
 #define TOPBAR_COLOR [UIColor colorWithRed:171.0/255.0 green:171.0/255.0 blue:181.0/255.0 alpha:1]
 
-#define APPLICATION_COLOR [UIColor colorWithRed:242/255.0f green:114/255.0f blue:68/255.0f alpha:1]
+#define APPLICATION_COLOR [UIColor colorWithRed:241/255.0f green:90/255.0f blue:36/255.0f alpha:1]
 
 #define APPLICATION_TITLE_COLOR [UIColor colorWithRed:85.0/255.0f green:85.0/255.0f blue:85.0/255.0f alpha:1]
 
