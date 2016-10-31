@@ -1741,6 +1741,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sukor.hungrymeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c715e874-feee-4f42-8899-300d2d213067";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2052,6 +2053,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sukor.hungrymeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c715e874-feee-4f42-8899-300d2d213067";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
