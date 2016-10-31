@@ -112,7 +112,6 @@
     NSString *month = [formatter stringFromDate:now];
     currentMonth = month;
     
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -339,18 +338,36 @@
         cell.dateLbl.text = [date stringByAppendingString:[NSString stringWithFormat:@" %ld",indexPath.row+1]];
         cell.lunchButtonOutlet.tag = indexPath.row;
         cell.dinnerButtonOutlet.tag = indexPath.row;
-        NSString *lunchText = lunchItemsList[indexPath.row];
-        NSString *dinnerText = dinnerItemsList[indexPath.row];
+        
+        if([lunchItemsList count] > 0 && [lunchItemsList count] > indexPath.row){
+            
+            NSString *lunchText =[lunchItemsList objectAtIndex:indexPath.row];
+            [cell.lunchButtonOutlet setTitle:[NSString stringWithFormat:@" Lunch: %@",lunchText] forState:UIControlStateNormal];
+        }
+        else{
+            
+            return  cell;
+        }
+        
+        if([dinnerItemsList count] > 0 && [dinnerItemsList count] > indexPath.row){
+            
+            NSString *lunchText =[dinnerItemsList objectAtIndex:indexPath.row];
+            [cell.dinnerButtonOutlet setTitle:[NSString stringWithFormat:@" Lunch: %@",lunchText] forState:UIControlStateNormal];
+        }
+        else{
+            
+            return  cell;
+        }
 
-        [cell.lunchButtonOutlet setTitle:[NSString stringWithFormat:@" Lunch: %@",lunchText] forState:UIControlStateNormal];
-        [cell.dinnerButtonOutlet setTitle:[NSString stringWithFormat:@" Dinner: %@",dinnerText] forState:UIControlStateNormal];
 
         return cell;
     }else if(tableView == self.itemListTableView){
         
     static NSString *cellIdentifier = @"ItemListCell";
         
+
     ItemTableViewCell *celll = (ItemTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        
         if(indexPath.row ==0 ){
               celll.itemNameLabel.text = @"Menu";
         }
