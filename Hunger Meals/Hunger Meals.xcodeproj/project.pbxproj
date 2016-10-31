@@ -1363,8 +1363,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Nikhil Srivatsa (P4W8JSQ677)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nikhil Srivatsa (P4W8JSQ677)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nikhil Srivatsa (88MQL3GAFM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nikhil Srivatsa (88MQL3GAFM)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1386,7 +1386,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "df33b089-deff-4524-bd3e-fcdd2772b815";
+				PROVISIONING_PROFILE = "c715e874-feee-4f42-8899-300d2d213067";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1410,8 +1410,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Nikhil Srivatsa (P4W8JSQ677)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nikhil Srivatsa (P4W8JSQ677)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nikhil Srivatsa (88MQL3GAFM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nikhil Srivatsa (88MQL3GAFM)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1426,7 +1426,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "df33b089-deff-4524-bd3e-fcdd2772b815";
+				PROVISIONING_PROFILE = "c715e874-feee-4f42-8899-300d2d213067";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1438,8 +1438,8 @@
 			baseConfigurationReference = F484EF451324D63B59B42C78 /* Pods-Hunger Meals.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nikhil Srivatsa (88MQL3GAFM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nikhil Srivatsa (88MQL3GAFM)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Hunger Meals/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1740,7 +1740,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sukor.hungrymeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c715e874-feee-4f42-8899-300d2d213067";
 			};
 			name = Debug;
 		};
@@ -1749,8 +1749,8 @@
 			baseConfigurationReference = 9132DF2985E04339F7A61F23 /* Pods-Hunger Meals.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nikhil Srivatsa (88MQL3GAFM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nikhil Srivatsa (88MQL3GAFM)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Hunger Meals/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2051,7 +2051,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sukor.hungrymeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c715e874-feee-4f42-8899-300d2d213067";
 			};
 			name = Release;
 		};
