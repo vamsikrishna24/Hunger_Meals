@@ -17,6 +17,7 @@
 
 
 @interface HMLandingViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *skipButtonOutlet;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *facebookLoginButton;
 @property(weak, nonatomic) IBOutlet GIDSignInButton *googleSignInButton;
@@ -25,6 +26,8 @@
 @property (nonatomic, strong) MBProgressHUD* hud;
 @property (nonatomic, assign, getter=isIndicatorShowing) BOOL activityIndicatorIsShowing;
 @property (weak, nonatomic) IBOutlet UIButton *forgotPasswordButtonOutlet;
+- (IBAction)skipButtonAction:(id)sender;
+
 
 
 @end
@@ -345,4 +348,24 @@ didSignInForUser:(GIDGoogleUser *)user
 }
 
 
+- (IBAction)skipButtonAction:(id)sender {
+  
+        [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: @"testios@gmail.com", @"email", @"testing123", @"password",  nil];
+        
+        SVService *service = [[SVService alloc] init];
+        [service loginUserWithDict: dict usingBlock:^(NSMutableArray *resultArray) {
+            if (resultArray.count != 0 || resultArray != nil) {
+                UserData *dataObject = resultArray[0];
+                NSData *personEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:dataObject];
+                [[NSUserDefaults standardUserDefaults] setObject:personEncodedObject forKey:@"UserData"];
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoginValid"];
+                [[NSUserDefaults standardUserDefaults] setObject: @"NO" forKey: @"isLocationSelected"];
+                //([(AppDelegate *)[[UIApplication sharedApplication] delegate] enableCurrentLocation]);
+                [APPDELEGATE showInitialScreen];
+            }
+            [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+        }];
+
+}
 @end

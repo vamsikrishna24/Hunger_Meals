@@ -187,6 +187,7 @@
 		2B252C9D1D808F2F00CED084 /* HMAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAddressViewController.m; sourceTree = "<group>"; };
 		2B252C9F1D8097C500CED084 /* HMAddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAddressTableViewCell.h; sourceTree = "<group>"; };
 		2B252CA01D8097C500CED084 /* HMAddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAddressTableViewCell.m; sourceTree = "<group>"; };
+		2B34FFAA1DCDCAB2000EE625 /* CitrusPay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CitrusPay.framework; path = "Pods/CitrusPay/Framework/core-sdk/CitrusPay.framework"; sourceTree = "<group>"; };
 		2B41F7961D74B78E0067F0C4 /* HMContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMContentViewController.h; sourceTree = "<group>"; };
 		2B41F7971D74B78E0067F0C4 /* HMContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMContentViewController.m; sourceTree = "<group>"; };
 		2B45D6741D58DDA100C873ED /* BulletPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BulletPoint.png; path = ../BulletPoint.png; sourceTree = "<group>"; };
@@ -427,6 +428,7 @@
 		0171980737B572F6B2C8653C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B34FFAA1DCDCAB2000EE625 /* CitrusPay.framework */,
 				2B89E5031D5BBF640022EC67 /* CoreLocation.framework */,
 				3517349AA1104418B811BF63 /* libPods-Hunger Meals.a */,
 				B9B03796A71316DB85DCF5A7 /* libPods-Hunger MealsTests.a */,
@@ -1441,6 +1443,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Nikhil Srivatsa (88MQL3GAFM)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nikhil Srivatsa (88MQL3GAFM)";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/CitrusPay/Framework/core-sdk",
+				);
 				INFOPLIST_FILE = "Hunger Meals/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1753,6 +1759,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Nikhil Srivatsa (88MQL3GAFM)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nikhil Srivatsa (88MQL3GAFM)";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/CitrusPay/Framework/core-sdk",
+				);
 				INFOPLIST_FILE = "Hunger Meals/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

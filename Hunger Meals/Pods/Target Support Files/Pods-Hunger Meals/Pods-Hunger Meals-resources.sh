@@ -81,6 +81,8 @@ EOM
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "FBSDKCoreKit/FacebookSDKStrings.bundle"
+  install_resource "GTMOAuth2/Source/Touch/GTMOAuth2ViewTouch.xib"
+  install_resource "GoogleAuthUtilities/Frameworks/frameworks/GoogleAuthUtilities.framework/Resources/GTMOAuth2ViewTouch.xib"
   install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
   install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
   install_resource "TwilioSDK/Resources/disconnect.wav"
@@ -101,6 +103,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "FBSDKCoreKit/FacebookSDKStrings.bundle"
+  install_resource "GTMOAuth2/Source/Touch/GTMOAuth2ViewTouch.xib"
+  install_resource "GoogleAuthUtilities/Frameworks/frameworks/GoogleAuthUtilities.framework/Resources/GTMOAuth2ViewTouch.xib"
   install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
   install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
   install_resource "TwilioSDK/Resources/disconnect.wav"

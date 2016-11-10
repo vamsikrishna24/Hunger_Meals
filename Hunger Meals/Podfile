@@ -11,6 +11,8 @@ pod 'FBSDKShareKit'
 pod 'FBSDKLoginKit'
 pod 'Google/SignIn'
 
+pod 'GoogleAuthUtilities'
+
 pod 'MBProgressHUD', '~> 1.0.0'
 
 pod 'JSONModel', '~> 1.2'
@@ -23,7 +25,10 @@ pod 'TwilioSDK', '~>1.2'
 
 pod 'JTCalendar', '~> 2.0'
 
-pod 'IQKeyboardManager'
+pod 'GoogleUtilities'
+
+pod 'GoogleNetworkingUtilities'
+
 
 
 end

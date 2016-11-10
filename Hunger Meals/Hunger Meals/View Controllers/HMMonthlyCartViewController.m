@@ -17,7 +17,7 @@
 
 @interface HMMonthlyCartViewController (){
     NSMutableArray *cartItemsArray;
-    NSMutableArray *monthlyCartItemsArray;
+    NSArray *monthlyCartItemsArray;
 
     NSString *rsString;
     float totalAmount;
@@ -142,7 +142,6 @@
     //cell.totalPriceLabel.text = [NSString stringWithFormat:@"%@ ₹",@"23"];
         cell.cartItemTitle.text = [monthlyCartItemsArray valueForKey:@"name"][indexPath.row];
         cell.countLabel.text = [monthlyCartItemsArray valueForKey:@"quantity"][indexPath.row];
-      //  self.quantityString = [monthlyCartItemsArray valueForKey:@"quantity"][indexPath.row];
        cell.totalPriceLabel.text = [monthlyCartItemsArray valueForKey:@"price"][indexPath.row];
 
 //    CartItem *cartObject = [itemsListArray objectAtIndex:indexPath.row];

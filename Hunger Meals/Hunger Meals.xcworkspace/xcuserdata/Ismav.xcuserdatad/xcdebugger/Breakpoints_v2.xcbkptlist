@@ -19,29 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunger Meals/View Controllers/Slide Menu/HMUserProfileViewController.m"
-            timestampString = "499459325.38581"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "emailLabel"
-            landmarkType = "19">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Hunger Meals/View Controllers/HMMonthlyCartViewController.m"
-            timestampString = "499465348.793877"
+            timestampString = "500320523.003442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
-            landmarkName = "-applyButtonAction:"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-fetchMonthlyProducts"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -51,13 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunger Meals/View Controllers/Home/HMCartViewController.m"
-            timestampString = "499465627.946332"
+            filePath = "Hunger Meals/View Controllers/Login/HMLandingViewController.m"
+            timestampString = "500492002.936387"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "-fetchAndLoadData"
+            startingLineNumber = "352"
+            endingLineNumber = "352"
+            landmarkName = "-skipButtonAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -67,13 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunger Meals/View Controllers/Home/HMCartViewController.m"
-            timestampString = "499465634.665928"
+            filePath = "Hunger Meals/View Controllers/Login/HMLandingViewController.m"
+            timestampString = "500492089.521599"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "-fetchAndLoadData"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
+            landmarkName = "-isValidationsSucceed"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -83,61 +67,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunger Meals/Data Services/SVService.m"
-            timestampString = "499465685.897646"
+            filePath = "Hunger Meals/View Controllers/Login/HMLandingViewController.m"
+            timestampString = "500492100.524966"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "503"
-            endingLineNumber = "503"
-            landmarkName = "-addToCart:usingBlock:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[SVService addToCart:usingBlock:]"
-                  moduleName = "Hunger Meals"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Ismav/Desktop/new/Hunger%20Meals/Hunger%20Meals/Data%20Services/SVService.m"
-                  timestampString = "499465685.902555"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "503"
-                  endingLineNumber = "503"
-                  offsetFromSymbolStart = "310">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[SVService addToCart:usingBlock:]_block_invoke"
-                  moduleName = "Hunger Meals"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Ismav/Desktop/new/Hunger%20Meals/Hunger%20Meals/Data%20Services/SVService.m"
-                  timestampString = "499465685.902732"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "503"
-                  endingLineNumber = "503"
-                  offsetFromSymbolStart = "101">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hunger Meals/Data Services/SVService.m"
-            timestampString = "499465687.22877"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "508"
-            endingLineNumber = "508"
-            landmarkName = "-addToCart:usingBlock:"
+            startingLineNumber = "353"
+            endingLineNumber = "353"
+            landmarkName = "-skipButtonAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -147,13 +83,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hunger Meals/Data Services/SVService.m"
-            timestampString = "499465688.235605"
+            filePath = "Hunger Meals/View Controllers/Login/HMLandingViewController.m"
+            timestampString = "500492175.55004"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "506"
-            endingLineNumber = "506"
-            landmarkName = "-addToCart:usingBlock:"
+            startingLineNumber = "361"
+            endingLineNumber = "361"
+            landmarkName = "-skipButtonAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
