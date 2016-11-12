@@ -30,6 +30,7 @@
 
 
 
+
 @end
 
 @implementation HMLandingViewController{
@@ -40,7 +41,7 @@
     [super viewDidLoad];
      [self setupFbConfiguration];
      [self initializations];
-    
+     self.isSkip = false;
      [GIDSignIn sharedInstance].uiDelegate = self;
      [[GIDSignIn sharedInstance] signInSilently];
      [GIDSignIn sharedInstance].delegate = self;
@@ -177,8 +178,6 @@ didSignInForUser:(GIDGoogleUser *)user
     {
         // self.imageURL = [user.profile imageURLWithDimension:150];
     }
-  
-    
 }
 
 #pragma mark Custom Methods
@@ -348,20 +347,21 @@ didSignInForUser:(GIDGoogleUser *)user
 }
 
 
-- (IBAction)skipButtonAction:(id)sender {
+-(IBAction)skipButtonAction:(id)sender {
   
         [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
         NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: @"testios@gmail.com", @"email", @"testing123", @"password",  nil];
         
         SVService *service = [[SVService alloc] init];
         [service loginUserWithDict: dict usingBlock:^(NSMutableArray *resultArray) {
+            self.isSkip = true;
             if (resultArray.count != 0 || resultArray != nil) {
                 UserData *dataObject = resultArray[0];
                 NSData *personEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:dataObject];
                 [[NSUserDefaults standardUserDefaults] setObject:personEncodedObject forKey:@"UserData"];
                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoginValid"];
                 [[NSUserDefaults standardUserDefaults] setObject: @"NO" forKey: @"isLocationSelected"];
-                //([(AppDelegate *)[[UIApplication sharedApplication] delegate] enableCurrentLocation]);
+                [[NSUserDefaults standardUserDefaults] setObject: @"YES" forKey: @"isGuestLogin"];
                 [APPDELEGATE showInitialScreen];
             }
             [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];

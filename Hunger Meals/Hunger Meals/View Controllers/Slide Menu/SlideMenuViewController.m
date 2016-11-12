@@ -129,6 +129,8 @@
                 [[NSUserDefaults standardUserDefaults] setBool: NO forKey:@"isLoginValid"];
                 [[NSUserDefaults standardUserDefaults] setValue: nil forKey: @"selectedLocation"];
                 [[NSUserDefaults standardUserDefaults] setObject: @"NO" forKey: @"isLocationSelected"];
+                [USER_DEFAULTS setObject: @"NO" forKey: @"isGuestLogin"];
+
                 [FBSDKAccessToken setCurrentAccessToken:nil];
                 [[GIDSignIn sharedInstance] signOut];
              

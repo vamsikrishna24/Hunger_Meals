@@ -15,7 +15,7 @@
 //#import "PCSAlertViewContainer.h"
 
 
-@interface HMHomePageViewController : CommonViewController<UITableViewDataSource,UITableViewDelegate, SWRevealViewControllerDelegate,MTGenericAlertViewDelegate,UIPopoverPresentationControllerDelegate,CLLocationManagerDelegate,UITableViewDataSource,UITableViewDelegate, LocationViewDelegate>
+@interface HMHomePageViewController : CommonViewController<UITableViewDataSource,UITableViewDelegate, SWRevealViewControllerDelegate,MTGenericAlertViewDelegate,UIPopoverPresentationControllerDelegate,CLLocationManagerDelegate,UITableViewDataSource,UITableViewDelegate, LocationViewDelegate,UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *locationBarButtonItem;
 @property (weak, nonatomic) IBOutlet UITableView *homePageTableView;

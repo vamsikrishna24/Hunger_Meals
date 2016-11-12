@@ -15,6 +15,7 @@
 @interface HMLandingViewController :UIViewController <GIDSignInUIDelegate,GIDSignInDelegate, FBSDKLoginButtonDelegate, MBProgressHUDDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-
 - (IBAction)signInButtonPressed:(id)sender;
+@property (nonatomic) BOOL isSkip;
+
 @end

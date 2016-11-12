@@ -16,6 +16,7 @@
 #import "HMMealPlannerViewController.h"
 #import "SVService.h"
 #import "LocationView.h"
+#import "HMLandingViewController.h"
 
 @interface HMHomePageViewController (){
     NSArray *categories;
@@ -42,6 +43,8 @@
 @property(nonatomic, strong) NSString *longitudeStrinng;
 @property(nonatomic, strong) NSString *addressStrinng;
 @property(nonatomic,strong) NSString *locationAddressString;
+@property(nonatomic,strong) HMLandingViewController *landingViewController;
+
 
 @end
 
@@ -49,6 +52,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     self.homePageTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     
@@ -186,6 +190,10 @@
     HMScrollingCell * cell = (HMScrollingCell*)[self.homePageTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:sender.tag inSection:0]];
     cell.pageControl.currentPage = page;
     
+    self.landingViewController = [[HMLandingViewController alloc]init];
+
+    
+    
     //    cell.titleLabel.text = [self.dashboardDataArray[sender.tag] objectForKey:kTitles][page] ;
     //    cell.descriptionLabel.text = [self.dashboardDataArray[sender.tag] objectForKey:kDescriptions] [page];
     
@@ -267,7 +275,7 @@
         cell.locationLabel.text = [locations [indexPath.row] valueForKey: @"name"];
         return cell;
     }
-    
+
     if(tableView == locationTable && indexPath.section ==0){
         
         
@@ -398,7 +406,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+
+    if ([[USER_DEFAULTS valueForKey: @"isGuestLogin"]  isEqual: @"YES"]){
+        
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Sign in required" message:@"Sign in with your account to explore all features in the app" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ok", nil];
+        
+        [alert show];
+        
+       
+        
+    }else if ([[USER_DEFAULTS valueForKey: @"isGuestLogin"]  isEqual: @"NO"]) {
     if (tableView == self.locationTableView) {
         selectedLocation = (int)indexPath.row;
         self.instanceView.hidden = true;
@@ -421,6 +438,21 @@
             
         }
         
+        }
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView
+clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == [alertView cancelButtonIndex]){
+        //cancel clicked ...do your action
+    }else{
+        [USER_DEFAULTS setObject: @"NO" forKey: @"isGuestLogin"];
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        
+        HMLandingViewController *loginVC = (HMLandingViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"LandingPage"];
+        
+        [self presentViewController:loginVC animated:YES completion:nil];
     }
 }
 
