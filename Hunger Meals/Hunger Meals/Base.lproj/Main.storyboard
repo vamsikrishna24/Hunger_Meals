@@ -1414,7 +1414,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQG-1l-Krl">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQG-1l-Krl">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dk3-BR-n76">
@@ -7038,7 +7038,7 @@
                                     <constraint firstAttribute="height" constant="44" id="ge6-aP-ppn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.96078431369999995" green="0.50196078430000002" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.38062294050000001" blue="0.15293890700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oli-IN-Q03">
@@ -7609,7 +7609,7 @@
         <image name="checkbox_not_ticked.png" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EDy-Ka-8Ho"/>
         <segue reference="hDr-0L-Afe"/>
+        <segue reference="SmF-o8-XHB"/>
     </inferredMetricsTieBreakers>
 </document>
