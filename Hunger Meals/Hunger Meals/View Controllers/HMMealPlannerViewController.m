@@ -352,7 +352,7 @@
         if([dinnerItemsList count] > 0 && [dinnerItemsList count] > indexPath.row){
             
             NSString *lunchText =[dinnerItemsList objectAtIndex:indexPath.row];
-            [cell.dinnerButtonOutlet setTitle:[NSString stringWithFormat:@" Lunch: %@",lunchText] forState:UIControlStateNormal];
+            [cell.dinnerButtonOutlet setTitle:[NSString stringWithFormat:@" Dinner: %@",lunchText] forState:UIControlStateNormal];
         }
         else{
             
