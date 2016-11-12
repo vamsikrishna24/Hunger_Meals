@@ -91,13 +91,38 @@
 
     }
     
-    else if (indexPath.row == 2){
+    else if (indexPath.row == 2)
+    {
+        if ([[USER_DEFAULTS valueForKey: @"isGuestLogin"]  isEqual: @"YES"]){
+            
+            [BTAlertController showAlertWithMessage: @"Sign in with your account to explore all features in the app" andTitle: @"Sign in required" andOkButtonTitle: @"Ok" andCancelTitle:@"Cancel" andtarget:self andAlertCancelBlock:^{
+                
+            } andAlertOkBlock:^(NSString *userName) {
+                
+                [self guestAction];
+            }];
+
+        }else if([[USER_DEFAULTS valueForKey: @"isGuestLogin"]  isEqual: @"NO"]){
+
         [self navigateToMealPlan];
+        }
     }
     else if (indexPath.row == 3){
+        if ([[USER_DEFAULTS valueForKey: @"isGuestLogin"]  isEqual: @"YES"]){
+            
+            [BTAlertController showAlertWithMessage: @"Sign in with your account to explore all features in the app" andTitle: @"Sign in required" andOkButtonTitle: @"Ok" andCancelTitle:@"Cancel" andtarget:self andAlertCancelBlock:^{
+                
+            } andAlertOkBlock:^(NSString *userName) {
+                [self guestAction];
+                
+            }];
+
+        }else if([[USER_DEFAULTS valueForKey: @"isGuestLogin"]  isEqual: @"NO"]){
+            
         HMOrdersListTableViewController *orderList = [storyBoard instantiateViewControllerWithIdentifier:@"OrdersViewIdentifier"];
         [APPDELEGATE.homeNavigationController pushViewController:orderList animated:YES];
         [self.revealViewController revealToggleAnimated:YES];
+        }
     }
     if (indexPath.row == 4){
         
@@ -111,13 +136,23 @@
     }
     if (indexPath.row == 5){
         
-        
+        if ([[USER_DEFAULTS valueForKey: @"isGuestLogin"]  isEqual: @"YES"]){
+            
+            [BTAlertController showAlertWithMessage: @"Sign in with your account to explore all features in the app" andTitle: @"Sign in required" andOkButtonTitle: @"Ok" andCancelTitle:@"Cancel" andtarget:self andAlertCancelBlock:^{
+                
+            } andAlertOkBlock:^(NSString *userName) {
+                [self guestAction];
+                
+                }];
+
+        }else if([[USER_DEFAULTS valueForKey: @"isGuestLogin"]  isEqual: @"NO"]){
+
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         
         HMUserProfileViewController *profileVC = [storyBoard instantiateViewControllerWithIdentifier:@"UserProfileIdentifier"];
-        //UINavigationController *senav = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationIdentifier"];
-        //[self performSegueWithIdentifier:@"NavigationIdentifier" sender:nil];
-        [self presentViewController:profileVC animated:YES completion:nil];
+
+               [self presentViewController:profileVC animated:YES completion:nil];
+        }
     }
     
     if (indexPath.row == 6) {
@@ -125,20 +160,7 @@
             [BTAlertController showAlertWithMessage: @"Are you sure want to Sign Out?" andTitle: @"Alert!" andOkButtonTitle: @"Ok" andCancelTitle:@"Cancel" andtarget:self andAlertCancelBlock:^{
                 
             } andAlertOkBlock:^(NSString *userName) {
-                [[NSUserDefaults standardUserDefaults] setObject: nil forKey:@"UserData"];
-                [[NSUserDefaults standardUserDefaults] setBool: NO forKey:@"isLoginValid"];
-                [[NSUserDefaults standardUserDefaults] setValue: nil forKey: @"selectedLocation"];
-                [[NSUserDefaults standardUserDefaults] setObject: @"NO" forKey: @"isLocationSelected"];
-                [USER_DEFAULTS setObject: @"NO" forKey: @"isGuestLogin"];
-
-                [FBSDKAccessToken setCurrentAccessToken:nil];
-                [[GIDSignIn sharedInstance] signOut];
-             
-                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-                
-                HMLandingViewController *loginVC = (HMLandingViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"LandingPage"];
-                
-                [self presentViewController:loginVC animated:YES completion:nil];
+                [self guestAction];
             }];
             
         }
@@ -169,7 +191,23 @@
     }];
     
 }
+-(void)guestAction{
+    [[NSUserDefaults standardUserDefaults] setObject: nil forKey:@"UserData"];
+    [[NSUserDefaults standardUserDefaults] setBool: NO forKey:@"isLoginValid"];
+    [[NSUserDefaults standardUserDefaults] setValue: nil forKey: @"selectedLocation"];
+    [[NSUserDefaults standardUserDefaults] setObject: @"NO" forKey: @"isLocationSelected"];
+    [USER_DEFAULTS setObject: @"NO" forKey: @"isGuestLogin"];
+    
+    [FBSDKAccessToken setCurrentAccessToken:nil];
+    [[GIDSignIn sharedInstance] signOut];
+    
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    
+    HMLandingViewController *loginVC = (HMLandingViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"LandingPage"];
+    
+    [self presentViewController:loginVC animated:YES completion:nil];
 
+}
 - (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue { }
 
 @end

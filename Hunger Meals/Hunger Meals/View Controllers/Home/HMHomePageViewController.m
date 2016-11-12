@@ -406,16 +406,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    if ([[USER_DEFAULTS valueForKey: @"isGuestLogin"]  isEqual: @"YES"]){
-        
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Sign in required" message:@"Sign in with your account to explore all features in the app" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ok", nil];
-        
-        [alert show];
-        
-       
-        
-    }else if ([[USER_DEFAULTS valueForKey: @"isGuestLogin"]  isEqual: @"NO"]) {
+ 
     if (tableView == self.locationTableView) {
         selectedLocation = (int)indexPath.row;
         self.instanceView.hidden = true;
@@ -438,23 +429,11 @@
             
         }
         
-        }
+
     }
 }
 
-- (void)alertView:(UIAlertView *)alertView
-clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex == [alertView cancelButtonIndex]){
-        //cancel clicked ...do your action
-    }else{
-        [USER_DEFAULTS setObject: @"NO" forKey: @"isGuestLogin"];
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        
-        HMLandingViewController *loginVC = (HMLandingViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"LandingPage"];
-        
-        [self presentViewController:loginVC animated:YES completion:nil];
-    }
-}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     

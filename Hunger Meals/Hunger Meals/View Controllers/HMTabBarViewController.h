@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HMTabBarViewController : UITabBarController<UITabBarDelegate>
+@interface HMTabBarViewController : UITabBarController<UITabBarDelegate,UIAlertViewDelegate,UITabBarControllerDelegate>
+@property (weak, nonatomic) IBOutlet UITabBar *tabbarView;
 
 @end
