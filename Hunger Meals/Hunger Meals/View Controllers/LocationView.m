@@ -68,7 +68,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    return _instancesArray.count + 1;
+    return _instancesArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -77,35 +77,37 @@
     LocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"LocationCell"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [UIColor colorWithRed:238.0/255.0f green:238.0/255.0f blue:238.0/255.0f alpha:1.0f];
-    if (indexPath.row == 0) {
-        [cell.locationLabel setText: @"Select Location"];
-        [cell.locationLabel setTextColor:APPLICATION_TITLE_COLOR];
-        [cell.locationLabel setFont:[Fonts nevisWithSize:16.0]];
-        cell.locationLeadingConstraint.constant = -13;
-        cell.radioButton.hidden = true;
-    } else {
-     //   NSDictionary *instance = _instancesArray [indexPath.row - 1];
-        
-      //  [cell.locationLabel setText: instance [@"address"]];
+//    if (indexPath.row == 0) {
+//        [cell.locationLabel setText: @""];
+//        [cell.locationLabel setTextColor:APPLICATION_TITLE_COLOR];
+//        [cell.locationLabel setFont:[Fonts nevisWithSize:19.0]];
+//        cell.locationLeadingConstraint.constant = -13;
+//        cell.radioButton.hidden = true;
+//    } else {
+    
+        NSDictionary *instance = _instancesArray [indexPath.row];
+       [cell.locationLabel setText: instance [@"address"]];
         
         [cell.locationLabel setTextColor:[UIColor colorWithRed:119.0/255.0f green:119.0/255.0f blue:119.0/255.0f alpha:1.0f]];
         [cell.locationLabel setFont:[Fonts HelveticaWithSize:13.0]];
         cell.radioButton.hidden = false;
         cell.locationLeadingConstraint.constant = 8;
         NSInteger selectedLoc = [[USER_DEFAULTS valueForKey: @"selectedLocation"] integerValue];
-        cell.locationLabel.text = (NSString *)[[_instancesArray[indexPath.row-1] valueForKey:@"location"]valueForKey:@"name"];
+        cell.locationLabel.text = (NSString *)[[_instancesArray[indexPath.row] valueForKey:@"location"]valueForKey:@"name"];
         if (selectedLoc == indexPath.row) {
             _selectedIndexPath = indexPath;
             [cell.radioButton setImage: [UIImage imageNamed: kRadioOn] forState: UIControlStateNormal];
         } else {
             [cell.radioButton setImage: [UIImage imageNamed: kRadioOff] forState: UIControlStateNormal];
         }
-    }
+    //}
     return cell;
 }
-
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    return @"Select Location";
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row != 0) {
         LocationTableViewCell *cell;
         if (_selectedIndexPath != nil) {
             cell = [self.tableView cellForRowAtIndexPath: _selectedIndexPath];
@@ -117,28 +119,28 @@
         APPDELEGATE.selectedInstance = (int)_selectedIndexPath.row;
         [USER_DEFAULTS setValue: [NSString stringWithFormat: @"%ld", (long)indexPath.row] forKey: @"selectedLocation"];
         
-        NSString *locationID = [[_instancesArray[indexPath.row-1] valueForKey:@"location"]valueForKey:@"id"];
+        NSString *locationID = [[_instancesArray[indexPath.row] valueForKey:@"location"]valueForKey:@"id"];
         [[NSUserDefaults standardUserDefaults] setObject:locationID forKey:@"locationID"];
-    }
     
     
-    if (indexPath.row == 0) {
-        
-        //[self.delegate selectedLocation: @{@"address":@"Banglore"}];
-    } else {
-        [self.delegate selectedLocation: _instancesArray [indexPath.row - 1]];
-    }
+//    if (indexPath.row == 0) {
+//        
+//        //[self.delegate selectedLocation: @{@"address":@"Banglore"}];
+//    } else {
+        [self.delegate selectedLocation: _instancesArray [indexPath.row]];
+   // }
     
     //[self.tableView reloadData];
 }
 
 - (CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    
-    if(indexPath.row == 0){
-        return 45;
-    }else
+
     return 70.0;
 }
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+        return 50;
+    
+}
 @end
