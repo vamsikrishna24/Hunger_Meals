@@ -103,13 +103,15 @@
 */
 
 - (void) saveLocation{
-    
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: self.cityTextField.text, @"name", self.cityTextField.text, @"city", self.areaLocalityTextField.text, @"sublocation",  self.flatNumberTextField.text, @"address", @12.9317,  @"lat", @77.6227, @"lng", self.pinCodeTextField.text, @"zip", @"userlocation", @"type", nil];
+    [self showActivityIndicatorWithTitle:@"Please wait..."];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: selectedAddressType, @"addresstype", self.cityTextField.text, @"name", self.cityTextField.text, @"city", self.areaLocalityTextField.text, @"sublocation",  self.flatNumberTextField.text, @"address", @12.9317,  @"lat", @77.6227, @"lng", self.pinCodeTextField.text, @"zip", @"userlocation", @"type", nil];
     SVService *service = [[SVService alloc] init];
     [service getLocationID:dict usingBlock:^(NSString *locationId) {
-        if (locationId != nil || ![locationId isEqualToString:@""]) {
+        if (locationId != nil) {
             [self syncLocationForUser:locationId];
             [savedLocationIDs addObject:locationId];
+        } else {
+            [self hideActivityIndicator];
         }
     }];
 }
@@ -122,16 +124,42 @@
         
         if (resultMessage != nil || ![resultMessage isEqualToString:@""]) {
             NSLog(@"%@", resultMessage);
-            
         }
         
+        [self performSegueWithIdentifier:@"ToDeliverySelection" sender:nil];
+        [self hideActivityIndicator];
     }];
     
 }
 
 
 - (IBAction)proceedToCheckoutAction:(id)sender {
-    [self saveLocation];
+    if (![[self checkFieldsValidity]  isEqual: @""]) {
+        [self showAlertWithTitle:@"Hunger Meals" andMessage:[self checkFieldsValidity]];
+    }
+    else {
+        [self saveLocation];
+    }
+}
+
+-(NSString *)checkFieldsValidity{
+    if (self.pinCodeTextField.text.length != 6) {
+        return @"Please enter valid pincode";
+    }
+    else if (self.flatNumberTextField.text.length == 0 || self.areaLocalityTextField.text.length == 0 || self.deliveryAddressTextFiels.text.length == 0 || self.stateTextField.text.length == 0 || self.cityTextField.text.length ==0) {
+        return @"Fields should not be empty";
+    }
+    
+    return @"";
+}
+
+- (void)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message{
+    [BTAlertController showAlertWithMessage:message andTitle:title andOkButtonTitle:nil andCancelTitle:@"Ok" andtarget:self andAlertCancelBlock:^{
+        
+    } andAlertOkBlock:^(NSString *userName) {
+        
+    }];
+    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -141,17 +169,18 @@
     }
 }
 
-//#pragma Mark - TextField Delegate methods
-//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-//{
-//    
-//    if(self.pinCodeTextField.text.length > 0 && self.deliveryAddressTextFiels.text.length > 0 && self.flatNumberTextField.text.length > 0 && self.areaLocalityTextField.text.length > 0 && self.cityTextField.text.length > 0 && self.stateTextField.text.length > 0){
-//        self.proceedToCheckOutButtonOutlet.enabled = YES;
-//    }
-//    self.proceedToCheckOutButtonOutlet.enabled = NO;
-//
-//    return YES;
-//}
+#pragma Mark - TextField Delegate methods
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    
+    if(self.pinCodeTextField.text.length > 0 && self.deliveryAddressTextFiels.text.length > 0 && self.flatNumberTextField.text.length > 0 && self.areaLocalityTextField.text.length > 0 && self.cityTextField.text.length > 0 && self.stateTextField.text.length > 0){
+        self.proceedToCheckOutButtonOutlet.enabled = YES;
+    }
+    self.proceedToCheckOutButtonOutlet.enabled = NO;
+
+    return YES;
+}
+
 - (IBAction)otherButtonAction:(id)sender {
     UIButton *btn = (UIButton *)sender;
     if ([btn.layer valueForKey:@"isSelected"]) {

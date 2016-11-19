@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDL-3C-iXZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDL-3C-iXZ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -1567,7 +1567,7 @@
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="0.90905172410000001" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="1" green="0.65921854759999998" blue="0.25414326069999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="6"/>
@@ -1628,7 +1628,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="proceedToCheckoutAction:" destination="KzZ-ca-Ydf" eventType="touchUpInside" id="6iH-Sd-iTS"/>
-                                            <segue destination="xRG-Yj-jMh" kind="show" identifier="ToDeliverySelection" id="VB8-by-ITA"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1655,6 +1654,7 @@
                             <constraint firstItem="OQG-1l-Krl" firstAttribute="leading" secondItem="Yva-U9-TJC" secondAttribute="leadingMargin" constant="-20" id="wpG-MS-rZj"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="areaLocalityTextField" destination="BNk-jd-ena" id="TBp-1R-Fj3"/>
@@ -1667,6 +1667,7 @@
                         <outlet property="pinCodeTextField" destination="a71-b6-u8R" id="dNi-n1-Okw"/>
                         <outlet property="proceedToCheckOutButtonOutlet" destination="zd3-aW-VrL" id="Qr3-KZ-zsY"/>
                         <outlet property="stateTextField" destination="lTo-WC-07D" id="LJ8-Lc-hqf"/>
+                        <segue destination="xRG-Yj-jMh" kind="show" identifier="ToDeliverySelection" id="28N-Av-gzw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="An0-Yj-Oei" userLabel="First Responder" sceneMemberID="firstResponder"/>
