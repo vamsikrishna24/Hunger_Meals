@@ -102,9 +102,9 @@
         // Will open an confirm dialog to get user's approval
         [locationManager requestWhenInUseAuthorization];
     } else {
-        [locationManager startUpdatingLocation]; //Will update location immediately
+       // [locationManager startUpdatingLocation]; //Will update location immediately
     }
-    [locationManager startUpdatingLocation];
+    //[locationManager startUpdatingLocation];
     NSLog(@"%@", [USER_DEFAULTS valueForKey: @"isLocationSelected"]);
     if ([[USER_DEFAULTS valueForKey: @"isLocationSelected"]  isEqual: @"NO"]) {
         [USER_DEFAULTS setObject: @"YES" forKey: @"isLocationSelected"];
@@ -119,8 +119,12 @@
         //        MTGenericAlertViewtainer.tag = 3;
         //        // [MTGenericAlertViewtainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
         //        [MTGenericAlertViewtainer show];
-        
-        [self.view addSubview: self.instanceView];
+        if([[NSUserDefaults standardUserDefaults]objectForKey:@"locationID"] == nil){
+            
+            [self.view addSubview: self.instanceView];
+
+        }
+
         
         locations = [[NSMutableArray alloc] init];
     } else {
@@ -137,7 +141,11 @@
         
         
         
-        [self.view addSubview: self.instanceView];
+        if([[NSUserDefaults standardUserDefaults]objectForKey:@"locationID"] == nil){
+            
+            [self.view addSubview: self.instanceView];
+            
+        }
     }
     
     //[locations addObject: @{@"address": @"Banglore"}];
@@ -460,12 +468,14 @@
 
 - (IBAction)locationButtonTapped:(id)sender {
     isLocationSelected = !isLocationSelected;
-    if (isLocationSelected) {
-        self.instanceView.hidden = NO;
-    } else {
-        self.instanceView.hidden = YES;
-        
-    }
+    
+        if (isLocationSelected) {
+            self.instanceView.hidden = NO;
+        } else {
+            self.instanceView.hidden = YES;
+            
+        }
+
     //    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //    HMContentViewController *contentVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"ContentViewController"];
     //        contentVC.view.backgroundColor = [UIColor clearColor];
@@ -613,7 +623,7 @@
         } break;
         case kCLAuthorizationStatusAuthorizedWhenInUse:
         case kCLAuthorizationStatusAuthorizedAlways: {
-            [locationManager startUpdatingLocation]; //Will update location immediately
+           // [locationManager startUpdatingLocation]; //Will update location immediately
         } break;
         default:
             break;

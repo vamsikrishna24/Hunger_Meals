@@ -237,16 +237,16 @@ didSignInForUser:(GIDGoogleUser *)user
 }
 
 - (BOOL)isValidationsSucceed{
-    if(![Utility isValidateEmail:self.userNameTextField.text] && ![Utility isValidatePassword:self.passwordTextField.text]){
-        [self showAlertWithTitle:@"Check Credentials" andMessage:@"Error with credentials you have provied. Please check them and try again!!"];
-        return NO;
-    }
-    else if(![Utility isValidateEmail:self.userNameTextField.text] ){
+     if(![Utility isValidateEmail:self.userNameTextField.text] ){
         [self showAlertWithTitle:@"Check Credentials" andMessage:@"Please enter valid email and try again!!"];
         return NO;
     }
-    else if(![Utility isValidatePassword:self.passwordTextField.text]){
-        [self showAlertWithTitle:@"Check Credentials" andMessage:@"Please enter valid password and try again!!"];
+     else if(![Utility isValidatePassword:self.passwordTextField.text]){
+         [self showAlertWithTitle:@"Check Credentials" andMessage:@"Please enter valid password and try again!!"];
+         return NO;
+     }
+   else if(![Utility isValidateEmail:self.userNameTextField.text] && ![Utility isValidatePassword:self.passwordTextField.text]){
+        [self showAlertWithTitle:@"Check Credentials" andMessage:@"Error with credentials you have provied. Please check them and try again!!"];
         return NO;
     }
     
@@ -274,7 +274,7 @@ didSignInForUser:(GIDGoogleUser *)user
         if (resultArray.count != 0 || resultArray != nil) {
             UserData *dataObject = resultArray[0];
             NSData *personEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:dataObject];
-            [[NSUserDefaults standardUserDefaults] setObject:personEncodedObject forKey:@"UserData"];
+            [[NSUserDefaults standardUserDefaults] setObject:personEncodedObject forKey:@"userData"];
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoginValid"];
             [[NSUserDefaults standardUserDefaults] setObject: @"NO" forKey: @"isLocationSelected"];
             //([(AppDelegate *)[[UIApplication sharedApplication] delegate] enableCurrentLocation]);

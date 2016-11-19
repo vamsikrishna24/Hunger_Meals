@@ -731,9 +731,9 @@ else{
     
     NSMutableArray *parsedArray = [UserData arrayOfModelsFromDictionaries:resultArray error:&error];
     UserData *userDataObj = parsedArray[0];
+    userDataObj.token = tokenString;
     NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:userDataObj];
     [[NSUserDefaults standardUserDefaults]setObject:userData forKey:@"UserData"];
-    userDataObj.token = tokenString;
     return parsedArray;
 }
 
@@ -944,6 +944,7 @@ else{
     [[NSUserDefaults standardUserDefaults] setBool: NO forKey:@"isLoginValid"];
     [[NSUserDefaults standardUserDefaults] setValue: nil forKey: @"selectedLocation"];
     [[NSUserDefaults standardUserDefaults] setObject: @"NO" forKey: @"isLocationSelected"];
+    //[[NSUserDefaults standardUserDefaults] setObject: nil forKey: @"userData"];
     [FBSDKAccessToken setCurrentAccessToken:nil];
     [[GIDSignIn sharedInstance] signOut];
     [APPDELEGATE showInitialScreen];
