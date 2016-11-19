@@ -11,6 +11,8 @@
 #import "HMAddressViewController.h"
 #import "HMOrdersListTableViewController.h"
 #import "HMInviteViewController.h"
+#import "AppDelegate.h"
+#import "UserData.h"
 @interface HMSettingsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *settingsTableView;
 
@@ -23,6 +25,15 @@
     [super viewDidLoad];
     self.title = @"Settings";
     self.settingsTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+    
+    NSData *archiverData = [[NSUserDefaults standardUserDefaults]valueForKey:@"UserData"];
+    
+    UserData *userData = [NSKeyedUnarchiver unarchiveObjectWithData:archiverData];
+    
+    self.userEmailLabel.text = userData.email;
+    self.userNameLabel.text = userData.name;
+    self.userPhoneNumberLabel.text = userData.phone_no;
+
     // Do any additional setup after loading the view.
 }
 - (IBAction)logoutAction:(id)sender {
