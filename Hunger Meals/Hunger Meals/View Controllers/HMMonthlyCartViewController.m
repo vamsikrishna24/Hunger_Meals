@@ -17,7 +17,7 @@
 
 @interface HMMonthlyCartViewController (){
     NSMutableArray *cartItemsArray;
-    NSArray *monthlyCartItemsArray;
+    NSMutableArray *monthlyCartItemsArray;
 
     NSString *rsString;
     float totalAmount;
@@ -39,6 +39,7 @@
     self.cartEmptyLabel.hidden = YES;
     self.title = @"Monthly Meal Cart";
     quantity = 0;
+    monthlyCartItemsArray = [[NSMutableArray alloc] init];
    // self.cartTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
 
@@ -71,9 +72,10 @@
     SVService *service = [[SVService alloc] init];
     [service currentUserMonthlyCartWithDict:dict usingBlock:^(NSMutableArray *resultArray) {
         
-        monthlyCartItemsArray = resultArray;
-        [self.cartTableView reloadData];
-
+        if (resultArray.count > 0) {
+            monthlyCartItemsArray = [resultArray mutableCopy];
+            [self.cartTableView reloadData];
+        }
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
     
@@ -140,9 +142,10 @@
         cell = [[HMMonthlyCartTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cartCell];
     }
     //cell.totalPriceLabel.text = [NSString stringWithFormat:@"%@ ₹",@"23"];
-        cell.cartItemTitle.text = [monthlyCartItemsArray valueForKey:@"name"][indexPath.row];
-        cell.countLabel.text = [monthlyCartItemsArray valueForKey:@"quantity"][indexPath.row];
-       cell.totalPriceLabel.text = [monthlyCartItemsArray valueForKey:@"price"][indexPath.row];
+        NSDictionary *mealsDict = [monthlyCartItemsArray objectAtIndex:indexPath.row];
+        cell.cartItemTitle.text = [mealsDict objectForKey:@"name"];
+        cell.countLabel.text = [NSString stringWithFormat:@"%@", [mealsDict objectForKey:@"quantity"]];
+       cell.totalPriceLabel.text = [NSString stringWithFormat:@"%@", [mealsDict objectForKey:@"price"]];
 
 //    CartItem *cartObject = [itemsListArray objectAtIndex:indexPath.row];
 //    cell.incrementButton.tag = indexPath.row;

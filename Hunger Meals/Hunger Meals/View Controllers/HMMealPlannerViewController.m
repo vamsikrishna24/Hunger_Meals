@@ -59,6 +59,7 @@
     
     UIBarButtonItem *saveBtn = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(saveButtonClicked:)];
     self.navigationItem.rightBarButtonItem = saveBtn;
+    self.navigationItem.rightBarButtonItem.enabled = NO;
     
     _calendarManager = [JTCalendarManager new];
     _calendarManager.delegate = self;
@@ -167,14 +168,20 @@
     
     SVService *service = [[SVService alloc] init];
     [service saveMonthlyMealPlan:params usingBlock:^(NSString *resultMessage) {
-        
-        [self showAlertWithTitle:@"Status!" andMessage:resultMessage];
+
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+        
+        if ([resultMessage  isEqual: @"Meal Plan saved successfully"]) {
+            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            HMMonthlyCartViewController *monthlyCartMealViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MonthlyCartViewIdentifier"];
+            [self.navigationController pushViewController:monthlyCartMealViewController animated:YES];
+        }
+        else {
+            [self showAlertWithTitle:@"Hunger Meals" andMessage:resultMessage];
+        }
+       
     }];
 
-    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    HMMonthlyCartViewController *monthlyCartMealViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MonthlyCartViewIdentifier"];
-    [self.navigationController pushViewController:monthlyCartMealViewController animated:YES];
 }
 
 #pragma mark - CalendarManager delegate
@@ -424,23 +431,17 @@
                 }
             }
             for (NSArray *array in dinnerList) {
-                if ([array firstObject] != nil) {
-                    [dinnerItemsList addObject:[array firstObject]];
-                }
-                
-                for (NSArray *array in dinnerList) {
+
                     if ([array firstObject] != nil) {
                         [dinnerItemsList addObject:[array firstObject]];
                     }
                     else {
                         [dinnerItemsList addObject:@""];
                     }
-                }
-                
-                [_calendarTableView reloadData];
-
             }
             
+            [_calendarTableView reloadData];
+            self.navigationItem.rightBarButtonItem.enabled = YES;
         }
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
