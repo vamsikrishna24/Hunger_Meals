@@ -731,6 +731,8 @@ else{
     
     NSMutableArray *parsedArray = [UserData arrayOfModelsFromDictionaries:resultArray error:&error];
     UserData *userDataObj = parsedArray[0];
+    NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:userDataObj];
+    [[NSUserDefaults standardUserDefaults]setObject:userData forKey:@"UserData"];
     userDataObj.token = tokenString;
     return parsedArray;
 }

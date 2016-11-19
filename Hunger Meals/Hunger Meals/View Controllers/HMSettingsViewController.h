@@ -10,5 +10,8 @@
 #import "CommonViewController.h"
 
 @interface HMSettingsViewController : CommonViewController<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userEmailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userPhoneNumberLabel;
 
 @end
