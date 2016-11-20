@@ -23,6 +23,7 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSURL *imageURL;
 @property (strong, nonatomic) UINavigationController *homeNavigationController;
+@property (assign, nonatomic) NSInteger cartItemsValue;
 
 
 @property int selectedInstance;

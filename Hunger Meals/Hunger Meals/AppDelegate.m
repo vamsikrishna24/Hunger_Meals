@@ -48,6 +48,9 @@
             NSLog(@"  %@", name);
         }
     }
+    
+    _cartItemsValue = 0;
+    
     return YES;
 }
 

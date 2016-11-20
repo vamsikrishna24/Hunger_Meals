@@ -61,7 +61,7 @@
     categoriesImgs = [NSArray arrayWithObjects: @"Category1.png",@"Category2.png",@"Category3.png", nil];
     
     scrollingImgs = [NSArray arrayWithObjects: @"page1.png",@"page2.png",@"page3.png",@"page4.png", @"page5.png", nil];
-    //[self updateCartItemsBadgeValue];
+    [self updateCartItemsBadgeValue];
     locationView = [[LocationView alloc]init];
     APPDELEGATE.homeNavigationController = self.navigationController;
     
@@ -185,7 +185,8 @@
     [service getCartDatausingBlock:^(NSMutableArray *resultArray) {
         
         if (resultArray.count != 0 || resultArray != nil) {
-            [[self navigationController] tabBarItem].badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)resultArray.count];
+            APPDELEGATE.cartItemsValue = resultArray.count;
+            [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%lu",(unsigned long)resultArray.count]];
         }
         
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];

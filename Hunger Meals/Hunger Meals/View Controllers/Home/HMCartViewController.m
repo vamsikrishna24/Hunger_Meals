@@ -80,6 +80,7 @@
         
         if (resultArray.count != 0 || resultArray != nil) {
             cartItemsArray = [resultArray mutableCopy];
+            APPDELEGATE.cartItemsValue = cartItemsArray.count;
             [[self navigationController] tabBarItem].badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)cartItemsArray.count];
         }
         
