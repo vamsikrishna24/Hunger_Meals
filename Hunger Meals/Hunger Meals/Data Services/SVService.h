@@ -74,6 +74,8 @@ typedef void(^SuccessBlock)(NSData *data , NSHTTPURLResponse *response, NSError 
 
 - (void)otpVerification:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock;
 
+- (void)checkExistingUser:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock;
+
 +(NSString *)getBasicAuthorization;
 
 - (NSMutableArray *)parseArrayProductsData:(NSMutableArray *)array;

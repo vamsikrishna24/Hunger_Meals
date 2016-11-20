@@ -574,7 +574,28 @@ else{
 //    }];
 //}
 
+#pragma CheckExistingUser Generation
+- (void)checkExistingUser:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
+    
+    NSString *email = [params objectForKey:@"email"];
+    
+    NSString *url = [NSString stringWithFormat:kCheckExistingUser, HTTP_DATA_HOST, email];
+    
+    
+    [self sendRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
         
+         id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+        NSString *resultString = [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];
+        if (response.statusCode == 200 && result!=nil) {
+           
+            resultBlock(resultString);
+            
+        }
+        else if(response.statusCode == 401){
+            resultBlock(resultString);
+        }
+    }];
+}
 #pragma OTP Generation
 - (void)otpGenaration:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
     

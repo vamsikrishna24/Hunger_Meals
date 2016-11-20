@@ -150,9 +150,23 @@ shouldChangeCharactersInRange:(NSRange)range
         SecondVC.pageViewController = _pageViewController;
         SecondVC.signUpFirstVC = self;
         self.pageIndex = 1;
+        
+        [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: self.emailTextField.text, @"email",nil];
+        SVService *service = [[SVService alloc] init];
+        [service checkExistingUser:dict usingBlock:^(NSString *resultMessage) {
+            
+            [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+            if([resultMessage isEqualToString:@"You are already registered with us"]){
+                
+                return [[[UIAlertView alloc] initWithTitle:@"Alert!!" message:@"You are already registered with us" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            }else{
+                [self.pageViewController setViewControllers:@[SecondVC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+            }
 
-        [self.pageViewController setViewControllers:@[SecondVC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-        [self otpGenation];
+        }];
+
+
 
     }
 }

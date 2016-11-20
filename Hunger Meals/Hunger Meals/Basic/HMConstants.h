@@ -44,6 +44,7 @@ extern NSString * const kCurrentActiveOrders;
 extern NSString * const kInviteUserURL;
 extern NSString * const kForgotPasswordURL;
 extern NSString * const kCurrentUserMonthlycart;
+extern NSString * const kCheckExistingUser;
 
 #pragma -mark Other constants
 extern NSString * const kEmptyString;
