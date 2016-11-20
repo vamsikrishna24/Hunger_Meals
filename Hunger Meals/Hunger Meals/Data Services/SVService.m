@@ -410,7 +410,6 @@ else{
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
         
-            //resultBlock([self parseArrayProductsData:(NSMutableArray *)dictResult]);
             resultBlock((NSMutableArray *)dictResult);
         }
         else{
@@ -542,7 +541,6 @@ else{
                 
             }
             NSString *resultDict = [dictResult objectForKey:@"data"];
-          //  NSString *resultMessage = [resultDict objectForKey:@"message"];
             
             resultBlock(resultDict);
         }
@@ -551,28 +549,6 @@ else{
         }
     }];
 }
-
-
-//-(void)couponCode:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
-//
-//    
-//    NSString *url = [NSString stringWithFormat:kAddCoupenCode, HTTP_DATA_HOST];
-//    
-//    [self sendRequest:url Perameters:dict usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
-//        
-//        if (response.statusCode == 200 && result!=nil) {
-//            
-//            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
-//            NSDictionary *resultDict = [dictResult objectForKey:@"data"];
-//            NSString *resultMessage = [resultDict objectForKey:@"message"];
-//            
-//            resultBlock(resultMessage);
-//        }
-//        else{
-//            resultBlock(nil);
-//        }
-//    }];
-//}
 
 #pragma CheckExistingUser Generation
 - (void)checkExistingUser:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
@@ -584,7 +560,6 @@ else{
     
     [self sendRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
         
-         id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
         NSString *resultString = [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];
         if (response.statusCode == 200 && result!=nil) {
            

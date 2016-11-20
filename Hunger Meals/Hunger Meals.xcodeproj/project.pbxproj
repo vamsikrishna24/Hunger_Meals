@@ -47,7 +47,7 @@
 		2B6ED9AF1D6FD915000D672D /* NorthIndianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6ED9AE1D6FD915000D672D /* NorthIndianViewController.m */; };
 		2B6ED9B21D6FD926000D672D /* AddonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6ED9B11D6FD926000D672D /* AddonsViewController.m */; };
 		2B6ED9B51D6FE7A9000D672D /* MealsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6ED9B41D6FE7A9000D672D /* MealsTableViewCell.m */; };
-		2B7AC6F81D47AC3F00D59BB3 /* Dish_Images in Resources */ = {isa = PBXBuildFile; fileRef = 2B7AC6F71D47AC3F00D59BB3 /* Dish_Images */; };
+		2B7AC6F81D47AC3F00D59BB3 /* RadioButtons in Resources */ = {isa = PBXBuildFile; fileRef = 2B7AC6F71D47AC3F00D59BB3 /* RadioButtons */; };
 		2B7AC6FD1D47BB6F00D59BB3 /* HMDetailPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7AC6FC1D47BB6F00D59BB3 /* HMDetailPageViewController.m */; };
 		2B7AC7001D47C18400D59BB3 /* HMCartItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7AC6FF1D47C18400D59BB3 /* HMCartItemsViewController.m */; };
 		2B89E5021D5BB2BA0022EC67 /* ProfileImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B89E5011D5BB2BA0022EC67 /* ProfileImage.jpg */; };
@@ -225,7 +225,7 @@
 		2B6ED9B11D6FD926000D672D /* AddonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddonsViewController.m; sourceTree = "<group>"; };
 		2B6ED9B31D6FE7A9000D672D /* MealsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealsTableViewCell.h; sourceTree = "<group>"; };
 		2B6ED9B41D6FE7A9000D672D /* MealsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealsTableViewCell.m; sourceTree = "<group>"; };
-		2B7AC6F71D47AC3F00D59BB3 /* Dish_Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Dish_Images; path = "Hunger Meals/Dish_Images"; sourceTree = "<group>"; };
+		2B7AC6F71D47AC3F00D59BB3 /* RadioButtons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RadioButtons; path = "Hunger Meals/RadioButtons"; sourceTree = "<group>"; };
 		2B7AC6FB1D47BB6F00D59BB3 /* HMDetailPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDetailPageViewController.h; sourceTree = "<group>"; };
 		2B7AC6FC1D47BB6F00D59BB3 /* HMDetailPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailPageViewController.m; sourceTree = "<group>"; };
 		2B7AC6FE1D47C18400D59BB3 /* HMCartItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCartItemsViewController.h; sourceTree = "<group>"; };
@@ -626,7 +626,7 @@
 			isa = PBXGroup;
 			children = (
 				2B58CE5C1DA5073F0005C043 /* Tax.json */,
-				2B7AC6F71D47AC3F00D59BB3 /* Dish_Images */,
+				2B7AC6F71D47AC3F00D59BB3 /* RadioButtons */,
 				9A0C43C41D2F868300A7BF6B /* Hunger Meals */,
 				9A0C43E11D2F868500A7BF6B /* Hunger MealsTests */,
 				9A0C43EC1D2F868500A7BF6B /* Hunger MealsUITests */,
@@ -1041,7 +1041,7 @@
 				2B03AB1A1DAFAE98000DD8DA /* amaranth.regular.ttf in Resources */,
 				2B03AB1B1DAFAE98000DD8DA /* Debby.ttf in Resources */,
 				2B45D6921D59106C00C873ED /* My_Location.png in Resources */,
-				2B7AC6F81D47AC3F00D59BB3 /* Dish_Images in Resources */,
+				2B7AC6F81D47AC3F00D59BB3 /* RadioButtons in Resources */,
 				2BC1DD0F1D5C65E900F00D7D /* meals_ban.jpg in Resources */,
 				A88FB7621D5C8BB8005E8667 /* meals banner.jpg in Resources */,
 				A831CA871D37CEC100B96F4F /* close@2x.png in Resources */,

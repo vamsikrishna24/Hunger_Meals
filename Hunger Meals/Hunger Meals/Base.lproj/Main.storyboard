@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDL-3C-iXZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDL-3C-iXZ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -912,11 +912,14 @@
                                             <action selector="forgotPasswordButtonAction:" destination="dDL-3C-iXZ" eventType="touchUpInside" id="jKN-Mx-UW7"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9B-2l-C7M">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9B-2l-C7M">
                                         <rect key="frame" x="25" y="46" width="45" height="16"/>
                                         <fontDescription key="fontDescription" name="nevis-Bold" family="nevis" pointSize="14"/>
                                         <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="25" y="46" width="43.5" height="16.5"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1JF-F8-PmL">
                                         <rect key="frame" x="25" y="365.5" width="61" height="21"/>
@@ -1215,14 +1218,48 @@
                                                         </view>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="RXV-A8-tJl" firstAttribute="centerY" secondItem="9iU-Zv-ZzR" secondAttribute="centerY" id="2f6-YJ-ZnI">
+                                                            <variation key="widthClass=compact" constant="4"/>
+                                                        </constraint>
                                                         <constraint firstAttribute="trailing" secondItem="RXV-A8-tJl" secondAttribute="trailing" id="5TE-Af-C74"/>
                                                         <constraint firstItem="RXV-A8-tJl" firstAttribute="centerX" secondItem="9iU-Zv-ZzR" secondAttribute="centerX" id="6ho-h4-kgU"/>
+                                                        <constraint firstItem="RXV-A8-tJl" firstAttribute="leading" secondItem="9iU-Zv-ZzR" secondAttribute="leading" id="Cdd-ol-cQP"/>
+                                                        <constraint firstAttribute="trailing" secondItem="RXV-A8-tJl" secondAttribute="trailing" id="PEe-vn-EKq"/>
+                                                        <constraint firstAttribute="bottom" secondItem="RXV-A8-tJl" secondAttribute="bottom" id="WOt-RZ-tkD"/>
+                                                        <constraint firstItem="RXV-A8-tJl" firstAttribute="top" secondItem="9iU-Zv-ZzR" secondAttribute="top" constant="8" id="aNg-44-VMx"/>
                                                         <constraint firstItem="RXV-A8-tJl" firstAttribute="top" secondItem="9iU-Zv-ZzR" secondAttribute="top" constant="8" id="i32-U8-k75"/>
                                                         <constraint firstItem="RXV-A8-tJl" firstAttribute="centerY" secondItem="9iU-Zv-ZzR" secondAttribute="centerY" constant="4" id="nbb-LW-R2O"/>
+                                                        <constraint firstItem="RXV-A8-tJl" firstAttribute="centerX" secondItem="9iU-Zv-ZzR" secondAttribute="centerX" id="q7C-zD-YEw"/>
                                                         <constraint firstAttribute="bottom" secondItem="RXV-A8-tJl" secondAttribute="bottom" id="yXj-fP-47G"/>
                                                         <constraint firstItem="RXV-A8-tJl" firstAttribute="leading" secondItem="9iU-Zv-ZzR" secondAttribute="leading" id="ywB-oC-Q1o"/>
                                                     </constraints>
                                                     <inset key="scrollIndicatorInsets" minX="600" minY="20" maxX="150" maxY="20"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="2f6-YJ-ZnI"/>
+                                                            <exclude reference="Cdd-ol-cQP"/>
+                                                            <exclude reference="PEe-vn-EKq"/>
+                                                            <exclude reference="WOt-RZ-tkD"/>
+                                                            <exclude reference="aNg-44-VMx"/>
+                                                            <exclude reference="q7C-zD-YEw"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="2f6-YJ-ZnI"/>
+                                                            <exclude reference="5TE-Af-C74"/>
+                                                            <exclude reference="6ho-h4-kgU"/>
+                                                            <include reference="Cdd-ol-cQP"/>
+                                                            <include reference="PEe-vn-EKq"/>
+                                                            <include reference="WOt-RZ-tkD"/>
+                                                            <include reference="aNg-44-VMx"/>
+                                                            <exclude reference="i32-U8-k75"/>
+                                                            <exclude reference="nbb-LW-R2O"/>
+                                                            <include reference="q7C-zD-YEw"/>
+                                                            <exclude reference="yXj-fP-47G"/>
+                                                            <exclude reference="ywB-oC-Q1o"/>
+                                                        </mask>
+                                                    </variation>
                                                 </scrollView>
                                                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="9uX-xc-WLb">
                                                     <rect key="frame" x="179" y="128" width="55" height="37"/>
@@ -1734,7 +1771,7 @@
                                             <constraint firstAttribute="height" constant="31" id="McQ-mW-J86"/>
                                             <constraint firstAttribute="width" constant="49" id="nau-7d-sG8"/>
                                         </constraints>
-                                        <color key="onTintColor" red="0.93725490199999995" green="0.54117647059999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="onTintColor" red="0.94509803920000002" green="0.35294117650000001" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="vegFilterSwitchClicked:" destination="szz-r1-i5K" eventType="valueChanged" id="PmF-wD-slT"/>
                                         </connections>
@@ -3243,17 +3280,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your preference" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WI-jU-2tr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Choose your preference" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WI-jU-2tr">
                                 <rect key="frame" x="20" y="50" width="140.5" height="17"/>
                                 <fontDescription key="fontDescription" name="Soria-Soria" family="Soria" pointSize="17"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="50" width="183" height="20"/>
+                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3L-lc-1JX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Choose your time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3L-lc-1JX">
                                 <rect key="frame" x="20" y="226" width="103" height="17"/>
                                 <fontDescription key="fontDescription" name="Soria-Soria" family="Soria" pointSize="17"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="229" width="134.5" height="20"/>
+                                </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBU-Yr-mUZ">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBU-Yr-mUZ">
                                 <rect key="frame" x="64" y="88" width="125.5" height="111"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="111" id="16O-km-wdf"/>
@@ -3271,11 +3314,14 @@
                                         <integer key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="64" y="91" width="125.5" height="111"/>
+                                </variation>
                                 <connections>
                                     <action selector="foodPreferenceClicked:" destination="SYK-GZ-Mjc" eventType="touchUpInside" id="DgV-9P-E4F"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTJ-3A-bu0">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTJ-3A-bu0">
                                 <rect key="frame" x="239" y="88" width="125.5" height="111"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
                                 <state key="normal" title="South Indian">
@@ -3289,45 +3335,60 @@
                                         <integer key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="239" y="91" width="125.5" height="111"/>
+                                </variation>
                                 <connections>
                                     <action selector="foodPreferenceClicked:" destination="SYK-GZ-Mjc" eventType="touchUpInside" id="3eQ-Ob-iiP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hn9-ct-5rO">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hn9-ct-5rO">
                                 <rect key="frame" x="20" y="271" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="Mg6-LD-Cma"/>
                                     <constraint firstAttribute="height" constant="20" id="emK-Vt-Bas"/>
                                 </constraints>
                                 <state key="normal" image="checkbox_not_ticked.png"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="277" width="20" height="20"/>
+                                </variation>
                                 <connections>
                                     <action selector="lunchCheckBoxClicked:" destination="SYK-GZ-Mjc" eventType="touchUpInside" id="861-a1-aeA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lunch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awt-nw-g0U">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lunch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awt-nw-g0U">
                                 <rect key="frame" x="48" y="272" width="43" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="48" y="278" width="43" height="18"/>
+                                </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ew-FI-6gt">
+                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ew-FI-6gt">
                                 <rect key="frame" x="121" y="271" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="9W4-Mp-FJs"/>
                                     <constraint firstAttribute="height" constant="20" id="vTC-c6-mXc"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="checkbox_not_ticked.png"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="121" y="277" width="20" height="20"/>
+                                </variation>
                                 <connections>
                                     <action selector="dinnerCheckBoxClicked:" destination="SYK-GZ-Mjc" eventType="touchUpInside" id="ChP-gQ-XoI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dinner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgz-r5-caV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dinner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgz-r5-caV">
                                 <rect key="frame" x="149" y="272" width="45.5" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="149" y="278" width="45.5" height="18"/>
+                                </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjC-BU-j7w">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjC-BU-j7w">
                                 <rect key="frame" x="114.5" y="371" width="185" height="35"/>
                                 <color key="backgroundColor" red="0.94509803920000002" green="0.35294117650000001" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -3343,6 +3404,9 @@
                                         <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="114.5" y="377" width="185" height="35"/>
+                                </variation>
                                 <connections>
                                     <action selector="proceedToCheckoutAction:" destination="KzZ-ca-Ydf" eventType="touchUpInside" id="kuZ-Cr-zjW"/>
                                     <action selector="viewMealPlannerClicked:" destination="SYK-GZ-Mjc" eventType="touchUpInside" id="Rlv-0W-XbT"/>
@@ -3952,7 +4016,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TnW-o2-qP5">
                                 <rect key="frame" x="0.0" y="134" width="414" height="602"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="OTP Verification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8Y-ku-7yg">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OTP Verification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8Y-ku-7yg">
                                         <rect key="frame" x="93" y="83" width="86.5" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="L4a-9n-cB0"/>
@@ -5442,11 +5506,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="73.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="207, 1st cross,sriram nagar - block -b kondapur,Hyderabad,Telangana 500087" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGE-Z9-5cz">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="207, 1st cross,sriram nagar - block -b kondapur,Hyderabad,Telangana 500087" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGE-Z9-5cz">
                                                     <rect key="frame" x="47" y="14" width="359" height="46.5"/>
                                                     <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="47" y="13.5" width="359" height="47.5"/>
+                                                    </variation>
                                                 </textView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Address" translatesAutoresizingMaskIntoConstraints="NO" id="8sr-0r-WLY">
                                                     <rect key="frame" x="8" y="17" width="40" height="40"/>
@@ -5656,7 +5723,7 @@
                                             <constraint firstAttribute="height" constant="31" id="ZMS-Ab-enA"/>
                                             <constraint firstAttribute="width" constant="49" id="jto-qR-52Y"/>
                                         </constraints>
-                                        <color key="onTintColor" red="0.93725490199999995" green="0.54117647059999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="onTintColor" red="0.94509803920000002" green="0.35294117650000001" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="vegFilterSwitchClicked:" destination="0Zx-PA-s6G" eventType="valueChanged" id="9O8-yy-vI1"/>
                                         </connections>
@@ -6137,7 +6204,7 @@
                                             <constraint firstAttribute="width" constant="49" id="0rq-OO-jBP"/>
                                             <constraint firstAttribute="height" constant="31" id="ore-Kq-P1L"/>
                                         </constraints>
-                                        <color key="onTintColor" red="0.93725490199999995" green="0.54117647059999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="onTintColor" red="0.94509803920000002" green="0.35294117650000001" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="vegFilterSwitchClicked:" destination="iUr-YI-hL8" eventType="valueChanged" id="Wqo-Fm-jd7"/>
                                         </connections>
