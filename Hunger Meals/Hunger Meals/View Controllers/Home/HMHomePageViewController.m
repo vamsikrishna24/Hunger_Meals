@@ -113,7 +113,6 @@
         self.instanceView.frame = self.view.bounds;//CGRectMake(16, self.view.frame.size.height / 2 - 30, self.view.frame.size.width - 32, 60);
         self.instanceView.delegate = self;
         [self.instanceView setBackgroundColor: [UIColor clearColor]];
-        self.navigationController.navigationBar.userInteractionEnabled = NO;
         [self.view addSubview: self.instanceView];
         
         //         MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:nil titleColor:nil titleFont:nil backgroundImage:nil];
@@ -123,9 +122,6 @@
         //        [MTGenericAlertViewtainer show];
         if([[NSUserDefaults standardUserDefaults]objectForKey:@"locationID"] != nil){
             self.instanceView.hidden = YES;
-        }
-        else {
-            self.navigationController.navigationBar.userInteractionEnabled = YES;
         }
         
         locations = [[NSMutableArray alloc] init];
@@ -148,9 +144,6 @@
         if([[NSUserDefaults standardUserDefaults]objectForKey:@"locationID"] != nil){
             self.instanceView.hidden = YES;
         }
-        else {
-            self.navigationController.navigationBar.userInteractionEnabled = YES;
-        }
     }
     
     //[locations addObject: @{@"address": @"Banglore"}];
@@ -159,7 +152,6 @@
 }
 
 - (void)selectedLocation:(NSDictionary *)location {
-    self.navigationController.navigationBar.userInteractionEnabled = YES;
     self.instanceView.hidden = true;
     //[MTGenericAlertViewtainer close];
     isLocationSelected = NO;
@@ -673,7 +665,6 @@
     UIAlertView *errorAlert = [[UIAlertView alloc]
                                initWithTitle:@"Oops" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [errorAlert show];
-    self.navigationController.navigationBar.userInteractionEnabled = YES;
     self.instanceView.hidden = YES;
 }
 
