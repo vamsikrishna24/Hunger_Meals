@@ -200,13 +200,7 @@
     
     [FBSDKAccessToken setCurrentAccessToken:nil];
     [[GIDSignIn sharedInstance] signOut];
-    
-    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    
-    HMLandingViewController *loginVC = (HMLandingViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"LandingPage"];
-    
-    [self presentViewController:loginVC animated:YES completion:nil];
-
+    [APPDELEGATE showInitialScreen];
 }
 - (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue { }
 
