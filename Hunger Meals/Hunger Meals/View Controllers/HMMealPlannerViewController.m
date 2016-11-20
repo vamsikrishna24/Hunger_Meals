@@ -176,7 +176,7 @@
             HMMonthlyCartViewController *monthlyCartMealViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MonthlyCartViewIdentifier"];
             [self.navigationController pushViewController:monthlyCartMealViewController animated:YES];
         }
-        else {
+        else if (![resultMessage isEqualToString:@""]){
             [self showAlertWithTitle:@"Hunger Meals" andMessage:resultMessage];
         }
        

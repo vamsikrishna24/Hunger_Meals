@@ -61,6 +61,7 @@
     categoriesImgs = [NSArray arrayWithObjects: @"Category1.png",@"Category2.png",@"Category3.png", nil];
     
     scrollingImgs = [NSArray arrayWithObjects: @"page1.png",@"page2.png",@"page3.png",@"page4.png", @"page5.png", nil];
+    //[self updateCartItemsBadgeValue];
     locationView = [[LocationView alloc]init];
     APPDELEGATE.homeNavigationController = self.navigationController;
     
@@ -113,24 +114,27 @@
         self.instanceView.delegate = self;
         [self.instanceView setBackgroundColor: [UIColor clearColor]];
         self.navigationController.navigationBar.userInteractionEnabled = NO;
+        [self.view addSubview: self.instanceView];
         
         //         MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:nil titleColor:nil titleFont:nil backgroundImage:nil];
         //        [MTGenericAlertViewtainer setCustomInputView:self.instanceView]; //Add customized view to this method
         //        MTGenericAlertViewtainer.tag = 3;
         //        // [MTGenericAlertViewtainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
         //        [MTGenericAlertViewtainer show];
-        if([[NSUserDefaults standardUserDefaults]objectForKey:@"locationID"] == nil){
-            
-            [self.view addSubview: self.instanceView];
-
+        if([[NSUserDefaults standardUserDefaults]objectForKey:@"locationID"] != nil){
+            self.instanceView.hidden = YES;
         }
-
+        else {
+            self.navigationController.navigationBar.userInteractionEnabled = YES;
+        }
         
         locations = [[NSMutableArray alloc] init];
     } else {
         self.instanceView.frame = self.view.bounds;
         self.instanceView.delegate = self;
         [self.instanceView setBackgroundColor: [UIColor clearColor]];
+        [self.view addSubview: self.instanceView];
+
         //       // [MTGenericAlertViewtainer close];
         //
         //        MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:nil titleColor:nil titleFont:nil backgroundImage:nil];
@@ -141,10 +145,11 @@
         
         
         
-        if([[NSUserDefaults standardUserDefaults]objectForKey:@"locationID"] == nil){
-            
-            [self.view addSubview: self.instanceView];
-            
+        if([[NSUserDefaults standardUserDefaults]objectForKey:@"locationID"] != nil){
+            self.instanceView.hidden = YES;
+        }
+        else {
+            self.navigationController.navigationBar.userInteractionEnabled = YES;
         }
     }
     
@@ -172,6 +177,21 @@
 //    [locationPopup show];
 //
 //}
+
+-(void)updateCartItemsBadgeValue{
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    
+    SVService *service = [[SVService alloc] init];
+    [service getCartDatausingBlock:^(NSMutableArray *resultArray) {
+        
+        if (resultArray.count != 0 || resultArray != nil) {
+            [[self navigationController] tabBarItem].badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)resultArray.count];
+        }
+        
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    }];
+    
+}
 
 -(void)cartView{
     

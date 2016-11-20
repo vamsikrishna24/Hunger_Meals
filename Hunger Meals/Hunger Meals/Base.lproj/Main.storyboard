@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDL-3C-iXZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDL-3C-iXZ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -6666,7 +6666,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRu-JF-EGj">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NRu-JF-EGj">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDJ-4x-pSl">
@@ -6976,7 +6976,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4ei-ro-9ne" id="fDj-yq-Hbx">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="170.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="92.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="sample address" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Eqn-sh-WFk">
@@ -7062,18 +7062,18 @@
                                 <exclude reference="TLd-MF-5Zt"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="qGY-MR-2cW"/>
+                                <exclude reference="6Zh-10-UUY"/>
+                                <exclude reference="vDK-g6-g2P"/>
                                 <exclude reference="4pt-pO-Voi"/>
                                 <exclude reference="leU-Sn-9Aj"/>
                                 <exclude reference="u6Q-ah-Vj2"/>
-                                <exclude reference="2TZ-Vo-B8P"/>
-                                <exclude reference="lNc-Yp-dgT"/>
-                                <exclude reference="m0C-ah-iMd"/>
-                                <exclude reference="6Zh-10-UUY"/>
-                                <exclude reference="vDK-g6-g2P"/>
                                 <exclude reference="1Yx-jk-hZH"/>
                                 <exclude reference="OpL-5g-QcA"/>
                                 <exclude reference="o66-ep-P4S"/>
-                                <exclude reference="qGY-MR-2cW"/>
+                                <exclude reference="2TZ-Vo-B8P"/>
+                                <exclude reference="lNc-Yp-dgT"/>
+                                <exclude reference="m0C-ah-iMd"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -7084,18 +7084,18 @@
                                 <include reference="TLd-MF-5Zt"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="qGY-MR-2cW"/>
+                                <include reference="6Zh-10-UUY"/>
+                                <include reference="vDK-g6-g2P"/>
                                 <include reference="4pt-pO-Voi"/>
                                 <include reference="leU-Sn-9Aj"/>
                                 <include reference="u6Q-ah-Vj2"/>
-                                <include reference="2TZ-Vo-B8P"/>
-                                <include reference="lNc-Yp-dgT"/>
-                                <include reference="m0C-ah-iMd"/>
-                                <include reference="6Zh-10-UUY"/>
-                                <include reference="vDK-g6-g2P"/>
                                 <include reference="1Yx-jk-hZH"/>
                                 <include reference="OpL-5g-QcA"/>
                                 <include reference="o66-ep-P4S"/>
-                                <include reference="qGY-MR-2cW"/>
+                                <include reference="2TZ-Vo-B8P"/>
+                                <include reference="lNc-Yp-dgT"/>
+                                <include reference="m0C-ah-iMd"/>
                             </mask>
                         </variation>
                     </view>
