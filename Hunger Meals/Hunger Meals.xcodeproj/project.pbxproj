@@ -72,6 +72,7 @@
 		2BDF98701D70B4E8003D943C /* HMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF986F1D70B4E8003D943C /* HMTabBarViewController.m */; };
 		2BE861881D9F69C50005FABC /* LocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE861871D9F69C50005FABC /* LocationTableViewCell.m */; };
 		2BE8618B1D9F742C0005FABC /* LocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8618A1D9F742C0005FABC /* LocationView.m */; };
+		2BEB3B961DE18253006589E2 /* UserProfileAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB3B951DE18253006589E2 /* UserProfileAddressTableViewCell.m */; };
 		2BEDB6391DA26CE800D24863 /* HMItemListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDB6381DA26CE800D24863 /* HMItemListTableViewCell.m */; };
 		2BEEF6CF1DAAB6AD0010715F /* HMOrdersListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEEF6CE1DAAB6AD0010715F /* HMOrdersListTableViewController.m */; };
 		2BEEF6D21DAAB6E00010715F /* HMOrdersListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEEF6D11DAAB6E00010715F /* HMOrdersListTableViewCell.m */; };
@@ -267,6 +268,8 @@
 		2BE861871D9F69C50005FABC /* LocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTableViewCell.m; sourceTree = "<group>"; };
 		2BE861891D9F742C0005FABC /* LocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationView.h; sourceTree = "<group>"; };
 		2BE8618A1D9F742C0005FABC /* LocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationView.m; sourceTree = "<group>"; };
+		2BEB3B941DE18253006589E2 /* UserProfileAddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileAddressTableViewCell.h; sourceTree = "<group>"; };
+		2BEB3B951DE18253006589E2 /* UserProfileAddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileAddressTableViewCell.m; sourceTree = "<group>"; };
 		2BEDB6371DA26CE800D24863 /* HMItemListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMItemListTableViewCell.h; sourceTree = "<group>"; };
 		2BEDB6381DA26CE800D24863 /* HMItemListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMItemListTableViewCell.m; sourceTree = "<group>"; };
 		2BEEF6CD1DAAB6AD0010715F /* HMOrdersListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMOrdersListTableViewController.h; sourceTree = "<group>"; };
@@ -497,6 +500,8 @@
 				2BEEF6D11DAAB6E00010715F /* HMOrdersListTableViewCell.m */,
 				2BF62A2D1DB8699B00B58A8B /* HMMonthlyCartTableViewCell.h */,
 				2BF62A2E1DB8699B00B58A8B /* HMMonthlyCartTableViewCell.m */,
+				2BEB3B941DE18253006589E2 /* UserProfileAddressTableViewCell.h */,
+				2BEB3B951DE18253006589E2 /* UserProfileAddressTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1267,6 +1272,7 @@
 				9A818F9F1D49F8B200FB5565 /* HMPaymentTypeSelectionViewController.m in Sources */,
 				2BF62A2F1DB8699B00B58A8B /* HMMonthlyCartTableViewCell.m in Sources */,
 				9A818FA41D4A203200FB5565 /* PaymentPageViewController.m in Sources */,
+				2BEB3B961DE18253006589E2 /* UserProfileAddressTableViewCell.m in Sources */,
 				2B9CCA951D8EB81100962F7B /* HMScroolMonthlyCollectionViewCell.m in Sources */,
 				2BC1DD161D5C90D900F00D7D /* HMLoginViewController.m in Sources */,
 				A88FB7461D5C5292005E8667 /* CommonViewController.m in Sources */,

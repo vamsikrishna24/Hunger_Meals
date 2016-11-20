@@ -8,11 +8,20 @@
 
 #import "HMUserProfileViewController.h"
 #import "UserData.h"
+#import "UserProfileAddressTableViewCell.h"
+#import "SVService.h"
 
 
-@interface HMUserProfileViewController ()
+
+@interface HMUserProfileViewController (){
+    MTGenericAlertView *locationPopup;
+
+}
+@property (weak, nonatomic) IBOutlet UITableView *profileAddressTableView;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumberLabel;
+
+
 
 @end
 
@@ -23,24 +32,64 @@
     self.emailLabel.text = [UserData email];
     self.emailLabel.font = [UIFont fontWithName:@"Helvetica-light" size:14];
     self.phoneNumberLabel.font = [UIFont fontWithName:@"Helvetica-light" size:14];
-   // self.phoneNumberLabel.text = [UserData phonNumber];
-    // Do any additional setup after loading the view.
+    [self getLocations];
+    self.addressesArray = [NSMutableArray new];
+    self.profileAddressTableView.layer.cornerRadius = 5;
+    self.profileAddressTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.addressesArray.count;
 }
-*/
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"UserProfileAddress";
+    UserProfileAddressTableViewCell *cell = [self.profileAddressTableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    cell.profileAddressTextView.textAlignment = NSTextAlignmentLeft;
+    
+    cell.profileAddressTextView.text = self.addressesArray[indexPath.row];
+    
+    return cell;
+}
+
+- (void)getLocations {
+    
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    
+    SVService *service = [[SVService alloc] init];
+    
+    [service getLocationsDataUsingBlock:^(NSMutableArray *resultArray) {
+        if (resultArray != nil || resultArray.count != 0) {
+            for(NSDictionary *addressDict in resultArray ){
+                [self.addressesArray addObject:[addressDict valueForKeyPath:@"location.address"]];
+            }
+            
+        }
+        [self.profileAddressTableView reloadData];
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    }];
+    
+}
+- (void)syncLocationForUser:(NSString *)locationID{
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: locationID, @"location_id", nil];
+    SVService *service = [[SVService alloc] init];
+    [service syncLocationToUserAccount:dict usingBlock:^(NSString *resultMessage) {
+        
+        if (resultMessage != nil || ![resultMessage isEqualToString:@""]) {
+            NSLog(@"%@", resultMessage);
+            [self.profileAddressTableView reloadData];
+            
+        }
+        
+    }];
+    
+}
 - (IBAction)closeAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
     
