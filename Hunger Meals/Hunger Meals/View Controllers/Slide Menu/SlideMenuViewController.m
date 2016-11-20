@@ -145,7 +145,7 @@
                 
                 }];
 
-        }else if([[USER_DEFAULTS valueForKey: @"isGuestLogin"]  isEqual: @"NO"]){
+        }else{
 
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         
