@@ -48,7 +48,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"AddressViewController";
     HMAddressTableViewCell *cell = [self.settingsTableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    cell.addressTableviewTextView.textAlignment = NSTextAlignmentCenter;
+    cell.addressTableviewTextView.textAlignment = NSTextAlignmentLeft;
     
     cell.addressTableviewTextView.text = self.addressesArray[indexPath.row];
 

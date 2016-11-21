@@ -42,6 +42,8 @@ NSString * const kInviteUserURL = @"%@/invite";
 NSString * const kForgotPasswordURL = @"%@/forgot_password";
 NSString * const kCurrentUserMonthlycart = @"%@/currusermonthlycart?token=%@";
 NSString * const kCheckExistingUser = @"%@/checkexistinguser?email=%@";
+NSString * const kRefreshTokenURL = @"%@/refreshtoken?token=%@";
+
 
 
 
