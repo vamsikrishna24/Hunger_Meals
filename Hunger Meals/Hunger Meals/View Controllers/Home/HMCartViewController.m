@@ -241,18 +241,35 @@
 - (IBAction)deleteCartItem:(id)sender{
     UIButton *btn = (UIButton *)sender;
     CartItem *productObject = cartItemsArray[btn.tag];
-    [cartItemsArray removeObject:productObject];
+    APPDELEGATE.cartItemsValue--;
+    [[APPDELEGATE.homeNavigationController.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%ld",(long)APPDELEGATE.cartItemsValue]];    [cartItemsArray removeObject:productObject];
     [_cartTableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:btn.tag inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self.cartTableView reloadData];
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: productObject.inventories_id, @"inventories_id", @"0", @"quantity",  nil];
+    
     SVService *service = [[SVService alloc] init];
     [service addToCart:dict usingBlock:^(NSString *resultMessage) {
         if (resultMessage != nil && [resultMessage isEqualToString:@"Item has been removed from cart"]) {
             
         }
     }];
+    
+   }
+-(void)updateCartItemsBadgeValue{
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
+    
+    SVService *service = [[SVService alloc] init];
+    [service getCartDatausingBlock:^(NSMutableArray *resultArray) {
+        
+        if (resultArray.count != 0 || resultArray != nil) {
+            APPDELEGATE.cartItemsValue = resultArray.count;
+            [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%lu",(unsigned long)resultArray.count]];
+        }
+        
+        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+    }];
+    
 }
-
 - (IBAction)applyButtonAction:(id)sender {
     if (totalAmount > 0) {
         
