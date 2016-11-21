@@ -118,13 +118,13 @@
     //Step 3: Create the order with whatever params you want to add. But make sure that you include the merchant mandatory params
     NSMutableDictionary *orderDict = [NSMutableDictionary new];
     //Merchant configuration in the order object
-    orderDict[@"MID"] = @"WorldP64425807474247";
-    orderDict[@"CHANNEL_ID"] = @"WAP";
-    orderDict[@"INDUSTRY_TYPE_ID"] = @"Retail";
-    orderDict[@"WEBSITE"] = @"worldpressplg";
+    orderDict[@"MID"] = @"RSVFoo68765272894551";
+    orderDict[@"CHANNEL_ID"] = @"WEB";
+    orderDict[@"INDUSTRY_TYPE_ID"] = @"Retail110";
+    orderDict[@"WEBSITE"] = @"RSVFoodWEB";
     //Order configuration in the order object
     orderDict[@"TXN_AMOUNT"] = self.PaymentAmountString;
-    orderDict[@"ORDER_ID"] = [HMPaymentTypeSelectionViewController generateOrderIDWithPrefix:@""];
+    orderDict[@"ORDER_ID"] = [HMPaymentTypeSelectionViewController generateOrderIDWithPrefix:@"666"];
     orderDict[@"REQUEST_TYPE"] = @"DEFAULT";
     orderDict[@"CUST_ID"] = @"1234567890";
     
@@ -134,7 +134,7 @@
     //PGTransactionViewController and set the serverType to eServerTypeProduction
     
     PGTransactionViewController *txnController = [[PGTransactionViewController alloc] initTransactionForOrder:order];
-    txnController.serverType = eServerTypeStaging;
+    txnController.serverType = eServerTypeProduction;
     txnController.merchant = mc;
     txnController.delegate = self;
     [self showController:txnController];
@@ -171,8 +171,8 @@
 {
     DEBUGLOG(@"ViewController::didCancelTransaction error = %@ response= %@", error, response);
     NSString *msg = nil;
-    if (!error) msg = [NSString stringWithFormat:@"Successful"];
-    else msg = [NSString stringWithFormat:@"UnSuccessful"];
+    if (!error) msg = [NSString stringWithFormat:@"Your transaction cancellation successful"];
+    else msg = [NSString stringWithFormat:@"Your transaction cancellation unsuccessful"];
     
     [[[UIAlertView alloc] initWithTitle:@"Transaction Cancel" message:msg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     [self removeController:controller];
