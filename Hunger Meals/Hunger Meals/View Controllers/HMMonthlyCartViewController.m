@@ -16,7 +16,8 @@
 
 
 @interface HMMonthlyCartViewController (){
-    NSMutableArray *cartItemsArray;
+    NSMutableArray *lunchItemsArray;
+    NSMutableArray *dinnerItemsArray;
     NSMutableArray *monthlyCartItemsArray;
 
     NSString *rsString;
@@ -25,7 +26,6 @@
     float coupondCodeDiscount;
     int quantity;
     BOOL isCouponApplied;
-    NSMutableArray *itemsListArray;
 }
 @property (weak, nonatomic) IBOutlet UILabel *cartEmptyLabel;
 
@@ -40,6 +40,9 @@
     self.title = @"Monthly Meal Cart";
     quantity = 0;
     monthlyCartItemsArray = [[NSMutableArray alloc] init];
+    lunchItemsArray = [[NSMutableArray alloc] init];
+    dinnerItemsArray = [[NSMutableArray alloc] init];
+    
    // self.cartTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
 
@@ -73,10 +76,29 @@
     [service currentUserMonthlyCartWithDict:dict usingBlock:^(NSMutableArray *resultArray) {
         
         if (resultArray.count > 0) {
-            monthlyCartItemsArray = [resultArray mutableCopy];
-            [self.cartTableView reloadData];
+            lunchItemsArray = [resultArray mutableCopy];
+            [monthlyCartItemsArray addObjectsFromArray:lunchItemsArray];
         }
-        [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+        
+        NSDictionary *dict = [[NSDictionary alloc]initWithObjectsAndKeys:@"dinner",@"type", nil];
+        [service currentUserMonthlyCartWithDict:dict usingBlock:^(NSMutableArray *resultArray) {
+            
+            if (resultArray.count > 0) {
+                dinnerItemsArray = [resultArray mutableCopy];
+                [monthlyCartItemsArray addObjectsFromArray:dinnerItemsArray];
+                [_cartTableView reloadData];
+            }
+            
+            totalAmount = 0;
+            for (NSDictionary *itemDict in monthlyCartItemsArray) {
+                totalAmount += [itemDict[@"price"] floatValue];
+            }
+            
+            [self calculation];
+            
+            [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
+
+        }];
     }];
     
 }
@@ -113,25 +135,29 @@
 //
 //    }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    totalAmount = 0;
-//    for (int row = 0; row < monthlyCartItemsArray.count ; row++) {
-//        Itemlist *itemObject = itemsListArray[row];
-//        totalAmount += [cartItemObject.price floatValue];
-//    }
-//    
-//    [self calculation];
-//    
-//    if (monthlyCartItemsArray.count == 0) {
-//        self.cartEmptyLabel.hidden = NO;
-//        
-//    }else {
-//        self.cartEmptyLabel.hidden = YES;
-//        
-//    }
-    return [monthlyCartItemsArray count];
+    if (monthlyCartItemsArray.count == 0) {
+        self.cartEmptyLabel.hidden = NO;
+        
+    }else {
+        self.cartEmptyLabel.hidden = YES;
+        
+    }
+    
+    //number of rows in each section
+    if (section == 0 ) {
+        return lunchItemsArray.count;
+    }
+    else {
+        return dinnerItemsArray.count;
+    }
+    
+    return 0;
 }
 
 
@@ -141,32 +167,49 @@
     if (cell == nil) {
         cell = [[HMMonthlyCartTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cartCell];
     }
-    //cell.totalPriceLabel.text = [NSString stringWithFormat:@"%@ ₹",@"23"];
-        NSDictionary *mealsDict = [monthlyCartItemsArray objectAtIndex:indexPath.row];
-        cell.cartItemTitle.text = [mealsDict objectForKey:@"name"];
-        cell.countLabel.text = [NSString stringWithFormat:@"%@", [mealsDict objectForKey:@"quantity"]];
-       cell.totalPriceLabel.text = [NSString stringWithFormat:@"%@", [mealsDict objectForKey:@"price"]];
-
-//    CartItem *cartObject = [itemsListArray objectAtIndex:indexPath.row];
-//    cell.incrementButton.tag = indexPath.row;
-//    cell.decrimentButton.tag = indexPath.row;
-//    cell.cancelButton.tag = indexPath.row;
-//    
-//    cell.totalPriceLabel.text = [NSString stringWithFormat:@"%@ ₹",cartObject.price];
-//    cell.cartItemTitle.text = cartObject.product.name;
-//    cell.countLabel.text = cartObject.quantity;
-//    
-//    self.quantityString = cartObject.quantity;
-//    
-//    NSString *string = [NSString stringWithFormat:@"%@%@",imageAmazonlink,cartObject.product.image_url];
-//    [cell.cartItemsImageView sd_setImageWithURL:[NSURL URLWithString:string]placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    
+    NSDictionary *mealsDict;
+    if (indexPath.section == 0) {
+        mealsDict = [lunchItemsArray objectAtIndex:indexPath.row];
+    }
+    else {
+        mealsDict = [dinnerItemsArray objectAtIndex:indexPath.row];
+    }
+    
+    cell.cartItemTitle.text = [mealsDict objectForKey:@"name"];
+    cell.countLabel.text = [NSString stringWithFormat:@"Qty: %@", [mealsDict objectForKey:@"quantity"]];
+    cell.totalPriceLabel.text = [NSString stringWithFormat:@"₹ %@", [mealsDict objectForKey:@"price"]];
+    
+    //    CartItem *cartObject = [itemsListArray objectAtIndex:indexPath.row];
+    //    cell.incrementButton.tag = indexPath.row;
+    //    cell.decrimentButton.tag = indexPath.row;
+    //    cell.cancelButton.tag = indexPath.row;
+    //
+    //    cell.totalPriceLabel.text = [NSString stringWithFormat:@"%@ ₹",cartObject.price];
+    //    cell.cartItemTitle.text = cartObject.product.name;
+    //    cell.countLabel.text = cartObject.quantity;
+    //
+    //    self.quantityString = cartObject.quantity;
+    //
+    //    NSString *string = [NSString stringWithFormat:@"%@%@",imageAmazonlink,cartObject.product.image_url];
+    //    [cell.cartItemsImageView sd_setImageWithURL:[NSURL URLWithString:string]placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
     return cell;
     
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (section ==0) {
+        return @"Lunch";
+    }
+    else if(section == 1){
+        return @"Dinner";
+    }
+    
+    return @"";
+}
+
 -(void)calculation{
-    Tax *taxObject = [[Tax alloc]init];
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Tax" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
@@ -214,39 +257,6 @@
     totalAmount = totalAmount + taxSum;
     self.totalPrice.text = [NSString stringWithFormat:@"%.2f ₹",totalAmount] ;
     
-    
-    
-}
-- (IBAction)updateProductQuantiy:(id)sender{
-//    UIButton *btn = (UIButton *)sender;
-//    HMMonthlyCartTableViewCell *mealsCell = (HMMonthlyCartTableViewCell*)[_cartTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:btn.tag inSection:0]];
-//    CartItem *cartItemObject = cartItemsArray[btn.tag];
-//    quantity = [mealsCell.countLabel.text intValue];
-//    int priceOfItem= [cartItemObject.price intValue]/[cartItemObject.quantity intValue];
-//    mealsCell.totalPriceLabel.text = [NSString stringWithFormat:@"%d ₹",priceOfItem * quantity];
-//    
-//    //Updating the latest cart details again
-//    cartItemObject.price = [NSString stringWithFormat:@"%d", priceOfItem*quantity];
-//    cartItemObject.quantity = [NSString stringWithFormat:@"%d", quantity];
-//    
-//    totalAmount = 0;
-//    for (int row = 0; row < cartItemsArray.count ; row++) {
-//        CartItem *cartItemObject = cartItemsArray[row];
-//        totalAmount += [cartItemObject.price floatValue];
-//    }
-//    
-//    [self calculation];
-//    NSString *stringArray =cartItemObject.inventories_id;
-//    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: stringArray, @"inventories_id",[NSNumber numberWithInteger:quantity], @"quantity",  nil];
-//    
-//    
-//    SVService *service = [[SVService alloc] init];
-//    [service addToCart:dict usingBlock:^(NSString *resultMessage) {
-//        if (resultMessage != nil) {
-//            
-//        }
-//        
-//    }];
     
     
 }

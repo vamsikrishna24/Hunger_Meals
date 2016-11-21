@@ -13,6 +13,7 @@
 @interface PaymentPageViewController () <UIWebViewDelegate, UIAlertViewDelegate> {
     UIActivityIndicatorView *activityIndicatorView;
     NSString *strMIHPayID;
+    NSString *paymentString;
 }
 
 @property (nonatomic, weak) IBOutlet UIWebView *webviewPaymentPage;
@@ -20,7 +21,7 @@
 @end
 
 @implementation PaymentPageViewController
-
+@synthesize paymentString;
 
 /*
  
@@ -111,7 +112,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    paymentString = self.paymentString;
     activityIndicatorView = [[UIActivityIndicatorView alloc] init];
     activityIndicatorView.center = self.view.center;
     [activityIndicatorView setColor:[UIColor blackColor]];
@@ -129,7 +130,7 @@
     NSString *txnid1 = [strHash substringToIndex:20];
     strMIHPayID = txnid1;
     NSString *key = Merchant_Key;
-    NSString *amount = self.paymentString;
+    NSString *amount = paymentString;
     NSString *productInfo = Product_Info;
     NSString *firstname = Payee_Name;
     NSString *email = [NSString stringWithFormat:@"suraj%d@yopmail.com",i]; // Generated a fake mail id for testing

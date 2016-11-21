@@ -153,7 +153,6 @@
 }
 
 -(void)calculation{
-    Tax *taxObject = [[Tax alloc]init];
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Tax" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
