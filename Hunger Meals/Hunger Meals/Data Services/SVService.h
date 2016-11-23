@@ -60,6 +60,9 @@ typedef void(^SuccessBlock)(NSData *data , NSHTTPURLResponse *response, NSError 
 - (NSMutableArray *)parseItemsData:(NSMutableArray *)array;
 
 - (NSMutableArray *)parseCurrentMonthlyCartData:(NSMutableArray *)array;
+
+- (void)verifyExistingMealPlan:(void(^)(NSString *resultMessage))resultBlock;
+
 //Service Requests
 
 -(void)sendRequest:(NSString *)urlString  Perameters:(NSDictionary *)perameterDict usingblock:(void(^)(id result, NSHTTPURLResponse *response, NSError *err))block;

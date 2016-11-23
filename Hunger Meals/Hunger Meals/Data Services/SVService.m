@@ -347,6 +347,27 @@
     }];
 
 }
+
+- (void)verifyExistingMealPlan:(void(^)(NSString *resultMessage))resultBlock{
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    
+    NSString *token = userDataObject.token;
+    NSString *url = [NSString stringWithFormat:kVerifiyMonthlyMealPlanExist, HTTP_DATA_HOST,token];
+    
+    
+    [self sendGetRequestWithAuth:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        if (response.statusCode == 200 && result!=nil) {
+             NSString *resultMsg = [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];
+            resultBlock(resultMsg);
+        }
+        else{
+            resultBlock(nil);
+        }
+    }];
+
+}
+
 #pragma forgot_Password
 - (void)forgotPassword:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock {
     

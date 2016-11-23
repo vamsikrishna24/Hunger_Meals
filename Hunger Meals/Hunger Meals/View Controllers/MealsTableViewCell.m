@@ -24,18 +24,22 @@
     // Configure the view for the selected state
 }
 - (IBAction)addAction:(id)sender{
-        self.countLabel.text = [NSString stringWithFormat:@"%d",[self.countLabel.text intValue]+1];
-
+    self.countLabel.text = [NSString stringWithFormat:@"%d",[self.countLabel.text intValue]+1];
+    
+    APPDELEGATE.cartItemsValue++;
+    [[APPDELEGATE.homeNavigationController.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%ld",(long)APPDELEGATE.cartItemsValue]];
+    
 }
 - (IBAction)decrementAction:(id)sender {
     if ([self.countLabel.text intValue]<=1) {
          self.addToCartButton.hidden = NO;
-            APPDELEGATE.cartItemsValue--;
-            [[APPDELEGATE.homeNavigationController.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%ld",(long)APPDELEGATE.cartItemsValue]];
     }
     else{
     self.countLabel.text = [NSString stringWithFormat:@"%d",[self.countLabel.text intValue]-1];
     }
+    
+    APPDELEGATE.cartItemsValue--;
+    [[APPDELEGATE.homeNavigationController.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%ld",(long)APPDELEGATE.cartItemsValue]];
 
 }
 - (IBAction)addTocartButtonAction:(id)sender {

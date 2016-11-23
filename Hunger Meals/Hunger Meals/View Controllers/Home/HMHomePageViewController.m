@@ -17,6 +17,7 @@
 #import "SVService.h"
 #import "LocationView.h"
 #import "HMLandingViewController.h"
+#import "CartItem.h"
 
 @interface HMHomePageViewController (){
     NSArray *categories;
@@ -177,8 +178,12 @@
     [service getCartDatausingBlock:^(NSMutableArray *resultArray) {
         
         if (resultArray.count != 0 || resultArray != nil) {
-            APPDELEGATE.cartItemsValue = resultArray.count;
-            [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%lu",(unsigned long)resultArray.count]];
+            NSInteger numberOfItems = 0;
+            for (CartItem *cartItem in resultArray) {
+                numberOfItems+= [cartItem.quantity intValue];
+            }
+            APPDELEGATE.cartItemsValue = numberOfItems;
+            [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%lu",(unsigned long)APPDELEGATE.cartItemsValue]];
         }
         
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
@@ -240,21 +245,17 @@
 -(void)navigateToMealPlan{
     [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
     SVService *service = [[SVService alloc] init];
-    [service getcurrmealplanusingBlock:^(NSDictionary *resultDict) {
-        if (resultDict.count > 0) {
-            NSMutableArray *lunchList = [resultDict valueForKeyPath:@"data.lunchplandata.title"];
-            NSMutableArray *dinnerList = [resultDict valueForKeyPath:@"data.dinnerplandata.title"];
-            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            if (lunchList.count || dinnerList.count) {
+    [service verifyExistingMealPlan:^(NSString *resultMessage) {
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        if ([resultMessage  isEqual: @""]) {
                 HMMealPlannerViewController *monthlyMealViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MonthlyMealsViewIdentifier"];
                 [self.navigationController pushViewController:monthlyMealViewController animated:YES];
             }
-            else {
+            else if(![resultMessage  isEqual: @""]) {
                 HMMonthlyDetailViewController *monthlyMealViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"MonthlyRecommondationViewIdentifier"];
                 [self.navigationController pushViewController:monthlyMealViewController animated:YES];
             }
             
-        }
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
     

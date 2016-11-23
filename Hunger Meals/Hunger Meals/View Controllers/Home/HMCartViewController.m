@@ -81,8 +81,12 @@
         
         if (resultArray.count != 0 || resultArray != nil) {
             cartItemsArray = [resultArray mutableCopy];
-            APPDELEGATE.cartItemsValue = cartItemsArray.count;
-            [[self navigationController] tabBarItem].badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)cartItemsArray.count];
+            NSInteger numberOfItems = 0;
+            for (CartItem *cartItem in resultArray) {
+                numberOfItems+= [cartItem.quantity intValue];
+            }
+            APPDELEGATE.cartItemsValue = numberOfItems;
+            [[self navigationController] tabBarItem].badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)APPDELEGATE.cartItemsValue];
         }
         
         [_cartTableView reloadData];
@@ -241,7 +245,7 @@
 - (IBAction)deleteCartItem:(id)sender{
     UIButton *btn = (UIButton *)sender;
     CartItem *productObject = cartItemsArray[btn.tag];
-    APPDELEGATE.cartItemsValue--;
+    APPDELEGATE.cartItemsValue -= [productObject.quantity intValue];
     [[APPDELEGATE.homeNavigationController.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%ld",(long)APPDELEGATE.cartItemsValue]];    [cartItemsArray removeObject:productObject];
     [_cartTableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:btn.tag inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self.cartTableView reloadData];
@@ -262,8 +266,12 @@
     [service getCartDatausingBlock:^(NSMutableArray *resultArray) {
         
         if (resultArray.count != 0 || resultArray != nil) {
-            APPDELEGATE.cartItemsValue = resultArray.count;
-            [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%lu",(unsigned long)resultArray.count]];
+            NSInteger numberOfItems = 0;
+            for (CartItem *cartItem in resultArray) {
+                numberOfItems+= [cartItem.quantity intValue];
+            }
+            APPDELEGATE.cartItemsValue = numberOfItems;
+            [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%lu",(unsigned long)APPDELEGATE.cartItemsValue]];
         }
         
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];

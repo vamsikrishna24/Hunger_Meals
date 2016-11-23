@@ -9,6 +9,7 @@
 #import "HMCartTableViewCell.h"
 #import "Product.h"
 #import "SVService.h"
+#import "ProjectConstants.h"
 
 @implementation HMCartTableViewCell
 
@@ -29,7 +30,8 @@
 - (IBAction)addAction:(id)sender{
     
     self.countLabel.text = [NSString stringWithFormat:@"%d",[self.countLabel.text intValue]+1];
-
+    APPDELEGATE.cartItemsValue++;
+    [[APPDELEGATE.homeNavigationController.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%ld",(long)APPDELEGATE.cartItemsValue]];
     
 }
 - (IBAction)decrementAction:(id)sender {
@@ -37,6 +39,10 @@
     if ([self.countLabel.text intValue]>1){
         self.countLabel.text = [NSString stringWithFormat:@"%d",[self.countLabel.text intValue]-1];
     }
+    
+    APPDELEGATE.cartItemsValue--;
+    [[APPDELEGATE.homeNavigationController.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%ld",(long)APPDELEGATE.cartItemsValue]];
+
     
 }
 @end

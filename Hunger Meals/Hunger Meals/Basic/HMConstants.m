@@ -43,9 +43,7 @@ NSString * const kForgotPasswordURL = @"%@/forgot_password";
 NSString * const kCurrentUserMonthlycart = @"%@/currusermonthlycart?token=%@";
 NSString * const kCheckExistingUser = @"%@/checkexistinguser?email=%@";
 NSString * const kRefreshTokenURL = @"%@/refreshtoken?token=%@";
-
-
-
+NSString *const kVerifiyMonthlyMealPlanExist = @"%@/verifycurrmealplan?token=%@";
 
 
 
