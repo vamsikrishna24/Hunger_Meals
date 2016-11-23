@@ -84,6 +84,7 @@
 		2BF98EB71DA8B7CE009573AB /* Itemlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB61DA8B7CE009573AB /* Itemlist.m */; };
 		2BF98EBA1DA8C812009573AB /* ItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB91DA8C812009573AB /* ItemTableViewCell.m */; };
 		2BFB8BAE1DE60493003DA3E3 /* HMAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB8BAD1DE60493003DA3E3 /* HMAboutUsViewController.m */; };
+		2BFB8BB11DE61120003DA3E3 /* HMPaymentSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB8BB01DE61120003DA3E3 /* HMPaymentSuccessViewController.m */; };
 		2BFE01171DB92D91007934BD /* BentonSans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BFE01161DB92D85007934BD /* BentonSans Regular.ttf */; };
 		2BFE01181DB92D91007934BD /* BentonSans Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BFE01151DB92D6A007934BD /* BentonSans Medium.ttf */; };
 		2BFE01191DB92D91007934BD /* BentonSans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BFE01141DB92D5A007934BD /* BentonSans Bold.ttf */; };
@@ -293,6 +294,8 @@
 		2BF98EB91DA8C812009573AB /* ItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTableViewCell.m; sourceTree = "<group>"; };
 		2BFB8BAC1DE60493003DA3E3 /* HMAboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAboutUsViewController.h; sourceTree = "<group>"; };
 		2BFB8BAD1DE60493003DA3E3 /* HMAboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAboutUsViewController.m; sourceTree = "<group>"; };
+		2BFB8BAF1DE61120003DA3E3 /* HMPaymentSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPaymentSuccessViewController.h; sourceTree = "<group>"; };
+		2BFB8BB01DE61120003DA3E3 /* HMPaymentSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPaymentSuccessViewController.m; sourceTree = "<group>"; };
 		2BFE01141DB92D5A007934BD /* BentonSans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BentonSans Bold.ttf"; sourceTree = "<group>"; };
 		2BFE01151DB92D6A007934BD /* BentonSans Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BentonSans Medium.ttf"; sourceTree = "<group>"; };
 		2BFE01161DB92D85007934BD /* BentonSans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BentonSans Regular.ttf"; sourceTree = "<group>"; };
@@ -719,6 +722,8 @@
 				9A818FA31D4A203200FB5565 /* PaymentStatusViewController.m */,
 				ACDD63931DAA4F4400B1889C /* PayTMViewController.h */,
 				ACDD63941DAA4F4400B1889C /* PayTMViewController.m */,
+				2BFB8BAF1DE61120003DA3E3 /* HMPaymentSuccessViewController.h */,
+				2BFB8BB01DE61120003DA3E3 /* HMPaymentSuccessViewController.m */,
 			);
 			name = "Payment GateWay";
 			sourceTree = "<group>";
@@ -1294,6 +1299,7 @@
 				A88F7FE31D6DA15600310F8F /* HMScrollingCell.m in Sources */,
 				2B227D391DAB892A00D5F583 /* HMOrderDetailTableViewController.m in Sources */,
 				2B45D6901D590E5F00C873ED /* HMLocationViewController.m in Sources */,
+				2BFB8BB11DE61120003DA3E3 /* HMPaymentSuccessViewController.m in Sources */,
 				A88FB7491D5C5658005E8667 /* Fonts.m in Sources */,
 				A895EB3D1D73FFDC00623D92 /* SVXMLParser.m in Sources */,
 				2B6ED9A91D6FD8E3000D672D /* QuickbitesViewController.m in Sources */,
