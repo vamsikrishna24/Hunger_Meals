@@ -18,6 +18,7 @@
     MealsTableViewCell *cell;
     BOOL isCellExpanded;
     BOOL isVegSwitchOn;
+    NSInteger quantity;
 }
 
 @property(nonatomic, strong) NSMutableArray *inventoryObjectArray;
@@ -43,6 +44,9 @@
 
    // [self.quickBitesTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
 
+    if(quantity >= 1){
+    cell.addToCartButton.hidden = NO;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -118,6 +122,7 @@
     
     if (qty > 0) {
         
+        quantity = qty;
         cell.addToCartButton.hidden = YES;
         cell.countLabel.text = [NSString stringWithFormat:@"%ld",qty];
         

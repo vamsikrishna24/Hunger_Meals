@@ -205,8 +205,9 @@
     UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
     
     NSString *token = userDataObject.token;
-    NSString *url = [NSString stringWithFormat:urlString, HTTP_DATA_HOST,token];
     
+    NSString *url = [NSString stringWithFormat:urlString, HTTP_DATA_HOST,token];
+    NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:userDataObject.token,@"token", nil];
     [self sendGetRequest:url usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
         if (response.statusCode == 200 && result!=nil) {
             
@@ -214,8 +215,11 @@
             
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
-                [self signOut];
-                
+               [self newRefreshTokenDict:params usingBlock:^(NSMutableArray *resultArray) {
+                   userDataObject.token = [resultArray valueForKey:@"token"];
+                  [self productRequestUSingBlock:dict dataUrl:url usingBlock:^(NSMutableArray *resultArray) {
+                  }];
+               }];
             }
             resultBlock([self parseProductsData:dictResult]);
         }
@@ -223,8 +227,8 @@
             resultBlock(nil);
         }
     }];
-    
 }
+
 #pragma Current-Cart
 - (void)getCartDatausingBlock:(void(^)(NSMutableArray *resultArray))resultBlock {
     
@@ -436,6 +440,31 @@ else{
             resultBlock(locationID);
         }
         else{
+            resultBlock(nil);
+        }
+    }];
+}
+
+#pragma NewTokenGeneration
+
+- (void)newRefreshTokenDict:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
+    
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    
+    NSString *token = userDataObject.token;
+
+    NSString *url = [NSString stringWithFormat:kRefreshTokenURL, HTTP_DATA_HOST,token];
+    
+    [self sendRequest:url Perameters:dict usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            resultBlock([self parseUserLoginData:dictResult]);
+        }
+        else{
+            NSString *error = [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];
             resultBlock(nil);
         }
     }];

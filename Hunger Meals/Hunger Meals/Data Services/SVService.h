@@ -76,6 +76,8 @@ typedef void(^SuccessBlock)(NSData *data , NSHTTPURLResponse *response, NSError 
 
 - (void)checkExistingUser:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock;
 
+- (void)newRefreshTokenDict:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock;
+
 +(NSString *)getBasicAuthorization;
 
 - (NSMutableArray *)parseArrayProductsData:(NSMutableArray *)array;

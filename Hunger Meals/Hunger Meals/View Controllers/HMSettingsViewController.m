@@ -13,6 +13,8 @@
 #import "HMInviteViewController.h"
 #import "AppDelegate.h"
 #import "UserData.h"
+#import "HMAboutUsViewController.h"
+
 @interface HMSettingsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *settingsTableView;
 
@@ -114,14 +116,19 @@ else if(indexPath.row == 2) {
          HMAddressViewController *addressVC= [mainStoryBoard instantiateViewControllerWithIdentifier:@"AddressViewController"];
         [self.navigationController pushViewController:addressVC animated:YES];
     }
-    if (indexPath.row == 2) {
+    if (indexPath.row == 1) {
         UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         HMOrdersListTableViewController *orderVC= [mainStoryBoard instantiateViewControllerWithIdentifier:@"OrdersViewIdentifier"];
         [self.navigationController pushViewController:orderVC animated:YES];    }
-    if (indexPath.row == 3) {
+    if (indexPath.row == 2) {
         UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         HMInviteViewController *inviteVC= [mainStoryBoard instantiateViewControllerWithIdentifier:@"InviteFriendIdentifier"];
         [self presentViewController:inviteVC animated:YES completion:nil];
+    }
+    if (indexPath.row == 3) {
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        HMAboutUsViewController *aboutVC= [mainStoryBoard instantiateViewControllerWithIdentifier:@"AboutUsSidentifier"];
+        [self presentViewController:aboutVC animated:YES completion:nil];
     }
 }
 

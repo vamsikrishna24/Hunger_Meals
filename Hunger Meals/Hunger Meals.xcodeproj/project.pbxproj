@@ -83,6 +83,7 @@
 		2BF98EB41DA89A55009573AB /* HMItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB31DA89A55009573AB /* HMItemList.m */; };
 		2BF98EB71DA8B7CE009573AB /* Itemlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB61DA8B7CE009573AB /* Itemlist.m */; };
 		2BF98EBA1DA8C812009573AB /* ItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF98EB91DA8C812009573AB /* ItemTableViewCell.m */; };
+		2BFB8BAE1DE60493003DA3E3 /* HMAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB8BAD1DE60493003DA3E3 /* HMAboutUsViewController.m */; };
 		2BFE01171DB92D91007934BD /* BentonSans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BFE01161DB92D85007934BD /* BentonSans Regular.ttf */; };
 		2BFE01181DB92D91007934BD /* BentonSans Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BFE01151DB92D6A007934BD /* BentonSans Medium.ttf */; };
 		2BFE01191DB92D91007934BD /* BentonSans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BFE01141DB92D5A007934BD /* BentonSans Bold.ttf */; };
@@ -290,6 +291,8 @@
 		2BF98EB61DA8B7CE009573AB /* Itemlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Itemlist.m; sourceTree = "<group>"; };
 		2BF98EB81DA8C812009573AB /* ItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemTableViewCell.h; sourceTree = "<group>"; };
 		2BF98EB91DA8C812009573AB /* ItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTableViewCell.m; sourceTree = "<group>"; };
+		2BFB8BAC1DE60493003DA3E3 /* HMAboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAboutUsViewController.h; sourceTree = "<group>"; };
+		2BFB8BAD1DE60493003DA3E3 /* HMAboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAboutUsViewController.m; sourceTree = "<group>"; };
 		2BFE01141DB92D5A007934BD /* BentonSans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BentonSans Bold.ttf"; sourceTree = "<group>"; };
 		2BFE01151DB92D6A007934BD /* BentonSans Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BentonSans Medium.ttf"; sourceTree = "<group>"; };
 		2BFE01161DB92D85007934BD /* BentonSans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BentonSans Regular.ttf"; sourceTree = "<group>"; };
@@ -768,6 +771,8 @@
 				2B0C2FAF1DB3B973000FCAB4 /* HMInviteViewController.m */,
 				2B203BB01DB3DF98006604BE /* HMUserProfileViewController.h */,
 				2B203BB11DB3DF98006604BE /* HMUserProfileViewController.m */,
+				2BFB8BAC1DE60493003DA3E3 /* HMAboutUsViewController.h */,
+				2BFB8BAD1DE60493003DA3E3 /* HMAboutUsViewController.m */,
 			);
 			path = "Slide Menu";
 			sourceTree = "<group>";
@@ -1296,6 +1301,7 @@
 				A895EB3B1D73FFDC00623D92 /* SVRequest.m in Sources */,
 				2BDF98701D70B4E8003D943C /* HMTabBarViewController.m in Sources */,
 				2BE8618B1D9F742C0005FABC /* LocationView.m in Sources */,
+				2BFB8BAE1DE60493003DA3E3 /* HMAboutUsViewController.m in Sources */,
 				ACD537CD1D9419700023B834 /* UserData.m in Sources */,
 				2B58CE601DA50AD00005C043 /* Tax.m in Sources */,
 				2BD7B2411D55CF9800B2FABD /* HMHomePageViewController.m in Sources */,

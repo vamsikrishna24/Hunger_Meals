@@ -24,6 +24,7 @@
     int quantity;
     BOOL isCouponApplied;
 }
+@property (weak, nonatomic) IBOutlet UIView *footerView;
 @property (weak, nonatomic) IBOutlet UILabel *cartEmptyLabel;
 @property (weak, nonatomic) IBOutlet UIView *cartTaxView;
 
@@ -40,7 +41,7 @@
     self.cartTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.cartTableView.tableFooterView = self.cartTaxView;
 
-    
+    self.cartTableView.tableFooterView = self.footerView;
     [self.promoCodeTextField setValue:[UIFont fontWithName: @"Roboto-Light" size: 13] forKeyPath:@"_placeholderLabel.font"];
     
     UIColor *color = [UIColor colorWithRed:119.0/255.0f green:119.0/255.0f blue:119.0/255.0f alpha:1.0];
@@ -288,7 +289,6 @@
         }];
         
     }
-    
 }
 
 #pragma Mark - TextField Delegate methods
@@ -316,6 +316,8 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     
 }
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"ToPaymentSelection"]){
         HmDelieveriAddressViewController *deliveryVC = (HmDelieveriAddressViewController *)segue.destinationViewController;

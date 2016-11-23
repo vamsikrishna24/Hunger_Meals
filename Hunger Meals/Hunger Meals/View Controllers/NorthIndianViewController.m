@@ -16,6 +16,7 @@
     BOOL isCellExpanded;
     BOOL isVegSwitchOn;
     MealsTableViewCell *cell;
+    NSInteger quantity;
 
     NSInteger tableViewHeight;
     NSMutableArray *productObjectsArray;
@@ -88,13 +89,15 @@
         cell.vegImageView.image = [UIImage imageNamed:@"NonVeg"];
 
         
+        
     }
-    NSString  *qty = [Utility getQuantityforId:[NSString stringWithFormat:@"%@",[inventory valueForKey:@"id"]]];
-    if (![qty isEqualToString:@"0"]) {
+    NSInteger  qty = [product.quantity integerValue];
+    
+    if (qty > 0) {
         
+        quantity = qty;
         cell.addToCartButton.hidden = YES;
-        cell.countLabel.text = [NSString stringWithFormat:@"%@",qty];
-        
+        cell.countLabel.text = [NSString stringWithFormat:@"%ld",qty];
         
     }else{
         cell.addToCartButton.hidden = NO;
