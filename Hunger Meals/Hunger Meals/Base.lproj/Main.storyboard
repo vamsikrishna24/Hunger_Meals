@@ -7662,35 +7662,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksl-gF-cpk">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="1tl-G5-5Su"/>
-                                </constraints>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Invite Friend" id="hNi-LO-eiq">
-                                        <barButtonItem key="leftBarButtonItem" title="Close" id="u6P-Fd-LMS">
-                                            <color key="tintColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <action selector="closeAction:" destination="7BK-Re-h7e" id="dsj-XP-ok5"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="1tl-G5-5Su"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="1tl-G5-5Su"/>
-                                    </mask>
-                                </variation>
-                            </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqG-du-92g">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
@@ -7795,6 +7766,35 @@ Currently, we are not customizing the meals, however, soon we plan to come up wi
                                     </mask>
                                 </variation>
                             </scrollView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksl-gF-cpk">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="1tl-G5-5Su"/>
+                                </constraints>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="About us" id="hNi-LO-eiq">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="u6P-Fd-LMS">
+                                            <color key="tintColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="closeAction:" destination="7BK-Re-h7e" id="dsj-XP-ok5"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1tl-G5-5Su"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="1tl-G5-5Su"/>
+                                    </mask>
+                                </variation>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -7814,8 +7814,8 @@ Currently, we are not customizing the meals, however, soon we plan to come up wi
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="ksl-gF-cpk"/>
                                 <exclude reference="MqG-du-92g"/>
+                                <exclude reference="ksl-gF-cpk"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="QMn-kz-gTr"/>
@@ -7833,8 +7833,8 @@ Currently, we are not customizing the meals, however, soon we plan to come up wi
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="ksl-gF-cpk"/>
                                 <include reference="MqG-du-92g"/>
+                                <include reference="ksl-gF-cpk"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="QMn-kz-gTr"/>
