@@ -152,9 +152,6 @@
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     HMPaymentSuccessViewController *paymentSuccessVC= [mainStoryBoard instantiateViewControllerWithIdentifier:@"PaymentSuccessidentifier"];
     [self presentViewController:paymentSuccessVC animated:YES completion:nil];
-
-    
-    [[[UIAlertView alloc] initWithTitle:title message:[response description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     
     [self removeController:controller];
 }

@@ -127,7 +127,6 @@
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
                 [self newRefreshTokenDict:params usingBlock:^(NSMutableArray *resultArray) {
-                    userDataObject.token = [resultArray valueForKey:@"token"];
                     [self currentUserMonthlyCartWithDict:dict usingBlock:^(NSMutableArray *resultArray) {
                         resultBlock([self parseProductsData:dictResult]);
                     }];
@@ -219,13 +218,14 @@
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
                [self newRefreshTokenDict:params usingBlock:^(NSMutableArray *resultArray) {
-                   userDataObject.token = [resultArray valueForKey:@"token"];
                   [self productRequestUSingBlock:dict dataUrl:url usingBlock:^(NSMutableArray *resultArray) {
                       resultBlock([self parseProductsData:dictResult]);
                   }];
                }];
             }
+            else {
             resultBlock([self parseProductsData:dictResult]);
+            }
         }
         else{
             resultBlock(nil);
@@ -250,7 +250,6 @@
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
                 [self newRefreshTokenDict:params usingBlock:^(NSMutableArray *resultArray) {
-                    userDataObject.token = [resultArray valueForKey:@"token"];
                     [self getCartDatausingBlock:^(NSMutableArray *resultArray) {
 
                         resultBlock([self parseProductsData:dictResult]);
@@ -286,7 +285,6 @@
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
                 [self newRefreshTokenDict:params usingBlock:^(NSMutableArray *resultArray) {
-                    userDataObject.token = [resultArray valueForKey:@"token"];
                     [self getmonthlyproductsusingBlock:^(NSMutableArray *resultArray) {
                         
                         resultBlock([self parseProductsData:dictResult]);
@@ -320,7 +318,6 @@
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
                 [self newRefreshTokenDict:params usingBlock:^(NSMutableArray *resultArray) {
-                    userDataObject.token = [resultArray valueForKey:@"token"];
                     [self getcurrmealplanusingBlock:^(NSDictionary *resultDict) {
                         
                         resultBlock(dictResult);
@@ -359,7 +356,6 @@
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
                 [self newRefreshTokenDict:params1 usingBlock:^(NSMutableArray *resultArray) {
-                    userDataObject.token = [resultArray valueForKey:@"token"];
                     [self saveMonthlyMealPlan:params usingBlock:^(NSString *resultMessage) {
                         
                         resultBlock(resultMsg);
@@ -498,10 +494,7 @@ else{
 
 - (void)newRefreshTokenDict:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock{
     
-    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
-    UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
-    
-    NSString *token = userDataObject.token;
+    NSString *token = [dict valueForKey:@"token"];
 
     NSString *url = [NSString stringWithFormat:kRefreshTokenURL, HTTP_DATA_HOST,token];
     
@@ -510,10 +503,16 @@ else{
         if (response.statusCode == 200 && result!=nil) {
             
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
-            resultBlock([self parseUserLoginData:dictResult]);
+            NSString *newTokenString = [dictResult valueForKeyPath:@"data.token"];
+            NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+            UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+            userDataObject.token = newTokenString;
+            NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:userDataObject];
+            [[NSUserDefaults standardUserDefaults] setObject:userData forKey:@"UserData"];
+            
+            resultBlock(dictResult);
         }
         else{
-            NSString *error = [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];
             resultBlock(nil);
         }
     }];
@@ -588,7 +587,6 @@ else{
             NSString *resultMessage = [resultDict objectForKey:@"message"];
             if([tokenString isEqualToString:@"Token is Expired"]){
                 [self newRefreshTokenDict:params1 usingBlock:^(NSMutableArray *resultArray) {
-                    userDataObject.token = [resultArray valueForKey:@"token"];
                     [self productRequestUSingBlock:params dataUrl:url usingBlock:^(NSMutableArray *resultArray) {
                         resultBlock(resultMessage);
                     }];

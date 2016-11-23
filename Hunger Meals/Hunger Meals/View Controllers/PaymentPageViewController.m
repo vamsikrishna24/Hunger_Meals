@@ -9,6 +9,7 @@
 #import "PaymentPageViewController.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "PaymentStatusViewController.h"
+#import "HMPaymentSuccessViewController.h"
 
 @interface PaymentPageViewController () <UIWebViewDelegate, UIAlertViewDelegate> {
     UIActivityIndicatorView *activityIndicatorView;
@@ -247,9 +248,9 @@
 
 - (void)navigateToPaymentStatusScreen: (NSMutableDictionary *)mutDictTransactionDetails {
     dispatch_async(dispatch_get_main_queue(), ^{
-        PaymentStatusViewController *paymentStatusViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PaymentStatusScreenID"];
-        paymentStatusViewController.mutDictTransactionDetails = mutDictTransactionDetails;
-        [self.navigationController pushViewController:paymentStatusViewController animated:YES];
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        HMPaymentSuccessViewController *paymentSuccessVC= [mainStoryBoard instantiateViewControllerWithIdentifier:@"PaymentSuccessidentifier"];
+        [self presentViewController:paymentSuccessVC animated:YES completion:nil];
     });
 }
 

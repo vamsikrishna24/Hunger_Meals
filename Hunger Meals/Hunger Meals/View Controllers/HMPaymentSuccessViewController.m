@@ -7,11 +7,11 @@
 //
 
 #import "HMPaymentSuccessViewController.h"
+#import "ProjectConstants.h"
 
 @implementation HMPaymentSuccessViewController
 
 - (IBAction)closeAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
+    [APPDELEGATE.homeNavigationController popToRootViewControllerAnimated:YES];
 }
 @end
