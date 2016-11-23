@@ -7647,6 +7647,172 @@
             </objects>
             <point key="canvasLocation" x="3240" y="1691"/>
         </scene>
+        <!--Payment Success View Controller-->
+        <scene sceneID="M5t-5R-okj">
+            <objects>
+                <viewController id="28y-YI-hcR" customClass="HMPaymentSuccessViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fof-WR-7P5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cn8-Ih-BCh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rgq-bS-oqv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CoR-W3-mYe">
+                                <rect key="frame" x="0.0" y="80" width="600" height="88"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Our delivery executive will be with you shortly" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bXQ-AK-QsJ">
+                                        <rect key="frame" x="0.0" y="43" width="600" height="45"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="mXE-lj-Umc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Thank you for placing an order with Hunger Meals" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qkw-kT-bzS">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="u0V-k8-zDt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="bXQ-AK-QsJ" secondAttribute="bottom" id="5hK-Q4-Vp8"/>
+                                    <constraint firstItem="Qkw-kT-bzS" firstAttribute="leading" secondItem="CoR-W3-mYe" secondAttribute="leading" id="8fA-V0-Hcc"/>
+                                    <constraint firstItem="Qkw-kT-bzS" firstAttribute="top" secondItem="CoR-W3-mYe" secondAttribute="top" id="Ilf-pz-ZVG"/>
+                                    <constraint firstItem="bXQ-AK-QsJ" firstAttribute="top" secondItem="Qkw-kT-bzS" secondAttribute="bottom" constant="8" id="Rth-Yd-I1E"/>
+                                    <constraint firstItem="bXQ-AK-QsJ" firstAttribute="trailing" secondItem="Qkw-kT-bzS" secondAttribute="trailing" id="SId-gm-lCE"/>
+                                    <constraint firstAttribute="height" constant="136" id="TRV-xy-Sxu">
+                                        <variation key="widthClass=compact" constant="82"/>
+                                    </constraint>
+                                    <constraint firstItem="bXQ-AK-QsJ" firstAttribute="leading" secondItem="Qkw-kT-bzS" secondAttribute="leading" id="fEw-1c-Smx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qkw-kT-bzS" secondAttribute="trailing" id="j3Q-Dt-HzH"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="TRV-xy-Sxu"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="TRV-xy-Sxu"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calendar" translatesAutoresizingMaskIntoConstraints="NO" id="bBj-Sw-IAY">
+                                <rect key="frame" x="141" y="176" width="319" height="223"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="223" id="5q8-fZ-osw"/>
+                                    <constraint firstAttribute="height" constant="268" id="NQZ-9E-5ek"/>
+                                    <constraint firstAttribute="width" constant="319" id="lkC-SH-HAO"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="NQZ-9E-5ek"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="NQZ-9E-5ek"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZN-fr-NI2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="pnV-LX-YbH"/>
+                                </constraints>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Success" id="ooo-tc-eSG">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="Ifc-bP-Isz">
+                                            <color key="tintColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pnV-LX-YbH"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="pnV-LX-YbH"/>
+                                    </mask>
+                                </variation>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bFC-W2-Kpz">
+                                <rect key="frame" x="119" y="463" width="362" height="57"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="0f9-Lp-KAE"/>
+                                    <constraint firstAttribute="height" constant="128" id="lQ0-iT-3CY">
+                                        <variation key="widthClass=compact" constant="66"/>
+                                    </constraint>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Meanwhile, visit our ">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="monthly meal planner">
+                                        <attributes>
+                                            <color key="NSColor" red="0.99424797296524048" green="0.39839267730712891" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" to enjoy a month full of delicious mouth watering homemade food">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lQ0-iT-3CY"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <mask key="constraints">
+                                        <include reference="lQ0-iT-3CY"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bFC-W2-Kpz" firstAttribute="trailing" secondItem="bBj-Sw-IAY" secondAttribute="trailing" constant="21" id="2bW-qP-0qa"/>
+                            <constraint firstItem="bBj-Sw-IAY" firstAttribute="centerX" secondItem="CoR-W3-mYe" secondAttribute="centerX" id="7GT-UU-Kqi"/>
+                            <constraint firstItem="bZN-fr-NI2" firstAttribute="top" secondItem="fof-WR-7P5" secondAttribute="bottom" constant="-20" id="FGb-7b-00L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bZN-fr-NI2" secondAttribute="trailing" constant="-20" id="FH1-oJ-kqn"/>
+                            <constraint firstItem="bBj-Sw-IAY" firstAttribute="top" secondItem="CoR-W3-mYe" secondAttribute="bottom" constant="8" id="Fkn-Vj-urA"/>
+                            <constraint firstItem="CoR-W3-mYe" firstAttribute="top" secondItem="bZN-fr-NI2" secondAttribute="bottom" constant="36" id="OLs-Y9-zVE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CoR-W3-mYe" secondAttribute="trailing" constant="-20" id="OPV-db-kDf"/>
+                            <constraint firstItem="bFC-W2-Kpz" firstAttribute="top" secondItem="bBj-Sw-IAY" secondAttribute="bottom" constant="64" id="UWT-kK-ptw"/>
+                            <constraint firstItem="bZN-fr-NI2" firstAttribute="leading" secondItem="Rgq-bS-oqv" secondAttribute="leadingMargin" constant="-20" id="YZr-7n-eG1"/>
+                            <constraint firstItem="CoR-W3-mYe" firstAttribute="leading" secondItem="Rgq-bS-oqv" secondAttribute="leadingMargin" constant="-20" id="jG7-jv-xp6"/>
+                            <constraint firstItem="bFC-W2-Kpz" firstAttribute="leading" secondItem="bBj-Sw-IAY" secondAttribute="leading" constant="-22" id="p9B-j9-ngX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CMn-r4-S8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-851" y="-1400"/>
+        </scene>
         <!--About Us View Controller-->
         <scene sceneID="Ocp-TY-7YH">
             <objects>
@@ -7857,179 +8023,6 @@ Currently, we are not customizing the meals, however, soon we plan to come up wi
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edF-NF-6jv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-186" y="-1125"/>
-        </scene>
-        <!--Settings View Controller-->
-        <scene sceneID="RTA-4c-ptH">
-            <objects>
-                <viewController id="4Y8-YG-1rH" customClass="HMSettingsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xzf-Ib-Czl"/>
-                        <viewControllerLayoutGuide type="bottom" id="iAT-Fh-7vu"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="15k-bT-lFJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WmF-aQ-i06">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Ui4-gS-0qo"/>
-                                </constraints>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Success" id="2tm-Uy-8Ej">
-                                        <barButtonItem key="leftBarButtonItem" title="Close" id="zlb-3t-7ge">
-                                            <color key="tintColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <action selector="closeAction:" destination="4Y8-YG-1rH" id="lx6-qc-c8s"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Ui4-gS-0qo"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="Ui4-gS-0qo"/>
-                                    </mask>
-                                </variation>
-                            </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uHi-U5-TLg">
-                                <rect key="frame" x="0.0" y="80" width="414" height="88"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Our delivery executive will be with you shortly" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9SO-3a-Mzd">
-                                        <rect key="frame" x="0.0" y="43" width="414" height="45"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="RyU-AJ-j09"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Thank you for placing an order with Hunger Meals" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1NW-Ly-QHG">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="35"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="O7P-Wu-IjM"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="9SO-3a-Mzd" firstAttribute="leading" secondItem="1NW-Ly-QHG" secondAttribute="leading" id="2Lb-wi-okO"/>
-                                    <constraint firstAttribute="trailing" secondItem="1NW-Ly-QHG" secondAttribute="trailing" id="2lF-6A-UVj"/>
-                                    <constraint firstItem="9SO-3a-Mzd" firstAttribute="trailing" secondItem="1NW-Ly-QHG" secondAttribute="trailing" id="5kR-7a-Hel"/>
-                                    <constraint firstItem="9SO-3a-Mzd" firstAttribute="top" secondItem="1NW-Ly-QHG" secondAttribute="bottom" constant="8" id="HX6-t5-rZc"/>
-                                    <constraint firstAttribute="height" constant="136" id="he9-Ep-tK0">
-                                        <variation key="widthClass=compact" constant="82"/>
-                                    </constraint>
-                                    <constraint firstAttribute="bottom" secondItem="9SO-3a-Mzd" secondAttribute="bottom" id="jyT-fe-29s"/>
-                                    <constraint firstItem="1NW-Ly-QHG" firstAttribute="top" secondItem="uHi-U5-TLg" secondAttribute="top" id="miV-4G-339"/>
-                                    <constraint firstItem="1NW-Ly-QHG" firstAttribute="leading" secondItem="uHi-U5-TLg" secondAttribute="leading" id="ovU-4v-7V7"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="he9-Ep-tK0"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="he9-Ep-tK0"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calendar" translatesAutoresizingMaskIntoConstraints="NO" id="bXH-Rp-duA">
-                                <rect key="frame" x="48" y="176" width="319" height="223"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="268" id="8mY-fb-N2K"/>
-                                    <constraint firstAttribute="height" constant="223" id="XKv-l9-AW1"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="8mY-fb-N2K"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="8mY-fb-N2K"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2IP-sb-7aa">
-                                <rect key="frame" x="27" y="461" width="362" height="57"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="4mk-7a-yNa"/>
-                                    <constraint firstAttribute="height" constant="128" id="Mtn-pm-GhU">
-                                        <variation key="widthClass=compact" constant="66"/>
-                                    </constraint>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="Meanwhile, visit our ">
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="monthly meal planner">
-                                        <attributes>
-                                            <color key="NSColor" red="0.99424797296524048" green="0.39839267730712891" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="14" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content=" to enjoy a month full of delicious mouth watering homemade food">
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Mtn-pm-GhU"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <mask key="constraints">
-                                        <include reference="Mtn-pm-GhU"/>
-                                    </mask>
-                                </variation>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="bXH-Rp-duA" secondAttribute="trailing" constant="27" id="0PD-Lx-xZR"/>
-                            <constraint firstItem="uHi-U5-TLg" firstAttribute="top" secondItem="WmF-aQ-i06" secondAttribute="bottom" constant="36" id="0a2-Ga-HOW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="uHi-U5-TLg" secondAttribute="trailing" constant="-20" id="71s-OF-QXj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WmF-aQ-i06" secondAttribute="trailing" constant="-20" id="9Ar-mr-tqy"/>
-                            <constraint firstItem="bXH-Rp-duA" firstAttribute="top" secondItem="9SO-3a-Mzd" secondAttribute="bottom" constant="8" id="Kz9-Ay-MLY"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="2IP-sb-7aa" secondAttribute="leading" constant="-7" id="Ma5-iM-X1b"/>
-                            <constraint firstItem="WmF-aQ-i06" firstAttribute="top" secondItem="xzf-Ib-Czl" secondAttribute="bottom" constant="-20" id="Mdh-Wl-uYc"/>
-                            <constraint firstItem="uHi-U5-TLg" firstAttribute="leading" secondItem="15k-bT-lFJ" secondAttribute="leadingMargin" constant="-20" id="NpA-fF-T7k"/>
-                            <constraint firstItem="bXH-Rp-duA" firstAttribute="leading" secondItem="15k-bT-lFJ" secondAttribute="leadingMargin" constant="28" id="Y1X-ao-lO9"/>
-                            <constraint firstItem="2IP-sb-7aa" firstAttribute="top" secondItem="bXH-Rp-duA" secondAttribute="bottom" constant="62" id="awI-Y1-L8r"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2IP-sb-7aa" secondAttribute="trailing" constant="5" id="cZ0-vl-nTz"/>
-                            <constraint firstItem="WmF-aQ-i06" firstAttribute="leading" secondItem="15k-bT-lFJ" secondAttribute="leadingMargin" constant="-20" id="zMa-y0-tB7"/>
-                        </constraints>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="Kq2-1f-g2R"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c4G-om-zXg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1052" y="-1125"/>
         </scene>
     </scenes>
     <resources>
