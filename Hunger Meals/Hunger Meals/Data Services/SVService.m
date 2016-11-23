@@ -438,7 +438,12 @@ else{
             
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
-            
+                [self newRefreshTokenDict:params usingBlock:^(NSMutableArray *resultArray) {
+                    [self getCurrentActiveordersusingBlock:^(NSMutableArray *resultArray) {
+                        
+                        resultBlock([self parseProductsData:dictResult]);
+                    }];
+                }];
             }
             resultBlock([self parseOrdersData:dictResult]);
         }
@@ -618,7 +623,6 @@ else{
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
                 
-                [self signOut];
                 
             }
             NSString *resultDict = [dictResult objectForKey:@"data"];
@@ -666,7 +670,6 @@ else{
             
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
-                [self signOut];
                 
             }
             NSDictionary *resultDict = [dictResult objectForKey:@"data"];
@@ -694,7 +697,6 @@ else{
             
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
-                [self signOut];
                 
             }
             NSDictionary *resultDict = [dictResult objectForKey:@"data"];

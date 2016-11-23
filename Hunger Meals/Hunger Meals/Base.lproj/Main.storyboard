@@ -7939,7 +7939,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqG-du-92g">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phv-Uq-fxb">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phv-Uq-fxb">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -7947,7 +7947,7 @@
                                                 <variation key="widthClass=compact" constant="1086"/>
                                             </constraint>
                                         </constraints>
-                                        <mutableString key="text">About us
+                                        <string key="text">About us
 
 We are a few young people who love food and feels deeply for people who work hard but are not able to either get or prepare food.  We do not claim to recreate your mother’s recipes. But we do guarantee you honest delicious home cooked meals. This is a relationship you will cherish for years to come. And yes, when you are eating your tasty meal remember you are serving a hungry child a meal. A hearty welcome to HungerMeals.com
 
@@ -7984,7 +7984,7 @@ Do contact 9986122222 for queries.
 
 Can I customize my meal?
 
-Currently, we are not customizing the meals, however, soon we plan to come up with various plans where you can personalize your daily meals.</mutableString>
+Currently, we are not customizing the meals, however, soon we plan to come up with various plans where you can personalize your daily meals.</string>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <variation key="default">
@@ -7993,6 +7993,7 @@ Currently, we are not customizing the meals, however, soon we plan to come up wi
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                             <mask key="constraints">
                                                 <include reference="zq0-Dw-75k"/>
                                             </mask>

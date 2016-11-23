@@ -1458,7 +1458,7 @@
 			baseConfigurationReference = F484EF451324D63B59B42C78 /* Pods-Hunger Meals.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Nikhil Srivatsa (88MQL3GAFM)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nikhil Srivatsa (88MQL3GAFM)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1774,7 +1774,7 @@
 			baseConfigurationReference = 9132DF2985E04339F7A61F23 /* Pods-Hunger Meals.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Nikhil Srivatsa (88MQL3GAFM)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nikhil Srivatsa (88MQL3GAFM)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
