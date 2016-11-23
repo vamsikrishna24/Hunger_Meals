@@ -128,7 +128,7 @@ else if(indexPath.row == 2) {
     }
     if (indexPath.row == 3) {
         UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        HMPaymentSuccessViewController *aboutVC= [mainStoryBoard instantiateViewControllerWithIdentifier:@"PaymentSuccessidentifier"];
+        HMAboutUsViewController *aboutVC= [mainStoryBoard instantiateViewControllerWithIdentifier:@"AboutUsSidentifier"];
         [self presentViewController:aboutVC animated:YES completion:nil];
     }
 }
