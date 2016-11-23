@@ -7861,10 +7861,10 @@ Currently, we are not customizing the meals, however, soon we plan to come up wi
             </objects>
             <point key="canvasLocation" x="-186" y="-1125"/>
         </scene>
-        <!--View Controller-->
+        <!--Payment Success View Controller-->
         <scene sceneID="RTA-4c-ptH">
             <objects>
-                <viewController id="4Y8-YG-1rH" sceneMemberID="viewController">
+                <viewController id="4Y8-YG-1rH" customClass="HMPaymentSuccessViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xzf-Ib-Czl"/>
                         <viewControllerLayoutGuide type="bottom" id="iAT-Fh-7vu"/>
