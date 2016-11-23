@@ -218,6 +218,7 @@
                [self newRefreshTokenDict:params usingBlock:^(NSMutableArray *resultArray) {
                    userDataObject.token = [resultArray valueForKey:@"token"];
                   [self productRequestUSingBlock:dict dataUrl:url usingBlock:^(NSMutableArray *resultArray) {
+                      resultBlock([self parseProductsData:dictResult]);
                   }];
                }];
             }
