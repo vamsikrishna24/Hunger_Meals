@@ -213,6 +213,9 @@
         alert.tag = 1;
         [alert show];
     }
+    else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)delayedDidFinish:(NSString *)getStringFromUrl {
