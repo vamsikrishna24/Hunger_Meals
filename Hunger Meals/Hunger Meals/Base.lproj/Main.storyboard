@@ -7682,13 +7682,19 @@
                                         <rect key="frame" x="0.0" y="43" width="600" height="45"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="hTn-8v-DdP"/>
                                             <constraint firstAttribute="height" constant="45" id="mXE-lj-Umc"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="43" width="400" height="45"/>
+                                        <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="hTn-8v-DdP"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="hTn-8v-DdP"/>
                                                 <exclude reference="mXE-lj-Umc"/>
                                             </mask>
                                         </variation>
@@ -7701,8 +7707,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="35"/>
+                                        <variation key="widthClass=compact">
                                             <mask key="constraints">
                                                 <exclude reference="u0V-k8-zDt"/>
                                             </mask>
@@ -7712,17 +7717,29 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="bXQ-AK-QsJ" secondAttribute="bottom" id="5hK-Q4-Vp8"/>
+                                    <constraint firstItem="bXQ-AK-QsJ" firstAttribute="leading" secondItem="CoR-W3-mYe" secondAttribute="leading" id="7RC-Nb-iYg"/>
                                     <constraint firstAttribute="height" constant="82" id="7TZ-cu-qwv"/>
                                     <constraint firstItem="Qkw-kT-bzS" firstAttribute="leading" secondItem="CoR-W3-mYe" secondAttribute="leading" id="8fA-V0-Hcc"/>
+                                    <constraint firstItem="bXQ-AK-QsJ" firstAttribute="trailing" secondItem="Qkw-kT-bzS" secondAttribute="trailing" id="9d3-Je-sxL"/>
                                     <constraint firstItem="Qkw-kT-bzS" firstAttribute="top" secondItem="CoR-W3-mYe" secondAttribute="top" id="Ilf-pz-ZVG"/>
                                     <constraint firstItem="bXQ-AK-QsJ" firstAttribute="top" secondItem="Qkw-kT-bzS" secondAttribute="bottom" constant="8" id="Rth-Yd-I1E"/>
                                     <constraint firstItem="bXQ-AK-QsJ" firstAttribute="trailing" secondItem="Qkw-kT-bzS" secondAttribute="trailing" id="SId-gm-lCE"/>
                                     <constraint firstItem="bXQ-AK-QsJ" firstAttribute="leading" secondItem="Qkw-kT-bzS" secondAttribute="leading" id="fEw-1c-Smx"/>
+                                    <constraint firstItem="bXQ-AK-QsJ" firstAttribute="top" secondItem="Qkw-kT-bzS" secondAttribute="bottom" constant="8" symbolic="YES" id="g6L-30-4dW"/>
                                     <constraint firstAttribute="trailing" secondItem="Qkw-kT-bzS" secondAttribute="trailing" id="j3Q-Dt-HzH"/>
+                                    <constraint firstAttribute="trailing" secondItem="bXQ-AK-QsJ" secondAttribute="trailing" id="l4h-Eo-Krb"/>
+                                    <constraint firstItem="bXQ-AK-QsJ" firstAttribute="leading" secondItem="Qkw-kT-bzS" secondAttribute="leading" id="u0H-Co-xWk"/>
+                                    <constraint firstAttribute="bottom" secondItem="bXQ-AK-QsJ" secondAttribute="bottom" constant="-6" id="vRh-5o-eso"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="7TZ-cu-qwv"/>
+                                        <exclude reference="7RC-Nb-iYg"/>
+                                        <exclude reference="9d3-Je-sxL"/>
+                                        <exclude reference="g6L-30-4dW"/>
+                                        <exclude reference="l4h-Eo-Krb"/>
+                                        <exclude reference="u0H-Co-xWk"/>
+                                        <exclude reference="vRh-5o-eso"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -7732,9 +7749,15 @@
                                         <exclude reference="Ilf-pz-ZVG"/>
                                         <exclude reference="j3Q-Dt-HzH"/>
                                         <exclude reference="5hK-Q4-Vp8"/>
+                                        <include reference="7RC-Nb-iYg"/>
+                                        <include reference="9d3-Je-sxL"/>
                                         <exclude reference="Rth-Yd-I1E"/>
                                         <exclude reference="SId-gm-lCE"/>
                                         <exclude reference="fEw-1c-Smx"/>
+                                        <include reference="g6L-30-4dW"/>
+                                        <include reference="l4h-Eo-Krb"/>
+                                        <include reference="u0H-Co-xWk"/>
+                                        <include reference="vRh-5o-eso"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -7761,195 +7784,98 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFC-W2-Kpz">
-                                <rect key="frame" x="119" y="439" width="362" height="87"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTe-QG-imq">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="87" id="0f9-Lp-KAE"/>
-                                    <constraint firstAttribute="height" constant="66" id="bSQ-Nu-Awn"/>
+                                    <constraint firstAttribute="height" constant="60" id="Nml-T9-AJU"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Meanwhile, visit our ">
                                         <attributes>
-                                            <font key="NSFont" size="12" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
+                                            <color key="NSBackgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
                                             </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="monthly meal planner">
+                                    <fragment content="monthly meal planner ">
                                         <attributes>
-                                            <color key="NSColor" red="0.99424999999999997" green="0.39839000000000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="12" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
+                                            <color key="NSBackgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.94509803921568625" green="0.35294117647058826" blue="0.13333333333333333" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <url key="NSLink" string="https://hungermeals.sukor.in/#/monthly"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
                                             </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.94509803921568625" green="0.35294117647058826" blue="0.13333333333333333" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content=" to enjoy a month full of delicious mouth watering homemade food">
+                                    <fragment content="to enjoy a month full of delicious mouth watering homemade food.">
                                         <attributes>
-                                            <font key="NSFont" size="12" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
+                                            <color key="NSBackgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
                                             </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="bSQ-Nu-Awn"/>
+                                        <exclude reference="Nml-T9-AJU"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <mask key="constraints">
-                                        <exclude reference="0f9-Lp-KAE"/>
-                                        <include reference="bSQ-Nu-Awn"/>
+                                        <include reference="Nml-T9-AJU"/>
                                     </mask>
                                 </variation>
-                            </textView>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bZN-fr-NI2" firstAttribute="top" secondItem="fof-WR-7P5" secondAttribute="bottom" id="1b8-ro-vgp"/>
-                            <constraint firstItem="bFC-W2-Kpz" firstAttribute="trailing" secondItem="bBj-Sw-IAY" secondAttribute="trailing" constant="31" id="2bW-qP-0qa"/>
-                            <constraint firstItem="Cn8-Ih-BCh" firstAttribute="top" secondItem="bFC-W2-Kpz" secondAttribute="bottom" constant="74" id="5fu-JQ-2H7"/>
                             <constraint firstItem="bBj-Sw-IAY" firstAttribute="centerX" secondItem="CoR-W3-mYe" secondAttribute="centerX" id="74I-3Y-09v">
                                 <variation key="widthClass=compact" constant="-9.5"/>
                             </constraint>
                             <constraint firstItem="bBj-Sw-IAY" firstAttribute="centerX" secondItem="CoR-W3-mYe" secondAttribute="centerX" constant="-9.5" id="7GT-UU-Kqi"/>
+                            <constraint firstItem="CTe-QG-imq" firstAttribute="leading" secondItem="Rgq-bS-oqv" secondAttribute="leadingMargin" constant="11" id="9Y5-TT-8dg">
+                                <variation key="widthClass=compact" constant="6"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="CTe-QG-imq" secondAttribute="trailing" constant="30" id="BBL-Dw-ems">
+                                <variation key="widthClass=compact" constant="5"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="CoR-W3-mYe" secondAttribute="trailing" constant="-20" id="BtD-8C-UYf"/>
+                            <constraint firstItem="CTe-QG-imq" firstAttribute="top" secondItem="bBj-Sw-IAY" secondAttribute="bottom" constant="24" id="EM0-tt-4HA"/>
                             <constraint firstItem="bZN-fr-NI2" firstAttribute="top" secondItem="fof-WR-7P5" secondAttribute="bottom" id="FGb-7b-00L"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bZN-fr-NI2" secondAttribute="trailing" constant="-20" id="FH1-oJ-kqn"/>
                             <constraint firstItem="bBj-Sw-IAY" firstAttribute="top" secondItem="CoR-W3-mYe" secondAttribute="bottom" constant="8" id="Fkn-Vj-urA"/>
                             <constraint firstItem="CoR-W3-mYe" firstAttribute="top" secondItem="bZN-fr-NI2" secondAttribute="bottom" constant="36" id="OLs-Y9-zVE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CoR-W3-mYe" secondAttribute="trailing" constant="-20" id="OPV-db-kDf"/>
-                            <constraint firstItem="bFC-W2-Kpz" firstAttribute="top" secondItem="bBj-Sw-IAY" secondAttribute="bottom" constant="20" id="UWT-kK-ptw"/>
                             <constraint firstItem="bZN-fr-NI2" firstAttribute="leading" secondItem="Rgq-bS-oqv" secondAttribute="leadingMargin" constant="-20" id="YZr-7n-eG1"/>
-                            <constraint firstItem="bFC-W2-Kpz" firstAttribute="top" secondItem="bBj-Sw-IAY" secondAttribute="bottom" constant="20" id="ZWS-S4-doT"/>
-                            <constraint firstItem="bFC-W2-Kpz" firstAttribute="leading" secondItem="Rgq-bS-oqv" secondAttribute="leadingMargin" constant="-1" id="ZyC-ql-l9y"/>
                             <constraint firstItem="CoR-W3-mYe" firstAttribute="top" secondItem="bZN-fr-NI2" secondAttribute="bottom" constant="36" id="fVp-B6-cXk"/>
                             <constraint firstItem="CoR-W3-mYe" firstAttribute="leading" secondItem="Rgq-bS-oqv" secondAttribute="leadingMargin" constant="-20" id="jG7-jv-xp6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bZN-fr-NI2" secondAttribute="trailing" constant="-20" id="lvw-rF-EW6"/>
                             <constraint firstItem="CoR-W3-mYe" firstAttribute="leading" secondItem="Rgq-bS-oqv" secondAttribute="leadingMargin" constant="-20" id="nNR-7a-1dg"/>
-                            <constraint firstItem="bFC-W2-Kpz" firstAttribute="leading" secondItem="bBj-Sw-IAY" secondAttribute="leading" constant="-12" id="p9B-j9-ngX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bFC-W2-Kpz" secondAttribute="trailing" constant="-1" id="pvV-0L-nb9"/>
                             <constraint firstItem="bZN-fr-NI2" firstAttribute="leading" secondItem="Rgq-bS-oqv" secondAttribute="leadingMargin" constant="-20" id="ugh-0c-7Ph"/>
                             <constraint firstItem="bBj-Sw-IAY" firstAttribute="top" secondItem="CoR-W3-mYe" secondAttribute="bottom" constant="8" id="wDk-UZ-vDY"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="CTe-QG-imq"/>
+                            </mask>
                             <mask key="constraints">
                                 <exclude reference="1b8-ro-vgp"/>
                                 <exclude reference="lvw-rF-EW6"/>
@@ -7959,12 +7885,15 @@
                                 <exclude reference="nNR-7a-1dg"/>
                                 <exclude reference="74I-3Y-09v"/>
                                 <exclude reference="wDk-UZ-vDY"/>
-                                <exclude reference="ZWS-S4-doT"/>
-                                <exclude reference="ZyC-ql-l9y"/>
-                                <exclude reference="pvV-0L-nb9"/>
+                                <exclude reference="9Y5-TT-8dg"/>
+                                <exclude reference="BBL-Dw-ems"/>
+                                <exclude reference="EM0-tt-4HA"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="CTe-QG-imq"/>
+                            </mask>
                             <mask key="constraints">
                                 <include reference="1b8-ro-vgp"/>
                                 <exclude reference="FGb-7b-00L"/>
@@ -7982,13 +7911,9 @@
                                 <exclude reference="7GT-UU-Kqi"/>
                                 <exclude reference="Fkn-Vj-urA"/>
                                 <include reference="wDk-UZ-vDY"/>
-                                <exclude reference="2bW-qP-0qa"/>
-                                <exclude reference="UWT-kK-ptw"/>
-                                <include reference="ZWS-S4-doT"/>
-                                <include reference="ZyC-ql-l9y"/>
-                                <exclude reference="p9B-j9-ngX"/>
-                                <include reference="pvV-0L-nb9"/>
-                                <exclude reference="5fu-JQ-2H7"/>
+                                <include reference="9Y5-TT-8dg"/>
+                                <include reference="BBL-Dw-ems"/>
+                                <include reference="EM0-tt-4HA"/>
                             </mask>
                         </variation>
                     </view>
