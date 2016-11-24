@@ -11,6 +11,7 @@
 #import "PayTMViewController.h"
 #import "HMPaymentSuccessViewController.h"
 
+
 @interface HMPaymentTypeSelectionViewController ()
 {
     NSString *selectedPaymentMethod;
@@ -40,8 +41,9 @@
     }
     
     [self.payUButton setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
+    [self.codButton setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
+    
     [self.paytmButton setImage:[UIImage imageNamed:@"Radio_Checked"] forState:UIControlStateNormal];
-
     selectedPaymentMethod = @"PAYTM";
 }
 
@@ -53,10 +55,28 @@
     else {
         [btn.layer setValue:[NSNumber numberWithBool:NO] forKey:@"isSelected"];
     }
+    
     [self.paytmButton setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
+    [self.codButton setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
+    
     [self.payUButton setImage:[UIImage imageNamed:@"Radio_Checked"] forState:UIControlStateNormal];
-
     selectedPaymentMethod = @"PAYUMONEY";
+}
+- (IBAction)codButtonAction:(id)sender {
+    UIButton *btn = (UIButton *)sender;
+    if ([btn.layer valueForKey:@"isSelected"]) {
+        [btn.layer setValue:[NSNumber numberWithBool:YES] forKey:@"isSelected"];
+    }
+    else {
+        [btn.layer setValue:[NSNumber numberWithBool:NO] forKey:@"isSelected"];
+    }
+    
+    [self.payUButton setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
+    [self.paytmButton setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
+    
+    [self.codButton setImage:[UIImage imageNamed:@"Radio_Checked"] forState:UIControlStateNormal];
+    selectedPaymentMethod = @"COD";
+
 }
 
 - (IBAction)MakeAPaymentButtonPressed:(id)sender{
@@ -67,6 +87,12 @@
     else if ([selectedPaymentMethod isEqualToString:@"PAYUMONEY"]){
         [self performSegueWithIdentifier:@"ToPayUMoney" sender:self];
     
+    }else if ([selectedPaymentMethod isEqualToString:@"COD"]){
+        
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        HMPaymentSuccessViewController *paymentSuccessVC= [mainStoryBoard instantiateViewControllerWithIdentifier:@"PaymentSuccessidentifier"];
+        [self presentViewController:paymentSuccessVC animated:YES completion:nil];
+        
     }
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

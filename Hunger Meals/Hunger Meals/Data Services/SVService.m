@@ -630,6 +630,9 @@ else{
             resultBlock(resultDict);
         }
         else{
+            
+            [[[UIAlertView alloc] initWithTitle:@"error!!" message:@"entered coupon code is invalid!!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            
             resultBlock(nil);
         }
     }];

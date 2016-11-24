@@ -90,8 +90,13 @@
 
 -(void)verifyOtp{
     
+  
       [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: self.phoneNumber,@"phoneno",self.otpTextField.text,@"otp",nil];
+    if(self.otpTextField.text.length < 1){
+        [self showAlertWithTitle:@"alert !!" andMessage:@"Please enter OTP"];
+        
+    } else if (self.otpTextField.text.length > 1){
     SVService *service = [[SVService alloc] init];
     [service otpVerification:dict usingBlock:^(NSString *resultMessage) {
     result = resultMessage;
@@ -103,12 +108,17 @@
             isMobileVerified = true;
             
         }else{
+            
+            [self showAlertWithTitle:@"Failure" andMessage:@"OTP is invalid"];
             self.nextButtonOutlet.hidden = YES;
             isMobileVerified = NO;
         }
+        
+        
 
     [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
+    }
 }
 
 -(void)navigate{

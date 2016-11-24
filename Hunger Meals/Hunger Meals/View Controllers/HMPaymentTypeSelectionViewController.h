@@ -15,5 +15,6 @@
 
 @property (nonatomic, weak) IBOutlet UIButton *paytmButton;
 @property (nonatomic, weak) IBOutlet UIButton *payUButton;
+@property (weak, nonatomic) IBOutlet UIButton *codButton;
 @property(nonatomic,strong) NSString *PaymentAmountString;
 @end

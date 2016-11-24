@@ -8,10 +8,19 @@
 
 #import "HMPaymentSuccessViewController.h"
 #import "ProjectConstants.h"
+#import "HMHomePageViewController.h"
 
 @implementation HMPaymentSuccessViewController
+- (IBAction)homeButtonAction:(id)sender {
+    
 
-- (IBAction)closeAction:(id)sender {
-    [APPDELEGATE.homeNavigationController popToRootViewControllerAnimated:YES];
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    
+    HMHomePageViewController *homeVC = [storyBoard instantiateViewControllerWithIdentifier:@"HomePage"];
+    
+    UINavigationController *loginNav = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    [self presentViewController:loginNav animated:YES completion:nil];
+
 }
+
 @end

@@ -107,15 +107,16 @@ shouldChangeCharactersInRange:(NSRange)range
 #pragma mark - Custom methods
 - (BOOL)isValidationsSucceed{
     if(![Utility isUserNameValidation:self.userNameTextField.text]){
-        [self showAlertWithTitle:@"Alert" andMessage:@"Please enter user name!!"];
+        [self showAlertWithTitle:@"Alert" andMessage:@"User name must be atleast 6 characters!!"];
         return NO;
     }
     else if(![Utility isValidateEmail:self.emailTextField.text]){
         [self showAlertWithTitle:@"Alert" andMessage:@"Please enter valid email!!"];
         return NO;
     }
+    
     else if(![Utility isValidatePassword:self.paswordTextField.text]){
-        [self showAlertWithTitle:@"Alert" andMessage:@"Please enter valid password and try again"];
+        [self showAlertWithTitle:@"Alert" andMessage:@"Password must be atleast 8 characters"];
         return NO;
     }
     else if(![self.paswordTextField.text isEqualToString: self.confirmPasswordTextField.text]){

@@ -71,7 +71,7 @@
 }
 
 -(void)TextFieldsFonts{
-    UIColor *color = [UIColor colorWithRed:237.0f/255.0f green:140.0f/255.0f blue:37.0f/255.0f alpha:0.5];
+    UIColor *color = [UIColor colorWithRed:85.0f/255.0f green:85.0f/255.0f blue:85.0f/255.0f alpha:0.5];
     self.pinCodeTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Pincode" attributes:@{NSForegroundColorAttributeName: color}];
     
     self.deliveryAddressTextFiels.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Delivery Time" attributes:@{NSForegroundColorAttributeName: color}];

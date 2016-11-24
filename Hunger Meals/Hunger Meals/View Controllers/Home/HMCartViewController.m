@@ -295,7 +295,6 @@
             [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
             
         }];
-        
     }
 }
 
