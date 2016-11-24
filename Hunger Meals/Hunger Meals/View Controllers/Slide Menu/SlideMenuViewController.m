@@ -102,7 +102,7 @@
                 [self guestAction];
             }];
 
-        }else if([[USER_DEFAULTS valueForKey: @"isGuestLogin"]  isEqual: @"NO"]){
+        }else{
 
         [self navigateToMealPlan];
         }
@@ -117,7 +117,8 @@
                 
             }];
 
-        }else if([[USER_DEFAULTS valueForKey: @"isGuestLogin"]  isEqual: @"NO"]){
+        }else
+        {
             
         HMOrdersListTableViewController *orderList = [storyBoard instantiateViewControllerWithIdentifier:@"OrdersViewIdentifier"];
         [APPDELEGATE.homeNavigationController pushViewController:orderList animated:YES];
