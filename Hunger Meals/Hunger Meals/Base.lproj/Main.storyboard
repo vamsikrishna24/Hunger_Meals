@@ -1676,7 +1676,6 @@
                                             <constraint firstItem="lTo-WC-07D" firstAttribute="top" secondItem="BNk-jd-ena" secondAttribute="bottom" constant="29" id="Y2Z-cI-9uf"/>
                                             <constraint firstItem="lTo-WC-07D" firstAttribute="trailing" secondItem="Nic-u1-UXq" secondAttribute="trailing" id="Y4h-kO-bqD"/>
                                             <constraint firstAttribute="bottom" secondItem="lTo-WC-07D" secondAttribute="bottom" constant="19" id="bcD-c9-pC0"/>
-                                            <constraint firstAttribute="height" constant="264" id="cU6-H9-UYO"/>
                                             <constraint firstItem="BNk-jd-ena" firstAttribute="top" secondItem="Z4Q-O5-xva" secondAttribute="bottom" constant="26" id="e08-Z8-1EG"/>
                                             <constraint firstAttribute="trailing" secondItem="Z4Q-O5-xva" secondAttribute="trailing" constant="13" id="eaN-c2-g7g"/>
                                             <constraint firstItem="Nic-u1-UXq" firstAttribute="height" secondItem="a71-b6-u8R" secondAttribute="height" id="hF4-xV-EAV"/>
@@ -1707,29 +1706,114 @@
                                             <action selector="proceedToCheckoutAction:" destination="KzZ-ca-Ydf" eventType="touchUpInside" id="6iH-Sd-iTS"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCC-rx-JtL">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WpZ-l9-Z0n">
+                                                <rect key="frame" x="115" y="412" width="185" height="35"/>
+                                                <color key="backgroundColor" red="0.94509803920000002" green="0.35294117650000001" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="OeV-7d-jof"/>
+                                                    <constraint firstAttribute="width" constant="185" id="rtX-vr-rKu">
+                                                        <variation key="widthClass=compact" constant="144"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Share Location">
+                                                    <color key="titleColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="shareLocationButtonAction:" destination="KzZ-ca-Ydf" eventType="touchUpInside" id="JdT-SS-yEv"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="WpZ-l9-Z0n" firstAttribute="top" secondItem="JCC-rx-JtL" secondAttribute="top" constant="21" id="HqA-KX-eN0">
+                                                <variation key="widthClass=compact" constant="33"/>
+                                            </constraint>
+                                            <constraint firstItem="WpZ-l9-Z0n" firstAttribute="centerX" secondItem="JCC-rx-JtL" secondAttribute="centerX" id="fQT-di-jPy"/>
+                                            <constraint firstAttribute="height" constant="76" id="nsm-Oo-fZv"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="WpZ-l9-Z0n"/>
+                                            </mask>
+                                            <mask key="constraints">
+                                                <exclude reference="nsm-Oo-fZv"/>
+                                                <exclude reference="HqA-KX-eN0"/>
+                                                <exclude reference="fQT-di-jPy"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="subviews">
+                                                <include reference="WpZ-l9-Z0n"/>
+                                            </mask>
+                                            <mask key="constraints">
+                                                <include reference="nsm-Oo-fZv"/>
+                                                <include reference="HqA-KX-eN0"/>
+                                                <include reference="fQT-di-jPy"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="JCC-rx-JtL" secondAttribute="trailing" id="4jz-hJ-v7y"/>
                                     <constraint firstItem="Hb7-ce-fl5" firstAttribute="leading" secondItem="OQG-1l-Krl" secondAttribute="leading" constant="8" id="89h-Xj-lsd"/>
                                     <constraint firstItem="Hb7-ce-fl5" firstAttribute="centerX" secondItem="zd3-aW-VrL" secondAttribute="centerX" id="CCu-er-lyu"/>
-                                    <constraint firstAttribute="bottom" secondItem="zd3-aW-VrL" secondAttribute="bottom" constant="289" id="Ef9-hB-nUl"/>
-                                    <constraint firstItem="zd3-aW-VrL" firstAttribute="top" secondItem="Hb7-ce-fl5" secondAttribute="bottom" constant="28" id="FNu-yp-Bsc"/>
+                                    <constraint firstItem="zd3-aW-VrL" firstAttribute="top" secondItem="Hb7-ce-fl5" secondAttribute="bottom" constant="28" id="FNu-yp-Bsc">
+                                        <variation key="widthClass=compact" constant="11"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="Hb7-ce-fl5" secondAttribute="trailing" constant="8" id="Ft1-YL-SDw"/>
+                                    <constraint firstAttribute="bottom" secondItem="zd3-aW-VrL" secondAttribute="bottom" constant="271" id="HVp-Cc-WPq">
+                                        <variation key="widthClass=compact" constant="222"/>
+                                    </constraint>
+                                    <constraint firstItem="Dk3-BR-n76" firstAttribute="top" secondItem="JCC-rx-JtL" secondAttribute="bottom" constant="8" id="HlC-79-6cV"/>
                                     <constraint firstItem="Hb7-ce-fl5" firstAttribute="top" secondItem="Dk3-BR-n76" secondAttribute="bottom" constant="20" id="KOg-83-8Wi"/>
                                     <constraint firstItem="Hb7-ce-fl5" firstAttribute="centerX" secondItem="OQG-1l-Krl" secondAttribute="centerX" id="LvX-wv-3rO"/>
-                                    <constraint firstItem="Dk3-BR-n76" firstAttribute="top" secondItem="OQG-1l-Krl" secondAttribute="top" id="PPU-wp-VAJ"/>
+                                    <constraint firstItem="JCC-rx-JtL" firstAttribute="leading" secondItem="OQG-1l-Krl" secondAttribute="leading" id="RtZ-x6-YCu"/>
+                                    <constraint firstItem="JCC-rx-JtL" firstAttribute="top" secondItem="OQG-1l-Krl" secondAttribute="top" id="SfW-ZV-Se2"/>
                                     <constraint firstItem="Dk3-BR-n76" firstAttribute="leading" secondItem="OQG-1l-Krl" secondAttribute="leading" id="ejs-KA-bPv"/>
                                     <constraint firstAttribute="trailing" secondItem="Dk3-BR-n76" secondAttribute="trailing" constant="-1" id="o10-rP-0td"/>
                                 </constraints>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="785"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="JCC-rx-JtL"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="4jz-hJ-v7y"/>
+                                        <exclude reference="RtZ-x6-YCu"/>
+                                        <exclude reference="SfW-ZV-Se2"/>
+                                        <exclude reference="HlC-79-6cV"/>
+                                        <exclude reference="HVp-Cc-WPq"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="JCC-rx-JtL"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="4jz-hJ-v7y"/>
+                                        <include reference="RtZ-x6-YCu"/>
+                                        <include reference="SfW-ZV-Se2"/>
+                                        <include reference="HlC-79-6cV"/>
+                                        <include reference="HVp-Cc-WPq"/>
+                                    </mask>
                                 </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="OQG-1l-Krl" secondAttribute="trailing" constant="-20" id="Snk-Au-xkT"/>
-                            <constraint firstItem="bBZ-1A-w4G" firstAttribute="top" secondItem="OQG-1l-Krl" secondAttribute="bottom" constant="-49" id="nAJ-l8-NDj"/>
+                            <constraint firstItem="bBZ-1A-w4G" firstAttribute="top" secondItem="OQG-1l-Krl" secondAttribute="bottom" constant="-49" id="nAJ-l8-NDj">
+                                <variation key="widthClass=compact" constant="-49"/>
+                            </constraint>
                             <constraint firstItem="OQG-1l-Krl" firstAttribute="top" secondItem="JaL-Lb-V4E" secondAttribute="bottom" constant="-20" id="qns-BB-z88"/>
                             <constraint firstItem="OQG-1l-Krl" firstAttribute="leading" secondItem="Yva-U9-TJC" secondAttribute="leadingMargin" constant="-20" id="wpG-MS-rZj"/>
                         </constraints>
@@ -1746,13 +1830,14 @@
                         <outlet property="otherButtonOutlet" destination="gMJ-xc-mmJ" id="KWl-qH-cG4"/>
                         <outlet property="pinCodeTextField" destination="a71-b6-u8R" id="dNi-n1-Okw"/>
                         <outlet property="proceedToCheckOutButtonOutlet" destination="zd3-aW-VrL" id="Qr3-KZ-zsY"/>
+                        <outlet property="shareLocationButton" destination="WpZ-l9-Z0n" id="8DH-YP-2Pl"/>
                         <outlet property="stateTextField" destination="lTo-WC-07D" id="LJ8-Lc-hqf"/>
                         <segue destination="xRG-Yj-jMh" kind="show" identifier="ToDeliverySelection" id="28N-Av-gzw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="An0-Yj-Oei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2809" y="-162"/>
+            <point key="canvasLocation" x="2808" y="-162"/>
         </scene>
         <!--Quickbites View Controller-->
         <scene sceneID="LqY-J0-5h3">

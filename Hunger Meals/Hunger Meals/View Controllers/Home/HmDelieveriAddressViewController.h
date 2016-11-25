@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "CommonViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface HmDelieveriAddressViewController : CommonViewController<UITextFieldDelegate>
+@interface HmDelieveriAddressViewController : CommonViewController<UITextFieldDelegate,CLLocationManagerDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *shareLocationButton;
 @property (weak, nonatomic) IBOutlet UIButton *homeButtonOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *officeButtonOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *otherButtonOutlet;
