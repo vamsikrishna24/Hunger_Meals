@@ -63,19 +63,22 @@
     selectedPaymentMethod = @"PAYUMONEY";
 }
 - (IBAction)codButtonAction:(id)sender {
-    UIButton *btn = (UIButton *)sender;
-    if ([btn.layer valueForKey:@"isSelected"]) {
-        [btn.layer setValue:[NSNumber numberWithBool:YES] forKey:@"isSelected"];
-    }
-    else {
-        [btn.layer setValue:[NSNumber numberWithBool:NO] forKey:@"isSelected"];
-    }
+//    UIButton *btn = (UIButton *)sender;
+//    if ([btn.layer valueForKey:@"isSelected"]) {
+//        [btn.layer setValue:[NSNumber numberWithBool:YES] forKey:@"isSelected"];
+//    }
+//    else {
+//        [btn.layer setValue:[NSNumber numberWithBool:NO] forKey:@"isSelected"];
+//    }
+//    
+//    [self.payUButton setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
+//    [self.paytmButton setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
+//    
+//    [self.codButton setImage:[UIImage imageNamed:@"Radio_Checked"] forState:UIControlStateNormal];
+//    selectedPaymentMethod = @"COD";
     
-    [self.payUButton setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
-    [self.paytmButton setImage:[UIImage imageNamed:@"Radio_Unchecked"] forState:UIControlStateNormal];
-    
-    [self.codButton setImage:[UIImage imageNamed:@"Radio_Checked"] forState:UIControlStateNormal];
-    selectedPaymentMethod = @"COD";
+    [[[UIAlertView alloc] initWithTitle:@"Alert" message:@"Currently COD is not Available" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+
 
 }
 
