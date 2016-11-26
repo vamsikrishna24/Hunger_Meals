@@ -327,8 +327,8 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"ToPaymentSelection"]){
-        HmDelieveriAddressViewController *deliveryVC = (HmDelieveriAddressViewController *)segue.destinationViewController;
-        deliveryVC.PaymentAmountString = [NSString stringWithFormat:@"%f",totalAmount];
+        HMAddressesListViewController *deliveryAddressVC = (HMAddressesListViewController *)segue.destinationViewController;
+        deliveryAddressVC.priceString = [NSString stringWithFormat:@"%f",totalAmount];
         
         
     }

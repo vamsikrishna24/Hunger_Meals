@@ -21,6 +21,8 @@
 		2B03AB2C1DAFD100000DD8DA /* LobsterTwo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B03AB281DAFD0EC000DD8DA /* LobsterTwo-Regular.otf */; };
 		2B085DBE1DA6715700EE2404 /* HMSlideMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B085DBD1DA6715700EE2404 /* HMSlideMenuTableViewCell.m */; };
 		2B0C2FB01DB3B973000FCAB4 /* HMInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C2FAF1DB3B973000FCAB4 /* HMInviteViewController.m */; };
+		2B141D3B1DEA015A00A2F51B /* HMAddressesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B141D3A1DEA015A00A2F51B /* HMAddressesListViewController.m */; };
+		2B141D3E1DEA01EC00A2F51B /* HMAddressesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B141D3D1DEA01EC00A2F51B /* HMAddressesCell.m */; };
 		2B203BB21DB3DF98006604BE /* HMUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B203BB11DB3DF98006604BE /* HMUserProfileViewController.m */; };
 		2B227D391DAB892A00D5F583 /* HMOrderDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B227D381DAB892A00D5F583 /* HMOrderDetailTableViewController.m */; };
 		2B252C9E1D808F2F00CED084 /* HMAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B252C9D1D808F2F00CED084 /* HMAddressViewController.m */; };
@@ -182,6 +184,10 @@
 		2B085DBD1DA6715700EE2404 /* HMSlideMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSlideMenuTableViewCell.m; sourceTree = "<group>"; };
 		2B0C2FAE1DB3B973000FCAB4 /* HMInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMInviteViewController.h; sourceTree = "<group>"; };
 		2B0C2FAF1DB3B973000FCAB4 /* HMInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMInviteViewController.m; sourceTree = "<group>"; };
+		2B141D391DEA015A00A2F51B /* HMAddressesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAddressesListViewController.h; sourceTree = "<group>"; };
+		2B141D3A1DEA015A00A2F51B /* HMAddressesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAddressesListViewController.m; sourceTree = "<group>"; };
+		2B141D3C1DEA01EC00A2F51B /* HMAddressesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAddressesCell.h; sourceTree = "<group>"; };
+		2B141D3D1DEA01EC00A2F51B /* HMAddressesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAddressesCell.m; sourceTree = "<group>"; };
 		2B203BB01DB3DF98006604BE /* HMUserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMUserProfileViewController.h; sourceTree = "<group>"; };
 		2B203BB11DB3DF98006604BE /* HMUserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMUserProfileViewController.m; sourceTree = "<group>"; };
 		2B227D371DAB892A00D5F583 /* HMOrderDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMOrderDetailTableViewController.h; sourceTree = "<group>"; };
@@ -508,6 +514,8 @@
 				2BF62A2E1DB8699B00B58A8B /* HMMonthlyCartTableViewCell.m */,
 				2BEB3B941DE18253006589E2 /* UserProfileAddressTableViewCell.h */,
 				2BEB3B951DE18253006589E2 /* UserProfileAddressTableViewCell.m */,
+				2B141D3C1DEA01EC00A2F51B /* HMAddressesCell.h */,
+				2B141D3D1DEA01EC00A2F51B /* HMAddressesCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -610,6 +618,8 @@
 				2BD458B81D6F4DEE00D48AE8 /* HMCartViewController.m */,
 				2B03AB161DAF5F7C000DD8DA /* HmDelieveriAddressViewController.h */,
 				2B03AB171DAF5F7C000DD8DA /* HmDelieveriAddressViewController.m */,
+				2B141D391DEA015A00A2F51B /* HMAddressesListViewController.h */,
+				2B141D3A1DEA015A00A2F51B /* HMAddressesListViewController.m */,
 			);
 			name = Cart;
 			path = Home;
@@ -1288,6 +1298,7 @@
 				A88FB7461D5C5292005E8667 /* CommonViewController.m in Sources */,
 				2BE861881D9F69C50005FABC /* LocationTableViewCell.m in Sources */,
 				2B9CCA921D8E7C3100962F7B /* HMMonthlyDetailViewController.m in Sources */,
+				2B141D3E1DEA01EC00A2F51B /* HMAddressesCell.m in Sources */,
 				A895EB3C1D73FFDC00623D92 /* SVService.m in Sources */,
 				A88444701D38E68500887098 /* UIAlertView+CustomAlertView.m in Sources */,
 				AC3533F71DB7F1680005D716 /* HMComboSelectionViewController.m in Sources */,
@@ -1306,6 +1317,7 @@
 				2BEEF6CF1DAAB6AD0010715F /* HMOrdersListTableViewController.m in Sources */,
 				A895EB3B1D73FFDC00623D92 /* SVRequest.m in Sources */,
 				2BDF98701D70B4E8003D943C /* HMTabBarViewController.m in Sources */,
+				2B141D3B1DEA015A00A2F51B /* HMAddressesListViewController.m in Sources */,
 				2BE8618B1D9F742C0005FABC /* LocationView.m in Sources */,
 				2BFB8BAE1DE60493003DA3E3 /* HMAboutUsViewController.m in Sources */,
 				ACD537CD1D9419700023B834 /* UserData.m in Sources */,

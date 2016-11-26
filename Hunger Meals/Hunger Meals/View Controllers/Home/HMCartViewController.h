@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CommonViewController.h"
+#import "HMAddressesListViewController.h"
 
 @interface HMCartViewController : CommonViewController<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIButton *applyButton;
