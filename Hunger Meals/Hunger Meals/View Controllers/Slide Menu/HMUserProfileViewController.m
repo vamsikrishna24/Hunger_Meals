@@ -15,6 +15,8 @@
 
 @interface HMUserProfileViewController (){
     MTGenericAlertView *locationPopup;
+    NSMutableArray *addressesArray;
+
 
 }
 @property (weak, nonatomic) IBOutlet UITableView *profileAddressTableView;
@@ -33,10 +35,15 @@
     self.emailLabel.text = [UserData email];
     self.emailLabel.font = [UIFont fontWithName:@"Helvetica-light" size:14];
     self.phoneNumberLabel.font = [UIFont fontWithName:@"Helvetica-light" size:14];
+    if ([[USER_DEFAULTS valueForKey: @"isGuestLogin"]  isEqual: @"YES"]) {
+        self.phoneNumberLabel.text = @"--";
+    }
+    else {
+        self.phoneNumberLabel.text = [UserData phonNumber];
+    }
     [self getLocations];
-    self.addressesArray = [NSMutableArray new];
+    addressesArray = [[NSMutableArray alloc] init];
     self.profileAddressTableView.layer.cornerRadius = 5;
-    self.profileAddressTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
 
 }
 
@@ -46,14 +53,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.addressesArray.count;
+    return addressesArray.count;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"UserProfileAddress";
-    UserProfileAddressTableViewCell *cell = [self.profileAddressTableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    cell.profileAddressTextView.textAlignment = NSTextAlignmentLeft;
+    UserProfileAddressTableViewCell *cell = (UserProfileAddressTableViewCell *)[self.profileAddressTableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    cell.profileAddressTextView.text = self.addressesArray[indexPath.row];
+    cell.profileAddressTextView.text = addressesArray[indexPath.row];
     
     return cell;
 }
@@ -67,11 +74,11 @@
     [service getLocationsDataUsingBlock:^(NSMutableArray *resultArray) {
         if (resultArray != nil || resultArray.count != 0) {
             for(NSDictionary *addressDict in resultArray ){
-                [self.addressesArray addObject:[addressDict valueForKeyPath:@"location.address"]];
+                [addressesArray addObject:[addressDict valueForKeyPath:@"location.address"]];
             }
-            
+            [self.profileAddressTableView reloadData];
+
         }
-        [self.profileAddressTableView reloadData];
         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     }];
     
