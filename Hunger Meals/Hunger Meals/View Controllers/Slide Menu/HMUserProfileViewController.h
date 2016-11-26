@@ -10,6 +10,5 @@
 #import "CommonViewController.h"
 
 @interface HMUserProfileViewController : CommonViewController
-@property NSMutableArray *addressesArray;
 
 @end
