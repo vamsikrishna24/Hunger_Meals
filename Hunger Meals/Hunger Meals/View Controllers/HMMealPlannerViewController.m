@@ -307,6 +307,7 @@
         NSIndexPath *selectedIndexPath = [self.itemListTableView indexPathForSelectedRow];
         if(selectedIndexPath){
             [MTGenericAlertViewtainer close];
+            self.navigationItem.rightBarButtonItem.enabled = YES;
             
             ItemTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
             if(isLunchBtn){

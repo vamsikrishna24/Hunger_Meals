@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDL-3C-iXZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDL-3C-iXZ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -1488,7 +1488,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQG-1l-Krl">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dk3-BR-n76">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dk3-BR-n76">
                                         <rect key="frame" x="0.0" y="0.0" width="415" height="100"/>
                                         <subviews>
                                             <button opaque="NO" tag="2222" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHr-JC-EZm">
@@ -1555,7 +1555,7 @@
                                             <constraint firstItem="mHr-JC-EZm" firstAttribute="centerX" secondItem="Dk3-BR-n76" secondAttribute="centerX" id="yBY-BO-BWW"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hb7-ce-fl5">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hb7-ce-fl5">
                                         <rect key="frame" x="8" y="120" width="398" height="264"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Delivery Time" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Nic-u1-UXq">
@@ -1686,7 +1686,7 @@
                                             <constraint firstItem="BNk-jd-ena" firstAttribute="height" secondItem="Z4Q-O5-xva" secondAttribute="height" id="ueU-7o-K5Z"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd3-aW-VrL">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd3-aW-VrL">
                                         <rect key="frame" x="115" y="412" width="185" height="35"/>
                                         <color key="backgroundColor" red="0.94509803920000002" green="0.35294117650000001" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -2518,7 +2518,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="YXQ-Kb-FeM" kind="show" identifier="ToPaymentSelection" id="gQz-mm-FUe"/>
+                                            <action selector="makePaymentClicked:" destination="tUW-7a-Rla" eventType="touchUpInside" id="2Re-jr-aUe"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zc-li-hC8">
@@ -2768,6 +2768,7 @@
                         <outlet property="totalPrice" destination="wGM-xw-Tb9" id="ksK-Zx-2Ia"/>
                         <outlet property="vatLabel" destination="wor-dr-ZcE" id="d6w-st-bKD"/>
                         <outlet property="vatValueLabel" destination="g3G-28-8Km" id="E1z-GF-gKV"/>
+                        <segue destination="YXQ-Kb-FeM" kind="show" identifier="ToPaymentSelection" id="NHw-7X-g7B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ZV-0R-Mcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3581,7 +3582,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P16-gS-yvi">
+                            <webView contentMode="scaleToFill" misplaced="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P16-gS-yvi">
                                 <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -5588,7 +5589,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="103" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jEN-f6-uxz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="103" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jEN-f6-uxz">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -7445,7 +7446,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="KzZ-ca-Ydf" kind="show" identifier="ToPaymentSelection" id="SmF-o8-XHB"/>
+                                            <action selector="makePaymentClicked:" destination="q4D-WZ-DHm" eventType="touchUpInside" id="TJg-Qt-Ndr"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yw2-uA-P9K">
@@ -7796,6 +7797,7 @@
                         <outlet property="totalPrice" destination="XpC-yl-cnh" id="bnU-8s-vUT"/>
                         <outlet property="vatLabel" destination="f9U-eg-yW5" id="mij-dN-r6w"/>
                         <outlet property="vatValueLabel" destination="C2F-af-XoR" id="NYv-1i-cHr"/>
+                        <segue destination="YXQ-Kb-FeM" kind="show" identifier="ToPaymentSelection" id="Fvn-B3-pJp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7W-Sf-2C0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -8388,5 +8390,6 @@ Currently, we are not customizing the meals, however, soon we plan to come up wi
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="BoR-LO-Ohd"/>
+        <segue reference="Fvn-B3-pJp"/>
     </inferredMetricsTieBreakers>
 </document>

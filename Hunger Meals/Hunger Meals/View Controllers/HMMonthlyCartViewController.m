@@ -13,7 +13,7 @@
 #import "Tax.h"
 #import "HMPaymentTypeSelectionViewController.h"
 #import "HmDelieveriAddressViewController.h"
-
+#import "HMAddressesListViewController.h"
 
 @interface HMMonthlyCartViewController (){
     NSMutableArray *lunchItemsArray;
@@ -86,7 +86,6 @@
             if (resultArray.count > 0) {
                 dinnerItemsArray = [resultArray mutableCopy];
                 [monthlyCartItemsArray addObjectsFromArray:dinnerItemsArray];
-                [_cartTableView reloadData];
             }
             
             totalAmount = 0;
@@ -94,6 +93,7 @@
                 totalAmount += [itemDict[@"price"] floatValue];
             }
             
+            [_cartTableView reloadData];
             [self calculation];
             
             [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
@@ -298,6 +298,24 @@
     
 }
 
+-(IBAction)makePaymentClicked:(id)sender{
+    if (monthlyCartItemsArray.count == 0) {
+        [self showAlertWithTitle:@"Hunger Meals" andMessage:@"No items found in your cart to proceed further. Please add items to cart."];
+    }
+    else {
+    [self performSegueWithIdentifier:@"ToPaymentSelection" sender:nil];
+    }
+}
+
+- (void)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message{
+    [BTAlertController showAlertWithMessage:message andTitle:title andOkButtonTitle:nil andCancelTitle:@"Ok" andtarget:self andAlertCancelBlock:^{
+        
+    } andAlertOkBlock:^(NSString *userName) {
+        
+    }];
+    
+}
+
 #pragma Mark - TextField Delegate methods
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
@@ -325,9 +343,8 @@
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"ToPaymentSelection"]){
-        HmDelieveriAddressViewController *deliveryVC = (HmDelieveriAddressViewController *)segue.destinationViewController;
-        deliveryVC.PaymentAmountString = [NSString stringWithFormat:@"%f",totalAmount];
-        
+        HMAddressesListViewController *addressVC = (HMAddressesListViewController *)segue.destinationViewController;
+        addressVC.priceString = [NSString stringWithFormat:@"%f",totalAmount];
         
     }
 }
