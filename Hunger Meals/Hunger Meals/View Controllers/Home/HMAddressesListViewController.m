@@ -35,7 +35,7 @@
     [headerView addSubview:selectAddressLabel];
     
     
-    UIButton *addNewAddressButton = [[UIButton alloc]initWithFrame:CGRectMake(headerView.frame.size.width - 120, selectAddressLabel.frame.origin.y - 7.5, 100, 40)];
+    UIButton *addNewAddressButton = [[UIButton alloc]initWithFrame:CGRectMake(headerView.frame.size.width - 15 - 100, selectAddressLabel.frame.origin.y - 7.5, 100, 40)];
     [addNewAddressButton setTitle:@"ADD NEW" forState:UIControlStateNormal];
     [addNewAddressButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [headerView addSubview:addNewAddressButton];
