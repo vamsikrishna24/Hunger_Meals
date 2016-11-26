@@ -9,5 +9,9 @@
 #import "HMAddressesCell.h"
 
 @implementation HMAddressesCell
-
+- (instancetype)init{
+    self.selectedRow = -1;
+    return  self;
+    
+}
 @end

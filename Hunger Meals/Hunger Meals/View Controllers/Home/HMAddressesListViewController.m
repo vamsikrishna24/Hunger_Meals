@@ -10,13 +10,20 @@
 #import "HMAddressesCell.h"
 #import "SVService.h"
 #import "HmDelieveriAddressViewController.h"
+#import "HMPaymentTypeSelectionViewController.h"
+#import "BTAlertController.h"
+
 
 
 @implementation HMAddressesListViewController
+{
+    NSInteger selectedAddressRow;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Delivery Address";
+    selectedAddressRow = -111;
     [self getLocations];
     self.addressesArray = [NSMutableArray new];
     
@@ -36,7 +43,7 @@
     [addNewAddressButton setBackgroundColor:APPLICATION_COLOR];
     addNewAddressButton.layer.cornerRadius = 5;
     [addNewAddressButton.titleLabel setFont:[UIFont fontWithName:@"Helvetica-Normal" size:13.0]];
-    [addNewAddressButton addTarget:self action:@selector(proceedToCheckOut) forControlEvents:UIControlEventTouchUpInside];
+    [addNewAddressButton addTarget:self action:@selector(addNewAddress) forControlEvents:UIControlEventTouchUpInside];
 
     UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.addressesTableView.frame.size.width, 40)];
     
@@ -46,11 +53,21 @@
     proceedToCheckout.layer.cornerRadius = 5;
     [proceedToCheckout setBackgroundColor:APPLICATION_COLOR];
     [footerView addSubview:proceedToCheckout];
+    [proceedToCheckout addTarget:self action:@selector(proceedToCheckOut) forControlEvents:UIControlEventTouchUpInside];
     
+
     
     self.addressesTableView.tableHeaderView = headerView;
     self.addressesTableView.tableFooterView = footerView;
 
+}
+- (void)showAlertWithMsg:(NSString *)msg{
+    [BTAlertController showAlertWithMessage:msg andTitle:@"Hunger Meals" andOkButtonTitle:nil andCancelTitle:@"Ok" andtarget:self andAlertCancelBlock:^{
+        
+    } andAlertOkBlock:^(NSString *userName) {
+        
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,7 +80,13 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"AddressCellIdentifier";
-    HMAddressesCell *cell = [self.addressesTableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    HMAddressesCell *cell = (HMAddressesCell *)[self.addressesTableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if(selectedAddressRow == indexPath.row){
+        cell.radioButtonImageView.image = [UIImage imageNamed:@"RadioOn"];
+    }else{
+        cell.radioButtonImageView.image = [UIImage imageNamed:@"RadioOff"];
+    }
+    
     cell.addressLabel.textAlignment = NSTextAlignmentLeft;
     cell.addressLabel.textColor = APPLICATION_SUBTITLE_COLOR;
     cell.addressLabel.text = self.addressesArray[indexPath.row];
@@ -72,9 +95,18 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
-        
-    }
+    HMAddressesCell *addressCell = (HMAddressesCell *)[tableView cellForRowAtIndexPath:indexPath];
+    
+    addressCell.radioButtonImageView.image = [UIImage imageNamed:@"RadioOn"];
+    addressCell.isRadioButtonSelected = YES;
+    selectedAddressRow = indexPath.row;
+}
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    HMAddressesCell *addressCell = (HMAddressesCell *)[tableView cellForRowAtIndexPath:indexPath];
+
+    addressCell.radioButtonImageView.image = [UIImage imageNamed:@"RadioOff"];
+    addressCell.isRadioButtonSelected = NO;
+
 }
 
 
@@ -97,13 +129,27 @@
     }];
     
 }
--(void)proceedToCheckOut{
+-(void)addNewAddress{
    
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     HmDelieveriAddressViewController *cartViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"deliverAddressIdentifier"];
     [self.navigationController pushViewController:cartViewController animated:YES];
 
     
+}
+
+-(void)proceedToCheckOut{
+    if(selectedAddressRow == -111){
+        
+        [self showAlertWithMsg:@"Please choose your deliver address to proceed further"];
+  
+    }else {
+
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    HMPaymentTypeSelectionViewController *paymentType = [mainStoryBoard instantiateViewControllerWithIdentifier:@"paymentTypeIdentifier"];
+    paymentType.PaymentAmountString= self.priceString;
+    [self.navigationController pushViewController:paymentType animated:YES];
+    }
 }
 
 @end

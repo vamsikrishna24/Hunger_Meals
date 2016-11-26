@@ -11,5 +11,8 @@
 @interface HMAddressesCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *radioButtonImageView;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (nonatomic,assign) BOOL isRadioButtonSelected;
+@property (nonatomic,assign) NSInteger selectedRow;
+
 
 @end

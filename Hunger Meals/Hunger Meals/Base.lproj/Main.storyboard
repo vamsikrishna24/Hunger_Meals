@@ -392,7 +392,7 @@
         <!--Payment Gateway-->
         <scene sceneID="r95-8p-0D2">
             <objects>
-                <viewController title="Payment Gateway" id="xRG-Yj-jMh" customClass="HMPaymentTypeSelectionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="paymentTypeIdentifier" title="Payment Gateway" id="xRG-Yj-jMh" customClass="HMPaymentTypeSelectionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SaL-VK-8VC"/>
                         <viewControllerLayoutGuide type="bottom" id="HrW-Zk-JPi"/>
@@ -542,7 +542,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDC-S2-JWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4323" y="-1035"/>
+            <point key="canvasLocation" x="4528.5" y="-1076"/>
         </scene>
         <!--Detail Page View Controller-->
         <scene sceneID="gsP-f5-kpo">
@@ -1832,7 +1832,6 @@
                         <outlet property="proceedToCheckOutButtonOutlet" destination="zd3-aW-VrL" id="Qr3-KZ-zsY"/>
                         <outlet property="shareLocationButton" destination="WpZ-l9-Z0n" id="8DH-YP-2Pl"/>
                         <outlet property="stateTextField" destination="lTo-WC-07D" id="LJ8-Lc-hqf"/>
-                        <segue destination="xRG-Yj-jMh" kind="show" identifier="ToDeliverySelection" id="28N-Av-gzw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="An0-Yj-Oei" userLabel="First Responder" sceneMemberID="firstResponder"/>
