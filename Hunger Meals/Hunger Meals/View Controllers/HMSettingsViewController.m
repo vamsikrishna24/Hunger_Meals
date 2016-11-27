@@ -103,7 +103,7 @@ else if(indexPath.row == 2) {
         cell.settingsImageView.image = [UIImage imageNamed:@"Invite_Friends"];
 
     }else if(indexPath.row == 3) {
-        cell.SettingsRowLabel.text = @"About US";
+        cell.SettingsRowLabel.text = @"About Us";
         cell.settingsImageView.image = [UIImage imageNamed:@"Help"];
 
     }

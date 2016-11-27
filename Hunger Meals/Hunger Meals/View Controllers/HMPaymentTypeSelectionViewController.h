@@ -17,4 +17,9 @@
 @property (nonatomic, weak) IBOutlet UIButton *payUButton;
 @property (weak, nonatomic) IBOutlet UIButton *codButton;
 @property(nonatomic,strong) NSString *PaymentAmountString;
+@property(nonatomic,strong) NSString *addressString;
+@property(nonatomic)double latitude;
+@property(nonatomic)double longitude;
+
+
 @end

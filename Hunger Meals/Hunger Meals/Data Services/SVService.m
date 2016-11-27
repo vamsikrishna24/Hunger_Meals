@@ -672,6 +672,38 @@
     }];
 }
 
+
+#pragma order
+
+- (void)order:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
+    NSData *userdataEncoded = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserData"];
+        UserData *userDataObject = [NSKeyedUnarchiver unarchiveObjectWithData:userdataEncoded];
+    
+        NSString *token = userDataObject.token;
+
+    NSString *url = [NSString stringWithFormat:KOrder, HTTP_DATA_HOST,token];
+    
+    
+    [self sendRequest:url Perameters:params usingblock:^(id result, NSHTTPURLResponse *response, NSError *err) {
+        
+        if (response.statusCode == 200 && result!=nil) {
+            
+            id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
+            
+            NSString *tokenString = [dictResult valueForKey:@"error"];
+            if([tokenString isEqualToString:@"Token is Expired"]){
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"Token_Expired"];
+            }
+            NSString *resultDict = [dictResult objectForKey:@"data"];
+            
+            resultBlock(resultDict);
+        }
+        else{
+                        
+            resultBlock(nil);
+        }
+    }];
+}
 #pragma CheckExistingUser Generation
 - (void)checkExistingUser:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock{
     

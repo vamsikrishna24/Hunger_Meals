@@ -81,6 +81,8 @@ typedef void(^SuccessBlock)(NSData *data , NSHTTPURLResponse *response, NSError 
 
 - (void)newRefreshTokenDict:(NSDictionary *)dict usingBlock:(void(^)(NSMutableArray *resultArray))resultBlock;
 
+- (void)order:(NSDictionary *)params usingBlock :(void(^)(NSString *resultMessage))resultBlock;
+
 +(NSString *)getBasicAuthorization;
 
 - (NSMutableArray *)parseArrayProductsData:(NSMutableArray *)array;

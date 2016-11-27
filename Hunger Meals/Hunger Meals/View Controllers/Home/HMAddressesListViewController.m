@@ -18,6 +18,7 @@
 @implementation HMAddressesListViewController
 {
     NSInteger selectedAddressRow;
+    NSString *addressString;
 }
 
 - (void)viewDidLoad {
@@ -61,6 +62,10 @@
     self.addressesTableView.tableFooterView = footerView;
 
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    [self getLocations];
+}
 - (void)showAlertWithMsg:(NSString *)msg{
     [BTAlertController showAlertWithMessage:msg andTitle:@"Hunger Meals" andOkButtonTitle:nil andCancelTitle:@"Ok" andtarget:self andAlertCancelBlock:^{
         
@@ -99,7 +104,11 @@
     
     addressCell.radioButtonImageView.image = [UIImage imageNamed:@"RadioOn"];
     addressCell.isRadioButtonSelected = YES;
+    
     selectedAddressRow = indexPath.row;
+    addressString = addressCell.addressLabel.text;
+    
+    
 }
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     HMAddressesCell *addressCell = (HMAddressesCell *)[tableView cellForRowAtIndexPath:indexPath];
@@ -148,6 +157,8 @@
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     HMPaymentTypeSelectionViewController *paymentType = [mainStoryBoard instantiateViewControllerWithIdentifier:@"paymentTypeIdentifier"];
     paymentType.PaymentAmountString= self.priceString;
+    paymentType.addressString = addressString;
+        
     [self.navigationController pushViewController:paymentType animated:YES];
     }
 }

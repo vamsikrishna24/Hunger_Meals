@@ -26,12 +26,14 @@ NSString * const kUpdateCartURL = @"%@/cart/%@?token=%@";
 NSString * const kAddCoupenCode = @"%@/getcouponvalue";
 NSString * const kOTPGeneration = @"%@/generateotp";
 NSString * const kOTPVerification = @"%@/verifyotp";
-NSString * const kLocation = @"%@/locations";
+NSString * const kLocation = @"%@/locations/%@?token=%@";
 NSString * const kMonthlyproducts = @"%@/getmonthlyproducts";
 NSString * const kGetMonthlyMealPlan = @"%@/mealplan/%@";
 NSString * const kCurrentmealplan = @"%@/currmealplan?token=%@";
 NSString * const kCurrentActiveOrders = @"%@/currentactiveorders";
-NSString * const kCurries = @"%@/products/category/curries?token=%@";;
+NSString * const kCurries = @"%@/products/category/curries?token=%@";
+NSString * const KOrder = @"%@/order?token=%@";;
+
 
 NSString * const kUserLoginURL = @"%@/login";
 NSString * const kUserSignUpURL = @"%@/jwcreate";

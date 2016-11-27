@@ -10,11 +10,15 @@
 #import "PaymentPageViewController.h"
 #import "PayTMViewController.h"
 #import "HMPaymentSuccessViewController.h"
+#import "SVService.h"
+#import "UserData.h"
+#import "CartItem.h"
 
 
 @interface HMPaymentTypeSelectionViewController ()
 {
     NSString *selectedPaymentMethod;
+    NSString *phonenumberString;
 }
 @end
 
@@ -22,8 +26,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.paytmButton.layer setValue:[NSNumber numberWithBool:YES] forKey:@"isSelected"];
     selectedPaymentMethod = @"PAYTM";
+    
+    NSData *archiverData = [[NSUserDefaults standardUserDefaults]valueForKey:@"UserData"];
+    
+    UserData *userData = [NSKeyedUnarchiver unarchiveObjectWithData:archiverData];
+    
+    NSData *archiverData1 = [[NSUserDefaults standardUserDefaults]valueForKey:@"CartItem"];
+    
+    CartItem *cartData = [NSKeyedUnarchiver unarchiveObjectWithData:archiverData1];
+
+    
+    if([userData.phone_no isEqualToString:@""]){
+      
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Message" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            if (![alert.textFields.firstObject.text isEqualToString:@""]) {
+                
+                userData.phone_no = alert.textFields.firstObject.text;
+                NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: @"Success", @"order_status", userData.name, @"user_name", userData.phone_no, @"phone",self.addressString, @"address",@"online", @"order_type",selectedPaymentMethod,@"payment_type",cartData.inventories_id,@"kitchen_id",self.latitude,@"lat",self.longitude,@"lng", nil];
+                SVService *service = [[SVService alloc] init];
+                [service order:dict usingBlock:^(NSString *resultMessage) {
+                    
+                    
+                }];
+                
+            }else{
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+        }]];
+        [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.placeholder = @"Enter your phone number";
+        }];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+   
+    [self.paytmButton.layer setValue:[NSNumber numberWithBool:YES] forKey:@"isSelected"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -176,8 +215,20 @@
 - (void)didSucceedTransaction:(PGTransactionViewController *)controller
                      response:(NSDictionary *)response
 {
+    
     DEBUGLOG(@"ViewController::didSucceedTransactionresponse= %@", response);
+    
+    NSData *archiverData = [[NSUserDefaults standardUserDefaults]valueForKey:@"UserData"];
+    
+    UserData *userData = [NSKeyedUnarchiver unarchiveObjectWithData:archiverData];
+    
     NSString *title = [NSString stringWithFormat:@"Your order  was completed successfully. \n %@", response[@"ORDERID"]];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: @"Success", @"order_status", userData.name, @"user_name", userData.phone_no, @"phone",  self.addressString, @"address",selectedPaymentMethod, @"payment_type", nil];
+    SVService *service = [[SVService alloc] init];
+    [service order:dict usingBlock:^(NSString *resultMessage) {
+        
+        
+    }];
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     HMPaymentSuccessViewController *paymentSuccessVC= [mainStoryBoard instantiateViewControllerWithIdentifier:@"PaymentSuccessidentifier"];
     [self presentViewController:paymentSuccessVC animated:YES completion:nil];

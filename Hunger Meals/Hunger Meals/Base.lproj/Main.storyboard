@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDL-3C-iXZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dDL-3C-iXZ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="LobsterTwo-Regular.otf">
-            <string>LobsterTwo</string>
-        </mutableArray>
         <mutableArray key="Roboto-Bold.ttf">
             <string>Roboto-Bold</string>
             <string>Roboto-Bold</string>
@@ -34,17 +31,9 @@
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
         </mutableArray>
-        <mutableArray key="Roboto-Medium.ttf">
-            <string>Roboto-Medium</string>
-            <string>Roboto-Medium</string>
-        </mutableArray>
         <mutableArray key="Roboto-Regular.ttf">
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
-        </mutableArray>
-        <mutableArray key="Soria font.ttf">
-            <string>Soria-Soria</string>
-            <string>Soria-Soria</string>
         </mutableArray>
         <mutableArray key="nevis.ttf">
             <string>nevis-Bold</string>
@@ -2978,7 +2967,7 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gY8-Cu-OdI">
                                                 <rect key="frame" x="148" y="235" width="120" height="2"/>
-                                                <color key="backgroundColor" red="0.91905349489999999" green="0.35409897569999998" blue="0.19947114590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.61176470588235299" green="0.61176470588235299" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="b20-Et-rEi"/>
                                                     <constraint firstAttribute="width" constant="120" id="iFj-Sp-nR4"/>
@@ -3071,15 +3060,21 @@
                                                 </connections>
                                             </collectionView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UM1-jN-1Ce">
-                                                <rect key="frame" x="0.0" y="412" width="415" height="127"/>
+                                                <rect key="frame" x="110" y="476" width="195" height="40"/>
                                                 <color key="backgroundColor" red="0.94509803920000002" green="0.35294117650000001" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="127" id="0yw-u8-Id0"/>
+                                                    <constraint firstAttribute="height" constant="40" id="0yw-u8-Id0"/>
+                                                    <constraint firstAttribute="width" constant="195" id="smo-78-ldi"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="LobsterTwo" family="Lobster Two" pointSize="22"/>
-                                                <state key="normal" title="Meal Planner">
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                                <state key="normal" title="Plan your meal">
                                                     <color key="titleColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <segue destination="wea-Oy-MWI" kind="show" id="hDr-0L-Afe"/>
                                                 </connections>
@@ -3120,13 +3115,12 @@
                                             <constraint firstAttribute="trailing" secondItem="0I6-Hx-EHa" secondAttribute="trailing" id="749-mj-F5Z"/>
                                             <constraint firstAttribute="trailing" secondItem="9lX-25-7Qv" secondAttribute="trailing" id="F3S-W6-wy7"/>
                                             <constraint firstItem="0I6-Hx-EHa" firstAttribute="leading" secondItem="IYM-tx-54v" secondAttribute="leading" id="HHX-Mj-bfg"/>
-                                            <constraint firstItem="UM1-jN-1Ce" firstAttribute="top" secondItem="9lX-25-7Qv" secondAttribute="bottom" id="Qjy-jR-yS1"/>
+                                            <constraint firstItem="UM1-jN-1Ce" firstAttribute="centerX" secondItem="IYM-tx-54v" secondAttribute="centerX" id="K2B-SW-ZPB"/>
+                                            <constraint firstItem="UM1-jN-1Ce" firstAttribute="top" secondItem="9lX-25-7Qv" secondAttribute="bottom" constant="64" id="Qjy-jR-yS1"/>
                                             <constraint firstItem="1hO-uf-JQl" firstAttribute="centerX" secondItem="gY8-Cu-OdI" secondAttribute="centerX" id="cPX-mh-I9M"/>
                                             <constraint firstItem="gY8-Cu-OdI" firstAttribute="top" secondItem="0I6-Hx-EHa" secondAttribute="bottom" constant="18" id="cUe-xZ-eMA"/>
                                             <constraint firstItem="0I6-Hx-EHa" firstAttribute="top" secondItem="IYM-tx-54v" secondAttribute="top" constant="20" id="cVm-cf-82E"/>
                                             <constraint firstItem="9lX-25-7Qv" firstAttribute="top" secondItem="1hO-uf-JQl" secondAttribute="bottom" constant="8" id="fqV-kP-FsC"/>
-                                            <constraint firstAttribute="trailing" secondItem="UM1-jN-1Ce" secondAttribute="trailing" id="nKF-Mt-Gio"/>
-                                            <constraint firstItem="UM1-jN-1Ce" firstAttribute="leading" secondItem="IYM-tx-54v" secondAttribute="leading" id="qat-yS-yiU"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -3382,16 +3376,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your preference" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WI-jU-2tr">
-                                <rect key="frame" x="20" y="50" width="140.5" height="17"/>
-                                <fontDescription key="fontDescription" name="Soria-Soria" family="Soria" pointSize="17"/>
+                                <rect key="frame" x="20" y="50" width="196.5" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="1Hx-2j-scN"/>
+                                    <constraint firstAttribute="width" constant="196.5" id="nau-bf-tNT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="20" y="50" width="183" height="20"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3L-lc-1JX">
-                                <rect key="frame" x="20" y="226" width="103" height="17"/>
-                                <fontDescription key="fontDescription" name="Soria-Soria" family="Soria" pointSize="17"/>
+                                <rect key="frame" x="20" y="226" width="174.5" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="d5Q-d0-K6c"/>
+                                    <constraint firstAttribute="width" constant="174.5" id="vL7-1h-5sp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="20" y="229" width="134.5" height="20"/>
@@ -3403,9 +3407,9 @@
                                     <constraint firstAttribute="height" constant="111" id="16O-km-wdf"/>
                                     <constraint firstAttribute="width" constant="125.5" id="XtR-n5-d9z"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="North Indian">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
@@ -3424,9 +3428,9 @@
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTJ-3A-bu0">
                                 <rect key="frame" x="239" y="88" width="125.5" height="111"/>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="South Indian">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
@@ -3460,7 +3464,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lunch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awt-nw-g0U">
                                 <rect key="frame" x="48" y="272" width="43" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="48" y="278" width="43" height="18"/>
@@ -3483,7 +3487,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dinner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgz-r5-caV">
                                 <rect key="frame" x="149" y="272" width="45.5" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="149" y="278" width="45.5" height="18"/>

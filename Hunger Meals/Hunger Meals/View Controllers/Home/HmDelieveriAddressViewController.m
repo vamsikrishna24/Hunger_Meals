@@ -144,6 +144,7 @@
     latitudeValue = latitude;
     longitudeValue = longitude;
     
+    
 }
 
 
@@ -197,6 +198,8 @@
     if([segue.identifier isEqualToString:@"ToDeliverySelection"]){
         HMPaymentTypeSelectionViewController *paymentVC = (HMPaymentTypeSelectionViewController *)segue.destinationViewController;
         paymentVC.PaymentAmountString = self.PaymentAmountString;
+        paymentVC.latitude = latitudeValue;
+        paymentVC.longitude = longitudeValue;
     }
 }
 
@@ -266,6 +269,7 @@
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
+    [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 &&
         [CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse
         //[CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedAlways
@@ -273,7 +277,9 @@
         // Will open an confirm dialog to get user's approval
         [locationManager requestWhenInUseAuthorization];
     } else {
-        [locationManager startUpdatingLocation]; //Will update location immediately
+        [locationManager startUpdatingLocation];
+        
+        //Will update location immediately
     }
     
 }
@@ -287,20 +293,17 @@
     
     [locationManager stopUpdatingLocation];
     locationManager = nil;
+     [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     NSLog(@"didUpdateToLocation: %@", newLocation);
     CLLocation *currentLocation = newLocation;
-    
-//    if (currentLocation != nil) {
-//        longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
-//        latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
-//    }
-    
+
     // Reverse Geocoding
     NSLog(@"Resolving the Address");
+    
     [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
         NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
         if (error == nil && [placemarks count] > 0) {
@@ -320,7 +323,9 @@
         }
         [locationManager stopUpdatingLocation];
         locationManager = nil;
+         [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
     } ];
+    
     
 }
 @end

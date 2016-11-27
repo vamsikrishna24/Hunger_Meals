@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property(nonatomic,strong) NSString *PaymentAmountString;
 
+
 - (IBAction)proceedToCheckoutAction:(id)sender;
 
 - (IBAction)otherButtonAction:(id)sender;

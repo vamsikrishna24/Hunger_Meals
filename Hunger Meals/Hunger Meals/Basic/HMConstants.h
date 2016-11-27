@@ -27,6 +27,7 @@ extern NSString * const kAddToCartURL;
 extern NSString * const kUpdateCartURL;
 extern NSString * const kDeleteCartURL;
 extern NSString * const kCurries;
+extern NSString * const KOrder;
 
 extern NSString * const kUserLoginURL;
 extern NSString * const kUserSignUpURL;

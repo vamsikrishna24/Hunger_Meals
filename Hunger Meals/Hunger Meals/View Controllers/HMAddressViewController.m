@@ -34,6 +34,7 @@
     self.title = @"Address";
     [self getLocations];
     self.addressesArray = [NSMutableArray new];
+
     
 }
 
@@ -84,6 +85,7 @@
 }
 
 - (void) saveLocation:(NSString *)address{
+    
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: @"Koramanagala", @"name", @"Banglore", @"city", @"Birla", @"sublocation",  address, @"address", @12.9317,  @"lat", @77.6227, @"lng", @560030, @"zip", @"userlocation", @"type", nil];
     [self performSelectorOnMainThread:@selector(showActivityIndicatorWithTitle:) withObject:kIndicatorTitle waitUntilDone:NO];
     SVService *service = [[SVService alloc] init];

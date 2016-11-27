@@ -33,7 +33,11 @@
     
     self.title = @"Combo Selection";
     selectedKindOfFood = @"NorthIndian";
-    [_northIndianBtn setBackgroundColor:[UIColor colorWithRed:0/255.0 green:128.0/255.0 blue:0/255.0 alpha:1.0f]];
+    //[_northIndianBtn setBackgroundColor:[UIColor colorWithRed:0/255.0 green:128.0/255.0 blue:0/255.0 alpha:1.0f]];
+    [[_northIndianBtn layer] setBorderWidth:2.0f];
+    [[_southIndianBtn layer] setBorderWidth:2.0f];
+
+    [[_northIndianBtn layer] setBorderColor:(__bridge CGColorRef _Nullable)(APPLICATION_COLOR)];
     [_northIndianBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
@@ -41,18 +45,20 @@
     UIButton *senderBtn = (UIButton *)sender;
     if (senderBtn.tag == 0) {
         selectedKindOfFood = @"NorthIndian";
-        [_northIndianBtn setBackgroundColor:[UIColor colorWithRed:0/255.0 green:128.0/255.0 blue:0/255.0 alpha:1.0f]];
+        [[_northIndianBtn layer] setBorderColor:(__bridge CGColorRef _Nullable)(APPLICATION_COLOR)];
+
         [_northIndianBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         
-        [_southIndianBtn setBackgroundColor:[UIColor whiteColor]];
+        [[_southIndianBtn layer] setBorderColor:(__bridge CGColorRef _Nullable)(APPLICATION_SUBTITLE_COLOR)];
         [_southIndianBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     }
     else {
         selectedKindOfFood = @"SouthIndian";
-        [_southIndianBtn setBackgroundColor:[UIColor colorWithRed:0/255.0 green:128.0/255.0 blue:0/255.0 alpha:1.0f]];
+        [[_southIndianBtn layer] setBorderColor:(__bridge CGColorRef _Nullable)(APPLICATION_COLOR)];
+
         [_southIndianBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         
-        [_northIndianBtn setBackgroundColor:[UIColor whiteColor]];
+        [[_northIndianBtn layer] setBorderColor:(__bridge CGColorRef _Nullable)(APPLICATION_SUBTITLE_COLOR)];
         [_northIndianBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     }
 }
