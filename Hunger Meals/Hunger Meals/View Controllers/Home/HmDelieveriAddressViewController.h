@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *areaLocalityTextField;
 @property (weak, nonatomic) IBOutlet UITextField *cityTextField;
 @property (weak, nonatomic) IBOutlet UITextField *stateTextField;
-@property (weak, nonatomic) IBOutlet UIButton *proceedToCheckOutButtonOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property(nonatomic,strong) NSString *PaymentAmountString;
 
 - (IBAction)proceedToCheckoutAction:(id)sender;

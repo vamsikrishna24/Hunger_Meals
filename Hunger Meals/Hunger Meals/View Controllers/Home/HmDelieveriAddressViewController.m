@@ -18,6 +18,8 @@
     CLGeocoder *geocoder;
     CLPlacemark *placemark;
     NSString *addressString;
+    double latitudeValue;
+    double longitudeValue;
 
 }
 
@@ -28,18 +30,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    locationManager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
-
     savedLocationIDs = [[NSMutableArray alloc] init];
-
+    latitudeValue = 0;
+    longitudeValue = 0;
+    
     [self textFieldProperties];
     
     [self TextFieldsFonts];
     self.title = @"Delivery address";
     [self.homeButtonOutlet.layer setValue:[NSNumber numberWithBool:YES] forKey:@"isSelected"];
     selectedAddressType = @"HOME";
-   // self.proceedToCheckOutButtonOutlet.enabled = NO;
+   // self.saveButton.enabled = NO;
     
 }
 -(void)textFieldProperties{
@@ -111,7 +113,8 @@
 
 - (void) saveLocation{
     [self showActivityIndicatorWithTitle:@"Please wait..."];
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: selectedAddressType, @"addresstype", self.cityTextField.text, @"name", self.cityTextField.text, @"city", self.areaLocalityTextField.text, @"sublocation",  self.flatNumberTextField.text, @"address", @12.9317,  @"lat", @77.6227, @"lng", self.pinCodeTextField.text, @"zip", @"userlocation", @"type", nil];
+    [self getLocationFromAddressString:self.cityTextField.text];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: selectedAddressType, @"addresstype", self.cityTextField.text, @"name", self.cityTextField.text, @"city", self.areaLocalityTextField.text, @"sublocation",  self.flatNumberTextField.text, @"address", latitudeValue,  @"lat", longitudeValue, @"lng", self.pinCodeTextField.text, @"zip", @"userlocation", @"type", nil];
     SVService *service = [[SVService alloc] init];
     [service getLocationID:dict usingBlock:^(NSString *locationId) {
         if (locationId != nil) {
@@ -123,6 +126,27 @@
     }];
 }
 
+-(void) getLocationFromAddressString: (NSString*) addressStr {
+    double latitude = 0, longitude = 0;
+    NSString *esc_addr =  [addressStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *req = [NSString stringWithFormat:@"http://maps.google.com/maps/api/geocode/json?sensor=false&address=%@", esc_addr];
+    NSString *result = [NSString stringWithContentsOfURL:[NSURL URLWithString:req] encoding:NSUTF8StringEncoding error:NULL];
+    if (result) {
+        NSScanner *scanner = [NSScanner scannerWithString:result];
+        if ([scanner scanUpToString:@"\"lat\" :" intoString:nil] && [scanner scanString:@"\"lat\" :" intoString:nil]) {
+            [scanner scanDouble:&latitude];
+            if ([scanner scanUpToString:@"\"lng\" :" intoString:nil] && [scanner scanString:@"\"lng\" :" intoString:nil]) {
+                [scanner scanDouble:&longitude];
+            }
+        }
+    }
+    
+    latitudeValue = latitude;
+    longitudeValue = longitude;
+    
+}
+
+
 - (void)syncLocationForUser:(NSString *)locationID{
     
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: locationID, @"location_id", nil];
@@ -133,14 +157,14 @@
             NSLog(@"%@", resultMessage);
         }
         
-        [self performSegueWithIdentifier:@"ToDeliverySelection" sender:nil];
+        [self.navigationController popViewControllerAnimated:YES];
         [self hideActivityIndicator];
     }];
     
 }
 
 
-- (IBAction)proceedToCheckoutAction:(id)sender {
+- (IBAction)saveAddress:(id)sender {
     if (![[self checkFieldsValidity]  isEqual: @""]) {
         [self showAlertWithTitle:@"Hunger Meals" andMessage:[self checkFieldsValidity]];
     }
@@ -181,9 +205,9 @@
 {
     
     if(self.pinCodeTextField.text.length > 0 && self.deliveryAddressTextFiels.text.length > 0 && self.flatNumberTextField.text.length > 0 && self.areaLocalityTextField.text.length > 0 && self.cityTextField.text.length > 0 && self.stateTextField.text.length > 0){
-        self.proceedToCheckOutButtonOutlet.enabled = YES;
+        self.saveButton.enabled = YES;
     }
-    self.proceedToCheckOutButtonOutlet.enabled = NO;
+    self.saveButton.enabled = NO;
 
     return YES;
 }
@@ -238,10 +262,19 @@
     selectedAddressType = @"OFFICE";
 }
 - (IBAction)shareLocationButtonAction:(id)sender {
+    locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    
     [locationManager startUpdatingLocation];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 &&
+        [CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse
+        //[CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedAlways
+        ) {
+        // Will open an confirm dialog to get user's approval
+        [locationManager requestWhenInUseAuthorization];
+    } else {
+        [locationManager startUpdatingLocation]; //Will update location immediately
+    }
     
 }
 
@@ -249,8 +282,11 @@
 {
     NSLog(@"didFailWithError: %@", error);
     UIAlertView *errorAlert = [[UIAlertView alloc]
-                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                               initWithTitle:@"Error" message:@"We are currently not able to detect your location. Please try again later." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [errorAlert show];
+    
+    [locationManager stopUpdatingLocation];
+    locationManager = nil;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
@@ -269,14 +305,21 @@
         NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
         if (error == nil && [placemarks count] > 0) {
             placemark = [placemarks lastObject];
-            addressString = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
-                                 placemark.subThoroughfare, placemark.thoroughfare,
-                                 placemark.postalCode, placemark.locality,
-                                 placemark.administrativeArea,
-                                 placemark.country];
+            _pinCodeTextField.text = placemark.postalCode;
+            _flatNumberTextField.text = placemark.subThoroughfare;
+            _areaLocalityTextField.text = [NSString stringWithFormat:@"%@, %@", placemark.thoroughfare, placemark.subLocality];
+            _stateTextField.text = placemark.administrativeArea;
+            _cityTextField.text = placemark.subAdministrativeArea;
+            CLLocation *location = placemark.location;
+            CLLocationCoordinate2D coordinate = location.coordinate;
+            latitudeValue = coordinate.latitude;
+            longitudeValue = coordinate.longitude;
+           
         } else {
             NSLog(@"%@", error.debugDescription);
         }
+        [locationManager stopUpdatingLocation];
+        locationManager = nil;
     } ];
     
 }

@@ -126,7 +126,7 @@
             
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
-                if ([[NSUserDefaults standardUserDefaults] boolForKey:@"Token_Expired"]) {
+                if (![[NSUserDefaults standardUserDefaults] boolForKey:@"Token_Expired"]) {
                     
                     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"Token_Expired"];
                     [self newRefreshTokenDict:params usingBlock:^(NSMutableArray *resultArray) {
@@ -221,7 +221,7 @@
             
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
-                if ([[NSUserDefaults standardUserDefaults] boolForKey:@"Token_Expired"]) {
+                if (![[NSUserDefaults standardUserDefaults] boolForKey:@"Token_Expired"]) {
                     
                     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"Token_Expired"];
                     [self newRefreshTokenDict:params usingBlock:^(NSMutableArray *resultArray) {
@@ -257,7 +257,7 @@
             
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
-                if ([[NSUserDefaults standardUserDefaults] boolForKey:@"Token_Expired"]) {
+                if (![[NSUserDefaults standardUserDefaults] boolForKey:@"Token_Expired"]) {
                     
                     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"Token_Expired"];
                     [self newRefreshTokenDict:params usingBlock:^(NSMutableArray *resultArray) {
@@ -296,7 +296,7 @@
             
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
-                if ([[NSUserDefaults standardUserDefaults] boolForKey:@"Token_Expired"]) {
+                if (![[NSUserDefaults standardUserDefaults] boolForKey:@"Token_Expired"]) {
                     
                     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"Token_Expired"];
                     [self newRefreshTokenDict:params usingBlock:^(NSMutableArray *resultArray) {
@@ -334,7 +334,7 @@
             id dictResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingAllowFragments error:nil];
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
-                if ([[NSUserDefaults standardUserDefaults] boolForKey:@"Token_Expired"]) {
+                if (![[NSUserDefaults standardUserDefaults] boolForKey:@"Token_Expired"]) {
                     
                     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"Token_Expired"];
                     [self newRefreshTokenDict:params usingBlock:^(NSMutableArray *resultArray) {
@@ -376,7 +376,7 @@
             NSString *resultMsg = [dictResult valueForKeyPath:@"data.message"];
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
-                if ([[NSUserDefaults standardUserDefaults] boolForKey:@"Token_Expired"]) {
+                if (![[NSUserDefaults standardUserDefaults] boolForKey:@"Token_Expired"]) {
                     
                     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"Token_Expired"];
                     [self newRefreshTokenDict:params1 usingBlock:^(NSMutableArray *resultArray) {
@@ -463,7 +463,7 @@
             
             NSString *tokenString = [dictResult valueForKey:@"error"];
             if([tokenString isEqualToString:@"Token is Expired"]){
-                if ([[NSUserDefaults standardUserDefaults] boolForKey:@"Token_Expired"]) {
+                if (![[NSUserDefaults standardUserDefaults] boolForKey:@"Token_Expired"]) {
                     
                     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"Token_Expired"];
                     [self newRefreshTokenDict:params usingBlock:^(NSMutableArray *resultArray) {
@@ -622,7 +622,7 @@
             NSString *resultMessage = [resultDict objectForKey:@"message"];
             if([tokenString isEqualToString:@"Token is Expired"]){
                 
-                if ([[NSUserDefaults standardUserDefaults] boolForKey:@"Token_Expired"]){
+                if (![[NSUserDefaults standardUserDefaults] boolForKey:@"Token_Expired"]){
                     
                     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"Token_Expired"];
                     [self newRefreshTokenDict:params1 usingBlock:^(NSMutableArray *resultArray) {
